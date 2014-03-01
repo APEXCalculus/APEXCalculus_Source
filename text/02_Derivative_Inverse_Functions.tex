@@ -1,0 +1,216 @@
+\section{Derivatives of Inverse Functions}\label{sec:deriv_inverse_function}
+
+Recall that a function $y=f(x)$ is said to be \textit{one to one} if it passes the horizontal line test; that is, for two different $x$ values $x_1$ and $x_2$, we do \textit{not} have $f(x_1)=f(x_2)$. In some cases the domain of $f$ must be restricted so that it is one to one. For instance, consider $f(x)=x^2$. Clearly, $f(-1)= f(1)$, so $f$ is not one to one on its regular domain, but by restricting $f$ to $(0,\infty)$, $f$ is one to one.
+
+Now recall that one to one functions have \textit{inverses}. That is, if $f$ is one to one, it has an inverse function, denoted by $f^{-1}$, such that if $f(a)=b$, then $f^{-1}(b) = a$. The domain of $f^{-1}$ is the range of $f$, and vice-versa. For ease of notation, we set $g=f^{-1}$ and treat $g$ as a function of $x$.
+
+Since $f(a)=b$ implies $g(b)=a$, when we compose $f$ and $g$ we get a nice result: $$f\big(g(b)\big) = f(a) = b.$$ In general, $f\big(g(x)\big) =x$ and $g\big(f(x)\big) = x$. This gives us a convenient way to check if two functions are inverses of each other: compose them and if the result is $x$, then they are inverses (on the appropriate domains.)
+
+When the point $(a,b)$ lies on the graph of $f$, the point $(b,a)$ lies on the graph of $g$. This leads us to discover that the graph of $g$ is the reflection of $f$ across the line $y=x$. In Figure \ref{fig:inverse1} we see a function graphed along with its inverse. See how the point $(1,1.5)$ lies on one graph, whereas $(1.5,1)$ lies on the other. Because of this relationship, whatever we know about $f$ can quickly be transferred into knowledge about $g$.
+
+\mfigure{.6}{A function $f$ along with its inverse $f^{-1}$. (Note how it does not matter which function we refer to as $f$; the other is $f^{-1}$.)}{fig:inverse1}{figures/figinverse1}
+
+For example, consider Figure \ref{fig:inverse2} where the tangent line to $f$ at the point $(a,b)$ is drawn. That line has slope $\fp(a)$. Through reflection across $y=x$, we can see that the tangent line to $g$ at the point $(b,a)$ should have slope $\ds \frac{1}{\fp(a)}$. This then tells us that $\ds g'(b) = \frac{1}{\fp(a)}.$
+
+\mfigure{.35}{Corresponding tangent lines drawn to $f$ and $f^{-1}$.}{fig:inverse2}{figures/figinverse2}
+
+Consider:
+\begin{center}
+	\begin{tabular}{ccc}
+	Information about $f$ & & Information about $g=f^{-1}$ \\ \hline
+	\parbox{100pt}{\centering $(-0.5,0.375)$ lies on $f$}\rule{0pt}{12pt} & \hskip 40pt & \parbox{100pt}{\centering $(0.375,-0.5)$ lies on $g$}\\
+	\rule{0pt}{20pt}\parbox{100pt}{\centering Slope of tangent line to $f$ at $x=-0.5$ is $3/4$} & & \parbox{100pt}{\centering Slope of tangent line to $g$ at $x=0.375$ is $4/3$}\rule{0pt}{17pt} \\
+	\rule{0pt}{15pt}$\fp(-0.5) = 3/4$ & & $g'(0.375) = 4/3$\rule{0pt}{12pt}
+	\end{tabular}
+\end{center}
+
+We have discovered a relationship between $\fp$ and $g'$ in a mostly graphical way. We can realize this relationship analytically as well. Let $y = g(x)$, where again $g = f^{-1}$. We want to find $\ds y'$. Since $y = g(x)$, we know that $f(y) = x$. Using the Chain Rule and Implicit Differentiation, take the derivative of both sides of this last equality.
+		\begin{align*}
+			\frac{d}{dx}\Big(f(y)\Big) &= \frac{d}{dx}\Big(x\Big) \\
+			\fp(y)\cdot y' &= 1\\
+			y' &= \frac{1}{\fp(y)}\\
+			y' &= \frac{1}{\fp(g(x))}
+		\end{align*}
+		
+This leads us to the following theorem.
+
+\theorem{thm:deriv_inverse_functions}{Derivatives of Inverse Functions}
+{Let $f$ be differentiable and one to one on an open interval $I$, where $\fp(x) \neq 0$ for all $x$ in $I$, let $J$ be the range of $f$ on $I$, let $g$ be the inverse function of $f$, and let $f(a) = b$ for some $a$ in $I$. Then $g$ is a differentiable function on $J$, and in particular,
+	
+%	\begin{center}
+\hskip-7pt	\begin{tabular}{ccc}
+	1. $\ds \left(f^{-1}\right)'(b)=g'(b) = \frac{1}{\fp(a)}$ &\hskip 4pt and \hskip 4pt&  2. $\ds \left(f^{-1}\right)'(x)=g'(x) = \frac{1}{\fp(g(x))}$
+	\end{tabular}
+%	\end{center}
+}
+
+The results of Theorem \ref{thm:deriv_inverse_functions} are not trivial; the notation may seem confusing at first. Careful consideration, along with examples, should earn understanding.
+
+In the next example we apply Theorem \ref{thm:deriv_inverse_functions} to the arcsine function.\\
+
+\example{ex_deriv_arcsin}{\textbf{Finding the derivative of an inverse trigonometric function}\\
+Let $y = \arcsin x = \sin^{-1} x$. Find $y'$ using Theorem \ref{thm:deriv_inverse_functions}.}
+{Adopting our previously defined notation, let $g(x) = \arcsin x$ and $f(x) = \sin x$. Thus $\fp(x) = \cos x$. Applying the theorem, we have 
+			\begin{align*}
+			g'(x) &= \frac{1}{\fp(g(x))} \\
+						&= \frac{1}{\cos(\arcsin x)}.
+			\end{align*}
+			
+This last expression is not immediately illuminating. Drawing a figure will help, as shown in Figure \ref{fig:inverse3}. Recall that the sine function can be viewed as taking in an angle and returning a ratio of sides of a right triangle, specifically, the ratio ``opposite over hypotenuse.'' This means that the arcsine function takes as input a ratio of sides and returns an angle. The equation $y=\arcsin x$ can be rewritten as $y=\arcsin (x/1)$; that is, consider a right triangle where the hypotenuse has length 1 and the side opposite of the angle with measure $y$ has length $x$. This means the final side has length $\sqrt{1-x^2}$, using the Pythagorean Theorem.
+
+\vskip \baselineskip
+\mfigure{.8}{A right triangle defined by $y=\sin ^{-1}(x/1)$ with the length of the third leg found using the Pythagorean Theorem.}{fig:inverse3}{figures/figinverse3}
+\vskip \baselineskip
+
+Therefore $\cos (\sin^{-1} x) = \cos y = \sqrt{1-x^2}/1 = \sqrt{1-x^2}$, resulting in $$\frac{d}{dx}\big(\arcsin x\big) = g'(x) = \frac{1}{\sqrt{1-x^2}}.$$
+\vskip-\baselineskip
+}\\
+
+Remember that the input $x$ of the arcsine function is a ratio of a side of a right triangle to its hypotenuse; the absolute value of this ratio will never be greater than 1. Therefore the inside of the square root will never be negative.
+
+In order to make $y=\sin x$ one to one, we restrict its domain to $[-\pi/2,\pi/2]$; on this domain, the range is $[-1,1]$. Therefore the domain of $y=\arcsin x$ is $[-1,1]$ and the range is $[-\pi/2,\pi/2]$. When $x=\pm 1$, note how the derivative of the arcsine function is undefined; this corresponds to the fact that as $x\to \pm1$, the tangent lines to arcsine approach vertical lines with undefined slopes.
+
+
+\ifthenelse{\boolean{longpage}}%
+{\mfigure{.5}{Graphs of $\sin x$ and $\sin^{-1}x$ along with corresponding tangent lines.}{fig:inverse4}{figures/figinverse4a}}
+{\mfigure{.5}{Graphs of $\sin x$ and $\sin^{-1}x$ along with corresponding tangent lines.}{fig:inverse4}{figures/figinverse4}}
+
+%\mfigure{.35}{Graphs of $\sin x$ and $\sin^{-1}x$}{fig:inverse4b}{figures/figinverse4}
+
+In Figure \ref{fig:inverse4} we see $f(x) = \sin x$ and $f^{-1} = \sin^{-1} x$ graphed on their respective domains. The line tangent to $\sin x$ at the point $(\pi/3, \sqrt{3}/2)$ has slope $\cos \pi/3 = 1/2$. The slope of the corresponding point on $\sin^{-1}x$, the point $(\sqrt{3}/2,\pi/3)$, is $$\frac{1}{\sqrt{1-(\sqrt{3}/2)^2}} = \frac{1}{\sqrt{1-3/4}} = \frac{1}{\sqrt{1/4}} = \frac{1}{1/2}=2,$$ verifying yet again that at corresponding points, a function and its inverse have reciprocal slopes.\\
+
+Using similar techniques, we can find the derivatives of all the inverse trigonometric functions. In Figure \ref{fig:domain_trig} we show the restrictions of the domains of the standard trigonometric functions that allow them to be invertible.\\
+
+%\noindent\hskip-100pt
+\begin{minipage}{\textwidth+200pt}
+\small\noindent
+%\centering%\begin{center}
+%\noindent\begin{minipage}[t]{.5\textwidth}%
+\begin{tabular}{cccccc}
+Function & Domain & Range &\parbox[b]{40pt}{\centering Inverse Function} & Domain & Range\\ \hline
+\rule{0pt}{12pt} $\sin x$ & $[-\pi/2, \pi/2]$ & $[-1,1]$&$\sin^{-1} x$ & $[-1,1]$ & $[-\pi/2, \pi/2]$ \\
+\rule{0pt}{12pt}$\cos x$ & $[0,\pi]$ & $[-1,1]$&$\cos^{-1}(x)$ & $[-1,1]$ & $[0,\pi]$ \\
+\rule{0pt}{12pt}$\tan x$ & $(-\pi/2,\pi/2)$ & $(-\infty,\infty)$&$\tan^{-1}(x)$ & $(-\infty,\infty)$ & $(-\pi/2,\pi/2)$	\\
+\rule{0pt}{12pt} $\csc x$ & $[-\pi/2,0)\cup (0, \pi/2]$ & $(-\infty,-1]\cup [1,\infty)$&$\csc^{-1} x$ & $(-\infty,-1]\cup [1,\infty)$ & $[-\pi/2,0)\cup (0, \pi/2]$  \\
+\rule{0pt}{12pt}$\sec x$ & $[0,\pi/2)\cup (\pi/2,\pi]$ & $(-\infty,-1]\cup [1,\infty)$&$\sec^{-1}(x)$ & $(-\infty,-1]\cup [1,\infty)$ & $[0,\pi/2)\cup (\pi/2,\pi]$ \\
+\rule{0pt}{12pt}$\cot x$ & $(0,\pi)$ & $(-\infty,\infty)$&$\cot^{-1}(x)$ &  $ (-\infty,\infty)$ & $(0,\pi)$	
+\end{tabular}
+\captionsetup{type=figure}
+\caption{Domains and ranges of the trigonometric and inverse trigonometric functions.}\label{fig:domain_trig}
+%\end{center}
+%\normalsize
+\end{minipage}
+%\captionsetup{type=figure}%
+%\caption{Domains and ranges of the trigonometric and inverse trigonometric functions.}\label{fig:domain_trig}
+%\end{minipage}
+%}
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%% The following is for preservation for a longpage edition sometime
+%%%%%%%%%%%%%%%%%%%%
+%%\begin{tabular}{ccc}
+%%Function & Domain & Range \\ \hline
+%%\rule{0pt}{12pt} $\sin x$ & $[-\pi/2, \pi/2]$ & $[-1,1]$ \\
+%%\rule{0pt}{12pt}$\cos x$ & $[0,\pi]$ & $[-1,1]$ \\
+%%\rule{0pt}{12pt}$\tan x$ & $(-\pi/2,\pi/2)$ & $(-\infty,\infty)$	\\
+%%\rule{0pt}{12pt} $\csc x$ & $[-\pi/2,0)\cup (0, \pi/2]$ & $(-\infty,-1]\cup [1,\infty)$ \\
+%%\rule{0pt}{12pt}$\sec x$ & $[0,\pi/2)\cup (\pi/2,\pi]$ & $(-\infty,-1]\cup [1,\infty)$ \\
+%%\rule{0pt}{12pt}$\cot x$ & $(0,\pi)$ & $(-\infty,\infty)$	
+%%\end{tabular}
+%%%\end{minipage}
+%%%\begin{minipage}[t]{.5\textwidth}
+%%%\vskip \baselineskip
+%%\hskip 10pt
+%%\begin{tabular}{ccc}
+%%\parbox[b]{40pt}{\centering Inverse Function} & Domain & Range \\ \hline
+%%\rule{0pt}{12pt} $\sin^{-1} x$ & $[-1,1]$ & $[-\pi/2, \pi/2]$ \\
+%%\rule{0pt}{12pt}$\cos^{-1}(x)$ & $[-1,1]$ & $[0,\pi]$\\
+%%\rule{0pt}{12pt}$\tan^{-1}(x)$ & $(-\infty,\infty)$ & $(-\pi/2,\pi/2)$\\
+%%\rule{0pt}{12pt} $\csc^{-1} x$ & $(-\infty,-1]\cup [1,\infty)$ & $[-\pi/2,0)\cup (0, \pi/2]$  \\
+%%\rule{0pt}{12pt}$\sec^{-1}(x)$ & $(-\infty,-1]\cup [1,\infty)$ & $[0,\pi/2)\cup (\pi/2,\pi]$\\
+%%\rule{0pt}{12pt}$\cot^{-1}(x)$ &  $ (-\infty,\infty)$ & $(0,\pi)$
+%%\end{tabular}
+
+
+
+\theorem{thm:deriv_inverse_trig}{Derivatives of Inverse Trigonometric Functions}
+{The inverse trigonometric functions are differentiable on their domains (as listed in Figure \ref{fig:domain_trig}) and their derivatives are as follows:\\
+
+\noindent	\begin{minipage}{.5\specialboxlength}\small
+	\begin{enumerate}
+	\item		$\ds \frac{d}{dx}\big(\sin^{-1}(x)\big) = \frac{1}{\sqrt{1-x^2}}$ 
+	\item		$\ds \frac{d}{dx}\big(\sec^{-1}(x)\big) = \frac{1}{|x|\sqrt{x^2-1}}$
+	\item		$\ds \frac{d}{dx}\big(\tan^{-1}(x)\big) = \frac{1}{1+x^2}$
+	\end{enumerate}
+	\end{minipage}
+	\begin{minipage}{.5\specialboxlength}\small
+	\begin{enumerate}\addtocounter{enumi}{3}
+	\item		$\ds \frac{d}{dx}\big(\cos^{-1}(x)\big) = -\frac{1}{\sqrt{1-x^2}}$ 
+	\item		$\ds \frac{d}{dx}\big(\csc^{-1}(x)\big) = -\frac{1}{|x|\sqrt{x^2-1}}$
+	\item		$\ds \frac{d}{dx}\big(\cot^{-1}(x)\big) = -\frac{1}{1+x^2}$
+	\end{enumerate}
+	\normalsize
+	\end{minipage}
+}			
+
+Note how the last three derivatives are merely the opposites of the first three, respectively. Because of this, the first three are used almost exclusively throughout this text.\\
+
+In Section \ref{sec:basic_diff_rules}, we stated without proof or explanation that $\ds \frac{d}{dx}\big(\ln x\big) = \frac{1}{x}$. We can justify that now using Theorem \ref{thm:deriv_inverse_functions}, as shown in the example.\\
+
+\example{ex_deriv_lnx}{\textbf{Finding the derivative of $y=\ln x$}\\
+Use Theorem \ref{thm:deriv_inverse_functions} to compute $\ds \frac{d}{dx}\big(\ln x\big)$.}
+{View $y= \ln x$ as the inverse of $y = e^x$. Therefore, using our standard notation, let $f(x) = e^x$ and $g(x) = \ln x$. We wish to find $g'(x)$. Theorem \ref{thm:deriv_inverse_functions} gives:
+		\begin{align*}
+		g'(x) &= \frac{1}{\fp(g(x))} \\
+					&=	\frac{1}{e^{\ln x}}\rule{0pt}{15pt} \\
+					&= \frac{1}{x}.\rule{0pt}{17pt}
+		\end{align*}
+\vskip-\baselineskip
+}\\
+
+%\vskip\baselineskip
+
+In this chapter we have defined the derivative, given rules to facilitate its computation, and given the derivatives of a number of standard functions. We restate the most important of these in the following theorem, intended to be a reference for further work.
+
+\theorem{thm:deriv_glossary}{Glossary of Derivatives of Elementary Functions}
+{Let $u$ and $v$ be differentiable functions, and let $a$, $c$ and $n$ be a real numbers, $a>0$, $n\neq 0$. \\
+
+\noindent%
+	\begin{minipage}{.5\specialboxlength}
+	\begin{enumerate}
+	\item		$\frac{d}{dx}\big(cu\big) = cu'$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(u\cdot v\big) = uv'+u'v$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(u(v)\big) = u'(v)v'$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(x\big) = 1$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(e^x\big) = e^x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\ln x\big) = \frac{1}{x}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sin x\big) = \cos x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\csc x\big) = -\csc x\cot x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\tan x\big) = \sec^2x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sin^{-1}x\big) = \frac{1}{\sqrt{1-x^2}}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\csc^{-1}x\big) = -\frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\tan^{-1}x\big) = \frac{1}{1+x^2}$\addtocounter{enumi}{1}
+	\end{enumerate}
+\normalsize
+\end{minipage}
+\begin{minipage}{.5\specialboxlength}
+	\begin{enumerate}\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(u\pm v\big) = u'\pm v'$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\frac uv\big) = \frac{u'v-uv'}{v^2}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(c\big) = 0$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(x^n\big) = nx^{n-1}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(a^x\big) = \ln a\cdot a^x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\log_a x\big) = \frac{1}{\ln a}\cdot\frac{1}{x}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\cos x\big) = -\sin x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sec x\big) = \sec x\tan x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\cot x\big) = -\csc^2x$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\cos^{-1}x\big) = -\frac{1}{\sqrt{1-x^2}}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\sec^{-1}x\big) = \frac{1}{|x|\sqrt{x^2-1}}$\addtocounter{enumi}{1}
+	\item		$\frac{d}{dx}\big(\cot^{-1}x\big) = -\frac{1}{1+x^2}$
+	\end{enumerate}
+\normalsize
+\end{minipage}
+}
+
+\printexercises{exercises/02_07_exercises}

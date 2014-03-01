@@ -1,0 +1,666 @@
+\documentclass[10pt]{book}
+%\usepackage[paperheight=11in,paperwidth=8.5in,%
+%						inner=1in,textheight=7in,textwidth=320pt,marginparwidth=150pt,%
+%						marginparsep=32pt,bottom=3in,footskip=1.5in]{geometry}
+\usepackage[paperheight=11in,paperwidth=8.5in,inner=72pt,%
+						outer=72pt,textheight=10in,%textwidth=320pt,
+						marginparwidth=150pt,%
+						marginparsep=32pt%,%
+						%bottom=3in,footskip=1.5in
+						]{geometry}
+												
+\usepackage{ifthen}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Calibri}
+	\setmainfont[Mapping=tex-text]{Calibri}
+	\setsansfont[Mapping=tex-text]{Calibri}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+\pagestyle{empty}
+
+\newcommand{\myrule}{\rule[-10pt]{0pt}{15pt}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\myds}{\ds\myrule}
+\newcommand{\deriv}[2]{\ensuremath{\myds\frac{d}{dx}\left(#1\right)=#2}}
+\newcommand{\myint}[2]{\ensuremath{\myds\int #1\ dx=} \ensuremath{\ds #2}}
+
+\begin{document}
+\noindent\textbf{\large Differentiation Rules}\\
+
+\noindent\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}
+\item \deriv{cx}{c}
+\item	\deriv{u\pm v}{u'\pm v'}
+\item	\deriv{u\cdot v}{uv'+ u'v}
+\item	\deriv{\frac uv}{\frac{vu'-uv'}{v^2}}
+\item	\deriv{u(v)}{u'(v)v'}
+\item	\deriv{c}{0}
+\item	\deriv{x}{1}
+\item	\deriv{x^n}{nx^{n-1}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{8}
+\item	\deriv{e^x}{e^x}
+\item	\deriv{a^x}{\ln a\cdot a^x}
+\item	\deriv{\ln x}{\frac{1}{x}}
+\item	\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}
+\item	\deriv{\sin x}{\cos x}
+\item	\deriv{\cos x}{-\sin x}
+\item	\deriv{\csc x}{-\csc x\cot x}
+\item	\deriv{\sec x}{\sec x\tan x}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{16}
+\item	\deriv{\tan x}{\sec^2 x}
+\item	\deriv{\cot x}{-\csc^2 x}
+\item	\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}
+\item	\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}
+\item	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
+\item	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
+\item	\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}
+\item	\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}
+\end{enumerate}
+\end{minipage}
+
+\vskip\baselineskip
+\noindent\textbf{\large Integration Rules}\\
+
+\noindent
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}
+\item	\myint{c\cdot f(x)}{c\int f(x)\ dx}
+\item	\myint{f(x)\pm g(x)}{\int f(x)\ dx \pm \int g(x)\ dx}
+\item	\myint{0}{C}
+\item	\myint{1}{x+C}
+\item	\myint{x^n}{\frac{1}{n+1}x^{n+1}+C,\ n\neq -1}
+\item	\myint{e^x}{e^x+C}
+\item	\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}
+\item	\myint{\frac{1}{x}}{\ln |x| + C}
+\item	\myint{\cos x}{\sin x+C}
+\item	\myint{\sin x}{-\cos x+C}
+\item	\myint{\tan x}{-\ln |\cos x|+C}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}\addtocounter{enumi}{11}
+\item	\myint{\sec x}{\ln |\sec x+\tan x|+C}
+\item	\myint{\csc x}{-\ln |\csc x+\cot x|+C}
+\item	\myint{\cot x}{\ln |\sin x|+C}
+\item	\myint{\sec^2 x}{\tan x+C}
+\item	\myint{\csc^2x}{-\cot x+C}
+\item	\myint{\sec x\tan x}{\sec x+C}
+\item	\myint{\csc x\cot x}{-\csc x+C}
+\item	\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}
+\item	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
+\item	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
+\end{enumerate}
+\end{minipage}
+
+\clearpage
+
+\noindent%
+\begin{minipage}[t]{.53\linewidth}
+\noindent\textbf{\large The Unit Circle}
+
+\begin{tikzpicture}[scale=3]
+\draw [<->,>=latex] (-1.5,0) -- (1.4,0) node [right] {\scriptsize $x$};
+\draw [<->,>=latex] (0,-1.3) -- (0,1.3) node [above] {\scriptsize $y$};
+\foreach \x / \y / \z / \w / \v in {
+								0/0/{1,0}/right/white,
+								30/{\pi/6}/{\frac{\sqrt{3}}2,\frac 12}/above right/none,%
+								45/{\pi/4}/{\frac{\sqrt{2}}2,\frac{\sqrt{2}}2}/above right/none,
+								60/{\pi/3}/{\frac{1}2,\frac{\sqrt{3}}2}/{above right}/none,
+								90/ {\pi/2}/{0,1}/above/white,%
+								120/{2\pi/3}/{-\frac{1}2,\frac{\sqrt{3}}2}/above left/none, 
+								135/{3\pi/4}/{-\frac{\sqrt{2}}2,\frac{\sqrt{2}}2}/above left/none, 
+								150/ {5\pi/6}/{-\frac{\sqrt{3}}2,\frac{1}2}/above left/none,%
+								180/ {\pi}/{-1,0}/left/white, 
+								210/{7\pi/6}/{-\frac{\sqrt{3}}2,-\frac{1}2}/below left/none, 
+								225/{5\pi/4}/{-\frac{\sqrt{2}}2,-\frac{\sqrt{2}}2}/below left/none, 
+								240/{4\pi/3}/{-\frac{1}2,-\frac{\sqrt{3}}2}/below left/none,
+								270/{3\pi/2}/{0,-1}/below/white, 
+								300/{5\pi/3}/{\frac{1}2,-\frac{\sqrt{2}}2}/below right/none, 
+								315/{7\pi/4}/{\frac{\sqrt{2}}2,-\frac{\sqrt{2}}2}/below right/none, 
+								330/{11\pi/6}/{\frac{\sqrt{3}}2,-\frac{1}2}/below right/none%
+										}
+	{%
+		\draw (\x:.65cm) node [fill=\v] {\scriptsize \x$^\circ$};
+		\draw (\x:.85cm) node [fill=\v] {\scriptsize $\y$};
+		\draw (\x:1cm) node [\w,fill=\v] {\scriptsize $\left(\z\right)$};
+		\draw [fill=black] (\x:1) circle (.5pt);
+	}
+
+\draw [thick] (0,0) circle (1);
+
+\end{tikzpicture}
+\end{minipage}
+%
+\begin{minipage}[t]{.45\linewidth}
+\noindent\textbf{\large Definitions of the Trigonometric Functions}\\
+
+\noindent\small
+%\begin{minipage}[t]{.48\linewidth}
+\textbf{\normalsize Unit Circle Definition}
+
+\noindent
+%
+\begin{minipage}{.56\linewidth}
+\centering
+\vskip 0in\begin{tikzpicture}[>=latex,scale=1.5,thick]
+\draw [<->](-1.3,0)--(1.3,0) node [right] {$x$};
+\draw [<->] (0,-1.3) -- (0,1.3) node [above] {$y$};
+\draw (0,0) circle (1);
+\draw [fill= black] (-.6,.8) circle (1pt);
+\draw (0,0) -- (-.6,.8) node [above left] {$(x,y)$};
+\draw [->] (.5,0) arc (0:127:.5);
+\draw [dashed,thin] (-.6,.8) -- (-.6,0) node [pos=.5,left] {$y$};
+\draw (-.3,0) node [below] {$x$};
+\draw (.45,.45) node {$\theta$};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\vskip 0in \small
+\begin{tabular}{cc}
+$\sin \theta = y$ & $\cos \theta = x$ \\
+\\
+$\ds\csc \theta = \frac1y$&$\ds\sec \theta = \frac1x$ \\
+\\
+$\myrule\ds\tan \theta = \frac yx$ & $\ds\cot \theta = \frac xy$
+\end{tabular}
+\end{minipage}
+%\rule[-50pt]{.5pt}{100pt}
+%
+%\end{minipage}\hskip .02\linewidth
+%\begin{minipage}[t]{.5\linewidth}
+%Right Triangle Definition\\
+%
+%\noindent
+\noindent\textbf{\normalsize Right Triangle Definition}
+
+\begin{minipage}{.56\linewidth}
+\centering
+\begin{tikzpicture}[thick]
+\draw (0,0) -- (2.5,0) node [below,pos=.5] {Adjacent} -- (2.5,2) node [pos=.5,rotate=-90,shift={(0pt,7pt)}] {Opposite} -- (0,0) node [pos=.5,above,rotate=38.7] {Hypotenuse} node [shift={(20pt,8pt)}] {$\theta$};
+\draw[->,>=latex] (1,0) arc (0:38.7:1);
+\draw (2.2,0) -- (2.2,.3) -- (2.5,.3);
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\vskip 0in \small
+\begin{tabular}{cc}
+$\ds\sin \theta = \frac{\text{O}}{\text{H}}$ & $\ds\csc \theta = \frac{\text{H}}{\text{O}}$ \\
+\\
+$\ds\cos \theta = \frac{\text{A}}{\text{H}}$ & $\ds\sec \theta = \frac{\text{H}}{\text{A}}$ \\
+\\
+$\ds\tan \theta = \frac{\text{O}}{\text{A}}$ & $\ds\cot \theta = \frac{\text{A}}{\text{O}}$ \\
+\end{tabular}
+\end{minipage}
+\end{minipage}
+\normalsize
+
+\vskip \baselineskip
+\noindent\textbf{\large Common Trigonometric Identities}\\
+\vskip \baselineskip
+\noindent
+\begin{minipage}[t]{.3\linewidth}
+	\noindent\textbf{Pythagorean Identities}\vskip 5pt
+
+	\noindent$\ds \sin ^2x+\cos ^2x= 1$\vskip 5pt
+
+	\noindent$\ds \tan^2x+ 1 = \sec^2 x$\vskip 5pt
+
+	\noindent$\ds 1 + \cot^2x=\csc^2 x$\vskip 5pt
+\end{minipage}
+\begin{minipage}[t]{.45\linewidth}
+	\textbf{Cofunction Identities}\vskip 5pt
+	\begin{minipage}[t]{.45\linewidth}
+		$\ds \sin\left(\frac{\pi}{2}-x\right) = \cos x$\vskip 5pt
+		$\ds \cos\left(\frac{\pi}{2}-x\right) = \sin x$\vskip 5pt
+		$\ds \tan\left(\frac{\pi}{2}-x\right) = \cot x$\vskip 5pt
+	\end{minipage}
+	\begin{minipage}[t]{.45\linewidth}
+		$\ds \csc\left(\frac{\pi}{2}-x\right) = \sec x$\vskip 5pt
+		$\ds \sec\left(\frac{\pi}{2}-x\right) = \csc x$\vskip 5pt
+		$\ds \cot\left(\frac{\pi}{2}-x\right) = \tan x$\vskip 5pt
+	\end{minipage}
+\end{minipage}
+\begin{minipage}[t]{.25\linewidth}
+	\textbf{Double Angle Formulas}\vskip 5pt
+	$\sin 2x = 2\sin x\cos x$ \vskip 5pt
+	$\cos 2x = \cos^2x - \sin^2 x$\vskip 5pt
+	$\phantom{\cos 2x}= 2\cos^2x-1$\vskip 5pt
+	$\phantom{\cos 2x}= 1-2\sin^2x$\vskip 5pt
+	$\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}$
+\end{minipage}
+
+\vskip \baselineskip
+
+\noindent
+\begin{minipage}[t]{.45\linewidth}
+\textbf{Sum to Product Formulas}\vskip 5pt
+$\ds \sin x+\sin y = 2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$\vskip 5pt
+$\ds \sin x-\sin y = 2\sin \left(\frac{x-y}2\right)\cos\left(\frac{x+y}2\right)$\vskip 5pt
+$\ds \cos x+\cos y = 2\cos \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$\vskip 5pt
+$\ds \cos x-\cos y = -2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$\vskip 5pt
+\end{minipage}
+\begin{minipage}[t]{.3\linewidth}
+\textbf{Power--Reducing Formulas}\vskip 5pt
+$\ds \sin^2 x = \frac{1-\cos 2x}{2}$\vskip 5pt
+$\ds \cos^2 x = \frac{1+\cos 2x}{2}$\vskip 5pt
+$\ds \tan^2x = \frac{1-\cos 2x}{1+\cos 2x}$
+\end{minipage}
+\begin{minipage}[t]{.25\linewidth}
+\textbf{Even/Odd Identities}\vskip 5pt
+$\sin(-x) = -\sin x$\vskip 5pt
+$\cos (-x) = \cos x$\vskip 5pt
+$\tan (-x) = -\tan x$\vskip 5pt
+$\csc(-x) = -\csc x$\vskip 5pt
+$\sec (-x) = \sec x$\vskip 5pt
+$\cot (-x) = -\cot x$\vskip 5pt
+\end{minipage}
+
+\vskip \baselineskip
+
+\noindent
+\begin{minipage}[t]{.45\linewidth}
+\textbf{Product to Sum Formulas}\vskip 5pt
+$\ds \sin x\sin y = \frac12 \big(\cos(x-y) - \cos (x+y)\big)$\vskip 5pt
+$\ds \cos x\cos y = \frac12\big(\cos (x-y) +\cos (x+y)\big)$\vskip 5pt
+$\ds \sin x\cos y = \frac12 \big(\sin(x+y) + \sin (x-y)\big)$\vskip 5pt
+\end{minipage}
+\begin{minipage}[t]{.45\linewidth}
+\textbf{Angle Sum/Difference Formulas}\vskip 5pt
+$\sin (x\pm y) = \sin x\cos y \pm \cos x\sin y$\vskip 5pt
+$\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y$\vskip 5pt
+$\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}$
+\end{minipage}
+
+\clearpage
+
+\noindent\textbf{\large Areas and Volumes}
+\vskip \baselineskip
+%\begin{tabular}{cc}
+\noindent%
+%
+\begin{minipage}[t]{225pt}
+		\begin{minipage}[t]{100pt}
+		\noindent\textbf{Triangles}\vskip 5pt
+		$h=a\sin \theta$\vskip 5pt
+		Area = $\frac12bh$\vskip 5pt
+		Law of Cosines:%\vskip 4pt
+		
+		$c^2=a^2+b^2-2ab\cos \theta$\vskip 5pt
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (0,0) -- node [below,pos=.5]  { $b$} (3,0) node [shift={(-15pt,8pt)}] {$\theta$} -- node [pos=.5,right] { $a$} (2,1.5) -- node [pos=.5,above left] { $c$} (0,0);
+			\draw (2.7,0) arc (180:125:.3);
+			\draw [dashed] (2,1.5) -- (2,0) node [pos=.5,left] {$h$};
+			\draw (2,.2) -- (1.8,.2) -- (1.8,0);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+%
+\begin{minipage}[t]{225pt}
+	\begin{minipage}[t]{100pt}
+		\noindent\textbf{Right Circular Cone}\vskip 5pt
+		Volume = $\frac 13 \pi r^2h$ \vskip 5pt
+		Surface Area =\vskip 3pt		
+		 $\pi r\sqrt{r^2+h^2} +\pi r^2$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=13pt,y=15pt,thick]
+			\begin{scope}[xscale=2]
+			\draw (-1,0) arc (-180:0:1);
+			\draw [dashed] (1,0) arc (0:180:1);
+			\draw (-1,.1) -- (0,3) -- (1,.15);
+			\draw [dashed] (0,3) -- node [pos=.5,left] {\small $h$} (0,0);
+			\draw [dashed] (0,0) -- (1,0) node [pos=.5,above] {\small $r$};
+			\end{scope}
+			\draw [fill=black] (0,0) circle (1pt);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+
+\vskip 2\baselineskip
+\noindent%
+\begin{minipage}[t]{225pt}
+		\begin{minipage}[t]{100pt}
+		\noindent\textbf{Parallelograms}\vskip 5pt
+		Area = $bh$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=30pt,y=25pt,thick]
+			\draw (0,0) -- node [below,pos=.5]  { $b$} (2,0) -- (3,1.5) -- (1,1.5) -- (0,0);
+			\draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {$h$};
+			\draw (.8,0) -- (.8,.2) -- (1,.2);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+\begin{minipage}[t]{225pt}
+\begin{minipage}[t]{100pt}
+		\noindent\textbf{Right Circular Cylinder}\vskip 5pt
+		Volume = $\pi r^2h$ \vskip 5pt
+		Surface Area =\vskip 3pt		
+		 $2\pi rh  +2\pi r^2$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=13pt,y=14pt,thick]
+			\begin{scope}[xscale=2]
+			\draw (-1,0) arc (-180:0:1);
+			\draw [dashed] (1,0) arc (0:180:1);
+			\draw (0,2.5) circle (1);
+			\draw (-1,0) -- (-1,2.5) (1,0)-- (1,2.5) node [right,pos=.5] {$h$};
+			\draw (0,2.5) -- (1,2.5) node [above,pos=.5] {$r$};
+			\end{scope}
+			\draw [fill=black] (0,2.5) circle (1pt);
+			\end{tikzpicture}
+		\end{minipage}
+
+		
+\end{minipage}
+
+\vskip 2\baselineskip
+\noindent%
+\begin{minipage}[t]{225pt}
+		\begin{minipage}[t]{100pt}
+		\noindent\textbf{Trapezoids}\vskip 5pt
+		Area = $\frac12(a+b)h$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=30pt,y=25pt,thick]
+			\draw (0,0) -- node [below,pos=.7]  { $b$} (3,0) -- (2.5,1.5) -- node [above,pos=.5] {$a$} (1.5,1.5) -- (0,0);
+			\draw [dashed] (1.5,1.5) -- (1.5,0) node [pos=.5,right] {$h$};
+			\draw (1.3,0) -- (1.3,.2) -- (1.5,.2);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+\begin{minipage}[t]{225pt}
+\begin{minipage}[t]{100pt}
+		\noindent\textbf{Sphere}\vskip 5pt
+		Volume = $\frac43\pi r^3$ \vskip 5pt
+		Surface Area =$4\pi r^2$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=13pt,y=13pt,thick]
+			\begin{scope}[xscale=2]
+			\draw (-1,0) arc (-180:0:1);
+			\draw [dashed] (1,0) arc (0:180:1);
+			\end{scope}
+			\draw (0,0) circle (2);
+			\draw [dashed] (0,0) -- (2,0) node [pos=.5,above] {$r$};
+			\draw [fill=black] (0,0) circle (1pt);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+
+\vskip 2\baselineskip
+\noindent%
+\begin{minipage}[t]{225pt}
+		\begin{minipage}[t]{100pt}
+		\noindent\textbf{Circles}\vskip 5pt
+		Area = $\pi r^2$\vskip 5pt
+		Circumference = $2\pi r$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (0,0) circle (1);
+			\draw [dashed] (0,0) -- (1,0) node [pos=.5,above] {$r$};
+			\draw [fill=black] (0,0) circle (1pt);
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+\begin{minipage}[t]{225pt}
+\begin{minipage}[t]{100pt}
+		\noindent\textbf{General Cone}\vskip 5pt
+		Area of Base = $A$\vskip 5pt
+		Volume = $\frac13Ah$ \vskip 5pt
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=13pt,y=10pt,thick]
+			\begin{scope}
+			\clip (0,0) rectangle (4,-2.5);
+			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\begin{scope}
+			\clip (0,0) rectangle (4,2.5);
+			\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\draw (0,0) -- (2,4)--(4,0);
+			\draw [dashed] (2,0)--(2,4) node [pos=.5,right] {$h$}; 
+			\draw [fill=black](2,0) circle (1pt);
+			\draw (1.5,-.75) node {$A$};
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+
+\vskip 2\baselineskip
+\noindent%
+\begin{minipage}[t]{225pt}
+		\begin{minipage}[t]{100pt}
+		\noindent\textbf{Sectors of Circles}\vskip 5pt
+		$\theta$ in radians \vskip 5pt
+		Area = $\frac12\theta r^2$\vskip 5pt
+		$s=r\theta$
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=30pt,y=30pt,thick]
+			\draw (2,0) arc (0:50:2) -- (0,0);
+			\draw [] (0,0) -- (2,0) node [pos=.5,below] {$r$};
+			\draw [fill=black] (0,0) circle (1pt);
+			\draw (1.95,1.0) node {$s$};
+			\draw (0,0) node [shift={(15pt,8pt)}] {$\theta$};
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+\begin{minipage}[t]{225pt}
+\begin{minipage}[t]{100pt}
+		\noindent\textbf{General Right Cylinder}\vskip 5pt
+		Area of Base = $A$\vskip 5pt
+		Volume = $Ah$ \vskip 5pt
+		\end{minipage}
+		\begin{minipage}[t]{115pt}
+			\centering
+			\vskip 0pt
+			\begin{tikzpicture}[x=13pt,y=10pt,thick]
+			\begin{scope}
+			\clip (0,0) rectangle (4,-2.5);
+			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\begin{scope}
+			\clip (0,0) rectangle (4,2.5);
+			\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\begin{scope}[shift={(0,4)}]
+			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\draw (0,0) -- (0,4) (4,0) -- (4,4) node [pos=.5,right] {$h$};
+			\draw (2,0) node {$A$};
+			\end{tikzpicture}
+		\end{minipage}
+\end{minipage}
+
+\clearpage
+
+\noindent\textbf{\Large Algebra}\vskip 2\baselineskip
+
+\noindent \textbf{\large Factors and Zeros of Polynomials}\\
+Let $p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ be a polynomial.  If $p(a)=0$, then $a$ is a $zero$ of the polynomial and a solution
+of the equation $p(x)=0$.  Furthermore, $(x-a)$ is a $factor$ of the polynomial.\\
+
+\noindent \textbf{\large Fundamental Theorem of Algebra}\\
+An $n$th degree polynomial has $n$ (not necessarily distinct) zeros.  Although all of these zeros may be imaginary, a real polynomial of odd degree
+must have at least one real zero.\\
+
+\noindent \textbf{\large Quadratic Formula}\\
+If $p(x) = ax^2 + bx + c$, and $0 \le b^2 - 4ac$, then the real zeros of $p$ are $x=(-b\pm \sqrt{b^2-4ac})/2a$\\
+
+\noindent \textbf{\large Special Factors}\\
+$
+\begin{array}{ll}
+x^2 - a^2 = (x-a)(x+a) \qquad \qquad \qquad & x^3 - a^3 = (x-a)(x^2+ax+a^2)\\	
+x^3 + a^3 = (x+a)(x^2-ax+a^2) \qquad \qquad \qquad & x^4 - a^4 = (x^2-a^2)(x^2+a^2)\\	
+\end{array}
+$
+
+\noindent$\begin{array}{l}
+(x+y)^n  =x^n + nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2+\cdots +nxy^{n-1}+y^n\\
+(x-y)^n  =x^n - nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2-\cdots \pm nxy^{n-1}\mp y^n
+\end{array}$\vskip \baselineskip
+
+
+\noindent \textbf{\large Binomial Theorem}\\
+$
+\begin{array}{ll}
+(x+y)^2 = x^2 + 2xy + y^2 \qquad & (x-y)^2 = x^2 -2xy +y^2\\
+(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \qquad  & (x-y)^3 = x^3 -3x^2y + 3xy^2 -y^3\\
+(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4 \qquad  & (x-y)^4 = x^4 - 4x^3y + 6x^2y^2 - 4xy^3 + y^4\\
+\end{array}
+$\vskip\baselineskip
+
+\noindent \textbf{\large Rational Zero Theorem}\\
+If $p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ has integer coefficients, then every $rational$ $zero$ of $p$ is of the form
+$x=r/s$, where $r$ is a factor of $a_0$ and $s$ is a factor of $a_n$.\\
+
+\noindent \textbf{\large Factoring by Grouping}\\
+$ac x^3 + adx^2 + bcx + bd = ax^2(cs+d)+b(cx+d)=(ax^2+b)(cx+d)$\\
+
+\noindent \textbf{\large Arithmetic Operations}\\
+$
+\begin{array}{lll}
+ab+ac=a(b+c) \qquad \qquad & \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \qquad \qquad & \displaystyle \frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}\\	\\
+\displaystyle\frac{\left(\displaystyle\frac{a}{b}\right)}{\left(\displaystyle\frac{c}{d}\right)}=\left(\frac{a}{b}\right)\left(\frac{d}{c}\right)=\frac{ad}{bc} 
+&\displaystyle \frac{\left(\displaystyle\frac{a}{b}\right)}{c} =\displaystyle \frac{a}{bc}
+&\displaystyle \frac{a}{\left(\displaystyle\frac{b}{c}\right)} =\displaystyle \frac{ac}{b}\\ \\
+a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}&\displaystyle\frac{a-b}{c-d}=\frac{b-a}{d-c}&\displaystyle\frac{ab+ac}{a}=b+c\\
+\end{array}
+$\vskip \baselineskip
+
+\noindent \textbf{\large Exponents and Radicals}\\[5pt]
+$
+\begin{array}{llllll}
+a^0=1, \; \; a \ne 0 \quad & (ab)^x=a^xb^x \quad & a^xa^y = a^{x+y}\quad  & \sqrt{a}=a^{1/2}   &\displaystyle \frac{a^x}{a^y}=a^{x-y}  &\sqrt[n]{a}=a^{1/n}\\[15pt]
+\left(\displaystyle\frac{a}{b}\right)^x=\displaystyle\frac{a^x}{b^x} &\sqrt[n]{a^m}=a^{m/n} & a^{-x}=\displaystyle\frac{1}{a^x} & \sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b} \quad &
+(a^x)^y=a^{xy} \quad& \displaystyle\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+\end{array}
+$
+
+\clearpage
+\noindent \textbf{\Large Additional Formulas}
+\vskip 3\baselineskip
+
+\noindent\textbf{\large Summation Formulas:}\\
+
+\noindent\begin{tabular}{ll}
+$\ds \sum^n_{i=1}{c} = cn$ \hskip 100pt\ & $\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}$\\
+$\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}$ & $\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2$\\
+\end{tabular}\\[5pt]
+
+\noindent\textbf{\large Trapezoidal Rule (Area):}\\
+
+\noindent$\ds%\begin{eqnarray*}
+\int_a^b{f(x)}\ dx  \approx \frac{\Delta x}{2}\big[f(x_1)+2f(x_2) + 2f(x_3) + ... + 2f(x_{n}) + f(x_{n+1})\big] \\[5pt]
+$%\end{eqnarray*}
+with  $\displaystyle \text{Error} \leq \frac{(b-a)^3}{12n^2}\big[ \max \big| \ifthenelse{\boolean{xetex}}{f\,''(x)}{f''(x)} \big|\big]$
+\vskip2\baselineskip
+
+\noindent\textbf{\large Simpson's Rule (Area):}\\
+
+\noindent$\ds\int_a^b{f(x)}\ dx  \approx  \frac{\Delta x}{3}\big[f(x_1)+4f(x_2) + 2f(x_3) + 4f(x_4) + ... + 2f(x_{n-1}) + 4f(x_{n}) + f(x_{n+1})\big] 
+$\\[5pt]
+with $\displaystyle \text{Error} \leq \frac{(b-a)^5}{180n^4}\big[ \max \big| \ifthenelse{\boolean{xetex}}{f\,^{(4)}(x)}{f^{(4)}(x)} \big|\big]
+$
+\vskip 2\baselineskip
+
+\noindent\begin{minipage}[t]{.5\linewidth}
+\textbf{\large Arc Length:}\\[5pt]
+$\displaystyle
+L = \int_a^b{\sqrt{1+ f\,'(x)^2}}\phantom{a}dx  
+$\\[5pt]
+
+%$\displaystyle
+%s = \int_c^d{\sqrt{1+ (g'(y))^2}}\phantom{a}dy 
+%$
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\textbf{\large Surface of Revolution:}
+\\[5pt]
+$\displaystyle
+S = 2\pi \int_a^b{f(x) \sqrt{1+ f\,'(x)^2}}\phantom{a}dx  
+$\\[5pt]
+
+$\displaystyle
+S = 2\pi \int_a^b{x \sqrt{1+ f\,'(x)^2}}\phantom{a}dx 
+$
+\end{minipage}
+\vskip2\baselineskip
+
+\noindent\begin{minipage}[t]{.5\linewidth}
+\textbf{\large Work Done by a Variable Force:}\\[5pt]
+$\displaystyle
+W = \int_a^b{F(x)}\phantom{a}dx  
+$
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\textbf{\large Force Exerted by a Fluid:}\\[5pt]
+$\displaystyle
+F = \int_a^b{w\,d(y)\,\ell(y)}\phantom{a}dy  
+$
+\end{minipage}
+\vskip2\baselineskip
+
+\noindent\textbf{\large Taylor Series Expansion for $f(x)$:}\\[5pt]
+\noindent$\displaystyle p_n(x) = f(c) + f\,'(c)(x-c) + \frac{f\,''(c)}{2!}(x-c)^2 + \frac{f\,'''(c)}{3!}(x-c)^3 + ... + \frac{f\,^{(n)}(c)}{n!}(x-c)^n
+$
+\vskip2\baselineskip
+
+\noindent\textbf{\large Maclaurin Series Expansion for $f(x)$, where $c=0$:}\\[5pt]
+\noindent$\displaystyle p_n(x) = f(0) + f\,'(0)x + \frac{f\,''(0)}{2!}x^2 + \frac{f\,'''(0)}{3!}x^3 + ... + \frac{f\,^{(n)}(0)}{n!}x^n
+$
+
+\clearpage
+
+\noindent\textbf{\large Summary of Tests for Series:}\\[5pt]
+
+\noindent\begin{tabular}{|c|c|c|c|c|}
+\hline
+Test & Series & \rule[-15pt]{0pt}{33pt}\parbox{1in}{\centering Condition(s) of Convergence} & \parbox{1in}{\centering Condition(s) of Divergence} &   Comment \\ \hline
+$n$th-Term & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=1}{a_n}}$ &  & $\displaystyle{\lim_{n \to \infty} a_n \neq 0}$ & \parbox{1.5in}{This test cannot be used to show convergence.}\\ \hline
+
+Geometric Series & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=0}{r^n}}$ & $ \left| r \right| < 1$ & $\left| r \right| \geq 1$ &  $\displaystyle{\text{Sum} = \frac{1}{1-r}}$ \\ \hline
+
+Telescoping Series &\rule[-15pt]{0pt}{33pt} $\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+1})}}$ & $\displaystyle{\lim_{n \to \infty} b_n = L}$ & & $\text{Sum}= b_1 -L$ \\ \hline
+
+$p$-Series & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}$ & $p>1$ & $p\leq 1$ & \\ \hline
+
+\end{tabular}
+
+
+\end{document}

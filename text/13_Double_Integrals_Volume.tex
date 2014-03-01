@@ -1,0 +1,288 @@
+\section{Double Integration and Volume}\label{sec:double_int_volume}
+
+The definite integral of $f$ over $[a,b]$, $\int_a^b f(x)\ dx$, was introduced as ``the signed area under the curve.'' We approximated the value of this area by first subdividing $[a,b]$ into $n$ subintervals, where the $i^\text{ th}$ subinterval has length $\dx_i$, and letting $c_i$ be any value in the $i^\text{ th}$ subinterval. We formed rectangles that approximated part of the area under the curve with width $\dx_i$, height $f(c_i)$, and hence with area $f(c_i)\dx_i$. Summing up all rectangles gave an approximation of the definite integral, and Theorem \ref{thm:riemann_sum} stated that
+$$\int_a^bf(x)\ dx = \lim_{\|\Delta x\|\to 0}\sum f(c_i)\dx_i,$$
+connecting sums of rectangles to area under the curve.\\
+
+We use a similar approach in this section to find volume under a surface.\\
+
+Let $R$ be a closed, bounded region in the $x$-$y$ plane and let $z=f(x,y)$ be a continuous function defined on $R$. We wish to find the signed volume under the surface of $f$ over $R$. (We use the term ``signed volume'' to denote that space above the $x$-$y$ plane, under $f$, will have a positive volume; space above $f$ and under the $x$-$y$ plane will have a ``negative'' volume, similar to the notion of signed area used before.)
+
+We start by partitioning $R$ into $n$ rectangular subregions as shown in Figure \ref{fig:double_intro}(a). For simplicity's sake, we let all widths be $\dx$ and all heights be $\dy$. Note that the sum of the areas of the rectangles is not equal to the area of $R$, but rather is a close approximation. Arbitrarily number the rectangles 1 through $n$, and pick a point $(x_i,y_i)$ in the $i^\text{ th}$ subregion. 
+\mtable{.5}{Developing a method for finding signed volume under a surface.}{fig:double_intro}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figdouble_intro1}\\[5pt]
+(a)\\[15pt]
+\myincludegraphics[scale=1.25,trim = 1mm 0mm 1mm 0mm,clip]{figures/figdouble_intro2}\\
+(b)
+\end{tabular}
+}
+
+The volume of the rectangular solid whose base is the $i^\text{ th}$ subregion and whose height is $f(x_i,y_i)$ is $V_i=f(x_i,y_i)\dx\dy$. Such a  solid is shown in Figure \ref{fig:double_intro}(b). Note how this rectangular solid only approximates the true volume under the surface; part of the solid is above the surface and part is below.
+
+For each subregion $R_i$ used to approximate $R$, create the rectangular solid with base area $\dx\dy$ and height $f(x_i,y_i)$. 
+The sum of all rectangular solids is $$\ds \sum_{i=1}^n f(x_i,y_i)\dx\dy.$$ This approximates the signed volume under $f$ over $R$. As we have done before, to get a better approximation we can use more rectangles to approximate the region $R$.
+
+In general, each rectangle could have a different width $\dx_j$ and height $\dy_k$, giving the $i^\text{ th}$ rectangle an area $\Delta A_i = \dx_j\dy_k$ and the $i^\text{ th}$ rectangular solid a volume of $f(x_i,y_i)\Delta A_i$. Let $|\Delta A|$ denote the length of the longest diagonal of all rectangles in the subdivision of $R$; $|\Delta A|\to 0$ means each rectangle's width and height are both approaching 0. If $f$ is a continuous function, as $\Delta A$ shrinks (and hence $n\to\infty$) the summation $\ds \sum_{i=1}^n f(x_i,y_i)\Delta A_i$ approximates the signed volume better and better. This leads to a definition.
+
+\definition{def:double_int}{Double Integral, Signed Volume}
+{Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. The \textbf{signed volume} $V$ under $f$ over $R$ is denoted by the \textbf{double integral}
+$$V = \iint_R f(x,y)\ dA.$$
+Alternate notations for the double integral are
+$$\iint_R f(x,y)\ dA=\iint_R f(x,y)\ dx\ dy=\iint_R f(x,y)\ dy\ dx.$$
+}
+
+The definition above does not state how to find the signed volume, though the notation offers a hint. We need the next two theorems to evaluate double integrals to find volume.
+
+\theorem{thm:double_int}{Double Integrals and Signed Volume}
+{Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. Then the signed volume $V$ under $f$ over $R$ is
+$$V = \iint_R f(x,y)\ dA = \lim_{|\Delta A|\to 0}\sum_{i=1}^n f(x_i,y_i)\Delta A_i.$$
+}
+
+This theorem states that we can find the exact signed volume using a limit of sums. The partition of the region $R$ is not specified, so any partitioning where the diagonal of each rectangle shrinks to 0 results in the same answer. 
+
+This does not offer a very satisfying way of computing area, though. Our experience has shown that evaluating the limits of sums can be tedious. We seek a more direct method.
+
+Recall Theorem \ref{thm:volume_by_cross_section} in Section \ref{sec:disk}. This stated that if $A(x)$ gives the cross-sectional area of a solid at $x$, then $\int_a^b A(x)\ dx$ gave the volume of that solid over $[a,b]$. 
+
+Consider Figure \ref{fig:double_intro3}, where a surface $z=f(x,y)$ is drawn over a region $R$. Fixing a particular $x$ value, we can consider the area under $f$ over $R$ where $x$ has that fixed value. That area can be found with a definite integral, namely $$ A(x)=\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy.$$
+
+Remember that though the integrand contains $x$, we are viewing $x$ as fixed. Also note that the bounds of integration are functions of $x$: the bounds depend on the value of $x$. 
+
+\mfigure[scale=1.25,trim=2mm 0mm 0mm 2mm,clip]{.75}{Finding volume under a surface by sweeping out a cross--sectional area.}{fig:double_intro3}{figures/figdouble_intro3}
+
+As $A(x)$ is a cross-sectional area function, we can find the signed volume $V$ under $f$ by integrating it:
+$$V = \int_a^b A(x)\ dx = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\right)dx = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\ dx.$$
+
+This gives a concrete method for finding signed volume under a surface. We could do a similar procedure where we started with $y$ fixed, resulting in a iterated integral with the order of integration $dx\ dy$. The following theorem states that both methods give the same result, which is the value of the double integral. It is such an important theorem it has a name associated with it.
+
+\theorem{thm:fubini}{Fubini's Theorem}
+{Let $R$ be a closed, bounded region in the $x$-$y$ plane and let $z=f(x,y)$ be a continuous function on $R$.
+\begin{itemize}
+	\item If $R$ is bounded by $a\leq x\leq b$ and $g_1(x)\leq y\leq g_2(x)$, where $g_1$ and $g_2$ are continuous functions on $[a,b]$, then
+	$$\iint_R f(x,y)\ dA = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\ dx.$$
+	
+	\item If $R$ is bounded by $c\leq y\leq d$ and $h_1(y)\leq x\leq h_2(y)$, where $h_1$ and $h_2$ are continuous functions on $[c,d]$, then
+	$$\iint_R f(x,y)\ dA = \int_c^d\int_{h_1(y)}^{h_2(y)} f(x,y)\ dx\ dy.$$
+\end{itemize}
+}
+
+Note that once again the bounds of integration follow the ``curve to curve, point to point'' pattern discussed in the previous section. In fact, one of the main points of the previous section is developing the skill of describing a region $R$ with the bounds of an iterated integral. Once this skill is developed, we can use double integrals to compute many quantities, not just signed volume under a surface.\\
+
+\example{ex_double1}{\textbf{Evaluating a double integral}\\
+Let $f(x,y) = xy+e^y$. Find the signed volume under $f$ on the region $R$, which is the rectangle with corners $(3,1)$ and $(4,2)$ pictured in Figure \ref{fig:double1}, using Fubini's Theorem and both orders of integration.}
+{We wish to evaluate $\iint_R \big(xy+e^y\big)\ dA$. As $R$ is a rectangle, the bounds are easily described as $3\leq x\leq 4$ and $1\leq y\leq 2$.\\
+
+Using the order $dy\ dx$:
+\begin{align*}
+\iint_R\big(xy+e^y\big) \ dA &= \int_3^4\int_1^2\big(xy+e^y\big)\ dy \ dx \\
+			&= \int_3^4 \left(\left.\left[\frac12xy^2+e^y\right]\right|_1^2\ \right) dx \\
+			&= \int_3^4\left(\frac 32x + e^2-e\right)dx \\
+			&= \left.\left(\frac 34x^2 + \big(e^2-e\big)x\right)\right|_1^2 \\
+			&= \frac {21}4+ e^2-e\approx 9.92.
+\end{align*}
+
+\mfigure[scale=1.25,trim= 1mm 0mm 2mm 0mm,clip]{.75}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
+
+Now we check the validity of Fubini's Theorem by using the order $dx\ dy$:
+\begin{align*}
+\iint_R\big(xy+e^y\big) \ dA &= \int_1^2\int_3^4\big(xy+e^y\big)\ dx \ dy \\
+		&= \int_1^2\left(\left.\left[\frac12x^2y+xe^y\right]\right|_3^4\right)dy\\
+		&= \int_1^2\left(\frac72y+e^y\right)\ dy\\
+		&= \left.\left(\frac74y^2+e^y\right)\right|_1^2\\
+		&=\frac{21}4+e^2-e\approx 9.92.
+\end{align*}
+Both orders of integration return the same result, as expected.
+}\\
+
+%\example{ex_double2}{\textbf{Evaluating a double integral}\\
+%Evaluate $\iint_R e^{2x+3y}\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $\frac12x+y=1$, as shown in FIGURE.}
+%{While it is not specified which order we are to use, we will evaluate the double integral using both orders to help drive home the point that it does not matter which order we use.\\
+%
+%Using the order $dy\ dx$:
+%The bounds on $y$ go from ``curve to curve,'' i.e., $0\leq y\leq 1-x/2$, and the bounds on $x$ go from ``point to point,'' i.e., $0\leq x\leq 2$.
+%\begin{align*}
+%\iint_R e^{2x+3y}\ dA &= \int_0^2\int_0^{-\frac x2+1} e^{2x+3y}\ dy\ dx\\
+		%&= \int_0^2\left.\left(\frac13e^{2x+3y}\right)\right|_0^{-\frac x2+1}dx\\
+		%&= \int_0^2 \left(\frac13\left(e^{\frac x2+3}-e^{2x}\right)\right)dx \\
+		%&= \frac13\left.\left(2e^{\frac x2+3}-\frac12e^{2x}\right)\right|_0^2\\
+		%&= \frac13\left(\frac32e^4-2e^3+\frac12\right)\\
+		%&= \frac12e^4-\frac23e^3+\frac16\approx  14.08.
+%\end{align*}
+%
+%Now lets consider the order $dx \ dy$. Here $x$ goes from ``curve to curve,'' $0\leq x\leq 2-2y$, and $y$ goes from ``point to point,'' $0\leq y\leq 1$:
+%\begin{align*}
+%\iint_R e^{2x+3y}\ dA &= \int_0^1\int_0^{2-2y} e^{2x+3y}\ dy\ dx\\
+		%&= \int_0^1\left.\left(\frac12e^{2x+3y}\right)\right|_0^{2-2y} dy\\
+		%&= \int_0^1\left(\frac12\big(e^{4-y}-e^{3y}\big)\right)dy\\
+		%&=\left.\frac12\left(-e^{4-y}-\frac13e^{3y}\right)\right|_0^1\\
+		%&=\frac12\left(-\frac43e^3+e^4+\frac13\right)\\
+		%&= \frac12e^4-\frac23e^3+\frac16\approx  14.08.
+%\end{align*}
+%We obtained the same result using both orders of integration. 
+%}\\
+
+\example{ex_double2}{\textbf{Evaluating a double integral}\\
+Evaluate $\iint_R 3xy-x^2-y^2+6\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $\frac12x+y=1$, as shown in Figure \ref{fig:double2}.
+\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
+}
+{While it is not specified which order we are to use, we will evaluate the double integral using both orders to help drive home the point that it does not matter which order we use.\\
+
+Using the order $dy\ dx$:
+The bounds on $y$ go from ``curve to curve,'' i.e., $0\leq y\leq 1-x/2$, and the bounds on $x$ go from ``point to point,'' i.e., $0\leq x\leq 2$.
+\begin{align*}
+\iint_R 3xy-x^2-y^2\ dA &= \int_0^2\int_0^{-\frac x2+1} 3xy-x^2-y^2\ dy\ dx\\
+		&= \int_0^2\left.\left(\frac32xy^2-x^2y-\frac13y^3+6y\right)\right|_0^{-\frac x2+1}dx\\
+		&= \int_0^2 \left(\frac{11}{12}x^3-\frac{11}{4}x^2-x-\frac{17}3\right)dx \\
+		&= \left.\left(\frac{11}{48}x^4-\frac{11}{12}x^3-\frac12x^2-\frac{17}3x\right)\right|_0^2\\
+		&= \frac{17}3=5.\overline{6}.
+\end{align*}
+
+Now lets consider the order $dx \ dy$. Here $x$ goes from ``curve to curve,'' $0\leq x\leq 2-2y$, and $y$ goes from ``point to point,'' $0\leq y\leq 1$:
+\begin{align*}
+\iint_R 3xy-x^2-y^2\ dA &= \int_0^1\int_0^{2-2y} 3xy-x^2-y^2+6\ dx\ dy\\
+		&= \int_0^1\left.\left(\frac32x^2y-\frac13x^3-xy^2+6x\right)\right|_0^{2-2y} dy\\
+		&= \int_0^1\left(\frac{32}3y^3-22y^2+2y+\frac{28}3\right)dy\\
+		&=\left.\left(\frac83y^4-\frac{22}3y^3+y^2+\frac{28}3y\right)\right|_0^1\\
+		&=\frac{17}3=5.\overline{6}.
+\end{align*}
+We obtained the same result using both orders of integration. 
+}\\
+
+ Note how in these two examples that the bounds of integration depend only on $R$; the bounds of integration have nothing to do with $f(x,y)$. This is an important concept, so we include it  as a Key Idea.
+
+\keyidea{idea:bounds_on_double}{Double Integration Bounds}
+{When evaluating $\iint_Rf(x,y)\ dA$ using an iterated integral, the bounds of integration depend only on $R$. The surface $f$ does not determine the bounds of integration.
+}
+
+Before doing another example, we give some properties of double integrals. Each should make sense if we view them in the context of finding signed volume under a surface, over a region.
+
+\theorem{thm:double_prop}{Properties of Double Integrals}
+{Let $f$ and $g$ be continuous functions over a closed, bounded plane region $R$, and let $c$ be a constant.
+\begin{enumerate}
+	\item $\ds \iint_Rcf(x,y)\ dA = c\iint_Rf(x,y)\ dA.$
+	\item	$\ds \iint_R \big(f(x,y)\pm g(x,y)\big)\ dA = \iint_R f(x,y)\ dA \pm \iint_R g(x,y)\ dA $
+	\item	If $f(x,y)\geq 0$ on $R$, then $\ds \iint_R f(x,y)\ dA\geq 0$.
+	\item	If $f(x,y)\geq g(x,y)$ on $R$, then $\ds \iint_R f(x,y)\ dA\geq \iint_R g(x,y)\ dA$.
+	\item \label{thm:double_prop_regions}	Let $R$ be the union of two nonoverlapping regions, $R = R_1\bigcup R_2$ (see Figure \ref{fig:double_region}). Then 
+	$$\iint_R f(x,y)\ dA = \iint_{R_1}f(x,y)\ dA+ \iint_{R_2}f(x,y)\ dA.$$
+\end{enumerate}
+}
+\mfigure{.6}{$R$ is the union of two nonoverlapping regions, $R_1$ and $R_2$.}{fig:double_region}{figures/figdouble_region}
+
+\example{ex_double3}{\textbf{Evaluating a double integral}\\
+Let $f(x,y) = \sin x\cos y$ and $R$ be the triangle with vertices $(-1,0)$, $(1,0)$ and $(0,1)$ (see Figure \ref{fig:double3}). Evaluate the double integral $\iint_Rf(x,y)\ dA$.
+\mfigure[trim=0mm 15mm 0mm 0mm,clip]{.35}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
+}
+{If we attempt to integrate using an iterated integral with the order $dy\ dx$, note how there are two upper bounds on $R$ meaning we'll need to use two iterated integrals. We can split the triangle into to regions along the $y$-axis, then use Theorem \ref{thm:double_prop}, part \ref{thm:double_prop_regions}.
+
+Instead, let's use the order $dx\ dy$. The curves bounding $x$ are $y-1\leq x\leq 1-y$; the bounds on $y$ are $0\leq y\leq 1$. This gives us:
+\begin{align*}
+\iint_R f(x,y)\ dA &= \int_0^1\int_{y-1}^{1-y}\sin x\cos y\ dx\ dy\\
+		&= \int_0^1\left.\Big( -\cos x\cos y\Big)\right|_{y-1}^{1-y}dy\\
+		&= \int_0^1 \cos y\Big(-\cos (1-y) + \cos(y-1)\Big)dy.
+\end{align*}
+Recall that the cosine function is an even function; that is, $\cos x = \cos (-x)$. Therefore, from the last integral above, we have $\cos (y-1) = \cos (1-y)$. Thus the integrand simplifies to 0, and we have 
+\begin{align*}
+\iint_R f(x,y)\ dA &= \int_0^1 0\ dy \\
+&= 0.
+\end{align*}
+It turns out that over $R$, there is just as much volume above the $x$-$y$ plane as below (look again at Figure \ref{fig:double3}), giving a final signed volume of 0. 
+}\\
+
+\example{ex_double4}{\textbf{Evaluating a double integral}\\
+Evaluate $\iint_R (4-y)\ dA$, where $R$ is the region bounded by the parabolas $y^2=4x$ and $x^2=4y$, graphed in Figure \ref{fig:double4}.
+\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.4}{Finding the volume under the surface in Example \ref{ex_double4}.}{fig:double4}{figures/figdouble4}
+}
+{Graphing each curve can help us find their points of intersection; analytically, the second equation tells us that $y=x^2/4$. Substituting this value in for $y$ in the first equation gives us $x^4/16 = 4x$. Solving for $x$:
+\begin{align*}
+\frac{x^4}{16} &= 4x\\
+x^4-64x &=0\\
+x(x^3-64) &=0\\
+x&= 0,\ 4.
+\end{align*}
+Thus we've found analytically what was easy to approximate graphically: the regions intersect at $(0,0)$ and $(4,4)$, as shown in Figure \ref{fig:double4}. 
+
+We now choose an order of integration: $dy\ dx$ or $dx\ dy$? Either order works; since the integrand does not contain $x$, choosing $dx\ dy$ might be simpler -- at least, the first integral is very simple.
+
+Thus we have the following ``curve to curve, point to point'' bounds: $y^2/4\leq x\leq 2\sqrt y$, and $0\leq y\leq 4$. 
+\begin{align*}
+\iint_R (4-y)\ dA &= \int_0^4\int_{y^2/4}^{2\sqrt{y}}(4-y)\ dx\ dy\\
+				&= \int_0^4 \big(x(4-y)\big)\Big|_{y^2/4}^{2\sqrt{y}} dy\\
+				&= \int_0^4 \Big(\big(2\sqrt{y}-\frac{y^2}{4}\big)\big(4-y)\Big)\ dy = \int_0^4 \Big( \frac{y^3}{4}-y^2-2y^{3/2}+8y^{1/2}\Big)\ dy\\
+				&= \left.\left(\frac{y^4}{16}-\frac{y^3}{3}-\frac{4y^{5/2}}5+\frac{16y^{3/2}}3\right)\right|_0^4\\
+				&= \frac{176}{15} = 11.7\overline{3}.
+\end{align*}
+The signed volume under the surface $f$ is about 11.7 cubic units.
+}\\
+
+%\noindent \textbf{\large Changing Order of Integration}\\
+%
+%In each of the previous examples, we have been given a region to integrate over and found the bounds needed for the order of integration chosen. Sometimes, to establish their equality, we integrated with both orders of operation.
+%
+%We now approach the skill of describing a region using both orders of integration from a different perspective. Instead of starting with a region and creating iterated integrals, we will start with an iterated integral and rewrite it in the other integration order. To do so, we'll need to understand the region over which we are integrating.
+%
+%The simplest of all cases is when both integrals are bound by constants. The region described by these bounds is a rectangle (see Example \ref{ex_double1}), and so:
+%$$\int_a^b\int_c^d f(x,y)\ dy\ dx = \int_c^d\int_a^bf(x,y)\ dx\ dy.$$
+%
+%When the inner integral's bounds are not constants, it is generally very useful to sketch the bounds to determine what the region we are integrating over looks like. From the sketch we can then rewrite the integral with the other order of integration.
+%
+%Examples will help us develop this skill.\\
+%
+%\example{ex_double5}{\textbf{Changing the order of integration}\\
+%Rewrite the iterated integral $\ds \int_0^6\int_0^{x/3} \frac{x}{x^2+y^2+1}\ dy\ dx$ with the order of integration $dx\ dy$.
+%}
+%{We need to use the bounds of integration to determine the region we are integrating over. Recall Key Idea \ref{idea:bounds_on_double}: the region $R$ is completely determined by these bounds, and not influenced at all by the integrand. Therefore, to rewrite the integral, we ignore the integrand.
+%
+%The bounds tell us that $y$ is bounded by $0$ and $x/3$; $x$ is bounded by 0 and 6. We plot these four curves: $y=0$, $y=x/3$, $x=0$ and $x=6$ to find the region described by the bounds. Figure \ref{fig:double5} shows these curves, indicating that $R$ is a triangle.
+%\mfigure{.8}{Sketching the region $R$ described by the iterated integral in Example \ref{ex_double5}.}{fig:double5}{figures/figdouble5}
+%
+%To change the order of integration, we need to consider the curves that bound the $x$-values. We see that the lower bound is $x=3y$ and the upper bound is $x=6$. The bounds on $y$ are $0$ to $2$. Thus we can rewrite the integral as 
+%$\ds \int_0^2\int_{3y}^6 \frac{x}{x^2+y^2+1}\ dx \ dy.$
+%\vskip 0pt
+%}\\
+%
+%\example{ex_double7}{\textbf{Changing the order of integration}\\
+%Change the order of integration of $\ds\int_0^2\int_{y^2/4}^{(y+4)/2}f(x,y)\ dx\ dy$.}
+%{We sketch the region described by the bounds to help us change the integration order. $x$ is bounded below and above (i.e., to the left and right) by $x=y^2/4$ and $x=(y+4)/2$ respectively, and $y$ is bounded between 0 and 2. Graphing the previous curves, we find the region $R$ to be that shown in Figure \ref{fig:double7}. 
+%\mfigure{.55}{Drawing the region determined by the bounds of integration in Example \ref{ex_double7}.}{fig:double7}{figures/figdouble7}
+%
+%To change the order of integration, we need to establish curves that bound $y$. The figure makes it clear that there are two lower bounds for $y$: $y=0$ on $0\leq x\leq 2$, and $y=2x-4$ on $2\leq x\leq 4$. Thus we need two double integrals. The upper bound for each is $y=2\sqrt{x}$. Thus we have
+%$$\int_0^2\int_{y^2/4}^{(y+4)/2}f(x,y)\ dx\ dy = \int_0^2\int_0^{2\sqrt{x}} f(x,y)\ dy\ dx + \int_2^4\int_{2x-4}^{2\sqrt{x}}f(x,y)\ dy\ dx.$$
+%Note how we did not specify the integrand, leaving it to be some function $f(x,y)$. This again stresses the point that the integrand has no bearing on the bounds of integration.
+%}\\
+
+In the previous section we practiced changing the order of integration of a given iterated integral, where the region $R$ was not explicitly given. Changing the bounds of an integral is more than just an test of understanding. Rather, there are cases where integrating in one order is really hard, if not impossible, whereas integrating with the other order is feasible.\\
+
+\example{ex_double6}{\textbf{Changing the order of integration}\\
+Rewrite the iterated integral $\ds \int_0^3\int_y^3 e^{-x^2}\ dx\ dy$ with the order $dy\ dx$. Comment on the feasibility to evaluate each integral.}
+{Once again we make a sketch of the region over which we are integrating to facilitate changing the order. The bounds on $x$ are from $x=y$ to $x=3$; the bounds on $y$ are from $y=0$ to $y=3$. These curves are sketched in Figure \ref{fig:double6}, enclosing the region $R$.
+\mfigure{.4}{Determining the region $R$ determined by the bounds of integration in Example \ref{ex_double6}.}{fig:double6}{figures/figdouble6}
+
+
+To change the bounds, note that the curves bounding $y$ are $y=0$ up to $y=x$; the triangle is enclosed between $x=0$ and $x=3$. Thus the new bounds of integration are $0\leq y\leq x$ and $0\leq x\leq 3$, giving the iterated integral $\ds \int_0^3\int_0^x e^{-x^2}\ dy\ dx$.
+
+How easy is it to evaluate each iterated integral? Consider the order of integrating $dx\ dy$, as given in the original problem. The first indefinite integral we need to evaluate is $\int e^{-x^2}\ dx$; we have stated before (see Section \ref{sec:numerical_integration}) that this integral cannot be evaluated in terms of elementary functions. We are stuck.
+
+Changing the order of integration makes a big difference here. In the second iterated integral, we are faced with $\int e^{-x^2}\ dy$; integrating with respect to $y$ gives us $ye^{-x^2}+C$, and the first definite integral evaluates to 
+$$\int_0^x e^{-x^2}\ dy = xe^{-x^2}.$$
+Thus 
+$$\int_0^3\int_0^x e^{-x^2}\ dy\ dx = \int_0^3\Big(xe^{-x^2}\Big)dx.$$
+This last integral is easy to evaluate with substitution, giving a final answer of $\frac12(1-e^{-9})\approx 0.5$. Figure \ref{fig:double6b} shows the surface over $R$.
+\mfigure[scale=1.25,trim = 1mm 10mm 1mm 0mm, clip]{.8}{Showing the surface $f$ defined in Example \ref{ex_double6} over its region $R$.}{fig:double6b}{figures/figdouble6b}
+ 
+
+In short, evaluating one iterated integral is impossible; the other iterated integral is relatively simple.
+}\\
+
+The previous section introduced the iterated integral in the context of finding the area of plane regions. This section has extended our understanding of iterated integrals; now we see they can be used to find the signed volume under a surface. 
+
+This new understanding allows us to revisit what we did in the previous section. Given a region $R$ in the plane, we computed $\iint_R 1\ dA$; again, our understanding at the time was that we were finding the area of $R$. However, we can now view the function $z=1$ as a surface, a flat surface with constant $z$-value of 1. The double integral $\iint_R 1\ dA$ finds the volume, under $z=1$, over $R$, as shown in Figure \ref{fig:double_summary}. Basic geometry tells us that if the base of a general right cylinder has area $A$, its volume is $A\cdot h$, where $h$ is the height. In our case, the height is 1. We were ``actually'' computing the volume of a solid, though we interpreted the number as an area.
+\mfigure[scale=1.25,trim=1mm 0mm 1mm 0mm,clip]{.5}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
+
+The next section extends our abilities to find ``volumes under surfaces.'' Currently, some integrals are hard to compute because either the region $R$ we are integrating over is hard to define with rectangular curves, or the integrand itself is hard to deal with. Some of these problems can be solved by converting everything into polar coordinates.
+
+\printexercises{exercises/13_02_exercises}
+
+
+

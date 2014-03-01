@@ -1,0 +1,201 @@
+\section{Unit Tangent and Normal Vectors}\label{sec:tan_norm}
+
+\noindent\textbf{\large Unit Tangent Vector}\\
+
+Given a smooth vector--valued function \vrt, we defined in Definition \ref{def:vector_tangent} that any vector parallel to $\vrp(t_0)$ is \emph{tangent} to the graph of \vrt\ at $t=t_0$. It is often useful to consider just the \emph{direction} of $\vrp(t)$ and not its magnitude. Therefore we are interested in the unit vector in the direction of $\vrp(t)$. This leads to a definition.
+
+\definition{def:unit_tangent}{Unit Tangent Vector}
+{Let \vrt\ be a smooth function on an open interval $I$. The unit tangent vector $\vec T(t)$ is 
+$$\vec T(t) = \frac{1}{\rule{0pt}{9pt}\norm{\vrp(t)}}\vrp(t).$$
+}
+
+\example{ex_tannorm1}{\textbf{Computing the unit tangent vector}\\
+Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$. Find $\vec T(t)$ and compute $\vec T(0)$ and $\vec T(1)$.}
+{We apply Definition \ref{def:unit_tangent} to find $\vec T(t)$. 
+\begin{align*}
+\vec T(t) &= \frac{1}{\rule{0pt}{9pt}\norm{\vrp(t)}}\vrp(t) \\
+				&=\frac{1}{\sqrt{\big(-3\sin t\big)^2+\big(3\cos t\big)^2+ 4^2}}\la -3\sin t,3\cos t, 4\ra \\
+				&= \la -\frac35\sin t,\frac35\cos t,\frac45\ra.
+\end{align*}
+We can now easily compute $\vec T(0)$ and $\vec T(1)$:
+$$\vec T(0) = \la 0,\frac35,\frac45\ra\,;\quad \vec T(1) = \la -\frac35\sin 1,\frac35\cos 1,\frac45\ra \approx \la -0.505,0.324,0.8\ra.$$
+These are plotted in Figure \ref{fig:tannorm1} with their initial points at $\vec r(0)$ and $\vec r(1)$, respectively. (They look rather ``short'' since they are only length 1.)
+\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.35}{Plotting unit tangent vectors in Example \ref{ex_tannorm1}.}{fig:tannorm1}{figures/figtannorm1}
+
+The unit tangent vector $\vec T(t)$ always has a magnitude of 1, though it is sometimes easy to doubt that is true. We can help solidify this thought in our minds by computing $\norm{\vec T(1)}$:
+$$\norm{\vec T(1)} \approx \sqrt{(-0.505)^2+0.324^2+0.8^2} = 1.000001.$$
+We have rounded in our computation of $\vec T(1)$, so we don't get 1 exactly. We leave it to the reader to use the exact representation of $\vec T(1)$ to verify it has length 1.
+}\\
+
+In many ways, the previous example was ``too nice.'' It turned out that $\vrp(t)$ was always of length 5. In the next example the length of $\vrp(t)$ is variable, leaving us with a formula that is not as clean.\\
+
+\example{ex_tannorm2}{\textbf{Computing the unit tangent vector}\\
+Let $\vrt=\la t^2-t,t^2+t\ra$. Find $\vec T(t)$ and compute $\vec T(0)$ and $\vec T(1)$.}
+{We find $\vrp(t) = \la 2t-1,2t+1\ra$, and $$\norm{\vrp(t)} = \sqrt{(2t-1)^2+(2t+1)^2} = \sqrt{8t^2+2}.$$
+Therefore $$\vec T(t) = \frac{1}{\sqrt{8t^2+2}}\la 2t-1,2t+1\ra = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra.$$
+When $t=0$, we have $\vec T(0) = \la -1/\sqrt{2},1/\sqrt{2}\ra$; when $t=1$, we have $\vec T(1) = \la 1/\sqrt{10}, 3/\sqrt{10}\ra.$ We leave it to the reader to verify each of these is a unit vector. They are plotted in Figure \ref{fig:tannorm2}
+\mfigure{.7}{Plotting unit tangent vectors in Example \ref{ex_tannorm2}.}{fig:tannorm2}{figures/figtannorm2}
+}\\
+
+\noindent\textbf{\large Unit Normal Vector}\\
+
+Just as knowing the direction tangent to a path is important, knowing a direction orthogonal to a path is important. When dealing with real-valued functions, we defined the normal line at a point to the be the line through the point that was perpendicular to the tangent line at that point. We can do a similar thing with vector--valued functions. Given \vrt\ in $\mathbb{R}^2$, we have 2 directions perpendicular to the tangent vector, as shown in Figure \ref{fig:tannorm_intro1}. It is good to wonder ``Is one of these two directions preferable over the other?''
+\mfigure{.45}{Given a direction in the plane, there are always two directions orthogonal to it.}{fig:tannorm_intro1}{figures/figtannorm_intro1}
+
+Given \vrt\ in $\mathbb{R}^3$, however, there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder ``Is one of these infinite choices preferable over the others? Is one of these the `right' choice?''
+
+The answer in both $\mathbb{R}^2$ and $\mathbb{R}^3$ is ``Yes, there is one vector that is not only preferable, it is the `right' one to choose.'' Recall Theorem \ref{thm:vects_of_constant_length}, which states that if \vrt\ has constant length, then \vrt\ is orthogonal to $\vrp(t)$ for all $t$. We know $\vec T(t)$, the unit tangent vector has constant length. Therefore $\vec T(t)$ is orthogonal to $\vec T\,'(t)$.
+
+We'll see that $\vec T\,'(t)$ is more than just a convenient choice of vector that is orthogonal to $\vrp(t)$; rather, it is the ``right'' choice. Since all we care about is the direction, we define this newly found vector to be a unit vector.
+\mnote{.28}{\textbf{Note:} $\vec T(t)$ is a unit vector, by definition. This \emph{does not} imply that $\vec T\,'(t)$ is also a unit vector.}
+
+\definition{def:unit_normal}{Unit Normal Vector}
+{Let \vrt\ be a vector--valued function where the unit tangent vector, $\vec T(t)$, is smooth on an open interval $I$. The \textbf{unit normal vector} $\vec N(t)$ is
+$$\vec N(t) = \frac1{\norm{\vec T\,'(t)}}\vec T\,'(t).$$
+}
+
+\example{ex_tannorm3}{\textbf{Computing the unit normal vector}\\
+Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$ as in Example \ref{ex_tannorm1}. Sketch both $\vec T(\pi/2)$ and $\vec N(\pi/2)$ with initial points at $\vec r(\pi/2)$.}
+{In Example \ref{ex_tannorm1}, we found $\vec T(t) = \la \rule{0pt}{10pt} (-3/5)\sin t,(3/5)\cos t,4/5\ra$. Therefore 
+$$\vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra\quad \text{and} \quad \norm{\vec T\,'(t)} = \frac35.$$
+Thus $$\vec N(t) = \frac{\vec T\,'(t)}{3/5} = \la -\cos t,-\sin t,0\ra.$$
+We compute $\vec T(\pi/2) = \la -3/5,0,4/5\ra$ and $\vec N(\pi/2) = \la 0,-1,0\ra$. These are sketched in Figure \ref{fig:tannorm3}.
+\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.6}{Plotting unit tangent and normal vectors in Example \ref{fig:tannorm3}.}{fig:tannorm3}{figures/figtannorm3}
+}\\
+
+The previous example was once again ``too nice.'' In general, the expression for $\vec T(t)$ contains fractions of square--roots, hence the expression of $\vec T\,'(t)$ is very messy. We demonstrate this in the next example.\\
+
+\example{ex_tannorm4}{\textbf{Computing the unit normal vector}\\
+Let $\vrt=\la t^2-t,t^2+t\ra$ as in Example \ref{ex_tannorm2}. Find $\vec N(t)$ and sketch $\vrt$ with the unit tangent and normal vectors at $t=-1,0$ and 1.}
+{In Example \ref{ex_tannorm2}, we found
+$$\vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra.$$
+Finding $\vec T\,'(t)$ requires two applications of the Quotient Rule:
+
+\begin{align*}
+T\,'(t) &= \la \frac{\sqrt{8t^2+2}(2)-(2t-1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2}, \frac{\sqrt{8t^2+2}(2)-(2t+1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2} \ra \\
+				&= \la \frac{4 (2 t+1)}{\left(8 t^2+2\right)^{3/2}},\frac{4
+   (1-2 t)}{\left(8 t^2+2\right)^{3/2}}\ra
+\end{align*}
+
+This is not a unit vector; to find $\vec N(t)$, we need to divide $\vec T\,'(t)$ by it's magnitude.
+\begin{align*}
+\norm{\vec T\,'(t)} &= \sqrt{\frac{16(2t+1)^2}{(8t^2+2)^3}+\frac{16(1-2t)^2}{(8t^2+2)^3}}\\
+					&= \sqrt{\frac{16(8t^2+2)}{(8t^2+2)^3}}\\
+					&= \frac{4}{8t^2+2}.
+\end{align*}
+Finally, 
+\begin{align*}
+\vec N(t) &= \frac1{4/(8t^2+2)}\la \frac{4 (2 t+1)}{\left(8 t^2+2\right)^{3/2}},\frac{4
+   (1-2 t)}{\left(8 t^2+2\right)^{3/2}}\ra\\
+	&= \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra.
+\end{align*}
+
+Using this formula for $\vec N(t)$, we compute the unit tangent and normal vectors for $t=-1,0$ and 1 and sketch them in Figure \ref{fig:tannorm4}.
+\mfigure{.5}{Plotting unit tangent and normal vectors in Example \ref{ex_tannorm4}.}{fig:tannorm4}{figures/figtannorm4}
+}\\
+
+The final 	result for $\vec N(t)$ in Example \ref{ex_tannorm4} is suspiciously similar to $\vec T(t)$. There is a clear reason for this. If $\vec u = \la u_1,u_2\ra $ is a unit vector in $\mathbb{R}^2$, then the \textit{only} unit vectors orthogonal to $\vec u$ are $\la -u_2,u_1\ra $ and $\la u_2,-u_1\ra$. Given $\vec T(t)$, we can quickly determine $\vec N(t)$ if we know which term to multiply by $(-1)$.
+
+Consider again Figure \ref{fig:tannorm4}, where we have plotted some unit tangent and normal vectors. Note how $\vec N(t)$ always points ``inside'' the curve, or to the concave side of the curve. This is not a coincidence; this is true in general. Knowing the direction that $\vec r(t)$ ``turns'' allows us to quickly find $\vec N(t)$.
+
+
+\theorem{thm:concave}{Unit Normal Vectors in $\mathbb{R}^2$}
+{Let $\vec r(t)$ be a vector--valued function in $\mathbb{R}^2$ where $\vec T\,'(t)$ is smooth on an open interval $I$. Let $\vec T(t) = \la t_1,t_2\ra$. Then $\vec N(t)$ is either
+$$\vec N(t) = \la -t_2,t_1\ra \quad \text{or}\quad \vec N(t) = \la t_2,-t_1\ra,$$ whichever is the vector that points to the concave side of the graph of $\vec r$.
+}
+
+\noindent\textbf{\large Application to Acceleration}\\
+
+Let \vrt\ be a position function. It is a fact (stated in Theorem \ref{thm:acc_plane} and proved in the Exercises) that acceleration, \vat, lies in the plane defined by $\vec T$ and $\vec N$. That is, there are scalars $a_{\text{T}}$ and $a_{\text{N}}$ such that 
+$$\vat = a_{\text{T}}\vec T(t) + a_{\text{N}}\vec N(t).$$
+The scalar $a_{\text{T}}$ measures ``how much'' acceleration is in the direction of travel, that is, it measures the component of acceleration that affects the speed. The scalar $a_{\text{N}}$ measures ``how much'' acceleration is perpendicular to the direction of travel, that is, it measures the component of acceleration that affects the direction of travel.
+
+We can find $a_{\text{T}}$ using the orthogonal projection of $\vec a(t)$ onto $\vec T(t)$ (review Definition \ref{def:orthogonal_projection} in Section \ref{sec:dot_product} if needed).
+Recalling that since $\vec T(t)$ is a unit vector, $\vec T(t)\cdot\vec T(t)=1$, so we have 
+$$\proj{a(t)}{T(t)} = \frac{\vec a(t)\cdot\vec T(t)}{\vec T(t)\cdot\vec T(t)}\vec T(t) = \underbrace{\big(\vec a(t)\cdot\vec T(t)\big)}_{a_{\text{T}}}\vec T(t).$$
+Thus the amount of \vat\ in the direction of $\vec T(t)$ is $a_{\text{T}}=\vat\cdot\vec T(t)$. The same logic gives $a_{\text{N}} = \vat\cdot\vec N(t)$.
+
+While this is a fine way of computing $a_{\text{T}}$, there are simpler ways of finding $a_{\text{N}}$ (as finding $\vec N$ itself can be complicated). The following theorem gives alternate formulas for $a_{\text{T}}$ and $a_{\text{N}}$.
+\mnote{.42}{\textbf{Note:} Keep in mind that both $a_\text{T}$ and $a_\text{N}$ are functions of $t$; that is, the scalar changes depending on $t$. It is convention to drop the ``$(t)$'' notation from $a_\text{T}(t)$ and simply write $a_\text{T}$.}
+
+\setboxwidth{20pt}
+\theorem{thm:acc_plane}{Acceleration in the Plane Defined by $\vec T$ and $\vec N$}
+{Let \vrt\ be a position function with acceleration \vat\ and unit tangent and normal vectors $\vec T(t)$ and $\vec N(t)$. Then $\vat$ lies in the plane defined by $\vec T(t)$ and $\vec N(t)$, that is, there exists scalars $a_\text{T}$ and $a_\text{N}$ such that
+$$\vat = a_\text{T}\vec T(t) + a_\text{N}\vec N(t).$$
+Moreover,
+\begin{align*}
+a_\text{T} &= \vat\cdot\vec T(t) = \frac{d}{dt}\Big(\norm{\vec v(t)}\Big) \\
+a_\text{N} &= \vat\cdot \vec N(t) = \sqrt{\norm{\vec a(t)}^2-a_\text{T}^2} = \frac{\norm{\vat\times\vvt}}{\norm{\vvt}} = \norm{\vvt}\,\norm{\vec T\,'(t)}
+\end{align*}
+}
+\restoreboxwidth
+
+Note the second formula for $a_\text{T}$: $\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)$. This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.\\
+
+\example{ex_tannorm5}{\textbf{Computing $a_\text{T}$ and $a_\text{N}$}\\
+Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$ as in Examples \ref{ex_tannorm1} and \ref{ex_tannorm3}. Find $a_\text{T}$ and $a_\text{N}$.}
+{The previous examples give $\vat = \la -3\cos t,-3\sin t,0\ra$ and 
+$$\vec T(t) = \la -\frac35\sin t,\frac35\cos t,\frac45\ra \quad \text{and}\quad \vec N(t) = \la -\cos t,-\sin t,0\ra.$$
+We can find $a_\text{T}$ and $a_\text{N}$ directly with dot products:
+\begin{align*}
+a_\text{T} &= \vat\cdot \vec T(t) = \frac95\cos t\sin t-\frac95\cos t\sin t+0 = 0.\\
+a_\text{N} &= \vat\cdot \vec N(t) = 3\cos^2t+3\sin^2t + 0 = 3.
+\end{align*}
+Thus $\vat = 0\vec T(t) + 3\vec N(t) = 3\vec N(t)$, which is clearly the case.
+
+What is the practical interpretation of these numbers? $a_\text{T}=0$ means the object is moving at a constant speed, and hence all acceleration comes in the form of direction change.
+}\\
+
+\example{ex_tannorm6}{\textbf{Computing $a_\text{T}$ and $a_\text{N}$}\\
+Let $\vrt=\la t^2-t,t^2+t\ra$ as in Examples \ref{ex_tannorm2} and \ref{ex_tannorm4}. Find $a_\text{T}$ and $a_\text{N}$.}
+{The previous examples give $\vat = \la 2,2\ra$ and
+$$\vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra \quad \text{and}\quad \vec N(t) = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra.$$
+While we can compute $a_\text{N}$ using $\vec N(t)$, we instead demonstrate using another formula from Theorem \ref{thm:acc_plane}.
+\begin{align*}
+a_\text{T} &= \vat\cdot\vec T(t) = \frac{4t-2}{\sqrt{8t^2+2}}+\frac{4t+2}{\sqrt{8t^2+2}} = \frac{8t}{\sqrt{8t^2+2}}.\\
+a_\text{N} &= \sqrt{\norm{\vat}^2-a_\text{T}^2} = \sqrt{8-\left(\frac{8t}{\sqrt{8t^2+2}}\right)^2}=\frac{4}{\sqrt{8t^2+2}}\rule{0pt}{25pt}.
+\end{align*}
+When $t=2$, $\ds a_\text{T} = \frac{16}{\sqrt{34}}\approx 2.74$ and $\ds a_\text{N} = \frac{4}{\sqrt{34}} \approx 0.69$. We interpret this to mean that at $t=2$, the particle is acclerating mostly by increasing speed, not by changing direction. As the path near $t=2$ is relatively straight, this should make intuitive sense. Figure \ref{fig:tannorm6} gives a graph of the path for reference.
+\mfigure{.7}{Graphing $\vec r(t)$ in Example \ref{ex_tannorm6}.}{fig:tannorm6}{figures/figtannorm6}
+
+Contrast this with $t=0$, where $a_\text{T} = 0$ and $a_\text{N} = 4/\sqrt{2}\approx 2.82$. Here the particle's speed is not changing and all acceleration is in the form of direction change.
+}\\
+
+\example{ex_tannorm7}{\textbf{Analyzing projectile motion}\\
+A ball is thrown from a height of 240ft with an initial velocity of 64ft/s with an angle of elevation of $30^\circ$. Find the position function \vrt\ for the ball and analyze $a_\text{T}$ and $a_\text{N}$.
+}
+{Using Key Idea \ref{idea:projectile} of Section \ref{sec:vvf_motion} we form the position function of the ball:
+$$\vrt = \la \big(64\cos 30^\circ\big)t, -16t^2+\big(64\sin 30^\circ\big)t+240\ra,$$
+which we plot in Figure \ref{fig:tannorm7b}.
+\mfigure{.4}{Plotting the position of a thrown ball, with 1s increments shown.}{fig:tannorm7b}{figures/figtannorm7b}
+
+From this we find $\vvt = \la 64\cos 30^\circ, -32t+64\sin 30^\circ\ra$ and $\vat = \la 0,-32\ra$. Computing $\vec T(t)$ is not difficult, and with some simplification we find
+$$\vec T(t) = \la \frac{\sqrt{3}}{\sqrt{t^2-2t+4}}, \frac{1-t}{\sqrt{t^2-2t+4}}\ra.$$
+With $\vat$ as simple as it is, finding $a_\text{T}$ is also  simple:
+$$a_\text{T} = \vat\cdot \vec T(t) = \frac{32t-32}{\sqrt{t^2-2t+4}}.$$
+We choose to not find $\vec N(t)$ and find $a_\text{N}$ through the formula $a_\text{N} = \sqrt{\norm{\vat}^2-a_\text{T}^2\,}$\,:
+$$a_\text{N} = \sqrt{32^2-\left(\frac{32t-32}{\sqrt{t^2-2t+4}}\right)^2} = \frac{32\sqrt{3}}{\sqrt{t^2-2t+4}}.$$
+Figure \ref{fig:tannorm7a} gives a table of values of $a_\text{T}$ and $a_\text{N}$. When $t=0$, we see the ball's speed is decreasing; when $t=1$ the speed of the ball is unchanged. This corresponds to the fact that at $t=1$ the ball reaches its highest point.
+
+After $t=1$ we see that $a_\text{N}$ is decreasing in value. This is because as the ball falls, it's path becomes straighter and most of the acceleration is in the form of speeding up the ball, and not in changing its direction.
+\mtable{.8}{A table of values of $a_\text{T}$ and $a_\text{N}$ in Example \ref{ex_tannorm7}.}{fig:tannorm7a}{%
+\begin{tabular}{ccc}
+$t$ & $a_\text{T}$ & $a_\text{N}$ \\ \hline
+0 & $-16$ & 27.7 \\
+1 & 0 & 32 \\
+2 & 16 & 27.7\\
+3 & 24.2 & 20.9 \\
+4 & 27.7 & 16 \\
+5 & 29.4 & 12.7 
+\end{tabular}
+}
+}\\
+
+Our understanding of the unit tangent and normal vectors is aiding our understanding of motion. The work in Example \ref{ex_tannorm7} gave quantitative analysis of what we intuitively knew.
+
+The next section provides two more important steps towards this analysis. %One problem we currently have is that while we can accurately describe a path for a particle, we are not particularly good at regulating the speed at which the particle travels. For instance, consider the parabolic path of Example \ref{ex_tannorm2}. Our particle slows as it nears the vertex, but clearly it ``doesn't have to.'' What vector--valued function has the same path, but where the particle speeds up near the vertex? 
+We currently describe position only in terms of time. In everyday life, though, we often describe position in terms of distance (``The gas station is about 2 miles ahead, on the left.''). The \emph{arc length parameter} allows us to reference a particle's position in terms of distance traveled. 
+
+We also intuitively know that some paths are straighter than others -- and some are curvier than others, but we lack a measurement of ``curviness.'' The arc length parameter provides a way for us to compute \emph{curvature}, a quantitative measurement of how curvy a curve is.
+
+\printexercises{exercises/11_04_exercises}

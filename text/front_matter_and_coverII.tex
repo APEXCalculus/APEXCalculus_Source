@@ -1,0 +1,79 @@
+%
+%%%%%%%%%%
+%%%
+%%%  Set criteria for the format of the book.
+%%%  This supercedes anything set in the Text_Header.
+%%%
+%%%%%%%%%%
+
+
+
+%\printinblackandwhite
+
+%\printexercisenames
+
+%\nodrawexamplelines
+
+%\printallanswers
+
+
+\normalem
+
+
+
+%%%\pagenumbering{roman}
+
+%%%%%%
+%%%		For editing purposes, block comment down to 
+%%%		the next mark
+%%%%%%
+
+%%%%\input{cover/front_cover_in_text}
+%%%%\clearpage
+%%%%\thispagestyle{empty}
+\frontmatter
+%%%%
+%%%%\title{\textsc{Fundamentals of Matrix Algebra}\\
+%%%%{\small Version 2.1011}}
+%%%%\author{Gregory N. Hartman, Ph.D.}
+%%%%\date{}
+
+\input{text/title_pageII}
+
+\thispagestyle{empty}
+\clearpage
+
+\input{text/copyright_page}
+\thispagestyle{empty}
+\clearpage
+
+
+%\cleardoublepage
+%%%%\phantomsection
+%%%%\input{text/thanks}
+%%%%\addcontentsline{toc}{chapter}{Thanks} 
+%%%%\clearpage{\pagestyle{empty}\cleardoublepage}
+\phantomsection
+\input{text/prefaceII}
+\addcontentsline{toc}{chapter}{Preface}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%%\phantomsection
+%%%%
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\addtocontents{toc}{\protect\enlargethispage\baselineskip}
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%%%
+%\includepdf[pages={1,2}]{CalculusTOC.pdf}
+%%%%
+\mainmatter
+
+
+%%%%
+%		End block comment here
+%%%%
+
+
+
+

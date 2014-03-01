@@ -1,0 +1,237 @@
+\section{Parametric Equations}\label{sec:param_eqs}
+
+We are familiar with sketching  shapes, such as parabolas, by following this basic procedure:
+
+\begin{center}
+\begin{tikzpicture}[>=latex]
+\draw (0,0) node (A) [align=center] {Choose \\$x$} 
+      (3,0) node[align=center] (B) {Use a function\\ $f$ to find $y$\\$\big(y=f(x)\big)$}
+			(6.25,0) node [align=center] (C) {Plot point \\ $(x,y)$};
+\draw [->](A) --(B);
+\draw [->](B) -- (C);
+\end{tikzpicture}
+\end{center}
+
+The \textbf{rectangular equation} $y=f(x)$ works well for some shapes like a parabola with a vertical axis of symmetry, but in the previous section we encountered several shapes that could not be sketched in this manner. (To plot an ellipse using the above procedure, we need to plot the ``top'' and ``bottom'' separately.)
+
+In this section we introduce a new sketching procedure:
+
+\begin{center}
+\begin{tikzpicture}[>=latex]
+\draw (0,0) node (A) [align=center] {Choose \\$t$} 
+      (3,1) node[align=center] (B1) {Use a function\\ $f$ to find $x$\\$\big(x=f(t)\big)$}
+			(3,-1) node[align=center] (B2) {Use a function\\ $g$ to find $y$\\$\big(y=g(t)\big)$}
+			(6.25,0) node [align=center] (C) {Plot point \\ $(x,y)$};
+\draw [->](A) --(B1);
+\draw [->](A) --(B2);
+\draw [->](B1) -- (C);
+\draw [->](B2) -- (C);
+\end{tikzpicture}
+\end{center}
+
+Here, $x$ and $y$ are found separately but then plotted together. This leads us to a definition.
+
+\definition{def:param_eq}{Parametric Equations and Curves}
+{Let $f$ and $g$ be continuous functions on an interval $I$. The set of all points $\big(x,y\big) = \big(f(t),g(t)\big)$ in the Cartesian plane, as $t$ varies over $I$, is the \textbf{graph} of the \textbf{parametric equations} $x=f(t)$ and $y=g(t)$, where $t$ is the \textbf{parameter}. A \textbf{curve} is a graph along with the parametric equations that define it.
+}
+
+This is a formal definition of the word \textit{curve}. When a curve lies in a plane (such as the Cartesian plane), it is often referred to as a \textbf{plane curve}. Examples will help us understand the concepts introduced in the definition.\\
+
+\example{ex_pareq1}{\textbf{Plotting parametric functions} \\
+Plot the graph of the parametric equations $x=t^2$, $y=t+1$ for $t$ in $[-2,2]$.}
+{We plot the graphs of parametric equations in much the same manner as we plotted graphs of functions like $y=f(x)$: we make a table of values, plot points, then connect these points with a ``reasonable'' looking curve. Figure \ref{fig:pareq1table} shows such a table of values; note how we have 3 columns.
+
+The points $(x,y)$ from the table are plotted in Figure \ref{fig:pareq1}. The points have been connected with a smooth curve. Each point has been labeled with its corresponding $t$-value. These values, along with the two arrows along the curve, are used to indicate the \textbf{orientation} of the graph. This information helps us determine the direction in which the graph is ``moving.''
+\mtable{.85}{A table of values of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1table}{%
+\begin{tabular}{rrr}
+$t$ & $x$ & $y$ \\ \hline
+$-2$ & \phantom{$-$}4 & $-1$ \\  $-1$ & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 2 \\ 2 & 4 & 3
+\end{tabular}}
+\mfigure{.65}{Sketching the graph of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1}{figures/figpareq1}
+}\\
+
+We often use the letter $t$ as the parameter as we often regard $t$ as representing \textit{time}. Certainly there are many contexts in which the parameter is not time, but it can be helpful to think in terms of time as one makes sense of parametric plots and their orientation (for instance, ``At time $t=0$ the position is $(1,2)$ and at time $t=3$ the position is $(5,1)$.'').
+\\
+
+\example{ex_pareq2}{\textbf{Plotting parametric functions} \\ Sketch the graph of the parametric equations $x=\cos^2t$, $y=\cos t+1$ for $t$ in $[0,\pi]$.}
+{We again start by making a table of values in Figure \ref{fig:pareq2_table}, then plot the points $(x,y)$ on the Cartesian plane in Figure \ref{fig:pareq2}.
+\mtable{.46}{A table of values of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2_table}{%
+\begin{tabular}{ccc}
+$t$ & $x$ & $y$ \\ \hline
+0 & 1 & 2 \\
+$\pi/4$ & $1/2$ & $1+\sqrt{2}/2$ \\
+$\pi/2$ & 0 & 1\\
+$3\pi/4$ & $1/2$ & $1-\sqrt{2}/2$ \\
+$\pi$ & 1 & 0
+\end{tabular}
+}
+\mfigure{.28}{Sketching the graph of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2}{figures/figpareq2}
+
+It is not difficult to show that the curves in Examples \ref{ex_pareq1} and \ref{ex_pareq2} are portions of the same parabola. While the \textit{parabola} is the same, the \textit{curves} are different. In Example \ref{ex_pareq1}, if we let $t$ vary over all real numbers, we'd obtain the entire parabola. In this example, letting $t$ vary over all real numbers would still produce the same graph; this portion of the parabola would be traced, and re--traced, infinitely. The orientation shown in Figure \ref{fig:pareq2} shows the orientation on $[0,\pi]$, but this orientation is reversed on $[\pi,2\pi]$.
+
+These examples begin to illustrate the powerful nature of parametric equations. Their graphs are far more diverse than the graphs of functions produced by ``$y=f(x)$'' functions.
+}\\
+
+\noindent\textbf{Technology Note:} Most graphing utilities can graph functions given in parametric form. Often the word ``parametric'' is abbreviated as ``PAR'' or ``PARAM'' in the  options. The user usually needs to determine the graphing window (i.e, the minimum and maximum $x$- and $y$-values), along with the values of $t$ that are to be plotted. The user is often prompted to give a $t$ minimum, a $t$ maximum, and a ``$t$-step'' or ``$\Delta t$.'' Graphing utilities effectively plot parametric functions just as we've shown here: it plots lots of points. A smaller $t$-step plots more points, making for a smoother graph (but may take longer). In Figure \ref{fig:pareq1table}, the $t$-step is 1; in Figure \ref{fig:pareq2_table}, the $t$-step is $\pi/4$.\\
+
+One nice feature of parametric equations is that their graphs are easy to shift. While this is not too difficult in the ``$y=f(x)$'' context, the resulting function can look rather messy. (Plus, to shift to the right by two, we replace $x$ with $x-2$, which is counter--intuitive.) The following example demonstrates this.\\
+
+\example{ex_pareq3}{\textbf{Shifting the graph of parametric functions}\\ Sketch the graph of the parametric equations $x=t^2+t$, $y=t^2-t$.  Find new parametric equations that shift this graph to the right 3 places and down 2.}
+{The graph of the parametric equations is given in Figure \ref{fig:pareq3} (a). It is a parabola with a axis of symmetry along the line $y=x$; the vertex is at $(0,0)$. 
+
+In order to shift the graph to the right 3 units, we need to increase the $x$-value by 3 for every point. The straightforward way to accomplish this is simply to add 3 to the function defining $x$: $x = t^2+t+3$. To shift the graph down by 2 units, we wish to decrease each $y$-value by 2, so we subtract 2 from the function defining $y$: $y = t^2-t-2$. Thus our parametric equations for the shifted graph are $x=t^2+t+3$, $y=t^2-t-2$. This is graphed in Figure \ref{fig:pareq3} (b). Notice how the vertex is now at $(3,-2)$. 
+\mtable{.73}{Illustrating how to shift graphs in Example \ref{ex_pareq3}.}{fig:pareq3}{%
+\begin{tabular}{cc}
+\myincludegraphics{figures/figpareq3a}\\
+(a) \\
+\myincludegraphics{figures/figpareq3b}\\
+(b)
+\end{tabular}
+}
+}\\
+
+Because the $x$- and $y$-values of a graph are determined independently, the graphs of parametric functions often possess features not seen on ``$y=f(x)$'' type graphs. The next example demonstrates how such graphs can arrive at the same point more than once.\\
+
+\example{ex_pareq4}{\textbf{Graphs that cross themselves}\\ Plot the parametric functions $x=t^3-5t^2+3t+11$ and $y=t^2-2t+3$ and determine the $t$-values where the graph crosses itself.}
+{Using the methods developed in this section, we again plot points and graph the parametric equations as shown in Figure \ref{fig:pareq4}. It appears that the graph crosses itself at the point $(2,6)$, but we'll need to analytically determine this.
+\mfigure{.4}{A graph of the parametric equations from Example \ref{ex_pareq4}.}{fig:pareq4}{figures/figpareq4}
+
+We are looking for two different values, say, $s$ and $t$, where $x(s) = x(t)$ and $y(s) = y(t)$. That is, the $x$-values are the same precisely when the $y$-values are the same. This gives us a system of 2 equations with 2 unknowns:
+
+$$\begin{array}{c} s^3-5s^2+3s+11 = t^3-5t^2+3t+11\rule[-7pt]{0pt}{10pt}\\
+								s^2-2s+3 = t^2-2t+3
+	\end{array}$$
+
+Solving this system is not trivial but involves only algebra. Using the quadratic formula, one can solve for $t$ in the second equation and find that $\ds t = 1\pm \sqrt{s^2-2s+1}$. This can be substituted into the first equation, revealing that the graph crosses itself at $t=-1$ and $t=3$. We confirm our result by computing $x(-1) = x(3)=2$ and $y(-1) = y(3) = 6$. 
+}\\
+
+\noindent\textbf{\large Converting between rectangular and parametric equations}
+\vskip \baselineskip
+
+It is sometimes useful to rewrite equations in rectangular form (i.e., $y=f(x)$) into parametric form, and vice--versa. Converting from rectangular to parametric can be very simple: given $y=f(x)$, the parametric equations $x=t$, $y=f(t)$ produce the same graph. As an example, given $y=x^2$, the parametric equations $x=t$, $y=t^2$ produce the familiar parabola. However, other parametrizations can be used. The following example demonstrates one possible alternative.\\
+
+\example{ex_pareq5}{\textbf{Converting from rectangular to parametric}\\
+Consider $y=x^2$. Find parametric equations $x=f(t)$, $y=g(t)$ for the parabola where $t=\frac{dy}{dx}$. That is, $t=a$ corresponds to the point on the graph whose tangent line has slope $a$.}
+{We start by computing $\frac{dy}{dx}$: $y' = 2x$. Thus we set $t=2x$. We can solve for $x$ and find $x= t/2$. Knowing that $y=x^2$, we have $y= t^2/4$. Thus parametric equations for the parabola $y=x^2$ are $$x=t/2 \quad y=t^2/4.$$
+To find the point where the tangent line has a slope of $-2$, we set $t=-2$. This gives the point $(-1, 1)$. We can verify that the slope of the line tangent to the curve at this point indeed has a slope of $-2$.
+}\\
+
+We sometimes chose the parameter to accurately model physical behavior.\\
+
+\example{ex_pareq6}{\textbf{Converting from rectangular to parametric}\\
+An object is fired from a height of 0ft and lands 6 seconds later, 192ft away. Assuming ideal projectile motion, the height, in feet, of the object can be described by $h(x) = -x^2/64+3x$, where $x$ is the distance in feet from the initial location. (Thus $h(0) = h(192) = 0$ft.) Find parametric equations $x=f(t)$, $y=g(t)$ for the path of the projectile where $x$ is the horizontal distance the object has traveled at time $t$ (in seconds) and $y$ is the height at time $t$.
+}
+{Physics tells us that the horizontal motion of the projectile is linear; that is, the horizontal speed of the projectile is constant. Since the object travels 192ft in 6s, we deduce that the object is moving horizontally at a rate of 32ft/s, giving the equation $x=32t$. As $y=-x^2/64+3x$, we find $y= -16t^2+96t$. We can quickly verify that $y''=-32$ft/s$^2$, the acceleration due to gravity, and that the projectile reaches its maximum at $t=3$, halfway along its path.
+
+These parametric equations make certain determinations about the object's location easy: 2 seconds into the flight the object is at the point $\big(x(2),y(2)\big) = \big(64,128\big)$. That is, it has traveled horizontally 64ft and is at a height of 128ft, as shown in Figure \ref{fig:pareq6}.
+\mfigure{.8}{Graphing projectile motion in Example \ref{ex_pareq6}.}{fig:pareq6}{figures/figpareq6}
+}\\
+
+It is also sometime necessary to convert given parametric equations into rectangular form. This can be decidedly more difficult, as some ``simple'' looking parametric equations can have very ``complicated'' rectangular equations. This conversion is often referred to as ``eliminating the parameter,'' as we are looking for a relationship between $x$ and $y$ that does not involve the parameter $t$.\\
+
+\example{ex_pareq7}{\textbf{Eliminating the parameter}\\
+Find a rectangular equation for the curve described by $$ x= \frac{1}{t^2+1}\quad \text{and}\quad y=\frac{t^2}{t^2+1}.$$ }
+{There is not a set way to eliminate a parameter. One method is to solve for $t$ in one equation and then substitute that value in the second. We use that technique here, then show a second, simpler method.
+
+Starting with $x= 1/(t^2+1)$, solve for $t$: $ t = \pm\sqrt{1/x-1}$. Substitute this value for $t$ in the equation for $y$:
+\begin{align*}
+ y &= \frac{t^2}{t^2 +1} \\
+		&= \frac{1/x-1}{1/x-1+1} \\
+		&= \frac{1/x - 1}{1/x} \\
+		&= \left(\frac1x-1\right)\cdot x \\
+		&= 1-x.
+\end{align*}
+
+\mfigure{.45}{Graphing parametric and rectangular equations for a graph in Example \ref{ex_pareq7}.}{fig:pareq7}{figures/figpareq7}
+Thus $y=1-x$. One may have recognized this earlier by manipulating the equation for $y$:
+$$y = \frac{t^2}{t^2+1} = 1-\frac{1}{t^2+1} = 1-x.$$ This is a shortcut that is very specific to this problem; sometimes shortcuts exist and are worth looking for.
+
+We should be careful to limit the domain of the function $y=1-x$. The parametric equations limit $x$ to values in $(0,1]$, thus to produce the same graph we should limit the domain of $y=1-x$ to the same. 
+
+The graphs of these functions is given in Figure \ref{fig:pareq7}. The portion of the graph defined by the parametric equations is given in a thick line; the graph defined by $y=1-x$ with unrestricted domain is given in a thin line.
+}\\
+
+\example{ex_pareq8}{\textbf{Eliminating the parameter}\\
+Eliminate the parameter in $x=4\cos t+3$, $y= 2\sin t+1$}
+{We should not try to solve for $t$ in this situation as the resulting algebra/trig would be messy. Rather, we solve for $\cos t$ and $\sin t$ in each equation, respectively. This gives $$\cos t = \frac{x-3}{4} \quad \text{and}\quad \sin t=\frac{y-1}{2}.$$
+The Pythagorean Theorem gives $\cos^2t+\sin^2t=1$, so:
+\begin{align*}
+\cos^2t+\sin^2t &=1 \\
+\left(\frac{x-3}{4}\right)^2 +\left(\frac{y-1}{2}\right)^2 &=1\\
+\frac{(x-3)^2}{16}+\frac{(y-1)^2}{4} &=1
+\end{align*}
+\mfigure{.6}{Graphing the parametric equations $x=4\cos t+3$, $y=2\sin t+1$ in Example \ref{ex_pareq8}.}{fig:pareq8}{figures/figpareq8} 
+This final equation should look familiar -- it is the equation of an ellipse! Figure \ref{fig:pareq8} plots the parametric equations, demonstrating that the graph is indeed of an ellipse with a horizontal major axis with center at $(3,1)$. 
+}\\
+
+The Pythagorean Theorem can also be used to identify parametric equations for hyperbolas. We give the parametric equations for ellipses and hyperbolas in the following Key Ideas.
+
+\keyidea{idea:par_ellipse}{Parametric Equations for Ellipses}
+{The parametric equations 
+$$ x=a\cos t+h, \quad y=b\sin t+k$$ define an ellipse with horizontal axis of length $2a$ and vertical axis of length $2b$, centered at $(h,k)$.\\
+}
+
+\keyidea{idea:par_hyperbola}{Parametric Equations for Hyperbolas}
+{The parametric equations
+$$ x= a\tan t+h,\quad y=\pm b\sec t+k$$ define a hyperbola with vertical transverse axis centered at $(h,k)$, and 
+$$ x=\pm a\sec t+h, \quad y=b\tan t + k$$ defines a hyperbola with horizontal transverse axis. Each has asymptotes at $y=\pm b/a(x-h)+k$.
+}
+%%%%% End with this??
+%%%%%
+
+\noindent\textbf{\large Special Curves}
+\vskip\baselineskip
+
+Figure \ref{fig:pareq_special} gives a small  gallery of ``interesting'' and ``famous'' curves along with parametric equations that produce them. Interested readers can begin learning more about these curves through internet searches.
+
+One might note a feature shared by two of these graphs: ``sharp corners,'' or \textbf{cusps}. We have seen graphs with cusps before and determined that such functions are not differentiable at these points. This leads us to a definition.
+
+\definition{def:smooth}{Smooth}
+{A curve $C$ defined by $x=f(t)$, $y=g(t)$ is \textbf{smooth} on an interval $I$ if $\fp$ and $g'$ are continuous on $I$ and not simultaneously 0 (except possibly at the endpoints of $I$). A curve is \textbf{piecewise smooth} on $I$ if $I$ can be partitioned into subintervals where $C$ is smooth on each subinterval.
+}
+
+Consider the astroid, given by $x=\cos^3t$, $y=\sin^3t$. Taking derivatives, we have:
+$$x' = -3\cos^2t\sin t\quad \text{and}\quad y' = 3\sin^2t\cos t.$$
+It is clear that each is 0 when $t=0,\ \pi/2,\ \pi,\ldots$. Thus the astroid is not smooth at these points, corresponding to the cusps seen in the figure.
+
+%\noindent
+%\begin{figure}%{\linewidth}
+%\centering
+%\begin{tabular}{cc}
+\mtable{.5}{A gallery of interesting planar curves.}{fig:pareq_special}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figplanecurve1} \\
+\parbox{150pt}{\centering Astroid\\ $x=\cos^3 t$\\ $y=\sin^3t$}\\ \\
+ \myincludegraphics{figures/figplanecurve2} \\
+ \parbox{150pt}{\centering Rose Curve\\ $x=\cos(t)\sin(4t)$\\ $y=\sin(t)\sin(4t)$}\\ \\
+\myincludegraphics{figures/figplanecurve3} \\
+\parbox{150pt}{\centering Hypotrochoid\\ $x=2\cos(t)+5\cos(2t/3)$\\$y=2\sin(t)-5\sin(2t/3)$} \\ \\
+ \myincludegraphics{figures/figplanecurve4} \\
+ \parbox{150pt}{\centering Epicycloid\\ $x=4\cos(t)-\cos(4t)$\\$y=4\sin(t)-\sin(4t)$}
+\end{tabular}
+}
+%\caption{A gallery of interesting planar curves.}\label{fig:pareq_special}
+%\end{figure}
+
+We demonstrate this once more.\\
+
+\example{ex_pareq9}{\textbf{Determine where a curve is not smooth}\\
+Let a curve $C$ be defined by the parametric equations $x=t^3-12t+17$ and $y=t^2-4t+8$. Determine the points, if any, where it is not smooth.}
+{We begin by taking derivatives. 
+$$x' = 3t^2-12,\quad y' = 2t-4.$$
+We set each equal to 0:
+$$\begin{array}{l}x' = 0 \Rightarrow 3t^2-12=0 \Rightarrow t=\pm 2\\
+  y'=0 \Rightarrow 2t-4 = 0 \Rightarrow t=2
+	\end{array}
+	$$
+We see at $t=2$ both $x'$ and $y'$ are 0; thus $C$ is not smooth at $t=2$, corresponding to the point $(1,4)$. The curve is graphed in Figure \ref{fig:pareq9}, illustrating the cusp at $(1,4)$.
+\mfigure{.8}{Graphing the curve in Example \ref{ex_pareq9}; note it is not smooth at $(1,4)$.}{fig:pareq9}{figures/figpareq9}
+}\\
+
+If a curve is not smooth at $t=t_0$, it means that $x'(t_0)=y'(t_0)=0$ as defined. This, in turn, means that rate of change of $x$ (and $y$) is 0; that is, at that instant, neither $x$ nor $y$ is changing. If the parametric equations describe the path of some object, this means the object is at rest at $t_0$. An object at rest can make a ``sharp'' change in direction, whereas moving objects tend to change direction in a ``smooth'' fashion.
+
+One should be careful to note that a ``sharp corner'' does not have to occur when a curve is not smooth. For instance, one can verify that $x=t^3$, $y=t^6$ produce the familiar $y=x^2$ parabola. However, in this parametrization, the curve is not smooth. A particle traveling along the parabola according to the given parametric equations comes to rest at $t=0$, though no sharp point is created.
+
+
+
+\printexercises{exercises/09_02_exercises}

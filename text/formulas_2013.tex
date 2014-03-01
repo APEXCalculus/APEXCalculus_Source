@@ -1,0 +1,131 @@
+\documentclass{article}[11pt]
+\usepackage[lmargin=1in,rmargin=1in]{geometry} 
+%\usepackage[margin=.25in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % This clears all previous header info
+\fancyfoot{} % Clears all footer info
+\fancyhead[C]{\textbf{\large{Additional Formulas}}}
+\renewcommand{\headrulewidth}{0pt} 
+
+
+
+
+
+
+
+\begin{document}
+\large
+
+
+\subsubsection*{\large{Summation Formulas:}}
+\vspace{-0.25in}
+\begin{eqnarray*}
+\sum^n_{i=1}{c} &=& cn\\
+\sum^n_{i=1}{i} &=& \frac{n(n+1)}{2}\\
+\sum^n_{i=1}{i^2} &=& \frac{n(n+1)(2n+1)}{6}\\
+\sum^n_{i=1}{i^3} &=& \frac{n^2(n+1)^2}{4}\\
+\end{eqnarray*}
+\vspace{0.15in}
+
+\subsubsection*{\large{Trapezoidal Rule (Area):}}
+\vspace{-0.05in}
+\begin{eqnarray*}
+\int_a^b{f(x)}dx & \approx & \frac{(b-a)}{2n}[f(x_0)+2f(x_1) + 2f(x_2) + ... + 2f(x_{n-1}) + f(x_n)] 
+\end{eqnarray*}
+\begin{center}
+with 
+\vspace{-0.05in}
+\end{center}
+\begin{eqnarray*}
+\textrm{Max Error} \leq \frac{(b-a)^3}{12n^2}[ max \Big| f''(x) \Big| ]
+\end{eqnarray*}
+\vspace{0.15in}
+
+\subsubsection*{\large{Simpson's Rule (Area):}}
+\begin{eqnarray*}
+\vspace{-0.05in}
+\int_a^b{f(x)}dx & \approx & \frac{(b-a)}{3n}[f(x_0)+4f(x_1) + 2f(x_2) + ... + 4f(x_{n-1}) + f(x_n)] 
+\end{eqnarray*}
+\begin{center}
+with 
+\vspace{-0.05in}
+\end{center}
+\begin{eqnarray*}
+\textrm{Max Error} \leq \frac{(b-a)^5}{180n^4}[ max \Big| f^{(4)}(x) \Big| ]
+\end{eqnarray*}
+
+\pagebreak
+
+\subsubsection*{\large{Arc Length:}}
+\vspace{-0.25in}
+\begin{eqnarray*}
+s &=& \int_a^b{\sqrt{1+ (f'(x))^2}}\phantom{a}dx  
+\end{eqnarray*}
+\begin{eqnarray*}
+s &=& \int_c^d{\sqrt{1+ (g'(y))^2}}\phantom{a}dy 
+\end{eqnarray*}
+\vspace{0.1in}
+
+\subsubsection*{\large{Surface of Revolution:}}
+\vspace{-0.25in}
+\begin{eqnarray*}
+S &=& 2\pi \int_a^b{r(x) \sqrt{1+ (f'(x))^2}}\phantom{a}dx  
+\end{eqnarray*}
+\begin{eqnarray*}
+S &=& 2\pi \int_c^d{r(y) \sqrt{1+ (g'(y))^2}}\phantom{a}dy 
+\end{eqnarray*}
+\vspace{0.1in}
+
+\subsubsection*{\large{Work Done by a Variable Force:}}
+\begin{eqnarray*}
+\vspace{-0.25in}
+W &=& \int_a^b{F(x)}\phantom{a}dx  
+\end{eqnarray*}
+\vspace{0.1in}
+
+\subsubsection*{\large{Force Exerted by a Fluid:}}
+\begin{eqnarray*}
+\vspace{-0.25in}
+F &=& w \int_c^d{h(y) L(y)}\phantom{a}dy  
+\end{eqnarray*}
+\vspace{0.15in}
+
+\subsubsection*{\large{Taylor Series Expansion for $f(x)$:}}
+\begin{eqnarray*}
+\vspace{-0.05in}
+p_n(x) &=& f(c) + \frac{f^{(1)}(c)(x-c)}{1!} + \frac{f^{(2)}(c)(x-c)^2}{2!} + ... + \frac{f^{(n)}(c)(x-c)^n}{n!} + ... 
+\end{eqnarray*}
+\vspace{0.15in}
+
+
+
+\subsubsection*{\large{Maclaurin Series Expansion for $f(x)$, where $c=0$:}}
+\begin{eqnarray*}
+\vspace{-0.05in}
+p_n(x) &=& f(0) + \frac{f^{(1)}(0)x}{1!} + \frac{f^{(2)}(0)x^2}{2!} + ... + \frac{f^{(n)}(0)x^n}{n!} + ... 
+\end{eqnarray*}
+
+\pagebreak
+
+\subsubsection*{\large{Summary of Tests for Series:}}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|p{1in}|p{1in}|p{2in}|}
+\hline
+Test & Series & Condition(s) of Convergence & Condition(s) of Divergence & Comment \\ \hline
+$n$th-Term & $\displaystyle{\sum^\infty_{n=1}{a_n}}$ &  & $\displaystyle{\lim_{n \to \infty} a_n \neq 0}$ & This test cannot be used to show convergence\\ \hline
+
+Geometric Series & $\displaystyle{\sum^\infty_{n=0}{a r^n}}$ & $ \left| r \right| < 1$ & $\left| r \right| \geq 1$ & Sums: $\displaystyle{S = \frac{a}{1-r}}$ \\ \hline
+
+Telescoping Series & $\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+1})}}$ & $\displaystyle{\lim_{n \to \infty} b_n = L}$ & & Sums: $S= b_1 -L$ \\ \hline
+
+$p$-Series & $\displaystyle{\sum^\infty_{n=1}{\frac{1}{n^p}}}$ & $p>1$ & $p\leq 1$ & \\ \hline
+
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\end{document}

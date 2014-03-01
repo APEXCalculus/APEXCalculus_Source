@@ -1,0 +1,15 @@
+Planets: Orbital Properties
+
+Planet	distance	revolution	eccentricity	inclination
+
+				(A.U.)															(deg)
+Mercury	0.387		87.969 d	0.2056	7.005
+Venus		0.723		224.701 d	0.0068	3.3947
+Earth		1.000		365.256 d	0.0167	0.0000
+Mars		1.524		686.98 d	0.0934	1.851
+Jupiter	5.203		11.862 y	0.0484	1.305
+Saturn	9.537		29.457 y	0.0542	2.484
+Uranus	19.191	84.011 y	0.0472	0.770
+Neptune	30.069	164.79 y	0.0086	1.769
+Pluto		39.482	247.68 y	0.2488	17.142
+

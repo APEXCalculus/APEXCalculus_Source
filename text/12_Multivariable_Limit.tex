@@ -1,0 +1,259 @@
+\section{Limits and Continuity of Multivariable Functions}\label{sec:multi_limit}
+
+We continue with the pattern we have established in this text: after defining a new kind of function, we apply calculus ideas to it. The previous section defined functions of two and three variables; this section investigates what it means for these functions to be ``continuous.''
+
+We begin with a series of definitions. We are used to ``open intervals'' such as $(1,3)$, which represents the set of all $x$ such that $1<x<3$,  and ``closed intervals'' such as $[1,3]$, which represents the set of all $x$ such that $1\leq x\leq 3$. We need analogous definitions for open and closed sets in the $x$-$y$ plane.
+
+\definition{def:open}{Open Disk, Boundary and Interior Points, Open and Closed Sets, Bounded Sets}
+{An \textbf{open disk} $B$ in $\mathbb{R}^2$ centered at $(x_0,y_0)$ with radius $r$ is the set of all points $(x,y)$ such that $\ds\sqrt{(x-x_0)^2+(y-y_0)^2} < r$. \\
+
+Let $S$ be a set of points in $\mathbb{R}^2$. A point $P$ in $\mathbb{R}^2$ is a \textbf{boundary point} of $S$  if all open disks centered at $P$ contain both points in $S$ and points not in $S$.\\
+
+A point $P$ in $S$ is an \textbf{interior point} of $S$ if there is an open disk centered at $P$ that contains only points in $S$. \\
+
+A set $S$ is \textbf{open} if every point in $S$ is an interior point.\\
+
+A set $S$ is \textbf{closed} if it contains all of its boundary points.\\
+
+A set $S$ is \textbf{bounded} if there is $M>0$ such that the open disk, centered at the origin, with radius $M$ contains $S$. A set that is not bounded is \textbf{unbounded}.
+}
+
+Figure \ref{fig:multilimit_intro} shows several sets in the $x$-$y$ plane. In each set, point $P_1$ lies on the boundary of the set as all open disks centered there contain both points in, and not in, the set. In contrast, point $P_2$ is an interior point for there is an open disk centered there that lies entirely within the set.
+\mtable{.6}{Illustrating open and closed sets in the $x$-$y$ plane.}{fig:multilimit_intro}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figmultilimit_introa}\\
+(a)\\[10pt]
+\myincludegraphics{figures/figmultilimit_introb}\\
+(b)\\[10pt]
+\myincludegraphics{figures/figmultilimit_introc}\\
+(c)\\[10pt]
+\end{tabular}
+}
+
+The set depicted in Figure \ref{fig:multilimit_intro}(a) is a closed set as it contains all of its boundary points. The set in (b) is open, for all of its points are interior points (or, equivalently, it does not contain any of its boundary points). The set in (c) is neither open nor closed as it contains just some of its boundary points.\\
+
+\example{ex_multilimit1}{\textbf{Determining open/closed, bounded/unbounded}\\
+Determine if the domain of the function $f(x,y)=\sqrt{1-\frac{x^2}9-\frac{y^2}4}$ is open, closed, or neither, and if it is bounded.}
+{This domain of this function was found in Example \ref{ex_multi2} to be $D = \{(x,y)\ |\ \frac{x^2}9+\frac{y^2}4\leq 1\}$, the region \textit{bounded} by the ellipse $\frac{x^2}9+\frac{y^2}4=1$. Since the region includes the boundary (indicated by the use of ``$\leq$''), the set contains all of its boundary points and hence is closed. The region is bounded as a disk of radius 4, centered at the origin, contains $D$.
+}\\
+
+\example{ex_multilimit2}{\textbf{Determining open/closed, bounded/unbounded}\\
+Determine if the domain of $f(x,y) = \frac1{x-y}$ is open, closed, or neither.}
+{As we cannot divide by 0, we find the domain to be $D = \{(x,y)\ |\ x-y\neq 0\}$. In other words, the domain is the set of all points $(x,y)$ \emph{not} on the line $y=x$. 
+
+\mfigure{.75}{Sketching the domain of the function in Example \ref{ex_multilimit2}.}{fig:multilimit2}{figures/figmultilimit2}
+The domain is sketched in Figure \ref{fig:multilimit2}. Note how we can draw an open disk around any point in the domain that lies entirely inside the domain, and also note how the only boundary points of the domain are the points on the line $y=x$. We conclude the domain is an open set. The set is unbounded.
+}\\
+
+\noindent\textbf{\large Limits}\\
+
+Recall a pseudo--definition of the limit of a function of one variable: ``$\ds \lim_{x\to c}f(x) = L$'' means that if $x$ is ``really close'' to $c$, then $f(x)$ is ``really close'' to $L$. A similar pseudo--definition holds for functions of two variables. We'll say that 
+
+\begin{center}
+``$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L$'' \end{center}
+means ``if the point $(x,y)$ is really close to the point $(x_0,y_0)$, then $f(x,y)$ is really close to $L$.'' The formal definition is given below.
+
+\definition{def:multilimit}{Limit of a Function of Two Variables}
+{Let $f(x,y)$ be a function of two variables and let $(x_0,y_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y)$ as $(x,y)$ approaches $(x_0,y_0)$ is $L$, denoted $$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L,$$
+if, for every $\epsilon>0$ there is a $\delta>0$ such that if $(x,y)$ is in the open disk centered at $(x_0,y_0)$ with radius $\delta$, then $|f(x,y) - L|<\epsilon.$
+}
+
+\mfigure[scale=1.25]{.35}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
+
+The concept behind Definition \ref{def:multilimit} is sketched in Figure \ref{fig:multilimitdef}. Given $\epsilon>0$, find $\delta>0$ such that if $(x,y)$ is any point in the open disk centered at $(x_0,y_0)$ in the $x$-$y$ plane with radius $\delta$, then $f(x,y)$ should be within $\epsilon$ of $L$. 
+
+Computing limits using this definition is rather cumbersome. The following theorem allows us to evaluate limits much more easily.
+
+\setboxwidth{0pt}
+\theorem{thm:multi_limit_algebra}{Basic Limit Properties of Functions of Two Variables}{%\small
+Let $b$, $x_0$, $y_0$, $L$ and $K$ be real numbers,  let $n$ be a positive integer, and let $f$ and $g$ be functions with the following limits:
+$$\lim_{(x,y)\to (x_0,y_0)}f(x,y) = L \quad \text{\ and\ } \lim_{(x,y)\to (x_0,y_0)} g(x,y) = K.$$
+The following limits hold.
+\begin{enumerate}
+\item \parbox{80pt}{Constants:} $\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b$
+\item	\parbox{80pt}{Identity }	$\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0$;\qquad $\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0$
+\item	\parbox{80pt}{Sums/Differences:} $\displaystyle \lim_{(x,y)\to (x_0,y_0)}\big(f(x,y)\pm g(x,y)\big) = L\pm K$
+\item	\parbox{80pt}{Scalar Multiples:}	$\displaystyle \lim_{(x,y)\to (x_0,y_0)} b\cdot f(x,y) = bL$
+\item	\parbox{80pt}{Products:}	$\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)\cdot g(x,y) = LK$
+\item	\parbox{80pt}{Quotients:} $\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)/g(x,y) = L/K$, ($K\neq 0)$
+\item	\parbox{80pt}{Powers:} 	$\displaystyle \lim_{(x,y)\to (x_0,y_0)} f(x,y)^n = L^n$
+%\item	\parbox{80pt}{Roots:}		\parbox[t]{185pt}{$\displaystyle \lim_{(x,y)\to (x_0,y_0)} \sqrt[n]{f(x,y)} = \sqrt[n]{L}$}% \qquad \small (if $n$ is even then $L$ must be greater than 0; when $n$ is odd, it is true for all $L$.)}
+
+\end{enumerate}
+}
+\restoreboxwidth
+
+This theorem, combined with Theorems \ref{thm:poly_rat} and \ref{thm:lim_continuous} of Section \ref{sec:limit_analytically}, allows us to evaluate many limits.\\
+
+\example{ex_multilimit3}{\textbf{Evaluating a limit}\\
+Evaluate the following limits:
+$$1. \lim_{(x,y)\to (1,\pi)} \frac yx + \cos(xy) \qquad\qquad 2. \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}$$
+}
+{\begin{enumerate}
+	\item The aforementioned theorems allow us to simply evaluate $y/x+\cos(xy)$ when $x=1$ and $y=\pi$. If an indeterminate form is returned, we must do more work to evaluate the limit; otherwise, the result is the limit. Therefore
+	\begin{align*}
+	\lim_{(x,y)\to (1,\pi)} \frac yx + \cos(xy)  &= \frac\pi{1}+\cos \pi \\
+		&= \pi -1.
+	\end{align*}
+	\item		We attempt to evaluate the limit by substituting 0 in for $x$ and $y$, but the result is the indeterminate form ``$0/0$.'' To evaluate this limit, we must ``do more work,'' but we have not yet learned what ``kind'' of work to do. Therefore we cannot yet evaluate this limit.
+\end{enumerate}
+\vskip -1.5\baselineskip
+}\\
+
+When dealing with functions of a single variable we also considered one--sided limits and stated
+$$\lim_{x\to c}f(x) = L \quad\text{ if, and only if,}\quad \lim_{x\to c^+}f(x) =L \quad\textbf{ and}\quad \lim_{x\to c^-}f(x) =L.$$
+That is, the limit is $L$ if and only if $f(x)$ approaches $L$ when $x$ approaches $c$ from \textbf{either} direction, the left or the right.
+
+In the plane, there are infinite directions from which $(x,y)$ might approach $(x_0,y_0)$. In fact, we do not have to restrict ourselves to approaching $(x_0,y_0)$ from a particular direction, but rather we can approach that point along a path that is not a straight line. It is possible to arrive at different limiting values by approaching $(x_0,y_0)$ along different paths. If this happens, we say that $\ds \lim_{(x,y)\to(x_0,y_0) } f(x,y)$ does not exist (this is analogous to the left and right hand limits of single variable functions not being equal).
+
+Our theorems tell us that we can evaluate most limits quite simply, without worrying about  paths. When indeterminate forms arise, the limit may or may not exist. If it does exist, it can be difficult to prove this as we need to show the same limiting value is obtained regardless of the path chosen. The case where the limit does not exist is often easier to deal with, for we can often pick two paths along which the limit is different.\\
+
+%it can be difficult to show that the limit exists, for we need to show that the same limiting value is obtained regardless of the path taken.  we can often evaluate the limit along specific paths. If any of these limits differ, we say that \emph{the} limit does not exist.\\
+
+\example{ex_multilimit4}{\textbf{Showing limits do not exist}\\
+\begin{enumerate}
+	\item Show $\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}$ does not exist by finding the limits along the lines $y=mx$.
+	\item	Show $\ds \lim_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}$ does not exist by finding the limit along the path $y=-\sin x$. 	
+\end{enumerate}
+}
+{\begin{enumerate}
+	\item Evaluating $\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}$ along the lines $y=mx$ means replace all $y$'s with $mx$ and evaluating the resulting limit:
+	\begin{align*}
+	\lim_{(x,mx)\to (0,0)} \frac{3x(mx)}{x^2+(mx)^2} &=\lim_{x\to 0} \frac{3mx^2}{x^2(m^2+1)}\\
+				&= \lim_{x\to 0} \frac{3m}{m^2+1}\\
+				&= \frac{3m}{m^2+1}.
+	\end{align*}
+	While the limit exists for each choice of $m$, we get a \emph{different} limit for each choice of $m$. That is, along different lines we get differing limiting values, meaning \emph{the} limit does not exist.
+	
+	\item		Let $f(x,y) = \frac{\sin(xy)}{x+y}$. We are to show that $\ds \lim_{(x,y)\to (0,0)} f(x,y)$ does not exist by finding the limit along the path $y=-\sin x$. First, however, consider the limits found along the lines $y=mx$ as done above.
+	\begin{align*}
+	\lim_{(x,mx)\to (0,0)} \frac{\sin\big(x(mx)\big)}{x+mx} &= \lim_{x\to 0} \frac{\sin (mx^2)}{x(m+1)} \\
+	&= \lim_{x\to 0} \frac{\sin(mx^2)}{x}\cdot\frac1{m+1}.
+	\end{align*}
+	By applying L'H\^opital's Rule, we can show this limit is 0 \emph{except} when $m=-1$, that is, along the line $y=-x$. This line is not in the domain of $f$, so we have found the following fact: along every line $y=mx$ in the domain of $f$, $\ds \lim_{(x,y)\to(0,0)} f(x,y)=0$. %Along this line, $f(x,y)$ is not defined, so it stands to reason that a limit along this line does not exist.
+\drawexampleline
+	
+	Now consider the limit along the path $y=-\sin x$:
+	\begin{align*}
+	\lim_{(x,-\sin x)\to (0,0)} \frac{\sin\big(-x\sin x\big)}{x-\sin x} &= \lim_{x\to0} \frac{\sin\big(-x\sin x\big)}{x-\sin x}
+	\end{align*}
+	Now apply L'H\^opital's Rule twice:
+	\small
+	\begin{align*}
+	 \quad &= \lim_{x\to 0}\frac{\cos\big(-x\sin x\big)(-\sin x-x\cos x)}{1-\cos x} \quad \left(\text{``}= 0/0\text{''}\right)\\
+	&= \lim_{x\to 0}\frac{-\sin\big(-x\sin x\big)(-\sin x-x\cos x)^2+\cos\big(-x\sin x\big)(-2\cos x+x\sin x)}{\sin x}\\
+	&= \text{``2/0''} \Rightarrow \text{the limit does not exist.}
+	\end{align*}
+	\normalsize
+Step back and consider what we have just discovered. Along any line $y=mx$ in the domain of the $f(x,y)$, the limit is 0. However, along the path $y=-\sin x$, which lies in the domain of the $f(x,y)$ for all $x\neq 0$, the limit does not exist. Since the limit is not the same along every path to $(0,0)$, we say $\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}$ does not exist.
+\end{enumerate}
+\vskip -1.5\baselineskip
+}\\
+
+\example{ex_multilimit5}{\textbf{Finding a limit}\\
+Let $\ds f(x,y) = \frac{5x^2y^2}{x^2+y^2}$. Find $\ds\lim_{(x,y)\to (0,0)}  f(x,y) .$
+}
+{It is relatively easy to show that along any line $y=mx$, the limit is 0. This is not enough to prove that the limit exists, as demonstrated in the previous example, but it tells us that if the limit does exist then it must be 0.
+
+To prove the limit is 0, we apply Definition \ref{def:multilimit}. Let $\epsilon >0$ be given. We want to find $\delta >0$ such that if $\sqrt{(x-0)^2+(y-0)^2} <\delta$, then $|f(x,y)-0| <\epsilon$.
+
+Set $\delta < \sqrt{\epsilon/5}$. Note that $\ds \left|\frac{5y^2}{x^2+y^2}\right| <5$ for all $(x,y)\neq (0,0)$, and that if $\sqrt{x^2+y^2} <\delta$, then $x^2<\delta^2$.
+
+Let $\sqrt{(x-0)^2+(y-0)^2}<\delta$. Consider $|f(x,y)-0|$:
+\begin{align*}
+|f(x,y)-0| &= \left|\frac{5x^2y^2}{x^2+y^2}-0\right| \\
+				&= \left|x^2\cdot\frac{5y^2}{x^2+y^2}\right|\\
+				&< \delta^2\cdot 5 \\
+				&< \frac{\epsilon}{5}\cdot 5 \\
+				&= \epsilon.
+\end{align*}
+Thus if $\sqrt{(x-0)^2+(y-0)^2}<\delta$ then $|f(x,y)-0|<\epsilon$, which is what we wanted to show. Thus $\ds \lim_{(x,y)\to(0,0)} \frac{5x^2y^2}{x^2+y^2} = 0$.
+}\\
+
+\noindent\textbf{\large Continuity}\\
+
+Definition \ref{def:continuous} defines what it means for a function of one variable to be continuous. In brief, it meant that the graph of the function did not have breaks, holes, jumps, etc. We define continuity for functions of two variables in a similar way.
+
+\definition{def:multi_continuous}{Continuous}
+{Let a function $f(x,y)$ be defined on an open disk $B$ containing the point $(x_0,y_0)$. 
+
+\begin{enumerate}
+	\item $f$ is \textbf{continuous} at $(x_0,y_0)$ if $\ds\lim_{(x,y)\to(x_0,y_0)} f(x,y) = f(x_0,y_0)$.
+	\item	$f$ is \textbf{continuous on $B$} if $f$ is continuous at all points in $B$. If $f$ is continuous at all points in $\mathbb{R}^2$, we say that $f$ is \textbf{continuous everywhere}.
+\end{enumerate}
+}
+
+\example{ex_multicont1}{\textbf{Continuity of a function of two variables}\\
+Let $\ds f(x,y) = \left\{ \begin{array}{rl} \frac{\cos y\sin x}{x} & x\neq 0 \\
+																						\cos y & x=0
+													\end{array} \right.$. Is $f$ continuous at $(0,0)$? Is $f$ continuous everywhere?
+}
+{To determine if $f$ is continuous at $(0,0)$, we need to compare $\ds\lim_{(x,y)\to (0,0)} f(x,y)$ to $f(0,0)$. 
+
+Applying the definition of $f$, we see that $f(0,0) = \cos 0 = 1$. 
+
+We now consider the limit $\ds \lim_{(x,y)\to (0,0)} f(x,y)$. Substituting $0$ for $x$ and $y$ in $(\cos y\sin x)/x$ returns the indeterminate form ``0/0'', so we need to do more work to evaluate this limit.
+
+Consider two related limits: $\ds \lim_{(x,y)\to (0,0)} \cos y$ and $\ds \lim_{(x,y)\to(0,0)} \frac{\sin x}x$. The first limit does not contain $x$, and since $\cos y$ is continuous, $$\ds \lim_{(x,y)\to (0,0)} \cos y =\lim_{y\to 0} \cos y = \cos 0 = 1.$$
+
+The second limit does not contain $y$. By Theorem \ref{thm:special_limits} we can say
+$$\lim_{(x,y)\to (0,0)} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\sin x}{x} = 1.$$
+Finally, Theorem \ref{thm:multi_limit_algebra} of this section states that we can combine these two limits as follows:
+\begin{align*}
+\lim_{(x,y)\to (0,0)} \frac{\cos y\sin x}{x} &= \lim_{(x,y)\to (0,0)} (\cos y)\left(\frac{\sin x}{x}\right) \\ 
+&=\left(\lim_{(x,y)\to (0,0)} \cos y\right)\left(\lim_{(x,y)\to (0,0)} \frac{\sin x}{x}\right) \\
+  &= (1)(1)\\
+	&=1.
+\end{align*}
+
+We have found that $\ds \lim_{(x,y)\to (0,0)} \frac{\cos y\sin x}{x} = f(0,0)$, so $f$ is continuous at $(0,0)$.
+
+A similar analysis shows that $f$ is continuous at all points in $\mathbb{R}^2$. As long as $x\neq0$, we can evaluate the limit directly; when $x=0$, a similar analysis shows that the limit is $\cos y$. Thus we can say that $f$ is continuous everywhere. A graph of $f$ is given in Figure \ref{fig:multicont1}. Notice how it has no breaks, jumps, etc.
+\mfigure[scale=1.25]{.8}{A graph of $f(x,y)$ in Example \ref{ex_multicont1}.}{fig:multicont1}
+{figures/figmulticont1}
+}\\
+
+The following theorem is very similar to Theorem \ref{thm:continuity_algebra}, giving us ways to combine continuous functions to create other continuous functions.
+
+\theorem{thm:multi_continuous_prop}{Properties of Continuous Functions}
+{Let $f$ and $g$ be continuous on an open disk $B$, let $c$ be a real number, and let $n$ be a positive integer. The following functions are continuous on $B$.
+		\begin{enumerate}
+		\item		\parbox{80pt}{Sums/Differences:}	$f\pm g$
+		\item		\parbox{80pt}{Constant Multiples:}	$c\cdot f$
+		\item		\parbox{80pt}{Products:}	$f\cdot g$
+		\item		\parbox{80pt}{Quotients:}	$f/g$ \qquad {\small (as longs as $g\neq 0$ on $I$)}
+		\item		\parbox{80pt}{Powers:}	$f\,^n$
+		\item		\parbox{80pt}{Roots:}	$\sqrt[n]{f}$ \qquad \parbox[t]{150pt}{\small (if $n$ is even then $f\geq 0$ on $I$; if $n$ is odd, then true for all values of $f$ on $I$.)}
+		\item		\parbox{80pt}{Compositions:}\parbox[t]{185pt}{Adjust the definitions of $f$ and $g$ to: Let $f$ be continuous on $B$, where the range of $f$ on $B$ is $J$, and let $g$ be a single variable function that is continuous on $J$. Then $g\circ f$, i.e., $g(f(x,y))$, is continuous on $B$.}
+		\end{enumerate}
+}
+\enlargethispage{\baselineskip}
+
+\example{ex_multicont2}{\textbf{Establishing continuity of a function}\\
+Let $f(x,y) = \sin (x^2\cos y)$. Show $f$ is continuous everywhere.}
+{We will apply both Theorems \ref{thm:continuity_algebra} and \ref{thm:multi_continuous_prop}. Let $f_1(x,y) = x^2$. Since $y$ is not actually used in the function, and polynomials are continuous (by Theorem \ref{thm:continuity_algebra}), we conclude $f_1$ is continuous everywhere. A similar statement can be made about $f_2(x,y) = \cos y$. Part 3 of Theorem \ref{thm:multi_continuous_prop} states that $f_3=f_1\cdot f_2$ is continuous everywhere, and Part 7 of the theorem states the composition of sine with $f_3$ is continuous: that is, $\sin (f_3) = \sin(x^2\cos y)$ is continuous everywhere.
+}\\
+
+\noindent\textbf{\large Functions of Three Variables}\\
+
+The definitions and theorems given in this section can be extended in a natural way to definitions and theorems about functions of three (or more) variables. We cover the key concepts here; some terms from Definitions \ref{def:open} and \ref{def:multi_continuous} are not redefined but their analogous meanings should be clear to the reader.
+
+\setboxwidth{20pt}
+\definition{def:multi3defs}{Open Balls, Limit, Continuous}
+{ 
+\begin{itemize}
+\item An \textbf{open ball} in $\mathbb{R}^3$ centered at $(x_0,y_0,z_0)$ with radius $r$ is the set of all points $(x,y,z)$ such that $\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2} = r$.\\
+
+\item Let $f(x,y,z)$ be a function of three variables and let $(x_0,y_0,z_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y,z)$ as $(x,y,z)$ approaches $(x_0,y_0,z_0)$ is $L$, denoted 
+$$\lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = L,$$
+if, for every $\epsilon >0$ there is a $\delta >0$ such that if $(x,y,z)$ is in the open ball centered at $(x_0,y_0,z_0)$ with radius $\delta$, then $|f(x,y,z) - L|< \epsilon$.\\
+
+\item Let $f(x,y,z)$ be defined on an open ball $B$ containing $(x_0,y_0,z_0)$. $f$ is \textbf{continuous} at $(x_0,y_0,z_0)$ if $\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)$.
+\end{itemize}
+}
+\restoreboxwidth
+
+These definitions can also be extended naturally to apply to functions of four or more variables. Theorem \ref{thm:multi_continuous_prop} also applies to function of three or more variables, allowing us to say that the function $$\ds f(x,y,z) = \frac{e^{x^2+y}\sqrt{y^2+z^2+3}}{\sin (xyz)+5}$$ is continuous everywhere.
+
+
+\printexercises{exercises/12_02_exercises}

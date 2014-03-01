@@ -1,0 +1,38 @@
+\documentclass[10pt]{book}
+%\usepackage[paperheight=11in,paperwidth=8.5in,%
+%						inner=1in,textheight=7in,textwidth=320pt,marginparwidth=150pt,%
+%						marginparsep=32pt,bottom=3in,footskip=1.5in]{geometry}
+\usepackage[paperheight=11in,paperwidth=8.5in,textwidth=320pt,inner=72pt,outer=72pt,%
+						textheight=10in,%textwidth=320pt,
+						marginparwidth=150pt,%
+						marginparsep=32pt%,%
+						%bottom=3in,footskip=1.5in
+						]{geometry}
+												
+\usepackage{ifthen}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Calibri}
+	\setmainfont[Mapping=tex-text]{Calibri}
+	\setsansfont[Mapping=tex-text]{Calibri}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+\pagestyle{empty}
+
+\newcommand{\myrule}{\rule[-10pt]{0pt}{15pt}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\myds}{\ds\myrule}
+\newcommand{\deriv}[2]{\ensuremath{\myds\frac{d}{dx}\left(#1\right)=#2}}
+\newcommand{\myint}[2]{\ensuremath{\myds\int #1\ dx=} \ensuremath{\ds #2}}
+
+\begin{document}
+
+\input{Inside_Cover_Of_The_Text_Material_Complete}
+
+\end{document}

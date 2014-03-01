@@ -1,0 +1,146 @@
+\section{The Multivariable Chain Rule}\label{sec:multi_chain}
+The Chain Rule, as learned in Section \ref{sec:chainrule}, states that $\ds \frac{d}{dx}\Big(f\big(g(x)\big)\Big) = \fp\big(g(x)\big)g'(x)$. If $t=g(x)$, we can express the Chain Rule as 
+$$\frac{df}{dx} = \frac{df}{dt}\frac{dt}{dx}.$$
+In this section we extend the Chain Rule to functions of more than one variable.
+
+\theorem{thm:multi_chain}{Multivariable Chain Rule, Part I}
+{Let $z=f(x,y)$, $x=g(t)$ and $y=h(t)$, where $f$, $g$ and $h$ are differentiable functions. Then $z = f(x,y) = f\big(g(t),h(t)\big)$ is a function of $t$, and 
+\begin{align*}
+\frac{dz}{dt} = \frac{df}{dt} &= f_x(x,y)\frac{dx}{dt}+f_y(x,y)\frac{dy}{dt}\\[5pt]
+		&= \frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.
+\end{align*}
+}
+
+It is good to understand what the situation of $z=f(x,y)$, $x=g(t)$ and $y=h(t)$ describes. We know that $z=f(x,y)$ describes a surface; we also recognize that $x=g(t)$ and $y=h(t)$ are parametric equations for a curve in the $x$-$y$ plane. Combining these together, we are describing a curve that lies on the surface described by $f$. The parametric equations for this curve are $x=g(t)$, $y=h(t)$ and $z=f\big(g(t),h(t)\big)$.
+
+Consider Figure \ref{fig:mchain_intro} in which a surface is drawn, along with a dashed curve in the $x$-$y$ plane. Restricting $f$ to just the points on this circle gives the curve shown on the surface.
+
+\mfigure[scale=1.25,trim=1mm 0mm 0mm 0mm,clip]{.5}{Understanding the application of the Multivariable Chain Rule.}{fig:mchain_intro}{figures/figmchain_intro} 
+
+We now practice applying the Multivariable Chain Rule.\\
+
+\example{ex_mchain1}{\textbf{Using the Multivariable Chain Rule}\\
+Let $z=x^2y+x$, where $x=\sin t$ and $y=e^{5t}$. Find $\ds \frac{dz}{dt}$ using the Chain Rule.}
+{Following Theorem \ref{thm:multi_chain}, we find
+$$f_x(x,y) = 2xy+1\qquad f_y(x,y) = x^2\qquad \frac{dx}{dt} = \cos t\qquad \frac{dy}{dt}= 5e^{5t}.$$
+Applying the theorem, we have
+$$\frac{dz}{dt} = (2xy+1)\cos t+ 5x^2e^{5t}.$$
+This may look odd, as it seems that $\frac{dz}{dt}$ is a function of $x$, $y$ and $t$. Since $x$ and $y$ are functions of $t$, $\frac{dz}{dt}$ is really just a function of $t$, and we can replace $x$ with $\sin t$ and $y$ with $e^{5t}$:
+$$\frac{dz}{dt} = (2xy+1)\cos t+ 5x^2e^{5t} = (2\sin (t)e^{5t}+1)\cos t+5e^{5t}\sin^2t.$$
+\vskip-1.5\baselineskip
+}\\
+
+The previous example can make us wonder: if we substituted for $x$ and $y$ at the end to show that $\frac{dz}{dt}$ is really just a function of $t$, why not substitute before differentiating, showing clearly that $z$ is a function of $t$?
+
+That is, $z = x^2y+x = (\sin t)^2e^{5t}+\sin t.$ Applying the Chain and Product Rules, we have 
+$$\frac{dz}{dt} = 2\sin t\cos t\, e^{5t}+ 5\sin^2t\,e^{5t}+\cos t,$$ which matches the result from the example.
+
+This may now make one wonder ``What's the point? If we could already find the derivative, why learn another way of finding it?'' In some cases, applying this rule makes deriving simpler, but this is hardly the power of the Chain Rule. Rather, in the case where $z=f(x,y)$, $x=g(t)$ and $y=h(t)$, the Chain Rule is extremely powerful when \textit{we do not know what $f$, $g$ and/or $h$ are}. It may be hard to believe, but often in ``the real world'' we know rate--of--change information (i.e., information about derivatives) without explicitly knowing the underlying functions. The Chain Rule allows us to combine several rates of change to find another rate of change. The Chain Rule also as theoretic use, giving us insight into the behavior of certain constructions (as we'll see in the next section).
+
+We apply the Chain Rule once more to solve a max/min problem.\\
+
+\example{ex_mchain2}{\textbf{Applying the Multivariable Chain Rule}\\
+Consider the surface $z=x^2+y^2-xy$, on which a particle moves with $x$ and $y$ coordinates given by $x=\cos t$ and $y=\sin t$. Find $\frac{dz}{dt}$ when $t=0$, and find where the particle reaches its maximum/minimum $z$-values.}
+{It is straightforward to compute
+$$f_x(x,y) = 2x-y\qquad f_y(x,y) = 2y-x\qquad \frac{dx}{dt} = -\sin t\qquad \frac{dy}{dt} = \cos t.$$
+Combining these according to the Chain Rule gives:
+$$\frac{dz}{dt} = -(2x-y)\sin t + (2y-x)\cos t.$$
+\mfigure{.5}{Plotting the path of a particle on a surface in Example \ref{ex_mchain2}.}{fig:mchain2}{figures/figmchain2}
+
+When $t=0$, $x=1$ and $y=0$. Thus $\ds\frac{dz}{dt} = -(2)(0)+ (-1)(1) = -1$. When $t=0$, the particle is moving down, as shown in Figure \ref{fig:mchain2}. 
+
+To find where $z$-value is maximized/minimized on the particle's path, we set $\frac{dz}{dt}=0$ and solve for $t$:
+\begin{align*}
+\frac{dz}{dt} =0 &= -(2x-y)\sin t + (2y-x)\cos t\\
+			0&= -(2\cos t-\sin t)\sin t+(2\sin t-\cos t)\cos t\\
+			0&= \sin^2t-\cos^2t\\
+\cos^2t &=\sin^2t\\
+	t&= n\frac{\pi}4\quad \text{(for odd $n$)}
+\end{align*}
+We can use the First Derivative Test to find that on $[0,2\pi]$, $z$ has reaches its absolute maximum at $t=\pi/4$ and $5\pi/4$; it reaches its absolute minimum at $t=3\pi/4$ and $7\pi/4$, as shown in Figure \ref{fig:mchain2}.
+}\\
+
+
+We can extend the Chain Rule to include the situation where $z$ is a function of more than one variable, and each of these variables is also a function of more than one variable. The basic case of this is where $z=f(x,y)$, and $x$ and $y$ are functions of two variables, say $s$ and $t$. \\
+
+\theorem{thm:multi_chain2}{Multivariable Chain Rule, Part II}
+{\begin{itemize}
+	\item Let $z=f(x,y)$, $x=g(s,t)$ and $y=h(s,t)$, where $f$, $g$ and $h$ are differentiable functions. Then $z$ is a function of $s$ and $t$, and
+		\begin{itemize}
+			\item $\ds \frac{\partial z}{\partial s} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial s}$\ , \quad and 
+			\item $\ds \frac{\partial z}{\partial t} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial t}.$
+		\end{itemize}
+		
+		\item		Let $z = f(x_1,x_2,\ldots,x_m)$ be a differentiable function of $m$ variables, where each of the $x_i$ is a differentiable function of the variables $t_1,t_2,\ldots,t_n$. Then $z$ is a function of the $t_i$, and 
+		$$\frac{\partial z}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + \frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + \cdots +  \frac{\partial f}{\partial x_m}\frac{\partial x_m}{\partial t_i}.$$
+\end{itemize}
+}
+
+\example{ex_mchain3}{\textbf{Using the Multivarible Chain Rule, Part II}\\
+Let $z=x^2y+x$, $x=s^2+3t$ and $y=2s-t$. Find $\frac{\partial z}{\partial s}$ and $\frac{\partial z}{\partial t}$, and evaluate each when $s=1$ and $t=2$.}
+{Following Theorem \ref{thm:multi_chain2}, we compute the following partial derivatives:
+$$\frac{\partial f}{\partial x} = 2xy+1\qquad\qquad \frac{\partial f}{\partial y} = x^2,$$
+$$\frac{\partial x}{\partial s} = 2s \qquad\qquad \frac{\partial x}{\partial t} = 3\qquad\qquad \frac{\partial y}{\partial s} = 2 \qquad\qquad \frac{\partial y}{\partial t} = -1.$$
+Thus 
+$$\ds \frac{\partial z}{\partial s} = (2xy+1)(2s) + (x^2)(2) = 4xys+2s + 2x^2,\quad \text{and}$$
+$$\ds \frac{\partial z}{\partial t} = (2xy+1)(3) + (x^2)(-1) = 6xy-x^2+3.$$
+When $s=1$ and $t=2$, $x= 7$ and $y= 0$, so 
+$$\frac{\partial z}{\partial s} = 100\qquad \text{and}\qquad \frac{\partial z}{\partial t} = -46.$$
+\vskip-1.5\baselineskip}\\
+
+\example{ex_mchain4}{\textbf{Using the Multivarible Chain Rule, Part II}\\
+Let $w = xy+z^2$, where $x= t^2e^s$, $y= t\cos s$, and $z=s\sin t$. Find $\frac{\partial w}{\partial t}$ when $s=0$ and $t=\pi$.}
+{Following Theorem \ref{thm:multi_chain2}, we compute the following partial derivatives:
+$$\frac{\partial f}{\partial x} = y\qquad\qquad \frac{\partial f}{\partial y} = x\qquad\qquad \frac{\partial f}{\partial z} = 2z,$$
+$$\frac{\partial x}{\partial t} = 2te^s\qquad\qquad \frac{\partial y}{\partial t} = \cos s\qquad\qquad \frac{\partial z}{\partial t} = s\cos t.$$
+Thus $$\ds \frac{\partial w}{\partial t} = y(2te^s) + x(\cos s) + 2z(s\cos t).$$ 
+When $s=0$ and $t=\pi$, we have $x=\pi^2$, $y=\pi$ and $z=0$. Thus
+$$\frac{\partial w}{\partial t} = \pi(2\pi) + \pi^2 = 3\pi^2.$$
+\vskip-1.5\baselineskip
+}\\
+
+\noindent\textbf{\large Implicit Differentiation}\\
+
+We studied finding $\frac{dy}{dx}$ when $y$ is given as an implicit function of $x$ in detail in Section \ref{sec:imp_deriv}. We find here that the Multivariable Chain Rule gives a simpler method of finding $\frac{dy}{dx}$.
+
+For instance, consider the implicit function $x^2y-xy^3=3.$ We learned to use the following steps to find $\frac{dy}{dx}$:
+\begin{align}
+\frac{d}{dx}\Big(x^2y-xy^3\big) &= \frac{d}{dx}\Big(3\Big) \notag\\
+2xy + x^2\frac{dy}{dx}-y^3-3xy^2\frac{dy}{dx} &= 0\notag \\
+\frac{dy}{dx} = -\frac{2xy-y^3}{x^2-3xy^2}.\label{eq:mchain2}
+\end{align}
+
+Instead of using this method, consider $z=x^2y-xy^3$. The implicit function above describes the level curve $z=3$. Considering $x$ and $y$ as functions of $x$, the Multivariable Chain Rule states that
+\begin{equation}\frac{dz}{dx} = \frac{\partial z}{\partial x}\frac{dx}{dx}+\frac{\partial z}{\partial y}\frac{dy}{dx}.\label{eq:mchain1}\end{equation}
+Since $z$ is constant (in our example, $z=3$), $\frac{dz}{dx} = 0$. We also know $\frac{dx}{dx} = 1$. Equation \eqref{eq:mchain1} becomes
+\begin{align*}
+0 &= \frac{\partial z}{\partial x}(1) + \frac{\partial z}{\partial y}\frac{dy}{dx} \quad \Rightarrow\\[5pt]
+\frac{dy}{dx} &= -\frac{\partial z}{\partial x}\Big/\frac{\partial z}{\partial y}\\[5pt]
+			&= -\frac{\,f_x\,}{f_y}.
+\end{align*}
+
+Note how our solution for $\frac{dy}{dx}$ in Equation \eqref{eq:mchain2} is just the partial derivative of $z$, with respect to $x$, divided by the partial derivative of $z$ with respect to $y$.
+
+We state the above as a theorem.
+
+\theorem{thm:implicit_deriv_chain}{Implicit Differentiation}
+{Let $f$ be a differentiable function of $x$ and $y$, where $f(x,y)=c$ defines $y$ as  an implicit function of $x$, for some constant $c$. Then
+$$\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}.$$
+}
+
+We practice using Theorem \ref{thm:implicit_deriv_chain} by applying it to a problem from Section \ref{sec:imp_deriv}.\\
+
+\example{ex_mchain5}{\textbf{Implicit Differentiation}\\
+Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$. Note: this is the same problem as given in Example \ref{ex_implicit5} of Section \ref{sec:imp_deriv}, where the solution took about a full page to find.}
+{Let $f(x,y) = \sin(x^2y^2)+y^3-x-y$; the implicitly defined function above is equivalent to $f(x,y)=0$. We find $\frac{dy}{dx}$ by applying Theorem \ref{thm:implicit_deriv_chain}. We find 
+$$f_x(x,y) = 2xy^2\cos(x^2y^2)-1\qquad \text{and}\qquad f_y(x,y) = 2x^2y\cos(x^2y^2)-1,$$
+so 
+$$\frac{dy}{dx} = -\frac{2xy^2\cos(x^2y^2)-1}{2x^2y\cos(x^2y^2)-1},$$
+which matches our solution from Example \ref{ex_implicit5}.
+}\\
+
+%\example{ex_implicit5}{\textbf{Using Implicit Differentiation}\\
+%Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$.}
+%$$y' = \frac{1 - 2xy^2\cos(x^2y^2)}{2x^2y\cos(x^2y^2)+3y^2-1}.$$
+
+\printexercises{exercises/12_08_exercises}

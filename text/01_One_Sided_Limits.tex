@@ -1,0 +1,186 @@
+\section{One Sided Limits}\label{sec:limit_continuity}
+
+\noindent\hskip-50pt\hskip-45pt\parbox{45pt}{\textbf{\itshape Review:}}
+\begin{minipage}[t]{\textwidth+50pt}
+We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for computing them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''
+\end{minipage}\\
+
+\vskip \baselineskip
+
+In Section \ref{sec:limit_intro} we explored the three ways in which limits of functions failed to exist: 
+	\begin{enumerate}
+	\item	The function approached different values from the left and right,
+	\item	The function grows without bound, and 
+	\item	The function oscillates.
+	\end{enumerate}
+	
+In this section we explore in depth the concepts behind \#1 by introducing the \textit{one-sided limit}. We begin with formal definitions that are very similar to the definition of the limit given in Section \ref{sec:limit_def}, but the notation is slightly different and a short phrase has been added to the end.
+%\small
+
+%
+%\ifthenelse{\boolean{longpage}}{}
+%{\setlength{\specialboxlength}{\textwidth+4\specialboxinnerseplength}}
+\enlargethispage{3\baselineskip}
+\setboxwidth{115pt}%
+\noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -115pt}%
+\noindent\begin{minipage}{\specialboxlength}
+\definition{def:onesidedlimit}{One Sided Limits}
+{\textbf{Left-Hand Limit}\\
+
+Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^-} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the left is $L$,'' or ``the \textit{left-hand limit of $f$ at $c$ is L}'' 
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
+$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x<c$.\\
+
+\textbf{Right-Hand Limit}\\
+
+Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^+} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the right is $L$,'' or ``the \textit{right-hand limit of $f$ at $c$ is L}'' 
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
+$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x>c$.
+}
+\end{minipage}
+\restoreboxwidth
+\normalsize
+
+Practically speaking, when evaluating a left-hand limit, we consider only values of $x$ ``to the left of $c$,'' i.e., where $x<c$. The admittedly imperfect notation $x\to c^-$ is used to imply that we look at values of $x$ to the left of $c$. The notation has nothing to do with positive or negative values of either $x$ or $c$. A similar statement holds for evaluating right-hand limits; there we consider only values of $x$ to the right of $c$, i.e., $x>c$. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of $c$.
+
+We practice evaluating left and right-hand limits through a series of examples.\\
+
+\example{ex_onesidea}{\textbf{Evaluating one sided limits}\\
+Let $\ds f(x) = \left\{\begin{array}{cc} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{array},\right.$ as shown in Figure \ref{fig:onesided1}. Find each of the following: 
+
+\noindent\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}
+\item		$\ds \lim_{x\to 1^-} f(x)$
+\item		$\ds \lim_{x\to 1^+} f(x)$
+\item		$\ds \lim_{x\to 1} f(x)$
+\item		$\ds f(1)$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}\addtocounter{enumi}{4}
+\item		$\ds \lim_{x\to 0^+} f(x)$
+\item		$f(0)$
+\item		$\ds \lim_{x\to 2^-} f(x)$
+\item		$f(2)$
+\end{enumerate}
+\end{minipage}
+
+\mfigure{.7}{A graph of $f$ in Example \ref{ex_onesidea}.}{fig:onesided1}{figures/figOneSidedLimits1}
+}
+{For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
+			\begin{enumerate}
+			\item		As $x$ goes to 1 \textit{from the left}, we see that $f(x)$ is approaching the value of 1. Therefore $\ds \lim_{x\to 1^-} f(x) =1.$
+			\item		As $x$ goes to 1 \textit{from the right}, we see that $f(x)$ is approaching the value of 2. Recall that it does not matter that there is an ``open circle'' there; we are evaluating a limit, not the value of the function. Therefore $\ds \lim_{x\to 1^+} f(x)=2$.
+			\item		\textit{The} limit of $f$ as $x$ approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.
+			\item		Using the definition and by looking at the graph we see that $f(1) = 1$.
+			\item		As $x$ goes to 0 from the right, we see that $f(x)$ is also approaching 0. Therefore $\ds \lim_{x\to 0^+} f(x)=0$. Note we cannot consider a left-hand limit at 0 as $f$ is not defined for values of $x<0$.
+			\item		Using the definition and the graph, $f(0) = 0$.
+			\item		As $x$ goes to 2 from the left, we see that $f(x)$ is approaching the value of 1. Therefore $\ds \lim_{x\to 2^-} f(x)=1.$
+			\item		The graph and the definition of the function show that $f(2)$ is not defined.
+			\end{enumerate}
+\vskip -\baselineskip
+}\\
+
+Note how the left and right-hand limits were different; this, of course, causes \textit{the} limit to not exist. The following theorem states what is fairly intuitive: \textit{the} limit exists precisely when the left and right-hand limits are equal.
+
+\theorem{thm:leftrightlimits}{Limits and One Sided Limits}
+{Let $f$ be a function defined on an open interval $I$ containing $c$. Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{and} \quad \lim_{x\to c^+}f(x) = L.$$}
+
+The phrase ``if, and only if'' means the two statements are \textit{equivalent}: they are either both true or both false. If the limit equals $L$, then the left and right hand limits both equal $L$. If the limit is not equal to $L$, then at least one of the left and right-hand limits is not equal to $L$ (it may not even exist).
+			
+One thing to consider in Examples \ref{ex_onesidea} -- \ref{ex_onesided} is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree. \\
+
+\example{ex_onesideb}{\textbf{Evaluating limits of a piecewise--defined function}\\
+Let $f(x) = \left\{\begin{array}{cc} 2-x & 0<x<1 \\ (x-2)^2 & 1<x<2 \end{array},\right.$ as shown in Figure \ref{fig:onesidedb}. Evaluate the following. 
+
+\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item		$\ds \lim_{x\to 1^-} f(x)$
+		\item		$\ds \lim_{x\to 1^+} f(x)$
+		\item		$\ds \lim_{x\to 1} f(x)$
+		\item		$\ds f(1)$
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{4}
+		\item		$\ds \lim_{x\to 0^+} f(x)$
+		\item		$f(0)$
+		\item		$\ds \lim_{x\to 2^-} f(x)$
+		\item		$f(2)$
+		\end{enumerate}	
+		\end{minipage}
+		
+\mfigure{.40}{A graph of $f$ from Example \ref{ex_onesideb}}{fig:onesidedb}{figures/figOneSidedLimits2}		
+}
+{Again we will evaluate each using both the definition of $f$ and its graph.
+		\begin{enumerate}
+		\item		As $x$ approaches 1 from the left, we see that $f(x)$ approaches 1. Therefore $\ds \lim_{x\to 1^-} f(x)=1.$
+		\item		As $x$ approaches 1 from the right, we see that again $f(x)$ approaches 1. Therefore $\ds \lim_{x\to 1+} f(x)=1$.
+		\item		\textit{The} limit of $f$ as $x$ approaches 1 exists and is 1, as $f$ approaches 1 from both the right and left. Therefore $\ds \lim_{x\to 1} f(x)=1$.
+		\item		$f(1)$ is not defined. Note that 1 is not in the domain of $f$ as defined by the problem, which is indicated on the graph by an open circle when $x=1$.
+		\item		As $x$ goes to 0 from the right, $f(x)$ approaches 2. So $\ds \lim_{x\to 0^+} f(x)=2$.
+		\item		$f(0)$  is not defined as $0$ is not in the domain of $f$.
+		\item		As $x$ goes to 2 from the left, $f(x)$ approaches 0. So $\ds \lim_{x\to 2^-} f(x)=0$.
+		\item		$f(2)$  is not defined as 2 is not in the domain of $f$.
+		\end{enumerate}
+\vskip -\baselineskip
+}\\
+
+\example{ex_onesidec}{\textbf{Evaluating limits of a piecewise--defined function}\\
+Let $f(x) = \left\{\begin{array}{cc} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{array},\right.$ as shown in Figure \ref{fig:onesidedc}. Evaluate the following.
+
+		\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item		$\ds \lim_{x\to 1^-} f(x)$
+		\item		$\ds \lim_{x\to 1^+} f(x)$
+		\end{enumerate}
+		\end{minipage}
+		\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{2}
+		\item		$\ds \lim_{x\to 1} f(x)$
+		\item		$f(1)$
+		\end{enumerate}
+		\end{minipage}
+		
+\mfigure{.55}{Graphing $f$ in Example \ref{ex_onesidec}}{fig:onesidedc}{figures/figOneSidedLimits3}		
+}
+{		It is clear by looking at the graph that both the left and right-hand limits of $f$, as $x$ approaches 1, is 0. Thus it is also clear that \textit{the} limit is 0; i.e., $\ds \lim_{x\to 1} f(x) = 0$. It is also clearly stated that $f(1) = 1$. \vskip .4\baselineskip
+}\\
+
+%\vskip .5\baselineskip
+
+\example{ex_onesided}{\textbf{Evaluating limits of a piecewise--defined function}\\
+Let $f(x) = \left\{\begin{array}{cc} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{array},\right.$ as shown in Figure \ref{fig:onesidedd}. Evaluate the following. 
+
+		\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}
+		\item		$\ds \lim_{x\to 1^-} f(x)$
+		\item		$\ds \lim_{x\to 1^+} f(x)$
+		\end{enumerate}
+		\end{minipage}
+				\noindent\begin{minipage}[t]{.5\textwidth}
+		\begin{enumerate}\addtocounter{enumi}{2}
+		\item		$\ds \lim_{x\to 1} f(x)$
+		\item		$f(1)$
+		\end{enumerate}
+		\end{minipage}
+		
+\mfigure{.3}{Graphing $f$ in Example \ref{ex_onesided}}{fig:onesidedd}{figures/figOneSidedLimits4}
+}
+{		It is clear from the definition of the function and its graph that all of the following are equal: 
+$$ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.$$
+}\\
+
+In Examples \ref{ex_onesidea} -- \ref{ex_onesided} we were asked to find both $\ds \lim_{x\to 1}f(x)$ and $f(1)$. Consider the following table:
+\begin{center}
+\begin{tabular}{ccc} & $\ds \lim_{x\to 1}f(x)$ & $f(1)$ \vspace{2pt}\\ \hline
+Example \ref{ex_onesidea} & does not exist & 1 \\
+Example \ref{ex_onesideb} & 1 & not defined \\
+Example \ref{ex_onesidec} & 0 & 1 \\
+Example \ref{ex_onesided} & 1 & 1 \\
+\end{tabular}
+\end{center}
+
+Only in Example \ref{ex_onesided} do both the function and the limit exist and agree. This seems ``nice;'' in fact, it seems ``normal.'' This is in fact an important situation which we explore in the next section, entitled ``Continuity.'' In short, a \textit{continuous function} is one in which when a function approaches a value as $x\rightarrow c$ (i.e., when $\ds \lim_{x\to c} f(x) = L$), it actually \textit{attains} that value at $c$. Such functions behave nicely as they are very predictable.
+
+\printexercises{exercises/01_04_exercises}

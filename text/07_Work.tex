@@ -1,0 +1,198 @@
+\section{Work}\label{sec:work}
+
+\textit{Work} is the scientific term used to describe the action of a force which moves an object. When a constant force $F$ is applied to move an object a distance $d$, the amount of work performed is $W=F\cdot d$. 
+
+The SI unit of force is the Newton, (kg$\cdot$m/s$^2$), and the SI unit of distance is a meter (m). The fundamental unit of work is one Newton--meter, or a joule (J). That is, applying a force of one Newton for one meter performs one joule of work. In Imperial units (as used in the United States), force is measured in pounds (lb) and distance is measured in feet (ft), hence work is measured in ft--lb. 
+
+\mnote{.7}{\textbf{Note:} \textit{Mass} and \textit{weight} are closely related, yet different, concepts. The mass $m$ of an object is a quantitative measure of that object's resistance to acceleration. The weight $w$  of an object is a measurement of the force applied to the object by the acceleration of gravity $g$.
+
+\hskip 5pt Since the two measurements are proportional, $w=m\cdot g$, they are often used interchangeably in everyday conversation. When computing Work, one must be careful to note which is being referred to. When mass is given, it must be multiplied by the acceleration of gravity to reference the related force.}
+
+When force is constant, the measurement of work is straightforward. For instance, lifting a 200 lb object 5 ft performs $200\cdot 5 = 1000$ ft--lb of work. 
+
+What if the force applied is variable? For instance, imagine a climber pulling a 200 ft rope up a vertical face. The rope becomes lighter as more is pulled in, requiring less force and hence the climber performs less work.
+
+In general, let $F(x)$ be a force function on an interval $[a,b]$. We want to measure the amount of work done applying the force $F$ from $x=a$ to $x=b$. We can approximate the amount of work being done by partitioning $[a,b]$ into subintervals $a=x_1<x_2 <\cdots <x_{n+1}=b$ and assuming that $F$ is constant on each subinterval. Let $c_i$ be a value in the $i\,^{\text{th}}$ subinterval $[x_i,x_{i+1}]$. Then the work done on this interval is approximately $W_i\approx F(c_i)\cdot(x_{i+1}-x_i) = F(c_i)\dx_i$, a constant force $\times$ the distance over which it is applied. The total work is 
+$$ W = \sum_{i=1}^n W_i \approx \sum_{i=1}^n F(c_i)\dx_i.$$
+This, of course, is a Riemann sum. Taking a limit as the subinterval lengths go to zero give an exact value of work which can be evaluated through a definite integral.
+
+\keyidea{idea:work}{Work}
+{Let $F(x)$ be a continuous function on $[a,b]$ describing the amount of force being applied to an object in the direction of travel from distance $x=a$ to distance $x=b$. The total work $W$ done on $[a,b]$ is
+$$W = \int_a^b F(x)\ dx.$$
+}
+\clearpage
+\example{ex_work1}{\textbf{Computing work performed: applying variable force}\\
+How much work is performed pulling a 60 m climbing rope up a cliff face, where the rope has a mass of 66 g/m?}
+{We need to create a force function $F(x)$ on the interval $[0,60]$. To do so, we must first decide what $x$ is measuring: it is the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that $x$ is the amount of rope pulled in. This seems to match intuition better; pulling up the first 10 meters of rope involves $x=0$ to $x=10$ instead of $x=60$ to $x=50$. 
+
+As $x$ is the amount of rope pulled in, the amount of rope still hanging is $60-x$. This length of rope has a mass of 66 g/m, or $0.066$ kg/m. The the mass of the rope still hanging is $0.066(60-x)$ kg; multiplying this mass by the acceleration of gravity, 9.8 m/s$^2$, gives our variable force function $$F(x) = (9.8)(0.066)(60-x) = 0.6468(60-x).$$
+
+Thus the total work performed in pulling up the rope is 
+$$W = \int_0^{60} 0.6468(60-x)\ dx = 1,164.24\ \text{J}.$$
+
+By comparison, consider the work done in lifting the entire rope 60 meters. The rope weights $60\times 0.066 \times 9.8 = 38.808$ N, so the work applying this force for 60 meters is $60\times 38.808 = 2,328.48$ J. This is exactly twice the work calculated before (and we leave it to the reader to understand why.)
+}\\
+
+\example{ex_work1_5}{\textbf{Computing work performed: applying variable force}\\
+Consider again pulling a 60 m rope up a cliff face, where the rope has a mass of 66 g/m. At what point is exactly half the work performed?}
+{From Example \ref{ex_work1} we know the total work performed is $11,642.4$ J. We want to find a height $h$ such that the work in pulling the rope from a height of $x=0$ to a height of $x=h$ is 5821.2, half the total work. Thus we want to solve the equation
+$$\int_0^h 6.468(60-x)\ dx = 5821.2$$ for $h$. 
+\begin{align*}
+\int_0^h 6.468(60-x)\ dx &= 5821.2 \\
+\left(388.08x-3.234x^2\right)\Big|_0^h &=5821.2 \\
+388.08h-3.234h^2 &=5821.2 \\
+-3.234h^2+388.08h-5821.2 &=0 .
+\intertext{Apply the Quadratic Formula.}
+h&=17.57 \ \text{and}\ 102.43
+\end{align*}
+As the rope is only 60 m long, the only sensible answer is $h=17.57$. Thus about half the work is done pulling up the first 17.5 m; the other half of the work is done pulling up the remaining 42.43 m. 
+\mnote{.85}{\textbf{Note:} In Example \ref{ex_work1_5}, we find that half of the work performed in pulling up a 60 m rope is done in the last 42.43 m. Why is it not coincidental that $60/\sqrt{2}=42.43$?}
+}\\
+
+\example{ex_work2}{\textbf{Computing work performed: applying variable force}\\
+A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft over 1 minute. The sand is leaking from the box at a rate of 1 lb/s. The box itself weighs 5 lb and is pulled by a rope weighing .2 lb/ft. 
+	\begin{enumerate}
+	\item		How much work is done lifting just the rope?
+	\item		How much work is done lifting just the box and sand?
+	\item		What is the total amount of work performed?
+	\end{enumerate}
+}
+{\begin{enumerate}
+	\item		We start by forming the force function $F_r(x)$ for the rope (where the subscript denotes we are considering the rope). As in the previous example, let $x$ denote the amount of rope, in feet, pulled in. (This is the same as saying $x$ denotes the height of the box.) The weight of the rope with $x$ feet pulled in is $F_r(x) = 0.2(50-x) = 10-0.2x$. (Note that we do not have to include the acceleration of gravity here, for the \textit{weight} of the rope per foot is given, not its \textit{mass} per meter as before.) The work performed lifting the rope is 
+	$$W_r = \int_0^{50} (10-0.2x)\ dx = 250\ \text{ft--lb}.$$
+	
+	\item	The sand is leaving the box at a rate of 1 lb/s. As the vertical trip is to take one minute, we know that 60 lb will have left when the box reaches its final height of 50 ft. Again letting $x$ represent the height of the box, we have two points on the line that describes the weight of the sand: when $x=0$, the sand weight is 100 lb, producing the point $(0,100)$; when $x=50$, the sand in the box weighs 40 lb, producing the point $(50,40)$. The slope of this line is $\frac{100-40}{0-50} = -1.2$, giving the equation of the weight of the sand at height $x$ as $w(x) = -1.2x+100$. The box itself weighs a constant 5 lb, so the total force function is $F_b(x) = -1.2x+105$. Integrating from $x=0$ to $x=50$ gives the work performed in lifting box and sand:
+	$$W_b = \int_0^{50} (-1.2x+105)\ dx = 3750\ \text{ft--lb.}$$
+	
+	\item	The total work is the sum of $W_r$ and $W_b$: $250+3750=4000$ ft--lb. We can also arrive at this via integration:
+	\begin{align*} W &= \int_0^{50} (F_r(x)+F_b(x))\ dx \\
+									&= \int_0^{50} (10-0.2x-1.2x+105)\ dx \\
+									&= \int_0^{50} (-1.4x+115) \ dx \\
+									&= 4000 \ \text{ft--lb.}
+	\end{align*}	
+\end{enumerate}
+\vskip-2\baselineskip
+}\\
+
+\noindent \textbf{\large Hooke's Law and Springs}
+\vskip\baselineskip
+
+Hooke's Law states that the force required to compress or stretch a spring $x$ units from its natural length is proportional to $x$; that is, this force is $F(x) = kx$ for some constant $k$. For example, if a force of 1 N stretches a given spring 2 cm, then a force of 5 N will stretch the spring 10 cm. Converting the distances to meters, we have that stretching a this spring 0.02 m requires a force of $F(0.02) = k(0.02) = 1$ N, hence $k = 1/0.02 = 50$ N/m. \\
+
+\example{ex_spring1}{\textbf{Computing work performed: stretching a spring}\\
+A force of 20 lb stretches a spring from a length of 7 inches to a length of 12 inches. How much work was performed in stretching the spring to this length?}
+{In many ways, we are not at all concerned with the actual length of the spring, only with the amount of its change. Hence, we do not care that 20 lb of force stretches the spring to a length of 12 inches, but rather that a force of 20 lb stretches the spring by 5 in. This is illustrated in Figure \ref{fig:spring1}; we only measure the change in the spring's length, not the overall length of the spring.
+
+\begin{center}
+\myincludegraphics{figures/figwork_spring1}
+\captionsetup{type=figure}%
+			\caption{Illustrating the important aspects of stretching a spring in computing work in Example \ref{ex_spring1}.}\label{fig:spring1}
+\end{center}
+
+Converting the units of length to feet, we have $$F(5/12) = 5/12k = 20\ \text{lb}.$$ Thus $k = 48$ lb/ft and $F(x) = 48x$. 
+
+We compute the total work performed by integrating $F(x)$ from $x=0$ to $x=5/12$:
+\begin{align*}
+		W 	&= 	\int_0^{5/12} 48x \ dx \\
+				&=	24x^2\Big|_0^{5/12} \\
+				&=  25/6 \approx 4.1667\ \text{ft--lb.}
+\end{align*}
+\vskip-1.5\baselineskip
+}\\
+
+\noindent\textbf{\large Pumping Fluids}
+\vskip\baselineskip
+
+Another useful example of the application of integration to compute work comes in the pumping of fluids, often illustrated in the context of emptying a storage tank by pumping the fluid out the top. This situation is different than our previous examples for the forces involved are constant. After all, the force required to move one cubic foot of water (about 62.4 lb) is the same regardless of its location in the tank. What is variable is the distance that cubic foot of water has to travel; water closer to the top travels less distance than water at the bottom, producing less work.
+
+\mtable{.8}{Weight and Mass densities}{fig:weight_density}{%
+\begin{tabular}{ccc}
+Fluid & lb/ft$^3$ & kg/m$^3$ \\ \hline
+Concrete & 150 & 2400 \\
+Fuel Oil & 55.46 & 890.13 \\
+Gasoline & 45.93 & 737.22\\
+Iodine & 307 & 4927\\
+Methanol & 49.3 & 791.3\\
+Mercury & 844 & 13546\\
+Milk & 63.6--65.4 & 1020 -- 1050 \\
+Water & 62.4 & 1000 \\
+\end{tabular}
+}
+
+We demonstrate how to compute the total work done in pumping a fluid out of the top of a tank in the next two examples.\\
+
+\example{ex_pump1}{\textbf{Computing work performed: pumping fluids}\\
+A cylindrical storage tank with a radius of 10 ft and a height of 30 ft is filled with water, which weighs approximately 62.4 lb/ft$^3$. Compute the amount of work performed by pumping the water up to a point 5 feet above the top of the tank.}
+{We will refer often to Figure \ref{fig:pump1a} which illustrates the salient aspects of this problem.
+\mfigure{.7}{Illustrating a water tank in order to compute the work required to empty it in Example \ref{ex_pump1}.}{fig:pump1a}{figures/figwork_pump1}
+
+We start as we often do: we partition an interval into subintervals. We orient our tank vertically since this makes intuitive sense with the base of the tank at $y=0$. Hence the top of the water is at $y=30$, meaning we are interested in subdividing the $y$-interval $[0,30]$ into $n$ subintervals as 
+$$0 = y_1 < y_2 < \cdots < y_{n+1} = 30.$$
+Consider the work $W_i$ of pumping only the water residing in the $i\,^\text{th}$ subinterval, illustrated in Figure \ref{fig:pump1a}. The force required to move this water is equal to its weight which we calculate as volume $\times $ density. The volume of water in this subinterval is 
+$V_i = 10^2\pi \Delta y_i$; its density is $62.4$ lb/ft$^3$. Thus the required force is $6240\pi\Delta y_i$ lb.
+
+We approximate the distance the force is applied by using any $y$-value contained in the $i\,^\text{th}$ subinterval; for simplicity, we arbitrarily use $y_i$ for now (it will not matter later on). The water will be pumped to a point 5 feet above the top of the tank, that is, to the height of $y=35$ ft. Thus the distance the water at height $y_i$ travels is $35-y_i$ ft. 
+
+In all, the approximate work $W_i$ peformed in moving the water in the $i\,^\text{th}$ subinterval to a point 5 feet above the tank is 
+$$W_i \approx 6240\pi\Delta y_i(35-y_i),$$
+and the total work performed is
+$$W \approx \sum_{i=1}^n W_i = \sum_{i=1}^n 6240\pi\Delta y_i(35-y_i).$$
+This is a Riemann sum. Taking the limit as the subinterval length goes to 0 gives 
+\begin{align*}
+W 	&=	\int_0^{30} 6240\pi(35-y)\ dy \\
+		&=  (6240\pi\left(35y-1/2y^2\right)\Big|_0^{30} \\
+		&= 	11,762,123 \ \text{ft--lb}\\
+		&\approx  1.176 \times 10^7 \ \text{ft--lb}.
+\end{align*}
+\vskip-1.5\baselineskip
+}\\
+\clearpage
+
+We can ``streamline'' the above process a bit as we may now recognize what the important features of the problem are. Figure \ref{fig:pump1b} shows the tank from Example \ref{ex_pump1} without the $i\,^\text{th}$ subinterval identified. 
+\mfigure{.8}{A simplified illustration for computing work.}{fig:pump1b}{figures/figwork_pump2}
+Instead, we just draw one differential element. This helps establish the height a small amount of water must travel along with the force required to move it (where the force is volume $\times$ density).
+
+We demonstrate the concepts again in the next examples.\\
+
+\example{ex_pump2}{\textbf{Computing work performed: pumping fluids}\\
+A conical water tank has its top at ground level and its base 10 feet below ground. The radius of the cone at ground level is 2 ft. It is filled with water weighing 62.4 lb/ft$^3$ and is to be emptied by pumping the water to a spigot 3 feet above ground level. Find the total amount of work performed in emptying the tank.}
+{The conical tank is sketched in Figure \ref{fig:pump2}. We can orient the tank in a variety of ways; we could let $y=0$ represent the base of the tank and $y=10$ represent the top of the tank, but we choose to keep the convention of the wording given in the problem and let $y=0$ represent ground level and hence $y=-10$ represents the bottom of the tank. The actual ``height'' of the water does not matter; rather, we are concerned with the distance the water travels. 
+\mfigure{.4}{A graph of the conical water tank in Example \ref{ex_pump2}.}{fig:pump2}{figures/figwork_pump3}
+
+The figure also sketches a differential element, a cross--sectional circle. The radius of this circle is variable, depending on $y$. When $y=-10$, the circle has radius 0; when $y=0$, the circle has radius 2. These two points, $(-10,0)$ and $(0,2)$, allow us to find the equation of the line that gives the radius of the cross--sectional circle, which is $r(y) = 1/5y+2$. Hence the volume of water at this height is $V(y)=\pi(1/5y+2)^2dy$, where $dy$ represents a very small height of the differential element. The force required to move the water at height $y$ is $F(y) = 62.4\times V(y)$.
+
+The distance the water at height $y$ travels is given by $h(y)=3-y$. Thus the total work done in pumping the water from the tank is 
+\begin{align*}
+%W &= 		\int_{-10}^0 F(y)h(y)\ dy \\
+W	&=	\int_{-10}^0 62.4\pi(1/5y+2)^2(3-y)\ dy\\
+	&=	62.4\pi\int_{-10}^0\left(-\frac1{25}y^3-\frac{17}{25}y^2-\frac85y+12\right)\ dy\\
+	&=  62.2\pi\cdot\frac{220}{3} \approx 14,376 \text{ ft--lb.}	
+\end{align*}
+\vskip-\baselineskip	
+}\\
+\clearpage
+
+\example{ex_pump3}{\textbf{Computing work performed: pumping fluids}\\
+A rectangular swimming pool is 20 ft wide and has a 3 ft ``shallow end'' and a 6 ft ``deep end.'' It is to have its water pumped out to a point 2 ft above the current top of the water. 
+The cross--sectional dimensions of the water in the pool are given in Figure \ref{fig:pump3}; note that the dimensions are for the water, not the pool itself. Compute the amount of work performed in draining the pool.}
+{For the purposes of this problem we choose to set $y=0$ to represent the bottom of the pool, meaning the top of the water is at $y=6$. 
+\mfigure{.8}{The cross--section of a swimming pool filled with water in Example \ref{ex_pump3}.}{fig:pump3}{figures/figpump4}
+\mfigure{.6}{Orienting the pool and showing differential elements for Example \ref{ex_pump3}.}{fig:pump3b}{figures/figpump4b}
+Figure \ref{fig:pump3b} shows the pool oriented with this $y$-axis, along with 2 differential elements as the pool must be split into two different regions. 
+
+The top region lies in the $y$-interval of $[3,6]$, where the length of the differential element is $25$ ft as shown. As the pool is 20 ft wide, this differential element represents a this slice of water with volume $V(y) = 20\cdot25\cdot dy$.  The water is to be pumped to a height of $y=8$, so the height function is $h(y) = 8-y$. The work done in pumping this top region of water is 
+$$W_t = 62.4\int_3^6 500(8-y)\ dy = 327,600 \text{ ft--lb}.$$
+
+The bottom region lies in the $y$-interval of $[0,3]$; we need to compute the length of the differential element in this interval.
+
+One end of the differential element is at $x=0$ and the other is along the line segment joining the points $(10,0)$ and $(15,3)$. The equation of this line is $y= 3/5(x-10)$; as we will be integrating with respect to $y$, we rewrite this equation as $x=5/3y+10$. So the length of the differential element is a difference of $x$-values: $x=0$ and $x=5/3y+10$, giving a length of $x=5/3y+10$. 
+
+Again, as the pool is 20 ft wide, this differential element  represents a thin slice of water with volume $V(y) = 20\cdot(5/3y+10)\cdot dy$; the height function is the same as before at $h(y)=8-y$. The work performed in emptying this part of the pool is
+$$W_b = 62.4\int_0^3 20(5/3y+10)(8-y)\ dy = 299,520\ \text{ft--lb}.$$
+The total work in empyting the pool is 
+$$W = W_b+W_t = 327,600+299,520 = 627,120\ \text{ft--lb}.$$		
+Notice how the emptying of the bottom of the pool performs almost as much work as emptying the top. The top portion travels a shorter distance but has more water. In the end, this extra water produces more work.
+}\\
+
+\printexercises{exercises/07_05_exercises}
+

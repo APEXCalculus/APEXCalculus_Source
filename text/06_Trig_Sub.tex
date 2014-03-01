@@ -1,0 +1,245 @@
+\section{Trigonometric Substitution}\label{sec:trig_sub}
+
+In Section \ref{sec:def_int} we defined the definite integral as the ``signed area under the curve.'' In that section we had not yet learned the Fundamental Theorem of Calculus, so we evaluated special definite integrals which described nice, geometric shapes. For instance, we were able to evaluate
+\begin{equation}
+\int_{-3}^3\sqrt{9-x^2}\ dx = \frac{9\pi}{2}\label{eq:trigsub1}
+\end{equation}
+ as we recognized that $f(x) = \sqrt{9-x^2}$ described the upper half of a circle with radius 3. 
+
+We have since learned a number of integration techniques, including Substitution and Integration by Parts, yet we are still unable to evaluate the above integral without resorting to a geometric interpretation. This section introduces Trigonometric Substitution, a method of integration that fills this gap in our integration skill. This technique works on the same principle as Substitution as found in Section \ref{sec:substitution}, though it can feel ``backwards.'' In Section \ref{sec:substitution}, we set $u=f(x)$, for some function $f$, and replaced $f(x)$ with $u$. In this section, we will set $x=f(\theta)$, where $f$ is a trigonometric function, then replace $x$ with $f(\theta)$. 
+
+We start by demonstrating this method in evaluating the integral in \eqref{eq:trigsub1}. After the example, we will generalize the method and give more examples.\\
+\enlargethispage{3\baselineskip}
+
+\example{ex_trigsub1}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds \int_{-3}^3\sqrt{9-x^2}\ dx$.}
+{We begin by noting that $9\sin^2\theta + 9\cos^2\theta = 9$, and hence $9\cos^2\theta = 9-9\sin^2\theta$. If we let $x=3\sin\theta$, then $9-x^2 = 9-9\sin^2\theta = \cos^2\theta$. 
+
+Setting $x=3\sin \theta$ gives  $dx = 3\cos\theta\ d\theta$. We are almost ready to substitute. We also wish to change our bounds of integration. The bound $x=-3$ corresponds to $\theta = -\pi/2$ (for when $\theta = -\pi/2$, $x=3\sin \theta = -3$). Likewise, the bound of $x=3$ is replaced by the bound $\theta = \pi/2$. Thus
+\begin{align*}
+\int_{-3}^3\sqrt{9-x^2}\ dx &= \int_{-\pi/2}^{\pi/2} \sqrt{9-9\sin^2\theta} (3\cos\theta)\ d\theta \\
+		&= \int_{-\pi/2}^{\pi/2} 3\sqrt{9\cos^2\theta} \cos\theta\ d\theta \\
+		&=\int_{-\pi/2}^{\pi/2} 3|3\cos \theta| \cos\theta\ d\theta.
+		\intertext{On $[-\pi/2,\pi/2]$, $\cos \theta$ is always positive, so we can drop the absolute value bars, then employ a power--reducing formula:}
+\end{align*}
+\begin{align*}
+			&= \int_{-\pi/2}^{\pi/2} 9\cos^2 \theta\ d\theta\\
+			&= \int_{-\pi/2}^{\pi/2} \frac{9}{2}\big(1+\cos(2\theta)\big)\ d\theta\\
+			& = \frac92 \big(\theta +\frac12\sin(2\theta)\big)\Bigg|_{-\pi/2}^{\pi/2}
+			%&= \frac92\pi.
+\end{align*}
+This matches our answer from before.
+}\\
+
+We now describe in detail Trigonometric Substitution. This method excels when dealing with integrands that contain $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ and $\sqrt{x^2+a^2}$. The following Key Idea outlines the procedure for each case, followed by more examples.
+\enlargethispage{2\baselineskip}
+
+\setboxwidth{100pt}
+%\hskip-100pt%
+\noindent\begin{minipage}{\linewidth+100pt}
+\keyidea{idea:trigsub}{Trigonometric Substitution}
+{\begin{enumerate}
+	\item[(a)] \noindent%
+		\begin{minipage}[t]{.6\linewidth}
+		For integrands containing $\sqrt{a^2-x^2}$:\\[5pt]
+		Let $x=a\sin\theta$, \qquad $dx = a\cos\theta\ d\theta$\\[5pt]	
+	Thus $\theta = \sin^{-1}(x/a)$, for $-\pi/2\leq \theta\leq \pi/2$. \\[5pt]	
+	On this interval, $\cos\theta\geq 0$, so\\[5pt]	
+	$\sqrt{a^2-x^2} = a\cos\theta$
+		\end{minipage}\qquad
+	\begin{minipage}[t]{.4\linewidth}\vskip 0pt
+		\includegraphics{figures/figtrigsub_intro1}
+		\end{minipage}
+		
+	\item[(b)] \noindent
+	\begin{minipage}[t]{.6\linewidth}
+		For integrands containing $\sqrt{x^2+a^2}$:\\[5pt]
+		Let $x=a\tan\theta$, \qquad $dx = a\sec^2\theta\ d\theta$\\[5pt]	
+	Thus $\theta = \tan^{-1}(x/a)$, for $-\pi/2 < \theta < \pi/2$. \\[5pt]	
+	On this interval, $\sec\theta> 0$, so\\[5pt]	
+	$\sqrt{x^2+a^2} = a\sec\theta$
+		\end{minipage}\qquad
+	\begin{minipage}[t]{.4\linewidth}\vskip 0pt
+		\includegraphics{figures/figtrigsub_intro3}
+		\end{minipage}
+		
+	\item[(c)] \noindent
+	\begin{minipage}[t]{.6\linewidth}
+		For integrands containing $\sqrt{x^2-a^2}$:\\[5pt]
+		Let $x=a\sec\theta$, \qquad $dx = a\sec\theta\tan\theta\ d\theta$\\[5pt]	
+	Thus $\theta = \sec^{-1}(x/a)$. If $x/a\geq 1$, then $0\leq\theta<\pi/2$; if $x/a \leq -1$, then $\pi/2<\theta\leq \pi$.\\[5pt]	
+	We restrict our work to where $x\geq a$, so $x/a\geq 1$, and $0\leq\theta<\pi/2$.
+	On this interval, $\tan\theta\geq 0$, so\\[5pt]	
+	$\sqrt{x^2-a^2} = a\tan\theta$
+		\end{minipage}\qquad
+	\begin{minipage}[t]{.4\linewidth}\vskip 0pt
+		\includegraphics{figures/figtrigsub_intro2}
+		\end{minipage}	
+\end{enumerate}
+}
+\end{minipage}
+\restoreboxwidth
+\vskip \baselineskip
+
+\example{ex_trigsub3}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds \int \frac{1}{\sqrt{5+x^2}}\ dx.$}
+{Using Key Idea \ref{idea:trigsub}(b), we recognize $a=\sqrt{5}$ and  set $x= \sqrt{5}\tan \theta$. This makes $dx = \sqrt{5}\sec^2\theta\ d\theta$. We will use the fact that $\sqrt{5+x^2} = \sqrt{5+5\tan^2\theta} = \sqrt{5\sec^2\theta} = \sqrt{5}\sec\theta.$ Substituting, we have:
+\begin{align*}
+\int \frac{1}{\sqrt{5+x^2}}\ dx &= \int \frac{1}{\sqrt{5+5\tan^2\theta}}\sqrt{5}\sec^2\theta\ d\theta \\
+			&= \int \frac{\sqrt{5}\sec^2\theta}{\sqrt{5}\sec\theta} \ d\theta\\
+			&= \int \sec\theta\ d\theta\\
+			&= \ln\big|\sec\theta+\tan\theta\big|+C.
+\end{align*}
+While the integration steps are over, we are not yet done. The original problem was stated in terms of $x$, whereas our answer is given in terms of $\theta$. We must convert back to $x$.
+
+The reference triangle given in Key Idea \ref{idea:trigsub}(b) helps. With $x=\sqrt{5}\tan\theta$, we have 
+$$\tan \theta = \frac x{\sqrt{5}}\quad \text{and}\quad \sec\theta = \frac{\sqrt{x^2+5}}{\sqrt{5}}.$$
+This gives
+\begin{align*}
+\int \frac{1}{\sqrt{5+x^2}}\ dx &= \ln\big|\sec\theta+\tan\theta\big|+C \\
+     &= \ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C.
+\end{align*}
+We can leave this answer as is, or we can use a logarithmic identity to simplify it. Note:
+\begin{align*}
+\ln\left|\frac{\sqrt{x^2+5}}{\sqrt{5}}+ \frac x{\sqrt{5}}\right|+C &= \ln\left|\frac{1}{\sqrt{5}}\big(\sqrt{x^2+5}+ x\big)\right|+C \\
+   &= \ln\left|\frac{1}{\sqrt{5}}\right| + \ln\big|\sqrt{x^2+5}+ x\big|+C\\
+	&=	\ln\big|\sqrt{x^2+5}+ x\big|+C,
+\end{align*}
+where the $\ln\big(1/\sqrt{5}\big)$ term is absorbed into the constant $C$. (In Section \ref{sec:hyperbolic} we will learn another way of approaching this problem.)
+}\\
+
+\example{ex_trigsub2}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds \int \sqrt{4x^2-1}\ dx$.}
+{We start by rewriting the integrand so that it looks like $\sqrt{x^2-a^2}$ for some value of $a$:
+\begin{align*}
+\sqrt{4x^2-1} &= \sqrt{4\left(x^2-\frac14\right)}\\
+		&= 2\sqrt{x^2-\left(\frac12\right)^2}.
+\end{align*}
+So we have $a=1/2$, and following Key Idea \ref{idea:trigsub}(c), we set $x= \frac12\sec\theta$, and hence $dx = \frac12\sec\theta\tan\theta\ d\theta$. %The Key Idea also shows that $\sqrt{x^2-1/2^2} = \frac12\tan\theta$. 
+We now rewrite the integral with these substitutions:
+\begin{align*}
+\int \sqrt{4x^2-1}\ dx &= \int 2\sqrt{x^2-\left(\frac12\right)^2}\ dx\\
+			&= \int 2\sqrt{\frac14\sec^2\theta - \frac14}\left(\frac12\sec\theta\tan\theta\right)\ d\theta\\
+			&=\int \sqrt{\frac14(\sec^2\theta-1)}\Big(\sec\theta\tan\theta\Big)\ d\theta\\
+			&=\int\sqrt{\frac14\tan^2\theta}\Big(\sec\theta\tan\theta\Big)\ d\theta\\
+			&=\int \frac12\tan^2\theta\sec\theta\ d\theta\\
+			&=\frac12\int \Big(\sec^2\theta-1\Big)\sec\theta\ d\theta\\
+			&=\frac12\int \big(\sec^3\theta - \sec\theta\big)\ d\theta.
+\end{align*}
+We integrated $\sec^3\theta$ in Example \ref{ex_trigint6}, finding its antiderivatives to be
+$$\int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big)+C.$$
+Thus
+\begin{align*}
+\int \sqrt{4x^2-1}\ dx &=\frac12\int \big(\sec^3\theta - \sec\theta\big)\ d\theta\\
+			&= \frac12\left(\frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big) -\ln|\sec \theta + \tan\theta|\right) + C\\
+			&= \frac14\left(\sec\theta\tan\theta -\ln|\sec\theta+\tan\theta|\right)+C.
+\end{align*}
+We are not yet done. Our original integral is given in terms of $x$, whereas our final answer, as given, is in terms of $\theta$. We need to rewrite our answer in terms of $x$. With $a=1/2$, and $x=\frac12\sec\theta$, the reference triangle in Key Idea \ref{idea:trigsub}(c) shows that 
+$$\tan \theta = \sqrt{x^2-1/4}/(1/2) = 2\sqrt{x^2-1/4}\quad \text{and}\quad \sec\theta = 2x.$$
+Thus 
+\begin{align*}
+\frac14\big(\sec\theta\tan\theta -\ln\big|\sec\theta+\tan\theta\big|\big)+C &=
+				\frac14\big(2x\cdot 2\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\big)+C\\
+				&= \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.
+\end{align*} 
+The final answer is given in the last line above, repeated here:
+$$\int \sqrt{4x^2-1}\ dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.$$
+}\\
+
+\example{ex_trigsub4}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds \int \frac{\sqrt{4-x^2}}{x^2}\ dx$.}
+{We use Key Idea \ref{idea:trigsub}(a) with $a=2$, $x=2\sin \theta$, $dx = 2\cos \theta$ and hence $\sqrt{4-x^2} = 2\cos\theta$. This gives
+\begin{align*}
+\int \frac{\sqrt{4-x^2}}{x^2}\ dx &= \int \frac{2\cos\theta}{4\sin^2\theta}(2\cos\theta)\ d\theta\\
+		&= \int \cot^2\theta\ d\theta\\
+		&=	\int (\csc^2\theta -1)\ d\theta\\
+		&= -\cot\theta -\theta + C.
+\end{align*}
+We need to rewrite our answer in terms of $x$. Using the reference triangle found in Key Idea \ref{idea:trigsub}(a), we have $\cot\theta = \sqrt{4-x^2}/x$ and $\theta = \sin^{-1}(x/2)$. Thus
+$$\int \frac{\sqrt{4-x^2}}{x^2}\ dx = -\frac{\sqrt{4-x^2}}x-\sin^{-1}\left(\frac x2\right) + C.$$
+}\\
+
+Trigonometric Substitution can be applied in many situations, even those not of the form $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ or $\sqrt{x^2+a^2}$. In the following example, we apply it to an integral we already know how to handle.\\
+
+\example{ex_trigsub5}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds \int\frac1{x^2+1}\ dx$.}
+{We know the answer already as $\tan^{-1}x+C$. We apply Trigonometric Substitution here to show that we get the same answer without inherently relying on knowledge of the derivative of the arctangent function.
+
+Using Key Idea \ref{idea:trigsub}(b), let $x=\tan\theta$, $dx=\sec^2\theta\ d\theta$ and note that $x^2+1 = \tan^2\theta+1 = \sec^2\theta$. Thus
+\begin{align*}
+\int \frac1{x^2+1}\ dx &= \int \frac{1}{\sec^2\theta}\sec^2\theta\ d\theta \\
+			&= \int 1\ d\theta\\
+			&= \theta + C.
+\end{align*}
+Since $x=\tan \theta$, $\theta = \tan^{-1}x$, and we conclude that $\ds \int\frac1{x^2+1}\ dx = \tan^{-1}x+C.$
+}\\
+
+The next example is similar to the previous one in that it does not involve a square--root. It shows how several techniques and identities can be combined to obtain a solution.\\
+
+\example{ex_trigsub7}{\textbf{Using Trigonometric Substitution}\\
+Evaluate $\ds\int\frac1{(x^2+6x+10)^2}\ dx.$
+}
+{We start by completing the square, then make the substitution $u=x+3$, followed by the trigonometric substitution of $u=\tan\theta$:
+\begin{align}
+\int \frac1{(x^2+6x+10)^2}\ dx &= \int \frac1{(u^2+1)^2}\ du. \notag
+\intertext{Now make the substitution $u=\tan\theta$, $du=\sec^2\theta\ d\theta$:}
+   &=	\int \frac1{(\tan^2\theta+1)^2}\sec^2\theta\ d\theta\notag\\
+	&= \int\frac 1{(\sec^2\theta)^2}\sec^2\theta\ d\theta\notag\\
+	&= \int \cos^2\theta\ d\theta.\notag
+	\intertext{Applying a power reducing formula, we have}
+	&= \int \left(\frac12 +\frac12\cos(2\theta)\right)\ d\theta \notag\\
+	&= \frac12\theta + \frac14\sin(2\theta) + C.\label{eq:extrigsub7}
+\end{align}
+We need to return to the variable $x$. As $u=\tan\theta$, $\theta = \tan^{-1}u$. Using the identity $\sin(2\theta) = 2\sin\theta\cos\theta$ and using the reference triangle found in Key Idea \ref{idea:trigsub}(b), we have 
+$$\frac14\sin(2\theta) = \frac12\frac u{\sqrt{u^2+1}}\cdot\frac 1{\sqrt{u^2+1}} = \frac12\frac u{u^2+1}.$$
+Finally, we return to $x$ with the substitution $u=x+3$. We start with the expression in Equation \eqref{eq:extrigsub7}:
+\begin{align*}
+\frac12\theta + \frac14\sin(2\theta) + C &= \frac12\tan^{-1}u + \frac12\frac{u}{u^2+1}+C\\
+				&= \frac12\tan^{-1}(x+3) + \frac{x+3}{2(x^2+6x+10)}+C.
+\end{align*}
+Stating our final result in one line,
+$$\int\frac1{(x^2+6x+10)^2}\ dx=\frac12\tan^{-1}(x+3) + \frac{x+3}{2(x^2+6x+10)}+C.$$
+}\\
+
+
+Our last example returns us to definite integrals, as seen in our first example. Given a definite integral that can be evaluated using Trigonometric Substitution, we could first evaluate the corresponding indefinite integral (by changing from an integral in terms of $x$ to one in terms of $\theta$, then converting back to $x$) and then evaluate using the original bounds. It is much more straightforward, though, to change the bounds as we substitute.\\
+
+\example{ex_trigsub6}{\textbf{Definite integration and Trigonometric Substitution}\\
+Evaluate $\ds\int_0^5\frac{x^2}{\sqrt{x^2+25}}\ dx$.
+}
+{Using Key Idea \ref{idea:trigsub}(b), we set $x=5\tan\theta$, $dx = 5\sec^2\theta\ d\theta$, and note that $\sqrt{x^2+25} = 5\sec\theta$. As we substitute, we can also change the bounds of integration.
+
+The lower bound of the original integral is $x=0$. As $x=5\tan\theta$, we solve for $\theta$ and find $\theta = \tan^{-1}(x/5)$. Thus the new lower bound is $\theta = \tan^{-1}(0) = 0$. The original upper bound is $x=5$, thus the new upper bound is $\theta = \tan^{-1}(5/5) = \pi/4$. 
+
+Thus we have 
+\begin{align*}
+\int_0^5\frac{x^2}{\sqrt{x^2+25}}\ dx &= \int_0^{\pi/4} \frac{25\tan^2\theta}{5\sec\theta}5\sec^2\theta\ d\theta\\
+		&= 25\int_0^{\pi/4} \tan^2\theta\sec\theta\ d\theta.
+\end{align*}
+We encountered this indefinite integral in Example \ref{ex_trigsub2} where we found 
+$$\int \tan^2\theta\sec\theta \ d\theta = \frac12\big(\sec\theta\tan\theta-\ln|\sec\theta+\tan\theta|\big).$$
+So
+\begin{align*}
+25\int_0^{\pi/4} \tan^2\theta\sec\theta\ d\theta &= \frac{25}2\big(\sec\theta\tan\theta-\ln|\sec\theta+\tan\theta|\big)\Bigg|_0^{\pi/4}\\
+&= \frac{25}2\big(\sqrt2-\ln(\sqrt2+1)\big)\\
+&\approx 6.661.
+\end{align*}
+\vskip-1.5\baselineskip
+}\\
+
+\enlargethispage{3\baselineskip}
+The following equalities are very useful when evaluating integrals using Trigonometric Substitution. 
+
+\keyidea{idea:useful_trigsub}{Useful Equalities with Trigonometric Substitution}
+{\begin{itemize}
+	\item	$\sin(2\theta) = 2\sin\theta\cos\theta$
+	\item	$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta-1 = 1-2\sin^2\theta$
+	\item $\ds \int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln\big|\sec \theta+\tan \theta\big|\Big)+C$
+	\item	$\ds \int \cos^2\theta\ d\theta = \int \frac12\big(1+\cos(2\theta)\big)\ d\theta = \frac12\big(\theta+\sin\theta\cos\theta\big)+C.$
+\end{itemize}
+}
+
+\printexercises{exercises/06_08_exercises}
+
+
+

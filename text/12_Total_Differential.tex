@@ -1,0 +1,192 @@
+\section{Differentiability and the Total Differential}\label{sec:total_differential}
+
+We studied  \textbf{differentials} in Section \ref{sec:differentials}, where Definition \ref{def:differential}  states that if $y=f(x)$ and $f$ is differentiable, then, $dy=\fp(x)dx$. One important use of this differential is in Integration by Substitution. Another important application is approximation. Let $\dx = dx$ represent a change in $x$. When $dx$ is small, $dy\approx \dy$, the change in $y$ resulting from the change in $x$. Fundamental in this understanding is this: as $dx$ gets small, the difference between $\dy$ and $dy$ goes to 0. Another way of stating this: as $dx$ goes to 0, the \textit{error} in approximating $\dy$ with $dy$ goes to 0.
+
+We extend this idea to functions of two variables. Let $z=f(x,y)$, and let $\dx = dx$ and $\dy=dy$ represent changes in $x$ and $y$, respectively. Let $\ddz = f(x+dx,y+dy) - f(x,y)$ be the change in $z$ over the change in $x$ and $y$. Recalling that $f_x$ and $f_y$ give the instantaneous rates of $z$-change in the $x$- and $y$-directions, respectively, we can approximate $\ddz$ with $dz = f_xdx+f_ydy$; in words, the total change in $z$ is approximately the change caused by changing $x$ plus the change caused by changing $y$. In a moment we give an indication of whether or not this approximation is any good. First we give a name to $dz$.
+
+\definition{def:total_differential}{Total Differential}
+{Let $z=f(x,y)$ be continuous on an open set $S$. Let $dx$ and $dy$ represent changes in $x$ and $y$, respectively. Where the partial derivatives $f_x$ and $f_y$ exist, the \textbf{total differential of $z$} is
+$$dz = f_x(x,y)dx + f_y(x,y)dy.$$
+}
+
+\example{ex_total_diff_10}{\textbf{Finding the total differential}\\
+Let $z = x^4e^{3y}$. Find $dz$.}
+{We compute the partial derivatives: $f_x = 4x^3e^{3y}$ and $f_y = 3x^4e^{3y}$. Following Definition \ref{def:total_differential}, we have
+$$dz = 4x^3e^{3y}dx+3x^4e^{3y}dy.$$
+\vskip-1.5\baselineskip
+}\\
+
+We \textit{can} approximate $\ddz$ with $dz$, but as with all approximations, there is error involved. A good approximation is one in which the error is small. At a given point $(x_0,y_0)$, let $E_x$ and $E_y$ be functions of $dx$ and $dy$ such that $E_xdx+E_ydy$ describes this error. Then
+\begin{align*}
+\ddz &= dz + E_xdx+ E_ydy \\
+		&= f_x(x_0,y_0)dx+f_y(x_0,y_0)dy + E_xdx+E_ydy.
+\end{align*}
+If the approximation of $\ddz$ by $dz$ is good, then as $dx$ and $dy$ get small,  so does $E_xdx+E_ydy$. The approximation of $\ddz$ by $dz$ is even better if, as $dx$ and $dy$ go to 0, so do $E_x$ and $E_y$. This leads us to our definition of differentiability.
+
+\definition{def:multi_differentiability}{Multivariable Differentiability}
+{Let $z=f(x,y)$ be defined on an open set $S$ containing $(x_0,y_0)$ where $f_x(x_0,y_0)$ and $f_y(x_0,y_0)$ exist. Let $dz$ be the total differential of $z$ at $(x_0,y_0)$, let $\ddz = f(x_0+dx,y_0+dy) - f(x_0,y_0)$, and let $E_x$ and $E_y$ be functions of $dx$ and $dy$  such that 
+$$\ddz = dz + E_xdx + E_ydy.$$
+\begin{itemize}
+	\item $f$ is \textbf{differentiable at $(x_0,y_0)$} if, given $\epsilon >0$, there is a $\delta >0$ such that if $||\la dx,dy\ra|| < \delta$, then $||\la E_x,E_y\ra|| < \epsilon$. That is, as $dx$ and $dy$ go to 0, so do $E_x$ and $E_y$.
+	\item	$f$ is \textbf{differentiable on $S$} if $f$ is differentiable at every point in $S$. If $f$ is differentiable on $\mathbb{R}^2$, we say that $f$ is \textbf{differentiable everywhere}.
+\end{itemize}
+}
+
+\example{ex_totaldiff1}{\textbf{Showing a function is differentiable}\\
+Show $f(x,y) = xy+3y^2$ is differentiable using Definition \ref{def:multi_differentiability}.}
+{We begin by finding $f(x+dx,y+dy)$, $\ddz$, $f_x$ and $f_y$.
+\begin{align*}
+f(x+dx,y+dy) &= (x+dx)(y+dy) + 3(y+dy)^2 \\
+						&= xy + xdy+ydx+dxdy + 3y^2+6ydy+3dy^2.
+\end{align*}
+$\ddz = f(x+dx,y+dy) - f(x,y)$, so
+$$\ddz = xdy + ydx + dxdy + 6ydy+3dy^2.$$
+It is straightforward to compute $f_x = y$ and $f_y = x+6y$. Consider once more $\ddz$:
+\begin{align*}
+\ddz &= xdy + ydx + dxdy + 6ydy+3dy^2 \qquad \text{ (now reorder)}\\
+		&= ydx + xdy+6ydy+ dxdy + 3dy^2\\
+		&= \underbrace{(y)}_{f_x}dx + \underbrace{(x+6y)}_{f_y}dy + \underbrace{(dy)}_{E_x}dx+\underbrace{(3dy)}_{E_y}dy\\
+		&= f_xdx + f_ydy + E_xdx+E_ydy.
+\end{align*}
+With $E_x = dy$ and $E_y = 3dy$, it is clear that as $dx$ and $ dy$ go to 0, $E_x$ and $E_y$ also go to 0. Since this did not depend on a specific point $(x_0,y_0)$, we can say that $f(x,y)$ is differentiable for all pairs $(x,y)$ in $\mathbb{R}^2$, or, equivalently, that $f$ is differentiable everywhere. 
+}\\
+
+Our intuitive understanding of differentiability of functions $y=f(x)$ of one variable was that the graph of $f$ was ``smooth.'' A similar intuitive understanding of functions $z=f(x,y)$ of two variables is that the surface defined by $f$ is also ``smooth,'' not containing cusps, edges, breaks,  etc. The following theorem states that differentiable functions are continuous, followed by another theorem that   provides a
+more tangible way of determining whether a great number of function are differentiable or not.
+
+\theorem{thm:diff_cont_multi}{Continuity and Differentiability of Multivariable Functions}
+{Let $z=f(x,y)$ be defined on an open set $S$ containing $(x_0,y_0)$. 
+If $f$ is differentiable at $(x_0,y_0)$, then $f$ is continuous at $(x_0,y_0)$.
+}
+
+\theorem{thm:differentiable}{Differentiability of Multivariable Functions}
+{Let $z=f(x,y)$ be defined on an open set $S$ containing $(x_0,y_0)$. 
+If $f_x$ and $f_y$ are both continuous on $S$, then $f$ is differentiable on $S$.
+}
+
+The theorems assure us that  essentially all functions that we see in the course of our studies here are differentiable (and hence continuous) on their natural domains. There is a difference between Definition \ref{def:multi_differentiability} and Theorem \ref{thm:differentiable}, though: it is possible for a function $f$ to be differentiable yet $f_x$ and/or $f_y$ is \textit{not} continuous. Such strange behavior of functions is a source of delight for many mathematicians.
+
+It is also possible for $f_x$ and $f_y$ to exist at a point but not be continuous at that point. In such a case, we need to use other methods to determine whether or not $f$ is differentiable at that point.
+
+For instance, consider the function 
+$$f(x,y) = \left\{\begin{array}{cl} \frac{xy}{x^2+y^2} & (x,y)\neq (0,0) \\
+																0 & (x,y) = (0,0)\end{array}\right.$$
+We can find $f_x(0,0)$ and $f_y(0,0)$ using Definition 	\ref{def:partial_derivative}:
+\begin{align*}
+f_x(0,0) &= \lim_{h\to 0} \frac{f(0+h,0) - f(0,0)}{h} \\
+				&= \lim_{h\to 0} \frac{0}{h^2} = 0;\\
+f_y(0,0) &= \lim_{h\to 0} \frac{f(0,0+h) - f(0,0)}{h} \\
+				&= \lim_{h\to 0} \frac{0}{h^2} = 0.
+\end{align*}
+
+Both $f_x$ and $f_y$ \textit{exist} at $(0,0)$, but they are not continuous at $(0,0)$, as 
+$$f_x(x,y) = \frac{y(y^2-x^2)}{(x^2+y^2)^2} \qquad \text{and}\qquad f_y(x,y) = \frac{x(x^2-y^2)}{(x^2+y^2)^2} $$ are not continuous at $(0,0)$. (Take the limit of $f_x$ as $(x,y)\to(0,0)$ along the $x$- and $y$-axes; they give different results.) So even though $f_x$ and $f_y$ \textit{exist} at every point in the $x$-$y$ plane, they are not continuous. Therefore it is possible, by Theorem \ref{thm:differentiable}, for $f$ to not be differentiable.
+
+ Indeed, it is not. One can show that $f$ is not continuous at $(0,0)$ (see Example \ref{ex_multilimit4}), and by Theorem \ref{thm:diff_cont_multi}, this means $f$ is not differentiable at $(0,0)$.\\
+														
+
+\noindent\textbf{\large Approximating with the Total Differential}\\
+
+By the definition, when $f$ is differentiable $dz$ is a good approximation for $\ddz$ when $dx$ and $dy$ are small. We give some simple examples of how this is used here.\\
+
+\example{ex_totaldiff2}{\text{Approximating with the total differential}\\
+Let $z = \sqrt{x}\sin y$. Approximate $f(4.1,0.8)$.}
+{Recognizing that $\pi/4 \approx 0.785\approx 0.8$, we can approximate $f(4.1,0.8)$ using $f(4,\pi/4)$. We can easily compute $f(4,\pi/4) = \sqrt{4}\sin(\pi/4) = 2\left(\frac{\sqrt{2}}2\right) = \sqrt{2}\approx 1.414.$ Without calculus, this is the best approximation we could reasonably come up with. The total differential gives us a way of adjusting this initial approximation to hopefully get a more accurate answer.
+
+We let $\ddz = f(4.1,0.8) - f(4,\pi/4)$. The total differential $dy$ is approximately equal to $\ddz$, so
+\begin{equation}f(4.1,0.8) - f(4,\pi/4) \approx dz \quad \Rightarrow \quad f(4.1,0.8) \approx dz + f(4,\pi/4).\label{eq:totaldiff2}\end{equation}
+To find $dz$, we need $f_x$ and $f_y$.
+
+\begin{align*}
+f_x(x,y) &= \frac{\sin y}{2\sqrt{x}} \quad\Rightarrow&
+f_x(4,\pi/4) &= \frac{\sin \pi/4}{2\sqrt{4}} \\
+						& &&= \frac{\sqrt{2}/2}{4} = \sqrt{2}/8.\\
+f_y(x,y) &= \sqrt{x}\cos y \quad\Rightarrow&
+f_y(4,\pi/4) &= \sqrt{4}\frac{\sqrt{2}}2\\
+		& & &= \sqrt{2}.
+\end{align*}
+Approximating $4.1$ with 4 gives $dx = 0.1$; approximating $0.8$ with $\pi/4$ gives $dy \approx 0.015$. Thus
+\begin{align*}
+dz(4,\pi/4) &=  f_x(4,\pi/4)(0.1) + f_y(4,\pi/4)(0.015)\\
+				&= \frac{\sqrt{2}}8(0.1) + \sqrt{2}(0.015)\\
+				&\approx 0.039.
+\end{align*}
+Returning to Equation \eqref{eq:totaldiff2}, we have
+$$f(4.1,0.8) \approx 0.039 + 1.414 = 1.4531.$$
+We, of course, can compute the actual value of $f(4.1,0.8)$ with a calculator; the actual value, accurate to 5 places after the decimal, is $1.45254$. Obviously our approximation is quite good.
+}\\
+
+The point of the previous example was \textit{not} to develop an approximation method for known functions. After all, we can very easily compute $f(4.1,0.8)$ using readily available technology. Rather, it serves to illustrate how well this method of approximation works, and to reinforce the following concept:
+\begin{center}
+	``New position = old position $+$ amount of change,'' so\\
+	``New position $\approx$ old position + approximate amount of change.''
+\end{center}
+
+In the previous example, we could easily compute $f(4,\pi/4)$ and could approximate the amount of $z$-change when computing $f(4.1,0.8)$, letting us approximate the new $z$-value.
+
+It may be surprising to learn that it is not uncommon to know the values of $f$, $f_x$ and $f_y$ at a particular point without actually knowing $f$. The total differential gives a good method of approximating $f$ at nearby points.\\
+
+\example{ex_totaldiff3}{\textbf{Approximating an unknown function}\\
+Given that $f(2,-3) = 6$, $f_x(2,-3) = 1.3$ and $f_y(2,-3) = -0.6$, approximate $f(2.1,-3.03)$.}
+{The total differential approximates how much $f$ changes from the point $(2,-3)$ to the point $(2.1,-3.03)$. With $dx = 0.1$ and $dy = -0.03$, we have
+\begin{align*}
+dz &= f_x(2,-3)dx + f_y(2,-3)dy\\
+		&= 1.3(0.1) + (-0.6)(-0.03) \\
+		&= 0.148.
+\end{align*}
+The change in $z$ is approximately $0.148$, so we approximate $f(2.1,-3.03)\approx 6.148.$
+}\\
+
+\noindent\textbf{\large Error/Sensitivity Analysis}\\
+
+The total differential gives an approximation of the change in $z$ given small changes in $x$ and $y$. We can use this to approximate error propagation; that is, if the input is a little off from what it should be, how far from correct will the output be? We demonstrate this in an example.\\
+
+\example{ex_totaldiff4}{\textbf{Sensitivity analysis}\\
+A cylindrical steel storage tank is to be built that is 10ft tall and 4ft across in diameter. It is known that the steel will expand/contract with temperature changes; is the overall volume of the tank more sensitive to changes in the diameter or in the height of the tank?}
+{A cylindrical solid with height $h$ and radius $r$ has volume $V = \pi r^2h$. We can view $V$ as a function of two variables, $r$ and $h$. We can compute partial derivatives of $V$:
+$$\frac{\partial V}{\partial r} = V_r(r,h) = 2\pi rh \qquad \text{and}\qquad \frac{\partial V}{\partial h} = V_h(r,h) = \pi r^2.$$
+The total differential is $dV = (2\pi rh)dr + (\pi r^2)dh.$ When $h = 10$ and $r = 2$, we have $dV = 40\pi dr + 4\pi dh$.
+Note that the coefficient of $dr$ is $40\pi\approx 125.7$; the coefficient of $dh$ is a tenth of that, approximately $12.57$. A small change in radius will be multiplied by 125.7, whereas a small change in height will be multiplied by 12.57. Thus the volume of the tank is more sensitive to changes in radius than in height.
+}\\
+
+The previous example showed that the volume of a particular tank was more sensitive to changes in radius than in height. Keep in mind that this analysis only applies to a tank of those dimensions. A tank with a height of 1ft and radius of 5ft would be more sensitive to changes in height than in radius.
+
+One could make a chart of small changes in radius and height and find exact changes in volume given specific changes. While this provides exact numbers, it does not give as much insight as the error analysis using the total differential.\\
+
+\noindent\textbf{\large Differentiability of Functions of Three Variables}
+
+The definition of differentiability for functions of three variables is very similar to that of functions of two variables. We again start with the total differential.
+
+\definition{def:total_differential3}{Total Differential}
+{Let $w=f(x,y,z)$ be continuous on an open set $S$. Let $dx$, $dy$ and $dz$ represent changes in $x$, $y$ and  $z$, respectively. Where the partial derivatives $f_x$, $f_y$ and $f_z$ exist, the \textbf{total differential of $w$} is
+$$dz = f_x(x,y,z)dx + f_y(x,y,z)dy+f_z(x,y,z)dz.$$
+}
+
+This differential can be a good approximation of the change in $w$ when $w = f(x,y,z)$ is \textbf{differentiable}.
+
+\definition{def:multi_differentiability3}{Multivariable Differentiability}
+{Let $w=f(x,y,z)$ be defined on an open ball $B$ containing $(x_0,y_0,z_0)$ where $f_x(x_0,y_0,z_0)$, $f_y(x_0,y_0,z_0)$ and $f_z(x_0,y_0,z_0)$ exist. Let $dw$ be the total differential of $w$ at $(x_0,y_0,z_0)$, let $\Delta w = f(x_0+dx,y_0+dy,z_0+dz) - f(x_0,y_0,z_0)$, and let $E_x$, $E_y$ and $E_z$ be functions of $dx$, $dy$ and $dz$  such that 
+$$\Delta w = dw + E_xdx + E_ydy + E_zdz.$$
+\begin{itemize}
+	\item $f$ is \textbf{differentiable at $(x_0,y_0,z_0)$} if, given $\epsilon >0$, there is a $\delta >0$ such that if $||\la dx,dy,dz\ra|| < \delta$, then $||\la E_x,E_y,E_z\ra|| < \epsilon$. 
+	\item	$f$ is \textbf{differentiable on $B$} if $f$ is differentiable at every point in $B$. If $f$ is differentiable on $\mathbb{R}^3$, we say that $f$ is \textbf{differentiable everywhere}.
+\end{itemize}
+}
+
+Just as before, this definition gives a rigorous statement about what it means to be differentiable that is not very intuitive. We follow it with a theorem similar to Theorem \ref{thm:differentiable}.
+
+\theorem{thm:differentiable3}{Continuity and Differentiability of Functions of Three Variables}
+{Let $w=f(x,y,z)$ be defined on an open ball $B$ containing $(x_0,y_0,z_0)$. 
+\begin{itemize}
+\item	If $f$ is differentiable at $(x_0,y_0,z_0)$, then $f$ is continuous at $(x_0,y_0,z_0)$.
+\item If $f_x$, $f_y$  and $f_z$ are continuous on $B$, then $f$ is differentiable on $B$.
+\end{itemize}
+}
+
+This set of definition and theorem extends to functions of any number of variables. The theorem again gives us a simple way of verifying that most functions that we enounter are differentiable on their natural domains.\\
+
+\noindent\textbf{\large Summary}\\
+
+This section has given us a formal definition of what it means for a functions to be ``differentiable,'' along with a theorem that gives a more accessible understanding. The following sections return to notions prompted by our study of partial derivatives that make use of the fact that most functions we encounter are differentiable.
+
+\printexercises{exercises/12_04_exercises}

@@ -1,0 +1,147 @@
+\section{Interpretations of the Derivative}\label{sec:interp_deriv}
+
+%\vskip \baselineskip
+%\noindent\textbf{\large The Meaning of the Derivative}\\
+
+The previous section defined the derivative of a function and gave examples of how to compute it using its definition (i.e., using limits). The section also started with a brief motivation for this definition, that is, finding the instantaneous velocity of a falling object given its position function. The next section will give us more accessible tools for computing the derivative, tools that are easier to use than repeated use of limits.
+
+This section falls in between the ``What is the definition of the derivative?'' and ``How do I compute the derivative?'' sections. Here we are concerned with ``What does the derivative mean?'', or perhaps, when read with the right emphasis, ``What \textit{is} the derivative?'' We offer two interconnected interpretations of the derivative, hopefully explaining why we care about it and why it is worthy of study.\\
+
+\vskip \baselineskip
+\noindent\textbf{\large Interpretation of the Derivative \#1: Instantaneous Rate of Change}\\
+
+The previous section started with an example of using the position of an object (in this case, a falling amusement--park rider) to find the object's velocity. This type of example is often used when introducing the derivative because we tend to readily recognize that velocity is the \textit{instantaneous rate of change of position.} In general, if $f$ is a function of $x$, then $\fp(x)$ measures the instantaneous rate of change of $f$ with respect to $x$. Put another way, the derivative answers ``When $x$ changes, at what rate does $f$ change?'' Thinking back to the amusement--park ride, we asked ``When time changed, at what rate did the height change?'' and found the answer to be ``By $-64$ feet per second.'' 
+
+Now imagine driving a car and looking at the speedometer, which reads ``60 mph.'' Five minutes later, you wonder how far you have traveled. Certainly, lots of things could have happened in those 5 minutes; you could have intentionally sped up significantly, you might have come to a complete stop, you might have slowed to 20 mph as you passed through construction.  But suppose that you know, as the driver, none of these things happened. You know you maintained a fairly consistent speed over those 5 minutes. What is a good approximation of the distance traveled?
+
+One could argue the \textit{only} good approximation, given the information provided, would be based on ``distance = rate $\times$ time.'' In this case, we assume a constant rate of 60 mph with a time of $5/60$ hours. Hence we would approximate the distance traveled as 5 miles.\\
+
+
+Referring back to the falling amusement--park ride, knowing that at $t=2$ the velocity was $-64$ ft/s, we could reasonably assume that 1 second later the riders' height would have dropped by about 64 feet. Knowing that the riders were \textit{accelerating} as they fell would inform us that this is an \textit{under--approximation}. If all we knew was that $f(2) = 86$ and $\fp(2) = -64$, we'd know that we'd have to stop the riders quickly otherwise they would hit the ground!
+
+\vskip \baselineskip
+\noindent\textbf{Units of the Derivative}\\
+
+It is useful to recognize the \textit{units} of the derivative function. If $y$ is a function of $x$, i.e., $y=f(x)$ for some function $f$, and $y$ is measured in feet and $x$ in seconds, then the units of $y' = \fp$ are ``feet per second,'' commonly written as ``ft/s.'' In general, if $y$ is measured in units $P$ and $x$ is measured in units $Q$, then $y'$ will be measured in units ``$P$ per $Q$'', or ``$P/Q$.'' Here we see the fraction--like behavior of the derivative in the notation:
+	\begin{center}
+	the units of $\quad\ds \frac{dy}{dx}$\quad are \quad$\ds \frac{\text{units of $y$}}{\text{units of $x$}}$.
+	\end{center}
+
+\example*{ex_der_meaning1}{\textbf{The meaning of the derivative: World Population}\\
+
+Let $P(t)$ represent the world population $t$ minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that $P(0) = 7,028,734,178$ (\texttt{www.prb.org}). It is also fairly accurate to state that $P'(0) = 156$; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 \textit{people per minute} (note the units). Twenty days later (or, 28,800 minutes later) we could reasonably assume the population grew by about $28,800\cdot156 = 4,492,800$ people. %If one were to plot the population of the world, with population on the $y$-axis and time, in minutes, on the $x$-axis, then when $x=0$, the tangent line to the graph would have a slope of 156.
+}\\
+
+\example{ex_der_meaning2}{\textbf{The meaning of the derivative: Manufacturing}\\
+
+The term \textit{widget} is an economic term for a generic unit of manufacturing output. Suppose a company produces widgets, and knows that the market supports a price of \$10 per widget. Let $P(n)$ give the profit, in dollars, earned by manufacturing and selling $n$ widgets. The company likely cannot make a (positive) profit making just one widget; the start--up costs will likely exceed \$10. Mathematically, we would write this as $P(1) < 0$.
+
+What do $P(1000) = 500$ and $P'(1000)=0.25$ mean? Approximate $P(1100)$.%
+}
+{\enlargethispage{2\baselineskip}
+The equation $P(1000)=500$ means that selling 1,000 widgets returns a profit of \$500. We interpret $P'(1000) = 0.25$ as meaning that the profit per widget is increasing at rate of \$$0.25$ per widget (the units are ``dollars per widget.'') Since we have no other information to use, our best approximation for $P(1100)$ is:
+	$$P(1100) \approx P(1000) + P'(1000)\times100 = \text{\$500} + 100\cdot0.25 = \text{\$525.}$$
+We approximate that selling 1,100 widgets returns a profit of \$525.
+}\\
+
+The previous examples made use of an important approximation tool that we first used in our previous ``driving a car at 60 mph'' example at the beginning of this section. Five minutes after looking at the speedometer, our best approximation for distance traveled assumed the rate of change was constant. In Examples \ref{ex_der_meaning1} and \ref{ex_der_meaning2} we made similar approximations. We were given rate of change information which we used to approximate total change. Notationally, we would say that 
+	$$f(c+h) \approx f(c) + \fp(c)\cdot h.$$ This approximation is best when $h$ is ``small.'' ``Small'' is a relative term; when dealing with the world population, $h=$ 22 days = 28,800 minutes is small in comparison to years. When manufacturing widgets, 100 widgets is small when one plans to manufacture thousands. \\
+
+% If $C(t)$ measures the number of customers in a store at time $t$, where $t$ is measured in hours since opening, then $C'(t)$ measures the rate at which the number of customers is increasing per hour. Suppose 2 hours after opening there are 50 customers in a store; this means $C(2) = 50$. Suppose further that $C'(2) = 20$. That means that 2 hours after opening, customers are coming into the store at a rate of 20 per hour. One could then reasonably assume that 3 hours after opening the store would have about 70 customers in it. (And 2.5 hours after opening the store would have about 60 customers in it.) If one were to plot the number of people in the 
+
+\noindent\textbf{\large The Derivative and Motion}\\
+
+One of the most fundamental applications of the derivative is the study of motion. Let $s(t)$ be a position function, where $t$ is time and $s(t)$ is  distance. For instance, $s$ could measure the height of a projectile or the distance an object has traveled. 
+
+Let's let $s(t)$ measure the distance traveled, in feet, of an object after $t$ seconds of travel. Then $s'(t)$ has units ``feet per second,'' and $s'(t)$ measures the \textit{instantaneous rate of distance change} -- it measures \textbf{velocity}. 
+
+Now consider $v(t)$, a velocity function. That is, at time $t$, $v(t)$ gives the velocity of an object. The derivative of $v$, $v'(t)$, gives the \textit{instantaneous rate of velocity change} --
+\textbf{acceleration}. (We often think of acceleration in terms of cars: a car may ``go from 0 to 60 in 4.8 seconds.'' This is an \textit{average} acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of $v'(t)$) are ``feet per second per second,'' or $($ft/s$)$/s. We often shorten this to ``feet per second squared,'' or ft/s$^2$, but this tends to obscure the meaning of the units.
+
+Perhaps the most well known acceleration is that of gravity. In this text, we use $g=32$ft/s$^2$ or $g=9.8$m/s$^2$. What do these numbers mean?
+
+A constant acceleration of 32$($ft/s$)$/s means that the velocity changes by 32ft/s each second. For instance, let $v(t)$ measures the velocity of a ball thrown straight up into the air, where $v$ has units ft/s and $t$ is measured in seconds. The ball will have a positive velocity while traveling upwards and a negative velocity while falling down. The acceleration is thus $-32$ft/s$^2$. If $v(1) = 20$ft/s$^2$, then when $t=2$, the velocity will have decreased by 32ft/s; that is, $v(t) = -12$ft/s. We can continue: $v(3) = -44$ft/s, and we can also figure that $v(0) = 42$ft/s.
+
+These ideas are so important we write them out as a Key Idea.
+
+\keyidea{idea:motion}{The Derivative and Motion}
+{\begin{itemize}
+	\item Let $s(t)$ be the position function of an object. Then $s'(t)$ is the velocity function of the object.
+	\item	Let $v(t)$ be the velocity function of an object. Then $v'(t)$ is the acceleration function of the object.
+\end{itemize}
+}
+
+We now consider the second interpretation of the derivative given in this section. This interpretation is not independent from the first by any means; many of the same concepts will be stressed, just from a slightly different perspective.
+
+\vskip 2\baselineskip
+\noindent\textbf{\large Interpretation of the Derivative \#2: The Slope of the Tangent Line}\\
+
+Given a function $y=f(x)$, the difference quotient $\ds \frac{f(c+h)-f(c)}{h}$ gives a change in $y$ values divided by a change in $x$ values; i.e., it is a measure of the ``rise over run,'' or ``slope,'' of the line that goes through two points on the graph of $f$. As $h$ shrinks to 0, these two points come close together; in the limit we find $\fp(c)$, the slope of a special line called the tangent line that intersects $f$ only once near $x=c$.
+
+Lines have a constant rate of change, their slope. Nonlinear functions do not have a constant rate of change, but we can measure their \textit{instantaneous rate of change} at a given $x$ value $c$ by computing $\fp(c)$. We can get an idea of how $f$ is behaving by looking at the slopes of its tangent lines. We explore this idea in the following example.\\
+
+\example{ex_der_meaning3}{\textbf{Understanding the derivative: the rate of change}\\
+Consider $f(x) = x^2$ as shown in Figure \ref{fig:xsquared}. It is clear that at $x=3$ the function is growing faster than at $x=1$; how much faster?
+
+\mfigure{.6}{A graph of $f(x)=x^2$.}{fig:xsquared}{figures/figxsquared}
+}
+{We can answer this directly after the following section, where we learn to quickly compute derivatives. For now, we will answer graphically, by considering the slopes of the respective tangent lines. 
+\mfigure{.35}{A graph of $f(x)=x^2$ and tangent lines.}{fig:xsquaredwithgrid}{figures/figxsquaredwithgrid}
+
+With practice, one can fairly effectively sketch tangent lines to a curve at a particular point. In Figure \ref{fig:xsquaredwithgrid}, we have sketched the tangent lines to $f$ at $x=1$ and $x=3$, along with a grid to help us measure the slopes of these lines. At $x=1$, the slope is 2; at $x=3$, the slope is 6. Thus we can say not only is $f$ growing faster at $x=3$ than at $x=1$, it is growing \textit{three times as fast}.
+}\\
+
+
+
+\example{ex_der_meaning4}{\textbf{Understanding the graph of the derivative}\\
+Consider the graph of $f(x)$ (in blue)  and its derivative, $\fp(x)$ (in red) in Figure \ref{fig:fwithderiv}. %f[x_] := InterpolatingPolynomial[{-1, 0, 2}, x]*4,MAKE BIGGER, PLOT THIS WITH F' NO INTEGRATE,IDIOT
+ Use these graphs to find the slopes of the tangent lines to $f$ at $x=1$, $x=2$, and $x=3$.
+ 
+ \mfigure{.8}{Graphs of $f$ and $\fp$ in Example \ref{ex_der_meaning4}.}{fig:fwithderiv}{figures/figfwithderiv}
+ }%Because of interp poly, we have f' = -1, 0, 2 respectively
+{To find the appropriate slopes of tangent lines to $f$, we need to look at the corresponding values of $\fp$.
+
+The slope of the tangent line to $f$ at $x=1$ is $\fp(1)$; this looks to be about $-1$. %It also appears that 
+
+The slope of the tangent line to $f$ at $x=2$ is $\fp(2)$; this looks to be about $4$. 
+
+The slope of the tangent line to $f$ at $x=3$ is $\fp(3)$; this looks to be about $3$. 
+
+Using these slopes, the tangent lines to $f$ are sketched in Figure \ref{fig:fwithderivdots}. Included on the graph of $\fp$ in this figure are filled circles where $x=1$, $x=2$ and $x=3$ to help better visualize the $y$ value of $\fp$ at those points. 
+}\\
+
+\mfigure{.55}{Graphs of $f$ and $\fp$ in Example \ref{ex_der_meaning4}, along with tangent lines.}{fig:fwithderivdots}{figures/figfwithderivdots}
+
+\example{ex_der_meaning5}{\textbf{Approximation with the derivative}\\
+Consider again the graph of $f(x)$ and its derivative $\fp(x)$ in Example \ref{ex_der_meaning4}. Use the tangent line to $f$ at $x=3$ to approximate the value of $f(3.1)$. }
+{Figure \ref{fig:fwithderivzoom3} shows the graph of $f$ along with its tangent line, zoomed in at $x=3$. Notice that near $x=3$, the tangent line makes an excellent approximation of $f$. Since lines are easy to deal with, often it works well to approximate a function with its tangent line. (This is especially true when you don't actually know much about the function at hand, as we don't in this example.)
+
+\mfigure{.3}{Zooming in on $f$ at $x=3$ for the function given in Examples \ref{ex_der_meaning4} and \ref{ex_der_meaning5}.}{fig:fwithderivzoom3}{figures/figfwithderivzoom3}
+
+While the tangent line to $f$ was drawn in Example \ref{ex_der_meaning4}, it was not explicitly computed. Recall that the tangent line to $f$ at $x=c$ is $y = \fp(c)(x-c)+f(c)$. While $f$ is not explicitly given, by the graph it looks like $f(3) = 4$. Recalling that $\fp(3) = 3$, we can compute the tangent line to be $y = 3(x-3)+4.$ It is often useful to leave the tangent line in point--slope form.
+
+To use the tangent line to approximate $f(3.1)$, we simply evaluate $y$ at $3.1$ instead of $f$.
+
+$$f(3.1) \approx y(3.1) = 3(3.1-3)+4 = .1*3+4 = 4.3.$$ 
+
+We approximate $f(3.1) \approx 4.3.$
+}\\
+
+To demonstrate the accuracy of the tangent line approximation, we now state that in Example \ref{ex_der_meaning5}, $f(x) = -x^3+7x^2-12x+4$. We can evaluate $f(3.1) = 4.279$. Had we known $f$ all along, certainly we could have just made this computation. In reality, we often only know two things:
+	\begin{enumerate}
+	\item		What $f(c)$ is, for some value of $c$, and
+	\item		what $\fp(c)$ is.
+	\end{enumerate}
+	
+For instance, we can easily observe the location of an object and its instantaneous velocity at a particular point in time. We do not have a ``function $f$\ '' for the location, just an observation. This is enough to create an approximating function for $f$.
+
+This last example has a direct connection to our approximation method explained above after Example \ref{ex_der_meaning2}. We stated there that $$f(c+h) \approx f(c)+\fp(c)\cdot h.$$ If we know $f(c)$ and $\fp(c)$ for some value $x=c$, then computing the tangent line at $(c,f(c))$ is easy: $y(x) = \fp(c)(x-c)+f(c)$. In Example \ref{ex_der_meaning5}, we used the tangent line to approximate a value of $f$. Let's use the tangent line at $x=c$ to approximate a value of $f$ near $x=c$; i.e., compute $y(c+h)$ to approximate $f(c+h)$, assuming again that $h$ is ``small.'' Note:
+		$$y(c+h) = \fp(c)\big((c+h)-c\big)+f(c) = \fp(c)\cdot h + f(c).$$ 
+This is the exact same approximation method used above! Not only does it make intuitive sense, as explained above, it makes analytical sense, as this approximation method is simply using a tangent line to approximate a function's value.\\
+
+\vskip \baselineskip
+
+
+The importance of understanding the derivative cannot be understated. When $f$ is a function of $x$, $\fp(x)$ measures the instantaneous rate of change of $f$ with respect to $x$ and gives the slope of the tangent line to $f$ at $x$.
+
+\printexercises{exercises/02_02_exercises}

@@ -1,0 +1,378 @@
+\newcommand{\mathN}{\ensuremath{\mathbb{N}}}
+
+\section{Sequences}\label{sec:sequences}
+
+We commonly refer to a set of events that occur one after the other as a \textit{sequence} of events. In mathematics, we use the word \textit{sequence} to refer to an ordered set of numbers, i.e., a set of numbers that ``occur one after the other.''
+
+For instance, the numbers 2, 4, 6, 8, \ldots, form a sequence. The order is important; the first number is 2, the second is 4, etc. It seems natural to seek a formula that describes a given sequence, and often this can be done. For instance, the sequence above could be described by the function $a(n) = 2n$, for the values of $n = 1, 2, \ldots$ To find the 10$^\text{th}$ term in the sequence, we would compute $a(10)$. This leads us to the following, formal definition of a sequence.
+
+\definition{def:sequence}{Sequence}
+{A \textbf{sequence} is a function $a(n)$ whose domain is $\mathbb{N}$. The \textbf{range} of a sequence is the set of all distinct values of $a(n)$.\\
+
+The \textbf{terms} of a sequence are the values $a(1)$, $a(2)$, \ldots, which are usually denoted with subscripts as $a_1$, $a_2$, \ldots.\\
+
+A sequence $a(n)$ is often denoted as $\{a_n\}$.}
+
+\mnote{.75}{\textbf{Notation:} We use \mathN\ to describe the set of natural numbers, that is, the integers 1, 2, 3, \ldots}
+
+\mnote{.62}{\textbf{Factorial:} The expression $3!$ refers to the number $3\cdot2\cdot1 = 6$.\\
+
+In general, $n! = n\cdot (n-1)\cdot(n-2)\cdots 2\cdot1$, where $n$ is a natural number.\\
+
+We define $0! = 1$. While this does not immediately make sense, it makes many mathematical formulas work properly.} 
+
+\example{ex_seq1}{\textbf{Listing terms of a sequence}\\
+List the first four terms of the following sequences.\\
+
+\noindent1. $\ds \{a_n\} = \left\{\frac{3^n}{n!}\right\}$ \qquad 2. $\{a_n\} = \{4+(-1)^n\}$ \qquad 3. $\ds \{a_n\} = \left\{\frac{(-1)^{n(n+1)/2}}{n^2}\right\}$
+}
+{\begin{enumerate}
+\item		$\ds a_1=\frac{3^1}{1!} = 3$;\qquad	$\ds a_2= \frac{3^2}{2!} = \frac92$;\qquad $\ds a_3 = \frac{3^3}{3!} = \frac92$; \qquad $\ds a_4 = \frac{3^4}{4!} = \frac{27}8$
+
+We can plot the terms of a sequence with a scatter plot. The ``$x$''-axis is used for the values of $n$, and the values of the terms are plotted on the $y$-axis. To visualize this sequence, see Figure \ref{fig:seq1} (a).
+
+\mtable{.3}{Plotting sequences in Example \ref{ex_seq1}.}{fig:seq1}{\begin{tabular}{c}
+\myincludegraphics{figures/figseq1a} \\ (a)\rule[-10pt]{0pt}{5pt} \\ \myincludegraphics{figures/figseq1b} \\ (b) \end{tabular}} 
+%\enlargethispage{4\baselineskip}
+
+\item		$a_1= 4+(-1)^1 = 3$;\qquad $a_2 = 4+(-1)^2 = 5$; 
+
+\noindent $a_3=4+(-1)^3 = 3$; \qquad $a_4 = 4+(-1)^4 = 5$. Note that the range of this sequence is finite, consisting of only the values 3 and 5. This sequence is plotted in Figure \ref{fig:seq1} (b).
+
+\item		$\ds a_1= \frac{(-1)^{1(2)/2}}{1^2} = -1$; \qquad $\ds a_2 = \frac{(-1)^{2(3)/2}}{2^2} =\frac14$
+
+\noindent $\ds a_3 = \frac{(-1)^{3(4)/2}}{3^2} = \frac19$ \qquad $\ds a_4 = \frac{(-1)^{4(5)/2}}{4^2} = \frac1{16}$; 
+
+\noindent $\ds a_5 = \frac{(-1)^{5(6)/2}}{5^2}=-\frac1{25}$.
+
+\noindent We gave one extra term to show how every 4$^\text{th}$ term is negative. This sequence is plotted in Figure \ref{fig:seq1b}.
+\mfigure{.8}{Plotting a sequence from Example \ref{ex_seq1}.}{fig:seq1b}{figures/figseq1c}
+\end{enumerate}
+\vskip -\baselineskip
+}\\
+
+\example{ex_seq2}{\textbf{Determining a formula for a sequence}\\
+Find the $n^\text{th}$ term of the following sequences, i.e., find a function that describes each of the given sequences.
+
+\begin{enumerate}
+\item		2, 5, 8, 11, 14, $\ldots$
+\item		2, $-5$, 10, $-17$, 26, $-37$, $\ldots$
+\item		1, 1, 2, 6, 24, 120, 720, $\ldots$
+\item		$\ds \frac52$, $\ds \frac52$, $\ds \frac{15}8$, $\ds \frac54$, $\ds \frac{25}{32}$, $\ldots$
+\end{enumerate}
+}
+{We should first note that there is never exactly one function that describes a finite set of numbers as a sequence. There are many sequences that start with 2, then 5, as our first example does. We are looking for a simple formula that describes the terms given, knowing there is possibly more than one answer.
+\begin{enumerate}
+\item		Note how each term is 3 more than the previous one. This implies a linear function would be appropriate: $a(n) = a_n = 3n + b$ for some appropriate value of $b$. As we want $a_1=2$, we set $b=-1$. Thus $a_n = 3n-1$.
+
+\item		First notice how the sign changes from term to term. This is most commonly accomplished by multiplying the terms by either $(-1)^n$ or $(-1)^{n+1}$. Using $(-1)^n$ multiplies the odd terms by $(-1)$; using $(-1)^{n+1}$ multiplies the even terms by $(-1)$. As this sequence has negative even terms, we will multiply by $(-1)^{n+1}$. 
+
+After this, we might feel a bit stuck as to how to proceed. At this point, we are just looking for a pattern of some sort: what do the numbers 2, 5, 10, 17, etc., have in common? There are many correct answers, but the one that we'll use here is that each is one more than a perfect square. That is, $2=1^1+1$, $5=2^2+1$, $10=3^2+1$, etc. Thus our formula is $a_n= (-1)^{n+1}(n^2+1)$.
+
+\item		One who is familiar with the factorial function will readily recognize these numbers. They are $0!$, $1!$, $2!$, $3!$, etc. Since our sequences start with $n=1$, we cannot write $a_n = n!$, for this misses the $0!$ term. Instead, we shift by 1, and write $a_n = (n-1)!$.
+
+\item		This one may appear difficult, especially as the first two terms are the same, but a little ``sleuthing'' will help. Notice how the terms in the numerator are always multiples of 5, and the terms in the denominator are always powers of 2. Does something as simple as $a_n = \frac{5n}{2^n}$ work?
+
+When $n=1$, we see that we indeed get $5/2$ as desired. When $n=2$, we get $10/4 = 5/2$. Further checking shows that this formula indeed matches the other terms of the sequence.
+\end{enumerate}
+\vskip -1.5\baselineskip
+}\\
+
+A common mathematical endeavor is to create a new mathematical object (for instance, a sequence) and then apply previously known mathematics to the new object. We do so here. The fundamental concept of calculus is the limit, so we will investigate what it means to find the limit of a sequence.
+
+\setboxwidth{80pt}
+\definition{def:seq_limit}{Limit of a Sequence, Convergent, Divergent}
+{Let $\{a_n\}$ be a sequence and let $L$ be a real number. Given any $\epsilon>0$, if an $m$ can be found such that $|a_n-L|<\epsilon$ for all $n>m$, then we say the \textbf{limit of $\{a_n\}$, as $n$ approaches infinity, is $L$}, denoted $$\lim_{n\to\infty}a_n = L.$$
+
+If $\ds\lim_{n\to\infty} a_n$ exists, we say the sequence \textbf{converges}; otherwise, the sequence \emph{diverges}.
+}
+\restoreboxwidth
+%\enlargethispage{3\baselineskip}
+
+
+This definition states, informally, that if the limit of a sequence is $L$, then if you go far enough out along the sequence, all subsequent terms will be \emph{really close} to $L$. Of course, the terms ``far enough'' and ``really close'' are subjective terms, but hopefully the intent is clear.
+
+This definition is reminiscent of the $\epsilon$--$\delta$ proofs of Chapter \ref{chapter:limits}. In that chapter we developed other tools to evaluate limits apart from the formal definition; we do so here as well.
+\clearpage
+
+\setboxwidth{30pt}
+\noindent\hskip-30pt
+\begin{minipage}{\specialboxlength}
+\theorem{thm:seq_limit}{Limit of a Sequence}
+{Let $\{a_n\}$ be a sequence and let $f(x)$ be a function where $f(n) = a_n$ for all $n$ in $\mathbb{N}$. 
+\begin{itemize}
+\item		If $\ds \lim_{x\to\infty} f(x) = L$, then $\ds\lim_{n\to\infty} a_n = L$.
+\item		If $\ds \lim_{x\to\infty} f(x)$ does not exist, then $\{a_n\}$ diverges.
+\end{itemize}
+}
+\end{minipage}
+\restoreboxwidth
+
+When we considered limits before, the domain of the function was an interval of real numbers. Now, as we consider limits, the domain is restricted to $\mathbb{N}$, the natural numbers. Theorem \ref{thm:seq_limit} states that this restriction of the domain does not affect the outcome of the limit and whatever tools we developed in Chapter \ref{chapter:limits} to evaluate limits can be applied here as well.\\
+
+%Considering again Example \ref{ex_seq3}, we can now state when $\{a_n\} = \{\frac1n\}$, \mbox{$\ds \lim_{n\to\infty} a_n = 0$}.\\
+
+\example{ex_seq4}{\textbf{Determining convergence/divergence of a sequence}\\
+Determine the convergence or divergence of the following sequences.\\
+
+\noindent \hfill1. $\ds\{a_n\} = \left\{\frac{3n^2-2n+1}{n^2-1000}\right\}$\qquad
+2. $\{a_n\} = \{\cos n \}$\qquad
+3.  $\ds\{a_n\} = \left\{\frac{(-1)^n}{n}\right\}$\hfill\null
+}
+{\begin{enumerate}
+\item		Using Theorem \ref{thm:lim_rational_fn_at_infty}, we can state that $\ds\lim_{x\to\infty} \frac{3x^2-2x+1}{x^2-1000} = 3$. (We could have also directly applied l'H\^opital's Rule.) Thus the sequence $\{a_n\}$ converges, and its limit is 3. A scatter plot of every 5 values of $a_n$ is given in Figure \ref{fig:seq4} (a). The values of $a_n$ vary widely near $n=30$, ranging from about $-73$ to $125$, but as $n$ grows, the values approach 3.
+
+\mtable{.45}{Scatter plots of the sequences in Example \ref{ex_seq4}.}{fig:seq4}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figseq4a} \\
+(a)\rule[-25pt]{0pt}{1pt}\\
+\myincludegraphics{figures/figseq4b} \\
+(b)\rule[-25pt]{0pt}{1pt}\\
+\myincludegraphics{figures/figseq4c} \\
+(c)
+\end{tabular}
+}
+
+\item		The limit $\ds\lim_{x\to\infty}\cos x$ does not exist, as the function oscillates (and takes on every value in $[-1,1]$ infinitely many times). Thus we conclude that the sequence $\{\cos n\}$ diverges. (And in this particular case, since the domain is restricted to $\mathbb{N}$, no value of $\cos n$ is repeated!) This sequence is plotted in Figure \ref{fig:seq4} (b); because only discrete values of cosine are plotted, it does not bear strong resemblance to the familiar cosine wave.
+
+\item		We cannot actually apply Theorem \ref{thm:seq_limit} here, as the function $f(x) = (-1)^x/x$ is not well defined. (What does $(-1)^{\sqrt{2}}$ mean? In actuality, there is an answer, but it involves \emph{complex analysis}, beyond the scope of this text.) So for now we say that we cannot determine the limit. (But we will be able to very soon.) By looking at the plot in Figure \ref{fig:seq4} (c), we would like to conclude that the sequence converges to 0. That is true, but at this point we are unable to decisively say so.
+\end{enumerate}
+\vskip-\baselineskip
+}\\
+
+It seems very clear that a sequence such as $\ds \left\{\frac{(-1)^n}{n}\right\}$ converges to 0 but we lack the formal tool to prove it. The following theorem gives us that tool.
+
+\theorem{thm:abs_val_seq}{Absolute Value Theorem}
+{Let $\{a_n\}$ be a sequence. If $\ds \lim_{n\to\infty} |a_n| = 0$, then $\ds \lim_{n\to\infty} a_n = 0$
+}
+
+\enlargethispage{\baselineskip}
+\example{ex_seq5}{\textbf{Determining the convergence/divergence of a sequence}\\
+Determine the convergence or divergence of the following sequences.
+
+\vskip 5pt
+\hfill 1. $\ds \{a_n\} = \left\{\frac{(-1)^n}{n}\right\}$ \qquad 2. $\ds \{a_n\} = \left\{\frac{(-1)^n(n+1)}{n}\right\}$ \hfill \null
+}
+{\begin{enumerate}
+\item		This appeared in Example \ref{ex_seq4}. We want to apply Theorem \ref{thm:abs_val_seq}, so consider the limit of $\{|a_n|\}$:
+\begin{align*}
+\lim_{n\to\infty} |a_n| &= \lim_{n\to\infty} \left|\frac{(-1)^n}{n}\right| \\
+					&= \lim_{n\to\infty} \frac{1}{n} \\
+					&= 0.
+\end{align*}
+Since this limit is 0, we can apply Theorem \ref{thm:abs_val_seq} and state that $\ds\lim_{n\to\infty} a_n=0$.
+
+\item Because of the alternating nature of this sequence (i.e., every other term is multiplied by $-1$), we cannot simply look at the limit $\ds \lim_{x\to\infty} \frac{(-1)^x(x+1)}{x}$. We can try to apply the techniques of Theorem \ref{thm:abs_val_seq}:
+\begin{align*}
+\lim_{n\to\infty} |a_n| &= \lim_{n\to\infty} \left|\frac{(-1)^n(n+1)}{n}\right| \\
+							&= \lim_{n\to\infty} \frac{n+1}{n}\\
+							&= 1.
+\end{align*}
+We have concluded that when we ignore the alternating sign, the sequence approaches 1. This means we cannot apply Theorem \ref{thm:abs_val_seq}; it states the the limit must be 0 in order to conclude anything.
+
+\mfigure{.45}{A plot of a sequence in Example \ref{ex_seq5}, part 2.}{fig:seq5}{figures/figseq5}
+In fact, since we know that the signs of the terms alternate \emph{and} we know that the limit of $|a_n|$ is 1, we know that as $n$ approaches infinity, the terms will alternate between values close to 1 and $-1$, meaning the sequence diverges. A plot of this sequence is given in Figure \ref{fig:seq5}.
+\end{enumerate}
+\vskip-\baselineskip
+}\\
+
+We continue our study of the limits of sequences by considering some of the properties of these limits.
+
+\theorem{thm:seq_properties}{Properties of the Limits of Sequences}
+{Let $\{a_n\}$ and $\{b_n\}$ be sequences such that $\ds \lim_{n\to\infty} a_n = L$, $\ds \lim_{n\to\infty} b_n = K$, and let $c$ be a real number.
+
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}
+\item		$\ds \lim_{n\to\infty} (a_n\pm b_n) = L\pm K$
+\item		$\ds \lim_{n\to\infty} (a_n\cdot b_n) = L\cdot K$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item		$\ds \lim_{n\to\infty} (a_n/b_n) = L/K$, $K\neq 0$
+\item		$\ds \lim_{n\to\infty} c\cdot a_n = c\cdot L$
+\end{enumerate}
+\end{minipage}
+}
+
+\example{ex_seq6}{\textbf{Applying properties of limits of sequences}\\
+Let the following sequences, and their limits, be given:
+
+\begin{itemize}
+\item	 	$\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}$, and $\ds \lim_{n\to\infty} a_n = 0$
+\item		$\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}$, and $\ds \lim_{n\to\infty} b_n = e$
+\item	  $\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}$, and $\ds \lim_{n\to\infty} c_n = 5$
+\end{itemize}
+
+Evaluate the following limits.\\
+
+\hfill 1. $\ds \lim_{n\to\infty} (a_n+b_n)$ \qquad 2. $\ds \lim_{n\to\infty} (b_n\cdot c_n)$ \qquad 3. $\ds \lim_{n\to\infty} (1000\cdot a_n)$\hfill\null
+}
+{We will use Theorem \ref{thm:seq_properties} to answer each of these.
+\begin{enumerate} 
+\item		Since $\ds \lim_{n\to\infty} a_n = 0$ and $\ds \lim_{n\to\infty} b_n = e$, we conclude that $\ds \lim_{n\to\infty} (a_n+b_n) = 0+e = e.$ So even though we are adding something to each term of the sequence $b_n$, we are adding something so small that the final limit is the same as before.
+
+\item		Since $\ds \lim_{n\to\infty} b_n = e$ and $\ds \lim_{n\to\infty} c_n = 5$, we conclude that $\ds \lim_{n\to\infty} (b_n\cdot c_n) = e\cdot 5 = 5e.$
+
+\item		Since $\ds \lim_{n\to\infty} a_n = 0$, we have $\ds \lim_{n\to\infty} 1000a_n =1000\cdot 0 = 0$. It does not matter that we multiply each term by 1000; the sequence still approaches 0. (It just takes longer to get close to 0.)
+\end{enumerate}
+\vskip-1.5\baselineskip
+}\\
+
+There is more to learn about sequences than just their limits. We will also study their range and the relationships terms have with the terms that follow. We start with some definitions describing properties of the range.
+
+\definition{def:bounded}{Bounded and Unbounded Sequences}
+{A sequence $\{a_n\}$ is said to be \textbf{bounded} if there exists real numbers $m$ and $M$ such that $m < a_n < M$ for all $n$ in $\mathbb{N}$.\\
+
+A sequence $\{a_n\}$ is said to be \textbf{unbounded} if it is not bounded.\\
+
+A sequence $\{a_n\}$ is said to be \textbf{bounded above} if there exists an $M$ such that $a_n < M$ for all $n$ in $\mathbb{N}$; it is \textbf{bounded below} if there exists an $m$ such that $m<a_n$ for all $n$ in $\mathbb{N}$.
+}
+
+It follows from this definition that an unbounded sequence may be bounded above or bounded below; a sequence that is both bounded above and below is simply a bounded sequence.\\
+
+\example{ex_seq3}{\textbf{Determining boundedness of sequences}\\
+Determine the boundedness of the following sequences.\\
+
+1. $\ds\{a_n\}  = \left\{\frac1n\right\}$ \qquad 2. 	$\{a_n\} = \{2^n\}$ \hfill \null
+}
+{\begin{enumerate}
+\item		The terms of this sequence are always positive but are decreasing, so we have $0<a_n<2$ for all $n$. Thus this sequence is bounded. Figure \ref{fig:seq3a} illustrates this.
+
+\mfigure{.55}{A plot of $\{a_n\} = \{1/n\}$ from Example \ref{ex_seq3}.}{fig:seq3a}{figures/figseq3a}
+
+\item		The terms of this sequence obviously grow without bound. However, it is also true that these terms are all positive, meaning $0<a_n$. Thus we can say the sequence is unbounded, but also bounded below. Figure \ref{fig:seq3b} illustrates this.
+
+\end{enumerate}
+\vskip -1.5 \baselineskip
+}\\
+
+\mfigure{.3}{A plot of $\{a_n\} = \{2^n\}$ from Example \ref{ex_seq3}.}{fig:seq3b}{figures/figseq3b}
+
+The previous example produces some interesting concepts. First, we can recognize that the sequence $\ds\left\{1/n\right\}$ converges to 0. This says, informally, that ``most'' of the terms of the sequence are ``really close'' to 0. This implies that the sequence is bounded, using the following logic. First, ``most'' terms are near 0, so we could find some sort of bound on these terms (using Definition \ref{def:seq_limit}, the bound is $\epsilon$). That leaves a ``few'' terms that are not near 0 (i.e., a \emph{finite} number of terms). A finite list of numbers is always bounded. 
+
+This logic implies that if a sequence converges, it must be bounded. This is indeed true, as stated by the following theorem.
+
+\theorem{thm:converge_bounded}{Convergent Sequences are Bounded}
+{Let $\ds \left\{a_n\right\}$ be a convergent sequence. Then $\{a_n\}$ is bounded.
+}
+
+\mnote{.85}{\textbf{Note:} Keep in mind what Theorem \ref{thm:converge_bounded} does \emph{not} say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.}
+
+In Example \ref{ex_seq6} we saw the sequence $\ds \{b_n\} = \left\{\left(1+1/n\right)^{n}\right\}$, where it was stated that $\ds \lim_{n\to\infty} b_n = e$. (Note that this is simply restating part of Theorem \ref{thm:special_limits}.) Even though it may be difficult to intuitively grasp the behavior of this sequence, we know immediately that it is bounded.
+
+Another interesting concept to come out of Example \ref{ex_seq3} again involves the sequence $\{1/n\}$. We stated, without proof, that the terms of the sequence were decreasing. That is, that $a_{n+1} < a_n$ for all $n$. (This is easy to show. Clearly $n < n+1$. Taking reciprocals flips the inequality: $1/n > 1/(n+1)$. This is the same as $a_n > a_{n+1}$.) Sequences that either steadily increase or decrease are important, so we give this property a name.
+
+\definition{def:monotonic}{Monotonic Sequences}
+{\begin{itemize}
+\item		A sequence $\{a_n\}$ is \textbf{monotonically increasing} if $a_n \leq a_{n+1}$ for all $n$, i.e.,
+ $$a_1 \leq a_2 \leq a_3 \leq \cdots a_n \leq a_{n+1} \cdots$$
+ \item	A sequence $\{a_n\}$ is \textbf{monotonically decreasing} if $a_n \geq a_{n+1}$ for all $n$, i.e.,
+ $$a_1 \geq a_2 \geq a_3 \geq \cdots a_n \geq a_{n+1} \cdots$$
+ \item	A sequence is \textbf{monotonic} if it is monotonically increasing or monotonically decreasing.
+ \end{itemize}
+}
+
+\mnote{.5}{\textbf{Note:} It is sometimes useful to call a monotonically increasing sequence \emph{strictly increasing} if $a_n < a_{n+1}$ for all $n$; i.e, we remove the possibility that subsequent terms are equal.
+
+A similar statement holds for \emph{strictly decreasing.}
+}
+
+\example{ex_seq7}{\textbf{Determining monotonicity}\\
+Determine the monotonicity of the following sequences.
+
+\noindent\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}
+\item $\ds \{a_n\} = \left\{\frac{n+1}n\right\}$
+\item	$\ds \{a_n\} = \left\{\frac{n^2+1}{n+1}\right\}$	
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item $\ds \{a_n\} = \left\{\frac{n^2-9}{n^2-10n+26}\right\}$
+\item	$\ds \{a_n\} = \left\{\frac{n^2}{n!}\right\}$	
+\end{enumerate}
+\end{minipage}
+}
+{In each of the following, we will examine $a_{n+1}-a_n$. If $a_{n+1}-a_n >0$, we conclude that $a_n<a_{n+1}$ and hence the sequence is increasing. If $a_{n+1}-a_n<0$, we conclude that $a_n>a_{n+1}$ and the sequence is decreasing. Of course, a sequence need not be monotonic and perhaps neither of the above will apply.
+
+We also give a scatter plot of each sequence. These are useful as they suggest a pattern of monotonicity, but analytic work should be done to confirm a graphical trend.
+
+\begin{enumerate}
+\item	\hfill	$\ds\begin{aligned}[t] a_{n+1}-a_n &= \frac{n+2}{n+1} - \frac{n+1}{n} \\		
+					&= \frac{(n+2)(n)-(n+1)^2}{(n+1)n} \\
+					&=	\frac{-1}{n(n+1)} \\
+					&<0 \quad\text{ for all $n$.}
+				\end{aligned}$ \hfill\null
+				
+Since $a_{n+1}-a_n<0$ for all $n$, we conclude that the sequence is decreasing.
+
+\mtable{.55}{Plots of sequences in Example \ref{ex_seq7}.}{fig:seq7}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figseq7a}\\
+(a)\rule[-25pt]{0pt}{10pt}\\ 
+\myincludegraphics{figures/figseq7b}\\
+(b)\rule[-25pt]{0pt}{10pt}\\ 
+\myincludegraphics{figures/figseq7c}\\
+(c)\\
+\end{tabular}
+}
+
+\item		\hfill $\ds \begin{aligned}[t]	
+						a_{n+1}-a_n &= \frac{(n+1)^2+1}{n+2} - \frac{n^2+1}{n+1} \\		
+								&= \frac{\big((n+1)^2+1\big)(n+1)- (n^2+1)(n+2)}{(n+1)(n+2)}\\
+								&=	\frac{n^2+4n+1}{(n+1)(n+2)} \\
+								&> 0 \quad \text{ for all $n$.}
+					\end{aligned}$\hfill \null
+					
+Since $a_{n+1}-a_n>0$ for all $n$, we conclude the sequence is increasing.
+\drawexampleline
+
+\item		We can clearly see in Figure \ref{fig:seq7} (c), where the sequence is plotted, that it is not monotonic. However, it does seem that after the first 4 terms it is decreasing. To understand why, perform the same analysis as done before:
+
+						\hfill $\ds \begin{aligned}[t]	
+						a_{n+1}-a_n &= \frac{(n+1)^2-9}{(n+1)^2-10(n+1)+26} - \frac{n^2-9}{n^2-10n+26} \\		
+								&= \frac{n^2+2n-8}{n^2-8n+17}-\frac{n^2-9}{n^2-10n+26}\\
+								&= \frac{(n^2+2n-8)(n^2-10n+26)-(n^2-9)(n^2-8n+17)}{(n^2-8n+17)(n^2-10n+26)}\\
+								&= \frac{-10n^2+60n-55}{(n^2-8n+17)(n^2-10n+26)}.
+								\end{aligned}$\hfill \null		
+
+We want to know when this is greater than, or less than, 0, therefore we are only concerned with the numerator. Using the quadratic formula, we can determine that $-10n^2+60n-55=0$ when $n\approx 1.13, 4.87$. So for $n<1.13$, the sequence is decreasing. Since we are only dealing with the natural numbers, this means that $a_1 > a_2$.
+
+Between $1.13$ and $4.87$, i.e., for $n=2$, 3 and 4, we have that $a_{n+1}>a_n$ and the sequence is increasing. (That is, when $n=2$, 3 and 4, the numerator $-10n^2+60n+55$ from the fraction above is $>0$.)
+
+When $n> 4.87$, i.e, for $n\geq 5$, we have that $-10n^2+60n+55<0$, hence $a_{n+1}-a_n<0$, so the sequence is decreasing.
+
+In short, the sequence is simply not monotonic. However, it is useful to note that for $n\geq 5$, the sequence is monotonically decreasing. 
+
+\item		Again, the plot in Figure \ref{fig:seq7d} shows that the sequence is not monotonic, but it suggests that it is monotonically decreasing after the first term. We perform the usual analysis to confirm this.
+
+					\hfill $\ds \begin{aligned}[t]	
+						a_{n+1}-a_n &= \frac{(n+1)^2}{(n+1)!} - \frac{n^2}{n!} \\
+								&= \frac{(n+1)^2-n^2(n+1)}{(n+1)!} \\
+								&=	\frac{-n^3+2n+1}{(n+1)!}
+					\end{aligned}$\hfill \null
+					
+When $n=1$, the above expression is $>0$; for $n\geq 2$, the above expression is $<0$. Thus this sequence is not monotonic, but it is monotonically decreasing after the first term.
+\mfigure{.6}{A plot of $\{a_n\} = \{n^2/n!\}$ in Example \ref{ex_seq7}.}{fig:seq7d}{figures/figseq7d}
+\end{enumerate}
+\vskip-1.5\baselineskip
+}\\
+
+Knowing that a sequence is monotonic can be useful. In particular, if we know that a sequence is bounded and monotonic, we can conclude it converges! Consider, for example, a sequence that is monotonically decreasing and is bounded below. We know the sequence is always getting smaller, but that there is a bound to how small it can become. This is enough to prove that the sequence will converge, as stated in the following theorem.
+
+\theorem{thm:monotonic_converge}{Bounded Monotonic Sequences are Convergent}
+{\begin{itemize}
+\item		Let $\{a_n\}$ be a bounded, monotonic sequence. Then $\{a_n\}$ converges; i.e., $\ds \lim_{n \to\infty}a_n$ exists.
+\item		Let $\{a_n\}$ be a monotonically increasing sequence that is bounded above. Then $\{a_n\}$ converges.
+\item		Let $\{a_n\}$ be a monotonically decreasing sequence that is bounded below. Then $\{a_n\}$ converges.
+\end{itemize}
+}
+
+Consider once again the sequence $\{a_n\} = \{1/n\}$. It is easy to show it is monotonically decreasing and that it is always positive (i.e., bounded below by 0). Therefore we can conclude by Theorem \ref{thm:monotonic_converge} that the sequence converges. We already knew this by other means, but in the following section this theorem will become very useful.
+
+Sequences are a great source of mathematical inquiry. The On-Line Encyclopedia of Integer Sequences (\url{http://oeis.org}) contains thousands of sequences and their formulae. (As of this writing, there are 218,626 sequences in the database.) Perusing this database quickly demonstrates that a single sequence can represent several different ``real life'' phenomena. 
+
+Interesting as this is, our interest actually lies elsewhere. We are more interested in the \emph{sum} of a sequence. That is, given a sequence $\{a_n\}$, we are very interested in $a_1+a_2+a_3+\cdots$. Of course, one might immediately counter with ``Doesn't this just add up to infinity?'' Many times, yes, but there are many important cases where the answer is no. This is the topic of \emph{series}, which we begin to investigate in the next section.
+
+\printexercises{exercises/08_01_exercises}

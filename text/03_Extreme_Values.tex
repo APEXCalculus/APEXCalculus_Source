@@ -1,0 +1,230 @@
+Our study of limits led to continuous functions, which is a certain class of functions that behave in a particularly nice way. Limits then gave us an even nicer class of functions, functions that are differentiable.
+
+This chapter explores many of the ways we can take advantage of the information that continuous and differentiable functions  provide.
+
+\section{Extreme Values}\label{sec:extreme_values}
+
+\enlargethispage{\baselineskip}
+Given any quantity described by a function, we are often interested in the largest and/or smallest values that quantity attains. For instance, if a function describes the speed of an object, it seems reasonable to want to know the fastest/slowest the object traveled. If a function describes the value of a stock, we might want to know how the highest/lowest values the stock attained over the past year. We call such values \textit{extreme values.}
+
+\definition{def:extreme_values}{Extreme Values}%
+{Let $f$ be defined on an interval $I$ containing $c$.
+	\begin{enumerate}
+	\item		$f(c)$ is the \textbf{minimum} (also, \textbf{absolute minimum}) of $f$ on $I$ if $f(c) \leq f(x)$ for all $x$ in $I$.
+	\item		$f(c)$ is the \textbf{maximum} (also, \textbf{absolute maximum}) of $f$ on $I$ if $f(c) \geq f(x)$ for all $x$ in $I$.
+	\end{enumerate}
+	The maximum and minimum values are the \textbf{extreme values}, or \textbf{extrema}, of $f$ on $I$.
+	}
+
+	
+\mnote{.15}{\textbf{Note:} The extreme values of a function are ``$y$'' values, values the function attains, not the input values.}
+
+Consider Figure \ref{fig:extreme}. %y=2-x^2 on [-1,1] and (-1,1), with hole
+ The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the ``natural'' place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed. 
+ 
+\ifthenelse{\boolean{longpage}}% if longpage
+			{% longpage
+				\begin{center}
+				\begin{minipage}{.45\textwidth}\centering
+				\myincludegraphics{figures/figextreme1}
+				\par (a)
+				\end{minipage}\hskip .10\textwidth
+				\begin{minipage}{.45\textwidth}\centering
+				\myincludegraphics{figures/figextreme2}
+				\par (b)
+				\end{minipage}
+				
+				\begin{minipage}{\textwidth}\centering
+				\myincludegraphics{figures/figextreme3}
+				\par (c)
+				\captionsetup{type=figure}%
+				\caption{Graphs of functions with and without extreme values.}\label{fig:extreme}
+				\end{minipage}
+				\end{center}
+			} %end longpage
+			{% not longpage
+				\mtable{.55}{Graphs of functions with and without extreme values.}{fig:extreme}{\begin{tabular}{c} \myincludegraphics{figures/figextreme1} \\ \rule{0pt}{10pt}(a) \\ \\ \myincludegraphics{figures/figextreme2}  \\  \rule{0pt}{10pt}(b)\\ \\  \myincludegraphics{figures/figextreme3} \\ \rule{0pt}{10pt}(c) \end{tabular}}
+			}
+ 
+ It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval \textit{always} have a maximum and minimum value.
+ 
+\theorem{thm:extreme_val}{The Extreme Value Theorem}%
+{Let $f$ be a continuous function defined on a closed interval $I$. Then $f$ has both a maximum and minimum value on $I$.}
+
+This theorem states that $f$ has extreme values, but it does not offer any advice about how/where to find these values. The process can seem to be fairly easy, as the next example illustrates. After the example, we will draw on lessons learned to form a more general and powerful method for finding extreme values.\\
+
+\example{ex_extval1}{\textbf{Approximating extreme values}\\
+Consider $f(x) = 2x^3-9x^2$ on $I=[-1,5]$, as graphed in Figure \ref{fig:extval1}. Approximate the extreme values of $f$.
+
+\mfigure{.6}{A graph of $f(x) = 2x^3-9x^2$ as in Example \ref{ex_extval1}.}{fig:extval1}{figures/figextval1}}
+{The graph is drawn in such a way to draw attention to certain points. It certainly seems that the smallest $y$ value is $-27$, found when $x=3$. It also seems that the largest $y$ value is 25, found at the endpoint of $I$, $x=5$. We use the word \textit{seems}, for by the graph alone we cannot be sure the smallest value is not less than $-27$. Since the problem asks for an approximation, we approximate the extreme values to be $25$ and $-27$.
+}\\
+
+Notice how the minimum value came at ``the bottom of a hill,'' and the maximum value came at an endpoint. Also note that while $0$ is not an extreme value, it would be if we narrowed our interval to $[-1,4]$. The idea that the point $(0,0)$ is the location of an extreme value for some interval is important, leading us to a definition.
+
+\enlargethispage{2\baselineskip}
+\mnote{.45}{\textbf{Note:} The terms \textit{local minimum} and \textit{local maximum} are often used as synonyms for \textit{relative minimum} and \textit{relative maximum}.}
+
+\setboxwidth{70pt}
+\noindent\hskip-70pt
+\noindent\begin{minipage}{\textwidth+100pt}
+%\small
+\definition{def:rel_ext}{Relative Minimum and Relative Maximum}%
+{Let $f$ be defined on an interval $I$ containing $c$. 
+		\begin{enumerate}
+		\item		If there is an open interval containing $c$ such that $f(c)$ is the minimum value, then $f(c)$ is a \textbf{relative minimum} of $f$. We also say that $f$ has a relative minimum at $(c,f(c))$. 
+		\item		If there is an open interval containing $c$ such that $f(c)$ is the maximum value, then $f(c)$ is a \textbf{relative maximum} of $f$. We also say that $f$ has a relative maximum at $(c,f(c))$. 
+		\end{enumerate}
+		
+The relative maximum and minimum values comprise the \textbf{relative extrema} of $f$.
+}
+\end{minipage}\\
+
+\restoreboxwidth
+
+We briefly practice using these definitions.\\
+
+\example{ex_extval2}{\textbf{Approximating relative extrema}\\
+Consider $f(x) = (3x^4-4x^3-12x^2+5)/5$, as shown in Figure \ref{fig:extval2}. Approximate the relative extrema of $f$. At each of these points, evaluate $\fp$.
+
+\mfigure{.8}{A graph of $f(x) = (3x^4-4x^3-12x^2+5)/5$ as in Example \ref{ex_extval2}.}%
+{fig:extval2}{figures/figextval2}
+}
+{We still do not have the tools to exactly find the relative extrema, but the graph does allow us to make reasonable approximations. It seems $f$ has relative minima at $x=-1$ and $x=2$, with values of $f(-1)=0$ and $f(2) = -5.4$. It also seems that $f$ has a relative maximum at the point $(0,1)$. 
+
+We approximate the relative minima to be $0$ and $-5.4$; we approximate the relative maximum to be $1$.
+
+It is straightforward to evaluate $\fp(x) =\frac15(12x^3-12x^2-24x)$ at $x=0, 1$ and $2$. In each case, $\fp(x) = 0$. 
+}\\
+
+\example{ex_extval3}{\textbf{Approximating relative extrema}\\
+Approximate the relative extrema of $f(x) = (x-1)^{2/3}+2$, shown in Figure \ref{fig:extval3}. At each of these points, evaluate $\fp$.
+
+\mfigure{.55}{A graph of $f(x) = (x-1)^{2/3}+2$ as in Example \ref{ex_extval3}.}{fig:extval3}{figures/figextval3}
+}
+{The figure implies that $f$ does not have any relative maxima, but has a relative minimum at $(1,2)$. In fact, the graph suggests that not only is this point a relative minimum, $y=f(1)=2$ \textit{the} minimum value of the function.
+
+We compute $\fp(x) = \frac23(x-1)^{-1/3}$. When $x=1$, $\fp$ is undefined.}\\
+
+What can we learn from the previous two examples? We were able to visually approximate relative extrema, and at each such point, the derivative was either 0 or it was not defined. This observation holds for all functions, leading to a definition and a theorem.
+
+\definition{def:criticalnum}{Critical Numbers and Critical Points}%
+{Let $f$ be defined at $c$. The value $c$ is a \textbf{critical number} (or \textbf{critical value}) of $f$ if $\fp(c)=0$ or $\fp(c)$ is not defined. \\
+
+If $c$ is a critical number of $f$, then the point $(c,f(c))$ is a \textbf{critical point} of $f$.}
+
+\theorem{thm:criticalpts}{Relative Extrema and Critical Points}
+{Let a function $f$ have a relative extrema at the point $(c,f(c))$. Then $c$ is a critical number of $f$.}
+
+Be careful to understand that this theorem states  ``All relative extrema occur at critical points.'' It does not say ``All critical numbers produce relative extrema.'' For instance, consider $f(x) = x^3$. Since $\fp(x) = 3x^2$, it is straightforward to determine that $x=0$ is a critical number of $f$. However, $f$ has no relative extrema, as illustrated in Figure \ref{fig:extreme4}. \\
+
+\mfigure{.8}{A graph of $f(x)=x^3$ which has a critical value of $x=0$, but no relative extrema.}{fig:extreme4}{figures/figextreme4}
+
+Theorem \ref{thm:extreme_val} states that a continuous function on a closed interval will have absolute extrema, that is, both an absolute maximum and an absolute minimum. These extrema occur either at the endpoints or at critical values in the interval. We combine these concepts to offer a strategy for finding extrema.
+
+\keyidea{idea:extrema}{Finding Extrema on a Closed Interval}%
+{Let $f$ be a continuous function defined on a closed interval $[a,b]$. To find the maximum and minimum values of $f$ on $[a,b]$:
+	\begin{enumerate}
+	\item		Evaluate $f$ at the endpoints $a$ and $b$ of the interval.
+	\item		Find the critical numbers of $f$ in $[a,b]$.
+	\item		Evaluate $f$ at each critical number.
+	\item		The absolute maximum of $f$ is the largest of these values, and the absolute minimum of $f$ is the least of these values.
+	\end{enumerate}
+}
+
+We practice these ideas in the next examples.\\
+
+\example{ex_extval4}{\textbf{Finding extreme values}\\
+Find the extreme values of $f(x) = 2x^3+3x^2-12x$ on $[0,3]$, graphed in Figure \ref{fig:extval4}.}
+{We follow the steps outlined in Key Idea \ref{idea:extrema}. We first evaluate $f$ at the endpoints: $$f(0) = 0 \quad \text{and}\quad f(3) =45.$$
+\mfigure{.35}{A graph of $f(x) = 2x^3+3x^2-12x$ on $[0,3]$ as in Example \ref{ex_extval4}.}{fig:extval4}{figures/figextval4}
+Next, we find the critical values of $f$ on $[0,3]$. $\fp(x) = 6x^2+6x-12 = 6(x+2)(x-1)$; therefore the critical values of $f$ are $x=-2$ and $x=1$. Since $x=-2$ does not lie in the interval $[0,3]$, we ignore it. Evaluating $f$ at the only critical number in our interval gives: $f(1) = -7$. 
+
+The table in Figure \ref{table:ext4} gives $f$ evaluated at the ``important'' $x$ values in $[0,3]$. We can easily see the maximum and minimum values of $f$: the maximum value is $45$ and the minimum value is $-7$.
+
+\mtable{.85}{Finding the extreme values of $f$ in Example \ref{ex_extval4}.}{table:ext4}{\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} 0 & 0 \\ 1 & $-7$\\3 & 45  \end{tabular}}
+\vskip-\baselineskip
+}\\
+
+Note that all this was done without the aid of a graph; this work followed an analytic algorithm and did not depend on any visualization. Figure \ref{fig:extval4} shows $f$ and we can confirm our answer, but it is important to  understand that these answers can be found without graphical assistance.
+
+
+
+We practice again.\\
+
+\example{ex_extval5}{\textbf{Finding extreme values}\\
+Find the maximum and minimum values of $f$ on $[-4,2]$, where $$f(x) = \left\{\begin{array}{cc} (x-1)^2 & x\leq 0 \\ x+1 & x>0 \end{array}\right. .$$
+}
+{Here $f$ is piecewise--defined, but we can still apply Key Idea \ref{idea:extrema}. Evaluating $f$ at the endpoints gives: 
+$$ f(-4) = 25 \quad \text{and} \quad f(2) = 3.$$
+
+We now find the critical numbers of $f$. We have to define $\fp$ in a piecewise manner; it is $$\fp(x) =\left\{\begin{array}{cc} 2(x-1) & x < 0 \\ 1 & x>0 \end{array}\right. .$$ Note that while $f$ is defined for all of $[-4,2]$, $\fp$ is not, as the derivative of $f$ does not exist when $x=0$. (From the left, the derivative approaches $-2$; from the right the derivative is 1.) Thus one critical number of $f$ is $x=0$.
+
+We now set $\fp(x) = 0$. When $x >0$, $\fp(x)$ is never 0.  When $x<0$, $\fp(x)$ is also never 0. (We may be tempted to say that $\fp(x) = 0 $ when $x=1$. However, this is nonsensical, for we only consider $\fp(x) = 2(x-1)$ when $x<0$, so we will ignore a solution that says $x=1$. 
+
+So we have three important $x$ values to consider: $x= -4, 2$ and $0$. Evaluating $f$ at each gives, respectively, $25$, $3$ and $1$, shown in Figure \ref{table:ext5}. Thus the absolute minimum of $f$ is 1; the absolute maximum of $f$ is $25$. Our answer is confirmed by the graph of $f$ in Figure \ref{fig:extval5}.
+\mtable{.6}{Finding the extreme values of $f$ in Example \ref{ex_extval5}.}{table:ext5}{\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} $-4$ & 25 \\ 0 & 1 \\ 2 & 3\end{tabular}}
+\mfigure{.4}{A graph of $f(x)$ on $[-4,2]$ as in Example \ref{ex_extval5}.}{fig:extval5}{figures/figextval5}
+}\\
+\clearpage
+\example{ex_extval6}{\textbf{Finding extreme values}\\
+Find the extrema of  $f(x) = \cos (x^2)$ on $[-2,2]$.}
+{We again use Key Idea \ref{idea:extrema}. Evaluating $f$ at the endpoints of the interval gives: $f(-2) = f(2) = \cos (4) \approx -0.6536.$ We now find the critical values of $f$.
+
+Applying the Chain Rule, we find $\fp(x) = -2x\sin (x^2)$. Set $\fp(x) = 0$ and solve for $x$ to find the critical values of $f$. 
+
+We have $\fp(x) = 0$ when $x = 0$ and when $\sin (x^2) = 0$. In general, $\sin t = 0$ when $t = \ldots -2\pi, -\pi, 0, \pi, \ldots$ Thus $\sin (x^2) = 0$ when $x^2 = 0, \pi, 2\pi, \ldots$ ($x^2$ is always positive so we ignore $-\pi$, etc.) So $\sin (x^2)=0$ when $x= 0, \pm \sqrt{\pi}, \pm\sqrt{2\pi}, \ldots$. The only values to fall in the given interval of $[-2,2]$ are $-\sqrt{\pi}$ and $\sqrt{\pi}$, approximately $\pm 1.77$.
+
+We again construct a table of important values in Figure \ref{table:ext6}. In this example we have 5 values to consider: $x= 0, \pm 2, \pm\sqrt{\pi}$. 
+
+\mtable{.85}{Finding the extrema of $f(x)= \cos (x^2)$ in Example \ref{ex_extval6}.}{table:ext6}{\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} $-2$ & $-0.65$ \\ $-\sqrt{\pi}$ & $-1$ \\ 0 & 1\\ $\sqrt{\pi}$ & $-1$ \\ 2 & $-0.65$ \end{tabular}}
+
+From the table it is clear that the maximum value of $f$ on $[-2,2]$ is 1; the minimum value is $-1$. The graph in Figure \ref{fig:extval6} confirms our results.
+\mfigure{.67}{A graph of $f(x)=\cos(x^2)$ on $[-2,2]$ as in Example \ref{ex_extval6}.}{fig:extval6}{figures/figextval6}
+}\\
+
+We consider one more example.\\
+
+
+\example{ex_extval7}{\textbf{Finding extreme values}\\
+Find the extreme values of $f(x) = \sqrt{1-x^2}$.} 
+{A closed interval is not given, so we find the extreme values of $f$ on its domain. $f$ is defined whenever $1-x^2\geq 0$; thus the domain of $f$ is $[-1,1]$. Evaluating $f$ at either endpoint returns 0. 
+\mfigure{.35}{A graph of $f(x)=\sqrt{1-x^2}$ on $[-1,1]$ as in Example \ref{ex_extval7}.}{fig:extval7}{figures/figextval7}
+\mtable{.5}{Finding the extrema of the half--circle in Example \ref{ex_extval7}.}{table:ext7}{\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} $-1$ & 0 \\ 0 & 1 \\ 1 & 0 \end{tabular}}
+
+Using the Chain Rule, we find $\ds \fp(x) = \frac{-x}{\sqrt{1-x^2}}$. The critical points of $f$ are found when $\fp(x) = 0$ or when $\fp$ is undefined. It is straightforward to find that $\fp(x) = 0$ when $x=0$, and $\fp$ is undefined when $x=\pm 1$, the endpoints of the interval. The table of important values is given in Figure \ref{table:ext7}.
+%\ifthenelse{\boolean{longpage}}{
+%\mtable{.5}{Finding the extrema of the half--circle in Example \ref{ex_extval7}.}{table:ext7}{\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} $-1$ & 0 \\ 0 & 1 \\ 1 & 0 \end{tabular}}
+%}{}
+%
+%From the table we see that the maximum of $f$ is 1 and the minimum is 0. A graph of $f$, the upper half of the unit circle, is given in Figure \ref{fig:extval7}.\\
+%\ifthenelse{\boolean{longpage}}{%
+%\mfigure{.35}{A graph of $f(x)=\sqrt{1-x^2}$ on $[-1,1]$ as in Example \ref{ex_extval7}.}{fig:extval7}{figures/figextval7}
+%}{}
+%\begin{minipage}{.37\textwidth}
+%\centering
+%\begin{tabular}{cc} $x$ & $f(x)$ \\ \hline \rule{0pt}{10pt} $-1$ & 0 \\ 0 & 1 \\ 1 & 0 \end{tabular}
+%\captionsetup{type=figure}%
+%\caption{Finding the extrema of the half--circle in Example \ref{ex_extval7}.}
+%\label{table:ext7}
+%\end{minipage}\hskip .1\textwidth
+%\begin{minipage}{.48\textwidth}
+%\centering
+%\myincludegraphics{figures/figextval7}
+%\captionsetup{type=figure}
+%\caption{A graph of $f(x)=\sqrt{1-x^2}$ on $[-1,1]$ as in Example \ref{ex_extval7}.}
+%\label{fig:extval7}
+%\end{minipage}
+}\\
+
+
+\mnote{.18}{\textbf{Note:}  We implicitly found the derivative of $x^2+y^2=1$, the unit circle, in Example \ref{ex_implicit7} as $\frac{dy}{dx} = -x/y$. In Example \ref{ex_extval7}, half of the unit circle is given as $y=f(x) = \sqrt{1-x^2}$. We found $\fp(x) = \frac{-x}{\sqrt{1-x^2}}$. Recognize that the denominator of this fraction is $y$; that is, we again found $\fp(x) = \frac{dy}{dx} = -x/y.$}
+
+
+We have seen that continuous functions on closed intervals always have a maximum and minimum value, and we have also developed a technique to find these values. In the next section, we further our study of the information we can glean from ``nice'' functions with the Mean Value Theorem. On a closed interval, we can find the \textit{average rate of change} of a function (as we did at the beginning of Chapter 2). We will see that differentiable functions always have a point at which their \textit{instantaneous} rate of change is same as the \textit{average} rate of change. This is surprisingly useful, as we'll see.
+
+
+\printexercises{exercises/03_01_exercises}
+
+
+

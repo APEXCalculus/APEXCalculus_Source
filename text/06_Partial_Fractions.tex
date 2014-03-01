@@ -1,0 +1,175 @@
+\section{Partial Fraction Decomposition}\label{sec:partial_fraction}
+
+In this section we investigate the antiderivatives of rational functions. Recall that rational functions are functions of the form $f(x)= \frac{p(x)}{q(x)}$, where $p(x)$ and $q(x)$ are polynomials and $q(x)\neq 0$. Such functions arise in many contexts, one of which is the solving of certain fundamental differential equations.
+
+We begin with an example that demonstrates the motivation behind this section. Consider the integral $\ds\int \frac{1}{x^2-1}\ dx$. We do not have a simple formula for this (if the denominator were $x^2+1$, we would recognize the antiderivative as being the arctangent function). It can be solved using Trigonometric Substitution, but note how the integral is easy to evaluate once we realize:
+
+%This integral is not difficult to evaluate once one realizes the following fact: 
+$$\frac{1}{x^2-1} = \frac{1/2}{x-1} - \frac{1/2}{x+1}.$$
+Thus 
+\begin{align*}
+\int\frac{1}{x^2-1}\ dx &= \int\frac{1/2}{x-1}\ dx - \int\frac{1/2}{x+1}\ dx \\
+			&= \frac12\ln|x-1| - \frac12\ln|x+1| + C.
+\end{align*}
+
+This section teaches how to \textit{decompose} $$\frac{1}{x^2-1}\quad  \text{into}\quad  \frac{1/2}{x-1}-\frac{1/2}{x+1}.$$
+
+We start with a rational function $f(x)=\frac{p(x)}{q(x)}$, where $p$ and $q$ do not have any common factors and the degree of $p$ is less than the degree of $q$. It can be shown that any polynomial, and hence $q$, can be factored into a product of linear and irreducible quadratic terms. The following Key Idea states how to decompose a rational function into a sum of rational functions whose denominators are all of lower degree than $q$.
+%\clearpage
+
+\keyidea{idea:partial_fraction}{Partial Fraction Decomposition}
+{Let $\ds \frac{p(x)}{q(x)}$ be a rational function, where the degree of $p$ is less than the degree of $q$.
+\begin{enumerate}
+	\item	\textbf{Linear Terms:} Let $(x-a)$ divide $q(x)$, where $(x-a)^n$ is the highest power of $(x-a)$ that divides $q(x)$. Then the decomposition of $\frac{p(x)}{q(x)}$ will contain the sum
+	$$\frac{A_1}{(x-a)} + \frac{A_2}{(x-a)^2} + \cdots +\frac{A_n}{(x-a)^n}.$$
+	\item		\textbf{Quadratic Terms:} Let $x^2+bx+c$ divide $q(x)$, where $(x^2+bx+c)^n$ is the highest power of $x^2+bx+c$ that divides $q(x)$. Then the decomposition of $\frac{p(x)}{q(x)}$ will contain the sum 
+	$$\frac{B_1x+C_1}{x^2+bx+c}+\frac{B_2x+C_2}{(x^2+bx+c)^2}+\cdots+\frac{B_nx+C_n}{(x^2+bx+c)^n}.$$
+	\end{enumerate}
+	To find the coefficients $A_i$, $B_i$ and $C_i$:
+	\begin{enumerate}
+	\item	Multiply all fractions by $q(x)$, clearing the denominators. Collect like terms.
+	\item		Equate the resulting coefficients of the powers of $x$ and solve the resulting system of linear equations.
+	\end{enumerate}
+}
+
+The following examples will demonstrate how to put this Key Idea into practice. Example \ref{ex_pf1} stresses the decomposition aspect of the Key Idea.\\
+
+\example{ex_pf1}{\textbf{Decomposing into partial fractions}\\
+Decompose $\ds f(x)=\frac{1}{(x+5)(x-2)^3(x^2+2x+1)(x^2+x+7)^2}$ without solving for the resulting coefficients.}
+{The denominator is already factored; we need to decompose $f(x)$ properly. Since $(x+5)$ is a linear term that divides the denominator, there will be a $$\frac{A}{x+5}$$ term in the decomposition.
+
+As $(x-2)^3$ divides the denominator, we will have the following terms in the decomposition:
+$$\frac{B}{x-2},\quad \frac{C}{(x-2)^2}\quad \text{and}\quad \frac{D}{(x-2)^3}.$$
+
+The $x^2+2x+1$ term in the denominator results in a $\ds\frac{Ex+F}{x^2+2x+1}$ term.
+
+Finally, the $(x^2+x+7)^2$ term results in the terms $$\frac{Gx+H}{x^2+x+7}\quad \text{and}\quad \frac{Ix+J}{(x^2+x+7)^2}.$$
+All together, we have 
+\begin{align*}
+\frac{1}{(x+5)(x-2)^3(x^2+2x+1)(x^2+x+7)^2} &= \frac{A}{x+5} + \frac{B}{x-2}+ \frac{C}{(x-2)^2}+\frac{D}{(x-2)^3}+ \\
+		& \frac{Ex+F}{x^2+2x+1}+\frac{Gx+H}{x^2+x+7}+\frac{Ix+J}{(x^2+x+7)^2}
+\end{align*}
+Solving for the coefficients $A$, $B \ldots J$ would be a bit tedious but not ``hard.''
+}\\
+
+\example{ex_pf2}{\textbf{Decomposing into partial fractions}\\
+Perform the partial fraction decomposition of $\ds \frac{1}{x^2-1}$.}
+{The denominator factors into two linear terms: $x^2-1 = (x-1)(x+1)$. Thus 
+$$\frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.$$
+To solve for $A$ and $B$, first multiply through by $x^2-1 = (x-1)(x+1)$:
+\begin{align*}
+1 &= \frac{A(x-1)(x+1)}{x-1}+\frac{B(x-1)(x+)}{x+1} \\
+	&= A(x+1) + B(x-1)\\
+	&= Ax+A + Bx-B \\
+	\intertext{Now collect like terms.}
+	&= (A+B)x + (A-B).
+\end{align*}
+The next step is key. Note the equality we have:
+$$1 = (A+B)x+(A-B).$$
+For clarity's sake, rewrite the left hand side as
+$$0x+1 = (A+B)x+(A-B).$$
+On the left, the coefficient of the $x$ term is 0; on the right, it is $(A+B)$. Since both sides are equal, we must have that $0=A+B$. 
+
+Likewise, on the left, we have a constant term of 1; on the right, the constant term is $(A-B)$. Therefore we have $1=A-B$.
+
+We have two linear equations with two unknowns. This one is easy to solve by hand, leading to 
+$$\begin{array}{c} A+B = 0 \\ A-B = 1 \end{array} \Rightarrow \begin{array}{c} A=1/2 \\ B = -1/2\end{array}.$$
+Thus $$\frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}.$$
+\vskip-\baselineskip
+}\\
+
+\example{ex_pf3}{\textbf{Integrating using partial fractions}\\
+Use partial fraction decomposition to integrate $\ds\int\frac{1}{(x-1)(x+2)^2}\ dx.$}
+{We decompose the integrand as follows, as described by Key Idea \ref{idea:partial_fraction}:
+$$\frac{1}{(x-1)(x+2)^2} = \frac{A}{x-1} + \frac{B}{x+2} + \frac{C}{(x+2)^2}.$$
+To solve for $A$, $B$ and $C$, we multiply both sides by $(x-1)(x+2)^2$ and collect like terms:
+\begin{align}
+1 &= A(x+2)^2 + B(x-1)(x+2) + C(x-1)\label{eq:pf3}\\
+	&= Ax^2+4Ax+4A + Bx^2 + Bx-2B + Cx-C \notag \\
+	&= (A+B)x^2 + (4A+B+C)x + (4A-2B-C)\notag
+\end{align}
+\mnote{.5}{\textbf{Note:} Equation \ref{eq:pf3} offers a direct route to finding the values of $A$, $B$ and $C$. Since the equation holds for all values of $x$, it holds in particular when $x=1$. However, when $x=1$, the right hand side simplifies to $A(1+2)^2 = 9A$. Since the left hand side is still 1, we have $1 = 9A$. Hence $A = 1/9$.
+
+Likewise, the equality holds when $x=-2$; this leads to the equation $1=-3C$. Thus $C = -1/3$.
+
+We can find the value of $B$ by expanding the terms as shown in the example.}
+We have $$0x^2+0x+ 1 = (A+B)x^2 + (4A+B+C)x + (4A-2B-C)$$
+leading to the equations 
+$$A+B = 0, \quad 4A+B+C = 0 \quad \text{and} \quad 4A-2B-C = 1.$$
+These three equations of three unknowns lead to a unique solution:
+$$A = 1/9,\quad B = -1/9 \quad \text{and} \quad C = -1/3.$$
+Thus 
+$$\int\frac{1}{(x-1)(x+2)^2}\ dx = \int \frac{1/9}{x-1}\ dx + \int \frac{-1/9}{x+2}\ dx + \int \frac{-1/3}{(x+2)^2}\ dx.$$
+
+Each can be integrated with a simple substitution with $u=x-1$ or $x=x+2$ (or by directly applying Key Idea \ref{idea:linearsub} as the denominators are linear functions). The end result is
+$$\int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+2)}+C.$$
+\vskip-\baselineskip}\\
+
+%\enlargethispage{\baselineskip}
+\example{ex_pf4}{\textbf{Integrating using partial fractions}\\
+Use partial fraction decomposition to integrate $\ds \int \frac{x^3}{(x-5)(x+3)}\ dx$.}
+{Key Idea \ref{idea:partial_fraction} presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that $$\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.$$
+Using Key Idea \ref{idea:partial_fraction}, we can rewrite the new rational function as:
+$$\frac{19x+30}{(x-5)(x+3)} = \frac{A}{x-5} + \frac{B}{x+3}$$ for appropriate values of $A$ and $B$. Clearing denominators, we have 
+
+\mnote{.6}{\textbf{Note:} The values of $A$ and $B$ can be quickly found using the technique described in the margin of Example \ref{ex_pf3}.}
+
+\begin{align*}
+19x+30 &= A(x+3) + B(x-5)\\
+			&= (A+B)x + (3A-5B).
+\intertext{This implies that:}
+19&= A+B \\
+30&= 3A-5B.\\
+\intertext{Solving this system of linear equations gives}
+125/8 &=A\\
+27/8 &=B.
+\end{align*}
+
+We can now integrate.
+\begin{align*}
+\int \frac{x^3}{(x-5)(x+3)}\ dx &= \int\left(x+2+\frac{125/8}{x-5}+\frac{27/8}{x+3}\right)\ dx \\
+					&= \frac{x^2}2 + 2x + \frac{125}{8}\ln|x-5| + \frac{27}8\ln|x+3| + C.
+\end{align*}
+\vskip-\baselineskip
+}\\
+%\clearpage
+
+\example{ex_pf5}{\textbf{Integrating using partial fractions}\\
+Use partial fraction decomposition to evaluate $\ds \int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx.$}
+{The degree of the numerator is less than the degree of the denominator so we begin by applying Key Idea \ref{idea:partial_fraction}. We have:
+\begin{align*}
+\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)} &= \frac{A}{x+1} + \frac{Bx+C}{x^2+6x+11}. \\
+\intertext{Now clear the denominators.}
+7x^2+31x+54 &= A(x^2+6x+11) + (Bx+C)(x+1)\\
+					&= (A+B)x^2 + (6A+B+C)x + (11A+C).\\
+\intertext{This implies that:}
+				7&=A+B\\
+				31 &= 6A+B+C\\
+				54 &= 11A+C.
+\end{align*}
+Solving this system of linear equations gives the nice result of $A=5$, $B = 2$ and $C=-1$. Thus
+$$\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx = \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\ dx.$$
+
+The first term of this new integrand is easy to evaluate; it leads to a $5\ln|x+1|$ term. The second term is not hard, but takes several steps and uses substitution techniques.
+
+The integrand $\ds \frac{2x-1}{x^2+6x+11}$ has a quadratic in the denominator and a linear term in the numerator. This leads us to try substitution. Let $u = x^2+6x+11$, so $du = (2x+6)\ dx$. The numerator is $2x-1$, not $2x+6$, but we can get a $2x+6$ term in the numerator by adding 0 in the form of ``$7-7$.''
+\begin{align*}
+\frac{2x-1}{x^2+6x+11} &= \frac{2x-1+7-7}{x^2+6x+11} \\
+					&= \frac{2x+6}{x^2+6x+11} - \frac{7}{x^2+6x+11}.
+\end{align*}
+We can now integrate the first term with substitution, leading to a $\ln|x^2+6x+11|$ term. The final term can be integrated using arctangent. First, complete the square in the denominator:
+$$\frac{7}{x^2+6x+11} = \frac{7}{(x+3)^2+2}.$$
+An antiderivative of the latter term can be found using Theorem \ref{thm:int_inverse_trig} and substitution:
+$$\int \frac{7}{x^2+6x+11}\ dx = \frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C.$$
+
+Let's start at the beginning and put all of the steps together.
+\small\begin{align*}
+\int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx &= \int\left(\frac{5}{x+1} + \frac{2x-1}{x^2+6x+11}\right)\ dx \\
+			&= \int\frac{5}{x+1}\ dx  + \int\frac{2x+6}{x^2+6x+11}\ dx -\int\frac{7}{x^2+6x+11}\ dx \\
+			&= 5\ln|x+1|+ \ln|x^2+6x+11| -\frac{7}{\sqrt{2}}\tan^{-1}\left(\frac{x+3}{\sqrt{2}}\right)+C.
+\end{align*}\normalsize
+As with many other problems in calculus, it is important to remember that one is not expected to ``see'' the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.
+}\\
+
+
+\printexercises{exercises/06_04_exercises}

@@ -1,0 +1,315 @@
+%\documentclass[fleqn]{article}
+%\usepackage[letterpaper,top=1in,left=1in,right=1in,bottom=1in,includefoot]{geometry}
+%\usepackage{graphicx, multicol}
+%\usepackage{amsmath,amsfonts,amssymb,amsthm}
+%
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{claim}{Claim}
+%\newtheorem{definition}{Definition}
+%
+%\setlength{\parindent}{0pt}
+%\parskip .1in
+%
+%
+%\begin{document}
+\section{Limits involving infinity}\label{sec:limits_infty}
+
+In Definition \ref{def:limit} we stated that in the equation $\ds \lim_{x\to c}f(x) = L$, both $c$ and $L$ were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let $c$ and/or $L$ be ``infinity.''
+
+As a motivating example, consider $f(x) = 1/x^2$, as shown in Figure \ref{fig:oneoverxsquared}. Note how, as $x$ approaches 0, $f(x)$ grows very, very large. It seems appropriate, and descriptive, to state that $$\lim_{x\rightarrow 0} \frac1{x^2}=\infty.$$ Also note that as $x$ gets very large, $f(x)$ gets very, very small. We could represent this concept with notation such as $$\lim_{x\rightarrow \infty} \frac1{x^2}=0.$$
+
+\mfigure{.8}{Graphing $f(x) = 1/x^2$ for values of $x$ near 0.}{fig:oneoverxsquared}{figures/figoneoverxsquared}
+
+We explore both types of use of $\infty$ in turn.
+
+%In the graph of $f(x)=1/x^2$ shown below, we see that near 0, the function explodes, getting larger and larger, heading off to infinity.
+
+%\myincludegraphics[scale=.4]{text/apex-limits_involving_infinity1.png}
+%
+%In a case like this, we write
+%$$\lim_{x\rightarrow 0} \frac1{x^2}=\infty.$$
+%We can make more precise this notion precise as follows:
+
+\definition{def:limit_of_infinity}{Limit of Infinity, $\infty$}
+{We say $\ds \lim_{x\rightarrow c} f(x)=\infty$ if for every $M>0$ there exists $\delta>0$ such that if $0<|x-c|<\delta$ then $f(x)\geq M$.  
+}
+
+This is just like the $\epsilon$--$\delta$ definition from Section \ref{sec:limit_def}.  In that definition, given any (small) value $\epsilon$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$) then $f(x)$ is guaranteed to be within $\epsilon$ of $f(c)$.  Here, given any (large) value $M$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$), then $f(x)$ will be at least as large as $M$.  In other words, if we get close enough to $c$, then we can make $f(x)$ as large as we want.  We can define limits equal to $-\infty$ in a similar way.
+
+It is important to note that by saying $\ds \lim_{x\to c}f(x) = \infty$ we are implicitly stating that \textit{the} limit of $f(x)$, as $x$ approaches $c$, \textit{does not exist.} A limit only exists when $f(x)$ approaches an actual numeric value. We use the concept of limits that approach infinity because they are helpful and descriptive.\\
+
+\example{ex_inflim1}{\textbf{Evaluating limits involving infinity}\\Find $\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}$ as shown in Figure \ref{fig:inflim1}.
+
+\mfigure{.4}{Observing infinite limit as $x\to 1$ in Example \ref{ex_inflim1}.}{fig:inflim1}{figures/fignolimit2}}
+{In Example \ref{ex_no_limit2} of Section \ref{sec:limit_intro}, by inspecting values of $x$ close to 1 we concluded that this limit does not exist.  That is, it cannot equal any real number.  But the limit could be infinite.  And in fact, we see that the function does appear to be growing larger and larger, as $f(.99)=10^4$, $f(.999)=10^6$, $f(.9999)=10^8$.  A similar thing happens on the other side of 1.  In general, let a ``large'' value $M$ be given. Let $\delta=1/\sqrt{M}$. If $x$ is within $\delta$ of 1, i.e., if $|x-1|<1/\sqrt{M}$, then:
+	\begin{align*}
+	|x-1| &< \frac{1}{\sqrt{M}} \\
+	(x-1)^2 &< \frac{1}{M}\\
+	\frac{1}{(x-1)^2} &> M,
+	\end{align*}
+	which is what we wanted to show.  So we may say $\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty$.
+}\\
+
+\example{ex_inflim2}{\textbf{Evaluating limits involving infinity}\\
+Find $\displaystyle\lim_{x\rightarrow 0}\frac1x$, as shown in Figure \ref{fig:oneoverx}.}
+{It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0.  Since its behavior is not consistent, we cannot say that $\ds \lim_{x\to 0}\frac{1}{x}=\infty$. However, we can make a statement about one--sided limits. We can state that $\ds \lim_{x\rightarrow 0^+}\frac1x=\infty$ and $\ds \lim_{x\rightarrow 0^-}\frac1x=-\infty$.  
+
+\mfigure{.65}{Evaluating $\lim_{x\rightarrow 0}\frac1x$.}{fig:oneoverx}{figures/figoneoverx}
+}
+
+\vskip \baselineskip
+\noindent\textbf{\large Vertical asymptotes}\\
+
+If the limit of $f(x)$ as $x$ approaches $c$ from either the left or right (or both) is $\infty$ or $-\infty$, we say the function has a \emph{vertical asymptote} at $c$.\\
+
+\example{ex_vertasy1}{\textbf{Finding vertical asymptotes}\\
+Find the vertical asymptotes of $f(x)=\dfrac{3x}{x^2-4}$.}
+{Vertical asymptotes occur where the function grows without bound; this occurs at values of $c$ where the denominator is 0. The denominator is small near $x=c$, which in turn can make the function overall take on large values.  In the case of the given function, the denominator is 0 at $x=\pm 2$.  Substituting in values of $x$ close to $2$ and $-2$ seems to indicate that the function tends toward $\infty$ or $-\infty$ at those points.  We can graphically confirm this by looking at Figure \ref{fig:multipleasymptotes}.
+
+\mfigure{.4}{Graphing $f(x) = \dfrac{3x}{x^2-4}$.}{fig:multipleasymptotes}{figures/figmultipleasymptotes}
+}\\
+
+When a function has a vertical asymptote, we can conclude that ``the denominator is 0'' for some part of that function. However, just because the denominator is 0 at a certain point does not mean there is a vertical asymptote there.  For instance, $f(x)=(x^2-1)/(x-1)$ does not have a vertical asymptote at $x=1$, as shown in Figure \ref{fig:noasy}.  While the denominator does get small near $x=1$, the numerator gets small too, matching the denominator step for step. In fact, factoring the numerator, we get
+$$f(x)=\frac{(x-1)(x+1)}{x-1}.$$
+Canceling the common term, we get that $f(x)=x+1$ for $x\not=1$.   So there is clearly no asymptote, rather a hole exists in the graph at $x=1$.\\
+
+\mfigure{.8}{Graphically showing that $f(x) = \dfrac{x^2-1}{x-1}$ does not have an asymptote at $x=1$.}{fig:noasy}{figures/fignoasy}
+
+The above example may seem a little contrived.  Another example demonstrating this important concept is $f(x)= (\sin x)/x$. We have considered this function several times in the previous sections. We found that $\ds \lim_{x\to0}\frac{\sin x}{x}=1$; i.e., there is no vertical asymptote. No simple algebraic cancellation makes this fact obvious; we used the Squeeze Theorem in Section \ref{sec:limit_analytically} to prove this.\\
+
+If the denominator is 0 at a certain point but the numerator is not, then there will usually be a vertical asymptote at that point.  On the other hand,  if the numerator and denominator are both zero at that point, then there may or may not be a vertical asymptote at that point.  This case where the numerator and denominator are both zero returns us to an important topic.
+
+\vskip\baselineskip
+\noindent\textbf{Indeterminate Forms}\\
+
+%When working with limits and infinity, it is important not to go beyond what the rules of algebra and limits allow.  Consider again the limit below:
+We have seen how the limits 
+$$\lim_{x\rightarrow 0}\frac{\sin x}{x}\quad \text{and}\quad \lim_{x\to1}\frac{x^2-1}{x-1}$$ each return the indeterminate form \zerooverzero\ when we blindly plug in $x=0$ and $x=1$, respectively. However, $0/0$ is not a valid arithmetical expression. It gives no indication that the respective limits are 1 and 2.% (hence the use of the word ``indeterminate.'')
+%Blindly plugging in $x=0$ would give us the expression $0/0$.  This is not a valid arithmetical expression because division by 0 is not allowed.  In fact, as we have seen already, the correct value of the limit is 1.
+
+%The expression $0/0$ is called an \emph{indeterminate form}.  For an idea as to where the name comes from, consider the following limit:
+%$$\lim_{x\rightarrow 1}\frac{x^2-1}{x-1}.$$
+%Blindly plugging in $x=1$ here gives $0/0$.  However, this time, the correct value of the limit is 2, which can be seen by factoring the numerator and then plugging in $x=1$.  So we have seen that the initial expression $0/0$ can correspond to a limit of 1 or a limit of 2.  In fact, w
+
+With a little cleverness, one can come up $0/0$ expressions which have a limit of $\infty$, 0, or any other real number.  That is why this expression is called \emph{indeterminate}.
+
+A key concept to understand is that such limits do not really return $0/0$. Rather, keep in mind that we are taking \textit{limits}. What is really happening is that the numerator is shrinking to 0 while the denominator is also shrinking to 0. The respective rates at which they do this are very important and determine the actual value of the limit.
+
+An indeterminate form indicates that one needs to do more work in order to compute the limit. That work may be algebraic (such as factoring and canceling) or it may require a tool such as the Squeeze Theorem. %algebraically manipulate the expression in some way in order to compute the limit.  It may also indicate that you need a completely different approach, like with $(\sin x)/x$. 
+ In a later section we will learn a technique called l'Hospital's Rule that provides another way to handle indeterminate forms.  
+ 
+Some other common indeterminate forms are $\infty-\infty$, $\infty\cdot 0$, $\infty/\infty$, $0^0$, $\infty^0$ and $1^{\infty}$. Again, keep in mind that these are the ``blind'' results of evaluating a limit, and each, in and of itself, has no meaning. The expression $\infty-\infty$ does not really mean ``subtract infinity from infinity.'' Rather, it means ``One quantity is subtracted from the other, but both are growing without bound.'' What is the result? It is possible to get every value between $-\infty$ and $\infty$
+
+Note that $1/0$ and $\infty/0$ are not indeterminate forms, though they are not exactly valid mathematical expressions, either.  Rather they indicate that the limit will be $\infty$, $-\infty$, or not exist.
+
+
+\vskip \baselineskip
+\noindent\textbf{Limits at Infinity and Horizontal Asymptotes}\\
+
+At the beginning of this section we briefly considered what happens to $f(x) = 1/x^2$ as $x$ grew very large. 
+Graphically, it concerns the behavior of the function to the ``far right'' of the graph. We make this notion more explicit in the following definition.
+
+%\setboxwidth{65pt}%
+%\noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -65pt}%
+%\noindent\begin{minipage}{\specialboxlength}
+\definition{def:limit_at_infinity}{Limits at Infinity and Horizontal Asymptote}
+{\begin{itemize}
+\item We say $\ds\lim_{x\rightarrow\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M>0$ such that if $x\geq M$, then $|f(x)-L|<\epsilon$. \\
+
+\item We say $lim_{x\rightarrow-\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M<0$ such that if $x\leq M$, then $|f(x)-L|<\epsilon$. \\
+
+ %In other words, the limit is $L$ if no matter how close you want to get to $L$, for large enough values of $x$ ($x>M$), you can get that close.
+\item  If $\ds\lim_{x\rightarrow\infty} f(x)=L$ or $\ds\lim_{x\rightarrow-\infty} f(x)=L$, we say that $y=L$ is a \textbf{horizontal asymptote} of $f$.
+\end{itemize}
+}
+%\end{minipage}
+\restoreboxwidth
+%\setlength{\specialboxlength}{\textwidth-2\specialboxinnerseplength}
+
+%We can define $\lim_{x\rightarrow-\infty} f(x)=L$ in an analogous way.  
+We can also define limits such as $\ds\lim_{x\rightarrow\infty}f(x)=\infty$ by combining this definition with Definition \ref{def:limit_of_infinity}. \\ %It is a good exercise to try this.
+
+\example{ex_hzasy1}{\textbf{Approximating horizontal asymptotes}\\
+Approximate the horizontal asymptote(s) of $\ds f(x)=\frac{x^2}{x^2+4}$.}
+{We will approximate the horizontal asymptotes by approximating the limits $$\lim_{x\to-\infty} \frac{x^2}{x^2+4}\quad \text{and}\quad \lim_{x\to\infty} \frac{x^2}{x^2+4}.$$ Figure \ref{fig:hzasy1}(a) shows a sketch of $f$, and part (b) gives values of $f(x)$ for large magnitude values of $x$. It seems reasonable to conclude from both of these sources that $f$ has a horizontal asymptote at $y=1$.
+
+\mtable{.73}{Using a graph and a table to approximate a horizontal asymptote in Example \ref{ex_hzasy1}.}{fig:hzasy1}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/fighzasy1}\\
+(a)\\[10pt]
+\begin{tabular}{cc}
+		$x$ & $f(x)$ \\ \hline
+		\rule{0pt}{11pt} 10 & 0.9615 \\
+		100 & 0.9996 \\
+		10000 & 0.999996\\
+		$-10$ & 0.9615 \\
+		$-100$ & 0.9996 \\
+		$-10000$ & 0.999996
+		\end{tabular} \\[10pt]
+		(b)
+\end{tabular}
+}
+%\mfigure{.5}{Graphing $f(x) = \dfrac{x^2}{x^2-4}$ to estimate its horizontal asymptote.}{fig:hzasy1}{figures/fighzasy1}
+%\ifthenelse{\boolean{longpage}}{\vskip \baselineskip}{}
+
+%\mtable{.35}{Values of $f(x) = \dfrac{x^2}{x^2-4}$ to numerically approximate its horizontal asymptote.}{table:hzasy1}%
+		%{\begin{tabular}{cc}
+		%$x$ & $f(x)$ \\ \hline
+		%\rule{0pt}{11pt} 10 & 0.9615 \\
+		%100 & 0.9996 \\
+		%10000 & 0.999996\\
+		%$-10$ & 0.9615 \\
+		%$-100$ & 0.9996 \\
+		%$-10000$ & 0.999996
+		%\end{tabular}
+
+Later, we will show how to determine this analytically.}\\
+
+%\myincludegraphics[scale=.5]{text/apex-limits_involving_infinity6.png}
+
+Horizontal asymptotes can take on a variety of forms. Figure \ref{fig:hzasy}(a) shows that $f(x) = x/(x^2+1)$ has a horizontal asymptote of $y=0$, where 0 is approached from both above and below.
+
+%\mfigure{.4}{Graphing $f(x) = \dfrac{x}{x^2+1}$}{fig:hzasy2}{figures/fighzasy2}
+
+Figure \ref{fig:hzasy}(b) shows that $f(x) =x/\sqrt{x^2+1}$ has two horizontal asymptotes; one at $y=1$ and the other at $y=-1$.
+
+%\mfigure{.55}{Graphing $f(x) = \dfrac{x}{\sqrt{x^2+1}}$ to see its two horizontal asymptotes.}{fig:hzasy3}{figures/fighzasy3}
+
+Figure \ref{fig:hzasy}(c) shows that $f(x) = (\sin x)/x$ has even more interesting behavior than at just $x=0$; as $x$ approaches $\pm\infty$, $f(x)$ approaches 0, but oscillates as it does this.\\% 
+
+\vskip 20pt
+\noindent\begin{minipage}{\textwidth+100pt}
+\begin{tabular}{ccc}
+\myincludegraphics{figures/fighzasy2} & \myincludegraphics{figures/fighzasy3}  & \myincludegraphics{figures/fighzasy4} \\
+(a) & (b) & (c)
+\end{tabular}
+\captionsetup{type=figure}%
+\caption{Considering different types of horizontal asymptotes.}
+\label{fig:hzasy}
+\end{minipage}\\
+
+We can analytically evaluate limits at infinity for rational functions once we understand $\ds\lim_{x\rightarrow\infty} 1/x$.  As $x$ gets larger and larger, the $1/x$ gets smaller and smaller, approaching 0.  We can, in fact, make $1/x$ as small as we want by choosing a large enough value of $x$.  Given $\epsilon$, we can make $1/x<\epsilon$  by choosing $x>1/\epsilon$.  Thus we have $\lim_{x\rightarrow\infty} 1/x=0$.  
+
+%\mfigure{.3}{Graphing $f(x) = \dfrac{\sin x}{x}$ to display the oscillating behavior of its horizontal asymptote.}{fig:hzasy4}{figures/fighzasy4}
+
+It is now not much of a jump to conclude the following:
+$$\lim_{x\rightarrow\infty}\frac1{x^n}=0\quad \text{and}\quad \lim_{x\rightarrow-\infty}\frac1{x^n}=0$$
+
+Now suppose we need to compute the following limit:
+$$\lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9}.$$
+The trick to doing this is to divide through the numerator and denominator by $x^3$ (hence dividing by 1), which is the largest power of $x$ to appear in the function.  Doing this, we get
+\begin{align*}
+\lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9} &=
+\lim_{x\rightarrow\infty}\frac{x^3+2x+1}{4x^3-2x^2+9}\cdot\frac{1/x^3}{1/x^3}\\ &=\lim_{x\rightarrow\infty}\frac{x^3/x^3+2x/x^3+1/x^3}{4x^3/x^3-2x^2/x^3+9/x^3}\\ &= \lim_{x\rightarrow\infty}\frac{1+2/x^2+1/x^3}{4-2/x+9/x^3}.
+\end{align*}
+Then using the rules for limits (which also hold for limits at infinity), as well as the fact about limits of $1/x^n$, we see that the limit becomes
+$$\frac{1+0+0}{4-0+0}=\frac14.$$
+
+This procedure works for any rational function.  In fact, it gives us the following theorem.
+
+\theorem{thm:lim_rational_fn_at_infty}{Limits of Rational Functions at Infinity}
+{Suppose we have a rational function of the following form:
+$$f(x)=\frac{a_nx^n + a_{n-1}x^{n-1}+\dots + a_1x + a_0}{b_mx^m + b_{m-1}x^{m-1} + \dots + b_1x + b_0},$$
+where any of the coefficients may be 0 except for $a_n$ and $b_m$.
+\begin{enumerate}
+\item If $n=m$, then $\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = \frac{a_n}{b_m}$.
+\item If $n<m$, then $\lim_{x\rightarrow\infty} f(x) = \lim_{x\rightarrow-\infty} f(x) = 0$.
+\item If $n>m$, then $\lim_{x\rightarrow\infty} f(x)$ and $\lim_{x\rightarrow-\infty} f(x)$ are both infinite.
+\end{enumerate}
+}
+
+We can see why this is true.  If the highest power of $x$ is the same in both the numerator and denominator (i.e. $n=m$), we will be in a situation like the example above, where we will divide by $x^n$ and in the limit all the terms will approach 0 except for $a_nx^n/x^n$ and $b_mx^n/x^m$. Since $n=m$, this will leave us with the limit $a_n/b_m$.  If $n<m$, then after dividing through by $x_m$, all the terms in the numerator will approach 0 in the limit, leaving us with $0/b_m$ or 0.  If $n>m$, and we try dividing through by $x^n$, we end up with all the terms in the denominator tending toward 0, while the $x^n$ term in the numerator does not approach 0.  This is indicative of some sort of infinite limit.
+
+Intuitively, as $x$ gets very large, all the terms in the numerator are small in comparison to $a_nx^n$, and likewise all the terms in the denominator are small compared to $b_nx^m$.  If $n=m$, looking only at these two important terms, we have $(a_nx^n)/(b_nx^m)$.  This reduces to $a_n/b_m$.  If $n<m$, the function behaves like $a_n/(b_mx^{m-n})$, which tends toward 0.  If $n>m$, the function behaves like $a_nx^{n-m}/b_m$, which will tend to either $\infty$ or $-\infty$ depending on the values of $n$, $m$, $a_n$, $b_m$ and whether you are looking for $\lim_{x\rightarrow\infty} f(x)$ or $\lim_{x\rightarrow-\infty} f(x)$.
+
+With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of $x$. For instance, consider again $\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}}.$ When $x$ is very large, $x^2+1 \approx x^2$. Thus $$\sqrt{x^2+1}\approx \sqrt{x^2} = |x|,\quad \text{and}\quad \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.$$ This expression is 1 when $x$ is positive and $-1$ when $x$ is negative. Hence we get asymptotes of $y=1$ and $y=-1$, respectively.\\
+
+\example{ex_hzasy2}{\textbf{Finding a limit of a rational function}\\
+Confirm analytically that $y=1$ is the horizontal asymptote of $\ds f(x) = \frac{x^2}{x^2+4}$, as approximated in Example \ref{ex_hzasy1}.}
+{Before using Theorem \ref{thm:lim_rational_fn_at_infty}, let's use the technique of evaluating limits at infinity of rational functions that led to that theorem. The largest power of $x$ in $f$ is 2, so divide the numerator and denominator of $f$ by $x^2$, then take limits.
+	\begin{align*}
+	\lim_{x\to\infty}\frac{x^2}{x^2+4} &= \lim_{x\to\infty}\frac{x^2/x^2}{x^2/x^2+4/x^2}\\
+																			&=\lim_{x\to\infty}\frac{1}{1+4/x^2}\\
+																			&=\frac{1}{1+0}\\
+																			&= 1.
+	\end{align*}
+
+We can also use Theorem \ref{thm:lim_rational_fn_at_infty} directly; in this case $n=m$ so the limit is the ratio of the leading coefficients of the numerator and denominator, i.e., 1/1 = 1. 
+}\\
+
+\example{ex_hzasy3}{\textbf{Finding limits of rational functions}\\
+Use Theorem \ref{thm:lim_rational_fn_at_infty} to evaluate each of the following limits.
+
+\noindent\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}
+\item		$\displaystyle\lim_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}$
+\item		$\displaystyle\lim_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item		$\displaystyle\lim_{x\rightarrow\infty}\frac{x^2-1}{3-x}$
+\end{enumerate}
+\end{minipage}
+}
+{
+	\begin{enumerate}
+	\item		The highest power of $x$ is in the denominator.  Therefore, the limit is 0; see Figure \ref{fig:hzasy3}(a).
+	
+	
+	%\mfigure{.8}{Visualizing $\displaystyle\lim_{x\rightarrow-\infty}\frac{x^2+2x-1}{x^3+1}$.}{fig:hzasy5}{figures/fighzasy5}
+	
+	\item		The highest power of $x$ is $x^2$, which occurs in both the numerator and denominator.  The limit is therefore the ratio of the coefficients of $x^2$, which is $-1/3$. See Figure \ref{fig:hzasy3}(b).
+	
+	%\mfigure{.55}{Visualizing $\ds\lim_{x\rightarrow\infty}\frac{x^2+2x-1}{1-x-3x^2}$.}{fig:hzasy6}{figures/fighzasy6}
+	
+	\mtable{.6}{Visualizing the functions in Example \ref{ex_hzasy3}.}{fig:hzasy3}{%
+	\begin{tabular}{c}
+	\myincludegraphics{figures/fighzasy5}\\[10pt]
+	(a)\\[10pt]
+	\myincludegraphics{figures/fighzasy6}\\[10pt]
+	(b)\\[10pt]
+	\myincludegraphics{figures/fighzasy7}\\[10pt]
+	(c)
+	\end{tabular}
+	}
+	
+	\item		The highest power of $x$ is in the numerator so the limit will be $\infty$ or $-\infty$.  To see which, consider only the dominant terms from the numerator and denominator, which are $x^2$ and $-x$.  The expression in the limit will behave like $x^2/(-x) = -x$ for large values of $x$.  Therefore, the limit is $-\infty$. See Figure \ref{fig:hzasy3}(c).
+	
+	%\mfigure{.3}{Visualizing $\ds\lim_{x\rightarrow\infty}\frac{x^2-1}{3-x}$.}{fig:hzasy7}{figures/fighzasy7}
+	\end{enumerate}
+\vskip -\baselineskip
+}\\
+
+\vskip 2\baselineskip
+\textbf{\Large Chapter Summary}
+\vskip \baselineskip
+
+In this chapter we:
+\begin{itemize}
+\item defined the limit, 
+\item found accessible ways to approximate their values numerically and graphically, 
+\item	developed a not--so--easy method of proving the value of a limit ($\epsilon-\delta$ proofs),
+\item	explored when limits do not exist,
+\item	defined continuity and explored properties of continuous functions, and 
+\item	considered limits that involved infinity.
+\end{itemize}
+
+Why? Mathematics is famous for building on itself and calculus proves to be no exception. In the next chapter we will be interested in ``dividing by 0.'' That is, we will want to divide a quantity by a smaller and smaller number and see what value the quotient approaches. In other words, we will want to find a limit. These limits will enable us to, among other things, determine \textit{exactly} how fast something is moving when we are only given position information.
+
+Later, we will want to add up an infinite list of numbers. We will do so by first adding up a finite string of numbers, then take a limit as the number of things we are adding approaches infinity. Surprisingly, this sum often is finite; that is, we can add up an infinite list of numbers and get, for instance, 42. 
+
+These are just two quick examples of why we are interested in limits. Many students dislike this topic when they are first introduced to it, but over time an appreciation is often formed based on the scope of its applicability.
+
+\printexercises{exercises/01_06_exercises}
+
+%Maybe some practical example here, like the cost to remove 100% of something and vertical asymptotes and the the long term limit of a population to demonstrate limits at infinity.  Or maybe just put these into the exercises.
+
+%\end{document}
+
+%Do both limits to infinity, limits resulting in “infinity”.
+%Define more clearly indeterminate form.
+%Thm: Rules about limits involving infinity
+%Thm: Something about the limits as x ? 8 and rational functions? 

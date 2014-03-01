@@ -1,0 +1,389 @@
+
+\section{The Chain Rule}\label{sec:chainrule}
+
+We have covered almost all of the derivative rules that deal with combinations of two (or more) functions.  The operations of addition, subtraction, multiplication (including by a constant) and division led to the Sum and Difference rules, the Constant Multiple Rule, the Power Rule, the Product Rule and the Quotient Rule.  %As a nice subcase of the Product Rule, we also have the Power Rule (which we will generalize in this section).  
+To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function ``inside''  another).
+
+Recall the notation for composition, $(f \circ g)(x)$ or $f(g(x))$, read as ``$f$ of $g$ of $x$.''  In shorthand, we simply write
+$f \circ g$ or $f(g)$ and read it as ``$f$ of $g$.''  Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like $f(g(h(x)))$ or $f(g(h(j(x))))$, etc.
+
+To motivate the rule, let's look at three derivatives we can already compute.\\
+
+
+\example{ex_chain1}{\textbf{Exploring similar derivatives}\\
+Find the derivatives of $F_1(x) = (1-x)^2$, $F_2(x) = (1-x)^3,$ and $F_3(x) = (1-x)^4.$ (We'll see later why we are using subscripts for different functions and an uppercase $F$.)}
+{In order to use the rules we already have, we must first expand each function as
+$F_1(x) = 1 - 2x + x^2$,  $F_2(x) = 1 - 3x + 3x^2 - x^3$ and $F_3(x) = 1 - 4x + 6x^2 - 4x^3 + x^4$.
+  
+It is not hard to see that:\\
+
+\noindent$F_1'(x) = -2 + 2x$,\vskip 3pt
+
+\noindent$F_2'(x) = -3 + 6x - 3x^2$ and\vskip 3pt
+  
+\noindent$F_3'(x) = -4 + 12x - 12x^2 + 4x^3.$\\
+
+An interesting fact is that these can be rewritten as
+$$ 
+F_1'(x) = -2(x - 1),\quad  F_2'(x) = -3(1-x)^2\ \textrm{ and } \ 
+F_3'(x) = -4(1-x)^3.
+$$  
+A pattern might jump out at you.  Recognize that each of these functions is a composition:
+\begin{eqnarray*}
+F_1(x) = f_1(g(x)),& \text{ where } f_1(x) = x^2,\\
+F_2(x) = f_2(g(x)),& \text{ where } f_2(x) = x^3,\\
+F_3(x) = f_3(g(x)),& \text{ where } f_3(x) = x^4.
+\end{eqnarray*}
+
+We'll come back to this example after giving the formal statements of the Chain Rule; for now, we are just illustrating a pattern.}\\
+
+
+\theorem{thm:chain_rule}{The Chain Rule}
+{Let $y = f(u)$ be a differentiable function of $u$ and let $u = g(x)$ be a differentiable function of $x$. Then $y=f(g(x))$ is a differentiable function of $x$, and $$y' = \fp(g(x))\cdot g'(x).$$
+}
+  
+ 
+% The derivative of $(f \circ g)(x)$ is $(f^{\, \prime} \circ g)(x) \cdot g^{\, \prime}(x)$.  Written with the other notation, the derivative of $f(g(x))$ is $f^{\, \prime}(g(x)) \cdot g^{\, \prime}(x)$.  
+%In our shorthand, we write this as $(f(g))^{\, \prime} = f^{\, \prime}(g) \cdot g^{\, \prime}.$ \\
+
+To help  understand the Chain Rule, we return to Example \ref{ex_chain1}.\\
+
+\example{ex_chain2}{\textbf{Using the Chain Rule}\\
+Use the Chain Rule to find the derivatives of the following functions, as given in Example \ref{ex_chain1}.}
+{Example \ref{ex_chain1} ended with the recognition that each of the given functions was actually a composition of functions. To avoid confusion, we ignore most of the subscripts here. \\ %
+
+\noindent\textbf{$F_1(x) = (1-x)^2$:}\\
+
+We found that $$y=(1-x)^2 = f(g(x)), \text{ where } f(x) = x^2\ \text{ and }\ g(x) = 1-x.$$
+To find $y'$, we apply the Chain Rule. We need $\fp(x)=2x$ and $g'(x)=-1.$
+
+Part of the Chain Rule uses $\fp(g(x))$. This means substitute $g(x)$ for $x$ in the equation for $\fp(x)$. That is, $\fp(x) = 2(1-x)$.  Finishing out the Chain Rule we have $$y' = \fp(g(x))\cdot g'(x) = 2(1-x)\cdot (-1) = -2(1-x)= 2x-2.$$
+
+%\vskip\baselineskip
+\noindent $F_2(x) = (1-x)^3$:\\
+
+Let $y = (1-x)^3 = f(g(x))$, where $f(x) = x^3$ and $g(x) = (1-x)$. We have $\fp(x) = 3x^2$, so $\fp(g(x)) = 3(1-x)^2$. The Chain Rule then states $$y' = \fp(g(x))\cdot g'(x) = 3(1-x)^2\cdot(-1) = -3(1-x)^2.$$
+
+\enlargethispage{2\baselineskip}%\vskip\baselineskip
+\noindent $F_3(x) = (1-x)^4$:\\
+
+Finally, when $y = (1-x)^4$, we have $f(x)= x^4$ and $g(x) = (1-x)$. Thus $\fp(x) = 4x^3$ and $\fp(g(x)) = 4(1-x)^3$. Thus $$y' = \fp(g(x))\cdot g'(x) = 4(1-x)^3\cdot (-1) = -4(1-x)^3.$$
+\vskip-1.5\baselineskip
+}\\
+
+Example \ref{ex_chain2} demonstrated a particular pattern: when $f(x)=x^n$, then $y' =n\cdot (g(x))^{n-1}\cdot g'(x)$. This  is called the Generalized Power Rule.\\
+
+
+\theorem{thm:gen_power_rule}{Generalized Power Rule}{Let $g(x)$ be a differentiable function and let $n\neq 0$ be an integer. Then $$\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g'(x).$$
+}
+
+This allows us to quickly find the derivative of functions like $y = (3x^2-5x+7+\sin x)^{20}$. While it may look intimidating, the Generalized Power Rule states that $$y' = 20(3x^2-5x+7+\sin x)^{19}\cdot (6x-5+\cos x).$$
+
+Treat the derivative--taking process step--by--step. In the example just given, first multiply by 20, the rewrite the inside of the parentheses, raising it all to the 19$^{\text{th}}$ power. Then think about the derivative of the expression inside the parentheses, and multiply by that.
+
+%
+
+We now consider more examples that employ the Chain Rule.\\
+
+\example{ex_chain3}{\textbf{Using the Chain Rule}\\
+Find the derivatives of the following functions:
+
+		\noindent\begin{minipage}[t]{.3\textwidth}
+			\begin{enumerate}
+			\item		$y = \sin{2x}$\addtocounter{enumi}{1}
+%			\item		$y= e^{3x}$
+			\end{enumerate}
+			\end{minipage}
+			\begin{minipage}[t]{.3\textwidth}
+			\begin{enumerate}\addtocounter{enumi}{1}
+%			\item		$y = \sin{2x}$\addtocounter{enumi}{1}
+			\item		$y= \ln (4x^3-2x^2)$
+			\end{enumerate}
+			\end{minipage}
+	\begin{minipage}[t]{.3\textwidth}
+	\begin{enumerate}\addtocounter{enumi}{2}
+	\item		$y = e^{-x^2}$
+	\end{enumerate}
+	\end{minipage}
+}
+{\begin{enumerate}
+		\item		Consider $y = \sin 2x$. Recognize that this is a composition of functions, where $f(x) = \sin x$ and $g(x) = 2x$. Thus $$y' = \fp(g(x))\cdot g'(x) = \cos (2x)\cdot 2 = 2\cos 2x.$$
+		
+		\item		Recognize that $y = \ln (4x^3-2x^2)$ is the composition of $f(x) = \ln x$ and $g(x) = 4x^3-2x^2$. Also, recall that $$\frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.$$ This leads us to:
+		$$y' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.$$
+		
+		\item		Recognize  that $y = e^{-x^2}$ is the composition of $f(x) = e^x$ and $g(x) = -x^2$. Remembering that $\fp(x) = e^x$, we have $$y' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.$$
+	\end{enumerate}
+\vskip-\baselineskip
+}\\
+
+\example{ex_chain7}{\textbf{Using the Chain Rule to find a tangent line}\\
+Let $f(x) = \cos x^2$. Find the equation of the line tangent to $f$ at $x=1$.}
+{The tangent line goes through the point $(1,f(1)) \approx (1,0.54)$ with slope $\fp(1)$. To find $\fp$, we need the Chain Rule.
+
+$\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin x^2$. Evaluated at $x=1$, we have $\fp(1) = -2\sin 1\approx -1.68$. Thus the equation of the tangent line is $$y = -1.68(x-1)+0.54 .$$
+
+The tangent line is sketched along with $f$ in Figure \ref{fig:chain7}.
+\mfigure{.7}{$f(x) = \cos x^2$ sketched along with its tangent line at $x=1$.}{fig:chain7}{figures/figchain7}
+}\\
+
+The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn  patterns that facilitate finding derivatives quickly. For instance, $$\frac{d}{dx}\Big(\ln (\text{anything})\Big) = \frac{1}{\text{anything}}\cdot (\text{anything})' = \frac{(\text{anything})'}{\text{anything}}.$$
+A concrete example of this is $$\frac{d}{dx}\Big(\ln(3x^{15}-\cos x+e^x)\Big) = \frac{45x^{14}+\sin x+e^x}{3x^{15}-\cos x+e^x}.$$ While the derivative may  look intimidating at first, look for the pattern. The denominator is the same as what was inside the natural log function; the  numerator is simply its derivative.
+
+This pattern recognition process can be applied to lots of functions. In general, instead of writing ``anything'', we use $u$ as a generic function of $x$. We then say $$\frac{d}{dx}\Big(\ln u\Big) = \frac{u'}{u}.$$
+The following is a short list of how the Chain Rule can be quickly applied to familiar functions.
+
+\noindent\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}
+\item		$\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot u'.$
+\item		$\ds\frac{d}{dx}\Big(e^u\Big) = u'\cdot e^u.$
+\item		$\ds\frac{d}{dx}\Big(\sin u\Big) = u'\cdot \cos u.$
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\begin{enumerate}\addtocounter{enumi}{3}
+\item		$\ds\frac{d}{dx}\Big(\cos u\Big) = -u'\cdot \sin u.$
+\item		$\ds\frac{d}{dx}\Big(\tan u\Big) = u'\cdot \sec^2 u.$
+\end{enumerate}
+\end{minipage}\\
+\vskip \baselineskip
+Of course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.\\
+
+\example{ex_chain4}{\textbf{Using the Product, Quotient and Chain Rules}\\
+Find the derivatives of the following functions. \\
+
+1. $f(x) = x^5 \sin{2x^3}$ \quad 2.  $\ds f(x) = \frac{5x^3}{e^{-x^2}}.$}
+{
+\begin{enumerate}
+\item		We must use the Product and Chain Rules. Do not think that you must be able to ``see'' the whole answer immediately; rather, just proceed step--by--step.
+		$$\fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\sin 2x^3= 6x^7\cos2x^3+5x^4\sin 2x^3.$$
+\item		We must employ the Quotient Rule along with the Chain Rule. Again, proceed step--by--step.
+\begin{align*}
+\fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} &=\frac{e^{-x^2}\big(30x^4+15x^2\big)}{e^{-2x^2}}\\
+ &= e^{x^2}\big(30x^4+15x^2\big).
+\end{align*}
+\end{enumerate}
+\vskip-2\baselineskip
+}\\
+
+A key to correctly working these problems is to break the problem down into smaller, more manageable pieces. For instance, when using the Product and Chain Rules together, just consider the first part of the Product Rule at first: $f(x)g'(x)$. Just rewrite $f(x)$, then find $g'(x)$. Then move on to the $\fp(x)g(x)$ part. Don't attempt to figure out both parts at once.
+
+Likewise, using the Quotient Rule, approach the numerator in two steps and handle the denominator after completing that. Only simplify afterward.
+
+We can also employ the Chain Rule itself several times, as shown in the next example.\\
+
+\example{ex_chain6}{\textbf{Using the Chain Rule multiple times}\\
+Find the derivative of $y = \tan^5(6x^3-7x)$.}
+{Recognize that we have the $g(x)=\tan(6x^3-7x)$ function ``inside'' the $f(x)=x^5$ function; that is, we have $y = \big(\tan(6x^3-7x)\big)^5$. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step--by--step.
+$$y' = 5\big(\tan(6x^3-7x)\big)^4\cdot g'(x).$$
+We now find $g'(x)$. We again need the Chain Rule; $$g'(x) = \sec^2(6x^3-7x)\cdot(18x^2-7).$$ Combine this with what we found above to give
+\begin{align*}
+y' &= 5\big(\tan(6x^3-7x)\big)^4\cdot\sec^2(6x^3-7x)\cdot(18x^2-7)\\ 
+&= (90x^2-35)\sec^2(6x^3-7x)\tan^4(6x^3-7x).
+\end{align*}
+
+This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and $6x^3-7x$ grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not ``hard;'' one must take several simple steps and be careful to keep track of how to apply each of these steps.%However, just to demonstrate that this is the proper derivative, we have plotted the tangent line to the function, along with $y$, in FIGURE. The derivative gives the correct slope.
+%Do for x=.05
+}\\
+%\enlargethispage{3\baselineskip}
+
+It is traditional mathematical exercise to find the derivatives of arbitrarily complicated functions just to demonstrate that it \textit{can be done}. Just break everything down into smaller pieces. \\
+
+%We note that these functions (which look similar to those in the previous example) may arise in dealing with a Fourier transform or a Fourier series (perhaps in a differential equations or circuits class).  They are more complicated, because you do not use the chain rule immediately.  You must first use a previous rule, namely the product rule.  However, within the calculations, you will have to involve the chain rule.**   \\
+
+\example{ex_chain5}{\textbf{Using the Product, Quotient and Chain Rules}\\
+Find the derivative of $\ds f(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}.$}
+{This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the Quotient Rule, the Product Rule, and the Chain Rule three times.\\
+%\small$$\fp(x) = \frac{\Big(\ln(x^2+5x^4)\Big)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}}{\big(\ln(x^2+5x^4)\big)^2}.$$
+
+\scriptsize
+\noindent $\fp(x) = $
+$$\frac{\left(\begin{array}{l}\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]\\
+\qquad-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}\end{array}\right)}{\big(\ln(x^2+5x^4)\big)^2}.$$
+\normalsize
+
+Again, in this example, there is no practical value to finding this derivative. It just demonstrates that it can be done, no matter how arbitrarily complicated the function is.
+}\\
+
+%------------------------\\
+%FOOTNOTE **: Most derivatives will use a combination of the derivative rules.  For kicks, have a shot at finding the derivative of
+%$$
+%F(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}
+%$$
+%you will never come across this function in practice (or at least we hope not!), but it does involve the constant multiple, sum, difference, product, quotient and chain rules all at once (and a healthy dose of transcendental functions).  Here's the answer: $<$solution redacted - blame the lawyers$>$.\\
+%------------------------\\
+%\\
+%Using the product rule, we can see that 
+%\begin{eqnarray*}
+%A^{\, \prime}(x) &= &1 \cdot \sin{2x} + x \cdot (\sin{2x})^{\prime},\\
+%B^{\, \prime}(x) &=& 1 \cdot e^{3x} + x \cdot (e^{3x})^{\prime},\\
+%C^{\, \prime}(x) &=& 15x^2 \cdot e^{-x^2}  +  5x^3 \cdot (e^{-x^2})^{\prime}.
+%\end{eqnarray*}
+%To complete the calculation, instead of reapplying the chain rule here, we use the results in the previous example to get
+%\begin{eqnarray*}
+%A^{\, \prime}(x) &= &1 \cdot \sin{2x} + x \cdot 2\cos{2x},\\
+%B^{\, \prime}(x) &=& 1 \cdot e^{3x} + x \cdot 3e^{3x},\\
+%C^{\, \prime}(x) &=& 15x^2 \cdot e^{-x^2}  +  5x^3 \cdot -2x e^{-x^2}.
+%\end{eqnarray*}
+%or
+%\begin{eqnarray*}
+%A^{\, \prime}(x) &=& \sin{2x} + 2x \cos{2x},\\
+%B^{\, \prime}(x) &=&  e^{3x} + 3x e^{3x},\\
+%C^{\, \prime}(x) &=& 15x^2 e^{-x^2}  -  10x^4 e^{-x^2}.
+%\end{eqnarray*}
+%If you wish, you can simplify the second two as $B^{\, \prime}(x) =  e^{3x}(1 + 3x)$ and 
+%$C^{\, \prime}(x) = e^{-x^2}(15x^2  -  10x^4)$.  We probably would make these simplifications because they look nicer, they are easer to calculate with, and it is easier to take further derivatives as necessary.\\
+%\\
+
+The Chain Rule also has theoretic value. That is, it can be used to find the derivatives of functions that we have not yet learned as we do in the following example.\\
+
+\example{ex_chain8}{\textbf{The Chain Rule and exponential functions}\\
+Use the Chain Rule to find the derivative of $f(x)= a^x$ where $a>0$, $a\neq 1$ is constant.}
+{We only know how to find the derivative of one exponential function: $f(x) = e^x$; this problem is asking us to find the derivative of functions such as $f(x) = 2^x$. 
+
+This can be accomplished by rewriting $a^x$ in terms of $e$.  Recalling that $e^x$ and $\ln x$ are inverse functions, we can write
+$$
+a = e^{\ln a} \quad \text{and so } \quad f(x) = a^x = e^{\ln (a^x)}.
+$$  
+
+By the exponent property of logarithms, we can ``bring down'' the power to get 
+
+$$
+f(x) = a^x = e^{x (\ln a)}.
+$$
+
+The function is now the composition $y=f(g(x))$, with $f(x) = e^x$ and $g(x) = x(\ln a)$.  Since $f^{\, \prime}(x) = e^x$ and $g^{\, \prime}(x) = \ln a$, the Chain Rule  gives 
+
+$$
+\fp(x) = e^{x (\ln a)} \cdot \ln a.
+$$
+Now one last look.  Does the right hand side look at all familiar?  In fact, the right side contains the original function itself! We have
+$$
+\fp(x) = f(x) \cdot \ln a = a^x\cdot \ln a.
+$$
+The Chain Rule, coupled with the derivative rule of $e^x$, allows us to find the derivatives of all exponential functions.
+}\\
+
+The previous example produced a result worthy of its own ``box.''
+
+\theorem{thm:exponentials}{Derivatives of Exponential Functions}
+{Let $f(x)=a^x$, for $a>0, a\neq 1$. Then $f$ is differentiable for all real numbers and $$\fp(x) = \ln a\cdot a^x.$$
+}
+
+%{\bf Hard Examples:} For constants $a$ and $\nu,$ find the derivatives of 
+%\begin{eqnarray*}
+%y(x) &=& a\ln\left(\frac{a+\sqrt{a^2-x^2}}{x}\right) - \sqrt{a^2-x^2}\\
+%f(t) &=& \frac{\Gamma(\frac{\nu + 1}{2})}{\sqrt{\nu \pi} \Gamma(\frac{\nu}{2})}
+%\left(1+\frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}, \\
+%E(x) &=& \frac{2}{\sqrt{\pi}}\int_0^{\frac{x}{\sqrt{2}}} e^{\frac{-t^2}{2}} \; dt
+%\end{eqnarray*}
+%where $y$ is the equation of a tractrix (important in the study of a certain motion), $f$ is the probability density function of the student's $t$-distribution (in statistics) and $E$ is related to the error function, which is defined as
+%erf$\displaystyle (x) = \frac{2}{\sqrt{\pi}}\int_0^x e^{\frac{-t^2}{2}} \; dt$, and to the normal cummulative distribution 
+%$\Phi(x) = \frac{1}{2} \left[ 1 + \textrm{erf}\left(\frac{x}{\sqrt{2}}  \right)\right]$  ***.  \\
+%\\
+%------------------------\\
+%FOOTNOTE ***: 
+%Yes, feel free to Google these functions and plot them on WolframAlpha - we would!\\
+%------------------------\\
+%\\
+%To compute the derivative of $y(x)$, rewrite it as
+%$$
+%y(x) = a\ln\left(\frac{a+(a^2-x^2)^{\frac{1}{2}}}{x}\right) - (a^2-x^2)^\frac{1}{2}
+%$$
+%and use the constant multiple, chain, and quotient rules:
+%$$
+%y^{\, \prime}(x) 
+%= 
+%a\left(\frac{x}{a+(a^2-x^2)^{\frac{1}{2}}}\right)
+%\cdot
+%\frac{1}{2} (a^2-x^2)^{-\frac{1}{2}} \cdot (-2x)
+%- 
+%\frac{1}{2} (a^2-x^2)^{-\frac{1}{2}} \cdot (-2x).
+%$$
+%With a little algebra, this simplifies to
+%$$
+%y^{\, \prime}(x) 
+%= 
+%-\frac{a\sqrt{a^2-x^2}+a^2-x^2}{x\sqrt{a^2-x^2}+ax}.
+%$$
+%The derivative of $f(t)$ isn't actually too bad, since the leading fraction is a constant, so we only need to use the constant multiple and chain rules:
+%$$
+%f^{\, \prime}(t) 
+%= 
+%\frac{\Gamma(\frac{\nu + 1}{2})}{\sqrt{\nu \pi} \Gamma(\frac{\nu}{2})}
+%\cdot
+%\left(-\frac{\nu+1}{2}\right)
+%\left(1+\frac{t^2}{\nu}\right)^{-\frac{\nu+3}{2}}
+%\cdot
+%\frac{2t}{\nu}
+%=
+%-\frac{\Gamma(\frac{\nu + 1}{2})}{\sqrt{\nu \pi} \Gamma(\frac{\nu}{2})}
+%\left(\frac{\nu+1}{\nu}\right)
+%\cdot
+%t\left(1+\frac{t^2}{\nu}\right)^{-\frac{\nu+3}{2}}.
+%$$
+%The derivative of $E(x)$ primarily uses the 1st Fundamental Theorem of Calculus as well as the chain rule
+%$$
+%E^{\, \prime}(x) 
+%= 
+%\frac{2}{\sqrt{\pi}} e^{\frac{-\left(\frac{x}{\sqrt{2}}\right)^2}{2}} 
+%\cdot
+%\frac{1}{\sqrt{2}}
+%=
+%\sqrt{\frac{2}{\pi}} \, e^{\frac{-x^2}{4}}. 
+%$$
+
+%\clearpage
+%\enlargethispage{2\baselineskip}
+\vskip \baselineskip
+\noindent\textbf{\large Alternate Chain Rule Notation}\\
+
+It is instructive to understand what the  Chain Rule ``looks like'' using ``$\frac{dy}{dx}$'' notation instead of $y'$ notation.  Suppose that $y=f(u)$ is a function of $u$, where $u=g(x)$ is a function of $x$ (as stated in Theorem \ref{thm:chain_rule}.  Then, through the composition $f \circ g$, we can think of $y$ as a function of $x$, as $y=f(g(x))$. Thus the derivative of $y$ with respect to $x$ makes sense; we can talk about $\frac{dy}{dx}.$  This leads to an interesting progression of notation:
+
+\begin{align*}
+y' &= \fp(g(x))\cdot g'(x) \\
+\frac{dy}{dx} &= \parbox{70pt}{$\ds y'(u) \cdot u'(x)$} \mbox{\small (since $y=f(u)$ and $u=g(x)$)}\\
+\frac{dy}{dx} &= \parbox{70pt}{$\ds \frac{dy}{du} \cdot \frac{du}{dx}$ } \mbox{\small (using ``fractional'' notation for the derivative)}
+\end{align*}
+
+%Using the previous notation, this would be written as $y^{\, \prime}(x(t)) \cdot x^{\, \prime}(t)$, but it makes more sense to write
+%$$
+%\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}.
+%$$
+
+Here the ``fractional'' aspect of the derivative notation stands out. On the right hand side, it seems as though the ``$du$'' terms cancel out, leaving $$ \frac{dy}{dx} = \frac{dy}{dx}.$$
+It is important to realize that we \textit{are not} canceling these terms; the derivative notation of $\frac{dy}{dx}$ is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the Chain Rule easy with multiple variables. For instance,
+
+%If you look at it like a fraction it sort of looks like the $dx$ part ``cancels out'' leaving $\displaystyle \frac{dy}{dt}.$  This isn't quite right, but it does work.  In fact you can extend this as
+$$
+\frac{dy}{dt} = \frac{dy}{d\bigcirc} \cdot \frac{d\bigcirc}{d\triangle} \cdot \frac{d\triangle}{dt}.
+$$
+where $\bigcirc$ and $\triangle$ are any variables you'd like to use.
+
+After a while, you get better at recognizing the pattern and may take the short cut of not actually writing down the functions that make up the composition when you apply the Chain Rule.  We simply recommend caution and point out that's where errors in work can (and often do) occur.\\
+
+One of the most common ways of 
+``visualizing'' the Chain Rule is to consider a set of gears, as shown in Figure \ref{fig:chainrulegears}. The gears have 36, 18, and 6 teeth, respectively. That means for every revolution of the $x$ gear, the $u$ gear revolves twice. That is: $\frac{du}{dx} = 2$. Likewise, every revolution of $u$ causes 3 revolutions of $y$: $\frac{dy}{du} = 3$. How does $y$ change with respect to $x$? For each revolution of $x$, $y$ revolves 6 times; that is, $$\frac{dy}{dx} = \frac{dy}{du}\cdot \frac{du}{dx} = 2\cdot 3 = 6.$$
+We can then extend the Chain Rule with more variables by adding more gears to the picture.\\
+
+\mfigure{.7}{A series of gears to demonstrate the Chain Rule. Note how $\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}$}{fig:chainrulegears}{figures/figchainrulegears}
+
+%
+%{\bf EXERCISES} Use the Chain Rule, the Generalized Power Rule or the Extended Chain Rule in these exercises.  The letters $a, b$ and $k$ indicates constants.
+%\begin{description} 
+%\item[1.] Verify the following derivatives, 
+%\item[a.] For $y = \cos (k x), y^{\, \prime} = -k \sin (kx)$.
+%\item[b.] For $y = \tan (k x), y^{\, \prime} = k \sec^2 (kx)$.
+%\item[c.] For $y = \sec (k x), y^{\, \prime} = k \sec (kx) \tan (kx)$.
+%\item[d.] For $y = e^{k x}, y^{\, \prime} = k e^{kx}$.
+%\item[e.] For $y = \ln (kx), y^{\, \prime} = \displaystyle \frac{1}{x}$ in two ways.  First, rewrite the function using the multiplicative property of logarithms as $y = \ln (k) + \ln (x)$.  Second, use the chain rule directly.
+%\item[f.] For $\displaystyle y = \tan\left(\frac{x}{a}\right), y^{\, \prime} = \frac{a}{a^2 + x^2}$
+%\item[g.] For $\displaystyle y = \frac{e^{bx}}{a^2 + b^2} (a \sin(ax) + b\cos(ax)), y^{\, \prime} = e^{bx} \cos(ax)$.  This is useful in Fourier series computations.
+%\item[h.] For $y = \ln |\sec x|, y^{\, \prime} = \tan x.$ 
+%\item[i.] For $y = -\frac{1}{k} \ln |\sec(kx) + \tan(kx)|, y^{\, \prime} = \sec(kx)$ (as long as $k \ne 0$).  
+%\item[j.] For $\displaystyle y = \frac{1}{2} \left(x + \frac{\sin(2x)}{2}\right), y^{\, \prime} = \cos^2(x).$ 
+%\end{description}
+
+\printexercises{exercises/02_05_exercises}
+
+%\end{document}

@@ -1,0 +1,159 @@
+\section{The Shell Method}\label{sec:shell_method}
+
+Often a given problem can be solved in more than one way. A particular method may be chosen out of convenience, personal preference, or perhaps necessity. Ultimately, it is good to have options.
+
+The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross-sectional area of the solid. This section develops another method of computing volume, the \textbf{Shell Method.} Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating ``shells.''
+
+Consider Figure \ref{fig:shell_intro}, where the region shown in (a) rotated around the $y$-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a \textbf{cylindrical shell}, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells. 
+\mtable{.6}{Introducing the Shell Method.}{fig:shell_intro}{%
+\noindent\begin{tabular}{c}
+\myincludegraphics{figures/figshell_intro_b}\\
+(a)\\
+\myincludegraphics{figures/figshell_intro_a}\\
+(b)\\
+\myincludegraphics{figures/figshell_intro_d}\\
+(c)
+\end{tabular}
+}
+
+To compute the volume of one shell, first consider the paper label on a soup can with radius $r$ and height $h$. What is the area of this label? A simple way of determining this is to cut the label and lay it out flat, forming a rectangle with height $h$ and length $2\pi r$. Thus the area is $A = 2\pi rh$; see Figure \ref{fig:soupcan} (a).
+
+Do a similar process with a cylindrical shell, with height $h$, thickness $\Delta x$, and approximate radius $r$. Cutting the shell and laying it flat forms a rectangular solid with length $2\pi r$, height $h$ and depth $\dx$. Thus the volume is $V \approx 2\pi rh\dx$; see Figure \ref{fig:soupcan} (b). (We say ``approximately'' since our radius was an approximation.)
+
+%\enlargethispage{2\baselineskip}
+By breaking the solid into $n$ cylindrical shells, we can approximate the volume of the solid as
+$$V = \sum_{i=1}^n 2\pi r_ih_i\dx_i,$$ where $r_i$, $h_i$ and $\dx_i$ are the radius, height and thickness of the $i\,^\text{th}$ shell, respectively. 
+
+This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 0 leads to a definite integral.
+\clearpage
+%\vskip 7pt
+%\noindent \hskip-\marginparwidth \hskip -\marginparsep%
+\begin{minipage}{\textwidth+\marginparwidth+\marginparsep}
+\begin{tabular}{cc}
+\myincludegraphics[scale=.9]{figures/figshell_soupcan} & \myincludegraphics[scale=.9]{figures/figshell_unwrapshell}\\
+(a) & (b)
+\end{tabular}
+\captionsetup{type=figure}%
+\caption{Determining the volume of a thin cylindrical shell.}\label{fig:soupcan}
+\end{minipage}
+
+\vskip 2\baselineskip
+%\clearpage
+
+
+
+\keyidea{idea:shell_method}{The Shell Method}
+{Let a solid be formed by revolving a region $R$, bounded by $x=a$ and $x=b$, around a vertical axis. Let $r(x)$ represent the distance from the axis of rotation to $x$ (i.e., the radius of a sample shell) and let $h(x)$ represent the height of the solid at $x$ (i.e., the height of the shell). The volume of the solid is $$V = 2\pi\int_a^b r(x)h(x)\ dx.$$
+}
+
+\textbf{Special Cases:}
+	\begin{itemize}
+	\item		When the region $R$ is bounded above by $y=f(x)$ and below by $y=g(x)$, then $h(x) = f(x)-g(x)$.
+	\item		When the axis of rotation is the $y$-axis (i.e., $x=0$) then $r(x) = x$.
+	\end{itemize}
+	
+Let's practice using the Shell Method.\\
+
+\example{ex_shell1}{\textbf{Finding volume using the Shell Method}\\
+Find the volume of the solid formed by rotating the region bounded by $y=0$, $y=1/(1+x^2)$, $x=0$ and $x=1$ about the $y$-axis.}
+{This is the region used to introduce the Shell Method in Figure \ref{fig:shell_intro}, but is sketched again in Figure \ref{fig:shell1} for closer reference. A line is drawn in the region parallel to the axis of rotation representing a shell that will be carved out as the region is rotated about the $y$-axis. (This is the differential element.)
+\mfigure{.35}{Graphing a region in Example \ref{ex_shell1}.}{fig:shell1}{figures/figshell1}
+
+The distance this line is from the axis of rotation determines $r(x)$; as the distance from $x$ to the $y$-axis is $x$, we have $r(x)=x$. The height of this line determines $h(x)$; the top of the line is at $y=1/(1+x^2)$, whereas the bottom of the line is at $y=0$. Thus $h(x) = 1/(1+x^2)-0 = 1/(1+x^2)$. The region is bounded from $x=0$ to $x=1$, so the volume is 
+\begin{align*}
+V 	&= 2\pi\int_0^1 \frac{x}{1+x^2}\ dx. \\
+\end{align*}
+This requires substitution. Let $u=1+x^2$, so $du = 2x\ dx$. We also change the bounds: $u(0) = 1$ and $u(1) = 2$. Thus we have:
+\begin{align*}
+		&= \pi\int_1^2 \frac{1}{u}\ du \\
+		&= \pi\ln u\Big|_1^2\\
+		&= \pi\ln 2 \approx 2.178 \ \text{units}^3.
+\end{align*}
+Note: in order to find this volume using the Disk Method, two integrals would be needed to account for the regions above and below $y=1/2$.
+}\\
+
+With the Shell Method, nothing special needs to be accounted for to compute the volume of a solid that has a hole in the middle, as demonstrated next.\\
+
+\example{ex_shell2}{\textbf{Finding volume using the Shell Method}\\
+Find the volume of the solid formed by rotating the triangular region determined by the points $(0,1)$, $(1,1)$ and $(1,3)$ about the line $x=3$.}
+{The region is sketched in Figure \ref{fig:shell2} (a) along with the differential element, a line within the region parallel to the axis of rotation. 
+\mtable{.4}{Graphing a region in Example \ref{ex_shell2}.}{fig:shell2}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figshell2a}\\
+(a)\\ \\
+\myincludegraphics{figures/figshell2b}\\
+(b)
+\end{tabular}
+}
+The height of the differential element is the distance from $y=1$ to $y=2x+1$, the line that connects the points $(0,1)$ and $(1,3)$. Thus $h(x) = 2x+1-1 = 2x$. The radius of the shell formed by the differential element is the distance from $x$ to $x=3$; that is, it is $r(x)=3-x$. The $x$-bounds of the region are $x=0$ to $x=1$, giving
+\begin{align*}
+V &=	2\pi\int_0^1 (3-x)(2x)\ dx \\
+	&= 2\pi\int_0^1 \big(6x-2x^2)\ dx \\
+	&= 2\pi\left(3x^2-\frac23x^3\right)\Big|_0^1\\
+	&= \frac{14}{3}\pi\approx 14.66 \ \text{units}^3.
+\end{align*}
+}\\
+
+When revolving a region around a horizontal axis, we must consider the radius and height functions in terms of $y$, not $x$.\\
+
+\example{ex_shell3}{\textbf{Finding volume using the Shell Method}\\
+Find the volume of the solid formed by rotating the region given in Example \ref{ex_shell2} about the $x$-axis.}
+{The region is sketched in Figure \ref{fig:shell3} (a) with a sample differential element and the solid is sketched in (b). (Note that the region looks slightly different than it did in the previous example as the bounds on the graph have changed.)
+
+The height of the differential element is an $x$-distance, between $x=\frac12y-\frac12$ and $x=1$. Thus $h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.$ The radius is the distance from $y$ to the $x$-axis, so $r(y) =y$. The $y$ bounds of the region are $y=1$ and $y=3$, leading to the integral
+\mtable{.45}{Graphing a region in Example \ref{ex_shell3}.}{fig:shell3}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figshell3a}\\
+(a) \\
+\myincludegraphics{figures/figshell3b}\\
+(b)
+\end{tabular}}
+
+\begin{align*}
+V &= 2\pi\int_1^3\left[y\left(-\frac12y+\frac32\right)\right]\ dy \\
+	&= 2\pi\int_1^3\left[-\frac12y^2+\frac32y\right]\ dy \\
+	&= 2\pi\left[-\frac16y^3+\frac34y^2\right]\Big|_1^3 \\
+	&= 2\pi\left[\frac94-\frac7{12}\right]\\
+	&=	\frac{10}{3}\pi \approx 10.472\ \text{units}^3.
+\end{align*}
+\vskip-\baselineskip
+}\\
+
+At the beginning of this section it was stated that ``it is good to have options.'' The next example finds the volume of a solid rather easily with the Shell Method, but using the Washer Method would be quite a chore.\\
+
+\example{ex_shell4}{\textbf{Finding volume using the Shell Method}\\
+Find the volume of the solid formed by revolving the region bounded by $y= \sin x$ and the $x$-axis from $x=0$ to $x=\pi$ about the $y$-axis.}
+{The region and the resulting solid are given in Figure \ref{fig:shell4}.
+\mtable{.6}{Graphing a region in Example \ref{ex_shell4}.}{fig:shell4}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figshell4a}\\
+(a) \\
+\myincludegraphics{figures/figshell4b}\\
+(b)
+\end{tabular}}
+The radius of a sample shell is $r(x) = x$; the height of a sample shell is $h(x) = \sin x$, each from $x=0$ to $x=\pi$. Thus the volume of the solid is 
+\begin{align*}
+V &=	2\pi\int_0^{\pi} x\sin x\ dx. \\
+\intertext{This requires Integration By Parts. Set $u=x$ and $dv=\sin x\ dx$; we leave it to the reader to fill in the rest. We have:}
+	&= 2\pi\Big[-x\cos x\Big|_0^{\pi} +\int_0^{\pi}\cos x\ dx \Big] \\
+	&= 2\pi\Big[\pi + \sin x \Big|_0^{\pi}\ \Big] \\
+	&= 2\pi\Big[\pi + 0 \Big] \\
+	&= 2\pi^2 \approx 19.74 \ \text{units}^3.
+	\end{align*}
+
+Note that in order to use the Washer Method, we would need to solve $y=\sin x$ for $x$, requiring the use of the arcsine function. We leave it to the reader to verify that the outside radius function is $R(y) = \pi-\arcsin y$ and the inside radius function is $r(y)=\arcsin y$. Thus the volume can be computed as $$\pi\int_0^1 \Big[ (\pi-\arcsin y)^2-(\arcsin y)^2\Big]\ dy.$$	This integral isn't terrible given that the $\arcsin^2 y$ terms cancel, but it is more onerous than the integral created by the Shell Method.
+}\\
+
+We end this section with a table summarizing the usage of the Washer and Shell Methods.
+
+\keyidea{idea:shell_and_washer}{Summary of the Washer and Shell Methods}
+{Let a region $R$ be given with $x$-bounds $x=a$ and $x=b$ and $y$-bounds $y=c$ and $y=d$.
+\vskip 5pt
+\begin{tabular}{cccc}
+ 		& Washer Method & & Shell Method \rule[-10pt]{0pt}{10pt} \\
+ \parbox{50pt}{\centering Horizontal Axis}  & $\ds \pi\int_a^b \big(R(x)^2-r(x)^2\big)\ dx$ & & $\ds 2\pi\int_c^d r(y)h(y)\ dy$ \\ \\
+ \parbox{40pt}{\centering Vertical Axis} &  $\ds\pi \int_c^d\big(R(y)^2-r(y)^2\big)\ dy$ & & $\ds 2\pi\int_a^b r(x)h(x)\ dx$
+ \end{tabular}
+ }
+ 
+\printexercises{exercises/07_03_exercises}

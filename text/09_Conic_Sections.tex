@@ -1,0 +1,358 @@
+\section{Conic Sections}\label{sec:conic_sections}
+
+The ancient Greeks recognized that interesting shapes can be formed by intersecting a plane with a 
+\textit{double napped} cone (i.e., two identical cones placed tip--to--tip as shown in the following figures). As these shapes are formed as sections of conics, they have earned the official name ``conic sections.''
+
+The three ``most interesting'' conic sections are given in the top row of Figure \ref{fig:nondeg_conic}. They are the parabola, the ellipse (which includes circles) and the hyperbola. In each of these cases, the plane does not intersect the tips of the cones (usually taken to be the origin). \\
+
+\noindent\begin{minipage}{\textwidth+50pt}
+\noindent\centering
+\begin{tabular}{cccc}
+\includegraphics[scale=.25]{figures/conic_parabola}&
+\includegraphics[scale=.25]{figures/conic_ellipse}&
+\includegraphics[scale=.25]{figures/conic_circle}&
+\includegraphics[scale=.25]{figures/conic_hyperbola} \\
+\small Parabola &\small Ellipse & \small Circle &  \small Hyperbola
+\end{tabular}
+\vskip \baselineskip
+\noindent%
+\begin{tabular}{ccc}
+\includegraphics[scale=.25]{figures/conic_singlept}&
+\includegraphics[scale=.25]{figures/conic_oneline}&
+\includegraphics[scale=.25]{figures/conic_crossedlines}
+\\
+ \small Point& \small Line &\small  Crossed Lines 
+\end{tabular}
+\captionsetup{type=figure}%
+\caption{Nondegenerate Conic Sections}\label{fig:nondeg_conic}
+\end{minipage}
+\vskip\baselineskip
+
+
+
+When the plane does contain the origin, three \textbf{degenerate} cones can be formed as shown the bottom row of  Figure \ref{fig:nondeg_conic}: a point, a line, and crossed lines. We focus here on the nondegenerate cases. 
+
+While the above geometric constructs define the conics in an intuitive, visual way, these constructs are not very helpful when trying to analyze the shapes algebraically or consider them as the graph of a function. It can be shown that all conics can be defined by the general second--degree equation $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0.$$ While this algebraic definition has its uses, most find another geometric perspective of the conics more beneficial.
+
+Each nondegenerate conic can be defined as the \textbf{locus}, or set, of points that satisfy a certain distance property. These distance properties can be used to generate an algebraic formula, allowing us to study each conic as the graph of a function.\\
+
+\noindent\textbf{\Large Parabolas}\\
+%
+%We start with a definition.
+%
+\definition{def:parabola}{Parabola}
+{A \textbf{parabola} is the locus of all points equidistant from a point (called a \textbf{focus}) and a line (called the \textbf{directrix}) that does not contain the focus.
+}
+
+\mfigure{.5}{Illustrating the definition of the parabola and establishing an algebraic formula.}{fig:parabola_def}{figures/figparabola_def}
+Figure \ref{fig:parabola_def} illustrates this definition. The point halfway between the focus and the directrix is the \textbf{vertex}. The line through the focus, perpendicular to the directrix, is the \textbf{axis of symmetry}, as the portion of the parabola on one side of this line is the mirror--image of the portion on the opposite side.
+
+The definition leads us to an algebraic formula for the parabola. Let $P=(x,y)$ be a point on a parabola whose focus is at $F=(0,p)$ and whose directrix is at $y=-p$. (We'll assume for now that the focus lies on the $y$-axis; by placing the focus $p$ units above the $x$-axis and the directrix $p$ units below this axis, the vertex will be at $(0,0)$.)
+
+We use the Distance Formula to find the distance $d_1$ between $F$ and $P$:
+$$d_1=\sqrt{(x-0)^2+(y-p)^2}.$$
+The distance $d_2$ from $P$ to the directrix is more straightforward:
+$$d_2=y-(-p) = y+p.$$
+These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms of $x$:
+	\begin{align*}
+	d_1&= d_2 \\
+	\sqrt{x^2+(y-p)^2} &= y+p \\
+	\intertext{Now square both sides.}
+	x^2+(y-p)^2 &= (y+p)^2 \\
+	x^2+y^2-2yp+p^2 &= y^2+2yp+p^2\\
+	x^2 &=4yp\\
+	y&= \frac{1}{4p}x^2.
+	\end{align*}
+	The geometric definition of the parabola has led us to the familiar quadratic function whose graph is a parabola with vertex at the origin. When we allow the vertex to not be at $(0,0)$, we get the following standard form of the parabola.
+	
+	\keyidea{idea:parabola}{General Equation of a Parabola}
+	{\begin{itemize}
+	\item		\textbf{Vertical Axis of Symmetry:} The equation of the parabola with vertex at $(h,k)$ and directrix $y=k-p$ in standard form is $$y=\frac{1}{4p}(x-h)^2+k.$$ The focus is at $(h,k+p)$.
+	\item		\textbf{Horizontal Axis of Symmetry:} The  equation of the parabola with vertex at $(h,k)$ and directrix $x=h-p$ in standard form is $$x=\frac{1}{4p}(y-k)^2+h.$$ The focus is at $(h+p,k)$.
+	\end{itemize}
+	Note: $p$ is not necessarily a positive number.
+	}
+	\enlargethispage{2\baselineskip}
+	
+	\example{ex_conic1}{\textbf{Finding the equation of a parabola}\\
+	Give the equation of the parabola with focus at $(1,2)$ and directrix at $y=3$.}
+	{The vertex is located halfway between the focus and directrix, so $(h,k) = (1,4)$. This gives $p=-0.5$. Using Key Idea \ref{idea:parabola} we have the equation of the parabola as $$y=\frac{1}{4(-0.5)}(x-1)^2+4 = -\frac12(x-1)^2+2.5.$$
+	\mfigure{.35}{The parabola described in Example \ref{ex_conic1}.}{fig:conic1}{figures/figconic1}
+	The parabola is sketched in Figure \ref{fig:conic1}.
+	}\\
+	
+	\example{ex_conic2}{\textbf{Finding the focus and directrix of a parabola}\\
+	Find the focus and directrix of the parabola $x=\frac18y^2-y+1$. The point $(7,12)$ lies on the graph of this parabola; verify that it is equidistant from the focus and directrix.}
+	{We need to put the equation of the parabola in its general form. This requires us to complete the square:
+	\begin{align*}
+	x &= \frac18y^2-y+1 \\
+	&= \frac18\big(y^2-8y+8\big)\\
+	&=	\frac18\big(y^2-8y+16 -16+8\big)\\
+	&=	\frac18\big((y-4)^2 - 8\big)\\
+	&=	\frac18(y-4)^2 -1.
+	\end{align*}
+	Hence the vertex is located at $(-1,4)$.  We have $\frac18=\frac1{4p}$, so $p=2$. We conclude that the focus is located at $(1,4)$ and the directrix is  $x=-3$. The parabola is graphed in Figure \ref{fig:conic2}, along with its focus and directrix.\\
+	
+\mfigure{.7}{The parabola described in Example \ref{ex_conic2}. The distances from a point on the parabola to the focus and directrix is given.}{fig:conic2}{figures/figconic2}
+	
+	The point $(7,12)$ lies on the graph and is $7-(-3)=10$ units from the directrix. The distance from $(7,12)$ to the focus is:
+	$$\sqrt{(7-1)^2 + (12-4)^2} = \sqrt{100}=10.$$ Indeed, the point on the parabola is equidistant from the focus and directrix.
+	}\\
+	
+	\noindent\textbf{\large Reflective Property}
+	\vskip\baselineskip
+	
+	One of the fascinating things about the nondegenerate conic sections is their reflective properties. For a parabola, the reflective property is this:
+	
+	\hskip 20pt \begin{minipage}[t]{.8\linewidth}
+	Any ray emanating from the focus that intersects the parabola reflects off along a line perpendicular to the directrix.
+	\end{minipage}
+	\mfigure{.35}{Illustrating the parabola's reflective property.}{fig:conic_reflect}{figures/figconic_reflect}
+	
+	This is illustrated in Figure \ref{fig:conic_reflect}. The following theorem states this more rigorously.
+	
+	\theorem{thm:parabola_reflect}{Reflective Property of the Parabola}
+	{Let $P$ be a point on a parabola. The tangent line to the parabola at $P$ makes equal angles with the following two lines:
+		\begin{enumerate}
+		\item		The line containing $P$ and the focus $F$, and
+		\item		The line perpendicular to the directrix through $P$.
+		\end{enumerate}
+	}
+	
+	Because of this reflective property, paraboloids (the 3D analogue of parabolas) make for useful flashlight reflectors as the light from the bulb, ideally located at the focus, is reflected along parallel rays. Satellite dishes also have paraboloid shapes. Signals coming from satellites effectively approach the dish along parallel rays. The dish then \textit{focuses} these rays at the focus, where the sensor is located.\\
+	
+	\noindent\textbf{\Large Ellipses}
+	\vskip \baselineskip
+	
+	\definition{def:ellipse}{Ellipse}
+	{An \textbf{ellipse} is the locus of all points whose sum of distances from two fixed points, each a \textbf{focus} of the ellipse, is constant.
+	}
+	
+	An easy way to visualize this construction of an ellipse is to pin both ends of a string to a board. The pins become the foci. Holding a pencil tight against the string places the pencil on the ellipse; the sum of distances from the pencil to the pins is constant: the length of the string. See Figure \ref{fig:ellipse_def}.
+	\mfigure{.4}{Illustrating the construction of an ellipse with pins, pencil and string.}{fig:ellipse_def}{figures/figellipse_def}
+	
+	We can again find an algebraic equation for an ellipse using this geometric definition. Let the foci be located along the $x$-axis, $c$ units from the origin. Let these foci be labeled as $F_1 = (-c,0)$ and $F_2=(c,0)$. Let $P=(x,y)$ be a point on the ellipse. The sum of distances from $F_1$ to $P$ ($d_1$) and from $F_2$ to $P$ ($d_2$) is a constant $d$. That is, $d_1+d_2=d$. Using the Distance Formula, we have 
+	$$\sqrt{(x+c)^2+y^2} + \sqrt{(x-c)^2+y^2} = d.$$ Using a fair amount of algebra can produce the following equation of an ellipse (note that the equation is an implicitly defined function; it has to be, as an ellipse fails the Vertical Line Test):
+	$$\frac{x^2}{\left(\frac d2\right)^2} + \frac{y^2}{\left(\frac d2\right)^2-c^2} = 1.$$
+	This is not particularly illuminating, but by making the substitution $a=d/2$ and $b=\sqrt{a^2-c^2}$, we can rewrite the above equation as 
+	$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.$$ This choice of $a$ and $b$ is not without reason; as shown in Figure \ref{fig:ellipse_label}, the values of $a$ and $b$ have geometric meaning in the graph of the ellipse. 
+\mfigure{.75}{Labeling the significant features of an ellipse.}{fig:ellipse_label}{figures/figellipse_label}
+	
+	In general, the two foci of an ellipse lie on the \textbf{major axis} of the ellipse, and the midpoint of the segment joining the two foci is the \textbf{center}. The major axis intersects the ellipse at two points, each of which is a \textbf{vertex}. The line segment through the center and perpendicular to the major axis is the \textbf{minor axis}. The ``constant sum of distances'' that defines the ellipse is the length of the major axis.
+	
+	Allowing for the shifting of the ellipse gives the following standard equations.
+	
+	\keyidea{idea:ellipse}{Standard Equation of the Ellipse}
+	{The equation of an ellipse centered at $(h,k)$ with major axis of length $2a$ and minor axis of length $2b$ in standard form is:
+	\begin{itemize}
+	\item	\textbf{Horizontal major axis:} $\ds \frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1.$
+	
+	\item	\textbf{Vertical major axis:} $\ds \frac{(x-h)^2}{b^2}+\frac{(y-k)^2}{a^2}=1.$
+	\end{itemize}
+	The foci lie along the major axis, $c$ units from the center, where $c^2=a^2-b^2$.
+	}
+	
+	\example{ex_conic3}{\textbf{Finding the equation of an ellipse}\\
+	Find the general equation of the ellipse graphed in Figure \ref{fig:conic3}.}
+	{The center is located at $(-3,1)$. The distance from the center to a vertex is 5 units, hence $a=5$. The minor axis seems to have length 4, so $b=2$. Thus the equation of the ellipse is $$\frac{(x+3)^2}{4}+\frac{(y-1)^2}{25} = 1.$$
+	\mfigure{.4}{The ellipse used in Example \ref{ex_conic3}.}{fig:conic3}{figures/figconic3}
+	}\\
+	
+\example{ex_conic4}{\textbf{Graphing an ellipse}\\
+Graph the ellipse defined by $4x^2+9y^2-8x-36y=-4$.}
+{It is simple to graph an ellipse once it is in general form. In order to put the given equation in general form, we must complete the square with both the $x$ and $y$ terms. We first rewrite the equation by regrouping:
+$$4x^2+9y^2-8x-36y=-4 \quad \Rightarrow \quad (4x^2-8x) + (9y^2-36y) = -4.$$
+Now we complete the squares.
+\begin{align*}
+(4x^2-8x) + (9y^2-36y) &= -4\\
+4(x^2-2x) + 9(y^2-4y) &= -4 \\
+4(x^2-2x +1 - 1) + 9(y^2-4y+4-4) &= - 4\\
+4\big((x-1)^2-1\big) + 9\big((y-2)^2-4\big) &= -4\\
+4(x-1)^2 -4 + 9(y-2)^2-36 &= -4 \\
+4(x-1)^2 + 9(y-2)^2 &= 36 \\
+\frac{(x-1)^2}{9} + \frac{(y-2)^2}{4} &= 1.
+\end{align*}
+We see the center of the ellipse is at $(1,2)$. We have $a=3$ and $b=2$; the major axis is horizontal, so the vertices are located at $(-2,2)$ and $(4,2)$. We find $c=\sqrt{9-4} = \sqrt{5}\approx 2.24.$ The foci are located along the major axis, approximately $2.24$ units from the center, at $(1\pm 2.24,2)$. This is all graphed in Figure \ref{fig:conic4}
+\mfigure{.82}{Graphing the ellipse in Example \ref{ex_conic4}.}{fig:conic4}{figures/figconic4}.
+}\\
+
+\noindent\textbf{\large Eccentricity}
+\vskip\baselineskip
+
+When $a=b$, we have a circle. The general equation becomes $$\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{a^2} = 1 \quad \Rightarrow (x-h)^2 + (y-k)^2 = a^2,$$ the familiar equation of the circle centered at $(h,k)$ with radius $a$.  The circle has ``two'' foci, but they lie on the same point, the center of the circle. 
+
+
+
+Consider Figure \ref{fig:ellipse_ecc}, where several ellipses are graphed with $a=1$. In (a), we have $c=0$ and the ellipse is a circle. As $c$ grows, the resulting ellipses look less and less circular. A measure of this ``noncircularness'' is \textit{eccentricity}.
+
+\mtable{.43}{Understanding the eccentricity of an ellipse.}{fig:ellipse_ecc}{%
+\begin{tabular}{c}
+\myincludegraphics[scale=.75]{figures/figellipse_ecca}\\
+(a)\\
+\myincludegraphics[scale=.75]{figures/figellipse_eccb}\\
+(b)\\
+\myincludegraphics[scale=.75]{figures/figellipse_eccc}\\
+(c)\\
+\myincludegraphics[scale=.75]{figures/figellipse_eccd}\\
+(d)
+\end{tabular}
+}
+
+\definition{def:eccentricity_ellipse}{Eccentricity of an Ellipse}
+{The eccentricity $e$ of an ellipse  is $\ds e=\frac{c}{a}$.
+}
+
+The eccentricity of a circle is 0; that is, a circle has no ``noncircularness.'' As $c$ approaches $a$, $e$ approaches 1, giving rise to a very noncircular ellipse, as seen in Figure \ref{fig:ellipse_ecc} (d). 
+
+It was long assumed that planets had circular orbits. This is known to be incorrect; the orbits are elliptical. Earth has an eccentricity of $0.0167$ -- it has a nearly circular orbit.   Mercury's orbit is the most eccentric, with $e=0.2056$. (Pluto's eccentricity is greater, at $e=0.248$, the greatest of all the dwarf planets.) The planet with the most circular orbit is Venus, with $e=0.0068$. The Earth's moon has an eccentricity of $e=0.0549$, also very circular.\\
+
+
+
+\noindent \textbf{\large Reflective Property}
+\vskip\baselineskip
+
+The ellipse also possesses an interesting reflective property Any ray emanating from one focus of an ellipse reflects off the ellipse along a line through the other focus, as illustrated in Figure \ref{fig:ellipse_reflect}. This property is given formally in the following theorem.
+
+\mfigure{.6}{Illustrating the reflective property of an ellipse.}{fig:ellipse_reflect}{figures/figellipse_reflect}
+
+\theorem{thm:ellipse_reflect}{Reflective Property of an Ellipse}
+{Let $P$ be a point on a ellipse with foci $F_1$ and $F_2$. The tangent line to the ellipse at $P$ makes equal angles with the following two lines:
+\begin{enumerate}
+	\item The line through $F_1$ and $P$, and
+	\item	The line through $F_2$ and $P$. 
+\end{enumerate}
+}
+
+This reflective property is useful in optics and is the basis of the phenomena experienced in whispering halls.
+
+\vskip\baselineskip
+\noindent\textbf{\Large Hyperbolas}
+\vskip \baselineskip
+
+The definition of a hyperbola is very similar to the definition of an ellipse; we essentially just change the word ``sum'' to ``difference.''
+
+\definition{def:hyperbola}{Hyperbola}
+{A \textbf{hyperbola} is the locus of all points where the absolute value of difference of distances from two fixed points, each a focus of the hyperbola, is constant.
+}
+
+We do not have a convenient way of visualizing the construction of a hyperbola as we did for the ellipse. The geometric definition does allow us to find an algebraic expression that describes it. It will be useful to define some terms first.
+
+The two foci lie on the \textbf{transverse axis} of the hyperbola; the midpoint of the line segment joining the foci is the \textbf{center} of the ellipse. The transverse axis intersects the hyperbola at two points, each a \textbf{vertex} of the hyperbola. The line through the center and perpendicular to the transverse axis is the \textbf{conjugate axis.} This is illustrated in Figure \ref{fig:hyperbola_def}. It is easy to show that the constant difference of distances used in the definition of the hyperbola is the distance between the vertices.
+\mfigure{.8}{Labeling the significant features of a hyperbola.}{fig:hyperbola_def}{figures/fighyperbola_def}
+
+\keyidea{idea:hyperbola}{Standard Equation of a Hyperbola}
+{The equation of a hyperbola centered at $(h,k)$ in standard form is:
+\begin{enumerate}
+	\item \parbox{120pt}{\textbf{Horizontal Transverse Axis:}} $\ds \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1.$
+	
+	\item	\parbox{120pt}{\textbf{Vertical Transverse Axis:}} $\ds \frac{(y-k)^2}{a^2}-\frac{(x-h)^2}{b^2} = 1.$
+\end{enumerate}
+The vertices are located $a$ units from the center and the foci are located $c$ units from the center, where $c^2 = a^2+b^2$. 
+}
+
+\noindent \textbf{\large Graphing Hyperbolas}
+\vskip\baselineskip
+
+Consider the hyperbola $\frac{x^2}9-\frac{y^2}1 = 1$. Solving for $y$, we find $y=\pm\sqrt{x^2/9-1}$. As $x$ grows large, the ``$-1$'' part of the equation for $y$ becomes less significant and $y\approx \pm\sqrt{x^2/9} = \pm x/3$. That is, as $x$ gets large, the graph of the hyperbola looks very much like the lines $y=\pm x/3$. These lines are asymptotes of the hyperbola, as shown in Figure \ref{fig:hyperbola_asy1}.
+\mfigure{.55}{Graphing the hyperbola $\frac{x^2}9-\frac{y^2}1 = 1$ along with its asymptotes, $y=\pm x/3$.}{fig:hyperbola_asy1}{figures/fighyperbola_asy1}
+
+This is a valuable tool in sketching. Given the equation of a hyperbola in general form, draw a rectangle centered at $(h,k)$ with sides of length $2a$ parallel to the transverse axis and sides of length $2b$ parallel to the conjugate axis. (See Figure \ref{fig:hyperbola_asy2} for an example with a horizontal transverse axis.) The diagonals of the rectangle lie on the asymptotes. 
+\mfigure{.3}{Using the asymptotes of a hyperbola as a graphing aid.}{fig:hyperbola_asy2}{figures/fighyperbola_asy2}
+
+These lines pass through $(h,k)$.  When the transverse axis is horizontal, the slopes are $\pm b/a$; when the transverse axis is vertical, their slopes are $\pm a/b$. This gives equations:
+
+\begin{center}
+\begin{tabular}{cc}
+\parbox{100pt}{\centering Horizontal \\ Transverse Axis} & \parbox{100pt}{\centering Vertical \\ Transverse Axis} \\ \ \\
+$\ds y=\pm\frac ba(x-h)+k$  &$\ds  y=\pm\frac ab(x-h)+k.$
+\end{tabular}
+\end{center}
+
+\example{ex_conic5}{\textbf{Graphing a hyperbola}\\
+Sketch the hyperbola given by $\ds \frac{(y-2)^2}{25}-\frac{(x-1)^2}{4}=1.$}
+{The hyperbola is centered at $(1,2)$; $a=5$ and $b=2$. In Figure \ref{fig:conic5} we draw the prescribed rectangle centered at $(1,2)$ along with the asymptotes defined by its diagonals. The hyperbola has a vertical transverse axis, so the vertices are located at $(1,7)$ and $(1,-3)$. This is enough to make a good sketch.
+\mfigure{.7}{Graphing the hyperbola in Example \ref{ex_conic5}.}{fig:conic5}{figures/figconic5}
+
+We also find the location of the foci: as $c^2= a^2+b^2$, we have $c=\sqrt{29}\approx 5.4$. Thus the foci are located at $(1,2\pm 5.4)$ as shown in the figure.
+}\\
+
+\example{ex_conic6}{\textbf{Graphing a hyperbola}\\
+Sketch the hyperbola given by $9x^2-y^2+2y=10.$}
+{We must complete the square to put the equation in general form. (We recognize this as a hyperbola since it is a general quadratic equation and the $x^2$ and $y^2$ terms have opposite signs.)
+
+\begin{align*}
+9x^2-y^2+2y &=10\\
+9x^2- (y^2-2y) &= 10\\
+9x^2 - (y^2-2y+1-1) &= 10\\
+9x^2 -\big((y-1)^2-1\big) &= 10\\
+9x^2 - (y-1)^2 &= 9\\
+x^2 - \frac{(y-1)^2}{9} &=1
+\end{align*}
+\mfigure{.4}{Graphing the hyperbola in Example \ref{ex_conic6}.}{fig:conic6}{figures/figconic6}
+
+We see the hyperbola is centered at $(0,1)$, with a horizontal transverse axis, where $a=1$ and $b=3$. The appropriate rectangle is sketched in Figure \ref{fig:conic6} along with the asymptotes of the hyperbola. The vertices are located at $(\pm 1,1)$. We have $c=\sqrt{10}\approx 3.2$, so the foci are located at $(\pm 3.2,1)$ as shown in the figure.
+}\\
+
+\noindent\textbf{\large Eccentricity}
+\vskip\baselineskip
+
+\definition{def:hyperbola_eccentricity}{Eccentricity of a Hyperbola}
+{The eccentricity of a hyperbola is $\ds e=\frac ca$.
+}
+
+\mtable{.5}{Understanding the eccentricity of a hyperbola.}{fig:hyperbola_ecc}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/fighyperbola_ecca} \\
+(a)\rule[-15pt]{0pt}{25pt}\\
+\myincludegraphics{figures/fighyperbola_eccb} \\
+(b)\rule[-15pt]{0pt}{25pt}\\
+\myincludegraphics{figures/fighyperbola_eccc} \\
+(c)\rule[-15pt]{0pt}{25pt}\\
+\myincludegraphics{figures/fighyperbola_eccd} \\
+(d)\rule[-15pt]{0pt}{25pt}
+\end{tabular}
+}
+Note that this is the definition of eccentricity as used for the ellipse.  When $c$ is close in value to $a$ (i.e., $e\approx 1$), the hyperbola is very narrow (looking almost like crossed lines). Figure \ref{fig:hyperbola_ecc} shows hyperbolas centered at the origin with $a=1$. The graph in (a) has $c=1.05$, giving an eccentricity of $e=1.05$, which is close to 1. As $c$ grows larger, the hyperbola widens and begins to look like parallel lines, as shown in part (d) of the figure.\\
+
+\noindent\textbf{\large Reflective Property}
+\vskip\baselineskip
+
+Hyperbolas share a similar reflective property with ellipses. However, in the case of a hyperbola, a ray emanating from a focus that intersects the hyperbola reflects along a line containing the other focus, but moving \textit{away} from that focus. This is illustrated in Figure \ref{fig:hyperbola_reflect} (on the next page). Hyperbolic mirrors are commonly used in telescopes because of this reflective property. It is stated formally in the following theorem.
+
+\theorem{thm:reflective_hyperbola}{Reflective Property of Hyperbolas}
+{Let $P$ be a point on a hyperbola with foci $F_1$ and $F_2$. The tangent line to the hyperbola at $P$ makes equal angles with the following two lines:
+	\begin{enumerate}
+		\item The line through $F_1$ and $P$, and
+		\item	The line through $F_2$ and $P$.
+	\end{enumerate}
+}\\
+
+\noindent\textbf{\large Location Determination}
+\vskip\baselineskip
+
+Determining the location of a known event has many practical uses (locating the epicenter of an earthquake, an airplane crash site, the position of the person speaking in a large room, etc.).  
+
+To determine the location of an earthquake's epicenter, seismologists use \textit{trilateration} (not to be confused with \textit{triangulation}). A seismograph allows one to determine how far away the epicenter was; using three separate readings, the location of the epicenter can be approximated.
+
+A key to this method is knowing distances. What if this information is not available? Consider three microphones at positions $A$, $B$ and $C$ which all record a noise (a person's voice, an explosion, etc.) created at unknown location $D$. The microphone does not ``know'' when the sound was \textit{created}, only when the sound was \textit{detected}. How can the location be determined in such a situation?
+
+\mfigure{.8}{Illustrating the reflective property of a hyperbola.}{fig:hyperbola_reflect}{figures/fighyperbola_reflect}
+
+If each location has a clock set to the same time, hyperbolas can be used to determine the location. Suppose the microphone at position $A$ records the sound at exactly 12:00, location $B$ records the time exactly 1 second later, and location $C$ records the noise exactly 2 seconds after that. We are interested in the \textit{difference} of times. Since the speed of sound is approximately 340 m/s, we can conclude quickly that the sound was created 340 meters closer to position $A$ than position $B$. If $A$ and $B$ are a known distance apart (as shown in Figure \ref{fig:hyperbola_locate} (a)), then we can determine a hyperbola on which $D$ must lie. 
+
+The ``difference of distances'' is 340; this is also the distance between vertices of the hyperbola. So we know $2a= 340$. Positions $A$ and $B$ lie on the foci, so $2c=1000$. From this we can find $b\approx 470$ and can sketch the hyperbola, given in part (b) of the figure. We only care about the side closest to $A$. 
+
+We can also find the hyperbola defined by positions $B$ and $C$. In this case, $2a = 680$ as the sound traveled an extra 2 seconds to get to $C$. We still have $2c=1000$, centering this hyperbola at $(-500,500)$. We find $b\approx 367$. This hyperbola is sketched in part (c) of the figure. The intersection point of the two graphs is the location of the sound, at approximately $(188,-222.5)$.\\
+
+\vskip 10pt
+\noindent\hskip-150pt\begin{minipage}{\textwidth+150pt}
+\centering
+\begin{tabular}{ccccc}
+\myincludegraphics{figures/fighyperbola_locate1}  &\hskip 15pt & \myincludegraphics{figures/fighyperbola_locate2} &\hskip 15pt  & \myincludegraphics{figures/fighyperbola_locate3}  \\ 
+(a) & & (b) & & (c) 
+\end{tabular}
+\captionsetup{type=figure}
+\caption{Using hyperbolas in location detection.}\label{fig:hyperbola_locate}
+\end{minipage}
+
+\printexercises{exercises/09_01_exercises}

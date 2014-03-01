@@ -1,0 +1,224 @@
+\section{Directional Derivatives}\label{sec:directional_derivative}
+
+Partial derivatives give us an understanding of how a surface changes when we move in the $x$ and $y$ directions. We made the comparison to standing in a rolling meadow and heading due east: the amount of rise/fall in doing so is comparable to $f_x$. Likewise, the rise/fall in  moving due north is comparable to $f_y$. The steeper the slope, the greater in magnitude $f_y$.
+
+But what if we didn't move due north or east? What if we needed to move northeast and wanted to measure the amount of rise/fall? Our partial derivatives alone cannot measure this. This section investigates \textbf{directional derivatives}, which are a measure of this. 
+
+We begin with a definition.
+
+\definition{def:direct_deriv}{Directional Derivatives}
+{Let $z=f(x,y)$ be continuous on an open set $S$ and let $\vec u = \la u_1,u_2\ra$ be a unit vector. For all points $(x,y)$, the \textbf{directional derivative of $f$ at $(x,y)$ in the direction of $\vec u$} is
+$$D_{\vec u\,}f(x,y) = \lim_{h\to 0} \frac{f(x+hu_1,y+hu_2) - f(x,y)}h.$$
+}
+
+The partial derivatives $f_x$ and $f_y$ are defined with similar limits, but only $x$ or $y$ varies with $h$, not both. Here both $x$ and $y$ vary with a weighted $h$, determined by a particular unit vector $\vec u$. This may look a bit intimidating but in reality it is not too difficult to deal with; it often just requires extra algebra. However, the following theorem reduces this algebraic load.
+
+\enlargethispage{2\baselineskip}
+%This definition may look intimidating as it incorporates trigonometric functions inside of a function $f$ inside of a limit. The following theorem allows us to compute directional derivatives without difficulty.
+
+\theorem{thm:direct_deriv1}{Directional Derivatives}
+{Let $z=f(x,y)$ be differentiable on an open set $S$ containing $(x_0,y_0)$, and let $\vec u = \la u_1,u_2\ra$ be a unit vector. The directional derivative of $f$ at $(x_0,y_0)$ in the direction of $\vec u$ is
+$$D_{\vec u\,}f(x_0,y_0)=f_x(x_0,y_0)u_1 + f_y(x_0,y_0)u_2.$$
+}
+
+\example{ex_direct1}{\textbf{Computing directional derivatives}\\
+Let $z= 14-x^2-y^2$ and let $P=(1,2)$. Find the directional derivative of $f$, at $P$, in the following directions:
+\begin{enumerate}
+	\item toward the point $Q=(3,4)$,
+	\item	in the direction of $\la 2,-1\ra$, and
+	\item toward the origin.
+\end{enumerate}
+}
+{\mfigure[scale=1.1]{.8}{Understanding the directional derivative in Example \ref{ex_direct1}.}{fig:direct1}{figures/figdirect1}
+The surface is plotted in Figure \ref{fig:direct1}, where the point $P=(1,2)$ is indicated in the $x,y$-plane as well as the point $(1,2,9)$ which lies on the surface of $f$. We find that $f_x(x,y) = -2x$ and $f_x(1,2) = -2$; $f_y(x,y) = -2y$ and $f_y(1,2) = -4$. 
+\begin{enumerate}
+	\item Let $\vec u_1$ be the unit vector that points from the point $(1,2)$ to the point $Q=(3,4)$, as shown in the figure. The vector $\vv{PQ} = \la 2,2\ra$; the unit vector in this direction is $\vec u_1=\la 1/\sqrt{2}, 1/\sqrt{2}\ra$. Thus the directional derivative of $f$ at $(1,2)$ in the direction of $\vec u_1$ is
+	$$D_{\vec u_1}f(1,2) = -2(1/\sqrt{2}) +(-4)(1/\sqrt{2}) = -6/\sqrt{2}\approx -4.24.$$
+	Thus the instantaneous rate of change in moving from the point $(1,2,9)$ on the surface in the direction of $\vec u_1$ (which points toward the point $Q$) is about $-4.24$. Moving in this direction moves one steeply downward.
+	
+	\item		We seek the directional derivative in the direction of $\la 2,-1\ra$. The unit vector in this direction is $\vec u_2 = \la 2/\sqrt{5},-1/\sqrt{5}\ra$. Thus the directional derivative of $f$ at $(1,2)$ in the direction of $\vec u_2$ is
+	$$D_{\vec u_2}f(1,2) = -2(2/\sqrt{5})+(-4)(-1/\sqrt{5}) = 0.$$
+	Starting on the surface of $f$ at $(1,2)$ and moving in the direction of $\la 2,-1\ra$ (or $\vec u_2$) results in no instantaneous change in $z$-value. This is analogous to standing on the side of a hill and choosing a direction to walk that does not change the elevation. One neither walks up nor down, rather just ``along the side'' of the hill.
+	
+	Finding these directions of ``no elevation change'' is important.
+	
+	\item		At $P=(1,2)$, the direction towards the origin is given by the vector $\la -1,-2\ra$; the unit vector in this direction is $\vec u_3=\la -1/\sqrt{5},-2/\sqrt{5}\ra$. The directional derivative of $f$ at $P$ in the direction of the origin is
+	$$D_{\vec u_3}f(1,2) = -2(-1/\sqrt{5}) + (-4)(-2/\sqrt{5}) = 10/\sqrt{5} \approx 4.47.$$
+	Moving towards the origin means ``walking uphill'' quite steeply, with an initial slope of about $4.47$.
+\end{enumerate}
+\vskip-1.5\baselineskip
+}\\
+
+As we study directional derivatives, it will help to make an important connection between the unit vector $\vec u = \la u_1,u_2\ra$ that describes the direction and the partial derivatives $f_x$ and $f_y$. We start with a definition and follow this with a Key Idea.
+
+\definition{def:gradient}{Gradient}
+{Let $z=f(x,y)$ be differentiable on an open set $S$ that contains the point $(x_0,y_0)$. 
+\begin{itemize}
+	\item The \textbf{gradient of $f$} is $\nabla f(x,y) = \la f_x(x,y),f_y(x,y)\ra$.
+	\item The \textbf{gradient of $f$ at $(x_0,y_0)$ is $\nabla f(x_0,y_0) = \la f_x(x_0,y_0),f_y(x_0,y_0)\ra$.}
+\end{itemize}
+}
+
+\mnote{.7}{\textbf{Note:} The symbol ``$\nabla$'' is named ``nabla,'' derived from the Greek name of a Jewish harp. Oddly enough, in mathematics the expression $\nabla f$ is pronounced ``del $f$.''}
+
+To simplify notation, we often express the gradient as $\nabla f = \la f_x, f_y\ra$. The gradient allows us to compute directional derivatives in terms of a dot product.
+
+\keyidea{idea:gradient_direct}{The Gradient and Directional Derivatives}
+{%Let $z=f(x,y)$ be differentiable on an open set $S$ and let $\vec u$ be a unit vector. 
+The directional derivative of $z=f(x,y)$ in the direction of $\vec u$ is
+$$D_{\vec u\,}f = \nabla f\cdot \vec u.$$
+}
+
+The properties of the dot product previously studied allow us to investigate the properties of the directional derivative. Given that the directional derivative gives the instantaneous rate of change of $z$ when moving in the direction of $\vec u$, three questions naturally arise:
+\begin{enumerate}
+	\item In what direction(s) is the change in $z$ the greatest (i.e., the ``steepest uphill'')?
+	\item In what direction(s) is the change in $z$ the least (i.e.,  the ``steepest downhill'')?
+	\item In what direction(s) is the change in $z$ 0?
+\end{enumerate}
+
+Using the key property of the dot product, we have
+\begin{equation}\nabla f\cdot \vec u = \norm{\nabla f}\,\vnorm u \cos \theta = \norm{\nabla f}\cos \theta, \label{eq:gradient}\end{equation}
+where $\theta$ is the angle between the gradient and $\vec u$. (Since $\vec u$ is a unit vector, $\vnorm{u} = 1$.) This equation allows us to answer the three questions stated previously.
+
+\begin{enumerate}
+	\item Equation \ref{eq:gradient} is maximized when $\cos \theta =1$, i.e., when the gradient and $\vec u$ have the same direction.
+	\item	Equation \ref{eq:gradient} is minimized when $\cos \theta = -1$, i.e., when the gradient and $\vec u$ have opposite directions.
+	\item Equation \ref{eq:gradient} is 0 when $\cos \theta = 0$, i.e., when the gradient and $\vec u$ are orthogonal to each other. 
+\end{enumerate}
+
+This result is rather amazing. Once again imagine standing in a rolling meadow and face the  direction that leads you steepest uphill. Then the direction that leads steepest downhill is directly behind you, and side--stepping either left or right (i.e., moving perpendicularly to the direction you face) does not change your elevation at all.
+
+Recall that a level curve is defined by a path in the $x$-$y$ plane along which the $z$-values of a function do not change. This is analogous to walking along a path in the rolling meadow along which the elevation does not change. The gradient at a point is orthogonal to the direction where the $z$ does not change; i.e., the gradient is orthogonal to level curves.
+
+We restate these ideas in a theorem, then use them in an example.
+
+\theorem{thm:gradient}{The Gradient and Directional Derivatives}
+{Let $z=f(x,y)$ be differentiable on an open set $S$ with gradient $\nabla f$ and let $\vec u$ be a unit vector.
+\begin{enumerate}
+	\item The maximum value of $D_{\vec u\,}f$ is $\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla f$.
+	\item The minimum value of $D_{\vec u\,}f$ is $-\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla f$.
+	\item $D_{\vec u\,}f = 0$ when $\nabla f$ and $\vec u$ are orthogonal.
+\end{enumerate}
+}
+
+\example{ex_direct2}{\textbf{Finding directions of maximal and minimal increase}\\
+Let $f(x,y) = \sin x\cos y$ and let $P=(\pi/3,\pi/3)$. Find the directions of maximal/minimal increase, and find a direction where the instantaneous rate of $z$ change is 0.}
+{We begin by finding the gradient. $f_x = \cos x\cos y$ and $f_y = -\sin x\sin y$, thus 
+$$\nabla f = \la \cos x\cos y,-\sin x\sin y\ra \quad \text{and, at $P$,} \quad \nabla f\left(\frac{\pi}3,\frac{\pi}3\right) = \la\frac14,-\frac34\ra.$$
+Thus the direction of maximal increase is $\la 1/4, -3/4\ra$. In this direction, the instantaneous rate of $z$ change is $||\la 1/4,-3/4\ra|| = \sqrt{10}/4 \approx 0.79.$ 
+
+Figure \ref{fig:direct2} shows the surface plotted from two different perspectives. In each, the gradient is drawn at $P$ with a dashed line (because of the nature of this surface, the gradient points ``into'' the surface). Let $\vec u = \la u_1, u_2\ra $ be the unit vector in the direction of $\nabla f$ at $P$. Each graph of the figure also contains the vector $\la u_1, u_2, ||\nabla f\,||\ra$. This vector has a ``run'' of 1 (because in the $x$-$y$ plane it moves 1 unit) and a ``rise'' of $||\nabla f\,||$, hence we can think of it as a vector with slope of $||\nabla f\,||$ in the direction of $\nabla f$, helping us visualize how ``steep'' the surface is in its steepest direction. 
+%To help understand this number, consider moving from $P$ one unit in the direction of $\la 1/4,-3/4\ra$. The unit vector in this direction is $\la 1/\sqrt{10},-3/\sqrt{10}\ra \approx  \la 0.316,-0.949\ra$; moving from $P$ one unit in the direction of the gradient places one at the point $R=(1.363,0.098)$. 
+
+%Compare the $z$-values at $P$ and $R$:
+%$$f\left(\frac{\pi}3,\frac{\pi}3\right) = \frac{\sqrt{3}}4 \approx 0.433.$$
+
+\mtable{.73}{Graphing the surface and important directions in Example \ref{ex_direct2}.}{fig:direct2}{%
+\begin{tabular}{c}
+\myincludegraphics[scale=1.,trim = 0mm 5mm 0mm 0mm,clip]{figures/figdirect2}\\
+(a)\\[15pt]
+\myincludegraphics[scale=1.]{figures/figdirect2b}\\
+(b)
+\end{tabular}
+}
+The direction of minimal increase is $\la -1/4,3/4\ra$; in this direction the instantaneous rate of $z$ change is $-\sqrt{10}/4 \approx -0.79$.
+
+Any direction orthogonal to $\nabla f$ is a direction of no $z$ change. We have two choices: the direction of $\la 3,1\ra$ and the direction of $\la -3,-1\ra$. The unit vector in the direction of $\la 3,1\ra$ is shown in each graph of the figure as well. The level curve at $z=\sqrt{3}/4$ is drawn: recall that along this curve the $z$-values do not change. Since $\la 3,1\ra$ is a direction of no $z$-change, this vector is tangent to the level curve at $P$.
+}\\
+
+\example{ex_direct9}{\textbf{Understanding when $\nabla f = \vec 0$}\\
+Let $f(x,y) = -x^2+2x-y^2+2y+1$. Find the directional derivative of $f$ in any direction at $P=(1,1)$.}
+{We find $\nabla f = \la -2x+2, -2y+2\ra$. At $P$, we have $\nabla f(1,1) = \la 0,0\ra$. 
+According to Theorem \ref{thm:gradient}, this is the direction of maximal increase. However, $\la 0,0\ra$ is directionless; it has no displacement. And regardless of the unit vector $\vec u$ chosen, $D_{\vec u\,}f = 0$.
+
+Figure \ref{fig:direct9} helps us understand what this means. We can see that $P$ lies at the top of a paraboloid. In all directions, the instantaneous rate of change is 0. 
+
+So what is the direction of maximal increase? It is fine to give an answer of $\vec 0 = \la 0,0\ra$, as this indicates that all directional derivatives are 0.
+\mfigure{.4}{At the top of a paraboloid, all directional derivatives are 0.}{fig:direct9}{figures/figdirect9}
+}\\
+
+The fact that the gradient of a surface always points in the direction of steepest increase/decrease is very useful, as illustrated in the following example.\\
+
+\example{ex_direct3}{\textbf{The flow of water downhill}\\
+Consider the surface given by $f(x,y)= 20-x^2-2y^2$. Water is poured on the surface at $(1,1/4)$. What path does it take as it flows downhill?}
+{Let $\vrt = \la x(t), y(t)\ra$ be the vector--valued function describing the path of the water in the $x$-$y$ plane; we seek $x(t)$ and $y(t)$. We know that water will always flow downhill in the steepest direction; therefore, at any point on its path, it will be moving in the direction of $-\nabla f$. (We ignore the physical effects of momentum on the water.) Thus $\vrp(t)$ will be parallel to $\nabla f$, and there is some constant $c$ such that $c\nabla f = \vrp(t) = \la x'(t), y'(t)\ra$. 
+
+We find $\nabla f = \la -2x, -4y\ra$ and write $x'(t)$ as $\frac{dx}{dt}$ and $y'(t)$ as $\frac{dy}{dt}$. Then 
+\begin{align*}
+c\nabla f &= \la x'(t), y'(t)\ra \\
+\la -2cx, -4cy \ra & = \la \frac{dx}{dt}, \frac{dy}{dt}\ra.
+\end{align*}
+This implies
+$$-2cx = \frac{dx}{dt} \quad \text{and} \quad  -4cy =\frac{dy}{dt}, \text{ i.e.,}$$
+$$c = -\frac{1}{2x}\frac{dx}{dt} \quad \text{and} \quad  c =-\frac{1}{4y}\frac{dy}{dt}.$$
+As $c$ equals both expressions, we have
+$$\frac{1}{2x}\frac{dx}{dt} =\frac{1}{4y}\frac{dy}{dt}.$$
+To find an explicit relationship between $x$ and $y$, we can integrate both sides with respect to $t$. Recall from our study of differentials that $\ds \frac{dx}{dt}dt = dx$. Thus:
+\begin{align*}
+\int \frac{1}{2x}\frac{dx}{dt}\ dt &=\int \frac{1}{4y}\frac{dy}{dt}\ dt \\
+\int \frac{1}{2x}\ dx &=\int\frac{1}{4y}\ dy \\
+\frac 12\ln|x| +C &= \frac14\ln|y|\\
+2\ln|x| + C &= \ln|y|\\
+Cx^2 &= y,
+\end{align*}
+where we skip some algebra in the last step. As the water started at the point $(1,1/4)$, we can solve for $C$:
+$$C(1)^2 = \frac14 \quad \Rightarrow \quad C = \frac14.$$
+\mtable{.65}{A graph of the surface described in Example \ref{ex_direct3} along with the path in the $x$-$y$ plane with the level curves.}{fig:direct3}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figdirect3}\\
+(a)\\[15pt]
+\myincludegraphics{figures/figdirect3b}\\
+(b)
+\end{tabular}
+}
+Thus the water follows the curve $y=x^2/4$ in the $x$-$y$ plane. The surface and the path of the water is graphed in Figure \ref{fig:direct3}(a). In part (b) of the figure, the level curves of the surface are plotted in the $x$-$y$ plane, along with the curve $y=x^2/4$. Notice how the path intersects the level curves at right angles. As the path follows the gradient downhill, this reinforces the fact that the gradient is orthogonal to level curves.
+}\\
+
+\noindent\textbf{\large Functions of Three Variables}\\
+
+The concepts of directional derivatives and the gradient are easily extended to three (and more) variables. We combine the concepts behind Definitions \ref{def:direct_deriv} and \ref{def:gradient} and Theorem \ref{thm:direct_deriv1} into one set of definitions.
+
+\definition{def:direct_deriv3}{Directional Derivatives and Gradient with Three Variables}
+{Let $w=F(x,y,z)$ be differentiable on an open ball $B$ and let $\vec u $ be a unit vector in $\mathbb{R}^3$.
+\begin{itemize}
+	\item	The \textbf{gradient} of $F$ is $\nabla F = \la F_x,F_y,F_z\ra$.
+	\item The \textbf{directional derivative of $F$ in the direction of $\vec u$} is $$D_{\vec u\,}F=\nabla F\cdot \vec u.$$
+\end{itemize}
+}
+
+The same properties of the gradient given in Theorem \ref{thm:gradient}, when $f$ is a function of two variables, hold for $F$, a function of three variables.
+
+\theorem{thm:gradient3}{The Gradient and Directional Derivatives with Three Variables}
+{Let $w=F(x,y,z)$ be differentiable on an open ball $B$, let $\nabla F$ be the gradient of $F$, and let $\vec u$ be a unit vector.
+\begin{enumerate}
+	\item The maximum value of $D_{\vec u\,}F$ is $\norm{\nabla F}$, obtained when the angle between $\nabla F$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla F$.
+	\item The minimum value of $D_{\vec u\,}F$ is $-\norm{\nabla F}$, obtained when the angle between $\nabla F$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla F$.
+	\item $D_{\vec u\,}F = 0$ when $\nabla F$ and $\vec u$ are orthogonal.
+\end{enumerate}
+}
+
+We interpret the third statement of the theorem as ``the gradient is orthogonal to level surfaces,'' the three--variable analogue to level curves.\\
+
+\example{ex_direct5}{\textbf{Finding directional derivatives with functions of three variables}\\
+If a point source $S$ is radiating energy, the intensity $I$ at a given point $P$ in space is inversely proportional to the square of the distance between $S$ and $P$. That is, when $S=(0,0,0)$,  $\ds I(x,y,z) = \frac{k}{x^2+y^2+z^2}$ for some constant $k$.
+
+Let $k=1$, let $\vec u = \la 2/3, 2/3, 1/3\ra$ be a unit vector, and let $P = (2,5,3).$ Measure distances in inches. Find the directional derivative of $I$ at $P$ in the direction of $\vec u$, and find the direction of greatest intensity increase at $P$.
+}
+{We need the gradient $\nabla I$, meaning we need $I_x$, $I_y$ and $I_z$. Each partial derivative requires a simple application of the Quotient Rule, giving
+\begin{align*}
+\nabla I &= \la \frac{-2x}{(x^2+y^2+z^2)^2},\frac{-2y}{(x^2+y^2+z^2)^2},\frac{-2z}{(x^2+y^2+z^2)^2}\ra\\
+\nabla I(2,5,3) &= \la \frac{-4}{1444},\frac{-10}{1444},\frac{-6}{1444}\ra \approx \la -0.003,-0.007,-0.004\ra\\
+D_{\vec u\,}I &= \nabla I(2,5,3)\cdot \vec u\\
+					&= -\frac{17}{2166} \approx -0.0078.
+\end{align*}
+The directional derivative tells us that moving in the direction of $\vec u$ from $P$ results in a decrease in intensity of about $-0.008$ units per inch. (The intensity is decreasing as $\vec u$ moves one farther from the origin than $P$.)
+
+The gradient gives the direction of greatest intensity increase. Notice that 
+\begin{align*}
+\nabla I(2,5,3) &= \la \frac{-4}{1444},\frac{-10}{1444},\frac{-6}{1444}\ra\\
+			&= \frac{2}{1444}\la -2,-5,-3\ra.
+\end{align*}
+That is, the gradient at $(2,5,3)$ is pointing in the direction of $\la -2,-5,-3\ra$, that is, towards the origin. That should make intuitive sense: the greatest increase in intensity is found by moving towards to source of the energy.
+}\\
+
+\printexercises{exercises/12_05_exercises}

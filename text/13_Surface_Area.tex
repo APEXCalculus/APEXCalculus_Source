@@ -1,0 +1,136 @@
+\section{Surface Area}\label{sec:surface_area}
+
+In Section \ref{sec:arc_length} we used definite integrals to compute the arc length of plane curves of the form $y=f(x)$. We later extended these ideas to compute the arc length of plane curves defined by parametric or polar equations. 
+
+The natural extension of the concept of ``arc length over an interval'' to surfaces is ``surface area over a region.'' 
+
+Consider the surface $z=f(x,y)$ over a region $R$ in the $x$-$y$ plane, shown in Figure \ref{fig:sa_intro}(a). Because of the domed shape of the surface, the surface area will be greater than that of the area of the region $R$. We can find this area using the same basic technique we have used over and over: we'll make an approximation, then using limits, we'll refine the approximation to the exact value.
+\mtable{.6}{Developing a method of computing surface area.}{fig:sa_intro}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figsurfacearea_intro1}\\
+(a)\\[20pt]
+\myincludegraphics{figures/figsurfacearea_intro2}\\
+(b)
+\end{tabular}
+}
+
+As done to find the volume under a surface or the mass of a lamina, we subdivide $R$ into $n$ subregions. Here we subdivide $R$ into rectangles, as shown in the figure. One such subregion is outlined in the figure, where the rectangle has dimensions $\dx_i$ and $\dy_i$, along with its corresponding region on the surface.
+
+In part (b) of the figure, we zoom in on this portion of the surface. When $\dx_i$ and $\dy_i$ are small, the function is approximated well by the tangent plane at any point $(x_i,y_i)$ in this subregion, which is graphed in part (b). In fact, the tangent plane approximates the function so well that in this figure, it is virtually indistinguishable from the surface itself! Therefore we can approximate the surface area $S_i$ of this region of the surface with the area $T_i$ of the corresponding portion of the tangent plane.
+
+This portion of the tangent plane is a parallelogram, defined by sides $\vec u$ and $\vec v$, as shown. One of the applications of the cross product from Section \ref{sec:cross_product} is that the area of this parallelogram is $\norm{\vec u\times \vec v}$. Once we can determine $\vec u$ and $\vec v$, we can determine the area.
+
+$\vec u$ is tangent to the surface in the direction of $x$, therefore, from Section \ref{sec:multi_tangent}, $\vec u$ is parallel to $\la 1,0,f_x(x_i,y_i)\ra$. The $x$-displacement of $\vec u$ is $\dx_i$, so we know that $\vec u = \dx_i\la 1,0,f_x(x_i,y_i)\ra$. Similar logic shows that $\vec v = \dy_i\la 0,1,f_y(x_i,y_i)\ra$. Thus:
+
+\begin{align*}
+\text{surface area $S_i$} &\approx \text{area of tangent plane $T_i$}\\
+				&= \norm{\vec u\times \vec v}\\
+				&= \big|\big|\dx_i\la 1,0,f_x(x_i,y_i)\ra\times\dy_i\la 0,1,f_y(x_i,y_i)\ra\big|\big|\\
+				&=\sqrt{1+f_x(x_i,y_i)^2+f_y(x_i,y_i)^2}\dx_i\dy_i.
+\end{align*}
+Note that $\dx_i\dy_i = \Delta A_i$, the area of the $i^{\,\text{th}}$ subregion.
+
+Summing up all $n$ of the approximations to the surface area gives
+$$\text{surface area over $R$} \approx \sum_{i=1}^n \sqrt{1+f_x(x_i,y_i)^2+f_y(x_i,y_i)^2}\Delta A_i.$$
+
+Once again take a limit as all of the $\dx_i$ and $\dy_i$ shrink to 0; this leads to a double integral.
+
+\definition{def:surfacearea}{Surface Area}
+{Let $z=f(x,y)$ where $f_x$ and $f_y$ are continuous over a closed, bounded region $R$. The surface area $S$ over $R$ is
+\begin{align*}
+S &= \iint_R \ dS\\
+&=\iint_R \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ dA.
+\end{align*}
+}
+
+\mnote{.78}{\textbf{Note:} as done before, we think of ``$\iint_R\ dS$'' as meaning ``sum up lots of little surface areas.''\\
+
+The concept of surface area is \textit{defined} here, for while we already have a notion of the area of a region in the \textit{plane}, we did not yet have a solid grasp of what  ``the area of a surface in \textit{space}'' means.}
+
+We test this definition by using it to compute surface areas of known surfaces. We start with a triangle.
+\enlargethispage{2\baselineskip}\\
+
+\example{ex_surfacearea1}{\textbf{Finding the surface area of a plane over a triangle}\\
+Let $f(x,y) = 4-x-2y$, and let $R$ be the region in the plane bounded by $x=0$, $y=0$ and $y=2-x/2$, as shown in Figure \ref{fig:surfacearea1}. Find the surface area of $f$ over $R$.
+\mfigure{.45}{Finding the area of a triangle in space in Example \ref{ex_surfacearea1}.}{fig:surfacearea1}{figures/figsurfacearea1}}
+{We follow Definition \ref{def:surfacearea}. We start by noting that $f_x(x,y) = -1$ and $f_y(x,y) = -2$. To define $R$, we use bounds $0\leq y\leq 2-x/2$ and $0\leq x\leq 4$. Therefore
+\begin{align*}
+S &= \iint_R\ dS \\
+  &= \int_0^4\int_0^{2-x/2} \sqrt{1+(-1)^2+(-2)^2}\ dy\ dx\\
+	&= \int_0^4 \sqrt{6}\left(2-\frac x2\right)\ dx\\
+	&= 4\sqrt{6}.
+\end{align*}
+
+Because the surface is a triangle, we can figure out the area using geometry. Considering the base of the triangle to be the leg in the $x$-$y$ plane, we find the length of the base to be $\sqrt{20}$. We can find the height using our knowledge of vectors: let $\vec u$ be the leg in the $x$-$z$ plane  and let $\vec v$ be the leg in the $x$-$y$ plane. The height is then $\norm {\vec u - \proj{u}{v}} = 4\sqrt{6/5}$. Geometry states that the area is thus
+$$\frac 12\cdot4\sqrt{6/5}\cdot\sqrt{20} = 4\sqrt{6}.$$
+We affirm the validity of our formula.
+}\\
+
+It is ``common knowledge'' that the surface area of a sphere of radius $r$ is $4\pi r^2$. We confirm this in the following example, which involves using our formula with polar coordinates.\\
+
+\example{ex_surfacearea2}{\textbf{The surface area of a sphere.}\\
+Find the surface area of the sphere with radius $a$ centered at the origin, whose top hemisphere has equation $f(x,y)=\sqrt{a^2-x^2-y^2}$. 
+}
+{We start by computing partial derivatives and find 
+$$f_x(x,y) = \frac{-x}{\sqrt{a^2-x^2-y^2}} \quad \text{and}\quad f_y(x,y) = \frac{-y}{\sqrt{a^2-x^2-y^2}}.$$
+As our function $f$ only defines the top upper hemisphere of the sphere, we double our surface area result to get the total area:
+\begin{align*}
+S & = 2\iint_R \sqrt{1+ f_x(x,y)^2+f_y(x,y)^2}\ dA \\
+		&= 2\iint_R \sqrt{1+ \frac{x^2+y^2}{a^2-x^2-y^2}}\ dA.
+\end{align*}
+The region $R$ that we are integrating over is the circle, centered at the origin, with radius $a$: $x^2+y^2=a^2$. Because of this region, we are likely to have greater success with our integration by converting to polar coordinates. Using the substitutions $x=r\cos\theta$, $y=r\sin\theta$, $dA = r\ dr\ d\theta$ and bounds $0\leq\theta\leq2\pi$ and $0\leq r\leq a$, we have:
+\begin{align*}
+S &= 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2\theta+r^2\sin^2\theta}{a^2-r^2\cos^2\theta-r^2\sin^2\theta}}\ r\ dr\ d\theta\\
+&=2\int_0^{2\pi}\int_0^ar\sqrt{1+\frac{r^2}{a^2-r^2}}\ dr\ d\theta\\
+&=2\int_0^{2\pi}\int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\ dr\ d\theta.
+\intertext{Apply substitution $u=a^2-r^2$ giving}
+&= 2\int_0^{2\pi} a^2\ d\theta\\
+&= 4\pi a^2.
+\end{align*}
+Our work confirms our previous formula.
+}\\
+
+\example{ex_surfacearea3}{\textbf{Finding the surface area of a cone}\\
+The general formula for a right cone with height $h$ and base radius $a$ is $$\ds f(x,y) = h-\frac{h}a\sqrt{x^2+y^2},$$ shown in Figure \ref{fig:surfacearea3}. Find the surface area of this cone.
+\mfigure[scale=1.5,trim=5mm 5mm 5mm 0mm, clip]{.7}{Finding the surface area of a cone in Example \ref{ex_surfacearea3}.}{fig:surfacearea3}{figures/figsurfacearea3}
+}
+{We begin by computing partial derivatives. 
+$$f_x(x,y) = -\frac{xh}{a\sqrt{x^2+y^2}}\quad \text{and}\quad -\frac{yh}{a\sqrt{x^2+y^2}}.$$
+
+Since we are integrating over the circle $x^2+y^2=a^2$, we again use polar coordinates. Using the standard substitutions, our integrand becomes
+$$\sqrt{1+ \left(\frac{hr\cos\theta}{a\sqrt{r^2\cos^2\theta+r^2\sin^2\theta}}\right)^2 + \left(\frac{hr\sin\theta}{a\sqrt{r^2\cos^2\theta+r^2\sin^2\theta}}\right)^2}.$$
+This may look intimidating at first, but there are lots of simple simplifications to be done. It amazingly reduces to just
+$$\sqrt{1+\frac{h^2}{a^2}} = \frac1a\sqrt{a^2+h^2}.$$
+Our polar bounds are $0\leq\theta\leq2\pi$ and $0\leq r\leq a$. Thus
+\begin{align*}
+S &=	\int_0^{2\pi}\int_0^ar\frac1a\sqrt{a^2+h^2}\ dr\ d\theta\\
+	&= \int_0^{2\pi} \left.\left(\frac12r^2\frac1a\sqrt{a^2+h^2}\right)\right|_0^ad\theta \\
+	&=	\int_0^{2\pi} \frac12a\sqrt{a^2+h^2} \ d\theta\\
+	&= \pi a\sqrt{a^2+h^2}.
+\end{align*}
+This matches the formula found in the back of this text.
+}\\
+
+\example{ex_surfacearea4}{\textbf{Finding surface area over a region}\\
+Find the area of the surface $f(x,y) = x^2-3y+3$ over the region $R$ bounded by $-x\leq y\leq x$, $0\leq x\leq 4$, as pictured in Figure \ref{fig:surfacearea4}.
+\mfigure[scale=1.2,trim=1mm 0mm 1mm 0mm, clip]{.3}{Graphing the surface in Example \ref{ex_surfacearea4}.}{fig:surfacearea4}{figures/figsurfacearea4}
+}
+{It is straightforward to compute $f_x(x,y) = 2x$ and $f_y(x,y) = -3$. Thus the surface area is described by the double integral
+$$\iint_R \sqrt{1+(2x)^2+(-3)^2}\ dA = \iint_R \sqrt{10+4x^2}\ dA.$$
+As with integrals describing arc length, double integrals describing surface area are in general hard to evaluate directly because of the square--root. This particular integral can be easily evaluated, though, with judicious choice of our order of integration. 
+
+Integrating with order $dx\ dy$ requires us to evaluate $\int \sqrt{10+4x^2}\ dx$. This can be done, though it involves Integration By Parts and $\sinh^{-1}x$. Integrating with order $dy\ dx$ has as its first integral $\int \sqrt{10+4x^2}\ dy$, which is easy to evaluate: it is simply $y\sqrt{10+4x^2}+C$. So we proceed with the order $dy\ dx$; the bounds are already given in the statement of the problem.
+\begin{align*}
+\iint_R\sqrt{10+4x^2}\ dA &= \int_0^4\int_{-x}^x\sqrt{10+4x^2}\ dy \ dx\\
+				&= \int_0^4\left.\big(y\sqrt{10+4x^2}\big)\right|_{-x}^x dx\\
+				&=\int_0^4\big(2x\sqrt{10+4x^2}\big)\ dx.
+				\intertext{Apply substitution with $u = 10+4x^2$:}
+				&= \left.\left(\frac16\big(10+4x^2\big)^{3/2}\right)\right|_0^4 \\
+				&= \frac13\big(37\sqrt{74}-5\sqrt{10}\big) \approx 100.825\text{u}^2.
+\end{align*}
+So while the region $R$ over which we integrate has an area of 16u$^2$, the surface has a much greater area as it's $z$-values change dramatically over $R$.
+}\\
+
+In practice, technology helps greatly in the evaluation of such integrals. High powered computer algebra systems can compute integrals that are difficult, or at least time consuming, by hand, and can at the least produce very accurate approximations with numerical methods. In general, just knowing \textit{how} to set up the proper integrals brings one very close to being able to compute the needed value. Most of the work is actually done in just describing the region $R$ in terms of polar or rectangular coordinates. Once this is done, technology can usually provide a good answer.
+
+\printexercises{exercises/13_05_exercises}
