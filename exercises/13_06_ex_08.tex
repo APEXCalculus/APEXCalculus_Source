@@ -1,0 +1,17 @@
+{\label{13_06_ex_08}$D$ is bounded by the planes $y=0$, $y=2$,  $x=1$, $z=0$ and\\
+ $z=(3-x)/2$.\\
+
+Evaluate the triple integral with order $dx\ dy\ dz$.
+
+\myincludegraphics[scale=1.25,trim=0mm 10mm 0mm 0mm,clip]{figures/fig13_06_ex_08}
+\ifthenelse{\boolean{printquestions}}{\columnbreak}{}
+}
+{	$dz\ dy\ dx$: $\ds\int_1^3\int_0^{2}\int_0^{(3-x)/2}\ dz\ dy\ dx$\\
+	$dz\ dx\ dy$: $\ds\int_0^2\int_1^{3}\int_0^{(3-x)/2}\ dz\ dy\ dx$\\
+	$dy\ dz\ dx$: $\ds\int_1^3\int_0^{(3-x)/2}\int_0^{2}\ dy\ dz\ dx$\\
+	$dy\ dx\ dz$: $\ds\int_0^1\int_1^{3-2z}\int_0^{2}\ dy\ dx\ dz$\\
+	$dx\ dz\ dy$: $\ds\int_0^2\int_0^{1}\int_1^{3-2z}\ dx\ dz\ dy$\\
+	$dx\ dy\ dz$: $\ds\int_0^1\int_0^{2}\int_1^{3-2z}\ dx\ dy\ dz$\\
+	
+	$\ds V = \int_0^1\int_0^{2}\int_1^{3-2z}\ dx\ dy\ dz =2.$
+}

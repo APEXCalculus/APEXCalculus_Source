@@ -1,0 +1,15 @@
+{\begin{minipage}{\linewidth}
+\begin{tikzpicture}[xscale=.7,yscale=.7]			
+\draw [shift={(-1,0)},thick] (0,0) -- node [below,pos=.5] {\scriptsize 2 ft} (2,0)-- node [right,pos=.5] {\scriptsize 2 ft} (2,2) -- (0,2) -- cycle;
+\foreach \x in {-2,-1,0,1,2}
+{%
+		\begin{scope}[shift={(\x*1,3)}]		
+		\draw [thick] (-.5,.25) parabola bend (0,0) (.5,.25);
+		\end{scope}
+}
+\draw [dashed] (0,2.1) -- node [right,pos=.5] {\scriptsize 1 ft} (0,2.9);
+\end{tikzpicture}
+\end{minipage}
+}
+{499.2 lb
+}

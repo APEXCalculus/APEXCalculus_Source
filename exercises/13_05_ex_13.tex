@@ -1,0 +1,8 @@
+{Find the surface area of the sphere with radius 5 by doubling the surface area of $f(x,y) = \sqrt{25-x^2-y^2}$ over $R$, the circle $x^2+y^2=25$. (Be sure to compare you result with the known formula.)
+}
+{This is easier in polar:
+\begin{align*}SA &= 2\int_{0}^{2\pi}\int_{0}^{5} r\sqrt{1+ \frac{r^2\cos^2t+r^2\sin^2t}{25-r^2\sin^2t-r^2\cos^2t}}\ dr\ d\theta\\
+		&= 2\int_0^{2\pi}\int_0^5r\sqrt{\frac{1}{25-r^2}}\ dr\ d\theta \\
+		&= 100\pi\approx 314.16
+\end{align*}
+}

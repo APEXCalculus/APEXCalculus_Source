@@ -1,0 +1,27 @@
+{$\displaystyle \lim_{x\to 0} e^{2x}-1 = 0$}
+{Let $\epsilon >0$ be given. We wish to find $\delta >0$ such that when $|x-0|<\delta$, $|f(x)-0|<\epsilon$. 
+
+Consider $|f(x)-0|<\epsilon$, keeping in  mind we want to make a statement about $|x-0|$ (i.e., $|x|$):
+\begin{gather*}
+|f(x) -0 | < \epsilon \\
+|e^{2x}-1 |<\epsilon \\
+-\epsilon< e^{2x}-1 < \epsilon \\
+1-\epsilon< e^{2x} < 1+\epsilon \\
+\ln (1-\epsilon) < 2x < \ln (1+\epsilon) \\
+\frac{\ln (1-\epsilon)}{2} < x < \frac{\ln (1+\epsilon)}{2} \\
+\end{gather*}
+Let $\delta = \min\left\{\left|\frac{\ln(1-\epsilon)}{2}\right|,\left|\frac{\ln(1+\epsilon)}{2}\right|\right\}.$
+
+Thus:
+\begin{gather*}
+|x| < \delta \\
+|x| < \min\left\{\left|\frac{\ln(1-\epsilon)}{2}\right|,\left|\frac{\ln(1+\epsilon)}{2}\right|\right\} \\
+\frac{\ln(1-\epsilon)}{2} < x < \frac{\ln(1\epsilon)}{2}\\
+-\epsilon < e^{2x} < \epsilon
+\end{gather*}
+which is what we wanted to prove.
+}
+
+
+
+

@@ -1,0 +1,36 @@
+{$\displaystyle \lim_{x\to 2} x^3-1 = 7$}
+{Let $\epsilon >0$ be given. We wish to find $\delta >0$ such that when $|x-2|<\delta$, $|f(x)-7|<\epsilon$. 
+
+Consider $|f(x)-7|<\epsilon$, keeping in  mind we want to make a statement about $|x-2|$:
+\begin{gather*}
+|f(x) -7 | < \epsilon \\
+|x^3-1 -7 |<\epsilon \\
+| x^3-8 | < \epsilon \\
+| x-2 |\cdot|x^2+2x+4| < \epsilon \\
+| x-3 | < \epsilon/|x^2+2x+4| \\
+\end{gather*}
+Since $x$ is near 2, we can safely assume that, for instance, $1<x<3$. Thus
+\begin{gather*}
+1^2+2\cdot1+4<x^2+2x+4<3^2+2\cdot3+4 \\
+7 < x^2+2x+4 < 19 \\
+\frac{1}{19} < \frac{1}{x^2+2x+4} < \frac{1}{7} \\
+\frac{\epsilon}{19} < \frac{\epsilon}{x^2+2x+4} < \frac{\epsilon}{7} \\
+\end{gather*}
+Let $\delta =\frac{\epsilon}{19}$. Then:
+\begin{gather*}
+|x-2|<\delta \\
+|x-2| < \frac{\epsilon}{19}\\
+|x-2| < \frac{\epsilon}{x^2+2x+4}\\
+|x-2|\cdot|x^2+2x+4| < \frac{\epsilon}{x^2+2x+4}\cdot|x^2+2x+4|\\
+\end{gather*}
+Assuming $x$ is near 2, $x^2+2x+4$ is positive and we can drop the absolute value signs on the right.
+\begin{gather*}
+|x-2|\cdot|x^2+2x+4| < \frac{\epsilon}{x^2+2x+4}\cdot(x^2+2x+4)\\
+|x^3-8| < \epsilon
+|(x^3-1) - 7| < \epsilon,
+\end{gather*}
+which is what we wanted to prove.
+}
+
+
+

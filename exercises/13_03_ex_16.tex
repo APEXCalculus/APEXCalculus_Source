@@ -1,0 +1,12 @@
+{The surface of a right circular cone with height $h$ and base radius $a$ can be described by the equation $\ds f(x,y) = h-h\sqrt{\frac{x^2}{a^2}+\frac{y^2}{a^2}}$, where the tip of the cone lies at $(0,0,h)$ and the circular base lies in the $x$-$y$ plane, centered at the origin.\\
+
+Confirm that the volume of a right circular cone with height $h$ and base radius $a$ is $\ds V = \frac13\pi a^2h$ by evaluating $\ds \iint_R f(x,y)\ dA$ in polar coordinates.
+}
+{\begin{align*}
+\iint_R f(x,y)\ dA &= \int_0^{2\pi}\int_0^a \left(h-h\sqrt{\frac{r^2\cos^2\theta}{a^2}+\frac{r^2\sin^2\theta}{a^2}}\right)r\ dr\ d\theta \\
+			&= \int_0^{2\pi}\int_0^a \left(hr-h\frac{r^2}{a}\right)\ dr\ d\theta \\
+			&= \int_0^{2\pi}\left.\left(\frac12hr^2-\frac{h}{3a}r^3\right)\right|_0^a d\theta \\
+			&= \int_0^{2\pi} \left(\frac16a^2h\right)\ d\theta\\
+			&= \frac13\pi a^2h.
+\end{align*}
+}

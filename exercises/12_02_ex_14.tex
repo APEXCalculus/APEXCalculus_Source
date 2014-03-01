@@ -1,0 +1,19 @@
+{$\ds \lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y}$
+\begin{enumerate}
+	\item Along the path $y=mx$.
+	\item Along the path $y=x^2$.
+\end{enumerate}}
+{\begin{enumerate}
+	\item Along $y=mx$, the limit is: 
+	\begin{align*}
+	\lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y} & =  \lim_{x\to 0} \frac{\sin(x^2)}{mx}
+					\intertext{apply L'H\^opital's Rule}
+							&= \lim_{x\to 0} \frac{2x\cos(x^2)}{m}\\
+							&= 0.
+			\end{align*}
+	\item	Along $x=0$, the limit is:
+   $$	\lim_{(x,y)\to(0,0)} \frac{\sin(x^2)}{y} =  \lim_{x\to 0} \frac{\sin(x^2)}{x^2}.$$
+	This can be evaluated with L'H\^opital's Rule or from known limits; it is 1.
+\end{enumerate}
+Since the limits along the lines $y=mx$ are not the same as the limit along $y=x^2$, the overall limit does not exist.
+}

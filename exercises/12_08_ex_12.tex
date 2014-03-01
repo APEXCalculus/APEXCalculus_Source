@@ -1,0 +1,21 @@
+{$\ds z=\cos x\sin y$,\qquad $x=\pi t$,\qquad $y=2\pi t+\pi/2$
+}
+{We find that $$\frac{dz}{dt} = -\pi\sin(\pi t)\sin(2\pi t+\pi/2)+2\pi\cos(\pi t)\cos(2\pi t+\pi/2).$$
+
+One can ``easily'' see that when $t$ is an integer, $\sin(\pi t) =0$ and $\cos(2\pi t+\pi/2)=0$, hence $\frac{dz}{dt}=0$ when $t$ is an integer. There are other places where $z$ has a relative max/min that require more work. First, verify that $\sin(2\pi t+\pi/2) = \cos(2\pi t)$, and $\cos(2\pi t+\pi/2) = -\sin(2\pi t)$. This lets us rewrite $\frac{dz}{dt} = 0$ as
+$$-\sin(\pi t)\cos(2\pi t)-2\cos(\pi t)\sin(2\pi t)=0.$$
+By bringing one term to the other side of the equality then dividing, we can get
+$$2\tan(2\pi t) = -\tan(\pi t).$$
+Using the angle sum/difference formulas found in the back of the book, we know 
+$$\tan(2\pi t) = \tan(\pi t)+\tan(\pi t) = \frac{\tan(\pi t)+\tan(\pi t)}{1-\tan^2(\pi t)}.$$
+Thus we write
+$$2\frac{\tan(\pi t)+\tan(\pi t)}{1-\tan^2(\pi t)} = -\tan(\pi t).$$
+Solving for $\tan^2(\pi t)$, we find
+$$\tan^2(\pi t) = 5 \quad \Rightarrow \quad \tan(\pi t) = \pm\sqrt{5},$$ and so
+$$\pi t = \tan^{-1}(\pm\sqrt{5}) = \pm\tan^{-1}(\sqrt{5}).$$
+Since the period of tangent is $\pi$, we can adjust our answer to be
+$$\pi t = \pm\tan^{-1}(\sqrt{5})+ n\pi,\text{ where $n$ is an integer.}$$
+Dividing by $\pi$, we find 
+$$t = \pm\frac1\pi\tan^{-1}(\sqrt{5})+ n,\text{ where $n$ is an integer.}$$
+
+}

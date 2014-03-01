@@ -1,0 +1,35 @@
+{$\displaystyle \lim_{x\to 4} x^2+x-5 = 15$}
+{Let $\epsilon >0$ be given. We wish to find $\delta >0$ such that when $|x-4|<\delta$, $|f(x)-15|<\epsilon$. 
+
+Consider $|f(x)-15|<\epsilon$, keeping in  mind we want to make a statement about $|x-4|$:
+\begin{gather*}
+|f(x) -15 | < \epsilon \\
+|x^2+x-5 -15 |<\epsilon \\
+| x^2+x-20 | < \epsilon \\
+| x-4 |\cdot|x+5| < \epsilon \\
+| x-4 | < \epsilon/|x+5| \\
+\end{gather*}
+Since $x$ is near 4, we can safely assume that, for instance, $3<x<5$. Thus
+\begin{gather*}
+3+5<x+5<5+5 \\
+8 < x+5 < 10 \\
+\frac{1}{8} < \frac{1}{x+5} < \frac{1}{10} \\
+\frac{\epsilon}{8} < \frac{\epsilon}{x+5} < \frac{\epsilon}{10} \\
+\end{gather*}
+Let $\delta =\frac{\epsilon}{8}$. Then:
+\begin{gather*}
+|x-4|<\delta \\
+|x-4| < \frac{\epsilon}8\\
+|x-4| < \frac{\epsilon}{x+5}\\
+|x-4|\cdot|x+5| < \frac{\epsilon}{x+5}\cdot|x+5|\\
+\end{gather*}
+Assuming $x$ is near 4, $x+4$ is positive and we can drop the absolute value signs on the right.
+\begin{gather*}
+|x-4|\cdot|x+5| < \frac{\epsilon}{x+5}\cdot(x+5)\\
+|x^2+x-20| < \epsilon
+|(x^2+x-5) -15| < \epsilon,
+\end{gather*}
+which is what we wanted to prove.
+}
+
+

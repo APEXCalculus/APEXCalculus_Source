@@ -1,0 +1,7 @@
+{A gasoline tanker is filled with gasoline with a weight density of 45.93 lb/ft$^3$. The dispensing valve at the base is jammed shut, forcing the operator to empty the tank via pumping the gas to a point 1 ft above the top of the tank. Assume the tank is a perfect cylinder, 20 ft long with a diameter of 7.5 ft. 
+
+How much work is performed in pumping all the gasoline from the tank?
+}
+{192,767 ft--lb. Note that the tank is oriented horizontally. Let the origin be the center of one of the circular ends of the tank. Since the radius is 3.75 ft, the fluid is being pumped to $y=4.75$; thus the distance the gas travels is $h(y)=4.75-y$. 
+A differential element of water is a rectangle, with length 20 and width $2\sqrt{3.75^2-y^2}$. Thus the force required to move that slab of gas is $F(y) = 40\cdot45.93\cdot\sqrt{3.75^2-y^2}dy$. Total work is $\int_{-3.75}^{3.75} 40\cdot45.93\cdot(4.75-y)\sqrt{3.75^2-y^2}\ dy$. This can be evaluated without actual integration; split the integral into $\int_{-3.75}^{3.75} 40\cdot45.93\cdot(4.75)\sqrt{3.75^2-y^2}\ dy + \int_{-3.75}^{3.75} 40\cdot45.93\cdot(-y)\sqrt{3.75^2-y^2}\ dy$. The first integral can be evaluated as measuring half the area of a circle; the latter integral can be shown to be 0 without much difficulty. (Use substitution and realize the bounds are both 0.)
+}

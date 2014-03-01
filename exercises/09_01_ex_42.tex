@@ -1,0 +1,27 @@
+{Johannes Kepler discovered that the planets of our solar system have elliptical orbits with the Sun at one focus. The Earth's elliptical orbit is used as a standard unit of distance; the distance from the center of Earth's elliptical orbit to one vertex is 1 Astronomical Unit, or A.U. 
+
+The following table gives information about the orbits of three planets.
+
+\begin{tabular}{ccc}
+ & \parbox{70pt}{\centering Distance from \\ center to vertex\\}\rule[-9pt]{0pt}{5pt} & eccentricity \\ \hline 
+Mercury & 0.387 A.U. & 0.2056 \\
+Earth & 1 A.U. & 0.0167 \\
+Mars & 1.524 A.U. & 0.0934 
+\end{tabular}
+
+\begin{enumerate}
+\item		In an ellipse, knowing $c^2=a^2-b^2$ and $e=c/a$ allows us to find $b$ in terms of $a$ and $e$. Show $b=a\sqrt{1-e^2}$. 
+\item		For each planet, find equations of their elliptical orbit of the form $\ds\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$. (This places the center at $(0,0)$, but the Sun is in a different location for each planet.)
+\item		Shift the equations so that the Sun lies at the origin. Plot the three elliptical orbits.
+\end{enumerate}
+}
+{\begin{enumerate}
+\item		Solve for $c$ in $e=c/a$: $c=ae$. Thus $a^2e^2=a^2-b^2$, and $b^2=a^2-a^2e^2$. The result follows.
+\item		Mercury: $x^2/(0.387)^2 + y^2/(0.3787)^2=1$	\\
+				Earth:	$x^2+y^2/(0.99986)^2 = 1$\\
+				Mars:   $x^2/(1.524)^2+y^2/(1.517)^2=1$
+\item		Mercury: $(x-0.08)^2/(0.387)^2 + y^2/(0.3787)^2=1$	\\
+				Earth:  $(x-0.0167)^2+y^2/(0.99986)^2 = 1$\\
+				Mars:   $(x-0.1423)^2/(1.524)^2+y^2/(1.517)^2=1$
+\end{enumerate}
+}

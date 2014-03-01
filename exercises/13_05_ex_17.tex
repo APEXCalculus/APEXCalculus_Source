@@ -1,0 +1,9 @@
+{Find the area of the ellipse formed by restricting the plane $f(x,y) = cx+dy+h$ to the region $R$, the circle $x^2+y^2=1$, where $c$, $d$ and $h$ are some constants. Your answer should be given in terms of $c$ and $d$; why does the value of $h$ not matter?
+}
+{Integrating in polar is easiest considering $R$:
+\begin{align*}SA &= \int_{0}^{2\pi}\int_{0}^{1} r\sqrt{1+ c^2+d^2}\ dr\ d\theta\\
+		&= \int_0^{2\pi}\frac12\Big(\sqrt{1+c^2+d^2}\Big)\ dy \\
+		&= \pi\sqrt{1+c^2+d^2}.
+\end{align*}
+The value of $h$ does not matter as it only shifts the plane vertically (i.e., parallel to the $z$-axis). Different values of $h$ do not create different ellipses in the plane.
+}

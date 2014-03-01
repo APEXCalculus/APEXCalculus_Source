@@ -1,0 +1,16 @@
+{$D$ is bounded by the coordinate planes and by \\
+$y=1-x^2$ and $y=1-z^2$.
+
+Do not evaluate  any triple integral. Which order is easier to evaluate: $dz\ dy\ dx$ or $dy\ dz\ dx$? Explain why.
+
+\myincludegraphics[scale=1.25,trim=0mm 0mm 0mm 0mm,clip]{figures/fig13_06_ex_13}
+}
+{$dz\ dy\ dx$: $\ds\int_{0}^1\int_{0}^{1-x^2}\int_{0}^{\sqrt{1-y}}\ dz\ dy\ dx$\\
+	$dz\ dx\ dy$: $\ds\int_{0}^1\int_{0}^{\sqrt{1-y}}\int_{0}^{\sqrt{1-y}}\ dz\ dy\ dx$\\
+	$dy\ dz\ dx$: $\ds\int_{0}^1\int_0^{x}\int_{0}^{1-x^2}\ dy\ dz\ dx + \int_{0}^1\int_x^{1}\int_{0}^{1-z^2}\ dy\ dz\ dx$\\
+	$dy\ dx\ dz$: $\ds\int_0^1\int_{0}^{z}\int_{0}^{1-z^2}\ dy\ dx\ dz+\int_0^1\int_{z}^{1}\int_{0}^{1-x^2}\ dy\ dx\ dz$\\
+	$dx\ dz\ dy$: $\ds\int_{0}^1\int_{0}^{\sqrt{1-y}}\int_{0}^{\sqrt{1-y}}\ dx\ dz\ dy$\\
+	$dx\ dy\ dz$: $\ds\int_0^1\int_{0}^{1-z^2}\int_{0}^{\sqrt{1-y}}\ dx\ dy\ dz$
+	
+	Answers will vary. Neither order is particularly ``hard.'' The order $dz\ dy\ dx$ requires integrating a square root, so powers can be messy; the order $dy\ dz\ dx$ requires two triple integrals, but each uses only polynomials. 
+}

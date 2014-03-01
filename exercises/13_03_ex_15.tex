@@ -1,0 +1,13 @@
+{Consider $\ds \iint_R e^{-(x^2+y^2)}\ dA$.
+	\begin{enumerate}
+		\item Why is this integral difficult to evaluate in rectangular coordinates, regardless of the region $R$?
+		\item		Let $R$ be the region bounded by the circle of radius $a$ centered at the origin. Evaluate the double integral using polar coordinates.
+		\item		Take the limit of your answer from (b), as $a\to\infty$. What does this imply about the volume under the surface of $\ds e^{-(x^2+y^2)}$?
+	\end{enumerate}
+}
+{\begin{enumerate}
+	\item This is impossible to integrate with rectangular coordinates as $e^{-(x^2+y^2)}$ does not have an antiderivative in terms of elementary functions.
+	\item	$\ds \int_0^{2\pi}\int_0^a re^{r^2}\ dr\ d\theta = \pi(1-e^{-a^2})$.
+	\item		$\ds \lim_{a\to\infty} \pi(1-e^{-a^2})=\pi$. This implies that there is a finite volume under the surface $e^{-(x^2+y^2)}$ over the entire $x$-$y$ plane.
+\end{enumerate}
+}
