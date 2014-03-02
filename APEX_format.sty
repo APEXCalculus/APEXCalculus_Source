@@ -1,0 +1,703 @@
+%%%
+
+%%%%
+%% Begins the usepackage section
+%%%%
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+\RequirePackage{ifthen}
+
+\RequirePackage{layout}
+\RequirePackage{graphicx}
+\RequirePackage{multicol}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\RequirePackage{makeidx}
+
+\RequirePackage{changepage}
+\RequirePackage{ulem}
+\RequirePackage{xcolor}
+\RequirePackage[bookmarksnumbered,hidelinks,pdfstartview=FitH]{hyperref}
+%linkbordercolor=white
+%\RequirePackage{fancyhdr}
+\RequirePackage{calc}
+\RequirePackage{enumitem}
+\RequirePackage[h]{esvect}
+
+
+
+\makeindex
+
+\newcommand{\apex}{A\kern -1pt \lower -2pt\hbox{P}\kern -4pt \lower .7ex\hbox{E}\kern -1pt X}
+
+
+%%%%
+%% The portions of the header containing fancyheader commands
+%% has been moved to a book specific location and is not considered
+%% part of the APEX header. This may change.
+%%%%
+
+
+%%%%
+%% Commands to determine whether we print in color or 
+%% black and white
+%%%%
+\newboolean{in_color}
+\setboolean{in_color}{true}
+
+% determines the line colors for color and black and white lines.
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+
+% sets the line color to be in color, as a default
+\newcommand{\thelinecolor}{\colorlinecolor}
+
+\newcommand{\setcolorlinecolor}[1]{\renewcommand{\colorlinecolor}{#1}\renewcommand{\thelinecolor}{\colorlinecolor}}
+\newcommand{\setbwlinecolor}[1]{\renewcommand{\bwlinecolor}{#1}\renewcommand{\thelinecolor}{\bwlinecolor}}
+
+% this allows the above default to be overriden by using
+% the \printincolor and \printinblackandwhite commands
+% anywhere in the file. This allows you to switch back
+% and forth between bw and color. (Who would want to?)
+\newcommand{\colornamesuffix}{}
+
+\newcommand{\printincolor}{\setboolean{in_color}{true}%
+\renewcommand{\thelinecolor}{\colorlinecolor}
+\renewcommand{\colornamesuffix}{}
+}
+
+\newcommand{\printinblackandwhite}{\setboolean{in_color}{false}%
+\renewcommand{\thelinecolor}{\bwlinecolor}
+\renewcommand{\colornamesuffix}{BW}
+}
+
+\newcommand{\myincludegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+
+
+% the default is printing in color
+\printincolor
+
+
+%\newboolean{printlabelname}
+%\setboolean{printlabelname}{true}
+%\ifthenelse{\boolean{printlabelname}}{\usepackage[notref,notcite]{showkeys}}{}
+
+
+%%%
+%% Creates a lot of measurements - lengths - to use
+%% later on. Explained when a value is set.
+%%%
+
+
+\newlength{\topmarginlength} 
+\newlength{\bottommarginlength}
+\newlength{\oddpagemarginlength}
+\newlength{\evenpagemarginlength}
+\newlength{\marginlinelength}
+
+
+% measures how far from the text the example line is to be drawn
+\setlength{\marginlinelength}{2pt}
+
+% the height of the top margin
+% used in calculating the lines for examples
+\setlength{\topmarginlength}{-1in-\voffset}
+
+% the length of the bottom margin (ish)
+% actually starts at the top of the page, moves
+% through the top margin length then the text height.
+\setlength{\bottommarginlength}{-1in-\textheight-2\baselineskip-\voffset-\headheight-\headsep-\topmargin}
+
+% the length of the left hand margin of an odd page
+\setlength{\oddpagemarginlength}{1in+\hoffset+\oddsidemargin-2\marginlinelength}
+
+% the length of the left hand margin of an even page
+\setlength{\evenpagemarginlength}{1in+\hoffset+\evensidemargin-2\marginlinelength}
+
+
+% creates a generic style for the lines. You can add lots
+% of things here, all separated by commas.
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+
+\newcommand{\setlinestyle}[1]{\renewcommand{\linestyle}{[#1, \thelinecolor]}}
+
+% Do you want to draw the lines for examples? If so,
+% use the first command. Otherwise, use the second. 
+% The first is the default, but you can override it
+% by using the second in your main file.
+\newboolean{showexamplelines}
+\newcommand{\drawexamplelines}{\setboolean{showexamplelines}{true}}
+\newcommand{\nodrawexamplelines}{\setboolean{showexamplelines}{false}}
+
+% by default the lines around the examples are drawn
+\drawexamplelines
+
+
+% This is more a debugging tool than a stylistic one.
+% This draws a small circle in the margin at the the
+% beginning of an example and another immediately follwing
+% the end of the example, in the text. Sometimes it is useful
+% to figure out why there seems to be a lot of space between
+% the end of the example and the end of the drawn line.
+% Too much space can occur, for instance, if the example ends with
+% with a ``$$ maths $$'' type environment. You can correct for this
+% with a \vskip -\baselineskip command.
+\newboolean{showexamplemarks}
+\newcommand{\drawexamplemarks}{\setboolean{showexamplemarks}{true}}
+\newcommand{\nodrawexamplemarks}{\setboolean{showexamplemarks}{false}}
+%\drawexamplemarks
+\nodrawexamplemarks
+
+\newboolean{exampleisintext}
+\newcommand{\exampleinmargin}{\setboolean{exampleisintext}{false}}
+\newcommand{\exampleintext}{\setboolean{exampleisintext}{true}}
+\exampleintext
+
+\newcounter{examplecounter}
+\setcounter{examplecounter}{0}
+
+% the example environment has a regular and starred version.
+% the regular version takes 3 arguments: label, problem, solution.
+% The starred version only has 2: label, problem/solution.
+\makeatletter
+\newcommand{\example}{\@ifstar \examplestarred \examplenostar}
+\newcommand{\reverseexampledefault}{\renewcommand{\example}{\@ifstar \examplenostar \examplestarred}}
+\newcommand{\restoreexampledefault}{\renewcommand{\example}{\@ifstar \examplestarred \examplenostar}}
+\makeatother
+
+%% This is the no-star (regular) version of
+%% the example command.
+\newcommand{\examplenostar}[3]{%
+%\ifthenelse{\boolean{in_color}}{renewcommand{\thelinecolor}{\colorlinecolor}}{\renewcommand{\thelinecolor}{\bwlinecolor}}%
+\noindent%
+\ifthenelse{\boolean{exampleisintext}}
+{% default: the Example word is in text
+\hskip -2\marginlinelength%
+\parbox{\marginlinelength}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplelines}}{\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (#1) {};}%
+{\draw (0,0) node (#1) {};}
+}
+{}% ends the ``Draw example lines and marks?'' booleans
+\end{tikzpicture}%
+}% ends parbox where line begins
+\hskip \marginlinelength% puts us back in line
+\parbox{80pt}{{\bf Example \refstepcounter{examplecounter}\theexamplecounter\label{#1}}}% ends parbox
+%\ifthenelse{\boolean{printlabelname}}%
+%{\hskip -35pt%
+%\parbox{35pt}{\tiny\texttt{\detokenize{#1}}}%
+%}%
+%{}%
+}% ends the if example in text; next do if not in text
+{%
+%\hskip -\marginlinelength%
+\hskip -70pt%
+\parbox{\marginlinelength}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplelines}}{\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (#1) {};}%
+{\draw (0,0) node (#1) {};}
+}%
+{}% ends the ``Draw example lines and marks?'' booleans
+\end{tikzpicture}%
+}%
+\hskip -\marginlinelength
+\parbox{70pt}{{\bf Example \refstepcounter{examplecounter}\theexamplecounter\label{#1}}}% ends parbox
+}% ends if example in text
+\ifthenelse{\pageref{#1}=\pageref{e#1}}% if the beginning and end are on the same page
+{%
+#2 \vskip \baselineskip%
+\ifthenelse{\boolean{exampleisintext}}
+{%solution is in text
+\parbox{65pt}{\textsc{\small\bfseries Solution}}% 
+}% solution is in margin
+{\hskip -80pt%
+\parbox{65pt}{\textsc{\small\bfseries Solution}}% 
+\hskip 15pt%
+}% end solution in margin
+#3\nopagebreak\label{e#1}% writes the full example then draws the lines
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (e#1) {};}%
+{\draw (0,0) node (e#1) {};}%
+\ifthenelse{\boolean{exampleisintext}}
+{\draw \linestyle (#1) -- (#1.south |- e#1.south) -- ++(10pt,0);}
+{\draw \linestyle ([yshift=-3pt]#1.south) -- ++(70pt-2\marginlinelength,0) node (f#1) {} -- (f#1 |- e#1.south) -- ++(10pt,0);} 
+\end{tikzpicture}
+}{}% ends if/then/else show lines
+}% ends if beginning and end are on same page.
+% next is if they are on different pages
+{% first draw line from start to bottom of page
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay]% 
+\ifthenelse{\isodd{\pageref{#1}}}% draws lines based on whether on an even or odd page %
+{\node [xshift=\oddpagemarginlength,yshift=\bottommarginlength](bottomleft) at (current page.north west)  {};}%
+{\node [xshift=\evenpagemarginlength,yshift=\bottommarginlength](bottomleft) at (current page.north west)  {};}%
+\ifthenelse{\boolean{exampleisintext}}% is example in text?
+{\draw \linestyle (#1) -- (bottomleft);}%
+{\draw \linestyle ([yshift=-3pt]#1.south) -- ++(70pt-2\marginlinelength,0) --(bottomleft);}% 
+\end{tikzpicture}%
+}{}% ends if/then/else show lines
+% end drawing of line
+#2 \vskip \baselineskip%
+\ifthenelse{\boolean{exampleisintext}}%
+{%solution is in text
+\parbox{65pt}{\textsc{\small\bfseries Solution}}% 
+}% solution is in margin
+{\hskip -80pt%
+\parbox{65pt}{\textsc{\small\bfseries Solution}}% 
+\hskip 15pt%
+}% end solution in margin
+#3\label{e#1}% now write out full example
+% now draw line from end to top of page
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay] 
+\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (e#1) {};}%
+{\draw (0,0) node (e#1) {};}%
+\ifthenelse{\isodd{\pageref{e#1}}}% draws lines based on whether on an even or odd page %
+{\node [xshift=\oddpagemarginlength,yshift=\topmarginlength](topleft) at (current page.north west)  {};}
+{\node [xshift=\evenpagemarginlength,yshift=\topmarginlength](topleft) at (current page.north west)  {};}
+\draw \linestyle (topleft)--(e#1.south -| topleft) -- ++(10pt,0);
+\end{tikzpicture}%
+}{}% ends if/then/else show lines
+}% ends the check for same page or not
+%
+}%ends the definition of example
+
+
+\newcommand{\examplestarred}[2]{%
+%\ifthenelse{\boolean{in_color}}{renewcommand{\thelinecolor}{\colorlinecolor}}{\renewcommand{\thelinecolor}{\bwlinecolor}}%
+\noindent%
+\ifthenelse{\boolean{exampleisintext}}
+{% default: the Example word is in text
+\hskip -2\marginlinelength%
+\parbox{\marginlinelength}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplelines}}{\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (#1) {};}%
+{\draw (0,0) node (#1) {};}
+}
+{}% ends the ``Draw example lines and marks?'' booleans
+\end{tikzpicture}%
+}% ends parbox where line begins
+\hskip \marginlinelength% puts us back in line
+\parbox{80pt}{{\bf Example \refstepcounter{examplecounter}\theexamplecounter\label{#1}}}% ends parbox
+}% ends the if example in text; next do if not in text
+{%
+%\hskip -\marginlinelength%
+\hskip -70pt%
+\parbox{\marginlinelength}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplelines}}{\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (#1) {};}%
+{\draw (0,0) node (#1) {};}
+}%
+{}% ends the ``Draw example lines and marks?'' booleans
+\end{tikzpicture}%
+}%
+\hskip -\marginlinelength
+\parbox{70pt}{{\bf Example \refstepcounter{examplecounter}\theexamplecounter\label{#1}}}% ends parbox
+}% ends if example in text
+\ifthenelse{\pageref{#1}=\pageref{e#1}}% if the beginning and end are on the same page
+{%
+#2 \label{e#1}% writes the full example then draws the lines
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay]%
+\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (e#1) {};}%
+{\draw (0,0) node (e#1) {};}%
+\ifthenelse{\boolean{exampleisintext}}
+{\draw \linestyle (#1) -- (#1.south |- e#1.south) -- ++(10pt,0);}
+{\draw \linestyle ([yshift=-3pt]#1.south) -- ++(70pt-2\marginlinelength,0) node (f#1) {} -- (f#1 |- e#1.south) -- ++(10pt,0);}%
+\end{tikzpicture}%
+}{}% ends if/then/else show lines
+}% ends if beginning and end are on same page.
+% next is if they are on different pages
+{% first draw line from start to bottom of page
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay]% 
+\ifthenelse{\isodd{\pageref{#1}}}% draws lines based on whether on an even or odd page %
+{\node [xshift=\oddpagemarginlength,yshift=\bottommarginlength](bottomleft) at (current page.north west)  {};}%
+{\node [xshift=\evenpagemarginlength,yshift=\bottommarginlength](bottomleft) at (current page.north west)  {};}%
+\ifthenelse{\boolean{exampleisintext}}% is example in text?
+{\draw \linestyle (#1) -- (bottomleft);}%
+{\draw \linestyle ([yshift=-3pt]#1.south) -- ++(70pt-2\marginlinelength,0) --(bottomleft);}%
+\end{tikzpicture}%
+}{}% ends if/then/else show lines
+% end drawing of line
+#2 \label{e#1}% now write out full example
+% now draw line from end to top of page
+\ifthenelse{\boolean{showexamplelines}}{%
+\begin{tikzpicture}[remember picture,overlay] 
+\ifthenelse{\boolean{showexamplemarks}}
+{\draw (0,0) circle (1pt) node (e#1) {};}%
+{\draw (0,0) node (e#1) {};}%
+\ifthenelse{\isodd{\pageref{e#1}}}% draws lines based on whether on an even or odd page %
+{\node [xshift=\oddpagemarginlength,yshift=\topmarginlength](topleft) at (current page.north west)  {};}
+{\node [xshift=\evenpagemarginlength,yshift=\topmarginlength](topleft) at (current page.north west)  {};}
+\draw \linestyle (topleft)--(e#1.south -| topleft) -- ++(10pt,0);
+\end{tikzpicture}%
+}{}% ends if/then/else show lines
+}% ends the check for same page or not
+%
+}%ends the definition of examplestarred
+
+% Draws a line on a page that doesn't contain either
+% the beginning or end of an example.
+% Takes no arguments; figures out if you 
+% are on an even or odd numbered page for
+% correct margin calculation
+\newcommand{\drawexampleline}{%
+\begin{tikzpicture}[remember picture,overlay]
+				\ifthenelse{\isodd{\thepage}}{%
+				\node [xshift=\oddpagemarginlength,yshift=\topmarginlength](tleft) at (current page.north west)  {};}
+				{\node [xshift=\evenpagemarginlength,yshift=\topmarginlength](tleft) at (current page.north west)  {};}
+        \draw \linestyle (tleft) -- ++(0,\bottommarginlength+1in);
+        \end{tikzpicture}%
+}
+
+%
+%Define style for Definitions, Theorems and Key Ideas  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+
+\newlength{\specialboxlength}
+\newlength{\specialboxtitlelength}
+\newlength{\specialboxinnerseplength}
+\newlength{\specialboxinnerseplengthx}
+\newlength{\specialboxinnerseplengthy}
+
+\setlength{\specialboxtitlelength}{75pt}
+\setlength{\specialboxinnerseplength}{15pt}
+\setlength{\specialboxinnerseplengthx}{15pt}
+\setlength{\specialboxinnerseplengthy}{10pt}
+%\setlength{\specialboxlength}{\textwidth-\specialboxtitlelength-2\specialboxinnerseplength}
+\setlength{\specialboxlength}{\textwidth-2\specialboxinnerseplength}
+
+\newcommand{\setboxwidth}[1]{\setlength{\specialboxlength}{\textwidth+#1-2\specialboxinnerseplength}}
+\newcommand{\restoreboxwidth}{\setlength{\specialboxlength}{\textwidth-2\specialboxinnerseplength}}
+
+%\long\def\newspecialbox#1#2#3#4{%
+%\newcounter{#1counter}
+%\expandafter\long\expandafter\def\csname #1\endcsname ##1##2{%
+%\vskip\baselineskip
+%\noindent\refstepcounter{#1counter}\label{##1}%
+%\begin{tikzpicture}
+%\draw (0,0) node[anchor=north west,text width=\specialboxtitlelength,inner sep=0pt]{\bf #2 \the\value{#1counter}};
+%\ifthenelse{\boolean{in_color}} %first, in color
+%{\draw (\specialboxtitlelength,0) node[rectangle,text width = \specialboxlength, inner sep=\specialboxinnerseplength, anchor=north west,yshift=\specialboxinnerseplength] [#3] {##2};}%if not in color
+%{\draw (\specialboxtitlelength,0) node[rectangle,text width = \specialboxlength, inner sep=\specialboxinnerseplength, anchor=north west,yshift=\specialboxinnerseplength]
+% [#4] {##2};}
+%\end{tikzpicture}
+%}
+%}
+
+\long\def\newspecialbox#1#2#3#4{%
+\newcounter{#1counter}
+\expandafter\long\expandafter\def\csname #1\endcsname ##1##2##3{%
+\vskip\baselineskip
+\noindent\refstepcounter{#1counter}\label{##1}%
+\begin{tikzpicture}
+%\draw (0,0) node[anchor=north west,text width=\specialboxtitlelength,inner sep=0pt]{\bf #2 \the\value{#1counter}};
+\ifthenelse{\boolean{in_color}} %first, in color
+{\draw (\specialboxtitlelength,0) node[rectangle,text width = \specialboxlength, inner xsep=\specialboxinnerseplengthx, inner ysep=\specialboxinnerseplengthy, anchor=north west,yshift=\specialboxinnerseplengthy] [#3] {\textbf{#2 \the\value{#1counter}\hskip 20pt ##2%
+}\vskip.5\baselineskip%\\
+
+##3};}%if not in color
+{\draw (\specialboxtitlelength,0) node[draw=black,thick,rectangle,text width = \specialboxlength, inner xsep=\specialboxinnerseplengthx, inner ysep=\specialboxinnerseplengthy, anchor=north west,yshift=\specialboxinnerseplengthy] [#4]  {\textbf{#2 \the\value{#1counter}\hskip 20pt ##2%
+}\vskip.5\baselineskip%\\
+
+##3};}
+\end{tikzpicture}
+}
+}
+
+
+\newspecialbox{definition}{Definition}{draw = yellow!95!black!60,top color = white!95!yellow, bottom color = yellow!90!black!30, text justified, very thick}{draw, text justified, very thick}
+
+\newspecialbox{theorem}{Theorem}{draw = green!30!black!50,top color = white!95!green, bottom color = green!60!black!20, text justified, very thick}{draw, text justified, very thick}
+
+\newspecialbox{keyidea}{Key Idea}{draw = red!30!black!50,top color = white!95!red, bottom color = red!60!black!20, text justified, very thick}{draw, text justified, very thick}
+
+
+%%%%
+%% Begins the exercise section, containing all commands
+%% related to creating problem sections.
+%%%%
+
+\newcommand{\exc}{\addtocounter{excounter}{2}\arabic{excounter}}
+
+\newif\ifmore
+
+\newif\ifexsetmore
+
+% this counter gives an effective, albeit not elegant
+% way of using the same command to both print questions
+% or the answers, depending on what section you are in.
+% showexercises = 1: print questions
+% showexercises = 2: print odd answers only
+% showexercises = 3: print all answers 
+% 
+% The subsequent lines sets the value 
+
+
+\setlength{\columnsep}{20pt}
+
+\newcommand{\printconcepts}{\noindent\textit{\Large Terms and Concepts}\vskip \baselineskip}
+\newcommand{\printproblems}{\vskip \baselineskip\noindent\textit{\Large Problems}\vskip \baselineskip}
+\newcommand{\printreview}{\vskip \baselineskip\noindent\textit{\Large Review}\vskip \baselineskip}
+
+\newcommand{\inanswersection}{%
+	\renewcommand{\printconcepts}{}%
+	\renewcommand{\printproblems}{}%
+	\renewcommand{\printreview}{}%
+}%
+
+\newcount\showexercises
+\newboolean{printquestions}
+\newboolean{printoddanswersonly}
+
+\setboolean{printoddanswersonly}{true}
+\newcommand{\printallanswers}{\setboolean{printoddanswersonly}{false}}
+
+
+\newcount\numberofexercises
+
+\newcounter{numofexer}
+\newcounter{negnumofexer}
+
+% used for debugging; not really used anymore
+\newcounter{debug}
+\setcounter{debug}{0}
+
+\newcounter{exercisecounter}
+\newcounter{IMTcount}
+\newcounter{IMTcount_temp}
+
+% the exercise names can be printed next to the problem
+% using these commands. The default is to not print them.
+\newboolean{showexercisenames}
+\newcommand{\printexercisenames}{\setboolean{showexercisenames}{true}}
+\newcommand{\noprintexercisenames}{\setboolean{showexercisenames}{false}}
+\noprintexercisenames
+
+
+% TeX uses a certain system to name input files that it reads from.
+% To prevent conflicts, we use the newread command.
+\newread\exread %read an example
+\newread\exsetread %read an example set
+\newread\exansread %read the answer
+\newread\printansread% read in the answers file
+
+\newwrite\answrite %write the answers file
+% give the answers file the name ``jobname.answers''
+\openout\answrite=\jobname.answers
+
+\def\exinput #1 {\ifthenelse{\boolean{printquestions}}{% 
+												\openin\exread=#1 
+												\read\exread to \tempp
+%												\begin{adjustwidth*}{}{-100pt}% 
+												\begin{enumerate}[leftmargin=*] 
+													\addtocounter{enumi}{\theexercisecounter}
+													\item 
+													\ifthenelse{\boolean{showexercisenames}}
+													{\tiny {\hskip -60pt}% This line too
+												  \makebox[60pt][l]{\printexercisename #1 }%  
+												  \small%
+												  }{}
+													\tempp 
+													\addtocounter{exercisecounter}{1}
+												\end{enumerate}
+%												\end{adjustwidth*}%
+												\closein\exread}% end print questions 
+									{% else: print answers
+									\ifthenelse{\boolean{printoddanswersonly}}{%i.e, we are printing odd answers, not questions 
+												\openin\exread=#1 
+												\read\exread to \tempp % read in the question - we ignore it.
+												\addtocounter{exercisecounter}{1}
+												\read\exread to \tempp % reads in the answer
+												\ifodd \theexercisecounter
+												%\else
+													\begin{enumerate}[leftmargin=*] 
+													\addtocounter{enumi}{\theexercisecounter}
+													\addtocounter{enumi}{-1}
+													\item 
+													\ifthenelse{\boolean{showexercisenames}}
+													{\tiny {\hskip -60pt}% This line too
+												  \makebox[60pt][l]{\printexercisename #1 }%
+												  \small%
+												  }{}
+													\tempp 
+													%\addtocounter{exercisecounter}{1}
+													\end{enumerate} 
+												\fi
+												\closein\exread 
+												}  %ends the \ifnum \showexercises = 2 if statement
+												{% print all answers
+												\openin\exread=#1 
+												\read\exread to \tempp %reads in the question, which is ignored 
+												\read\exread to \tempp %reads in the answer
+												\begin{enumerate}[leftmargin=*] 
+													\addtocounter{enumi}{\theexercisecounter}
+													\item 
+													\ifthenelse{\boolean{showexercisenames}}
+													{\tiny {\hskip -60pt}% This line too
+												  \makebox[60pt][l]{\printexercisename #1 }%
+												  \small%
+												  }{}
+													\tempp 
+													\addtocounter{exercisecounter}{1}
+												\end{enumerate}
+												\closein\exread
+												} % ends the \ifnum \showexercises=3 if statement
+									}
+								}
+
+\def\exsetinput #1 {\openin\exsetread=#1%
+										\setcounter{numofexer}{0}%
+										\setcounter{negnumofexer}{0}% 
+										\read\exsetread to \exsettemp%
+										\read\exsetread to \exsettemp%
+										{\loop%
+												\read\exsetread to \exsettemp%
+												\ifeof \exsetread \exsetmorefalse \else \exsetmoretrue \fi%
+												\ifexsetmore%
+														\addtocounter{numofexer}{1}%
+														\addtocounter{negnumofexer}{-1}%
+											\repeat}%							
+										\closein\exsetread%
+										\openin\exsetread=#1%
+										\ifthenelse{\boolean{printquestions}}{% 
+											\read\exsetread to \exsettemp%
+											\setcounter{enumi}{\theexercisecounter} %
+											\addtocounter{enumi}{1}%
+											\ifthenelse{\boolean{showexercisenames}}%
+													{\tiny {\hskip -60pt}% This line too
+												  \makebox[60pt][l]{\printexercisename #1 }%
+												  \small%
+												  }{}% end show exercise names
+%											\begin{adjustwidth*}{}{-100pt}%
+											\noindent\textbf{\exsettemp\theenumi\addtocounter{enumi}{-1}%
+											\addtocounter{enumi}{\thenumofexer}{ -- }\theenumi%
+											\addtocounter{enumi}{\thenegnumofexer}%
+											\read\exsetread to \exsettemp \exsettemp}%
+%											\end{adjustwidth*}%
+											
+											{\loop%
+													\read\exsetread to \exsettemp%
+													\ifeof \exsetread \exsetmorefalse \else \exsetmoretrue \fi%
+													\ifexsetmore%
+															\exsettemp%
+											\repeat}%
+										}% ends print exercises; on to print answers
+										{	\read\exsetread to \exsettemp%
+											\read\exsetread to \exsettemp%
+											{\loop%
+													\read\exsetread to \exsettemp%
+													\ifeof \exsetread \exsetmorefalse \else \exsetmoretrue \fi%
+													\ifexsetmore%
+															\exsettemp%
+											\repeat}%
+										}%ends else printing asnwers
+										\closein\exsetread%
+								}%
+
+\def\printexercises #1 {%
+\ifthenelse{\equal{\expandafter\readsection\thesection}{1}}{\immediate\write\answrite{\noexpand \noindent {\noexpand\Large\noexpand\bf Chapter \thechapter} \noexpand \vskip \noexpand\baselineskip } \write\answrite{}}{}%
+\immediate\write\answrite{\noexpand\noindent {\noexpand\bf Section \thesection} \noexpand \vskip \baselineskip}%
+\write\answrite{\noexpand\printanswers{#1}}%
+%\strictpagecheck%
+\setcounter{exercisecounter}{0}\setboolean{printquestions}{true}%
+%\thispagestyle{empty}%
+%\begin{adjustwidth*}{}{-100pt}%
+\exercisegeometry%
+\exerciseheader%
+\small%
+\noindent\underline{\parbox{\textwidth}{\huge\textbf{Exercises \thesection} }}% 
+\sffamily%
+\vskip\baselineskip%
+\begin{multicols}{2}%
+				\openin\exansread=#1 
+				\ifeof \exansread 
+					{No problems written.} 
+				\else 
+					\loop \read\exansread to \extemp  
+							\ifeof \exansread \morefalse \else \moretrue \fi 
+							\ifmore 
+									\extemp
+							\repeat 
+				\fi 
+				\closein\exansread 
+				\end{multicols}
+%				\end{adjustwidth*}%
+				\restoregeometry
+				\regularheader
+%				\easypagecheck
+				\setlength{\hoffset}{0pt} \rmfamily\normalsize \vskip \baselineskip%
+				}
+				
+
+
+% The following prints the answers. To print all answers, use command \printallanswers.
+% 
+\def\printanswers #1 {\setcounter{exercisecounter}{0} \footnotesize \setboolean{printquestions}{false} \openin\printansread=#1 
+				\ifeof \printansread 
+					{No problems written.} 
+				\else 
+					\loop \read\printansread to \extemp  
+							\ifeof \printansread \morefalse \else \moretrue \fi 
+							\ifmore 
+									\extemp
+							\fi 
+							\ifeof \printansread \morefalse \else \moretrue \fi 
+							\ifmore 
+					\repeat 
+				\fi 
+				\closein\printansread
+				\small}
+
+								
+\def \printexercisename exercises/#1_#2_#3_#4 {#1 #2 #3 #4}
+
+%%%%%%%%%%%%% Used to automate the answer production at
+%%%%%%%%%%%%% end the text.
+
+\ifthenelse{\boolean{longpage}}%
+{% if longpage, readsection does nothing, really
+\def\readsection #1{#1}%
+}%
+{% not longpage: usual readsection
+\def \readsection #1.#2{#2}
+}%
+
+\def \writeexercisestofile #1{%
+\write\answrite{\noexpand\printanswers{exercises/0\thechapter_0\expandafter\readsection #1_exercises.tex} \noexpand \vskip \baselineskip } \write\answrite{} }
+
+\def \makeexercisesection #1{\immediate\write\answrite{\noexpand\end{multicols}%
+\noexpand\normalsize}%
+\immediate\closeout\answrite\inanswersection\exercisegeometry\exerciseheader\chapter{#1}%
+\input{\jobname.answers}\restoregeometry\regularheader%
+\setlength{\hoffset}{0pt}\rmfamily\normalsize}%
+
+%\def \makeexercisesection{\immediate\write\answrite{\noexpand\end{multicols}%
+%\noexpand\normalsize}%
+%\immediate\closeout\answrite}
+%
+%\def \printexercisesection #1{%
+%\inanswersection\exercisegeometry\exerciseheader\chapter{#1}\input{\jobname.answers}\input{tobedone}\input{\jobname.answers}\section{\jobname}\restoregeometry\regularheader%
+%\setlength{\hoffset}{0pt}\rmfamily\normalsize}
+
+%
+% The following is a line of code, not a definition. 
+% It writes the first line of the ``.answers'' file
+% to set up the proper formatting of that file.
+%
+\write\answrite{\noexpand\small\noexpand\raggedright\noexpand\begin{multicols}{2}}
+
