@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={2,6,8},
+			extra x tick labels={$\ a$,$b\ $,$\ c$},
+			ytick={-5,5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-9,ymax=17,%
+			xmin=-.5,xmax=8.5%
+]
+
+\addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:8] {15/64*x*(x-2)*(x-6)*(x-8)};
+
+\draw (axis cs:.9,-4) node {\scriptsize $11$};
+\draw (axis cs:7.1,-4) node {\scriptsize $11$};
+\draw (axis cs:4,8) node {\scriptsize $38$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+
+

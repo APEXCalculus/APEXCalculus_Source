@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,5,10},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=1.1,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill}] coordinates {(1.,1.)(1.5,0.6667)(2.,0.5)(2.5,0.4)(3.,0.3333)(3.5,0.2857)(4.,0.25)(4.5,0.2222)(5.,0.2)(5.5,0.1818)(6.,0.1667)(6.5,0.1538)(7.,0.1429)(7.5,0.1333)(8.,0.125)(8.5,0.1176)(9.,0.1111)(9.5,0.1053)(10.,0.1)(10.5,0.09524)} -- (axis cs:10.5,0)-- (axis cs:1,0)--cycle;
+
+\addplot [{\colorone},thick,smooth] coordinates {(1.,1.)(1.5,0.6667)(2.,0.5)(2.5,0.4)(3.,0.3333)(3.5,0.2857)(4.,0.25)(4.5,0.2222)(5.,0.2)(5.5,0.1818)(6.,0.1667)(6.5,0.1538)(7.,0.1429)(7.5,0.1333)(8.,0.125)(8.5,0.1176)(9.,0.1111)(9.5,0.1053)(10.,0.1)(10.5,0.09524)};
+
+\draw (axis cs:5,.75) node {\scriptsize $\ds f(x)=\frac{1}{x}$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+

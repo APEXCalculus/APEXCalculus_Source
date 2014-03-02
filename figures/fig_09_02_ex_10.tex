@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+ymin=-1.1,ymax=1.1,xmin=-0.5,xmax=1.5]
+
+\addplot [thick, smooth,domain=0.1:10,samples=60] ({1/x},{sin(deg(x))});
+\draw[>=latex,->,thick] (axis cs:0.25,-.756802)-- (axis cs:0.249377,-.763301);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}

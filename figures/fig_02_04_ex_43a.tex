@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2,-3,3},
+			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-6.5,ymax=6.5,%
+			xmin=-3.5,xmax=3.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},domain=-3.5:-1] {3};
+\addplot [thick,{\colorone},domain=-1:3.5] {-1};
+\filldraw [fill=white] (axis cs:-1,3) circle (1.5pt);
+\filldraw [fill=white] (axis cs:-1,-1) circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

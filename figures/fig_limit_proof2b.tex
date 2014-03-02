@@ -1,0 +1,27 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=3.1,xmin=-.1,xmax=7.1,xtick={2,4,6},name=myplot]
+\addplot [{\colorone},smooth] coordinates {(0.,0.) (0.05,0.223607) (0.1,0.316228) (0.15,0.387298) (0.2,0.447214) (0.25,0.5) (0.5,0.707107) (0.75,0.866025) (1.,1.) (1.25,1.11803) (1.5,1.22474) (1.75,1.32288) (2.,1.41421) (2.25,1.5)(2.5,1.58114) (2.75,1.65831) (3.,1.73205) (3.25,1.80278)(3.5,1.87083) (3.75,1.93649) (4.,2.) (4.25,2.06155) (4.5,2.12132)(4.75,2.17945) (5.,2.23607) (5.25,2.29129) (5.5,2.34521) (5.75,2.39792) (6.,2.44949) (6.25,2.5)(6.5,2.54951) (6.75,2.59808) (7.,2.64575) 
+};
+\fill[black] (axis cs:4,2) circle (1pt);
+\draw[thin,dashed,gray] (axis cs:0,1.5) -- (axis cs:2.25,1.5);
+\draw[thin,dashed,gray] (axis cs:0,2.5) -- (axis cs:6.25,2.5);
+\draw[thin,dashed,{\colortwo}] (axis cs:2.25,0) -- (axis cs:2.25,1.5);
+\draw[thin,dashed,{\colortwo}] (axis cs:6.25,0) -- (axis cs:6.25,2.5);
+\draw (axis cs:-.1,1.75) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
+\draw (axis cs:-.1,2.25) node [right]{\tiny$\left.\rule{0pt}{7.5pt}\right\}\epsilon = .5$};
+\fill[{\colortwo}] (axis cs:2.25,1.5) circle (1pt);
+\fill[{\colortwo}] (axis cs:6.25,2.5) circle (1pt);
+\draw (axis cs:3.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 1.75\\[-3pt] $\overbrace{\rule{30pt}{0pt}}$};
+\draw (axis cs:5.125,.1) node [above,align=center,text width = 45pt] {\tiny width\\[-2pt] = 2.25\\[-3pt] $\overbrace{\rule{39pt}{0pt}}$};
+\draw (axis cs:4.3,1.35)	node [align=center,text width = 80pt] {\footnotesize ... choose $\delta$ smaller than each of these};
+\draw [->,thin] (axis cs:4,1) -- (axis cs:3,.8);
+\draw [->,thin] (axis cs:4,1) -- (axis cs:5,.8);
+\end{axis}
+%\fill[{\colortwo}] (1,1) circle (1pt);
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+% this is the sqrt[x] on [0,5]
+
+
+

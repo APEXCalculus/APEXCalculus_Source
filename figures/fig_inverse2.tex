@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.2,ymax=1.7,xmin=-1.2,xmax=1.7,name=myplot]
+%height=\marginparwidth+25pt,
+
+\addplot [{\colorone},smooth,thick,domain=-1:1.05] (x,x^3+.5);% {};
+\addplot [{\colortwo},smooth,thick,domain=-1:1.05] (x^3+.5,x);
+
+%\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
+\addplot [dashed,thin] {x};
+
+\addplot [domain=-.9:-.1] {.75*(x+.5)+.375};
+\addplot [domain=.1:.7] {4/3*(x-.375)-.5};
+
+
+\filldraw [black] (axis cs:-.5,.375) node [shift={(-10pt,7pt)}] {\tiny $(a,b)$} circle (1pt);
+\filldraw [black] (axis cs:.375,-.5) node [shift={(10pt,-7pt)}] {\tiny $(b,a)$} circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+

@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={1,...,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1},
+			%minor y tick num=1,
+%			extra y ticks={.5,.25,.1},%
+%			extra y tick labels={$1/2$,$1/4$,$1/10$},
+%			minor x tick num=4,
+			ymin=-.1,ymax=275,%
+			xmin=-.1,xmax=9%
+]
+
+\addplot [only marks,{\colorone},mark size={1.75pt},domain=1:8,samples=8]  {2^x};
+
+\draw (axis cs:4,150) node {\scriptsize $\ds a_n = 2^{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+
+
+
+
+

@@ -1,0 +1,56 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{45},
+			name=myplot,
+			%xtick={2},
+			%ytick={-4,2,4},
+			%ztick={-4,2,4},
+			ymin=-2.5,ymax=2.5,
+			xmin=-2.5,xmax=2.5,
+			zmin=-6.1, zmax=4.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+
+\addplot3[domain=-2:2,,y domain=-2:2,surf,faceted color={\coloronefill},samples=10,colormap={mp2}{\colormapplaneone}] {(-x+y-1)};
+
+%\addplot3[domain=-2:2,,y domain=-2:2,surf,faceted color={\coloronefill},samples=10,colormap={mp2}{\colormapplaneone}] {(2*x-y-2)};
+%
+
+\filldraw [{\coloronefill}](axis cs: 2,-2,-5) -- (axis cs: -1,-2,-2) -- (axis cs: 1.66,2,-.66)-- (axis cs: 2,2,-1) -- cycle;
+
+\filldraw [{\colortwofill}](axis cs: -2,-2,-4) -- (axis cs: -1,-2,-2) -- (axis cs: 1.66,2,-.66)-- (axis cs: -2,2,-8) -- cycle;
+
+\filldraw [{\coloronefill}](axis cs: -2,-2,-1) -- (axis cs: -1,-2,-2) -- (axis cs: 1.66,2,-.66)-- (axis cs: -2,2,3) -- cycle;
+
+\filldraw [{\colortwofill}](axis cs: 2,-2,4) -- (axis cs: -1,-2,-2) -- (axis cs: 1.66,2,-.66)-- (axis cs: 2,2,0) -- cycle;
+
+
+\addplot3[domain=-1:1.5,samples y=0,thick,{\colorone}] ({-2*x+1},{-3*x+1},{-1*x-1});
+
+%\draw [->](axis cs:-1,0,1) -- (axis cs: 0,2,3);
+
+\filldraw [] (axis cs:1,1,-1) circle (1.5pt) node [right] {\scriptsize $P$};
+
+
+\end{axis}
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

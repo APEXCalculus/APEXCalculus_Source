@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=1,>=stealth]
+		
+	\draw [<->,] (-2.1,0) -- (2.1,0);
+	\draw [<->,] (0,-2.1) -- (0,2.1);
+	
+	
+\draw [thick,{\colorone},domain=0:18.85,samples=100,smooth] plot ({cos(deg(\x))*(\x/9.5)},{sin(deg(\x))*(\x/9.5)});
+%\draw [thick,{\colorone},domain=-45:45,samples=60,smooth] plot ({-cos(\x)*(1.9*sqrt(sec(\x)^4*cos(2*\x)))},{-sin(\x)*(1.9*sqrt(sec(\x)^4*cos(2*\x)))});
+
+	
+\end{tikzpicture}		
+
+
+

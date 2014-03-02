@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1},%
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=.35,%
+			xmin=-.1,xmax=21%
+]
+
+\addplot [{\colortwo},thick,smooth] coordinates {(3.,0.3333)(4.,0.25)(5.,0.2)(6.,0.1667)(7.,0.1429)(8.,0.125)(9.,0.1111)(10.,0.1)(11.,0.09091)(12.,0.08333)(13.,0.07692)(14.,0.07143)(15.,0.06667)(16.,0.0625)(17.,0.05882)(18.,0.05556)(19.,0.05263)(20.,0.05)};
+
+\addplot [{\colorone},thick,smooth] coordinates {(3.,0.2236)(4.,0.1857)(5.,0.1581)(6.,0.1374)(7.,0.1213)(8.,0.1085)(9.,0.09806)(10.,0.08944)(11.,0.0822)(12.,0.07603)(13.,0.07071)(14.,0.06608)(15.,0.06202)(16.,0.05842)(17.,0.05522)(18.,0.05234)(19.,0.04975)(20.,0.0474)};
+
+\draw (axis cs:10,.3) node {\scriptsize $\ds f(x)=\frac{1}{\sqrt{x^2+2x+5}}$};
+\draw (axis cs:4,.09) node {\scriptsize $\ds f(x)=\frac{1}{x}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,
+			extra x ticks={2,8,5},
+			extra x tick labels={$h-a$, $h+a$,$h$},
+			ytick=\empty,
+			%minor y tick num=1,
+			extra y ticks={2,4,6},
+			extra y tick labels={$k-b$, $k$, $k+b$},%
+			ymin=-2.2,ymax=10.2,%
+			xmin=-3.2,xmax=13.2%
+]
+
+\addplot [thick, {\colorone},smooth,domain=-70:70,samples=60] ({3*sec(x)+5},{2*tan(x)+4});
+\addplot [thick, {\colorone},smooth,domain=-70:70,samples=60] ({-3*sec(x)+5},{2*tan(x)+4});
+
+\draw [thick,dashed] (axis cs: 2,6) -- (axis cs:8,6) -- (axis cs:8,2) -- (axis cs: 2,2) -- cycle;
+\addplot [thick,dashed,{\colortwo},domain=-3:13] {2*(x-5)/3+4};
+\addplot [thick,dashed,{\colortwo},domain=-3:13] {-2*(x-5)/3+4};
+
+\filldraw (axis cs:5,4) circle (1.5pt);
+\filldraw [{\colorone}] (axis cs:2,4) circle (1.5pt);
+\filldraw [{\colorone}] (axis cs:8,4) circle (1.5pt);
+
+%\draw (axis cs:2,3.5) node {\scriptsize $\overbrace{\rule{47pt}{0pt}}^{2b}$};
+%\draw (axis cs:4,1) node {\scriptsize $2a\left\{\rule{0pt}{35pt}\right.$};
+												%
+							
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+

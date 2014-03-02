@@ -1,0 +1,48 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={125}{20},
+			name=myplot,
+			xtick={-1,1},
+			ytick={-1,1},
+			%ztick={-3,3},
+			ymin=-1.1,ymax=1.1,
+			xmin=-1.1,xmax=1.1,
+			zmin=-6.5, zmax=6.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-6.5:6.5,smooth,y domain=-1:1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=20,samples y=25,very thin,z buffer=sort] ({y},{cos(deg(x))},{x});
+
+\addplot3[domain=-6.5:6.5,,thick,smooth,samples y=0,{\colorone},samples=30,] 
+({0},{cos(deg(x))},{x});
+
+\foreach \z in {-6,-4,...,6}
+{
+\addplot3[domain=-1:1,,thick,smooth,samples y=0,{\colortwo},samples=2,] 
+({x},{cos(deg(\z))},{(\z)});
+}
+\end{axis}
+
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

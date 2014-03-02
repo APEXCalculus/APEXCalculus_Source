@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-1,1},% 
+%			ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-7.5,ymax=45.5,%
+			xmin=-.4,xmax=3.3%
+]
+
+\addplot [thick,{\colorone},domain=0:3] {2*x^3+3*x^2-12*x};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

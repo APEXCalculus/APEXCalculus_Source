@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+%			extra x ticks={.45,2.52},
+%			extra x tick labels={$x_0$,$x_1$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.5,ymax=.6,%
+			xmin=-0.1,xmax=1.6%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.05:1.58] {x^3-x^2-1};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

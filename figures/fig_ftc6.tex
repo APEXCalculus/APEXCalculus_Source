@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,-1,1,2,3,4},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick={5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-10,ymax=16,%
+			xmin=-2.5,xmax=4.5%
+]
+
+\addplot [smooth,thick, {\colorone},domain=-2:4] {x^2+x-5}; 
+\draw (axis cs: 2.5,15) node [black] {\scriptsize $y=x^2+x-5$};
+\addplot [smooth,thick, {\colorone},domain=-2:4] {3*x-2}; 
+\draw (axis cs: -1.5,-9) node [black] {\scriptsize $y=3x-2$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+

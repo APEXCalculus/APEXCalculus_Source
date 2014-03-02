@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.7,ymax=1.7,xmin=-1.7,xmax=1.7,xtick={-1.57,-.79,.79,1.57},xticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},name=myplot]
+%height=\marginparwidth+25pt,
+
+\addplot [{\colorone},smooth,thick,domain=-1.57:1.57] (x,{sin(deg(x))});% {};
+\draw (axis cs:-1.1,-1.1) node {\scriptsize $y=\sin x$};
+\filldraw [black] (axis cs:1.05,.866) node [shift={(-10pt,7pt)}] {\scriptsize $(\frac{\pi}{3},\frac{\sqrt{3}}{2})$} circle (1pt);
+\addplot [black,thick,smooth,domain=.5:1.5] {.5*(x-1.05)+.866};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\begin{scope}[shift={(0,-120pt)}]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.7,ymax=1.7,xmin=-1.7,xmax=1.7,ytick={-1.57,-.79,.79,1.57},yticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},name=myplot]
+
+\addplot [{\colortwo},smooth,thick,domain=-1.57:1.57,] ({sin(deg(x))},x);
+\draw (axis cs:-1.2,-.6) node {\scriptsize $y=\sin^{-1} x$};
+\filldraw [black] (axis cs:.866,1.05) node [shift={(-10pt,7pt)}] {\scriptsize $(\frac{\sqrt{3}}{2},\frac{\pi}{3})$} circle (1pt);
+\addplot [black,thick,smooth,domain=.5:1.5] {2*(x-.866)+1.05};
+
+\end{axis}
+\end{scope}
+
+\end{tikzpicture}
+
+
+
+
+
+

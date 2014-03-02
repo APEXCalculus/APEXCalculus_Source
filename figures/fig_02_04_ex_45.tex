@@ -1,0 +1,23 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,4,3,5},
+%			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-10.9,ymax=10.9,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-1.08,samples=40] {-1/(x+1)-4};
+\addplot [thick,{\colorone},smooth,domain=-.92:5.5,samples=40] {-1/(x+1)+3};
+\draw [dashed,{\colorone}] (axis cs:-1,-10.5) -- (axis cs:-1,10.5);
+\draw [dashed,{\colorone}] (axis cs:-5.5,-4) -- (axis cs:5.5,-4);
+\draw [dashed,{\colorone}] (axis cs:-5.5,3) -- (axis cs:5.5,3);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.785,.392},
+			extra x tick labels={$\pi/4$,$\pi/8$},
+			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=2.2,%
+			xmin=-.1,xmax=1%
+]
+
+\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:.785] {sin(deg(4*x))};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:.785] {sec(deg(x))^2-(sin(deg(4*x)))} \closedcycle;
+
+\addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sin(deg(4*x))} node [shift={(-65pt,40pt)} ,black] {\scriptsize $y=\sin (4x)$};
+
+\addplot [smooth,thick, {\colorone},domain=-.1:.9,samples=60] {sec(deg(x))^2} node [shift={(-35pt,-20pt)} ,black] {\scriptsize $y=\sec^2 x$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

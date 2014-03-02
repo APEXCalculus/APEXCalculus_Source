@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,1.5,3},
+			extra x tick labels={$a$,$b$,$\ c$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.2,xmax=3.5%
+]
+
+\addplot [smooth,{\coloronefill},fill={\coloronefill},area style,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)} \closedcycle;
+\addplot [thick, {\colorone},smooth,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)};
+%\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+%\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

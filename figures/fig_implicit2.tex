@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-3.2,ymax=3.2,xmin=-3.2,xmax=3.2,name=myplot]
+
+\addplot [{\colorone},smooth,thick] coordinates {(2.89,-2.61) (2.78,-2.46) (2.65,-2.28) (2.52,-2.09) (2.36,-1.82)(2.22,-1.57) (2.1,-1.33) (2.,-1.07) (1.94,-0.842) (1.89,-0.607)(1.85,-0.295) (1.82,-0.0424) (1.79,0.214) (1.76,0.471) (1.71,0.686)
+(1.65,0.899) (1.61,1.) (1.51,1.18) (1.39,1.32) (1.29,1.42) (1.18,1.5)(1.07,1.55) (0.96,1.6) (0.794,1.65) (0.643,1.68) (0.416,1.7)(0.00338,1.71) (-0.214,1.71) (-0.423,1.72) (-0.643,1.74) (-0.947,1.8)(-1.28,1.93) (-1.49,2.04) (-1.67,2.14) (-1.83,2.24) (-2.07,2.43)(-2.31,2.61) (-2.52,2.79) (-2.68,2.92)};
+
+\addplot [{\colortwo},smooth,thick,domain=1.5:2.15] {-9.91*x+18};
+%\addplot [smooth,thick,domain=-2:1.2] {3*(x+1)-1};
+%\filldraw (axis cs:-1,-1) circle (1pt);
+%\filldraw (axis cs:-1,3) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+

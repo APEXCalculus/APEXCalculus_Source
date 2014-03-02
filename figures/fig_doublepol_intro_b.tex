@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=none,axis x line=none,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.05,ymax=0.65,%
+			xmin=-.1,xmax=.74%
+]
+
+
+
+\addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0.6928,0.4)(0.6857,0.412)(0.6784,0.4239)(0.6709,0.4357)(0.6632,0.4474)(0.6553,0.4589)(0.6472,0.4702)(0.6389,0.4815)(0.6304,0.4925)(0.6217,0.5035)(0.6128,0.5142)(0.6038,0.5248)(0.5945,0.5353)(0.5851,0.5456)(0.5755,0.5557)(0.5657,0.5657)(0.4243,0.4243)(0.4316,0.4168)(0.4388,0.4092)(0.4459,0.4015)(0.4528,0.3936)(0.4596,0.3857)(0.4663,0.3776)(0.4728,0.3694)(0.4792,0.3611)(0.4854,0.3527)(0.4915,0.3441)(0.4974,0.3355)(0.5032,0.3268)(0.5088,0.318)(0.5143,0.309)(0.5196,0.3)(0.6928,0.4)};
+
+\addplot [{\colortwo}, thick,smooth,domain=30:45,samples=30] ({cos(x)*(.8)},{sin(x)*(.8))});
+
+
+\addplot [{\colortwo}, thick,smooth,domain=30:45,samples=30] ({cos(x)*(.8)},{sin(x)*(.8))});
+
+\addplot [{\colortwo}, thick,smooth,domain=30:45,samples=30] ({cos(x)*(.6)},{sin(x)*(.6))});
+
+
+\addplot [{\colortwo},thick, smooth,domain=0:.8,samples=2] ({cos(30)*(x)},{sin(30)*(x)});
+
+\addplot [{\colortwo},thick, smooth,domain=0:.8,samples=2] ({cos(45)*(x)},{sin(45)*(x)});
+
+\draw [rotate=30] (axis cs:.31,-.12) node [rotate=30] {$\underbrace{\rule{92pt}{0pt}}_{r_1}$};
+
+\draw [rotate=45] (axis cs:.41,-.03) node [rotate=45] {$\overbrace{\rule{120pt}{0pt}}^{r_2}$};
+
+\draw [thick,->,>=stealth,rotate=24] (axis cs:.45,0) arc (0:13:80pt);
+\draw (axis cs: .4,.3) node {\scriptsize $\Delta \theta$};
+\end{axis}
+
+%\node [right] at (myplot.right of origin) {\scriptsize $0$};
+%\node [above] at (myplot.above origin) {\scriptsize $\pi/2$};
+\end{tikzpicture}
+
+
+
+

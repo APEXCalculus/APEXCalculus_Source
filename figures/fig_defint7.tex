@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+%			extra x ticks={2,6,8},
+%			extra x tick labels={$\ a$,$b\ $,$\ c$},
+%			ytick={-5,5,10,15},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1,ymax=11,%
+			xmin=-1,xmax=3.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=0:3] {x^2} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=0:3] {x^2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

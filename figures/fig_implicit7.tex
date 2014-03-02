@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,height=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,minor y tick num=1,axis y line=middle,axis x line=middle,ymin=-1.2,ymax=1.2,xmin=-1.2,xmax=1.2,name=myplot]
+
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)},{sin(x)});% {};
+\addplot [{\colortwo},smooth,thick,domain=.1:.9] {-.577*(x-.5)+.866};
+\filldraw [black] (axis cs:.5,.866) node [shift={(10pt,10pt)}] {\scriptsize $(1/2,\sqrt{3}/2)$} circle (1pt);
+\draw [thin,{\colortwo},dashed] (axis cs:0,0) -- (axis cs:.5,.866);
+%\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x+1};
+%\addplot [{\colortwo},smooth,thick,domain=-.75:.75] {0.5*x-1};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+

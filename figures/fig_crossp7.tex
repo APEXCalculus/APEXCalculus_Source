@@ -1,0 +1,26 @@
+\begin{tikzpicture}[>=stealth]
+	
+	
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	\draw[rotate=45] (-.4,0) arc (180:90:.4);
+	\draw [rotate=0] (-.6,0) node {\scriptsize $90^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-45] (-1.5,0)node [left] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	
+	\begin{scope}[shift={(3,0)}]
+		
+	\draw [thick,->,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] {\scriptsize $\vec\ell$};
+	\filldraw[black,rotate=45] (-2,0) circle (1.5pt);
+	\draw [rotate=45,->] (-1.8,0) arc (0:-270:.2);
+	%\filldraw [black] (-2,0) circle (1.5pt);
+	\draw[rotate=45] (-.4,0) arc (180:120:.4);
+	\draw [rotate=15] (-.6,0) node {\scriptsize $60^\circ$};
+	\begin{scope}[shift={(-.05,.05)}]
+	\draw [thick,->,rotate=-15] (-1.5,0)node [above] {\scriptsize $\vec F$} -- (0,0);
+		\end{scope}
+	\end{scope}
+\end{tikzpicture}
+

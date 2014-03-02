@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:2] {cos(deg(3*x-1))} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1.5:5.5,samples=50] {cos(deg(3*x-1))}; 
+\draw (axis cs:3.5,1.05) node {\scriptsize $y=\cos(3x-1)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

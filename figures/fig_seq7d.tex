@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=2.1,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {(x^2)/(factorial(x))};
+
+\draw (axis cs:7,1.25) node {\scriptsize $\ds a_n = \frac{n^2}{n!}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+
+
+
+

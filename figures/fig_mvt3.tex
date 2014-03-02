@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2},% 
+			extra x ticks={-.39,1.22,.333},
+			extra x tick labels={$a$,$b$,$c$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.2,ymax=8,%
+			xmin=-1.5,xmax=2.5%
+]
+
+\addplot [thick,{\colorone},smooth,domain=-1.5:3.5] {x^3-5*x^2+3*x+5};
+\addplot [dashed,thin,domain=-1:2] {3};
+\filldraw (axis cs:-.39,3) circle (1pt);
+\filldraw (axis cs:1.22,3) circle (1pt);
+\addplot [thin,dashed,domain=-.75:1.5] {5.48};
+\filldraw (axis cs:.3333,5.48) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+

@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={4,5,1,2,3},% 
+			%ytick={1,2,3,4,5},
+			%extra y ticks={.1,.9},
+			%extra y tick labels={$a$,$b$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=2.5,%
+			xmin=-.5,xmax=6.9%
+]
+
+%\addplot [smooth,very thick, {\colorone},samples=2,domain=-.5:6.9] ({x},{x/3});
+
+\draw [very thick,{\colortwo}] (axis cs:-.5,0) -- (axis cs:6.9,0)
+													(axis cs:-.5,-.1666) -- node [above,black,pos=.5,sloped] {\scriptsize $y=x/3$} (axis cs: 6.9, 2.3);
+\draw [very thick,{\colorone}] (axis cs:0,-.5) -- (axis cs:0,2.5)
+													(axis cs:6,-.5) -- (axis cs:6,2.5);
+													
+\draw (axis cs:4,.5) node {$R$};													
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

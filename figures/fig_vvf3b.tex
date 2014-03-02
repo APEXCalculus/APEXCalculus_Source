@@ -1,0 +1,50 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-20,-10,10,20},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-20.5,ymax=20.5,%
+			xmin=-24.5,xmax=24.5%
+]
+
+
+%\addplot [thick,{\colorone}, smooth,domain=-10:10] ({.2*x},{.3*x});
+%\addplot [thick,{\colorone}, smooth,domain=0:360] ({cos(x)},{sin(x)});
+\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=60] ({.2*x+cos(deg(x))},{.3*x+sin(deg(x))});
+\addplot [thick,{\colorone}, smooth,domain=-10:10,samples=60] ({x+5*cos(deg(x))},{1.5*x+5*sin(deg(x))});
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

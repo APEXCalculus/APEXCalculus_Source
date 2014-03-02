@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-10.5,xmax=10.5%
+]
+
+\addplot [thick,{\colorone},domain=-10.5:10.5,samples=50] {1/(exp(x)+1)};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

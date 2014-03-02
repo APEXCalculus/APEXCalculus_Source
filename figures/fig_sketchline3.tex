@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [<->, thick] (-5,0) -- (5,0);
+\foreach \x / \y  in %
+					{-3.33/{$-5.579$},%
+					-1.67/{$-4$},%
+					0/{$-1.305$},%
+					1.67/{$0$},%
+					3.33/{$1.064$}}
+		{\draw (\x,-.2) node[below] {\scriptsize \parbox{40pt}{\centering \y}} -- (\x,.2);}
+		
+\draw (-4.165,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$ \ incr \vskip 3pt $\fpp>0$ \ c. up}};
+\draw (-2.5,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$ \ incr \vskip 3pt$\fpp<0$ \ c. down}};
+\draw (-.83,.5) node {\tiny \parbox{50pt}{\centering $\fp<0$ \ decr \vskip 3pt $\fpp<0$ \ c. down}};
+\draw (.83,.5) node {\tiny \parbox{50pt}{\centering $\fp<0$ \ decr \vskip 3pt $\fpp>0$ \ c. up}};
+\draw (2.5,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$ \ incr \vskip 3pt $\fpp>0$ \ c. up}};
+\draw (4.165,.5) node {\tiny \parbox{50pt}{\centering $\fp>0$ \ decr \vskip 3pt $\fpp<0$ \ c. down}};
+
+
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.1,ymax=4.1,%
+			xmin=-4.1,xmax=4.1%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:360] ({cos(x)},{.5*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({2*cos(x)},{sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({3*cos(x)},{1.5*sin(x)});
+\addplot [{\colorone},smooth,thick,domain=0:360] ({4*cos(x)},{2*sin(x)});
+
+
+%\draw (axis cs:1.5,-2.5) node {\scriptsize $c=1$};
+%\draw (axis cs:-1.5,2.5) node {\scriptsize $c=-1$};
+%
+%
+%\draw (axis cs:3,2) node {\scriptsize $c=0$};
+%\draw (axis cs:1,-2.1) node {\scriptsize $c=1$};
+%
+%\draw (axis cs:-1,-3) node  (A) {\scriptsize $c=0$};
+%\draw[->,thick,>=stealth] (A) -- (axis cs: .4,-.41);
+%\draw[->,thick,>=stealth] (A) -- (axis cs: -.4,-.41);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

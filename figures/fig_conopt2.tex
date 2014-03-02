@@ -1,0 +1,60 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={15}{25},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			ztick=\empty,
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-5,ymax=135,
+			xmin=-5,xmax=35,
+			%zmin=-1, zmax=8,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=5pt,yshift=0pt},
+				xlabel={\scriptsize $w$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=3pt},
+				ylabel={\scriptsize $\ell$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $V$}
+			]
+
+\addplot3[domain=0:33,,y domain=0:135,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},,faceted color=black!40,samples=25,samples y=25,very thin,z buffer=sort] {x^2*y};
+
+\addplot3 [thick,{\colortwo}, smooth,domain=0:32.5,samples=10,samples y=0] ({x},{130-4*x},{x^2*(130-4*x)});
+\addplot3 [thick,{\colortwo}, smooth,dashed,opacity=.5,domain=0:32.5,samples=10,samples y=0] ({x},{130-4*x},{0});
+%\addplot3 [thick,{\colortwo}, smooth,domain=0:2,samples=10,samples y=0] ({x},{-1.5*x+1},{x^2-(-1.5*x+1)^2+5});
+%\addplot3 [thick,{\colortwo}, smooth,domain=-1:2,samples=10,samples y=0] ({x},{-2},{x^2-4+5});
+%
+%\addplot3 [thick,{\colortwo}, smooth,dashed,domain=-1:0,samples=10,samples y=0] ({x},{3*x+1},{0});
+%\addplot3 [thick,{\colortwo}, smooth,dashed,domain=0:2,samples=10,samples y=0] ({x},{-1.5*x+1},{0});
+%\addplot3 [thick,{\colortwo}, smooth,dashed,domain=-1:2,samples=10,samples y=0] ({x},{-2},{0});
+
+
+\filldraw [black,] (axis cs:21.67,43.33,19408) circle (1pt);
+%\filldraw [black,] (axis cs:-1,-2,2) circle (1pt);
+%\filldraw [black,] (axis cs:-.375,-0.125,5.125) circle (1pt);
+%\filldraw [black,] (axis cs:0,-2,1) circle (1pt);
+%\filldraw [black,] (axis cs:2,-2,5) circle (1pt);
+%\filldraw [black,] (axis cs:0,1,4) circle (1pt);
+%\filldraw [black,] (axis cs:1.2,-0.8,5.8) circle (1pt);
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

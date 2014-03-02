@@ -1,0 +1,80 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={125}{25},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-1.8,ymax=2.9,
+			xmin=-1.8,xmax=2.9,
+			zmin=-2.1, zmax=2.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+%\addplot3[domain=0:180,smooth,y domain=0:360,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=30,samples y=25,very thin,z buffer=sort] ({cos(x)*1.5*cos(y)},{sin(x)*cos(y)},{sin(y)});
+
+%\addplot3[domain=-1:1.4,y domain=-1:1.4,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,%opacity=.6,
+%samples=15,] {-1*x^2-1*y^2-x-y};
+%
+%\addplot3[domain=-1.5:-.5,y domain=.5:1.5,surf,colormap={mp2}{\colormaptwo},shader=faceted,faceted color=black!40,samples y=10,very thin,z buffer=sort,%opacity=.6,
+%samples=10,] {x-3*y+2};
+
+
+\addplot3[domain=-1:2,y domain=-1:2,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,%opacity=.6,
+samples=15,] {-x^2-y^2+2};
+
+\ifthenelse{\boolean{colorprint}}{%
+\addplot3[domain=-1:1,y domain=.5:1.5,surf,colormap={mp2}{\colormaptwo},shader=faceted,faceted color=black!40,samples y=2,very thin,z buffer=sort,opacity=.7,
+samples=2,] {-2*y+3};}
+{%
+\addplot3[domain=-1:1,y domain=.5:1.5,surf,colormap={mp2}{\colormaptwo},shader=faceted,faceted color=black!60,samples y=2,thick,z buffer=sort,opacity=.7,
+samples=2,] {-2*y+3};
+}
+
+
+
+\addplot3 [thick,{\colortwo}, smooth,domain=-.75:0,samples=2,samples y=0] ({0},{-2*x+1},{-x+1});
+\addplot3 [thick,{\colortwo}, smooth,dashed,opacity=.5,domain=0:1,samples=2,samples y=0] ({0},{-2*x+1},{-x+1});
+%%
+\filldraw [black] (axis cs:0,1,1) circle (1pt);
+%%
+%\addplot3 [thick,{\colortwo}, smooth,domain=-1:1,samples=2,samples y=0] ({1.57},{x+1.57},{-x});
+
+%\addplot3 [thick,{\colorone}, smooth,domain=-3:3,samples=20,samples y=0] ({x},{2},{x^2+8});
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.93*(cos(x))},{1.96*(sin(x))},.2);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.75*(cos(x))},{1.83*(sin(x))},.4);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-35:170,samples=60,samples y=0] ({2.4*(cos(x))},{1.6*(sin(x))},.6);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-40:170,samples=60,samples y=0] ({1.8*(cos(x))},{1.2*(sin(x))},.8);
+%
+%\filldraw [{\colorone}] (axis cs: 0,0,1) circle (1pt);
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

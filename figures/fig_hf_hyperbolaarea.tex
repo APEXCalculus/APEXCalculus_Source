@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={.25,.5,.75,1},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-3.1,ymax=3.1,%
+			xmin=-3.1,xmax=3.1%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:1.6] ({cosh(x)},{sinh(x)}) -- (axis cs:0,0)--cycle;
+
+\addplot [{\colorone},domain=-2:2,thick,smooth] ({cosh(x)},{sinh(x)});
+\addplot [{\colorone},domain=-2:2,thick,smooth] ({-cosh(x)},{sinh(x)});
+
+\filldraw (axis cs:2.577,2.376) circle (1pt) node [left] {\scriptsize ($\cosh \theta$,$\sinh \theta$)};
+
+\draw (axis cs:.73,.32) node {\scriptsize $\frac{\theta}{2}$};
+\draw (axis cs:-1.75,2.75) node {\scriptsize $x^2-y^2=1$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+

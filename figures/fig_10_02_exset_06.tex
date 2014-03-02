@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\draw [dashed] (-1.5,-.2) -- (2,-.2);
+	\draw (1.75,.65) node {\scriptsize $\ell$\ ft $\left\{\rule{0pt}{.8cm}\right.$};
+	\filldraw[thick,black,fill=gray!30] (-.5,0) -- (.5,0) -- (1,-1) -- (-1,-1)--cycle;
+	\draw (0,-.5) node {$p$ lb};
+	
+	
+	
+	\draw [thick] (-1.5,1.5) -- (2,1.5);
+	\clip (-1.5,1.5) rectangle (2,-1.25);
+	\draw [thick,rotate=110] (0,0) -- (3,0);
+	\draw [dashed] (0,0) -- (0,2);
+	\draw [rotate=90,->,>=stealth] (1,0) arc (0:20:1);
+	\draw [rotate=99] (1.2,0) node {\scriptsize $\theta$};
+	\draw [thick,->,>=stealth] (-1.45,-.5) -- (-.8,-.5) node [pos=.15,below] {\scriptsize $\vec F_w$};
+
+	
+\end{tikzpicture}

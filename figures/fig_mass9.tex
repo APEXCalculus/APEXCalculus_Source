@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-2,-1,1,2},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1,2,3,4,5,6,7,8},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-2,ymax=8.8,%
+			xmin=-6.5,xmax=6.5%
+]
+
+\filldraw (axis cs:0,3.51) circle (1.5pt) node [below right] {\scriptsize $(\overline{x},\overline{y})$};
+
+
+					%(axis cs: 1,1) circle (2pt)
+					%(axis cs: 3,1) circle (3.16pt)
+					%(axis cs: 2.375,0.875) circle (1pt) node [below ] {\scriptsize $(\overline{x},\overline{y})$};
+					%
+%
+%\draw [very thick] (axis cs: 2,0) -- (axis cs:3,1) -- (axis cs:1,1) -- cycle;
+
+\addplot [{\colorone},very thick,fill={\coloronefill},area style, ] coordinates {(6.,0)(5.967,0.6272)(5.869,1.247)(5.706,1.854)(5.481,2.44)(5.196,3.)(4.854,3.527)(4.459,4.015)(4.015,4.459)(3.527,4.854)(3.,5.196)(2.44,5.481)(1.854,5.706)(1.247,5.869)(0.6272,5.967)(0,6.)(-0.6272,5.967)(-1.247,5.869)(-1.854,5.706)(-2.44,5.481)(-3.,5.196)(-3.527,4.854)(-4.015,4.459)(-4.459,4.015)(-4.854,3.527)(-5.196,3.)(-5.481,2.44)(-5.706,1.854)(-5.869,1.247)(-5.967,0.6272)(-6.,0)(-5.,0)(-4.973,0.5226)(-4.891,1.04)(-4.755,1.545)(-4.568,2.034)(-4.33,2.5)(-4.045,2.939)(-3.716,3.346)(-3.346,3.716)(-2.939,4.045)(-2.5,4.33)(-2.034,4.568)(-1.545,4.755)(-1.04,4.891)(-0.5226,4.973)(0,5.)(0.5226,4.973)(1.04,4.891)(1.545,4.755)(2.034,4.568)(2.5,4.33)(2.939,4.045)(3.346,3.716)(3.716,3.346)(4.045,2.939)(4.33,2.5)(4.568,2.034)(4.755,1.545)(4.891,1.04)(4.973,0.5226)(5.,0)(6,0)};
+
+%\draw (axis cs: .5,1.4) node (B) {\scriptsize $(\overline{x},\overline{y})$};
+%\draw [->,>=stealth] (B)--(A);
+
+%\draw [->,>=stealth] (axis cs: .5,1.4) node [yshift=4pt] {\scriptsize $(\overline{x},\overline{y})$} -- (A);
+%\addplot [{\colorone},thick,fill=white,area style, smooth,domain=0:360,samples=30] ({1+cos(x)},{sin(x)});
+%
+%\addplot [{\colorone},thick,,area style, smooth,domain=0:360,samples=30] ({2+2*cos(x)},{2*sin(x)});
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

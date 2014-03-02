@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-.5,ymax=6.5,%
+			xmin=-1,xmax=11,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},domain=.2:11,samples=100] {(((x-2)^2)^(1/3))/x+1};
+
+\draw [{\colorone},fill={\colorone}] 	(axis cs: 2,1) node [below,black] {\scriptsize $(2,1)$} circle (1.5pt);
+\draw [{\colorone},fill={\colorone}] 	(axis cs: 6,1.42) node [above,black] {\scriptsize $\left(6,1+\frac{\sqrt[3]{2}}{3}\right)$} circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

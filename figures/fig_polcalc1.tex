@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.35,ymax=3.2,%
+			xmin=-2.1,xmax=2.1%
+]
+
+\addplot [{\colorone},thick, smooth,domain=0:360,samples=60] ({cos(x)*(1+2*sin(x))},{sin(x)*(1+2*sin(x))});
+\addplot [{\colortwo},thick, smooth,domain=0.1:2,samples=2] ({x},{-3.82843*x+8.24264});
+\filldraw (axis cs: 0,3) circle (1.5pt)
+		(axis cs: 0,1) circle (1.5pt)
+		(axis cs: -.493,-0.125) circle (1.5pt)
+		(axis cs: .483,-0.125) circle (1.5pt);
+
+\filldraw [fill=white,draw=black,thick] (axis cs: 1.76011, 1.31048) circle (1.5pt)
+		(axis cs: -1.76011, 1.31048) circle (1.5pt)
+		(axis cs: 0.368977, 0.572639) circle (1.5pt)
+		(axis cs: -0.369009, 0.578743) circle (1.5pt);
+
+
+%\draw (axis cs:.5,0) circle (25pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $0$};
+\node [above] at (myplot.above origin) {\scriptsize $\pi/2$};
+\end{tikzpicture}
+
+
+
+

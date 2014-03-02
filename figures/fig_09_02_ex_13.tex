@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.1,ymax=1.1,xmin=-1.1,xmax=1.1]
+
+\addplot [thick, smooth,domain=0:180,samples=60] ({cos(x)},{cos(x*2)});
+\draw[>=latex,->,thick] (axis cs:0.8845,0.5646)-- (axis cs:0.8798,0.548024);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			%y dir=reverse,
+			name=myplot,
+			view={115}{30},
+			minor x tick num=1,
+			minor y tick num=1,
+			minor z tick num=1,
+			ymin=-1.1,ymax=4.5,
+			xmin=-1.1,xmax=2.5,
+			zmin=-2.1, zmax=2.5,
+]
+
+\threedlines[{\colortwo}]{2}{1}{1}
+\threedlines[{\colortwo}]{1}{4}{-1}
+\draw [thick] (axis cs:1,4,-1)--(axis cs:2,1,1);
+\filldraw [{\colorone}] (axis cs: 1,4,-1) circle (1.5pt) node [right,black] {\scriptsize $P$};
+\filldraw [{\colorone}] (axis cs: 2,1,1) circle (1.5pt) node [above left,black] {\scriptsize $Q$};
+
+\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,20pt,0)}]{\scriptsize $y$};
+
+\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(30pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-10pt,-10pt)}] {\scriptsize $y$};
+%%\node [above] at (myplot.above origin) [shift={(0,-10pt)}] {\scriptsize $z$};
+%\node [] at (myplot.above origin) [shift={(-37pt,-72pt)}] {\scriptsize $x$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

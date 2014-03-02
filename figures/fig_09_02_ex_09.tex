@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+ymin=0.1,ymax=9,xmin=-11,xmax=11]
+
+\addplot [thick, smooth,domain=-2:3,samples=30] ({x^3-2*x^2},{x^2});
+\draw[>=latex,->,thick] (axis cs:-1.183,1.69)-- (axis cs:-1.18411,1.7161);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}

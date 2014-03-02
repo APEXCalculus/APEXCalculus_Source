@@ -1,0 +1,64 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,height=200pt,
+tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={145}{35},
+			name=myplot,
+			%xtick={1,2,3,4},
+			%ytick={1,2,3,4,5,6},
+			%ztick=\empty,
+			%extra x ticks={1},
+			minor x tick num=1,
+			minor y tick num=4,
+			minor z tick num=1,
+			%extra x tick labels={$a$},
+			%extra y ticks={1},
+			%extra y tick labels={$a$},
+			%extra z ticks={1},
+			%extra z tick labels={$h$},
+			ymin=-.5,ymax=6.9,
+			xmin=-.5,xmax=4.9,
+			zmin=-.5, zmax=2.9,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-1pt,yshift=-4pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+%\draw [{\colortwo},thick] (axis cs: 0,4,0) -- (axis cs: 2,4,-6) -- (axis cs: 2,0,2);
+
+
+%\addplot3[domain=0:2,,y domain=0:4,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=2,samples y=2,very thin,z buffer=sort] {3*x+y-4};
+
+\draw [{\colorone}, very thick] (axis cs:0,0,0) -- (axis cs:0,0,2)
+																		(axis cs:0,0,0) -- (axis cs:3,0,0)
+																		(axis cs:0,0,0) -- (axis cs:0,6,0);
+		
+
+\draw [{\coloronefill},thin,fill={\coloronefill},opacity=.6] (axis cs: 3,0,0) -- (axis cs: 0,6,0) -- (axis cs: 0,0,2)--cycle;
+
+
+\draw [{\colorone},thick] (axis cs: 3,0,0) -- (axis cs: 0,6,0) -- (axis cs: 0,0,2)--cycle;
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

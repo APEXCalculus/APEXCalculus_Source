@@ -1,0 +1,60 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{25},
+			name=myplot,
+			xtick={-3,3},
+			ytick={-3,3},
+			ztick={-3,3},
+			ymin=-4.3,ymax=4.3,
+			xmin=-4.3,xmax=4.3,
+			zmin=-3.2, zmax=3.2,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=180:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,opacity=.5] ({2.24*sin(x)*sin(y)},{2.24*cos(x)*sin(y)},{2.24*cos(y)});
+
+\addplot3[domain=180:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,opacity=.5] ({1.82*sin(x)*sin(y)},{1.82*cos(x)*sin(y)},{1.82*cos(y)});
+
+\addplot3[domain=180:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,opacity=.5] ({1.58*sin(x)*sin(y)},{1.58*cos(x)*sin(y)},{1.58*cos(y)});
+
+\addplot3[domain=180:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,opacity=.5] ({1.414*sin(x)*sin(y)},{1.414*cos(x)*sin(y)},{1.414*cos(y)});
+
+
+\addplot3[domain=180:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,opacity=.5] ({sin(x)*sin(y)},{cos(x)*sin(y)},{cos(y)});
+
+%\addplot3[domain=90:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=20,very thin,z buffer=sort,
+%samples=20,] ({.707*sin(x)*sin(y)},{.707*cos(x)*sin(y)},{.707*cos(y)});
+%
+%\addplot3[domain=90:270,y domain=0:180,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=20,very thin,z buffer=sort,
+%samples=20,] ({.577*sin(x)*sin(y)},{.577*cos(x)*sin(y)},{.577*cos(y)});
+
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

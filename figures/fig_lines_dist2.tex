@@ -1,0 +1,24 @@
+\begin{tikzpicture}[>=stealth]
+\draw [thin,{\colorone}] (-2,-1) -- (2,1);
+
+\draw[thin,{\colorone}]  (-2,1) -- (2,2);
+
+\draw [thick,->,{\colortwo}] (0,0) -- (1,.5) node [below,black] {\scriptsize $\vec d_1$};
+
+\draw [thick,->,{\colortwo}] (-1,1.25) -- ($(-1,1.25)+.25*(4,1)$) node [below,black] {\scriptsize $\vec d_2$};
+
+\filldraw [black] (-1,1.25) circle (1.5pt) node (Q) [above] {\scriptsize $P_2$}
+									(0,0) circle (1.5pt) node (P) [below] {\scriptsize $P_1$};
+									
+\draw [thick,dashed] (1.25,1.25) -- (1,1.75) node [left,pos=.3] {\scriptsize $h$};
+
+
+\draw [thick,->] (0,0) -- (-1,1.25) node [pos=.5,left] {\scriptsize $\vv{P_1P_2}$};
+
+\draw (1.4,0.95) -- (1.6,1.05)--(1.7,.85);
+
+\draw (1.1,1.55) -- (1.3,1.6)--(1.2,1.8);
+
+\draw [thick,->,{\colortwo}] (1.5,.75) -- (1.25,1.25) node [right,black,pos=.9] {\scriptsize $\vec c$};
+	
+\end{tikzpicture}

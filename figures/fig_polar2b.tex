@@ -1,0 +1,32 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [very thick] (-2.5,-2.5) grid (2.5,2.5);
+
+\draw [thin,gray,->] (0,0) node [below left,black] {\scriptsize$(0,0)$} -- (2.5,0);
+
+\foreach \x in {1,2}
+	{\draw [thin,gray] (0,0) circle (\x cm);
+	%\draw (\x,0) node [below right] {\x};
+		}
+\filldraw (0,0) circle (1.5pt);
+
+\filldraw [] (1,2) circle (1.5pt) node [above left] {\scriptsize $(1,2)$};
+\filldraw [] (-1,1) circle (1.5pt) node [above right] {\scriptsize$(-1,1)$};
+
+\draw [gray,dashed] (0,0) -- ($(0,0)!2.2!(-1,1)$);
+\draw [gray,->] (.5,0) arc (0:135:.5);
+\draw [rotate=35,gray ] (.65,0) node [] {\scriptsize$\frac{3\pi}{4}$};
+
+\draw [gray,dashed] (0,0) -- ($(0,0)!1.2!(1,2)$);
+\draw [gray,->] (.5,0) arc (0:135:.5);
+\draw [gray,->] (-.5,0) arc (180:135:.5);
+\draw [rotate=35,gray ] (.65,0) node [] {\scriptsize$\frac{3\pi}{4}$};
+\draw [rotate=-30,gray ] (-.65,0) node [shift={(-3pt,0pt)}] {\scriptsize$\frac{-\pi}{4}$};
+
+\draw [gray,->] (1.5,0) arc (0:63.4:1.5);
+\draw [rotate=28,gray ] (1.75,0) node [] {\scriptsize$1.11$};
+
+
+\end{tikzpicture}
+
+

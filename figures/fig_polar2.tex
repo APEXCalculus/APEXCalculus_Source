@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [thin,gray] (-2.5,-2.5) grid (2.5,2.5);
+
+\draw [thick,->] (0,0) node [below] {$O$} -- (2.5,0);
+
+\foreach \x in {1,2}
+	{\draw [very thick] (0,0) circle (\x cm);
+	%\draw (\x,0) node [below right] {\x};
+		}
+\filldraw (0,0) circle (1.5pt);
+
+\filldraw [rotate=120] (2,0) circle (1.5pt) node [ left] {\scriptsize $P(2,\frac{2\pi}{3})$};
+\filldraw [rotate=225] (-1,0) circle (1.5pt) node [shift={(0pt,12pt)}] {\scriptsize$P(-1,\frac{5\pi}{4})$};
+
+\end{tikzpicture}
+

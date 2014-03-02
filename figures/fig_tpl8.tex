@@ -1,0 +1,53 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={125}{25},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-3.5,ymax=3.5,
+			xmin=-3.5,xmax=3.5,
+			zmin=-2.5, zmax=2.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:180,smooth,y domain=0:360,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=19,samples y=19,very thin,z buffer=sort] ({cos(y)*(3.46*cos(x))},{cos(y)*(2.45*sin(x))},{2*sin(y)});
+
+
+\ifthenelse{\boolean{colorprint}}{%
+\addplot3[domain=.5:1.5,y domain=1.5:2.5,surf,colormap={mp2}{\colormaptwo},shader=faceted,faceted color=black!40,samples y=2,very thin,z buffer=sort,opacity=.7,
+samples=2,] {1-(x-1)/3-4*(y-2)/3};}
+{%
+\addplot3[domain=.5:1.5,y domain=1.5:2.5,surf,colormap={mp2}{\colormaptwo},shader=faceted,faceted color=black!60,samples y=2,thick,z buffer=sort,opacity=.7,
+samples=2,] {1-(x-1)/3-4*(y-2)/3};
+}
+
+\filldraw [black] (axis cs:1,2,1) circle (1pt);
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

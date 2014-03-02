@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},% 
+			extra x ticks={.4},
+			extra x tick labels={$x$},
+			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={0.001},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.15,xmax=1.1,%
+]
+
+\addplot [{\coloronefill},thick,smooth,domain=0:1,fill={\coloronefill}] plot {(1/(1+x^2))} -- (axis cs:1,0) -- (axis cs:0,0) -- cycle;
+
+\addplot [{\colorone},thick,smooth,domain=0:1] plot {(1/(1+x^2))};
+
+\draw [thick,{\colortwo}] (axis cs:.4,0) -- (axis cs:.4,.86);
+
+\draw (axis cs:.4,.45) node [left] {\scriptsize$ h(x)\left\{\rule{0pt}{33pt}\right.$}
+			(axis cs:.2,-.12) node {\scriptsize $\underbrace{\rule{35pt}{0pt}}_{r(x)}$}
+			(axis cs: .7,1) node {\scriptsize $\ds y=\frac{1}{1+x^2}$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+

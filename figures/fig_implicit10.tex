@@ -1,0 +1,37 @@
+\begin{tikzpicture}%[x={(1,0)},z={(0,1)},y={(.5,.87)},xscale=.4,yscale=.3]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=4.2,%
+			xmin=-.1,xmax=2.2%
+]
+
+\addplot [{\colorone},smooth,thick] coordinates {(0,1)(0.04,0.8792)(0.08,0.817)(0.12,0.7754)(0.16,0.7459)(0.2,0.7248)(0.24,
+0.71)(0.28,0.7002)(0.32,0.6945)(0.36,0.6923)(0.4,0.6931)(0.44,0.6968)(
+0.48,0.7031)(0.52,0.7117)(0.56,0.7227)(0.6,0.736)(0.64,0.7515)(0.68,0.
+7693)(0.72,0.7894)(0.76,0.8117)(0.8,0.8365)(0.84,0.8638)(0.88,0.8936)(
+0.92,0.9262)(0.96,0.9616)(1.,1.)(1.04,1.042)(1.08,1.087)(1.12,1.135)(
+1.16,1.188)(1.2,1.245)(1.24,1.306)(1.28,1.372)(1.32,1.443)(1.36,1.519)
+(1.4,1.602)(1.44,1.691)(1.48,1.786)(1.52,1.89)(1.56,2.001)(1.6,2.121)(
+1.64,2.251)(1.68,2.391)(1.72,2.542)(1.76,2.705)(1.8,2.881)(1.84,3.071)
+(1.88,3.277)(1.92,3.499)(1.96,3.74)(2.,4.)};
+
+\addplot [{\colortwo},thick,domain=.9:2] {2.582*(x-1.5)+1.837};
+
+\draw [fill=white,draw=black,thick] (axis cs:0,1) circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+
+
+

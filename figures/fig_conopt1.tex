@@ -1,0 +1,55 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={55}{45},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-2.5,ymax=2,
+			xmin=-1.5,xmax=2.5,
+			zmin=-1, zmax=8,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=5pt,yshift=0pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-1.4:2.4,,y domain=-2.5:2,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},,faceted color=black!40,samples=25,samples y=25,very thin,z buffer=sort] {x^2-y^2+5};
+
+\addplot3 [thick,{\colortwo}, smooth,domain=-1:0,samples=10,samples y=0] ({x},{3*x+1},{x^2-(3*x+1)^2+5});
+\addplot3 [thick,{\colortwo}, smooth,domain=0:2,samples=10,samples y=0] ({x},{-1.5*x+1},{x^2-(-1.5*x+1)^2+5});
+\addplot3 [thick,{\colortwo}, smooth,domain=-1:2,samples=10,samples y=0] ({x},{-2},{x^2-4+5});
+
+\addplot3 [thick,{\colortwo}, smooth,dashed,domain=-1:0,samples=10,samples y=0] ({x},{3*x+1},{0});
+\addplot3 [thick,{\colortwo}, smooth,dashed,domain=0:2,samples=10,samples y=0] ({x},{-1.5*x+1},{0});
+\addplot3 [thick,{\colortwo}, smooth,dashed,domain=-1:2,samples=10,samples y=0] ({x},{-2},{0});
+
+
+%\filldraw [black,] (axis cs:-1,0,0) circle (1pt);
+%\filldraw [black,] (axis cs:0,0,0) circle (1pt);
+%\filldraw [black,] (axis cs:-.5,.125,-.016) circle (1pt);
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

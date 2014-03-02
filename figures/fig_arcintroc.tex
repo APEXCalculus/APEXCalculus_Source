@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.52,1.05,1.6,2.1,2.6,3.14},
+			extra x tick labels={$\frac{\pi}6$,$\frac{\pi}3$,$\frac{\pi}{2}$,$\frac{2\pi}3$,$\frac{5\pi}6$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+			extra y ticks={.866},%
+			extra y tick labels={$\frac{\sqrt{3}}2$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.1,xmax=3.5,%
+]
+
+\addplot [{\colorone},smooth,thick,domain=0:3.14] {sin(deg(x))};
+
+\draw [{\colortwo},thick] (axis cs:0,0)--(axis cs:0.5236,0.5)--(axis cs:1.047,0.866)--(axis cs:1.571,1.)--(axis cs:2.094,0.866)--(axis cs:2.618,0.5)--(axis cs:3.142,0);
+
+\filldraw (axis cs:0,0) circle (1pt) (axis cs:0.5236,0.5) circle (1pt) (axis cs:1.047,0.866) circle (1pt) (axis cs:1.571,1.) circle (1pt) (axis cs:2.094,0.866) circle (1pt) (axis cs:2.618,0.5) circle (1pt) (axis cs:3.142,0);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

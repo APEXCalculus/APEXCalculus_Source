@@ -1,0 +1,31 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-3,-2,-1,1,2,3},% 
+			%minor x tick num=4,
+			%extra x ticks={1,1.57,3.14},
+			%extra x tick labels={$x$,$\frac{\pi}2$,$\pi$},
+			ytick={1,2,-1,-2},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-2.8,ymax=2.8,%
+			xmin=-2.9,xmax=3.9,%
+]
+
+
+\draw [thick,->] (axis cs:0,0) --(axis cs: -2,1) node [above] {\scriptsize$\vec u$};
+\draw [thick,->] (axis cs:0,0) --(axis cs: 3,1) node [above] {\scriptsize$\vec v$};
+\draw [thick,->,gray] (axis cs:0,0) --(axis cs: -1.5,-.5) node [below,black] {\scriptsize$\text{proj}_{\, \vec v}\, \vec u$};
+
+\draw [dotted,thick] (axis cs: -2,1) -- (axis cs:-1.5,-.5);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

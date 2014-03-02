@@ -1,0 +1,47 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{20},
+			name=myplot,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			ymin=-2.5,ymax=2.5,
+			xmin=-2.5,xmax=2.5,
+			zmin=-1.25, zmax=1.25,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:360,smooth,y domain=0:1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=40,samples y=10,very thin,z buffer=sort] ({cos(x)*1.5*(y)^2},{sin(x)*(y)^2},{y^2});
+
+\addplot3[domain=0:360,smooth,y domain=0:1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=40,samples y=10,very thin,z buffer=sort] ({cos(x)*1.5*(y)^2},{sin(x)*(y)^2},{-y^2});
+
+
+%\foreach \z in {-6.28,-4.71,-1.57,1.57,6.28}
+%{\addplot3[domain=-2:2,,thick,smooth,samples y=0,{\colortwo},%surf,%fill=white,
+%samples=30,] ({sin(deg(\z))},{x},{\z});
+%}
+
+
+\end{axis}
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+

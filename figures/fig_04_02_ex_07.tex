@@ -1,0 +1,25 @@
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (0,0) rectangle (120pt,50pt);
+\draw [inner color={\colorone},draw = white] (-10,-25pt) rectangle (180pt,70pt);
+\end{scope}
+\draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (120pt,-15pt);
+\draw (0,0) -- (120pt,0);
+\draw [dashed] (12.5pt,0pt) node [xshift=22pt,yshift=4pt] {\scriptsize $\theta$} -- (105pt,35pt);
+\draw [ultra thick] (12.5pt,0) -- (18pt,4pt);
+\filldraw [fill=white] (10pt,-2.5pt) rectangle (15pt,2.5pt);
+
+%\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\draw [<->] (15pt,-10pt) -- (110pt,-10pt) node [below,pos=.5] {\scriptsize $x$};
+\draw [<->] (120pt,0pt) -- (120pt,35pt) node [right, pos=.5] {\scriptsize 10,000 ft};
+
+\begin{scope}[shift={(105pt,35pt)}]
+\draw [fill=black] (0,0) rectangle (10pt,2pt);
+\draw [very thick] (3pt,1pt) -- (6pt,-1.5pt) -- (5pt,0pt);
+\draw [very thick] (9pt,2pt) -- (9pt,4pt) -- (7pt,2pt);
+\end{scope}
+
+\end{tikzpicture}
+

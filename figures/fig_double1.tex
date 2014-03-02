@@ -1,0 +1,84 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,height=200pt,
+tick label style={font=\scriptsize},%axis on top,
+			axis lines=center,
+			view={45}{20},
+			name=myplot,
+			xtick={1,2,3,4},
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-.1,ymax=2.5,
+			xmin=-.1,xmax=4.5,
+			zmin=-.1, zmax=16,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-1pt,yshift=-4pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+%\addplot3[domain=-90:90,%fill=white,
+%{\colorone},very thick,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},0);
+ 
+
+\draw [thick,{\colorone}] (axis cs: 3,1,0) -- (axis cs: 3,2,0) -- (axis cs: 4,2,0) -- node [above,pos=.7,black] {\scriptsize $R$} (axis cs: 4,1,0) -- cycle;
+
+\addplot3[domain=0:4.3,,y domain=0:2.1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=13,samples y=18,very thin,z buffer=sort] {x*y+exp(y)};
+
+\addplot3[domain=1:2,%fill=white,
+{\colorone},very thick,samples=20,samples y=0] ({3},{x},{3*x+exp(x)});
+
+\addplot3[domain=1:2,%fill=white,
+{\colorone},very thick,samples=20,samples y=0] ({4},{x},{4*x+exp(x)});
+
+\addplot3[domain=3:4,%fill=white,
+{\colorone},very thick,samples=20,samples y=0] ({x},{1},{1*x+exp(1)});
+
+\addplot3[domain=3:4,%fill=white,
+{\colorone},very thick,samples=20,samples y=0] ({x},{2},{2*x+exp(2)});
+
+\draw [{\colorone},dashed,thin] 
+						(axis cs: 3,1,0) -- (axis cs: 3,1,5.7)
+						(axis cs: 3,2,0) -- (axis cs: 3,2,13.4)
+						(axis cs: 4,2,0) -- (axis cs: 4,2,15.4)
+						(axis cs: 4,1,0) -- (axis cs: 4,1,6.7);
+
+
+%\draw [{\colortwo},very thick] (axis cs:1.35,-0.74,1.665)--(axis cs:1.35,-0.592,1.764)--(axis cs:1.35,-0.444,1.84)--(axis cs:1.35,-0.296,1.895)--(axis cs:1.35,-0.148,1.928)--(axis cs:1.35,0,1.939)--(axis cs:1.35,0.148,1.928)--(axis cs:1.35,0.296,1.895)--(axis cs:1.35,0.444,1.84)--(axis cs:1.35,0.592,1.764)--(axis cs:1.35,0.74,1.665);
+%
+ %(axis cs: 1.8,.3,1.69) -- (axis cs:1.8,.3,1.635)
+%(axis cs: 1.8,.4,1.69) -- (axis cs: 1.8,.4,1.6);
+%
+%\addplot3[domain=-30:50,%fill=white,
+%{\colorone},very thick,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+%
+%\addplot3[domain=-90:-30,%fill=white,
+%{\colorone},very thick,dashed,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+%
+%\addplot3[domain=50:90,%fill=white,
+%{\colorone},very thick,dashed,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+%
+%\draw (axis cs: .5,.75,0) node {$R$};
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

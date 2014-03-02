@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%			axis z line=none,%
+			axis lines=center,
+			%y dir=reverse,
+			%view={10}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick={1},
+			ztick=\empty,% 
+			%extra x ticks={3.14},
+			%extra x tick labels={$\pi$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=.5,%
+			xmin=-.1,xmax=1.1,
+			zmin=-.49,zmax=.49%
+]
+
+%
+
+\addplot3[domain=0:360,y domain=0:45,samples y=20,surf,faceted color=black!40,colormap={mp2}{\colormapone},z buffer=sort,very thin] ({cos(y)*(cos(2*y))},{(sin(y)*(cos(2*y)))*cos(x)},{(sin(y)*(cos(2*y)))*sin(x)});
+
+%\addplot3[domain=0:45,y domain=-10:210,samples y=30,surf,shader=flat,colormap={mp2}{\colormapone}] ({cos(x)*(cos(2*x))},{(sin(x)*(cos(2*x)))*sin(y)},{(sin(x)*(cos(2*x)))*cos(y)});
+
+
+
+\addplot3[domain=0:45,,samples y=0,{\colorone},thick] ({cos(x)*cos(2*x)},{0},{sin(x)*cos(2*x)});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-20pt,-13pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

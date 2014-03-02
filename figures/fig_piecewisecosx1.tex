@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,xtick={1.57},xticklabels={$\frac{\pi}2$},axis y line=middle,axis x line=middle,ymin=-.4,ymax=1.4,xmin=-.1,xmax=2.1,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates {(-0.1,0.995) (0.,1.) (0.1,0.995) (0.2,0.98) (0.3,0.955) (0.4,0.921)(0.5,0.878) (0.6,0.825) (0.7,0.765) (0.8,0.697) (0.9,0.622) (1.,0.54)(1.1,0.454) (1.2,0.362) (1.3,0.267) (1.4,0.17) (1.5,0.0707)(1.57,0)};
+\addplot [{\colorone},thick] coordinates {(1.57,0) (2.,0) };
+%\filldraw [fill=white, thick] (axis cs:0,-1) circle (2pt);
+%\filldraw [fill=white, thick] (axis cs:0,1) circle (2pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=none,axis x line=none,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-10,-5,5,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-11.9,ymax=11.9,%
+			xmin=-5,xmax=5%
+]
+
+\addplot [thick, smooth,domain=-85:85,samples=60] ({sec(x)},{2.83*tan(x)});
+\addplot [thick,smooth,domain=-85:85,samples=60] ({-sec(x)},{2.83*tan(x)});
+
+\filldraw (axis cs:0,0) circle (1.5pt);
+\filldraw [{\colorone}] (axis cs:-1,0) circle (1.5pt);
+\filldraw [{\colorone}] (axis cs:1,0) circle (1.5pt);
+
+\draw [{\colortwo},thick,->,>=latex] (axis cs:-3,0) -- (axis cs: 1.4,2.83);
+\draw [{\colortwo},thick,->,>=latex] (axis cs:1.4,2.83)--(axis cs: -1.8,8.49);
+\draw [dashed,{\colortwo},thick] (axis cs:1.4,2.83)--(axis cs: 3,0);
+\filldraw [] (axis cs:1.4,2.83) circle (1.5pt);
+\filldraw [] (axis cs:3,0) circle (1.5pt) node [below] {\scriptsize $F_2$};
+\filldraw [] (axis cs:-3,0) circle (1.5pt) node [below] {\scriptsize $F_1$};
+
+			
+
+\end{axis}
+
+%\node [right] at (myplot.right of origin) {\scriptsize $x$};
+%\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

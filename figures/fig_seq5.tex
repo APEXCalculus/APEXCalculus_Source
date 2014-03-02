@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-2.5,ymax=2.5,%
+			xmin=-.1,xmax=22%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:20,samples=20] {((-1)^x*(x+1))/x};
+
+\draw (axis cs:15,1.9) node {\scriptsize $\ds a_n = \frac{(-1)^n(n+1)}{n}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+
+
+
+

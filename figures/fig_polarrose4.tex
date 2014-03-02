@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=1,>=stealth]
+		
+	\draw [<->,] (-2.1,0) -- (2.1,0);
+	\draw [<->,] (0,-2.1) -- (0,2.1);
+	
+	
+\draw [thick,{\colorone},domain=0:360,samples=60,smooth] plot ({cos(\x)*(1.9*cos(3*\x))},{sin(\x)*(1.9*cos(3*\x))});
+
+	
+\end{tikzpicture}		
+
+
+

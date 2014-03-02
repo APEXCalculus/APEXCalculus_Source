@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-10,%ymax=2.1,%
+			xmin=-1,xmax=11%
+]
+
+\addplot [only marks,{\colorone},mark size={1.5pt},domain=1:10,samples=10] {x^2};
+
+\addplot [only marks,{\colortwo},mark size={1.5pt},domain=1:10,samples=10] {x*(x+1)*(2*x+1)/6};
+
+%\fill [{\colorone}](axis cs:2,250) circle (1.5pt) node[right,black] {\scriptsize $a_n$};
+%\fill [{\colortwo}](axis cs:2,225) circle (1.5pt) node[right,black] {\scriptsize $S_n$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\node[shift={(0,-25pt)},draw] at (myplot.south) {\begin{tikzpicture} 
+																\fill [\colorone] (0,0) circle (1.5pt) node [right,black] {\scriptsize $a_n$};
+																\fill [\colortwo] (1,0) circle (1.5pt) node [right, black] {\scriptsize $S_n$};
+																\end{tikzpicture}};
+
+\end{tikzpicture}
+
+
+
+

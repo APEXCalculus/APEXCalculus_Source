@@ -1,0 +1,56 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+%			view={125}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+%			xtick={5},
+			ztick={1,2,3},% 
+%%			extra x ticks={.33},
+%%			extra x tick labels={$1/3$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.1,ymax=2.1,%
+			xmin=-.1,xmax=2.3,
+			zmin=-.5, zmax=4.2%
+]
+
+
+\addplot3[domain=0:1.37,y domain=0:360,surf,shader=flat,colormap={mp2}{\colormaptwo},] (1.5,{x*cos(y)},{x*sin(y)+2});
+
+\addplot3[domain=0:360,samples y=0,black,thick,smooth,{\colortwo}] (1.5,{1.37*cos(x)},{1.37*sin(x)+2});
+
+\filldraw (axis cs:1.5,0,2) circle (1pt);
+
+\addplot3[domain=1.5:2,samples y=0,thick,{\colorone}] (x,0,{1/x});
+\addplot3[domain=1:1.5,samples y=0,thick,{\colorone},opacity=.3] (x,0,{1/x});
+
+\draw [dashed] (axis cs:-.1,0,2) -- (axis cs:2.3,0,2);
+
+\draw (axis cs:2.1,0,1.1) node [] {\scriptsize $y=1/x$};
+
+\draw (axis cs:1.5,0,2) --  (axis cs:1.5,0,.66);
+
+\draw [->,>=stealth] (axis cs:.8,0,3) node [above]{\scriptsize $R(x)=2-1/x$}-- (axis cs:1.45,0,1.4);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-20pt,-15pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

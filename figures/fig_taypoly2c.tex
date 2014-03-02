@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+%			xtick={2,4,6,8,10},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={-1,-2,1,2},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-4.5,ymax=2.4,%
+			xmin=-.5,xmax=3.2%
+]
+
+\addplot [{\colorone},domain=0.01:3,smooth,thick,samples=50] {ln(x)};
+\addplot [{\colortwo},domain=-4:4,smooth,thick] coordinates {(-0.108,-7.567)(-0.052,-4.958)(0.004,-3.519)(0.06,-2.671)(0.116,-2.13)
+(0.172,-1.756)(0.228,-1.478)(0.284,-1.259)(0.34,-1.079)(0.396,-0.9263)
+(0.452,-0.7941)(0.508,-0.6773)(0.564,-0.5727)(0.62,-0.478)(0.676,-0.
+3916)(0.732,-0.312)(0.788,-0.2383)(0.844,-0.1696)(0.9,-0.1054)(0.956,-
+0.045)(1.012,0.01193)(1.068,0.06579)(1.124,0.1169)(1.18,0.1655)(1.236,
+0.2119)(1.292,0.2562)(1.348,0.2986)(1.404,0.3393)(1.46,0.3784)(1.516,
+0.4161)(1.572,0.4523)(1.628,0.4874)(1.684,0.5212)(1.74,0.5538)(1.796,
+0.5853)(1.852,0.6154)(1.908,0.6427)(1.964,0.6635)(2.02,0.6665)(2.076,
+0.621)(2.132,0.4476)(2.188,-0.04877)(2.244,-1.326)(2.3,-4.421)};
+%\addplot [{\colortwo!40},domain=-4:4,thick,smooth] {-x^4/2-x^3/6+x^2+x+2};
+
+\draw (axis cs:2.5,1.65) node {\scriptsize $y=\ln x$};
+\draw (axis cs:1.7,-2.75) node {\scriptsize $y=p_{20}(x)$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}
+
+
+
+

@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=350000,ymax=650000,%
+			xmin=0,xmax=5100%
+]
+
+\addplot [thick, {\colorone},smooth,samples=50,domain=0:5000] {50*(5000-x)+130*sqrt(x^2+1000^2)};
+%\addplot [{\colortwo},thick,smooth] {6*x};
+%\filldraw (axis cs:1.85,4.39) circle (1pt);
+%\filldraw (axis cs:3.15,4.39) circle (1pt);
+%\draw (axis cs:1.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+%\draw (axis cs:3.5,8) node {\tiny \parbox{30pt}{\centering$\fpp>0$ \vskip 2pt c. up}};
+%\draw (axis cs:2.5,4) node {\tiny \parbox{30pt}{\centering$\fpp<0$ \vskip 2pt c. down}};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+

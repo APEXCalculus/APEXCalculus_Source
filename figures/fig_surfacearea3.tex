@@ -1,0 +1,78 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,height=200pt,
+tick label style={font=\scriptsize},%axis on top,
+			axis lines=center,
+			view={135}{25},
+			name=myplot,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			extra x ticks={1},
+			extra x tick labels={$a$},
+			extra y ticks={1},
+			extra y tick labels={$a$},
+			extra z ticks={1},
+			extra z tick labels={$h$},
+			ymin=-1.3,ymax=1.3,
+			xmin=-1.3,xmax=1.3,
+			zmin=-.1, zmax=1.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-1pt,yshift=-4pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+%\draw [dashed, ultra thick,{\colorone}] (axis cs: 0,0,0) -- (axis cs: 4,0,0) -- (axis cs: 0,2,0) -- cycle;
+%
+%\addplot3[domain=-.1:4.1,,y domain=-0.1:2.1,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},opacity=.6,faceted color={\colorone},samples=2,samples y=2, very thin,z buffer=sort] {4-x-2*y};
+%
+%\draw [thick,{\colorone}] (axis cs: 0,0,4) -- (axis cs: 4,0,0) -- (axis cs: 0,2,0) -- cycle;
+%
+%\draw [{\colortwo}] (axis cs:0,0,4) -- (axis cs: .8,1.6,0);
+
+
+%\addplot3[domain=-90:90,%fill=white,
+%{\colorone},very thick,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},0);
+%
+%
+%
+\addplot3[domain=0:1,,y domain=0:360,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=10,samples y=36,very thin,z buffer=sort] ({x*cos(y)}, {x*sin(y)},{1-x});
+%
+%\draw [{\colorone},thick] (axis cs: .8,.2,1.96) --(axis cs: .8,.3,1.935) --(axis cs: 1,.3,1.955) --(axis cs: 1,.2,1.98) --(axis cs: .8,.2,1.96)
+ %(axis cs: .8,.2,0) --(axis cs: .8,.3,0) --(axis cs: 1,.3,0) --(axis cs: 1,.2,0) --(axis cs: .8,.2,0);
+%
+%
+%
+%
+%\addplot3[domain=-40:40,%fill=white,
+%{\colorone},very thick,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+%
+%\addplot3[domain=-90:-40,%fill=white,
+%{\colorone},very thick,dashed,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+%
+%\addplot3[domain=40:90,%fill=white,
+%{\colorone},very thick,dashed,samples=40,samples y=0] ({cos(x)*(1+cos(2*x))},{sin(x)*(1+cos(2*x))},{-.5*((cos(x)*(1+cos(2*x)))-1)^2-.5*(sin(x)*(1+cos(2*x)))^2+2});
+
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

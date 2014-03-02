@@ -1,0 +1,76 @@
+\begin{tikzpicture}[>=latex,scale=.8]
+
+%\begin{scope}
+%\foreach \x in {0,1,2,...,31}
+%{%
+%\draw [rotate around={{\x*11.25}:(0,0)}] (60pt,0)--(65pt,0) arc (0:{5.}:65pt);
+%\draw [rotate around={{\x*11.25+5.}:(0,0)}] (65pt,0) -- (60pt,0) arc (0:6.25:60pt);
+%}
+%\draw [->] (40pt,0) arc (0:170:40pt);
+%\draw (0,0) node {$x$};
+%
+%\end{scope}
+%
+%
+%\begin{scope}[shift={(-.5pt,-99pt)}]
+%\foreach \x in {0,1,2,...,15}
+%{%
+%\draw [rotate around={{\x*22.5}:(0,0)}] (30pt,0)--(35pt,0) arc (0:{10.}:35pt);
+%\draw [rotate around={{\x*22.5+10.}:(0,0)}] (35pt,0) -- (30pt,0) arc (0:12.5:30pt);
+%}
+%\draw [->] (0,25pt) arc (90:-80:25pt);
+%\draw (0,0) node {$u$};
+%
+%\end{scope}
+%
+%\begin{scope}[shift={(53.5pt,-101pt)}]
+%\foreach \x in {0,1,2,...,7}
+%{%
+%\draw [rotate around={{\x*45}:(0,0)}] (15pt,0)--(20pt,0) arc (0:{22}:20pt);
+%\draw [rotate around={{\x*45+22}:(0,0)}] (20pt,0) -- (15pt,0) arc (0:23:15pt);
+%}
+%\draw [->] (10pt,0) arc (0:170:10pt);
+%\draw (0,0) node {$y$};
+%
+%\end{scope}
+
+
+\begin{scope}[shift={(0,-200pt)}]
+\begin{scope}
+\foreach \x in {0,1,2,...,35}
+{%
+\draw [rotate around={{\x*10}:(0,0)}] (60pt,0)--(65pt,0) arc (0:{4.}:65pt);
+\draw [rotate around={{\x*10+4.}:(0,0)}] (65pt,0) -- (60pt,0) arc (0:6:60pt);
+}
+\draw [->] (40pt,0) arc (0:170:40pt);
+\draw (0,0) node {$x$};
+
+\end{scope}
+
+
+\begin{scope}[shift={(4.5pt,-99pt)}]
+\foreach \x in {0,1,2,...,17}
+{%
+\draw [rotate around={{\x*20}:(0,0)}] (30pt,0)--(35pt,0) arc (0:{9}:35pt);
+\draw [rotate around={{\x*20+9}:(0,0)}] (35pt,0) -- (30pt,0) arc (0:11:30pt);
+}
+\draw [->] (0,25pt) arc (90:-80:25pt);
+\draw (0,0) node {$u$};
+\draw (45pt,-30pt) node {\small$\ds \frac{dy}{du} = 3$};
+\draw (-50pt,30pt) node {\small $\ds \frac{du}{dx} = 2$};
+\draw (60pt,40pt) node {\small $\ds \frac{dy}{dx} = 6$};
+
+\end{scope}
+
+\begin{scope}[shift={(53.5pt,-100pt)}]
+\foreach \x in {0,1,2,...,5}
+{%
+\draw [rotate around={{\x*60}:(0,0)}] (10pt,0)--(15pt,0) arc (0:{29}:15pt);
+\draw [rotate around={{\x*60+29}:(0,0)}] (15pt,0) -- (10pt,0) arc (0:31:10pt);
+}
+\draw [->] (0,-20pt) arc (-90:70:20pt);
+\draw (0,0) node {$y$};
+
+\end{scope}
+\end{scope}
+\end{tikzpicture}

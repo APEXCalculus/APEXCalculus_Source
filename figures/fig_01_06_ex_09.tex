@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-5,ymax=105,%
+			xmin=-2.5,xmax=.5%
+]
+
+\addplot [thick,{\colorone},domain=-2.5:-1.1,samples=50] {1/(x+1)^2};
+\addplot [thick,{\colorone},domain=-.9:0.5,samples=50] {1/(x+1)^2};
+\draw [{\colorone},dashed] (axis cs:-1,105) -- (axis cs:-1,-5);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

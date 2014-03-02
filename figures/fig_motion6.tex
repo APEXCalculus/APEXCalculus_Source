@@ -1,0 +1,46 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={115}{25},
+			name=myplot,
+			%xtick={-3,3},minor tick num=2,
+			%ytick={-3,3},
+			%ztick={-3,3},
+			ymin=-.5,ymax=4.5,
+			xmin=-3.5,xmax=3.5,
+			zmin=-1.5, zmax=1.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=0pt,yshift=-5pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-2:2,,thick,smooth,samples y=0,{\colorone},samples=30,] ({x},{x^2},{sin(180*x)});
+
+\draw[thick,->,{\colorone}] (axis cs: 1,1,0) -- (axis cs: 1.01,1.02,-.0314);
+%\draw[thick,->,{\colortwo}] (axis cs: 0,0,0) -- (axis cs: -1,0,1) node (B) {};
+
+
+\end{axis}
+
+%\draw (A) node [ above] {\scriptsize $\vec r\,'(\pi/2)$};
+%\draw (B) node [shift={(-5pt,5pt)}] {\scriptsize $\vec r\,'(\pi/2)$};
+
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

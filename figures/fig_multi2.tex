@@ -1,0 +1,48 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={1,2,-1,-2},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-3,-2,-1,1,2,3},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.9,ymax=5.9,%
+			xmin=-5.9,xmax=5.9%
+]
+
+\addplot [thick,{\colorone},fill={\coloronefill}, smooth,domain=0:360,samples=45] ({3*cos(x)},{2*sin(x)});
+
+\draw (axis cs: 3,3) node {\scriptsize $\displaystyle \frac{x^2}9+\frac{y^2}4=1$};
+
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

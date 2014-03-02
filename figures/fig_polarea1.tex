@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1.1,%
+			xmin=-.1,xmax=1.1%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style, smooth,domain=18:72,samples=30] ({cos(x)*(1+.05*cos(9*x))},{sin(x)*(1+.05*cos(9*x))}) -- (axis cs:0,0) -- cycle;
+
+\addplot [{\colorone},thick, smooth,domain=0:90,samples=30] ({cos(x)*(1+.05*cos(9*x))},{sin(x)*(1+.05*cos(9*x))});
+
+%\addplot [{\colortwo},thick, smooth,domain=28.65:45.84,samples=30] ({1.045*cos(x)},{1.045*sin(x)}) ;-- (axis cs:0,0) -- cycle;
+
+\draw [thick,{\colorone},] (axis cs:0,0) -- (axis cs: 0.905831, 0.294322) node [pos=.7,below,rotate=18,black] {\scriptsize $\theta=\alpha$};
+
+\draw [thick,{\colorone},] (axis cs:0,0) -- (axis cs:0.313792, 0.965751) node [pos=.7,above,rotate=72,black] {\scriptsize $\theta=\beta$};
+
+\draw [thick,{\colorone},dashed] (axis cs:0,0) -- (axis cs: 0.862592, 0.528597)
+(axis cs:0,0) -- (axis cs: 0.732107, 0.732107)
+(axis cs:0,0) -- (axis cs: 0.497095, 0.811186);
+
+\draw (axis cs:.8,.85) node {\scriptsize $r=f(\theta)$};
+
+
+%\addplot [{\colortwo},thick, smooth,domain=-1:1,samples=2] ({x},{.577*x});
+%\addplot [{\colortwo},thick, smooth,domain=-1:1,samples=2] ({x},{-.577*x});
+
+
+%\draw (axis cs:.5,0) circle (25pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $0$};
+\node [above] at (myplot.above origin) {\scriptsize $\pi/2$};
+\end{tikzpicture}
+
+
+
+

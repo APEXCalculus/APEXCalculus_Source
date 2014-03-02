@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+%minor x tick num=4,minor y tick num=4,
+ymin=-1.5,ymax=1.5,xmin=-1.5,xmax=1.5]
+
+\addplot [thick, smooth,domain=0:360,samples=120] ({cos(x)+sin(8*x)/4},{sin(x)+cos(8*x)/4});
+\draw[>=latex,->,thick] (axis cs:0.3613,.6771)-- (axis cs:.33215,.68275);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}

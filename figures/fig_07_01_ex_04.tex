@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={3.14,6.28},
+			extra x tick labels={$\pi$,$2\pi$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=6.5,%
+			xmin=-1,xmax=7%
+]
+
+\addplot [{\coloronefill},domain=0:6.28,stack plots=y,samples=40] {.5*cos(deg(x))+1};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,domain=0:6.28,stack plots=y,samples=40] {.5*x+3-(.5*cos(deg(x))+1)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.9:6.5,samples=40] {.5*cos(deg(x))+1} node [shift={(-25pt,7pt)} ,black] {\scriptsize $y=\frac12\cos x+1$};
+\addplot [smooth,thick, {\colorone},domain=-.9:6.5,samples=40] {.5*x+3}node [shift={(-30pt,0pt)} ,black] {\scriptsize $y=\frac12x+3$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

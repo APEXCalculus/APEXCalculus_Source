@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,5,10},%
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=.5,%
+			xmin=-.1,xmax=1.1%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill}] coordinates {(0.1,3.162)(0.2,2.236)(0.3,1.826)(0.4,1.581)(0.5,1.414)(0.6,1.291)(0.7,1.195)(0.8,1.118)(0.9,1.054)(1.,1.)} -- (axis cs:1,0)--(axis cs:.1,0)--cycle;
+
+\addplot [{\colorone},thick,smooth] coordinates {(0.1,3.162)(0.2,2.236)(0.3,1.826)(0.4,1.581)(0.5,1.414)(0.6,1.291)(0.7,1.195)(0.8,1.118)(0.9,1.054)(1.,1.)};
+
+\draw (axis cs:.5,.3) node {\scriptsize $\ds f(x)=\frac{1}{\sqrt{x}}$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+

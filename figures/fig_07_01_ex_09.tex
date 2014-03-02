@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.785,1.57,2.36,3.14,3.92},
+%			extra x tick labels={$\pi/4$,$\pi/2$,$3\pi/4$,$\pi$,$5\pi/4$},
+%			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=4.1,%
+			xmin=-.1,xmax=1.1%
+]
+
+\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:1] {2^x};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:1] {4^x-(2^x)} \closedcycle;
+
+\addplot [smooth,thick, {\colorone},domain=-.1:1.1,samples=40] {2^x} node [shift={(-25pt,-20pt)} ,black] {\scriptsize $y=2^x$};
+
+\addplot [smooth,thick, {\colorone},domain=-.1:1.1,samples=40] {4^x} node [shift={(-40pt,-20pt)} ,black] {\scriptsize $y=4^x$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

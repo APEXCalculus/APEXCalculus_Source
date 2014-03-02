@@ -1,0 +1,77 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={105}{35},
+			name=myplot,
+			xtick={4},
+			ytick={4},
+			ztick={10},
+			%minor xtick=1,
+			%minor ytick=1,
+			ymin=-.1,ymax=4.5,
+			xmin=-.1,xmax=4.5,
+			zmin=-1.5, zmax=11,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:2,smooth,y domain=0:2,surf,%fill=white,opacity=.4,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=7,samples y=7,very thin,z buffer=sort] ({x},{y},{-x^2-y^2+9});
+
+\pgfplotsinvokeforeach {1,2,3,4}{
+\draw [thin,gray](axis cs: #1,0,0) -- (axis cs: #1,4.4,0);
+\draw [thin,gray ](axis cs: 0,#1,0) -- (axis cs: 4.4,#1,0);
+}
+
+\filldraw [black] (axis cs: 1,1,7) circle (1pt) (axis cs: 1,1,0) circle (1pt) (axis cs: 3,2,0) circle (1pt);
+\draw [->] (axis cs: 1,1,0) -- (axis cs: 1.89,1.45,0) node [right] {\scriptsize $\vec u_1$};
+\draw [->] (axis cs: 1,1,7) -- (axis cs: 1.89,1.45,4.3);
+
+\draw [->] (axis cs: 1,1,0) -- (axis cs: 1.71,.293,0) node [below] {\scriptsize $\vec u_2$};;
+\draw [->] (axis cs: 1,1,7) -- (axis cs: 1.71,.293,7);
+
+\draw [->] (axis cs: 1,1,0) -- (axis cs: .293,.293,0) node [above] {\scriptsize $\vec u_3$};;
+\draw [->] (axis cs: 1,1,7) -- (axis cs: .293,.293,9.83);
+
+%\addplot3 [thick,{\colorone},dashed, smooth,domain=-.5:.5,samples=2,samples y=0] ({-0.25}, {0.5 + x}, {-0.3125 - 1.25*x});
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-.5:.5,samples=2,samples y=0] ({-0.5}, {0.5 + x}, {-0.25 - 1.5*x});
+%
+%\addplot3 [thick,{\colorone}, dashed,smooth,domain=-.5:.5,samples=2,samples y=0] ({-0.75}, {0.5 + x},{ -0.0625 - 1.75*x});
+%
+%
+%\ifthenelse{\boolean{colorprint}}{
+%\addplot3 [thick,{\colortwo}, smooth,domain=-1:.5,samples=15,samples y=0] ({x}, 0.5, {x^2-.25+.5*x});
+%}
+%{\addplot3 [thick,{\colorone}, smooth,domain=-1:.5,samples=15,samples y=0] ({x}, 0.5, {x^2-.25+.5*x});
+%}
+%
+%
+%\filldraw [black] (axis cs:-.25,.5,-.3125) circle (1pt);
+%\filldraw [black] (axis cs:-.5,.5,-.25) circle (1pt);
+%\filldraw [black] (axis cs:-.75,.5,-0.0625) circle (1pt);
+%
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+

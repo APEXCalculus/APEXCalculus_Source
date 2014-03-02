@@ -1,0 +1,29 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.1,ymax=1.1,%
+			xmin=-1.1,xmax=1.1,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth] coordinates {(1.,0) (0.98901,0.45597) (0.9558,0.63776) (0.89945,0.76667) (0.818,0.86206) (0.70711,0.9306) (0.55589,0.97522) (0.32331,0.99726) (-0.32331,0.99726) (-0.55589,0.97522) (-0.70711,0.9306) (-0.818,0.86206) (-0.89945,0.76667) (-0.9558,0.63776) (-0.98901,0.45597) (-1.,0) (-1.,0) (-0.98901,-0.45597) (-0.9558,-0.63776) (-0.89945,-0.76667) (-0.818,-0.86206)(-0.70711,-0.9306) (-0.55589,-0.97522) (-0.32331,-0.99726)(0.32331,-0.99726) (0.55589,-0.97522) (0.70711,-0.9306)(0.818,-0.86206) (0.89945,-0.76667) (0.9558,-0.63776)(0.98901,-0.45597) (1.,0) };
+%\addplot [thick,{\colortwo},smooth,domain=-4.5:4.5,samples=40] {cos(deg(3.14*x/2))};
+%\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+%\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+%\draw (axis cs:1,1) node[above] {\scriptsize $f(x)$};
+%\draw (axis cs:2,-1) node[below] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+\filldraw [] (axis cs:.775,.894) node [below left] {\scriptsize $(\sqrt{0.6},\sqrt{0.8})$} circle (1pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

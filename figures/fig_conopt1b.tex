@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,2},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+			minor x tick num=1,
+			extra x ticks={-1,1},%
+			ymin=-2.5,ymax=1.5,%
+			xmin=-2.1,xmax=2.1%
+]
+
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\draw [thick,{\colorone}] (axis cs:-1,-2)-- node [black,pos=.2,above,sloped] {\scriptsize $y=3x+1$} (axis cs:0,1)--node [black,pos=.6,below,sloped] {\scriptsize $y=-3/2x+1$} (axis cs:2,-2)--node [black,pos=.5,below,sloped] {\scriptsize $y=-2$}(axis cs:-1,-2);
+%\draw [thick,{\colorone}] (axis cs:-1,-2) -- (axis cs:2,-2);
+
+\fill[black,draw=black] (axis cs:-1,-2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:2,-2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:0,1) circle (1.5pt);
+%\fill[black,draw=black] (axis cs:2,2) circle (1.5pt);
+%\fill[white,draw=black] (axis cs:1,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

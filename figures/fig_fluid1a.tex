@@ -1,0 +1,24 @@
+\begin{tikzpicture}[x=.3cm,y=.3cm,>=stealth]
+
+\begin{scope}[xscale=2]
+
+
+\draw [left color={\coloronefill},right color={\coloronefill!20},thick](-2,10) -- (-2,0) arc (180:360:2) -- (2,10);
+\draw [right color={\coloronefill},left color={\coloronefill!30},thick] (0,10) circle (2);
+\draw [thick] (0,12) circle (2);
+\draw [thick](-2,12)--(-2,10)
+			(2,12)--(2,10);
+\draw [dashed,thick] (-2,0) arc (180:0:2);
+\draw (0,0) -- node [above,pos=.5] {\scriptsize 2 ft} (2,0);
+%\draw [dashed] (-2,10) arc (180:0:2);
+%\draw [] (-2,10) arc (180:360:2);
+\end{scope}
+
+\begin{scope}[shift={(5,0)}]
+\draw (-.5,0) -- (.5,0)
+			(-.5,10) -- (.5,10)
+			(0,0) -- node [pos=.5,fill=white,rotate=90] {\scriptsize 10 ft} (0,10);
+\end{scope}
+
+\end{tikzpicture}
+

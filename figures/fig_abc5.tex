@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5,6,7,8,9,10,11,12},% 
+%			extra x ticks={12.57},
+%			extra x tick labels={$4\pi$},
+			ytick={1,2,3,4,5,6,7,8},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=8.5,%
+			xmin=-.1,xmax=12.5%
+]
+
+\addplot [{\colorone},thick,fill={\coloronefill},smooth] coordinates {(0,3.2)(0.5,3.417)(1.,3.637)(1.5,4.041)(2.,4.505)(2.5,5.)(3.,5.495)(3.5,5.959)(4.,6.363)(4.5,6.683)(5.,6.898)(5.5,6.995)(6.,6.968)(6.5,6.819)(7.,6.556)(7.5,6.197)(8.,5.763)(8.5,5.282)(9.,4.784)(9.5,4.298)(10.,3.857)(10.5,3.486)(11.,3.21)(11.5,2.8)(11.5,2)(11.,1.545)(10.5,1.314)(10.,1.102)(9.5,0.9154)(9.,0.7585)(8.5,0.6361)(8.,0.5514)(7.5,0.5069)(7.,0.5038)(6.5,0.5421)(6.,0.6208)(5.5,0.7378)(5.,0.8897)(4.5,1.072)(4.,1.281)(3.5,1.509)(3.,1.751)(2.5,2.)(2.,2.249)(1.5,2.491)(1.,2.719)(0.5,2.9102)(0,3.15)(0,3.2)};
+%(0.5,3.317)
+\draw (axis cs:2,4.5) -- (axis cs:2,2.249) node [shift={(-3pt,0pt)},rotate=90,pos=.5] {\scriptsize 2.25}
+(axis cs:4,6.36) -- (axis cs:4,1.28) node [shift={(-3pt,0pt)},rotate=90,pos=.5] {\scriptsize 5.08}
+(axis cs:6,6.97) -- (axis cs:6,0.62) node [shift={(-3pt,0pt)},rotate=90,pos=.5] {\scriptsize 6.35}
+(axis cs:8,5.76) -- (axis cs:8,.55) node  [shift={(-3pt,0pt)},rotate=90,pos=.5] {\scriptsize 5.21}
+(axis cs:10,3.86) -- (axis cs:10,1.1) node [shift={(-3pt,0pt)},rotate=90,pos=.5] {\scriptsize 2.76};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

@@ -1,0 +1,43 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={75}{35},
+			name=myplot,
+			%xtick={4},
+			%ytick={4},
+			%ztick={10},
+			%minor xtick=1,
+			%minor ytick=1,
+			ymin=-2,ymax=2,
+			xmin=-2,xmax=2,
+			zmin=-.75, zmax=.75,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=1pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-2:2.01,smooth,y domain=-2:2.01,surf,%fill=white,opacity=.4,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=25,samples y=25,very thin,z buffer=sort] ({x},{y},{(x*y)/(x^2+y^2)});
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+

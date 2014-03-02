@@ -1,0 +1,51 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={-1,1},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.1,ymax=1,%
+			xmin=-.1,xmax=1.2%
+]
+
+%\addplot [{\coloronefill},fill={\coloronefill},area style, smooth,domain=18:72,samples=30] ({cos(x)*(1+.05*cos(9*x))},{sin(x)*(1+.05*cos(9*x))}) -- plot ({cos(x)*(2+.05*cos(9*x))},{sin(x)*(2+.05*cos(9*x))});
+%
+%\addplot [{\colortwofill},fill={\colortwofill},area style, smooth,domain=18:72,samples=30] ({cos(x)*(.7+.05*sin(6*x))},{sin(x)*(.7+.05*sin(6*x))}) -- (axis cs:0,0) -- cycle;
+%
+
+
+\addplot [{\colortwofill},fill={\colortwofill},area style] coordinates {(1.,0)(0.9986,0.05234)(0.9945,0.1045)(0.9877,0.1564)(0.9781,0.2079)(0.9659,0.2588)(0.9511,0.309)(0.9336,0.3584)(0.9135,0.4067)(0.891,0.454)(0.866,0.5)(0,0)};
+
+\addplot [{\coloronefill},fill={\coloronefill},area style] coordinates {(0.866,0.5)(0.7742,0.4744)(0.6822,0.443)(0.5907,0.406)(0.5,0.3633)(0.4107,0.3151)(0.3232,0.2617)(0.2379,0.2032)(0.1554,0.1399)(0.07593,0.07205)(0,0)};
+
+\addplot [{\colorone},thick, smooth,domain=0:360,samples=90] ({cos(x)*(2*cos(2*x))},{sin(x)*(2*cos(2*x))});
+\addplot [{\colortwo}, thick,smooth,domain=0:360,samples=60] ({cos(x)*(1)},{sin(x)*(1)});
+
+\draw [thick,dashed] (axis cs: 0,0) -- (axis cs:.866,.5);
+
+
+
+%\draw (axis cs:.8,.85) node {\scriptsize $r_2=f_2(\theta)$}
+%(axis cs:.2,.8) node {\scriptsize $r_1=f_1(\theta)$};
+
+
+%\addplot [{\colortwo},thick, smooth,domain=-1:1,samples=2] ({x},{.577*x});
+%\addplot [{\colortwo},thick, smooth,domain=-1:1,samples=2] ({x},{-.577*x});
+
+
+%\draw (axis cs:.5,0) circle (25pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $0$};
+\node [above] at (myplot.above origin) {\scriptsize $\pi/2$};
+\end{tikzpicture}
+
+
+
+
+

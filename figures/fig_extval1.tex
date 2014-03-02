@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=5,xtick={-1,5}, axis y line=middle,axis x line=middle,ymin=-31,ymax=31,xmin=-1.5,xmax=5.5,name=myplot]
+
+\addplot [thick,{\colorone},smooth,domain=-1:5] {2*x^3-9*x^2};
+
+\filldraw [thick,{\colorone}] (axis cs:5,25) node [black,above] {\tiny$(5,25)$} circle (1pt);
+\filldraw [thick,{\colorone}] (axis cs:-1., -11) circle (1pt);
+\filldraw [{\colorone}] (axis cs: 3,-27) node [black,shift={(0,9pt)}] {\tiny$(3,-27)$} circle (1pt);
+\filldraw [{\colorone}] (axis cs: -1,-11) node [black,shift={(4pt,-5pt)}] {\tiny$(-1,-11)$} circle (1pt) ;
+\filldraw [{\colorone}] (axis cs: 0,0) node [black,above right] {\tiny$(0,0)$} circle (1pt); 
+%\filldraw [thick,{\colorone}] (axis cs:0,3) circle (1.5pt);
+%\filldraw [thick,{\colorone},fill=white] (axis cs:0,5) circle (1.5pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+

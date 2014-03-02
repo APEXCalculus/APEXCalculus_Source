@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1,2,3,4,5},% 
+%			extra x ticks={2,6,8},
+%			extra x tick labels={$\ a$,$b\ $,$\ c$},
+%			ytick={10,17,-8},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-2,ymax=130,%
+			xmin=-1.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=-1:5] {x^3} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-1:5] {x^3};
+
+\foreach \x / \y in {-0.4 / -0.064, 0.2 / 0.008, 0.8 / 0.512, 1.4 / 2.744, 2. / 8., 2.6 /17.576, 3.2 / 32.768, 3.8 / 54.872, 4.4 / 85.184, 5. / 125.}
+  	{\addplot [thick,draw={\colortwo}] coordinates {(\x-.6,0) (\x-.6,\y) (\x,\y) (\x,0) (\x-.6,0)};
+  	}
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

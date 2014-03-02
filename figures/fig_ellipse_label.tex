@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	
+	\draw [thick,{\colorone}] (0,0) circle [x radius=2,y radius=1.5];
+	
+	
+	\draw [thick,dashed] (-2.4,0) -- (2.4,0)
+												(0,1.8) -- (0,-1.9);
+												
+	\filldraw [{\colortwo}] (1.3,0) circle (1.5pt)
+						(-1.3,0) circle (1.5pt);
+	\draw [->,>=latex] (-2,-2) node [fill=white] {\scriptsize Major axis} -- (-2.2,-.1);
+	
+	\draw [->,>=latex] (2,-2) node [fill=white] {\scriptsize Minor axis} -- (.1,-1.8);
+	
+	\draw [->,>=latex] 	(-2,2)  -- (-2,.3);
+	\draw [->,>=latex] 	(-2,2) node [fill=white] {\scriptsize Vertices} -- (1.9,.1);
+	
+	\draw [->,>=latex] 	(2,2)  -- (-1.2,.1);
+	\draw [->,>=latex] 	(2,2) node [fill=white] {\scriptsize Foci} -- (1.3,.1);
+	\filldraw [{\colorone}] (2,0) circle (1.5pt)
+						(-2,0) circle (1.5pt);
+						
+	\draw (-1,-.25) node {\scriptsize $\underbrace{\rule{1.8cm}{0pt}}_a$};
+	\draw (.65,-.25) node {\scriptsize $\underbrace{\rule{1.1cm}{0pt}}_c$};
+	%\draw (.25,.75) node [fill=white] {\scriptsize $\left.\rule[-.65cm]{0pt}{1.3cm}\right\}b$};
+	\draw (-.25,.75) node [] {\scriptsize $b\left\{\rule[-.65cm]{0pt}{1.3cm}\right.$};
+\end{tikzpicture}

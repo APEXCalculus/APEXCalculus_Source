@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [thick,->] (0,0) node [below] {$O$} -- (2.5,0);
+
+\foreach \x in {1,2}
+	{\draw [thin] (0,0) circle (\x cm);
+	\draw (\x,0) node [shift={(3pt,-4pt)}] {\scriptsize\x};
+		}
+\filldraw (0,0) circle (1.5pt);
+
+\draw [very thick] (0,0) circle (1.5);
+\draw[rotate=90] (1.7,0) node {\scriptsize $r=1.5$};
+
+\draw [thick] (-2,-2) -- node [pos=1,left] {\scriptsize $\theta = \frac{\pi}4$} (2,2);
+
+
+\end{tikzpicture}
+
+

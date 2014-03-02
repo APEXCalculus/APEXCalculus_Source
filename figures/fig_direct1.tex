@@ -1,0 +1,61 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={105}{35},
+			name=myplot,
+			xtick={4},
+			ytick={4},
+			ztick={10},
+			%minor xtick=1,
+			%minor ytick=1,
+			ymin=-.1,ymax=4.5,
+			xmin=-.1,xmax=4.5,
+			zmin=-1.5, zmax=15,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:2,smooth,y domain=0:2.5,surf,%fill=white,opacity=.4,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=7,samples y=6,very thin,z buffer=sort] ({x},{y},{-x^2-y^2+14});
+
+\pgfplotsinvokeforeach {1,2,3,4}{
+\draw [thin,gray](axis cs: #1,0,0) -- (axis cs: #1,4.4,0);
+\draw [thin,gray ](axis cs: 0,#1,0) -- (axis cs: 4.4,#1,0);
+}
+
+\filldraw [black] (axis cs: 1,2,9) circle (1pt) (axis cs: 1,2,0) circle (1pt) node [right] {\scriptsize $P$} (axis cs: 3,4,0) circle (1pt)node [right] {\scriptsize $Q$};
+
+\draw [->] (axis cs: 1,2,0) -- (axis cs: 1.71,2.71,0) node [right] {\scriptsize $\vec u_1$};
+\draw [->] (axis cs: 1,2,9) -- (axis cs: 1.71,2.71,4.76);
+
+\draw [->] (axis cs: 1,2,0) -- (axis cs: 1.89,1.55,0) node [below] {\scriptsize $\vec u_2$};;
+\draw [->] (axis cs: 1,2,9) -- (axis cs: 1.89,1.55,9);
+
+\draw [->] (axis cs: 1,2,0) -- (axis cs: .553,1.11,0) node [left] {\scriptsize $\vec u_3$};;
+\draw [->] (axis cs: 1,2,9) -- (axis cs: .553,1.11,13.47);
+
+
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+

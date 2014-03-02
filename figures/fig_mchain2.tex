@@ -1,0 +1,87 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,height=200pt,
+tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={115}{5},
+			name=myplot,
+			%xtick={1,2,3,4},
+			%ytick={1,2,3,4,5,6},
+			%ztick=\empty,
+			%extra x ticks={1},
+			%minor x tick num=1,
+			%minor y tick num=4,
+			%minor z tick num=1,
+			%extra x tick labels={$a$},
+			%extra y ticks={1},
+			%extra y tick labels={$a$},
+			%extra z ticks={1},
+			%extra z tick labels={$h$},
+			ymin=-1.1,ymax=1.1,
+			xmin=-1.1,xmax=1.1,
+			zmin=-.5, zmax=3.9,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-1pt,yshift=-4pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+%\draw [{\colortwo},thick] (axis cs: 0,4,0) -- (axis cs: 2,4,-6) -- (axis cs: 2,0,2);
+
+
+\addplot3[domain=210:270,y domain=0:1,%surf, %fill=white,
+%colormap={mp2}{\colormaptwo},opacity=.6,faceted color=black!40,
+samples=36,%samples y=10, very thin
+{\colorone},very thick,samples y=0,smooth,] ({cos(x)},{sin(x)},{cos(x)^2+sin(x)^2-cos(x)*sin(x)});
+
+\draw [fill=black] (axis cs:-.71,-.71,.5) circle (1.5pt);
+
+
+\addplot3[domain=-1.1:1.1,,y domain=-1.1:1.1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=10,samples y=10,very thin,z buffer=sort] {x^2+y^2-x*y};
+
+\addplot3[domain=-90:210,y domain=0:1,%surf, %fill=white,
+%colormap={mp2}{\colormaptwo},opacity=.6,faceted color=black!40,
+samples=36,%samples y=10, very thin
+{\colorone},very thick,samples y=0,smooth,] ({cos(x)},{sin(x)},{cos(x)^2+sin(x)^2-cos(x)*sin(x)});
+
+\draw [fill=black] (axis cs:.71,.71,.5) circle (1.5pt);
+
+\draw [fill=black] (axis cs:-.71,.71,1.5) circle (1.5pt);
+\draw [fill=black] (axis cs:.71,-.71,1.5) circle (1.5pt);
+
+\draw [fill=black] (axis cs:1,0,1) circle (1.5pt) node [below left] {\scriptsize $t=0$};
+
+
+
+
+%\draw [{\colorone}, very thick] (axis cs:0,0,0) -- (axis cs:0,0,2)
+																		%(axis cs:0,0,0) -- (axis cs:3,0,0)
+																		%(axis cs:0,0,0) -- (axis cs:0,6,0);
+		
+
+%\draw [{\coloronefill},thin,fill={\coloronefill},opacity=.6] (axis cs: 3,0,0) -- (axis cs: 0,6,0) -- (axis cs: 0,0,2)--cycle;
+
+%
+%\draw [{\colorone},very thick,fill={\coloronefill}] (axis cs: 0,0,0) -- (axis cs: 3,0,0) -- node [below,pos=.5,sloped,black] {\scriptsize $y= 6-2x$} (axis cs: 0,6,0)--cycle;
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

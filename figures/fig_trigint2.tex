@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+			ytick={-.002,.002,.004},
+			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={0.001},%
+%			minor x tick num=4,
+			ymin=-.003,ymax=0.005,%
+			xmin=-.1,xmax=3.15,%
+			scaled ticks=false
+]
+
+\addplot [{\colortwo},thick,smooth] coordinates {(0,-0.0027879) (0.15708,-0.0027856) (0.31416,-0.0026798) (0.47124,-0.0020322) (0.62832,-0.00060997) (0.7854,0.00089518)(0.94248,0.0017233) (1.0996,0.0019485) (1.2566,0.0019734) (1.4137,0.0019741) (1.5708,0.0019741) (1.7279,0.0019741) (1.885,0.0019734) (2.042,0.0019485) (2.1991,0.0017233) (2.3562,0.00089518) (2.5133,-0.00060997) (2.6704,-0.0020322) (2.8274,-0.0026798) (2.9845,-0.0027856) (3.1416,-0.0027879)};
+
+\draw (axis cs:2.6,0.004) node {\scriptsize $g(x)$};
+
+\addplot [{\colorone},thick,smooth] coordinates {(0,0) (0.15708,0) (0.31416,0.00010807) (0.47124,0.0007557) (0.62832,0.0021779) (0.7854,0.003683) (0.94248,0.0045111)
+(1.0996,0.0047364) (1.2566,0.0047612) (1.4137,0.0047619)
+(1.5708,0.0047619) (1.7279,0.0047619) (1.885,0.0047612) (2.042,0.0047364) (2.1991,0.0045111) (2.3562,0.003683) (2.5133,0.0021779) (2.6704,0.0007557) (2.8274,0.00010807) (2.9845,0) (3.1416,0)};
+
+\draw (axis cs:2.4,-0.002) node {\scriptsize $f(x)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

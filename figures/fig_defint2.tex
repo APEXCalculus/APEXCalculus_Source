@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1,2,3,4},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={-2,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			minor x tick num=4,
+			ymin=-2.9,ymax=5.9,%
+			xmin=-.9,xmax=15.9%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=0:10,area style] {5} \closedcycle;
+\addplot [thick, {\colorone},domain=0:10] {5};
+\addplot [{\coloronefill},fill={\coloronefill},domain=10:14,area style] {-2} \closedcycle;
+\addplot [thick, {\colorone},domain=10:14] {-2};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$ (s)};
+\node [above] at (myplot.above origin) {\scriptsize $y$ (ft/s)};
+\end{tikzpicture}
+
+
+
+
+
+
+
+

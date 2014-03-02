@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-10,ymax=129,xmin=1.4,xmax=2.6,name=myplot]
+\addplot [{\colorone},smooth,thick] coordinates { (1.4,118.64) (1.5,114.) (1.6,109.04) (1.7,103.76) (1.8,98.16) (1.9,92.24) (2.,86.) (2.1,79.44) (2.2,72.56) (2.3,65.36) (2.4,57.84) (2.5,50.) (2.6,41.84)  };
+\addplot [{\colortwo},domain=1.42:2.6,thick] {-80*(x-2)+86};
+%\addplot [] {-104*(x-3)+56};
+%\addplot [{\colortwo}] {-112*(x-3)+56};
+\filldraw [black] (axis cs:2,86) circle (1pt);
+%\filldraw [black] (axis cs:4,-56) circle (1pt);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

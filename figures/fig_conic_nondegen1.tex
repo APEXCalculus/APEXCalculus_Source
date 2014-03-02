@@ -1,0 +1,61 @@
+\begin{tikzpicture}[scale=.5,x={(1cm,0cm)},y={(-.5cm,-.5cm)},z={(0cm,1cm)}]
+
+%\begin{scope}[xscale=2,yscale=.5]							
+%\coordinate (A) at (199.5:1);
+%\coordinate (B) at ($(160.5:1)-(0,12)$);
+%
+%\draw [left color=black!50,right color=black!0,thick] (0,0) circle (1);
+%
+%\draw [thick,right color=black!50,left color=black!0] (A) arc (199.5:340.5:1) -- (0,-6) -- cycle;
+%
+%\draw [thick,right color=black!50,left color=black!0] (B) arc (160.5:379.5:1) -- (0,-6) -- cycle;
+%
+%
+%\fill [left color=black!50,right color=black!0] (0,-12) circle (1);
+%\draw [thick,dashed] (B) arc (160.5:19.5:1);
+%\draw [thick] (B) arc (160.5:379.5:1);
+%%\draw [thick] (A) arc (199.5:340.5:1)
+							%%(B) arc (160.5:19.5:1);
+%\end{scope}
+
+\begin{scope}%[rotate=-2.5]%[xshift=6cm]
+
+\draw [thick,domain=-3.5:183.5,right color=black!50,left color=black!0] (0,0,0)-- plot ({4*cos(\x)},{.5*sin(\x)},8) -- cycle;
+
+\draw [thick,domain=0:360,smooth,left color=black!50,right color=black!0] plot ({4*cos(\x)},{.5*sin(\x)},8);
+
+\draw [thick,domain=176.5:363.5,right color=black!50,left color=black!0] (0,0,0) -- plot ({4*cos(\x)},{.5*sin(\x)},-8) -- cycle;
+
+\fill [domain=0:360,left color=black!50,right color=black!0] plot ({4*cos(\x)},{.5*sin(\x)},-8);
+
+\draw [thick,smooth,dashed,domain=3.5:176.5] plot ({4*cos(\x)},{.5*sin(\x)},-8);
+\draw [thick,smooth,domain=176.5:363.5] plot ({4*cos(\x)},{.5*sin(\x)},-8);
+
+\draw [red] (0,0,0) -- (1,0,0)
+						(0,0,0) -- (0,1,0)
+						(0,0,0) -- (0,0,1);
+
+\end{scope}
+
+\begin{scope}[xshift=9cm]
+
+\draw [thick,domain=-15:140,right color=black!50,left color=black!0] (0,0,0)-- plot ({4*cos(\x)},{4*sin(\x)},8) -- cycle;
+
+\draw [thick,domain=0:360,smooth,left color=black!50,right color=black!0] plot ({4*cos(\x)},{4*sin(\x)},8);
+
+%\draw [thick,domain=176.5:363.5,right color=black!50,left color=black!0] (0,0,0) -- plot ({4*cos(\x)},{4*sin(\x)},-8) -- cycle;
+%
+%\fill [domain=0:360,left color=black!50,right color=black!0] plot ({4*cos(\x)},{4*sin(\x)},-8);
+%
+%\draw [thick,smooth,dashed,domain=3.5:176.5] plot ({4*cos(\x)},{4*sin(\x)},-8);
+%\draw [thick,smooth,domain=176.5:363.5] plot ({4*cos(\x)},{4*sin(\x)},-8);
+%
+%\draw [thick,smooth,domain=3.5:176.5,dashed] plot ({2.13*cos(\x)-0.53},{2.066*sin(\x)},{4.267-1.067*cos(\x)});
+%
+\draw [thick,smooth,domain=0:360] plot ({2.13*cos(\x)-0.53},{2.066*sin(\x)},{4.267-1.067*cos(\x)});
+%
+%\draw (-5,0,6.5) -- (2,0,3)--(5,0,1.5)-- (-2,0,5)--cycle;
+
+\end{scope}
+	
+\end{tikzpicture}

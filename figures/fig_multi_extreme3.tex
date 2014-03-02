@@ -1,0 +1,46 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={165}{35},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-.5,ymax=3.5,
+			xmin=-1.5,xmax=2,
+			zmin=-2, zmax=6,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-1.5:2,,y domain=-0:3.5,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},,faceted color=black!40,samples=25,samples y=25,very thin,z buffer=sort] {x^3-3*x-y^2+4*y};
+
+
+\filldraw [black,] (axis cs:1,2,2) circle (1pt);
+\filldraw [black,] (axis cs:-1,2,6) circle (1pt);
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

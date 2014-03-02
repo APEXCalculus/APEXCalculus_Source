@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			xtick={20,40,60,80,100},% 
+%			extra x ticks={3.14,1.57},
+%			extra x tick labels={$\pi$,$\pi/2$},
+%			ytick={1,2,3,4,5},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.1,xmax=110%
+]
+
+\addplot [only marks,{\colorone},mark size={.75pt},domain=1:100,samples=100] {cos(deg(x))};
+
+%\draw (axis cs:60,-.8) node {\scriptsize $\ds a_n = \cos n$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $n$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\node [] at (myplot.north) {\scriptsize $\ds a_n = \cos n$};
+
+\end{tikzpicture}
+
+
+
+

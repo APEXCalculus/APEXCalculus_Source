@@ -1,0 +1,34 @@
+\begin{tikzpicture}[x=.18cm,y=.2cm,>=stealth]
+
+
+
+%\draw [thick] (0,0) -- node [below,pos=.5] {\scriptsize 10 ft.} (10,0) -- (15,3) -- node [below,pos=.5] {\scriptsize 10 ft.} (25,3)-- node [right,pos=.5] {\scriptsize 3 ft.} (25,7)--node [above,pos=.5] {\scriptsize 25 ft} (0,7) -- node [left,pos=.5] {\scriptsize 6 ft.} (0,0);
+
+\draw[>=stealth,->] (-2,-1) -- ( -2,10) node [above] {\scriptsize $y$};
+
+\foreach \y/\x in {0/0,1.5/$y$,3/3,6/6,8/8}
+  {
+		\draw (-2.5,\y) node [left] {\scriptsize $\x$} -- (-1.5,\y);
+  }
+\draw [thick] (0,0) --  (10,0) -- (15,3) --  (25,3)--  (25,6)-- (0,6) -- (0,0);
+
+
+\draw [thick,{\colorone}] (0,5) -- (25,5)
+													(0,1.5) -- (12.5,1.5);
+													
+\draw [fill=black] (10,0) circle (1.5pt) node [shift={(15pt,-2pt)}] {\scriptsize $(10,0)$}
+									 (15,3) circle (1.5pt) node [shift={(15pt,-6pt)}] {\scriptsize $(15,3)$};
+									 
+\draw[>=stealth,->] (-2,-2) -- (20,-2) node [right] {\scriptsize $x$};
+
+\foreach \y in {0,10,15}
+  {
+		\draw (\y,-2.5) node [below] {\scriptsize $\y$} -- (\y,-1.5);
+  }									 
+
+\end{tikzpicture}
+
+
+
+
+

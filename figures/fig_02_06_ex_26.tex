@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.5,ymax=1.5,%
+			xmin=-2.5,xmax=0.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth] coordinates {(-2.,0) (-1.9547,-0.34466) (-1.8227,-0.66341) (-1.616,-0.93301)(-1.3529,-1.1352) (-1.056,-1.2584) (-0.75,-1.299) (-0.459,-1.2611)(-0.2038,-1.1558) (0,-1.) (0.14349,-0.8138) (0.22504,-0.6183)(0.25,-0.43301) (0.22961,-0.27364) (0.17922,-0.15038)(0.11603,-0.066987) (0.05667,-0.020626) (0.014961,-0.0026381) (0,0)
+(0.014961,0.0026381) (0.05667,0.020626) (0.11603,0.066987)(0.17922,0.15038) (0.22961,0.27364) (0.25,0.43301) (0.22504,0.6183)(0.14349,0.8138) (0,1.) (-0.2038,1.1558) (-0.459,1.2611)(-0.75,1.299) (-1.056,1.2584) (-1.3529,1.1352) (-1.616,0.93301)(-1.8227,0.66341) (-1.9547,0.34466) (-2.,0)};
+
+\filldraw [] (axis cs:-.75,1.3) node [shift={(0pt,-10pt)}] {\scriptsize $\left(-\frac{3}{4},\frac{3\sqrt{3}}{4}\right)$} circle (1pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

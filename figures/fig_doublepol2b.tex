@@ -1,0 +1,62 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,height=200pt,
+tick label style={font=\scriptsize},%axis on top,
+			axis lines=center,
+			view={-35}{35},
+			name=myplot,
+			%xtick={1,2,3,4},
+			%ytick={5},
+			%ztick={.7,-.7},
+			%minor xtick=1,
+			%minor ytick=1,
+			ymin=-2.5,ymax=2.5,
+			xmin=-.5,xmax=4.5,
+			zmin=-2, zmax=6.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=3pt,yshift=-0pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=-3pt,yshift=3pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+			
+\addplot3[domain=0:360,dashed,%fill=white,
+{\colorone},very thick,samples=30,samples y=0,smooth] ({1+cos(x)},{sin(x)},{0});
+
+\addplot3[domain=0:4,,y domain=-2:2,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=15,samples y=15,very thin,z buffer=sort] {4-(x-2)^2-y^2};
+
+%\draw [thick,dashed,{\colorone}] (axis cs: 0,0,0) -- (axis cs:-1,0,0) -- node [right,black,pos=.4] {\scriptsize $R$} (axis cs: 0,1,0); 
+%
+\addplot3[domain=0:360,%fill=white,
+{\colorone},very thick,samples=30,samples y=0,smooth] ({2+2*cos(x)},{2*sin(x)},{0});
+
+\addplot3[domain=0:360,dashed,%fill=white,
+{\colorone},very thick,samples=30,samples y=0,smooth] ({1+cos(x)},{sin(x)},{4-(1+cos(x)-2)^2-(sin(x))^2});
+%
+%\addplot3[domain=-1:0,%fill=white,
+%{\colorone},very thick,samples=10,samples y=0,smooth] ({x},{x+1},{sin(deg(x))*cos(deg(x+1))});
+%
+%\addplot3[domain=0:1,%fill=white,
+%{\colorone},very thick,samples=10,samples y=0,smooth] ({x},{-x+1},{sin(deg(x))*cos(deg(-x+1))});
+
+
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

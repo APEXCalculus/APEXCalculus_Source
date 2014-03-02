@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=stealth,thick]
+	\begin{scope}[scale=1.25]
+		\draw[->] (0,0) -- (1,0) node [pos=.5,below] {\scriptsize $\vec u\cdot \vec v >0$} node [right] {\scriptsize $\vec u$};
+		\draw[->] (0,0) -- (.5,.866)node [above right] {\scriptsize $\vec v$};
+		\draw[->] (.3,0) arc (0:60:.3);
+		\draw[rotate=30] (.45,0) node {\scriptsize $\theta$};
+	\end{scope}
+	
+	\begin{scope}[shift={(3cm,0)},scale=1.25]
+		\draw[->] (0,0) -- (1,0)node [pos=.5,below] {\scriptsize $\vec u\cdot \vec v =0$}node [right] {\scriptsize $\vec u$};
+		\draw[->] (0,0) -- (0,1)node [above ] {\scriptsize $\vec v$};
+		\draw[->] (.3,0) arc (0:90:.3);
+		\draw[rotate=22.5] (.7,0) node {\scriptsize $\theta=\pi/2$};
+	\end{scope}
+	
+	\begin{scope}[shift={(6.5cm,0)},scale=1.25]
+		\draw[->] (0,0) -- (1,0)node [pos=.5,below] {\scriptsize $\vec u\cdot \vec v <0$}node [right] {\scriptsize $\vec u$};
+		\draw[->] (0,0) -- (-.707,.707)node [above left] {\scriptsize $\vec v$};
+		\draw[->] (.3,0) arc (0:135:.3);
+		\draw[rotate=67.5] (.45,0) node {\scriptsize $\theta$};
+	\end{scope}
+\end{tikzpicture}

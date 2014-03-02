@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2,3},% 
+			extra x ticks={.4},
+			extra x tick labels={$x$},
+			ytick={1,2,3},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={0.001},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=3.25,%
+			xmin=-.15,xmax=3.2,%
+]
+
+\draw [{\colorone},thick,smooth,,fill={\coloronefill}] (axis cs:0,1) -- node [black,rotate=57,pos=.5,above]  {\scriptsize $y=2x+1$} (axis cs:1,3) --  (axis cs: 1,1) -- cycle;
+
+\draw [dashed] (axis cs:3,0) -- (axis cs:3,3.2);
+
+\draw [thick,{\colortwo}] (axis cs: .4,1) -- (axis cs:.4,1.8);
+
+%
+%\addplot [{\colorone},thick,smooth,domain=0:1] plot {(1/(1+x^2))};
+%
+%\draw [thick,{\colortwo}] (axis cs:.4,0) -- (axis cs:.4,.86);
+%
+\draw (axis cs:1,1.4) node [right] {\scriptsize$ \left.\rule{0pt}{14pt}\right\} h(x).$}
+			(axis cs:1.7,.7) node { $\underbrace{\rule{100pt}{0pt}}_{r(x)}$};
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

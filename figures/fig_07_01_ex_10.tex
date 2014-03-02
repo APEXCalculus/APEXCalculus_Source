@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={3.14,1.57},
+			extra x tick labels={$\pi$,$\pi/2$},
+			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.5,ymax=2.2,%
+			xmin=-.1,xmax=3.5%
+]
+
+\addplot [{\coloronefill},stack plots=y,samples=40,domain=0:3.14] {1};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,stack plots=y,samples=40,domain=0:3.14] {1} \closedcycle;
+
+\addplot [smooth,thick, {\colorone},samples=40] {1} node [shift={(-70pt,-5pt)} ,black] {\scriptsize $y=1$};
+
+\addplot [smooth,thick, {\colorone},samples=40] {2} node [shift={(-70pt,5pt)} ,black] {\scriptsize $y=2$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

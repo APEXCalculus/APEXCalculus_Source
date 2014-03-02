@@ -1,0 +1,67 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={125}{25},
+			name=myplot,
+			xtick={2},
+			%ytick=\empty,
+			%ztick=\empty,
+			ymin=-1.1,ymax=6.1,
+			xmin=-1.5,xmax=2.1,
+			zmin=-2.1, zmax=7.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+
+\addplot3[domain=-2.5:3.5,thick,samples y=0,{\colorone}] ({2-x},{3+x},{1+2*x});
+
+\filldraw [black] (axis cs:-1,6,6) circle (1.5pt) node [below] {\scriptsize $Q$};
+
+\filldraw [black] (axis cs:2,3,1) circle (1.5pt) node [above] {\scriptsize $P$};
+
+\draw [->,thick,black] (axis cs:0,0,0) -- (axis cs: -1,1,2) node [black,shift={(-10pt,0pt)}] {\scriptsize $\vec d$};
+%
+%\draw [->,thick,{\colortwo}] (axis cs:0,0,0) -- (axis cs: 1,-1,1) node [black,above] {\scriptsize $\vec p$};
+%\draw [->,thick] (axis cs: 0,0,0) -- (axis cs: 0,2,1) node [above,pos=.9] {\scriptsize $\vec p$};
+%
+%\draw [->,thick] (axis cs: 0,0,0) -- (axis cs: -1,2,2) node [above,pos=.8] {\scriptsize $\vec p+\vec d$};
+%
+%\draw [->,thick] (axis cs: 0,0,0) -- (axis cs: 2,2,-1) node [left,pos=.9] {\scriptsize $\vec p-2\vec d$};
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .7,.1,1.03) node [ left] {\scriptsize $\vec u$};
+%
+%\filldraw[black] (axis cs: .1,.1,1.09) circle (1pt);
+%
+%\draw[>=stealth,->,thick] (axis cs:.1,.1,1.09) -- (axis cs: .1,.8,1.79) node [right] {\scriptsize $\vec v$};
+%
+%\addplot3[domain=0:90,samples y=0,black,thick] ({.3*cos(x)+.1},{.3*sin(x)+.1},{-.1*(.3*cos(x)+.1)+(.3*sin(x)+.1)+1});
+%
+%\draw (axis cs: .5,.4,1.36) node  {\scriptsize $\theta$};
+
+%\draw (axis cs: 0,0,\pgfkeysvalueof{/pgfplots/zmax}) node [shift={(0,0,20pt)}]{\scriptsize $z$};
+
+%\draw (axis cs: 0,\pgfkeysvalueof{/pgfplots/ymax},0) node [shift={(0,2pt,0)}]{\scriptsize $y$};
+
+%\draw (axis cs: \pgfkeysvalueof{/pgfplots/xmax},0,0) node [shift={(6pt,0,0)}]{\scriptsize $x$};
+
+\end{axis}
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $y$};
+%\node [above] at (myplot.above origin) [shift={(0,-5pt)}] {\scriptsize $z$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={150}{25},
+			name=myplot,
+			xtick={-4,4},
+			ytick={-4,4},
+			%ztick={-4,4},
+			ymin=-4.25,ymax=4.25,
+			xmin=-4.25,xmax=4.25,
+			zmin=-1.9, zmax=3.9,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+
+\addplot3[domain=-.4:1.6,,y domain=-.2:2.5,surf,faceted color={\coloronefill},samples=10,colormap={mp2}{\colormapplaneone}] {-2*(x-1)-y+2};
+
+\draw [thick,{\colortwo}] (axis cs:3,-3,-1) -- (axis cs: 1,1,1) node [pos=.1,above,black] {\scriptsize $\ell(t)$}; %node [black,below,pos=.5] {\scriptsize $\vv{PQ}$};
+\draw [dashed,thick,{\colortwo}] (axis cs:1,1,1) -- (axis cs: 0,3,2); 
+\draw [thick,{\colortwo}] (axis cs:0,3,2) -- (axis cs: -1,5,3);
+\filldraw [{\colortwo}] (axis cs:1,1,1) circle (1.5pt); %node%node
+%\draw [->,thick,{\colorone}] (axis cs:1,1,0) -- (axis cs: 0,1,2); %node [black,above,pos=.5] {\scriptsize $\vv{PR}$};
+%%
+%\draw [->,thick,{\colorone}] (axis cs:1,1,0) -- (axis cs: 3,2,1) node [pos=.8](A) {};
+%
+%\node (B) at (axis cs: 2.5,0,-2) {\scriptsize $\vv{PQ}\times\vv{PR}$};
+%\draw [->,dashed] (B) -- (A) ;
+%
+%\filldraw [black] (axis cs:1,1,0) circle (1.5pt) node [above] {\scriptsize $P$};
+%\filldraw [black] (axis cs:0,1,2) circle (1.5pt) node [above] {\scriptsize $R$};
+%\filldraw [black] (axis cs:1,2,-1) circle (1.5pt) node [below] {\scriptsize $Q$};
+
+
+\end{axis}
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={85}{25},
+			name=myplot,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			extra z ticks={3.5},
+			extra z tick labels={$L$},
+			ymin=-.1,ymax=1,
+			xmin=-.1,xmax=1,
+			zmin=-.1, zmax=4.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=2pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-1pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:1,y domain=0:90,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=15,very thin,z buffer=sort,
+samples=15,] ({x*cos(y)},{x*sin(y)},{4-2*x^2});
+
+\addplot3[dashed,thick,domain=0:360,{\colorone},samples y=0,
+samples=60,] ({.25*cos(x)+.5},{.25*sin(x)+.5},{0});
+
+\addplot3[thick,dashed,domain=0:360,,{\colorone},samples y=0,
+samples=60,] ({.25*cos(x)+.5},{.25*sin(x)+.5},{4-(.25*cos(x)+.5)^2-(.25*sin(x)+.5)^2});
+
+\addplot3[black,fill=black, thick,domain=0:360,,,samples y=0,
+samples=60,] ({.01*cos(x)+.5},{.01*sin(x)+.5},{4-(.01*cos(x)+.5)^2-(.01*sin(x)+.5)^2});
+
+\addplot3[black,fill=black, thick,domain=0:360,,,samples y=0,
+samples=60,] ({.01*cos(x)+.5},{.01*sin(x)+.5},{0});
+
+%\draw (axis cs:.5,.63,-.5) node[] {$\underbrace{\rule{16pt}{0pt}}_{\delta}$};
+
+\draw (axis cs: 1,.2,0) node (A) {}
+					(axis cs: .5,.5) node (B) {};% {\scriptsize $(x_0,y_0)$} -- (axis cs: .53,.5,0);
+					
+\draw[->] (axis cs: 0,.9,3) node [above] {\scriptsize $(x_0,y_0,L)$} -- (axis cs: .5,.53,3.55);
+
+\end{axis}
+\draw [->] (A) node [below] {\scriptsize $(x_0,y_0,0)$}  -- (B);
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.3,1.37},
+			extra x tick labels={$x_i$,$x_{i+1}$},
+			ytick=\empty,
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+			extra y ticks={.48,1},%
+			extra y tick labels={$y_i$,$y_{i+1}$},
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.25,%
+			xmin=-.1,xmax=1.6,%
+]
+%\addplot [{\colorone},smooth,thin,dashed,domain=0.1:1.55] {sin(deg(x+.2))};
+
+\addplot [{\colorone},smooth,thick,domain=0.3:1.37] {sin(deg(x+.2))};
+
+\draw (axis cs: .25,1) -- (axis cs:.1,1) 
+			(axis cs: .25,.48) -- (axis cs:.1,.48)
+			(axis cs: .175,.48) -- node [pos=.5,fill=white] {\scriptsize $\Delta y_i$} (axis cs:.175,1);
+
+\draw (axis cs: .3,.25) -- (axis cs: .3,.4)
+			(axis cs: 1.37,.25) -- (axis cs: 1.37,.4)
+			(axis cs: .3,.325) -- node [pos=.5,fill=white] {\scriptsize $\dx_i$} (axis cs: 1.37,.325);
+			
+\draw [{\colortwo},thick] (axis cs: .3,.48) -- (axis cs:1.37,1);
+
+\draw [dashed,thin] (axis cs: .3,.48) -| (axis cs:1.37,1);
+			
+\filldraw (axis cs: .3,.48) circle (1pt) (axis cs:1.37,1) circle (1pt);
+
+%\draw [{\colortwo},thick] (axis cs:0,0)--(axis cs:0.5236,0.5)--(axis cs:1.047,0.866)--(axis cs:1.571,1.)--(axis cs:2.094,0.866)--(axis cs:2.618,0.5)--(axis cs:3.142,0);
+%
+%\filldraw (axis cs:0,0) circle (1pt) (axis cs:0.5236,0.5) circle (1pt) (axis cs:1.047,0.866) circle (1pt) (axis cs:1.571,1.) circle (1pt) (axis cs:2.094,0.866) circle (1pt) (axis cs:2.618,0.5) circle (1pt) (axis cs:3.142,0);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+

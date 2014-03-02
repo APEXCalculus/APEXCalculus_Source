@@ -1,0 +1,51 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={2,4,6,8,10},
+			%minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-10,-5,5,10},
+			%minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-2.6,ymax=6.5,%
+			xmin=-.6,xmax=10.5%
+]
+
+%\draw (axis cs:4,-1) node (A) {}
+			%(axis cs:4,3) node (B) {} ;
+%\draw [->,>=latex] (A) parabola bend (axis cs:0,1) (B);
+\addplot [thick,{\colorone}, smooth,domain=-3:3,] ({x^2+x},{x^2-x});
+\draw [->,>=latex] (axis cs:0.96, 4.16) -- (axis cs:0.9381, 4.1181);
+\draw [->,>=latex] (axis cs:6,2) -- (axis cs:6.05,2.03);
+
+\draw (axis cs: 4,5) node [align=left] {\scriptsize $x=t^2+t$\\ \scriptsize $y=t^2-t$};
+
+
+
+			
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

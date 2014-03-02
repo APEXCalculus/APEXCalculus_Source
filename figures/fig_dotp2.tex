@@ -1,0 +1,46 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick=\empty,% 
+			minor x tick num=4,
+			%extra x ticks={1,1.57,3.14},
+			%extra x tick labels={$x$,$\frac{\pi}2$,$\pi$},
+			%ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-1.8,ymax=6.99,%
+			xmin=-5.5,xmax=5.5,%
+]
+
+
+\draw [thick,->] (axis cs:0,0) --(axis cs: 3,1) node [above] {\scriptsize$\vec u$};
+\draw [thick,->] (axis cs:0,0) --(axis cs: -2,6) node [above] {\scriptsize$\vec v$};
+\draw [thick,->] (axis cs:0,0) --(axis cs: -4,3) node [above] {\scriptsize$\vec w$};
+
+\draw [->] (axis cs: .949,.316) arc (18.4:108.4:12pt);
+\draw [] (axis cs:0.680986, 1.33651) node {\scriptsize $\alpha$};
+
+\draw [->] (axis cs: -0.474342, 1.42302) arc (108.4:155.1:12pt);
+\draw [] (axis cs:-1.13929, 1.58257) node {\scriptsize $\beta$};
+
+\draw [->] (axis cs: 2.3725, 0.79) arc (18.4:143.1:30pt);
+\draw [] (axis cs:1.5, 2.59808) node {\scriptsize $\theta$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

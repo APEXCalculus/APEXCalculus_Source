@@ -1,0 +1,21 @@
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (0,0) rectangle (140pt,50pt);
+\draw [inner color={\colorone},draw = white] (-10,-25pt) rectangle (180pt,70pt);
+\end{scope}
+\draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (140pt,-15pt);
+\draw (0,0) -- (150pt,0);
+\filldraw [fill=white] (10pt,-5pt) rectangle (20pt,5pt);
+%\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\draw [<->] (15pt,-10pt) -- (130pt,-10pt) node [below,pos=.5] {\scriptsize 5000 ft};
+\draw [<->] (140pt,0pt) -- (140pt,35pt) node [right, pos=.5] {\scriptsize 1000 ft};
+
+\draw [ultra thick] (20pt,0) -- (70pt,0);
+\filldraw (70pt,0) circle (2pt);
+\draw [dashed,thick] (70pt,0) -- (130pt,35pt);
+\filldraw [fill=white] (130pt,35pt) circle (7pt);
+
+\end{tikzpicture}
+

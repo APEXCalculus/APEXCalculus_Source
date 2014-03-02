@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1]
+	\draw [dashed,gray] (-2.1,0) -- (0,0);
+	\draw[thick,->,>=stealth] (0,0) node [below] {$O$} -- (2.5,0) ;
+	\filldraw (0,0) circle (1.5pt);
+	\foreach \x in {1,2}
+	{\draw (0,0) circle (\x cm);
+	\draw (\x,0) node [shift={(3pt,-4pt)}] {\scriptsize\x};
+	}
+	\foreach \x in {30,45,60,90,120,135,150}
+	{\draw [rotate=\x,dashed,gray] (-2.3,0) -- (2.3,0);
+	}
+	
+	\draw [thick,{\colorone}] (2,0)--(1.616,0.933)--(1.207,1.207) -- (0.75,1.299) -- (0,1.) -- (-0.25,0.433) -- (-0.2071,0.2071) -- (-0.116,0.06699) -- (0,0) -- (-0.116,-0.06699) -- (-0.2071,-0.2071) -- (-0.25,-0.433) -- (0,-1) -- (0.75,-1.299) -- (1.207,-1.207) -- (1.616,-0.933) -- (2,0);
+	
+	\filldraw (2.,0) circle (2pt) 
+	(1.616,0.933) circle (2pt) 
+	(1.207,1.207) circle (1pt) 
+	(0.75,1.299) circle (1pt) 
+	(0,1.) circle (2pt) 
+	(-0.25,0.433) circle (1pt) 
+	(-0.2071,0.2071) circle (1pt) 
+	(-0.116,0.06699) circle (1pt) 
+	(0,0)	 circle (1pt) 
+	(-0.116,-0.06699) circle (1pt) 
+	(-0.2071,-0.2071) circle (1pt) 
+	(-0.25,-0.433) circle (2pt) 
+	(0,-1.) circle (1pt) 
+	(0.75,-1.299)	 circle (1pt) 
+	(1.207,-1.207) circle (2pt) 
+	(1.616,-0.933) circle (1pt) ;
+\end{tikzpicture}		

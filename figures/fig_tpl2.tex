@@ -1,0 +1,64 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={115}{25},
+			name=myplot,
+			%xtick=\empty,
+			%ytick={5},
+			%ztick={.7,-.7},
+			minor xtick=1,
+			minor ytick=1,
+			ymin=-.1,ymax=2.1,
+			xmin=-.1,xmax=2.1,
+			zmin=-3.1, zmax=3.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-5pt,yshift=-1pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=-4pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+%\addplot3[domain=0:180,smooth,y domain=0:360,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=30,samples y=25,very thin,z buffer=sort] ({cos(x)*1.5*cos(y)},{sin(x)*cos(y)},{sin(y)});
+
+\addplot3[domain=-.1:2,y domain=-.1:2,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=20,very thin,z buffer=sort,%opacity=.6,
+samples=20,] (x,y,{4*x*y-x^4-y^4});
+
+%\addplot3 [thick,{\colorone}, smooth,domain=-2:1.5,samples=20,samples y=0] ({1.57-x},{1.57+x},{sin(deg(x))*cos(deg(x+3.14))});
+%%
+%
+%\addplot3 [thick,{\colortwo}, smooth,domain=-1.5:1,samples=2,samples y=0] ({1.57-0.71*x},{0.71*x+1.57},{-0.71*x});
+
+\filldraw [black] (axis cs:1,1,2) circle (1.5pt);
+
+
+%\addplot3 [thick,{\colorone}, smooth,domain=-3:3,samples=20,samples y=0] ({x},{2},{x^2+8});
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.93*(cos(x))},{1.96*(sin(x))},.2);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.75*(cos(x))},{1.83*(sin(x))},.4);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-35:170,samples=60,samples y=0] ({2.4*(cos(x))},{1.6*(sin(x))},.6);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-40:170,samples=60,samples y=0] ({1.8*(cos(x))},{1.2*(sin(x))},.8);
+%
+%\filldraw [{\colorone}] (axis cs: 0,0,1) circle (1pt);
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

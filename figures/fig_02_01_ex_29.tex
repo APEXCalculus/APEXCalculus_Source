@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick=\empty,
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+			extra x ticks={-6.28,-3.14,3.14,6.28},%
+			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.1,ymax=1.1,%
+			xmin=-6.9,xmax=6.9,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-6.9:6.9,samples=50] {cos(deg(x))};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

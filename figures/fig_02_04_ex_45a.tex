@@ -1,0 +1,20 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,4,3,5},
+%			ytick={-2,2,-4,4,-6,6},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.1,ymax=10.9,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-1.08,samples=40] {1/((x+1)^2)};
+\addplot [thick,{\colorone},smooth,domain=-.9:5.5,samples=60] {1/((x+1)^2)};
+\draw [{\colorone}, dashed] (axis cs:-1,-1) -- (axis cs:-1,10.5);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

@@ -1,0 +1,115 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{20},
+			name=myplot,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			ymin=-2,ymax=2,
+			xmin=-2,xmax=2,
+			zmin=-2.1, zmax=2.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=-60:60,smooth,y domain=0:360,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=20,samples y=25,very thin,z buffer=sort] ({cos(y)*tan(x)},{tan(x)*sin(y)},{sec(x)});
+
+\addplot3[domain=-60:60,smooth,y domain=0:360,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=20,samples y=25,very thin,z buffer=sort] ({cos(y)*tan(x)},{tan(x)*sin(y)},{-sec(x)});
+
+\ifthenelse{\boolean{colorprint}}{%
+%%%%%  Printing in color
+\addplot3[domain=10:60,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+\addplot3[domain=-30:10,dashed,thick,smooth,samples y=0,red!60,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+\addplot3[domain=-60:-30,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+
+\addplot3[domain=-60:60,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{-sec(x)});
+
+\addplot3[domain=10:60,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] (0,{tan(x)},{sec(x)});
+\addplot3[domain=-30:10,dashed,thick,smooth,samples y=0,red!60,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{sec(x)});
+\addplot3[domain=-60:-30,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{sec(x)});
+
+\addplot3[domain=-60:60,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{-sec(x)});
+
+
+
+\addplot3[domain=-50:150,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({1.5*cos(x)},{1.5*sin(x)},{-1.8});
+\addplot3[domain=150:310,dashed,thick,smooth,samples y=0,red!60,%surf,%fill=white,
+samples=30,] ({1.5*cos(x)},{1.5*sin(x)},{-1.8});
+%%% end printing in color
+}{%
+%%% printing in BW
+\addplot3[domain=10:60,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+\addplot3[domain=-30:10,dashed,thick,smooth,samples y=0,black!60,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+\addplot3[domain=-60:-30,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{sec(x)});
+
+\addplot3[domain=-60:60,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({tan(x)},{0},{-sec(x)});
+
+\addplot3[domain=10:60,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] (0,{tan(x)},{sec(x)});
+\addplot3[domain=-30:10,dashed,thick,smooth,samples y=0,black!60,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{sec(x)});
+\addplot3[domain=-60:-30,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{sec(x)});
+
+\addplot3[domain=-60:60,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,]  (0,{tan(x)},{-sec(x)});
+
+\addplot3[domain=-50:150,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({1.5*cos(x)},{1.5*sin(x)},{-1.8});
+\addplot3[domain=150:310,dashed,thick,smooth,samples y=0,black!60,%surf,%fill=white,
+samples=30,] ({1.5*cos(x)},{1.5*sin(x)},{-1.8});
+%%%% end printing BW
+}
+
+
+
+\draw (axis cs:1.32,0,-1.5) node (A2) {};
+\draw (axis cs:0,1.32,-1.5) node (B2) {};
+\draw (axis cs:-.5,1.75,-1.5) node (C2) {};
+
+
+\end{axis}
+
+\draw (.5,1) node [align=center](A1) {\scriptsize in plane\\[-4pt] \scriptsize $y=0$};
+\draw (4.2,1.75) node [align=center](B1) {\scriptsize in plane\\[-4pt] \scriptsize $x=0$};
+\draw (4.4,1) node [align=center](C1) {\scriptsize in plane\\[-4pt] \scriptsize $z=d$};
+
+\draw [->](A1)--(A2.center);
+\draw [->](B1)--(B2.center);
+\draw [->](C1)--(C2.center);
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+\begin{tikzpicture}[>=latex,scale=.75]
+
+
+
+
+\begin{scope}[scale=.5,shift={(0,10)}]
+ \ifthenelse{\boolean{colorprint}}{\draw[fill=brown,ultra thick] }
+{\draw[ultra thick,fill=white]}
+   (.75,-1)  ..  controls (.5,.5)  and   (.5,3)    .. (0.5,4) 
+-- (-0.5,4)  ..  controls (-.5,3) and (-.5,.5)     .. (-.75,-1) ;
+\ifthenelse{\boolean{colorprint}}{\draw[ultra thick,fill=green!50!black] }
+{\draw[ultra thick,fill=white]}
+      (0,10) .. controls  (0,8)     and   (1,7)    .. (1.5,7) 
+             ..  controls (1,7)     and   (1,7)    .. (0.5,7.25) 
+             ..  controls (1.5,5)   and   (2.5,4)  .. (3,4)
+             ..  controls (2,4)     and   (1.25,4) .. (1,4.5)
+             ..  controls (2,2)     and   (3.5,2)  .. (4,2)
+             ..  controls (1,1)     and   (-1,1)   .. (-4,2) 
+             ..  controls (-3.5,2)  and   (-2,2)   .. (-1,4.5)
+             ..  controls (-1.25,4) and   (-2,4)   .. (-3,4) 
+             ..  controls (-2.5,4)  and   (-1.5,5) .. (-0.5,7.25) 
+             ..  controls  (-1,7)   and   (-1,7)   .. (-1.5,7)
+             ..  controls  (-1,7)   and   (0,8)    .. (0,10)
+              ;
+\end{scope}	
+
+\begin{scope}[scale=.5]
+\coordinate (ball) at (215:2cm);
+\coordinate (release) at (11.5:2cm);
+
+
+\draw [rotate=11.5] (0,0) -- (1.9,0) node [above,sloped,pos=.5] {\scriptsize 2ft};
+\draw [thick,dashed] (0,0) circle (2cm);
+\draw [thick,->] (ball) arc (215:225:2cm);
+
+\draw (0,10) circle (2pt);
+\draw[dotted,thick] (release) -- (0,10) node [sloped, pos=.5, above] {\scriptsize $\langle 0,10\rangle - \vec r(t_0)$};
+\filldraw[draw=black,fill=white,thick] (release) circle (.1);
+\end{scope}
+\end{tikzpicture}

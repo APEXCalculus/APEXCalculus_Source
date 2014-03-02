@@ -1,0 +1,41 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={145}{20},
+			name=myplot,
+			xtick={1},
+			ytick={-3,3},
+			ztick={-3,3},
+			ymin=-3.5,ymax=3.5,
+			xmin=-.1,xmax=1.1,
+			zmin=-3.5, zmax=3.5,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+\addplot3[domain=0:360,smooth,y domain=0:1,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=40,samples y=10,very thin,z buffer=sort] ({y^2},{cos(x)*y},{3*sin(x)*y});
+
+
+
+
+\end{axis}
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

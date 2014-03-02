@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-4,...,-1,1,2,...,4},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-4.5,xmax=4.5%
+]
+
+%\addplot [thick,{\colorone},smooth,domain=0:.9] {1/(x-1)^2};
+%\addplot [{\colorone},thick,smooth,domain=1.1:2] {1/(x-1)^2};
+\addplot [thick,{\colorone}] coordinates {(-4,0) (-2,2) (0,0) (2,2) (4,0)}; 
+%\addplot [thick,{\colorone},domain=0:4]  {-4*cos(deg(x)*3.14159/4};
+%
+\fill[black,draw=black] (axis cs:0,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-4,0) circle (1.5pt);
+\fill[black,draw=black] (axis cs:-2,0) circle (1.5pt);
+\fill[white,draw=black] (axis cs:-2,2) circle (1.5pt);
+\fill[white,draw=black] (axis cs:2,2) circle (1.5pt);
+\fill[black,draw=black] (axis cs:4,0) circle (1.5pt);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

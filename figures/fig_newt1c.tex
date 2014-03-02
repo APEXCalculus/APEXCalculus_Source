@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,2.52,1.12,1.6},
+			extra x tick labels={$x_0$,$x_1$,$x_2$,$x_3$},
+			%ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1.1,ymax=1.1,%
+			xmin=-.3,xmax=2.7%
+]
+
+
+\addplot [thick, {\colorone},smooth,domain=-.3:3.2] {cos(deg(x))};
+
+\addplot [thick, {\colortwo},smooth,domain=.8:1.6] {-.9*(x-1.12)+.432};
+\draw [dashed] (axis cs:1.12,0) -- (axis cs:1.12,.432);
+\filldraw (axis cs:1.12,.432) circle (1pt);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

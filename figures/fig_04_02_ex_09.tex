@@ -1,0 +1,13 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [top color=brown, bottom color=brown!50!white,draw=black] (0,0) rectangle (20pt,30pt);
+\draw [fill=black] (0,30pt) -- (10pt,38pt) -- (20pt,30pt) -- cycle;
+\draw [fill=white] (7pt,15pt) rectangle (13pt,25pt);
+\draw (10pt,15pt) -- (10pt,25pt) (7pt,20pt) -- (13pt,20pt);
+
+\draw [thick] (20pt,25pt) -- node [pos=.5,rotate=-67,yshift=5pt] {\scriptsize 24 ft} (30pt,0);
+
+\draw [thick] (0,0) -- (35pt,0);
+\draw [->,>=latex] (34pt,2pt) -- node [above right,pos=.5] {\scriptsize 1 ft/s} (50pt,2pt);
+\end{tikzpicture}
+

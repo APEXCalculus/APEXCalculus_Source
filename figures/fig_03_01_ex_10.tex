@@ -1,0 +1,21 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-1.5,ymax=1.5,%
+			xmin=-.5,xmax=6.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=0:6.28] {sin(deg(x))};
+
+\draw [{\colorone},fill={\colorone}] 	(axis cs: 1.57,1) node [above,black] {\scriptsize $(\pi/2,1)$} circle (1.5pt);
+\draw [{\colorone},fill={\colorone}] 	(axis cs: 4.71,-1) node [below,black] {\scriptsize $(3\pi/2,-1)$} circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

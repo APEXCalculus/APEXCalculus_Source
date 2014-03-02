@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=latex,x=1pt,y=1pt]
+
+\draw [thick](0,40) -- (55,40);
+\draw [thick] (0,0) -- (55,0);
+\draw (2,0) -- (12,0) -- (9,5) -- (5,5)--cycle;
+\draw (7,5) -- (7,35) -- (33,5);
+\draw (7,35) -- (7,40);
+\draw [fill=gray] (7,35) circle (2pt);
+\draw (35,10) circle (2pt);
+\draw (35,8) -- (35,4) -- (33,0) (35,4) -- (37,0) (33,6) -- (37,6);
+
+\draw (-4,5) -- (-1,5)  (-2.5,5) -- (-2.5,35) node [pos=.5,draw,fill=white,draw=white,rotate=90] {\scriptsize 30 ft}
+       (-4,35) -- (-1,35);
+       
+ \draw [thick,->](40,5) --(55,5) node[pos=.5,above] {\scriptsize 2 ft/s};
+\end{tikzpicture}
+

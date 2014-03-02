@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-1,1},% 
+%			extra x ticks={3.14,6.28},
+%			extra x tick labels={$\pi$,$2\pi$},
+			ytick={-1,1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-1.5,ymax=3.5,%
+			xmin=-1.1,xmax=1.1%
+]
+
+\addplot [{\coloronefill},domain=-1:1,stack plots=y,samples=40] {x^2+x-1};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,domain=-1:1,stack plots=y,samples=40] {-3*x^3+3*x+2-(x^2+x-1)} \closedcycle;
+
+\addplot [smooth,thick, {\colorone},domain=-1.05:1.05,samples=40] {x^2+x-1} node [shift={(-23pt,-40pt)} ,black] {\scriptsize $y=x^2+x-1$};
+
+\addplot [smooth,thick, {\colorone},domain=-1.05:1.05,samples=40] {-3*x^3+3*x+2}node [shift={(-95pt,13pt)} ,black] {\scriptsize $y=-3x^3+3x+2$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,
+minor x tick num=4,minor y tick num=4,
+ymin=-5.5,ymax=8.5,xmin=-5.5,xmax=7.5]
+
+\addplot [thick, smooth,domain=0:360,samples=60] ({3*cos(x)+2},{5*sin(x)+3});
+\draw[>=latex,->,thick] (axis cs:4.12,6.5355)-- (axis cs:4.1,6.5707);
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+
+\end{tikzpicture}

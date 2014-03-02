@@ -1,0 +1,54 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={30}{30},
+			name=myplot,
+			%xtick=\empty,
+			ytick={5},
+			ztick={.7,-.7},
+			ymin=-5.1,ymax=5.1,
+			xmin=-5.1,xmax=5.1,
+			zmin=-.8, zmax=.8,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=5pt,yshift=0pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=4pt,yshift=2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+%\addplot3[domain=0:180,smooth,y domain=0:360,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=30,samples y=25,very thin,z buffer=sort] ({cos(x)*1.5*cos(y)},{sin(x)*cos(y)},{sin(y)});
+
+\addplot3[domain=-5:5,y domain=-5:5,surf,colormap={mp2}{\colormapplaneone},shader=faceted,faceted color=black!40,samples y=25,very thin,z buffer=sort,
+samples=25,] {(x+y)/(x^2+y^2+1)};
+
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({3*(cos(x))},{2*(sin(x))},0);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.93*(cos(x))},{1.96*(sin(x))},.2);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-30:170,samples=60,samples y=0] ({2.75*(cos(x))},{1.83*(sin(x))},.4);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-35:170,samples=60,samples y=0] ({2.4*(cos(x))},{1.6*(sin(x))},.6);
+%
+%\addplot3 [thick,{\colorone}, smooth,domain=-40:170,samples=60,samples y=0] ({1.8*(cos(x))},{1.2*(sin(x))},.8);
+%
+%\filldraw [{\colorone}] (axis cs: 0,0,1) circle (1pt);
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

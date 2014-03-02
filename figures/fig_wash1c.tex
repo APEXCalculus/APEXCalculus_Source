@@ -1,0 +1,66 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+%			view={125}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick={1,2,3},
+			ztick=\empty,% 
+%			extra x ticks={1,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-4.5,ymax=4.5,%
+			xmin=-.2,xmax=3.3,
+			zmin=-4.5,zmax=4.5%
+]
+
+\addplot3[domain=0:1,y domain=90:270, samples y=36,surf, shader=flat, colormap={mp2}{\colormaptwo}] (2,{cos(y)*(2+x)},{sin(y)*(2+x)});
+
+\addplot3[domain=1:3,y domain=0:1,surf,shader=flat,colormap={mp2}{\colormapone}] (x,0,{y*((2*x-1)-(x^2-2*x+2))+x^2-2*x+2});
+
+\addplot3[domain=0:1,y domain=0:180, samples y=36,surf, shader=flat, colormap={mp2}{\colormaptwo}] (2,{sin(y)*(2+x)},{cos(y)*(2+x)});
+
+\addplot3[domain=1:3,samples y=0,black,thick,smooth,] (x,0,{x^2-2*x+2});
+
+
+\addplot3[domain=1:3,samples y=0,black,thick,smooth,] (x,0,{2*x-1});
+
+
+
+
+
+\addplot3[domain=0:300,samples y=0,{\colortwo},thick,smooth,] (2,{3*sin(x)},{3*cos(x)});
+
+\addplot3[domain=0:360,samples y=0,{\colortwo},thick,smooth,] (2,{2*cos(x)},{2*sin(x)});
+
+%
+%\draw (axis cs:1.2,0,2.68) -- node [pos=.6,left] {\scriptsize $R(x)$} (axis cs:1.2,0,.5);
+%
+%\draw (axis cs: 2.8,0,1.64) -- node [pos=.5,right] {\scriptsize $r(x)$} (axis cs: 2.8,0,.5);
+%
+%\filldraw (axis cs:1.2,0,2.68) circle (1pt) (axis cs:1.2,0,.5) circle (1pt)  (axis cs: 2.8,0,1.64)circle (1pt)  (axis cs: 2.8,0,.5) circle (1pt)  ;
+
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-20pt,-15pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+

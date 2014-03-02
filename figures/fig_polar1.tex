@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=.75,>=latex]
+\draw[thick,->] (0,0) node [below] {$O$} -- (3.5,0) ;
+	\filldraw (0,0) circle (1.5pt);
+	\foreach \x in {1,2,3}
+	{\draw (0,0) circle (\x cm);
+	\draw (\x,0) node [below right] {\x};
+		}
+\filldraw [rotate=45] (1,0) circle (1.5pt) node [above right] {$A$};
+\filldraw [rotate=180] (1.5,0) circle (1.5pt) node [above] {$B$};
+\filldraw [rotate=-60] (2,0) circle (1.5pt) node [below right] {$C$};
+\filldraw [rotate=45] (-1,0) circle (1.5pt) node [below] {$D$};
+
+\end{tikzpicture}

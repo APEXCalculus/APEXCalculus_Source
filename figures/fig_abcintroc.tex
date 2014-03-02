@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick=\empty,% 
+			extra x ticks={.5,3},
+			extra x tick labels={$a$,$b$},
+			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=2,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},domain=.5:3,stack plots=y] {.25*(x-2)^2+.2};
+\addplot [{\coloronefill},thick,fill={\coloronefill},area style,domain=.5:3,stack plots=y] {.25*sin(deg(2*x))+1.25-(.25*(x-2)^2+.2)} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*sin(deg(2*x))+1.25} node [shift={(5pt,7pt)} ,black] {\scriptsize $f(x)$};
+\addplot [smooth,thick, {\colorone},domain=-.25:3.25] {.25*(x-2)^2+.2}node [shift={(5pt,7pt)} ,black] {\scriptsize $g(x)$};
+
+%\draw [thick] (axis cs:0.5,0.7625)--(axis cs:0.5,1.46) (axis cs:1.,0.45)--(axis cs:1.,1.477) (axis cs:1.5,0.2625)--(axis cs:1.5,1.285) (axis cs:2.,0.2)--(axis cs:2.,1.061) (axis cs:2.5,0.2625)--(axis cs:2.5,1.01) (axis cs:3.,1.18)--(axis cs:3.,0.45) (axis cs:0.75,1.499)--(axis cs:0.75,0.5906) (axis cs:1.25,0.3406)--(axis cs:1.25,1.4) (axis cs:1.75,1.162)--(axis cs:1.75,0.2156) (axis cs:2.25,0.2156)--(axis cs:2.25,1.006) (axis cs:2.75,1.074)--(axis cs:2.75,0.3406);
+
+\draw [thick] (axis cs:0.5,0.6225)rectangle(axis cs:0.75,1.5) (axis cs:1.,1.487)rectangle(axis cs:0.75,0.4756) (axis cs:1.,0.4025)rectangle(axis cs:1.25,1.452) (axis cs:1.5,1.334)rectangle(axis cs:1.25,0.29) (axis cs:1.5,0.24)rectangle(axis cs:1.75,1.235) (axis cs:2.,1.097)rectangle(axis cs:1.75,0.2025) (axis cs:2.,0.21)rectangle(axis cs:2.25,1.012) (axis cs:2.5,1.002)rectangle(axis cs:2.25,0.2225) (axis cs:2.5,0.29)rectangle(axis cs:2.75,1.029)(axis cs:3.,1.134)rectangle(axis cs:2.75,0.4025);
+
+\filldraw (axis cs:.7,.6225) circle (1.3pt)
+(axis cs:0.95,0.4756) circle (1.3pt)
+(axis cs:1.1,0.4025) circle (1.3pt)
+(axis cs:1.4,0.29) circle (1.3pt)
+(axis cs:1.6,0.24) circle (1.3pt)
+(axis cs:1.9,0.2025) circle (1.3pt)
+(axis cs:2.2,0.21) circle (1.3pt)
+(axis cs:2.3,0.2225) circle (1.3pt)
+(axis cs:2.6,0.29) circle (1.3pt)
+(axis cs:2.9,0.4025) circle (1.3pt)
+(axis cs:0.7,1.496) circle (1.3pt)
+(axis cs:0.95,1.487) circle (1.3pt)
+(axis cs:1.1,1.452) circle (1.3pt)
+(axis cs:1.4,1.334) circle (1.3pt)
+(axis cs:1.6,1.235) circle (1.3pt)
+(axis cs:1.9,1.097) circle (1.3pt)
+(axis cs:2.2,1.012) circle (1.3pt)
+(axis cs:2.3,1.002) circle (1.3pt)
+(axis cs:2.6,1.029) circle (1.3pt)
+(axis cs:2.9,1.134) circle (1.3pt);
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.79,1.57,2.36,3.14},
+%			extra x tick labels={$\frac{\pi}4$,$\frac{\pi}2$,$\frac{3\pi}{4}$,$\pi$},
+%			ytick={1},
+%			yticklabels={$-0.002$,$0.002$,$0.004$},
+			%minor y tick num=1,
+%			extra y ticks={1.8},%
+%			extra y tick labels={$y$},
+%			minor x tick num=4,
+			ymin=-.26,ymax=1.2,%
+			xmin=-.1,xmax=3.1,%
+]
+\addplot [{\colorone},smooth,thin] coordinates{(0.2,1.614)(0.3,1.215)(0.4,0.9363)(0.5,0.7244)(0.6,0.5558)(0.7,0.4179)(0.8,0.3031)(0.9,0.2066)(1.,0.125)(1.1,0.05594)(1.2,-0.002322)(1.3,-0.05111)(1.4,-0.09147)(1.5,-0.1242)(1.6,-0.15)(1.7,-0.1694)(1.8,-0.1828)(1.9,-0.1906)(2.,-0.1931)(2.1,-0.1907)(2.2,-0.1835)(2.3,-0.1717)(2.4,-0.1555)(2.5,-0.135)(2.6,-0.1105)(2.7,-0.082)(2.8,-0.04962)(2.9,-0.01346)(3.,0.02639)};
+
+\addplot [{\colorone},smooth,very thick,] coordinates {(1.,0.125)(1.1,0.05594)(1.2,-0.002322)(1.3,-0.05111)(1.4,-0.09147)(1.5,-0.1242)(1.6,-0.15)(1.7,-0.1694)(1.8,-0.1828)(1.85,-0.1874)(1.9,-0.1906)(1.95,-0.1925)(2.,-0.1931)};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

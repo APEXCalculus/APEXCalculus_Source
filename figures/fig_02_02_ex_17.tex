@@ -1,0 +1,29 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-5.5,ymax=5.5,%
+			xmin=-5.5,xmax=5.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-5.5:-.1,samples=40] {1/x};
+\addplot [thick,{\colorone},smooth,domain=.1:5.5,samples=40] {1/x};
+\addplot [thick,{\colortwo},smooth,domain=-5.5:-.1,samples=40] {-1/x^2};
+\addplot [thick,{\colortwo},smooth,domain=.1:5.5,samples=40] {-1/x^2};
+\draw (axis cs:1.5,1.5) node {\scriptsize $f(x)$};
+\draw (axis cs:1.5,-2) node[] {\scriptsize $g(x)$};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\filldraw [fill=white] (axis cs:-3,1) circle (1.5pt);
+%\filldraw [fill=white] (axis cs:-3,3) circle (1.5pt);
+%\filldraw [fill=black] (axis cs:-3,2) circle (1.5pt);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

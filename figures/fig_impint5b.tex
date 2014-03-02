@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick={1},%
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.1,ymax=.5,%
+			xmin=-.1,xmax=6.2%
+]
+
+\addplot [{\colorone},thick,smooth] coordinates {(3.,0.4082)(3.1,0.3919)(3.2,0.3769)(3.3,0.363)(3.4,0.3501)(3.5,0.3381)(3.6,0.3269)(3.7,0.3164)(3.8,0.3066)(3.9,0.2974)(4.,0.2887)(4.1,0.2805)(4.2,0.2728)(4.3,0.2655)(4.4,0.2585)(4.5,0.252)(4.6,0.2457)(4.7,0.2398)(4.8,0.2341)(4.9,0.2288)(5.,0.2236)(5.1,0.2187)(5.2,0.214)(5.3,0.2095)(5.4,0.2052)(5.5,0.201)(5.6,0.197)(5.7,0.1932)(5.8,0.1895)(5.9,0.186)(6.,0.1826)};
+
+\addplot [{\colortwo},thick,smooth] coordinates {(3.,0.3333)(3.1,0.3226)(3.2,0.3125)(3.3,0.303)(3.4,0.2941)(3.5,0.2857)(3.6,0.2778)(3.7,0.2703)(3.8,0.2632)(3.9,0.2564)(4.,0.25)(4.1,0.2439)(4.2,0.2381)(4.3,0.2326)(4.4,0.2273)(4.5,0.2222)(4.6,0.2174)(4.7,0.2128)(4.8,0.2083)(4.9,0.2041)(5.,0.2)(5.1,0.1961)(5.2,0.1923)(5.3,0.1887)(5.4,0.1852)(5.5,0.1818)(5.6,0.1786)(5.7,0.1754)(5.8,0.1724)(5.9,0.1695)(6.,0.1667)};
+
+\draw (axis cs:4,.45) node {\scriptsize $\ds f(x)=\frac{1}{\sqrt{x^2-x}}$};
+\draw (axis cs:2.5,.2) node {\scriptsize $\ds f(x)=\frac{1}{x}$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

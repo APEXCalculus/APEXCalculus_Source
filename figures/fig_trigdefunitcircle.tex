@@ -1,0 +1,11 @@
+\begin{tikzpicture}[>=latex,scale=1.5,thick]
+\draw [<->](-1.3,0)--(1.3,0) node [right] {$x$};
+\draw [<->] (0,-1.3) -- (0,1.3) node [above] {$y$};
+\draw (0,0) circle (1);
+\draw [fill= black] (-.6,.8) circle (1pt);
+\draw (0,0) -- (-.6,.8) node [above left] {$(x,y)$};
+\draw [->] (.5,0) arc (0:127:.5);
+\draw [dashed,thin] (-.6,.8) -- (-.6,0) node [pos=.5,left] {$y$};
+\draw (-.3,0) node [below] {$x$};
+\draw (.45,.45) node {$\theta$};
+\end{tikzpicture}

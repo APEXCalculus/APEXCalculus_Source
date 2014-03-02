@@ -1,0 +1,72 @@
+\begin{tikzpicture}[x=.25cm,y=.25cm,>=stealth]
+
+\begin{scope}[xscale=2]
+
+\begin{scope}[rotate=-30]
+\draw [thick](-2.5,0) node (A) {} 
+						 (2.5,0) node (B) {} 
+						 (2.5,5) node (C) {};
+\draw [dashed,thick] (A.center) -- (-2.5,5) node (D) {} -- (C.center);
+
+\draw (0,2.5) node (O) {}
+			(-1,.77) node (OC) {};
+\end{scope}
+
+\begin{scope}[shift={(0,10)}]
+\begin{scope}[rotate=-30,]
+\draw  	(-2.5,0) node (AAA) {} 
+				(2.5,0) node (BBB) {}
+				(2.5,5) node (CCC) {}
+				(-2.5,5) node (DDD) {};
+
+%\draw [left color={\coloronefill},right color={\coloronefill!20},thick] (-1.5,0) node (AAA) {} -- (1.5,0) node (BBB) {} -- (1.5,3) node (CCC) {}-- (-1.5,3) node (DDD) {} -- cycle;
+\end{scope}
+\end{scope}
+
+
+\begin{scope}[shift={(0,12)}]
+\begin{scope}[rotate=-30,]
+\draw [thick]	(-2.5,0) node (AA) {} 
+							(2.5,0) node (BB) {} 
+							(2.5,5) node (CC) {}
+							(-2.5,5) node (DD) {};
+\end{scope}
+\end{scope}
+
+\begin{scope}[shift={(0,10)}]
+\begin{scope}[rotate=-30,]
+%\draw  	(-1.5,0) node (AAA) {} 
+%				(1.5,0) node (BBB) {}
+%				(1.5,3) node (CCC)
+%				(-1.5,3) node (DDD) {};
+
+\end{scope}
+\end{scope}
+
+
+\draw [left color={\coloronefill},right color={\coloronefill!20},thick](AAA.center) -- (A.center)-- node [pos=.5,rotate=-15,below] {\scriptsize 5 ft} (B.center)--node [pos=.5,rotate=45,below] {\scriptsize 5 ft}(C.center)--(CCC.center);
+
+\draw [right color={\coloronefill},left color={\coloronefill!20},thick] (AAA.center) -- (BBB.center) -- (CCC.center)--(DDD.center) -- cycle;
+
+\draw [thick] (AA.center) -- (BB.center) -- (CC.center)--(DD.center) -- cycle
+							(AA.center) -- (AAA.center)
+							(CC.center) -- (CCC.center)
+							(B.center) -- (BB.center)
+							(DD.center) --(DDD.center);
+
+\draw [thick,dashed]	(DDD.center)--(D.center)--(C.center)
+											(D.center) -- (A.center)
+											(O.center) circle (2)
+											(O.center) -- node [pos=.5,above,rotate=15] {\scriptsize 2 ft} (OC.center);
+
+\begin{scope}[shift={(5.5,3)}]
+\draw (-.5,0) -- (.5,0)
+			(-.5,10) -- (.5,10)
+			(0,0) -- node [pos=.5,fill=white,rotate=90] {\scriptsize 10 ft} (0,10);
+\end{scope}
+
+\end{scope}
+
+\end{tikzpicture}
+
+

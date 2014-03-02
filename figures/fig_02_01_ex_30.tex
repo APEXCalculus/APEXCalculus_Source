@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-7.9,ymax=5.9,%
+			xmin=-2.5,xmax=2.5,%
+%			grid=major
+]
+
+\addplot [thick,{\colorone},smooth,domain=-2.3:2.3,samples=50] {(-10)*(x^4/4-x^2/2)+1};
+%\addplot [thick,{\colorone},domain=3.001:4.99,samples=50] {1/((x-3)*(x-5)^2)};
+%\addplot [thick,{\colorone},domain=5.01:6.5,samples=50] {1/((x-3)*(x-5)^2)};
+%\draw [{\colorone},dashed] (axis cs:3,105) -- (axis cs:3,-105);
+%\draw [{\colorone},dashed] (axis cs:5,105) -- (axis cs:5,-105);
+
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

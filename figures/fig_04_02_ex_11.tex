@@ -1,0 +1,28 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [top color=blue!60!white, bottom color=blue!10!white,draw=blue] (-5pt,5pt) rectangle (100pt,-5pt);
+\draw [thick,fill=brown] (-10pt,20pt) rectangle (8pt,22pt);
+\draw [top color=brown!30!black, bottom color=brown!70!white,draw=black] (0,0) rectangle (5pt,30pt);
+
+\draw [fill=white] (50pt,0pt) -- (90pt,0pt) -- (90pt, 15pt) -- (45pt,15pt) -- cycle;
+\draw [fill=black] (65pt,15pt) rectangle (67pt,20pt);
+\draw [fill=yellow] (55pt,20pt) -- (80pt,20pt) -- (65pt,40pt) -- cycle;
+
+\draw [fill=black] (8pt,35pt) circle (2pt);
+\draw (45pt,15pt) [dashed] -- (8pt,15pt) -- (8pt,35pt) node [pos=.4,xshift=7pt] {\scriptsize 10ft};
+
+\draw [,>=latex,thick] (8pt,35pt) -- (45pt,15pt); 
+
+
+%
+%
+%\draw [fill=black] (0,30pt) -- (10pt,38pt) -- (20pt,30pt) -- cycle;
+%\draw [fill=white] (7pt,15pt) rectangle (13pt,25pt);
+%\draw (10pt,15pt) -- (10pt,25pt) (7pt,20pt) -- (13pt,20pt);
+%
+%\draw [thick] (20pt,25pt) -- node [pos=.5,rotate=-67,yshift=5pt] {\scriptsize 24 ft} (30pt,0);
+%
+%\draw [thick] (0,0) -- (35pt,0);
+%\draw [->,>=latex] (34pt,2pt) -- node [above right,pos=.5] {\scriptsize 1 ft/s} (50pt,2pt);
+\end{tikzpicture}
+

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=latex]
+
+\draw [<->, thick] (-2,0) -- (2,0);
+\foreach \x / \y  in %
+					{%
+%					-2.5/{$-1$},%
+					0/{$0$}%
+%					2.5/{$1$}%
+					}
+		{\draw (\x,-.3) node[below] {\scriptsize \parbox{40pt}{\centering \y}} -- (\x,.3);}
+		
+\draw (-1,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp<0$ \ c. down }};
+\draw (1,.5) node {\scriptsize \parbox{50pt}{\centering $\fpp>0$ \ c. up }};
+%\draw (1.25,.5) node {\scriptsize \parbox{50pt}{\centering $\fp<0$ \ decr }};
+%\draw (3.75,.5) node {\scriptsize \parbox{50pt}{\centering $\fp>0$ \ incr}};
+
+
+\end{tikzpicture}
+
+

@@ -1,0 +1,69 @@
+\begin{tikzpicture}
+
+\begin{scope}[xscale=.2,yscale=.5,shift={(.5,0)}]
+\draw [thick,{\colorone}] (-1,.5)--(-.5,.5)--(0,0);
+\foreach \x in {0,1,...,5}
+{%
+	\begin{scope}[shift={(\x*2,0)}]
+	\draw [thick,{\colorone}] (0,0)--(1,1)--(2,0);
+	\end{scope}
+}
+
+		\begin{scope}[shift={(12,0)}]
+		\draw [thick,{\colorone}] (0,0) --(1,1) --(1.5,.5)--(2,.5);
+		\end{scope}
+\end{scope}
+
+\draw [shift={(.9,0)},thick,left color={\colorone!70},right color={\coloronefill},{\colorone}] (2,0) rectangle (2.5,.5);
+
+\draw [shift={(.9,0)},->,>=stealth] (2.75,.15)-= node [pos=.5,above] {$F$} (3.25,.15);
+
+		\begin{scope}[shift={(0,-.25)}]
+			\draw [thick] (-.5,0)--(5.5,0);
+
+			\foreach \x in {0,...,6}
+			{%
+			\draw (\x*.4+2.8,.1)--(\x*.4+2.8,-.1) node [below] {\scriptsize $\x$};
+			}
+		\end{scope}
+		
+\begin{scope}[shift={(0,-1.75)}]
+
+\begin{scope}[xscale=.343,yscale=.5,shift={(.5,0)}]
+\draw [thick,{\colorone}] (-1,.5)--(-.5,.5)--(0,0);
+\foreach \x in {0,1,...,5}
+{%
+	\begin{scope}[shift={(\x*2,0)}]
+	\draw [thick,{\colorone}] (0,0)--(1,1)--(2,0);
+	\end{scope}
+}
+
+		\begin{scope}[shift={(12,0)}]
+		\draw [thick,{\colorone}] (0,0) --(1,1) --(1.5,.5)--(2,.5);
+		\end{scope}
+\end{scope}
+
+		\begin{scope}[shift={(0,-.25)}]
+			\draw [thick] (-.5,0)--(5.5,0);
+
+			\foreach \x in {0,...,6}
+			{%
+			\draw (\x*.4+2.8,.1)--(\x*.4+2.8,-.1) node [below] {\scriptsize $\x$};
+			}
+		\end{scope}
+		
+\draw [shift={(2.9,0)},thick,left color={\colorone!70},right color={\coloronefill},{\colorone}] (2,0) rectangle (2.5,.5);
+		
+\end{scope}		
+
+%\foreach \x in {0,2,4,6}
+%{%
+%	\begin{scope}[shift={(\x*.3,0)}]
+%	\draw [rounded corners=.1cm,rotate=-45,thick,left color=black!80,right color=black!30] (-.1,-.5) rectangle (.1,.5);
+%	\end{scope}
+%}
+
+
+
+
+\end{tikzpicture}

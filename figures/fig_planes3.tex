@@ -1,0 +1,46 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{25},
+			name=myplot,
+			%xtick={2},
+			%ytick={-4,2,4},
+			%ztick={-4,2,4},
+			ymin=-3,ymax=3,
+			xmin=-3,xmax=3,
+			zmin=-1.4, zmax=3.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+
+
+
+\addplot3[domain=-1.5:1.8,,y domain=-1.5:1.8,surf,faceted color={\coloronefill},samples=10,colormap={mp2}{\colormapplaneone}] {(-x-2*y+1)/2};
+%
+\addplot3[domain=0:2,samples y=0,thick,{\colorone}] ({x-1},{2*x},{2*x+1});
+
+\addplot3[domain=-2:0,samples y=0,thick,{\colorone},dashed] ({x-1},{2*x},{2*x+1});
+
+%\draw [->](axis cs:-1,0,1) -- (axis cs: 0,2,3);
+
+\filldraw (axis cs:-1,0,1) circle (1.5pt) node [below] {\scriptsize $P$};
+
+
+\end{axis}
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+

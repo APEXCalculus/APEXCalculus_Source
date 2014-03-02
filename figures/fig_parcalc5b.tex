@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			%xtick={3,1,2,4},
+			minor x tick num=4,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			%ytick={-1,1},
+			minor y tick num=4,%extra y ticks={-5,-3,...,7},%
+			ymin=-59,ymax=59,%
+			xmin=-.5,xmax=16.9%
+]
+
+\addplot [{\colorone},thick, smooth,domain=0:16,samples=60] ({x},{2*cos(deg(x))-4*x*sin(deg(x))});
+%\addplot [{\colorone},thick, smooth,domain=3:18,samples=60] ({sqrt(x)},{sin(deg(x))});
+\draw  (axis cs: 5,-40) node {\scriptsize $y=2\cos t-4t\sin t$};
+
+%\filldraw (axis cs: 0.808252, 0.607787) circle (1.5pt)
+					%(axis cs: 1.81447, -0.150147) circle (1.5pt)
+					%(axis cs: 2.52223, 0.0783547) circle (1.5pt)
+					%(axis cs: 3.07855, -0.0526833) circle (1.5pt)
+					%(axis cs: 3.55049, 0.0396324) circle (1.5pt)
+					%(axis cs:3.96733, -0.0317508) circle (1.5pt);;
+%{0.808252, 0.607787}, {1.81447, -0.150147}, {2.52223, 0.0783547}, \
+%{3.07855, -0.0526833}, {3.55049, 0.0396324}, {3.96733, -0.0317508}
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $t$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

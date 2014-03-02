@@ -1,0 +1,10 @@
+\begin{tikzpicture}[>=stealth,scale=.3]
+	\draw [thick] (0,0) -- node [below,pos=.5] {\scriptsize 15} (15,0) -- node [right, pos=.5] {\scriptsize 3} (15,3) -- cycle;
+	\draw [thick] (5,1) -- (4.55,3.25) -- (6.8,3.7) -- (7.25,1.45);
+	\begin{scope}[,shift={(5.9,2.35)}]
+		\draw [thick,rotate=30,->] (0,0) -- (5,0) node [right] {\scriptsize $\vec F$};
+		\draw [thick,dashed] (-2,0) -- (4,0);
+		\draw (2,0) arc (0:30:2);
+		\draw [rotate=15] (3,0) node {\scriptsize $30^\circ$};
+	\end{scope}
+\end{tikzpicture}

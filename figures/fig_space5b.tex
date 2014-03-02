@@ -1,0 +1,85 @@
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center,
+			view={135}{20},
+			name=myplot,
+			xtick={-3,3},minor tick num=2,
+			ytick={-3,3},
+			ztick={-3,3},
+			ymin=-3.1,ymax=3.1,
+			xmin=-3.1,xmax=3.1,
+			zmin=-3.1, zmax=3.1,
+			every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				xlabel={\scriptsize $x$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $y$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $z$}
+			]
+%\addplot3[domain=180:270,smooth,y domain=0:90,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=10,samples y=10,very thin,z buffer=sort] ({cos(y)*1.5*cos(x)},{sin(y)*cos(x)},{sin(x)});
+%
+%\addplot3[domain=90:180,smooth,y domain=0:90,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=10,samples y=10,very thin,z buffer=sort] ({cos(y)*1.5*cos(x)},{sin(y)*cos(x)},{sin(x)});
+%\addplot3[domain=0:180,smooth,y domain=0:360,surf,%fill=white,
+%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=30,samples y=25,very thin,z buffer=sort] ({cos(x)*1*cos(y)},{3*sin(x)*cos(y)},{2*sin(y)});
+
+
+\ifthenelse{\boolean{colorprint}}{%
+%%%%%  Printing in color
+\addplot3[domain=0:360,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({cos(x)},{3*sin(x)},{0});
+\addplot3[domain=0:360,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({cos(x)},{0},{2*sin(x)});
+\addplot3[domain=0:360,,thick,smooth,samples y=0,red,%surf,%fill=white,
+samples=30,] ({0},{3*cos(x)},{2*sin(x)});
+
+%%% end printing in color
+}{%
+%%% printing in BW
+\addplot3[domain=0:360,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({cos(x)},{3*sin(x)},{0});
+\addplot3[domain=0:360,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({cos(x)},{0},{2*sin(x)});
+\addplot3[domain=0:360,,thick,smooth,samples y=0,black,%surf,%fill=white,
+samples=30,] ({0},{3*cos(x)},{2*sin(x)});
+%%%% end printing BW
+}
+
+
+
+%\draw (axis cs:1.32,0,-.2) node (A2) {};
+%\draw (axis cs:0,.8,-.3) node (B2) {};
+%\draw (axis cs:-1.5,.3,-.15) node (C2) {};
+%
+%\draw (axis cs:.5,0,-.9) node (B2) {};
+
+
+\end{axis}
+
+%\draw (.75,.6) node [align=center](A1) {\scriptsize in plane\\[-4pt] \scriptsize $y=0$};
+%\draw (3.5,.6) node [align=center](B1) {\scriptsize in plane\\[-4pt] \scriptsize $x=0$};
+%\draw (3.5,3) node [align=center](C1) {\scriptsize in plane\\[-4pt] \scriptsize $z=0$};
+%\draw [->] (CC) -- (B2);
+%
+%\draw [->](A1)--(A2);
+%\draw [->](B1)--(B2);
+%\draw [->](C1)--(C2);
+%\draw [->](A1)--(A3);
+%\draw (A1)  node[align=center,fill=white] {\scriptsize in plane\\[-4pt] \scriptsize $y=0$};
+
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+

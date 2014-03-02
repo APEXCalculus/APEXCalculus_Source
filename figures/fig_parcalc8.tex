@@ -1,0 +1,64 @@
+%\begin{tikzpicture}
+%\begin{axis}%
+%[
+%width=\marginparwidth+25pt,%
+%tick label style={font=\scriptsize},axis on top,
+			%axis y line=none,
+%%			axis x line=none,
+%%			axis z line=none,%
+			%axis lines=center,
+			%y dir=reverse,
+			%%view={10}{30},
+			%name=myplot,
+%%			%x=.37\marginparwidth,
+%%			%y=.37\marginparwidth,
+			%%xtick=\empty,
+%%			ztick=\empty,% 
+			%%extra x ticks={3.14},
+			%%extra x tick labels={$\pi$},
+%%			ytick={.1,1},
+%%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			%ymin=-1,ymax=1,%
+			%xmin=-1.1,xmax=1.1,
+			%zmin=-1.5,zmax=1.5%
+%]
+\begin{tikzpicture}[>=stealth]
+\begin{axis}%
+[width=175pt,tick label style={font=\scriptsize},axis on top,
+			axis lines=center, axis x line=none,
+			view={135}{25},
+			name=myplot,
+			xtick=\empty,
+			ytick=\empty,
+			ztick=\empty,
+			ymin=-1,ymax=1,
+			xmin=-1.1,xmax=1.1,
+			zmin=-1.5, zmax=1.5,
+			%every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+				%xlabel={\scriptsize $z$},
+			every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+				ylabel={\scriptsize $x$},
+				every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+				zlabel={\scriptsize $y$}
+			]
+%
+
+\addplot3[domain=-1:1,y domain=0:360,smooth,surf,%fill=white,
+colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=20,samples y=25,very thin,z buffer=sort] ({(x^2-1)*cos(y)},{x^3-x},{(x^2-1)*sin(y)});
+\addplot3[domain=.4:1,dashed,samples y=0,{\colorone},thick] ({0},{x^3-x},{-(x^2-1)});
+\addplot3[domain=-1:.4,,samples y=0,{\colorone},thick] ({0},{x^3-x},{-(x^2-1)});
+
+%%%\addplot3[domain=-1:1,y domain=0:360,smooth,surf,%fill=white,
+%%%colormap={mp2}{\colormapplaneone},faceted color=black!40,samples=20,samples y=25,very thin,z buffer=sort] ({x^3-x},{(x^2-1)*sin(y)},{(x^2-1)*cos(y)});
+%%%\addplot3[domain=-1:1,,samples y=0,{\colorone},thick] ({x^3-x},{0},{-(x^2-1)});
+
+
+\end{axis}
+
+%\node [right] at (myplot.right of origin)[shift={(-20pt,-8pt)}] {\scriptsize $x$};
+%\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

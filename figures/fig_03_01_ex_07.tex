@@ -1,0 +1,27 @@
+\begin{tikzpicture}[baseline=10pt]
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2},
+%			ytick={-1,1,2,3},
+%			minor y tick num=1,
+%			extra x ticks={-6.28,-3.14,3.14,6.28},%
+%			extra x tick labels={$-2\pi$, $-\pi$, $\pi$, $2\pi$},
+			ymin=-2.5,ymax=2.5,%
+			xmin=-.5,xmax=5.5,%
+%			grid=major
+]
+
+\draw [thick,{\colorone},smooth] (axis cs:1,-2)	parabola 	(axis cs:2,1) 
+																								-- 	(axis cs:3,2) 
+																					parabola [bend at end] (axis cs:4,1) 
+																					-- (axis cs:5,-1);
+
+\draw [{\colorone},fill={\colorone}] 	(axis cs: 1,-2) node [above,black] {\scriptsize $A$} circle (1.5pt) 
+							(axis cs:2,1) node [left,black] {\scriptsize $B$} circle (1.5pt)
+							(axis cs:3,2) node [above,black] {\scriptsize $C$} circle (1.5pt)
+							(axis cs:4,1) node [right,black] {\scriptsize $D$} circle (1.5pt)
+							(axis cs:5,-1) node [below,black] {\scriptsize $E$} circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

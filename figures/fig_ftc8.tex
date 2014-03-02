@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1,2},% 
+			extra x ticks={.69,3.14},
+			extra x tick labels={$c$,$\pi$},
+			ytick={1},
+			%minor y tick num=1,
+			extra y ticks={.637},%
+			extra y tick labels={$\sin 0.69$},
+%			minor x tick num=4,
+			ymin=-.25,ymax=1.25,%
+			xmin=-.5,xmax=3.5%
+]
+
+\addplot [{\coloronefill},thick,fill={\coloronefill},domain=0:3.14] {sin(deg(x))} \closedcycle;
+\addplot [smooth,thick, {\colorone},domain=-.5:3.5] {sin(deg(x))}; 
+\draw [thick,draw={\colortwo}] (axis cs: 0,0) rectangle (axis cs:3.14,.637);
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+

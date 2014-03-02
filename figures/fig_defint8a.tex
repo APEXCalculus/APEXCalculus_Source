@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,2,5},% 
+%			extra x ticks={.5,1.5,3},
+%			extra x tick labels={$a$,$b$,$\ c$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-11,ymax=11,%
+			xmin=-3.5,xmax=5.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},area style,domain=-2:5] {2*x-4} \closedcycle;
+\addplot [thick, {\colorone},domain=-2:5] {2*x-4};
+
+\draw [black,fill=black] (axis cs: -2,-8) node [shift={(-6pt,-7pt)}] {\scriptsize $(-2,-8)$} circle (1.5pt);
+\draw [black,fill=black] (axis cs: 5,6) node [above left] {\scriptsize $(5,6)$} circle (1.5pt);
+
+\draw (axis cs:-1,-2) node {\scriptsize $R_1$};
+\draw (axis cs:4.2,2) node {\scriptsize $R_2$};
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={-2,-1,1,2},% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+%			ytick={1,2,3},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-5.5,ymax=11,%
+			xmin=-2.5,xmax=2.5%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},domain=-2:2,area style] {3*x^2-3} |- (axis cs:-2,0) --cycle;
+\addplot [thick, {\colorone},smooth,samples=40,domain=-2:2] {3*x^2-3};
+
+%\draw (axis cs:-.9,8) node {\scriptsize $f(x)=3x^2-3$};
+\draw (axis cs:1.5,10) node {\scriptsize $f(x)=3x^2-3$};
+\draw (axis cs:-1.5,1) node {\scriptsize $4$};
+\draw (axis cs:1.5,1) node {\scriptsize $4$};
+\draw (axis cs:.3,-1) node {\scriptsize $-4$};
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+
+

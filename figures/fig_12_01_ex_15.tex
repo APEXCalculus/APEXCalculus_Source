@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,%
+%			xtick={-2,-1,1,2,3},% 
+%			ytick={-6,-4,-2,0,2,4,6},
+%			minor y tick num=1,
+%			extra y ticks={-5,-3,...,7},%
+			ymin=-3.1,ymax=3.1,%
+			xmin=-2.1,xmax=2.1%
+]
+
+\addplot [{\colorone},smooth,thick,] {3/2*x+1};
+
+\addplot [{\colorone},smooth,thick,] {3/2*x};
+
+\addplot [{\colorone},smooth,thick,] {3/2*x-1};
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}

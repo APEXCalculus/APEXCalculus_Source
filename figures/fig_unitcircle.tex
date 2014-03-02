@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=3]
+\draw [<->,>=latex] (-1.5,0) -- (1.4,0) node [right] {\scriptsize $x$};
+\draw [<->,>=latex] (0,-1.3) -- (0,1.3) node [above] {\scriptsize $y$};
+\foreach \x / \y / \z / \w / \v in {
+								0/0/{1,0}/right/white,
+								30/{\pi/6}/{\frac{\sqrt{3}}2,\frac 12}/above right/none,%
+								45/{\pi/4}/{\frac{\sqrt{2}}2,\frac{\sqrt{2}}2}/above right/none,
+								60/{\pi/3}/{\frac{1}2,\frac{\sqrt{3}}2}/{above right}/none,
+								90/ {\pi/2}/{0,1}/above/white,%
+								120/{2\pi/3}/{-\frac{1}2,\frac{\sqrt{3}}2}/above left/none, 
+								135/{3\pi/4}/{-\frac{\sqrt{2}}2,\frac{\sqrt{2}}2}/above left/none, 
+								150/ {5\pi/6}/{-\frac{\sqrt{3}}2,\frac{1}2}/above left/none,%
+								180/ {\pi}/{-1,0}/left/white, 
+								210/{7\pi/6}/{-\frac{\sqrt{3}}2,-\frac{1}2}/below left/none, 
+								225/{5\pi/4}/{-\frac{\sqrt{2}}2,-\frac{\sqrt{2}}2}/below left/none, 
+								240/{4\pi/3}/{-\frac{1}2,-\frac{\sqrt{3}}2}/below left/none,
+								270/{3\pi/2}/{0,-1}/below/white, 
+								300/{5\pi/3}/{\frac{1}2,-\frac{\sqrt{2}}2}/below right/none, 
+								315/{7\pi/4}/{\frac{\sqrt{2}}2,-\frac{\sqrt{2}}2}/below right/none, 
+								330/{11\pi/6}/{\frac{\sqrt{3}}2,-\frac{1}2}/below right/none%
+										}
+	{%
+		\draw (\x:.65cm) node [fill=\v] {\scriptsize \x$^\circ$};
+		\draw (\x:.85cm) node [fill=\v] {\scriptsize $\y$};
+		\draw (\x:1cm) node [\w,fill=\v] {\scriptsize $\left(\z\right)$};
+		\draw [fill=black] (\x:1) circle (.5pt);
+	}
+
+\draw [thick] (0,0) circle (1);
+
+\end{tikzpicture}
