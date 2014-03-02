@@ -1,5 +1,9 @@
 # README file for APEX Calculus
 
+The copywright is under the Creative Commons
+Attribution-Noncommercial 3.0 license. (CC-BY-NC)
+
+
 To compile, either compile Calculus.tex or Calculus1.tex. 
 They are essentially the same, with the latter producing a smaller file with 
 fewer chapters than "all" of calculus. 
