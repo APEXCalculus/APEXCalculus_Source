@@ -72,7 +72,7 @@ It is helpful to organize our new concepts and notations in one place.
 
 What is the value of differentials? Like many mathematical concepts, differentials provide both practical and theoretical benefits. We explore both here.\\
 
-\example{ex_diffal1}{\textbf{Finding and using differentials}\\
+\example{ex_diffal1}{Finding and using differentials}{
 Consider $f(x) = x^2$. Knowing $f(3) = 9$, approximate $f(3.1)$.}
 {The $x$ value is changing from $x=3$ to $x=3.1$; therefore, we see that $dx=0.1$. If we know how much the $y$ value changes from $f(3)$ to $f(3.1)$ (i.e., if we know $\dy$), we will know exactly what $f(3.1)$ is (since we already know $f(3)$). We can approximate \dy\ with $dy$.
 \begin{align*} \dy &\approx dy \\
@@ -97,7 +97,7 @@ We use differentials once more to approximate the value of a function. Even thou
 
 \enlargethispage{\baselineskip}
 
-\example{ex_diffal2}{\textbf{Using differentials to approximate a function value}\\
+\example{ex_diffal2}{Using differentials to approximate a function value}{
 Approximate $\sqrt{4.5}$.}
 {We expect $\sqrt{4.5} \approx 2$, yet we can do better. Let $f(x) = \sqrt{x}$, and let $c=4$. Thus $f(4) = 2$. We can compute $\fp(x) = 1/(2\sqrt{x})$, so $\fp(4) = 1/4$. 
 
@@ -110,7 +110,7 @@ Differentials are important when we discuss \textit{integration}. When we study 
 
 In light of that, we practice finding differentials in general.\\
 
-\example{ex_diffal3}{\textbf{Finding differentials}\\
+\example{ex_diffal3}{Finding differentials}{
 In each of the following, find the differential $dy$.
 
 \begin{center}
@@ -139,7 +139,7 @@ We have seen a practical use of differentials as they offer a good method of mak
 
 How close are $f(x)$ and $f(x+\dx)$? This is a difference in ``y'' values; $$f(x+\dx)-f(x) = \dy \approx dy.$$ We can approximate the propagated error using differentials.\\
 
-\example{ex_diffal4}{\textbf{Using differentials to approximate propagated error}\\
+\example{ex_diffal4}{Using differentials to approximate propagated error}{
 A steel ball bearing is to be manufactured with a diameter of 2cm. The manufacturing process has a tolerance of $\pm 0.1$mm in the diameter. Given that the density of steel is about 7.85g/cm$^3$, estimate the propagated error in the mass of the ball bearing.}
 {The mass of a ball bearing is found using the equation mass = volume $\times$ density. In this situation the mass function is a product of the radius of the ball bearing, hence it is $m = 7.85\frac43\pi r^3$. The differential of the mass is $$dm = 31.4\pi r^2 dr.$$ The radius is to be 1cm; the manufacturing tolerance in the radius is $\pm 0.05$mm, or $\pm 0.005$cm. The propagated error is approximately:
 \begin{align*}

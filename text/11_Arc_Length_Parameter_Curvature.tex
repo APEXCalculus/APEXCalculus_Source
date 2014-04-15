@@ -23,7 +23,7 @@ s(t) = \int_0^t \norm{\vec r\,'(u)}\ du.\label{eq:vvfarc}
 
 This establishes a relationship between $s$ and $t$. Knowing this relationship explicitly, we can rewrite $\vec r(t)$ as a function of $s$: $\vec r(s)$. We demonstrate this in an example.\\
 
-\example{ex_vvfarc1}{\textbf{Finding the arc length parameter}\\
+\example{ex_vvfarc1}{Finding the arc length parameter}{
 Let $\vec r(t) = \la 3t-1,4t+2\ra$. Parametrize $\vec r$ with the arc length parameter $s$.}
 {Using Equation \eqref{eq:vvfarc}, we write
 $$s(t) = \int_0^t \norm{\vec r\,'(u)}\ du.$$
@@ -129,7 +129,7 @@ $$\kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\time
 
 We practice using these formulas.\\
 
-\example{ex_curvature2}{\textbf{Finding the curvature of a circle}\\
+\example{ex_curvature2}{Finding the curvature of a circle}{
 Find the curvature of a circle with radius $r$, defined by $\vec r(t) = \la r\cos t,r\sin t\ra$.}
 {Before we start, we should expect the curvature of a circle to be constant, and not dependent on $t$. (Why?)
 
@@ -157,7 +157,7 @@ is the \textbf{osculating circle}, or \textbf{circle of curvature}, to $C$ at $P
 %\mnote{.65}{\textbf{Note:} 
  (The word ``osculating'' comes from a Latin word related to kissing; an osculating circle ``kisses'' the graph at a particular point. Many beautiful ideas in mathematics have come from studying the osculating circles to a curve.)\\
 
-\example{ex_curvature3}{\textbf{Finding curvature}\\
+\example{ex_curvature3}{Finding curvature}{
 Find the curvature of the parabola defined by $y=x^2$ at the vertex and at $x=1$.}
 {We use the first formula found in Theorem \ref{thm:curvature_formulas}. 
 \begin{align*}
@@ -168,7 +168,7 @@ Find the curvature of the parabola defined by $y=x^2$ at the vertex and at $x=1$
 At the vertex ($x=0$), the curvature is $\kappa = 2$. At $x=1$, the curvature is $\kappa = 2/(5)^{3/2} \approx 0.179.$ So at $x=0$, the curvature of $y=x^2$ is that of a circle of radius $1/2$; at $x=1$, the curvature is that of a circle with radius $\approx 1/0.179 \approx 5.59$. This is illustrated in Figure \ref{fig:curvature3}. At $x=3$, the curvature is $0.009$; the graph is nearly straight as the curvature is very close to 0. 
 }\\
 
-\example{ex_curvature4}{\textbf{Finding curvature}\\
+\example{ex_curvature4}{Finding curvature}{
 Find where the curvature of $\vec r(t) = \la t, t^2, 2t^3\ra $ is maximized.}
 {We use the third formula in Theorem \ref{thm:curvature_formulas} as $\vrt$ is defined in space. We leave it to the reader to verify that 
 $$\vrp(t) =\la 1,2t,6t^2\ra,\quad \vrp'(t) = \la 0,2,12t\ra,\quad \text{and}\quad \vrp(t)\times \vrp'(t) = \la 12t^2,-12t,2\ra.$$
@@ -217,7 +217,7 @@ Putting our new formulas for $a_\text{T}$ and $a_\text{N}$ together, we have
 $$\vat = s\,''(t)\vec T(t) + \kappa\norm{\vvt}^2\vec N(t).$$
 This is not a particularly practical way of finding $a_\text{T}$ and $a_\text{N}$, but it reveals some great concepts about how acceleration interacts with speed and the shape of a curve.\\
 
-\example{ex_curvature5}{\textbf{Curvature and road design}\\
+\example{ex_curvature5}{Curvature and road design}{
 The minimum radius of the curve in a highway cloverleaf is determined by the operating speed, as given in the table in Figure \ref{fig:curvature5}. For each curve and speed, compute $a_\text{N}$.}
 {\mtable{.32}{Operating speed and minimum radius in highway cloverleaf design.}{fig:curvature5}{%
 \begin{tabular}{cc}

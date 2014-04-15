@@ -30,7 +30,7 @@ The key notion to extract from this example is: by treating $y$ as a constant (i
 }
 \mnote{.35}{Alternate notations for $f_x(x,y)$ include: $$\frac{\partial}{\partial x}f(x,y),\ \ \frac{\pf}{\px},\ \ \frac{\pz}{\px},\ \ \text{and}\ z_x,$$ with similar notations for $f_y(x,y).$ For ease of notation, $f_x(x,y)$ is often abbreviated $f_x$.}
 
-\example{ex_partial1}{\textbf{Computing partial derivatives with the limit definition}\\
+\example{ex_partial1}{Computing partial derivatives with the limit definition}{
 Let $f(x,y) = x^2y + 2x+y^3$. Find $f_x(x,y)$ using the limit definition.}
 {Using Definition \ref{def:partial_derivative}, we have:
 \begin{align*}
@@ -50,7 +50,7 @@ Just as $\frac{d}{dx}\big(5x^2\big) = 10x$, we compute $\frac{\partial}{\px}\big
 
 Just as $\frac{d}{dx}\big(5^3\big) = 0$, we compute $\frac{\partial}{\px}\big(y^3\big) = 0.$ Here we are treating $y$ as a constant. More examples will help make this clear.\\
 
-\example{ex_partial2}{\textbf{Finding partial derivatives}\\
+\example{ex_partial2}{Finding partial derivatives}{
 Find $f_x(x,y)$ and $f_y(x,y)$ in each of the following.
 \begin{enumerate}
 	\item $f(x,y) = x^3y^2+ 5y^2-x+7$
@@ -90,7 +90,7 @@ Imagine standing in a rolling meadow, then beginning to walk due east. Depending
 
 The following example helps us visualize this more.\\
 
-\example{ex_partial3}{\textbf{Evaluating partial derivatives}\\
+\example{ex_partial3}{Evaluating partial derivatives}{
 Let $z=f(x,y)=-x^2-\frac12y^2+xy+10$. Find $f_x(2,1)$ and $f_y(2,1)$ and interpret their meaning.
 }
 {We begin by computing $f_x(x,y) = -2x+y$ and $f_y(x,y) = -y+x$. Thus
@@ -141,7 +141,7 @@ The notation of second partial derivatives gives some insight into the notation 
 \mnote{.7}{\textbf{Note:} The terms in Definition \ref{def:second_partial} all depend on limits, so each definition comes with the caveat ``where the limit exists.''} 
 
 
-\example{ex_partial6}{\textbf{Second partial derivatives}\\
+\example{ex_partial6}{Second partial derivatives}{
 For each of the following, find all six first and second partial derivatives. That is, find 
 $$f_x,\quad f_y,\quad f_{xx},\quad f_{yy},\quad f_{xy}\quad \text{and}\quad f_{yx}\,.$$
 \begin{enumerate}
@@ -226,7 +226,7 @@ We now consider the mixed partials $f_{xy}$ and $f_{yx}$. The mixed partial $f_{
 
 The following example examines these ideas with concrete numbers and graphs.\\
 
-\example{ex_partial7}{\textbf{Understanding second partial derivatives}\\
+\example{ex_partial7}{Understanding second partial derivatives}{
 Let $z=x^2-y^2+xy$. Evaluate the 6 first and second partial derivatives at $(-1/2,1/2)$ and interpret what each of these numbers mean.
 }
 {We find that:
@@ -268,7 +268,7 @@ The \textbf{partial derivative of $f$ with respect to $x$} is:
 
 By taking partial derivatives of partial derivatives, we can find second partial derivatives of $f$ with respect to $z$ then $y$, for instance, just as before.\\
 
-\example{ex_partial8}{\textbf{Partial derivatives of functions of three variables}\\
+\example{ex_partial8}{Partial derivatives of functions of three variables}{
 For each of the following, find $f_x$,\ \ $f_y$,\ \ $f_z$,\ \  $f_{xz}$,\ \  $f_{yz}$, and $f_{zz}$.
 \begin{enumerate}
 	\item $f(x,y,z) = x^2y^3z^4+x^2y^2+x^3z^3+y^4z^4$
@@ -297,7 +297,7 @@ We do not formally define each higher order derivative, but rather give just a f
 $$f_{xyx}(x,y)  =\frac{\partial}{\px}\left(\frac{\partial}{\py}\left(\frac{\pf}{\px}\right)\right) \quad \text{and}$$
 $$f_{xyz}(x,y,z)  =\frac{\partial}{\partial z}\left(\frac{\partial}{\py}\left(\frac{\pf}{\px}\right)\right) \quad $$
 
-\example{ex_partial9}{\textbf{Higher order partial derivatives}\\
+\example{ex_partial9}{Higher order partial derivatives}{
 \begin{enumerate}
 	\item Let $f(x,y) = x^2y^2+\sin(xy)$. Find $f_{xxy}$ and $f_{yxx}$. 
 	\item Let $f(x,y,z) = x^3e^{xy}+\cos(z)$. Find $f_{xyz}$.

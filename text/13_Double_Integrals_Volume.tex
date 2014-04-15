@@ -69,7 +69,7 @@ This gives a concrete method for finding signed volume under a surface. We could
 
 Note that once again the bounds of integration follow the ``curve to curve, point to point'' pattern discussed in the previous section. In fact, one of the main points of the previous section is developing the skill of describing a region $R$ with the bounds of an iterated integral. Once this skill is developed, we can use double integrals to compute many quantities, not just signed volume under a surface.\\
 
-\example{ex_double1}{\textbf{Evaluating a double integral}\\
+\example{ex_double1}{Evaluating a double integral}{
 Let $f(x,y) = xy+e^y$. Find the signed volume under $f$ on the region $R$, which is the rectangle with corners $(3,1)$ and $(4,2)$ pictured in Figure \ref{fig:double1}, using Fubini's Theorem and both orders of integration.}
 {We wish to evaluate $\iint_R \big(xy+e^y\big)\ dA$. As $R$ is a rectangle, the bounds are easily described as $3\leq x\leq 4$ and $1\leq y\leq 2$.\\
 
@@ -95,7 +95,7 @@ Now we check the validity of Fubini's Theorem by using the order $dx\ dy$:
 Both orders of integration return the same result, as expected.
 }\\
 
-%\example{ex_double2}{\textbf{Evaluating a double integral}\\
+%\example{ex_double2}{Evaluating a double integral}{
 %Evaluate $\iint_R e^{2x+3y}\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $\frac12x+y=1$, as shown in FIGURE.}
 %{While it is not specified which order we are to use, we will evaluate the double integral using both orders to help drive home the point that it does not matter which order we use.\\
 %
@@ -122,7 +122,7 @@ Both orders of integration return the same result, as expected.
 %We obtained the same result using both orders of integration. 
 %}\\
 
-\example{ex_double2}{\textbf{Evaluating a double integral}\\
+\example{ex_double2}{Evaluating a double integral}{
 Evaluate $\iint_R 3xy-x^2-y^2+6\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $\frac12x+y=1$, as shown in Figure \ref{fig:double2}.
 \mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
 }
@@ -170,7 +170,7 @@ Before doing another example, we give some properties of double integrals. Each 
 }
 \mfigure{.6}{$R$ is the union of two nonoverlapping regions, $R_1$ and $R_2$.}{fig:double_region}{figures/figdouble_region}
 
-\example{ex_double3}{\textbf{Evaluating a double integral}\\
+\example{ex_double3}{Evaluating a double integral}{
 Let $f(x,y) = \sin x\cos y$ and $R$ be the triangle with vertices $(-1,0)$, $(1,0)$ and $(0,1)$ (see Figure \ref{fig:double3}). Evaluate the double integral $\iint_Rf(x,y)\ dA$.
 \mfigure[trim=0mm 15mm 0mm 0mm,clip]{.35}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
 }
@@ -190,7 +190,7 @@ Recall that the cosine function is an even function; that is, $\cos x = \cos (-x
 It turns out that over $R$, there is just as much volume above the $x$-$y$ plane as below (look again at Figure \ref{fig:double3}), giving a final signed volume of 0. 
 }\\
 
-\example{ex_double4}{\textbf{Evaluating a double integral}\\
+\example{ex_double4}{Evaluating a double integral}{
 Evaluate $\iint_R (4-y)\ dA$, where $R$ is the region bounded by the parabolas $y^2=4x$ and $x^2=4y$, graphed in Figure \ref{fig:double4}.
 \mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.4}{Finding the volume under the surface in Example \ref{ex_double4}.}{fig:double4}{figures/figdouble4}
 }
@@ -229,7 +229,7 @@ The signed volume under the surface $f$ is about 11.7 cubic units.
 %
 %Examples will help us develop this skill.\\
 %
-%\example{ex_double5}{\textbf{Changing the order of integration}\\
+%\example{ex_double5}{Changing the order of integration}{
 %Rewrite the iterated integral $\ds \int_0^6\int_0^{x/3} \frac{x}{x^2+y^2+1}\ dy\ dx$ with the order of integration $dx\ dy$.
 %}
 %{We need to use the bounds of integration to determine the region we are integrating over. Recall Key Idea \ref{idea:bounds_on_double}: the region $R$ is completely determined by these bounds, and not influenced at all by the integrand. Therefore, to rewrite the integral, we ignore the integrand.
@@ -242,7 +242,7 @@ The signed volume under the surface $f$ is about 11.7 cubic units.
 %\vskip 0pt
 %}\\
 %
-%\example{ex_double7}{\textbf{Changing the order of integration}\\
+%\example{ex_double7}{Changing the order of integration}{
 %Change the order of integration of $\ds\int_0^2\int_{y^2/4}^{(y+4)/2}f(x,y)\ dx\ dy$.}
 %{We sketch the region described by the bounds to help us change the integration order. $x$ is bounded below and above (i.e., to the left and right) by $x=y^2/4$ and $x=(y+4)/2$ respectively, and $y$ is bounded between 0 and 2. Graphing the previous curves, we find the region $R$ to be that shown in Figure \ref{fig:double7}. 
 %\mfigure{.55}{Drawing the region determined by the bounds of integration in Example \ref{ex_double7}.}{fig:double7}{figures/figdouble7}
@@ -254,7 +254,7 @@ The signed volume under the surface $f$ is about 11.7 cubic units.
 
 In the previous section we practiced changing the order of integration of a given iterated integral, where the region $R$ was not explicitly given. Changing the bounds of an integral is more than just an test of understanding. Rather, there are cases where integrating in one order is really hard, if not impossible, whereas integrating with the other order is feasible.\\
 
-\example{ex_double6}{\textbf{Changing the order of integration}\\
+\example{ex_double6}{Changing the order of integration}{
 Rewrite the iterated integral $\ds \int_0^3\int_y^3 e^{-x^2}\ dx\ dy$ with the order $dy\ dx$. Comment on the feasibility to evaluate each integral.}
 {Once again we make a sketch of the region over which we are integrating to facilitate changing the order. The bounds on $x$ are from $x=y$ to $x=3$; the bounds on $y$ are from $y=0$ to $y=3$. These curves are sketched in Figure \ref{fig:double6}, enclosing the region $R$.
 \mfigure{.4}{Determining the region $R$ determined by the bounds of integration in Example \ref{ex_double6}.}{fig:double6}{figures/figdouble6}

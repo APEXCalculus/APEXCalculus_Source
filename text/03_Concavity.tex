@@ -82,7 +82,7 @@ We have identified the concepts of concavity and points of inflection. It is now
 
 %\myincludegraphics[scale=.5]{apex-second-derivative_img3} % function for this image is $x^5-3x^3+2x+1$
 
-\example{ex_conc1}{\textbf{Finding intervals of concave up/down, inflection points}\\
+\example{ex_conc1}{Finding intervals of concave up/down, inflection points}{
 Let $f(x)=x^3-3x+1$. Find the inflection points of $f$ and the intervals on which it is concave up/down.}
 {We start by finding $\fp(x)=3x^2-3$ and $\fpp(x)=6x$.  To find the inflection points, we use Theorem \ref{thm:inflection} and find where $\fpp(x)=0$ or where \fpp\ is undefined. We find \fpp\ is always defined, and is 0 only when $x=0$. So the point $(0,1)$ is the only possible point of inflection.
 
@@ -98,7 +98,7 @@ The number line in Figure \ref{fig:concline1} illustrates the process of determi
 %\myincludegraphics[scale=.5]{apex-second-derivative_img4}
 
 
-\example{ex_conc2}{\textbf{Finding intervals of concave up/down, inflection points}\\
+\example{ex_conc2}{Finding intervals of concave up/down, inflection points}{
 Let $f(x)=x/(x^2-1)$. Find the inflection points of $f$ and the intervals on which it is concave up/down.}
 {We need to find \fp\ and \fpp. Using the Quotient Rule and simplifying, we find
 $$\fp(x)=\frac{-(1+x^2)}{(x^2-1)^2} \quad \text{and}\quad \fpp(x) = \frac{2x(x^2+3)}{(x^2-1)^3}.$$
@@ -136,7 +136,7 @@ We utilize this concept in the next example.\\
 
 \enlargethispage{\baselineskip}
 
-\example{ex_conc3}{\textbf{Understanding inflection points}\\
+\example{ex_conc3}{Understanding inflection points}{
 The sales of a certain product over a three-year span are modeled by $S(t)= t^4-8t^2+20$, where $t$ is the time in years, shown in Figure \ref{fig:conc3}.  Over the first two years, sales are decreasing.  Find the point at which sales are decreasing at their greatest rate.
 
 \mfigure{.55}{A graph of $S(t)$ in Example \ref{ex_conc3}, modeling the sale of a product over time.}{fig:conc3}{figures/figconc3}
@@ -185,7 +185,7 @@ The first derivative of a function gave us a test to find if a critical value co
 
 The Second Derivative Test relates to the First Derivative Test in the following way. If $\fpp(c)>0$, then the graph is concave up at a critical point $c$ and $\fp$ itself is growing.  Since $\fp(c)=0$ and $\fp$ is growing at $c$, then it must go from negative to positive at $c$.  This means the function goes from decreasing to increasing, indicating a local minimum at $c$.\\
 
-\example{ex_conc4}{\textbf{Using the Second Derivative Test}\\
+\example{ex_conc4}{Using the Second Derivative Test}{
 Let $f(x)=100/x + x$.  Find the critical points of $f$ and use the Second Derivative Test to label them as relative maxima or minima.}
 {We find $\fp(x)=-100/x^2+1$ and $\fpp(x) = 100/x^3.$  We set $\fp(x)=0$ and solve for $x$ to find the critical values (note that \fp\ is not defined at $x=0$, but neither is $f$ so this is not a critical value.) We find  the critical values are $x=\pm 10$.  Evaluating \fpp\ at $x=10$ gives $0.1>0$, so there is a local minimum at $x=10$.  Evaluating $\fpp(-10)=-0.1<0$, determining a relative maximum at  $x=-10$. These results are confirmed in Figure \ref{fig:conc4}.
 }\\

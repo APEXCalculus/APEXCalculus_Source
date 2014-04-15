@@ -29,7 +29,7 @@ The definition leaves two special cases to consider. When the tangent line is ho
 	\item		If the normal line at $t=t_0$ has a slope of 0, the tangent line to $C$ at $t=t_0$ is the line $x=f(t_0)$.
 	\end{itemize}
 	
-\example{ex_parcalc1}{\textbf{Tangent and Normal Lines to Curves}\\
+\example{ex_parcalc1}{Tangent and Normal Lines to Curves}{
 Let $x=5t^2-6t+4$ and $y=t^2+6t-1$, and let $C$ be the curve defined by these equations.
 \begin{enumerate}
 	\item Find the equations of the tangent and normal lines to $C$ at $t=3$.
@@ -61,7 +61,7 @@ Let $x=5t^2-6t+4$ and $y=t^2+6t-1$, and let $C$ be the curve defined by these eq
 		\vskip-\baselineskip
 	}\\
 	
-	\example{ex_parcalc2}{\textbf{Tangent and Normal Lines to a Circle}\\
+	\example{ex_parcalc2}{Tangent and Normal Lines to a Circle}{
 	\begin{enumerate}
 		\item Find where the circle, defined by $x=\cos t$ and $y=\sin t$ on $[0,2\pi]$, has vertical and horizontal tangent lines. 
 		\item	 Find the equation of the normal line at $t=t_0$.
@@ -84,7 +84,7 @@ as long as $\cos t_0\neq 0$. It is an important fact to recognize that the norma
 
 \clearpage
 
-\example{ex_parcalc3}{\textbf{Tangent Lines When $\frac{dy}{dx}$ is Not Defined}\\
+\example{ex_parcalc3}{Tangent Lines When $\frac{dy}{{dx}$ is Not Defined}\\
 Find the equation of the tangent line to the astroid $x=\cos^3 t$, $y=\sin^3t$ at $t=0$, shown in Figure \ref{fig:parcalc3}.
 }
 {We start by finding $x'(t)$ and $y'(t)$:
@@ -121,7 +121,7 @@ $$\frac{d^2y}{dx^2}\quad = \quad\frac{d}{dt}\left[\frac{dy}{dx}\right]\Bigg/\fra
 
 Examples will help us understand this Key Idea.\\
 
-\example{ex_parcalc4}{\textbf{Concavity of Plane Curves}\\
+\example{ex_parcalc4}{Concavity of Plane Curves}{
 Let $x=5t^2-6t+4$ and $y=t^2+6t-1$ as in Example \ref{ex_parcalc1}. Determine the $t$-intervals on which the graph is concave up/down.}
 {Concavity is determined by the second derivative of $y$ with respect to $x$, $\frac{d^2y}{dx^2}$, so we compute that here following Key Idea \ref{idea:second_der_par}.
 
@@ -149,7 +149,7 @@ As the numerator of $\ds -\frac{9}{(5t-3)^3}$ is never 0, $\frac{d^2y}{dx^2} \ne
 Reviewing Example \ref{ex_parcalc1}, we see that when $t=3/5=0.6$, the graph of the parametric equations has a vertical tangent line. This point is also a point of inflection for the graph, illustrated in Figure \ref{fig:parcalc4}.
 }\\
 
-\example{ex_parcalc5}{\textbf{Concavity of Plane Curves}\\
+\example{ex_parcalc5}{Concavity of Plane Curves}{
 Find the points of inflection of the graph of the parametric equations $x=\sqrt{t}$, $y=\sin t$, for $0\leq t\leq 16$.}
 {We need to compute $\frac{dy}{dx}$ and $\frac{d^2y}{dx^2}$. 
 $$\frac{dy}{dx} = \frac{y'(t)}{x'(t)} = \frac{\cos t}{1/(2\sqrt{t})} = 2\sqrt{t}\cos t.$$
@@ -186,7 +186,7 @@ $$L = \int_{t_1}^{t_2} \sqrt{\fp(t)^2+g'(t)^2}\ dt.$$
 
 As before, these integrals are often not easy to compute. We start with a simple example then another where we approximate the solution.\\
 
-\example{ex_parcalc6}{\textbf{Arc Length of a Circle}\\
+\example{ex_parcalc6}{Arc Length of a Circle}{
 Find the arc length of the circle parametrized by $x=3\cos t$, $y=3\sin t$ on $[0,3\pi/2]$. 
 }
 {By direct application of Theorem \ref{thm:arc_length_parametric}, we have
@@ -200,7 +200,7 @@ L &= \int_0^{3\pi/2} \sqrt{(-3\sin t)^2 +(3\cos t)^2} \ dt.\\
 This should make sense; we know from geometry that the circumference of a circle with radius 3 is $6\pi$; since we are finding the arc length of $3/4$ of a circle, the arc length is $3/4\cdot 6\pi = 9\pi/2$.
 }\\
 
-\example{ex_parcalc7}{\textbf{Arc Length of a Parametric Curve}\\
+\example{ex_parcalc7}{Arc Length of a Parametric Curve}{
 The graph of the parametric equations $x=t(t^2-1)$, $y=t^2-1$ crosses itself as shown in Figure \ref{fig:parcalc7}, forming a ``teardrop.'' Find the arc length of the teardrop.
 }
 {We can see by the parametrizations of $x$ and $y$ that when $t=\pm 1$, $x=0$ and $y=0$. This means we'll integrate from $t=-1$ to $t=1$. Applying Theorem \ref{thm:arc_length_parametric}, we have
@@ -228,7 +228,7 @@ Related to the formula for finding arc length is the formula for finding surface
 }
 
 
-\example{ex_parcalc8}{\textbf{Surface Area of a Solid of Revolution}\\
+\example{ex_parcalc8}{Surface Area of a Solid of Revolution}{
 Consider the teardrop shape formed by the parametric equations $x=t(t^2-1)$, $y=t^2-1$ as seen in Example \ref{ex_parcalc7}. Find the surface area if this shape is rotated about the $x$-axis, as shown in Figure \ref{fig:parcalc8}.}
 {The teardrop shape is formed between $t=-1$ and $t=1$. Using Key Idea \ref{idea:surface_area_parametric}, we see we need for $g(t)\geq 0$ on $[-1,1]$, and this is not the case. To fix this, we simplify replace $g(t)$ with $-g(t)$, which flips the whole graph about the $x$-axis (and does not change the surface area of the resulting solid). The surface area is: 
 \begin{align*}

@@ -34,7 +34,7 @@ We start with a rational function $f(x)=\frac{p(x)}{q(x)}$, where $p$ and $q$ do
 
 The following examples will demonstrate how to put this Key Idea into practice. Example \ref{ex_pf1} stresses the decomposition aspect of the Key Idea.\\
 
-\example{ex_pf1}{\textbf{Decomposing into partial fractions}\\
+\example{ex_pf1}{Decomposing into partial fractions}{
 Decompose $\ds f(x)=\frac{1}{(x+5)(x-2)^3(x^2+2x+1)(x^2+x+7)^2}$ without solving for the resulting coefficients.}
 {The denominator is already factored; we need to decompose $f(x)$ properly. Since $(x+5)$ is a linear term that divides the denominator, there will be a $$\frac{A}{x+5}$$ term in the decomposition.
 
@@ -52,7 +52,7 @@ All together, we have
 Solving for the coefficients $A$, $B \ldots J$ would be a bit tedious but not ``hard.''
 }\\
 
-\example{ex_pf2}{\textbf{Decomposing into partial fractions}\\
+\example{ex_pf2}{Decomposing into partial fractions}{
 Perform the partial fraction decomposition of $\ds \frac{1}{x^2-1}$.}
 {The denominator factors into two linear terms: $x^2-1 = (x-1)(x+1)$. Thus 
 $$\frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.$$
@@ -78,7 +78,7 @@ Thus $$\frac{1}{x^2-1} = \frac{1/2}{x-1}-\frac{1/2}{x+1}.$$
 \vskip-\baselineskip
 }\\
 
-\example{ex_pf3}{\textbf{Integrating using partial fractions}\\
+\example{ex_pf3}{Integrating using partial fractions}{
 Use partial fraction decomposition to integrate $\ds\int\frac{1}{(x-1)(x+2)^2}\ dx.$}
 {We decompose the integrand as follows, as described by Key Idea \ref{idea:partial_fraction}:
 $$\frac{1}{(x-1)(x+2)^2} = \frac{A}{x-1} + \frac{B}{x+2} + \frac{C}{(x+2)^2}.$$
@@ -106,7 +106,7 @@ $$\int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+
 \vskip-\baselineskip}\\
 
 %\enlargethispage{\baselineskip}
-\example{ex_pf4}{\textbf{Integrating using partial fractions}\\
+\example{ex_pf4}{Integrating using partial fractions}{
 Use partial fraction decomposition to integrate $\ds \int \frac{x^3}{(x-5)(x+3)}\ dx$.}
 {Key Idea \ref{idea:partial_fraction} presumes that the degree of the numerator is less than the degree of the denominator. Since this is not the case here, we begin by using polynomial division to reduce the degree of the numerator. We omit the steps, but encourage the reader to verify that $$\frac{x^3}{(x-5)(x+3)} = x+2+\frac{19x+30}{(x-5)(x+3)}.$$
 Using Key Idea \ref{idea:partial_fraction}, we can rewrite the new rational function as:
@@ -134,7 +134,7 @@ We can now integrate.
 }\\
 %\clearpage
 
-\example{ex_pf5}{\textbf{Integrating using partial fractions}\\
+\example{ex_pf5}{Integrating using partial fractions}{
 Use partial fraction decomposition to evaluate $\ds \int\frac{7x^2+31x+54}{(x+1)(x^2+6x+11)}\ dx.$}
 {The degree of the numerator is less than the degree of the denominator so we begin by applying Key Idea \ref{idea:partial_fraction}. We have:
 \begin{align*}

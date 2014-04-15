@@ -1,0 +1,156 @@
+\section{Taylor Series}\label{sec:taylor_series}
+
+In Section \ref{sec:power_series}, we showed how certain functions can be represented by a power series function. In \ref{sec:taylor_poly}, we showed how we can approximate functions with polynomials, given that enough derivative information is available. In this section we combine these concepts: if a function $f(x)$ is infinitely differentiable, we show how to represent it with a power series function.
+
+\definition{def:taylor_series}{Taylor and Maclaurin Series}
+{Let $f(x)$ have derivatives of all orders at $x=c$.
+\begin{itemize}
+	\item The \sword{Taylor Series of $f(x)$, centered at $c$} is
+	$$\sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n.$$
+	\item	Setting $c=0$ gives the \sword{Maclaurin Series of $f(x)$}:
+	$$\sum_{n=0}^\infty \frac{f\,^{(n)}(0)}{n!}x^n.$$
+\end{itemize}
+}
+
+The difference between a Taylor polynomial and a Taylor series is the former is a polynomial, containing only a finite number of terms, whereas the latter is a series, a summation of an infinite set of terms. When creating the Taylor polynomial of degree $n$ for a function $f(x)$ at $x=c$, we needed to evaluate $f$, and the first $n$ derivatives of $f$, at $x=c$. When creating the Taylor series of $f$, it helps to find a pattern that describes the $n^\text{th}$ derivative of $f$ at $x=c$. We demonstrate this in the next two examples.\\
+
+\example{ex_ts1}{The Maclaurin series of $f(x) = \cos x$}
+{Find the Maclaurin series of $f(x)=\cos x$.}
+{In Example \ref{ex_taypoly4} we found the $8^\text{th}$ degree Maclaurin polynomial of $\cos x$. In doing so, we created the table shown in Figure \ref{fig:ts1}.
+\mtable{.35}{A table of the derivatives of $f(x)=\cos x$ evaluated at $x=0$.}{fig:ts1}{%
+\begin{tabular}{lll}
+$f(x) = \cos x $&$\Rightarrow $&$f(0) = 1$\\
+$\fp(x) = -\sin x $&$\Rightarrow $&$\fp(0) = 0$\\
+$\fp'(x) = -\cos x $&$\Rightarrow $&$\fp'(0) = -1$\\
+$\fp''(x) = \sin x $&$\Rightarrow $&$\fp''(0) = 0$\\
+$f\,^{(4)}(x) = \cos x $&$\Rightarrow $&$f\,^{(4)}(0) = 1$\\
+$f\,^{(5)}(x) = -\sin x $&$\Rightarrow $&$f\,^{(5)}(0) = 0$\\
+$f\,^{(6)}(x) = -\cos x $&$\Rightarrow $&$f\,^{(6)}(0) = -1$\\
+$f\,^{(7)}(x) = \sin x $&$\Rightarrow $&$f\,^{(7)}(0) = 0$\\
+$f\,^{(8)}(x) = \cos x $&$\Rightarrow $&$f\,^{(8)}(0) = 1$\\
+$f\,^{(9)}(x) = -\sin x $&$\Rightarrow $&$f\,^{(9)}(0) = 0$
+\end{tabular}
+}
+Notice how $f\,^{(n)}(0)=0$ when $n$ is odd,  $f\,^{(n)}(0)=1$ when $n$ is divisible by $4$, and $f\,^{(n)}(0)=-1$ when $n$ is even but not divisible by 4. Thus the Maclaurin series of $\cos x$ is
+$$1-\frac{x^2}2+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!} - \cdots$$
+We can go further and write this as a summation. Since we only need the terms where the power of $x$ is even, we write the power series in terms of $x^{2n}$:
+$$\sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}.$$
+\vskip-1.\baselineskip
+}\\
+
+\example{ex_ts2}{The Taylor series of $f(x)=\ln x$ at $x=1$}
+{Find the Taylor series of $f(x) = \ln x$ centered at $x=1$.}
+{Figure \ref{fig:ts2} shows the $n^\text{th}$ derivative of $\ln x$ evaluated at $x=1$ for $n=0,\ldots,5$, along with an expression for the $n^\text{th}$ term: $$f\,^{(n)}(1) = (-1)^{n+1}(n-1)!\quad \text{for $n\geq 1$.}$$ Remember that this is what distinguishes Taylor series from Taylor polynomials; we are very interested in finding a pattern for the $n^\text{th}$ term, not just finding a finite set of coefficients for a polynomial.
+\mtable{.7}{Derivatives of $\ln x$ evaluated at $x=1$.}{fig:ts2}{%
+\begin{tabular}{lll}
+$f(x) = \ln x $&$\Rightarrow $&$f(1) = 0$\\
+$\fp(x) = 1/x $&$\Rightarrow $&$\fp(1) = 1$\\
+$\fp'(x) = -1/x^2 $&$\Rightarrow $&$\fp'(1) = -1$\\
+$\fp''(x) = 2/x^3 $&$\Rightarrow $&$\fp''(1) = 2$\\
+$f\,^{(4)}(x) = -6/x^4 $&$\Rightarrow $&$f\,^{(4)}(1) = -6$\\
+$f\,^{(5)}(x) = 24/x^5 $&$\Rightarrow $&$f\,^{(5)}(1) = 24$\\
+$\ \vdots $& &$\ \vdots$\\
+$f\,^{(n)}(x) = $ &$\Rightarrow$ & $f\,^{(n)}(1) = $\\
+$\ds \rule{0pt}{15pt}\frac{(-1)^{n+1}(n-1)!}{x^n} $ & & $(-1)^{n+1}(n-1)!$
+\end{tabular}
+}
+Since $f(1) = \ln 1 = 0$, we skip the first term and start the summation with $n=1$, giving the Taylor series for $\ln x$, centered at $x=1$, as 
+$$\sum_{n=1}^\infty (-1)^{n+1}(n-1)!\frac{1}{n!}(x-1)^n = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^n}{n}. $$
+\vskip-1.5\baselineskip
+}\\
+
+It is important to note that Definition \ref{def:taylor_series} defines a Taylor series given a function $f(x)$; however, we \emph{cannot} yet state that $f(x)$ \emph{is equal} to its Taylor series. We will find that ``most of the time'' they are equal, but we need to consider the conditions that allow us to conclude this.
+
+Theorem \ref{thm:taylorthm} states that the error between a function $f(x)$ and its $n^\text{th}$--degree Taylor polynomial $p_n(x)$ is $R_n(x)$, where
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-c)^{(n+1)}\big|.$$
+
+If $R_n(x)$ goes to 0 for each $x$ in an interval $I$ as $n$ approaches infinity, we conclude that the function is equal to its Taylor series expansion.
+
+\theorem{thm:function_series_equality}{Function and Taylor Series Equality}
+{Let $f(x)$ have derivatives of all orders at $x=c$, let $R_n(x)$ be as stated in Theorem \ref{thm:taylorthm}, and let $I$ be an interval on which the Taylor series of $f(x)$ converges. 
+If $\ds\lim_{n\to\infty} R_n(x) = 0$ for all $x$ in $I$ containing $c$, then 
+$$f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\quad \text{on $I$.}$$
+}
+
+We demonstrate the use of this theorem in an example.\\
+
+\example{ex_ts3}{Establishing equality of a function and its Taylor series}
+{Show that $f(x) = \cos x$ is equal to its Maclaurin series, as found in Example \ref{ex_ts1}, for all $x$. 
+}
+{Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|.$$
+Since all derivatives of $\cos x$ are $\pm \sin x$ or $\pm\cos x$, whose magnitudes are bounded by $1$, we can state
+$$ \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{(n+1)}\big|.$$
+For any $x$, $\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+$$\cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}\quad \text{for all $x$}.$$
+\vskip-1.5\baselineskip
+}\\
+
+It is natural to assume that a function is  equal to its Taylor series on the series' interval of convergence, but this is not the case. In order to properly establish equality, one must use Theorem \ref{thm:function_series_equality}. This is a bit disappointing, as we developed beautiful techniques for determining the interval of convergence of a power series, and proving that $R_n(x)\to 0$ can be cumbersome as it deals with high order derivatives of the function.
+
+There is good news. A function $f(x)$ that is equal to its Taylor series, centered at any point the domain of $f(x)$, is said to be an \sword{analytic function}, and most, if not all, functions that we encounter within this course are analytic functions. Generally speaking, any function that one creates with elementary functions (polynomials, exponentials, trigonometric functions, etc.) that is not piecewise defined is probably analytic. For most functions, we assume the function is equal to its Taylor series on the series' interval of convergence and only use Theorem \ref{thm:function_series_equality} when we suspect something may not work as expected.
+
+We develop the Taylor series for one more important function, then give a table of the Taylor series for a number of common functions.\\
+
+\example{ex_ts4}{The Binomial Series}
+{Find the Maclaurin series of $f(x) = (1+x)^k$, $k\neq 0$.
+}
+{When $k$ is a positive integer, the Maclaurin series is finite. For instance, when $k=4$, we have 
+$$f(x) = (1+x)^4 = 1+4x+6x^2+4x^3+x^4.$$
+The coefficients of $x$ when $k$ is a positive integer are known as the \emph{binomial coefficients}, giving the series we are developing its name.
+
+When $k=1/2$, we have $f(x) = \sqrt{1+x}$. Knowing a series representation of this function would give a useful way of approximating $\sqrt{1.3}$, for instance.
+
+To develop the Maclaurin series for $f(x) = (1+x)^k$ for any value of $k\neq0$, we consider the derivatives of $f$ evaluated at $x=0$:
+
+\noindent\begin{minipage}{1.3\linewidth}
+\begin{align*}
+f(x) &= (1+x)^k & f(0) &= 1\\
+\fp(x) &= k(1+x)^{k-1} & \fp(0) &=k\\
+\fp'(x) &= k(k-1)(1+x)^{k-2} & \fp'(0) &=k(k-1)\\
+\fp''(x) &= k(k-1)(k-2)(1+x)^{k-3} & \fp''(0) &=k(k-1)(k-2)\\
+&\vdots & &\vdots\\
+f\,^{(n)}(x) &= k(k-1)\cdots\big(k-(n-1)\big)(1+x)^{k-n} & f\,^{(n)}(0) &=k(k-1)\cdots\big(k-(n-1)\big)
+\end{align*}
+\end{minipage}
+
+Thus the Maclaurin series for $f(x) = (1+x)^k$ is
+$$1+ k + \frac{k(k-1)}{2!} + \frac{k(k-1)(k-2)}{3!} + \ldots + \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}+\ldots$$
+
+It is important to determine the interval of convergence of this series. With 
+$$a_n = \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n,$$
+we apply the Ratio Test:
+\begin{align*}
+\lim_{n\to\infty}\frac{|a_{n+1}|}{|a_n|}&=\lim_{n\to\infty} \left|\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}\right|\Big/\left|\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n\right|\\
+		&=\lim_{n\to\infty} \left|\frac{k-n}{n}x\right|\\
+		&= |x|.
+\end{align*}
+
+The series converges absolutely when the limit of the Ratio Test is less than 1; therefore, we have absolute convergence when $|x|<1$. When $x=1$, we can apply the Alternating Series Test and find the series converges. When $x=-1$, it can be shown (with some difficulty) that the series also converges. Therefore the interval of convergence is $[-1,1]$. We can apply Theorem \ref{thm:function_series_equality} to prove equality between $f(x)$ and the series (or apply the discussion following the theorem). 
+}\\
+
+We learned that Taylor polynomials offer a way of approximating a ``difficult to compute'' function with a polynomial. Taylor series offer a way of exactly representing a function with a series. One probably can see the use of a good approximation; is there any use of representing a function exactly as a series? 
+
+While we should not overlook the mathematical beauty of Taylor series (which is reason enough to study them), there are practical uses as well. They provide a valuable tool for solving a variety of problems, including problems relating to integration and differential equations. 
+
+We start by giving a table of the Taylor series of a number of common functions. We then give a theorem about the ``algebra of power series,'' that is, how we can combine power series to create power series of new functions. This allows us to find the Taylor series of functions like $f(x) = e^x\cos x$ by knowing the Taylor series of $e^x$ and $\cos x$.
+
+\clearpage
+
+\setboxwidth{100pt}
+%\noindent\hskip-65pt
+\keyidea{idea:common_taylor}{Important Taylor Series Expansions}
+{\vskip10pt%
+\noindent\begin{tabular}{lll}
+\textbf{Function} & \textbf{First Few Terms} & \textbf{Interval of Convergence} \\
+$\ds e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$ & $\ds 1+ x+\frac{x^2}{2} + \frac{x^3}{6}+\cdots$ & $(-\infty,\infty)$\\
+\end{tabular}
+}
+\restoreboxwidth
+
+
+
+
+
+
+

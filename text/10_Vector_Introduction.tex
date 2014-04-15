@@ -41,7 +41,7 @@ The numbers $a$, $b$ (and $c$, respectively) are the \textbf{components} of $\ve
 It follows from the definition that the component form of the vector $\vv{PQ}$, where $P=(x_1,y_1)$ and $Q=(x_2,y_2)$ is $$\vv{PQ} = \la x_2-x_1, y_2-y_1\ra;$$ in space, where $P=(x_1,y_1,z_1)$ and $Q=(x_2,y_2,z_2)$, the component form of $\vv{PQ}$ is	$$\vv{PQ} = \la x_2-x_1, y_2-y_1,z_2-z_1\ra.$$
 We practice using this notation in the following example.\\
 
-\example{ex_vect1}{\textbf{Using component form notation for vectors}\\
+\example{ex_vect1}{Using component form notation for vectors}{
 \begin{enumerate}
 	\item Sketch the vector $\vec v=\la 2,-1\ra$ starting at $P=(3,2)$ and find its magnitude.
 	\item		Find the component form of the vector $\vec w$ whose initial point is $R=(-3,-2)$ and whose terminal point is $S=(-1,2)$.
@@ -98,7 +98,7 @@ Now that we have defined vectors, and have created a nice notation by which to d
 
 In short, we say addition and scalar multiplication are computed ``component--wise.''\\
 
-\example{ex_vect2}{\textbf{Adding vectors}\\
+\example{ex_vect2}{Adding vectors}{
 	Sketch the vectors $\vec u = \la1,3\ra$, $\vec v = \la 2,1\ra$ and $\vec u+\vec v$ all with initial point at the origin.}
 	{We first compute $\vec u +\vec v$. 
 	\begin{align*}
@@ -123,7 +123,7 @@ While not illustrated here, the Head to Tail Rule and Parallelogram Law hold for
 
 It follows from the properties of the real numbers and Definition \ref{def:vector_algebra} that $$\vec u-\vec v = \vec u + (-1)\vec v.$$ The Parallelogram Law gives us a good way to visualize this subtraction. We demonstrate this in the following example.\\
 
-\example{ex_vect4}{\textbf{Vector Subtraction}\\
+\example{ex_vect4}{Vector Subtraction}{
 Let $\vec u = \la 3,1\ra$ and $\vec v=\la 1,2\ra.$ Compute and sketch $\vec u-\vec v$.
 }
 {The computation of $\vec u-\vec v$ is straightforward, and we show all steps below. Usually the formal step of multiplying by $(-1)$ is omitted and we ``just subtract.''
@@ -136,7 +136,7 @@ Let $\vec u = \la 3,1\ra$ and $\vec v=\la 1,2\ra.$ Compute and sketch $\vec u-\v
 Figure \ref{fig:vect4} illustrates, using the Head to Tail Rule, how the subtraction can be viewed as the  sum $\vec u + (-\vec v)$. The figure also illustrates how $\vec u-\vec v$ can be obtained by looking only at the terminal points of $\vec u$ and $\vec v$ (when their initial points are the same).
 }\\
 
-\example{ex_vect3}{\textbf{Scaling vectors}\\
+\example{ex_vect3}{Scaling vectors}{
 \begin{enumerate}
 \item	Sketch the vectors $\vec v = \la 2,1\ra$ and  $2\vec v$ with initial point at the origin. 
 \item Compute the magnitudes of $\vec v$ and $2\vec v$.
@@ -206,7 +206,7 @@ Property \ref{thm:norm_prop} of Theorem \ref{thm:vector_properties} holds the ke
 \end{align*}			
 So the vector of length 10 in the direction of $\vec v$ is $\ds 10\cdot\frac{1}{\norm{\vec v}}\cdot\vec v.$ An example will make this more clear.\\
 
-\example{ex_vect5}{\textbf{Using Unit Vectors}\\
+\example{ex_vect5}{Using Unit Vectors}{
 Let $\vec v= \la 3,1\ra$ and let $\vec w = \la 1,2,2\ra$. 
 \begin{enumerate}
 	\item Find the unit vector in the direction of $\vec v$.
@@ -256,7 +256,7 @@ These formulas can come in handy in a variety of situations, especially the form
 
 
 
-\example{ex_vect6}{\textbf{Finding Component Forces}\\
+\example{ex_vect6}{Finding Component Forces}{
 Consider a weight of 50lb hanging from two chains, as shown in Figure \ref{fig:vect6}. One chain makes an angle of $30^\circ$ with the vertical, and the other an angle of $45^\circ$. Find the force applied to each chain.
 \mfigure{.3}{A diagram of a weight hanging from 2 chains in Example \ref{ex_vect6}.}{fig:vect6}{figures/figvect6}}
 {Knowing that gravity is pulling the 50lb weight straight down, we can create a vector $\vec F$ to represent this force. 
@@ -294,7 +294,7 @@ Unit vectors were very important in the previous calculation; they allowed us to
 \end{itemize}
 }
 
-\example{ex_vect7}{\textbf{Using standard unit vectors}\\
+\example{ex_vect7}{Using standard unit vectors}{
 \begin{enumerate}
 	\item Rewrite $\vec v = \la 2,-3\ra$ using the standard unit vectors.
 	\item	Rewrite $\vec w = 4\vec i - 5\vec j +2\vec k$ in component form.
@@ -317,7 +317,7 @@ Unit vectors were very important in the previous calculation; they allowed us to
 These two examples demonstrate that converting from component form to/from using the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering text use that notation.
 }\\
 
-\example{ex_vect8}{\textbf{Finding Component Force}\\
+\example{ex_vect8}{Finding Component Force}{
 A weight of 25 is suspended from a chain of length 2ft while a wind pushes the weight to the right with constant force of 5lb as shown in Figure \ref{fig:vect8}. What angle will the chain make with the vertical as a result of the wind's pushing? How much higher will the weight be?
 \mfigure{.3}{A figure of a weight being pushed by the wind in Example \ref{ex_vect8}.}{fig:vect8}{figures/figvect8}
 }

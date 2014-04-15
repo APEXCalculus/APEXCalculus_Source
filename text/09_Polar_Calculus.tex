@@ -14,7 +14,7 @@ Using Key Idea \ref{idea:dydxpar} we have $$\frac{dy}{dx} = \frac{dy}{d\theta}\B
 $$\frac{dy}{dx} = \frac{\fp(\theta)\sin\theta+f(\theta)\cos\theta}{\fp(\theta)\cos\theta-f(\theta)\sin\theta}.$$
 }
 
-\example{ex_polcalc1}{\textbf{Finding $\frac{dy}{dx}$ with polar functions.}\\
+\example{ex_polcalc1}{Finding $\frac{dy}{{dx}$ with polar functions.}\\
 Consider the lima\c con $r=1+2\sin\theta$ on $[0,2\pi]$. Find:
 \begin{enumerate}
 	\item The equations of the tangent and normal lines to the graph at $\theta=\pi/4$.
@@ -68,7 +68,7 @@ These points are also shown in Figure \ref{fig:polcalc1} with white--filled dots
 When the graph of the polar function $r=f(\theta)$ intersects the pole, it means that $f(\alpha)=0$ for some angle $\alpha$. Thus the formula for $\frac{dy}{dx}$ in such instances is very simple, reducing simply to $$\frac{dy}{dx} = \tan \alpha.$$
 This equation makes an interesting point. It tells us the slope of the tangent line at the pole is $\tan \alpha$; some of our previous work (see, for instance, Example \ref{ex_polar3}) shows us that the line through the pole with slope $\tan \alpha$ has polar equation $\theta=\alpha$. Thus when a polar graph touches the pole at $\theta=\alpha$, the equation of the tangent line at the pole is $\theta=\alpha$. \\
 
-\example{ex_polcalc2}{\textbf{Finding tangent lines at the pole.}\\
+\example{ex_polcalc2}{Finding tangent lines at the pole.}{
 Let $r=1+2\sin\theta$, a lima\c con. Find the equations of the lines tangent to the graph at the pole.
 \mfigure{.35}{Graphing the tangent lines at the pole in Example \ref{ex_polcalc2}.}{fig:polcalc2}{figures/figpolcalc2}}
 {We need to know when $r=0$. 
@@ -122,7 +122,7 @@ A \ =\  \frac12\int_\alpha^\beta f(\theta)^2 \ d\theta\  =\  \frac12\int_\alpha^
 
 The theorem states that $0\leq \beta-\alpha\leq 2\pi$. This ensures that region does not overlap itself, giving a result that does not correspond directly to the area.\\
 
-\example{ex_polcalc3}{\textbf{Area of a polar region}\\
+\example{ex_polcalc3}{Area of a polar region}{
 Find the area of the circle defined by $r=\cos \theta$.}
 {This is a direct application of Theorem \ref{thm:polar_area}. The circle is traced out on $[0,\pi]$, leading to the integral
 \begin{align*}
@@ -139,7 +139,7 @@ $$\int\cos^2\theta\ d\theta = \frac12\theta+\frac14\sin(2\theta)+C$$
 $$\int\sin^2\theta\ d\theta = \frac12\theta-\frac14\sin(2\theta)+C$$
 }
 
-\example{ex_polcalc4}{\textbf{Area of a polar region}\\
+\example{ex_polcalc4}{Area of a polar region}{
 Find the area of the cardiod $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $\theta=\pi/3$, as shown in Figure \ref{fig:polcalc4}.
 \mfigure{.45}{Finding the area of the shaded region of a cardiod in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
 }
@@ -167,7 +167,7 @@ $$A = \frac12\int_\alpha^\beta \big(r_2^{\,2}-r_1^{\,2}\big)\ d\theta.$$
 }
 
 \enlargethispage{2\baselineskip}
-\example{ex_polcalc5}{\textbf{Area between polar curves}\\
+\example{ex_polcalc5}{Area between polar curves}{
 Find the area bounded between the curves $r=1+\cos \theta$ and $r=3\cos\theta$, as shown in Figure \ref{fig:polcalc5}.
 \mfigure{.5}{Finding the area between polar curves in Example \ref{ex_polcalc5}.}{fig:polcalc5}{figures/figpolcalc5}
 }
@@ -187,7 +187,7 @@ Thus we integrate $\frac12\big((3\cos\theta)^2-(1+\cos\theta)^2\big)$ on $[-\pi/
 Amazingly enough, the area between these curves has a ``nice'' value.
 }\\
 
-\example{ex_polcalc6}{\textbf{Area defined by polar curves}\\
+\example{ex_polcalc6}{Area defined by polar curves}{
 Find the area bounded between the polar curves $r=1$ and $r=2\cos(2\theta)$, as shown in Figure \ref{fig:polcalc6} (a).}
 {We need to find the point of intersection between the two curves. Setting the two functions equal to each other, we have
 $$2\cos(2\theta) = 1 \quad \Rightarrow \quad \cos(2\theta) = \frac12 \quad \Rightarrow \quad 2\theta = \pi/3\quad \Rightarrow \quad \theta=\pi/6.$$
@@ -221,7 +221,7 @@ The expression $x'(\theta)^2+y'(\theta)^2$ can be simplified a great deal; we le
 $$L = \int_\alpha^\beta \sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta = \int_\alpha^\beta\sqrt{(r\,')^2+ r^2}\ d\theta.$$
 }
 
-\example{ex_polcalc7}{\textbf{Arc length of a lima\c con}\\
+\example{ex_polcalc7}{Arc length of a lima\c con}{
 Find the arc length of the lima\c con $r=1+2\sin t$.}
 {With $r=1+2\sin t$, we have $r\,' = 2\cos t$. The lima\c con is traced out once on $[0,2\pi]$, giving us our bounds of integration. Applying Key Idea \ref{idea:polar_arclength}, we have
 \begin{align*}
@@ -248,7 +248,7 @@ The formula for arc length leads us to a formula for surface area. The following
 	\end{itemize}
 }
 
-\example{ex_polcalc8}{\textbf{Surface area determined by a polar curve}\\
+\example{ex_polcalc8}{Surface area determined by a polar curve}{
 Find the surface area formed by revolving one petal of the rose curve $r=\cos(2\theta)$ about its central axis (see Figure \ref{fig:polcalc8}).}
 {\mtable{.5}{Finding the surface area of a rose--curve petal that is revolved around its central axis.}{fig:polcalc8}{%
 \begin{tabular}{c}

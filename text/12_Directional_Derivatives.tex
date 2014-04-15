@@ -21,7 +21,7 @@ The partial derivatives $f_x$ and $f_y$ are defined with similar limits, but onl
 $$D_{\vec u\,}f(x_0,y_0)=f_x(x_0,y_0)u_1 + f_y(x_0,y_0)u_2.$$
 }
 
-\example{ex_direct1}{\textbf{Computing directional derivatives}\\
+\example{ex_direct1}{Computing directional derivatives}{
 Let $z= 14-x^2-y^2$ and let $P=(1,2)$. Find the directional derivative of $f$, at $P$, in the following directions:
 \begin{enumerate}
 	\item toward the point $Q=(3,4)$,
@@ -101,7 +101,7 @@ We restate these ideas in a theorem, then use them in an example.
 \end{enumerate}
 }
 
-\example{ex_direct2}{\textbf{Finding directions of maximal and minimal increase}\\
+\example{ex_direct2}{Finding directions of maximal and minimal increase}{
 Let $f(x,y) = \sin x\cos y$ and let $P=(\pi/3,\pi/3)$. Find the directions of maximal/minimal increase, and find a direction where the instantaneous rate of $z$ change is 0.}
 {We begin by finding the gradient. $f_x = \cos x\cos y$ and $f_y = -\sin x\sin y$, thus 
 $$\nabla f = \la \cos x\cos y,-\sin x\sin y\ra \quad \text{and, at $P$,} \quad \nabla f\left(\frac{\pi}3,\frac{\pi}3\right) = \la\frac14,-\frac34\ra.$$
@@ -126,7 +126,7 @@ The direction of minimal increase is $\la -1/4,3/4\ra$; in this direction the in
 Any direction orthogonal to $\nabla f$ is a direction of no $z$ change. We have two choices: the direction of $\la 3,1\ra$ and the direction of $\la -3,-1\ra$. The unit vector in the direction of $\la 3,1\ra$ is shown in each graph of the figure as well. The level curve at $z=\sqrt{3}/4$ is drawn: recall that along this curve the $z$-values do not change. Since $\la 3,1\ra$ is a direction of no $z$-change, this vector is tangent to the level curve at $P$.
 }\\
 
-\example{ex_direct9}{\textbf{Understanding when $\nabla f = \vec 0$}\\
+\example{ex_direct9}{Understanding when $\nabla f = \vec 0$}{
 Let $f(x,y) = -x^2+2x-y^2+2y+1$. Find the directional derivative of $f$ in any direction at $P=(1,1)$.}
 {We find $\nabla f = \la -2x+2, -2y+2\ra$. At $P$, we have $\nabla f(1,1) = \la 0,0\ra$. 
 According to Theorem \ref{thm:gradient}, this is the direction of maximal increase. However, $\la 0,0\ra$ is directionless; it has no displacement. And regardless of the unit vector $\vec u$ chosen, $D_{\vec u\,}f = 0$.
@@ -139,7 +139,7 @@ So what is the direction of maximal increase? It is fine to give an answer of $\
 
 The fact that the gradient of a surface always points in the direction of steepest increase/decrease is very useful, as illustrated in the following example.\\
 
-\example{ex_direct3}{\textbf{The flow of water downhill}\\
+\example{ex_direct3}{The flow of water downhill}{
 Consider the surface given by $f(x,y)= 20-x^2-2y^2$. Water is poured on the surface at $(1,1/4)$. What path does it take as it flows downhill?}
 {Let $\vrt = \la x(t), y(t)\ra$ be the vector--valued function describing the path of the water in the $x$-$y$ plane; we seek $x(t)$ and $y(t)$. We know that water will always flow downhill in the steepest direction; therefore, at any point on its path, it will be moving in the direction of $-\nabla f$. (We ignore the physical effects of momentum on the water.) Thus $\vrp(t)$ will be parallel to $\nabla f$, and there is some constant $c$ such that $c\nabla f = \vrp(t) = \la x'(t), y'(t)\ra$. 
 
@@ -199,7 +199,7 @@ The same properties of the gradient given in Theorem \ref{thm:gradient}, when $f
 
 We interpret the third statement of the theorem as ``the gradient is orthogonal to level surfaces,'' the three--variable analogue to level curves.\\
 
-\example{ex_direct5}{\textbf{Finding directional derivatives with functions of three variables}\\
+\example{ex_direct5}{Finding directional derivatives with functions of three variables}{
 If a point source $S$ is radiating energy, the intensity $I$ at a given point $P$ in space is inversely proportional to the square of the distance between $S$ and $P$. That is, when $S=(0,0,0)$,  $\ds I(x,y,z) = \frac{k}{x^2+y^2+z^2}$ for some constant $k$.
 
 Let $k=1$, let $\vec u = \la 2/3, 2/3, 1/3\ra$ be a unit vector, and let $P = (2,5,3).$ Measure distances in inches. Find the directional derivative of $I$ at $P$ in the direction of $\vec u$, and find the direction of greatest intensity increase at $P$.

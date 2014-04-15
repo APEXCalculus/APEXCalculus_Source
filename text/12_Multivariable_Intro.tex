@@ -10,7 +10,7 @@ This chapter studies \textbf{multivariable} functions, that is, functions with m
 {Let $D$ be a subset of $\mathbb{R}^2$. A \textbf{function $f$ of two variables} is a rule that assigns each pair $(x,y)$ in $D$ a value $z=f(x,y)$ in $\mathbb{R}$. $D$ is the \textbf{domain} of $f$; the set of all outputs of $f$ is the \textbf{range}.
 }
 
-\example{ex_multi1}{\textbf{Understanding a function of two variables}\\
+\example{ex_multi1}{Understanding a function of two variables}{
 Let $z=f(x,y) = x^2-y$. Evaluate $f(1,2)$, $f(2,1)$, and $f(-2,4)$; find the domain and range of $f$.}
 {Using the definition $f(x,y) = x^2-y$, we have:
 \begin{align*}
@@ -23,7 +23,7 @@ The domain is not specified, so we take it to be all possible pairs in $\mathbb{
 The output of $f$ can be made as large or small as possible; any real number $r$ can be the output. (In fact, given any real number $r$, $f(0,-r)=r$.) So the range $R$ of $f$ is $\mathbb{R}$.
 }\\
 
-\example{ex_multi2}{\textbf{Understanding a function of two variables}\\
+\example{ex_multi2}{Understanding a function of two variables}{
 Let $\ds f(x,y) = \sqrt{1-\frac{x^2}9-\frac{y^2}4}.$ Find the domain and range of $f$.}
 {The domain is all pairs $(x,y)$ allowable as input in $f$. Because of the square--root, we need $(x,y)$ such that $0\leq1-\frac{x^2}9-\frac{y^2}4$:
 \begin{align*}
@@ -62,7 +62,7 @@ Given a function $z=f(x,y)$, we can draw a ``topographical map'' of $f$ by drawi
 
 When drawing level curves, it is important that the $c$ values are spaced equally apart as that gives the best insight to how quickly the ``elevation'' is changing. Examples will help one understand this concept.\\
 
-\example{ex_levelcurve1}{\textbf{Drawing Level Curves}\\
+\example{ex_levelcurve1}{Drawing Level Curves}{
 Let $\ds f(x,y) = \sqrt{1-\frac{x^2}9-\frac{y^2}4}$. Find the level curves of $f$ for $c=0$, $0.2$, $0.4$, $0.6$, $0.8$ and $1$.}
 {Consider first $c=0$. The level curve for $c=0$ is the set of all points $(x,y)$ such that $0=\sqrt{1-\frac{x^2}9-\frac{y^2}4}$. Squaring both sides quickly gives us
 $$\frac{x^2}9+\frac{y^2}4=1,$$ an ellipse centered at $(0,0)$ with horizontal major axis of length 6 and minor axis of length 4. Thus for any point $(x,y)$ on this curve, $f(x,y) = 0$.
@@ -99,7 +99,7 @@ The level curves are shown in Figure \ref{fig:levelcurves1}(a). Note how the lev
 In Figure \ref{fig:levelcurves1}(b), the curves are drawn on a graph of $f$ in space. Note how the elevations are evenly spaced. Near the level curves of $c=0$ and $c=0.2$ we can see that $f$ indeed is growing quickly.
 }\\
 
-\example{ex_levelcurves2}{\textbf{Analyzing Level Curves}\\
+\example{ex_levelcurves2}{Analyzing Level Curves}{
 Let $\ds f(x,y) = \frac{x+y}{x^2+y^2+1}$. Find the level curves for $z=c$.}
 {We begin by setting $f(x,y)=c$ for an arbitrary $c$ and seeing if algebraic manipulation of the equation reveals anything significant.
 \begin{align*}
@@ -136,7 +136,7 @@ We extend our study of multivariable functions to functions of three variables. 
 
 Note how this definition closely resembles that of Definition \ref{def:multi2}.\\
 
-\example{ex_multi3}{\textbf{Understanding a function of three variables}\\
+\example{ex_multi3}{Understanding a function of three variables}{
 Let $\ds f(x,y,z) =  \frac{x^2+z+3\sin y}{x+2y-z}.$ Evaluate $f$ at the point $(3,0,2)$ and find the domain and range of $f$.}
 {$\ds f(3,0,2) = \frac{3^2+2+3\sin 0}{3+2(0)-2} = 11.$
 
@@ -153,7 +153,7 @@ It is very difficult to produce a meaningful graph of a function of three variab
 
 There are a few techniques one can employ to try to ``picture'' a graph of three variables. One is an analogue of level curves: \textbf{level surfaces}. Given $f(x,y,z)$, the level surface at $w=c$ is the surface in space formed by all points $(x,y,z)$ where $f(x,y,z)=c$. \\
 
-\example{ex_multi4}{\textbf{Finding level surfaces}\\
+\example{ex_multi4}{Finding level surfaces}{
 If a point source $S$ is radiating energy, the intensity $I$ at a given point $P$ in space is inversely proportional to the square of the distance between $S$ and $P$. That is, when $S=(0,0,0)$,  $\ds I(x,y,z) = \frac{k}{x^2+y^2+z^2}$ for some constant $k$.
 
 Let $k=1$; find the level surfaces of $I$.}

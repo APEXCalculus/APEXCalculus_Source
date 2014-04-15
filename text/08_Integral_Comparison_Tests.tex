@@ -1,0 +1,183 @@
+\section{Integral and Comparison Tests}\label{sec:int_comp_tests}
+
+Knowing whether or not a series converges is very important, especially when we discuss Power Series in Sections \ref{}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$- series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
+
+%\mnote{.85}{\textbf{Note:} Recall we often use $\sum a_n$ to write $\ds \sum_{n=1}^\infty a_n$.}
+
+\noindent\textbf{\large Integral Test}\\
+
+We stated in Section \ref{sec:sequences} that a sequence $\{a_n\}$ is a function $a(n)$ whose domain is $\mathN$, the set of natural numbers. If we can extend $a(n)$ to $\mathbb{R}$, the real numbers, and $a(x)$ is both positive and decreasing on $[1,\infty)$, then the convergence of $\ds \sum_{n=1}^\infty a_n$ is the same as $\ds\int_1^\infty a(x)\ dx$. 
+
+\theorem{thm:integral_test}{Integral Test}
+{Let a sequence $\{a_n\}$ be defined by $a_n=a(n)$, where $a(n)$ is continuous, positive and decreasing on $[1,\infty)$. Then $\ds \sum_{n=1}^\infty a_n$ converges, if, and only if, $\ds\int_1^\infty a(x)\ dx$ converges.
+}
+\mnote{.65}{\textbf{Note:} Theorem \ref{thm:integral_test} does not state that the integral and the summation have the same value.}
+
+We can demonstrate the truth of the Integral Test with two simple graphs. In Figure \ref{fig:integral_test}(a), the height of each rectangle is $a(n)=a_n$ for $n=1,2,\ldots$, and clearly the rectangles enclose more area than the area under $y=a(x)$. Therefore we can conclude that \
+\begin{equation}
+\ds \int_1^\infty a(x)\ dx < \sum_{n=1}^\infty a_n.
+\label{eq:integral_testa}
+\end{equation}
+\mtable{.4}{Illustrating the truth of the Integral Test.}{fig:integral_test}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figintegral_test_a}\\
+(a)\\
+\myincludegraphics{figures/figintegral_test_b}\\
+(b)
+\end{tabular}
+} 
+In Figure \ref{fig:integral_test}(b), we draw rectangles under $y=a(x)$ with the Right-Hand rule, starting with $n=2$. This time, the area of the rectangles is less than the area under $y=a(x)$, so $\ds\sum_{n=2}^\infty a_n < \int_1^\infty a(x)\ dx$. Note how this summation starts with $n=2$; adding $a_1$ to both sides lets us rewrite the summation starting with $n=1$:
+\begin{equation}\sum_{n=1}^\infty a_n < a_1 +\int_1^\infty a(x)\ dx.\label{eq:integral_testb}
+\end{equation} 
+
+
+Combining Equations \eqref{eq:integral_testa} and \eqref{eq:integral_testb}, we have
+\begin{equation}\sum_{n=1}^\infty a_n< a_1 +\int_1^\infty a(x)\ dx < a_1 + \sum_{n=1}^\infty a_n.\label{eq:integral_testc}\end{equation}
+From Equation \eqref{eq:integral_testc} we can make the following two statements:
+\begin{enumerate}
+	\item If $\ds \sum_{n=1}^\infty a_n$ diverges, so does $\ds\int_1^\infty a(x)\ dx$ \quad (because $\ds \sum_{n=1}^\infty a_n < a_1 +\int_1^\infty a(x)\ dx$)
+	\item	If $\ds \sum_{n=1}^\infty a_n$ converges, so does $\ds\int_1^\infty a(x)\ dx$ \quad (because $\ds \ds \int_1^\infty a(x)\ dx < \sum_{n=1}^\infty a_n$.)
+\end{enumerate}
+Therefore the series and integral either both converge or both diverge. Theorem \ref{thm:series_behavior} allows us to extend this theorem to series where $a_n$ is positive and decreasing on $[b,\infty)$ for some $b>1$.\\
+
+\example{ex_itest1}{Using the Integral Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac{\ln n}{n^2}$.  (The terms of the sequence $\{a_n\} = \{\ln n/n^2\}$ and the n$^{\text{th}}$ partial sums are given in Figure \ref{fig:itest1}.)
+}
+{Applying the Integral Test, we test the convergence of $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$. Integrating this improper integral requires the use of Integration by Parts, with $u = \ln x$ and $dv = 1/x^2\ dx$. 
+\begin{align*}
+\int_1^\infty \frac{\ln x}{x^2}\ dx &= \lim_{b\to\infty} \int_1^b \frac{\ln x}{x^2}\ dx\\
+				&= \lim_{b\to\infty} -\frac1x\ln x\Big|_1^b + \int_1^b\frac1{x^2}\ dx \\
+				&= \lim_{b\to\infty} -\frac1x\ln x -\frac 1x\Big|_1^b\\
+				&= \lim_{b\to\infty}1-\frac1b-\frac{\ln b}{b}.\quad \text{Apply L'H\^opital's Rule:}\\
+				&= 1.
+\end{align*}
+Since $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$ converges, so does $\ds \sum_{n=1}^\infty \frac{\ln n}{n^2}$.
+\mfigure{.5}{Plotting the sequence and series in Example \ref{ex_itest1}.}{fig:itest1}{figures/figitest1}
+
+Note how the sequence $\{a_n\}$ is not strictly decreasing; it increases from $n=1$ to $n=2$. However, this does not keep us from applying the Integral Test as the sequence in positive and decreasing on $[2,\infty)$.
+}\\
+
+Theorem \ref{thm:pseries} was given without justification, stating that the general $p$-series $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$. In the following example, we prove this to be true by applying the Integral Test.\\
+
+\example{ex_itest2}{Using the Integral Test to establish Theorem \ref{thm:pseries}{.}\\
+Use the Integral Test to prove that $\ds \sum_{n=1}^\infty \frac1{(an+b)^p}$ converges if, and only if, $p>1$.
+}
+{Consider the integral $\ds\int_1^\infty \frac1{(ax+b)^p}\ dx$; assuming $p\neq 1$,
+\begin{align*}
+\int_1^\infty \frac1{(ax+b)^p}\ dx &= \lim_{c\to\infty} \int_1^c \frac1{(ax+b)^p}\ dx \\
+		&= \lim_{c\to\infty} \frac{1}{a(1-p)}(ax+b)^{1-p}\Big|_1^c\\
+		&= \lim_{c\to\infty} \frac{1}{a(1-p)}\big((ac+b)^{1-p}-(a+b)^{1-p}\big).
+\end{align*}
+This limit converges if, and only if, $p>1$. It is easy to show that the integral also diverges in the case of $p=1$. (This result is similar to the work preceding Key Idea \ref{idea:impint1}.)
+
+Therefore $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$.
+}\\
+
+We consider two more convergence tests in this section, both \textit{comparison} tests. That is, we determine the convergence of one series by  comparing it to another series with known convergence. 
+
+\noindent\textbf{\large Direct Comparison Test}\\
+
+\theorem{thm:series_direct_compare}{Direct Comparison Test}
+{Let $\{a_n\}$ and $\{b_n\}$ be positive sequences where $a_n\leq b_n$ for all $n\geq N$, for some $N\geq 1$. 
+	\begin{enumerate}
+		\item If $\ds \sum_{n=1}^\infty b_n$ converges, then $\ds \sum_{n=1}^\infty a_n$ converges.
+		\item	If $\ds \sum_{n=1}^\infty a_n$ diverges, then $\ds \sum_{n=1}^\infty b_n$ diverges.
+	\end{enumerate}
+}
+
+\mnote{.8}{\textbf{Note:} A sequence $\{a_n\}$ is a \textbf{positive sequence} if $a_n>0$ for all $n$.\\ 
+
+Because of Theorem \ref{thm:series_behavior}, any theorem that relies on a positive sequence still holds true when $a_n>0$ for all but a finite number of values of $n$.}
+
+\example{ex_dct1}{Applying the Direct Comparison Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac1{3^n+n^2}$.
+}
+{This series is neither a geometric or $p$-series, but seems related. We predict it will converge, so we look for a series with larger terms that converges. (Note too that the Integral Test seems difficult to apply here.)
+
+Since $3^n < 3^n+n^2$, $\ds \frac1{3^n}> \frac1{3^n+n^2}$ for all $n\geq1$. The series $\ds\sum_{n=1}^\infty \frac{1}{3^n}$ is a convergent geometric series; by Theorem \ref{thm:series_direct_compare}, $\ds \sum_{n=1}^\infty \frac1{3^n+n^2}$ converges.
+}\\
+
+\example{ex_dct2}{Applying the Direct Comparison Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac{1}{n-\ln n}$.}
+{We know the Harmonic Series $\ds\sum_{n=1}^\infty \frac1n$ diverges, and it seems that the given series is closely related to it, hence we predict it will diverge. 
+
+Since $n\geq n-\ln n$ for all $n\geq 1$, $\ds \frac1n \leq \frac1{n-\ln n}$ for all $n\geq 1$. 
+
+The Harmonic Series diverges, so we conclude that $\ds\sum_{n=1}^\infty \frac{1}{n-\ln n}$ diverges as well.
+}\\
+
+The concept of direct comparison is powerful and often relatively easy to apply. Practice helps one develop the necessary intuition to quickly pick a proper series with which to compare. However, it is easy to construct a series for which it is difficult to apply the Direct Comparison Test. 
+
+Consider $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$. It is very similar to the divergent series given in Example \ref{ex_dct2}. We suspect that it also diverges, as $\ds \frac 1n \approx \frac1{n+\ln n}$ for large $n$. However, the inequality that we naturally want to use ``goes the wrong way'': since $n\leq n+\ln n$ for all $n\geq 1$, $\ds\frac1n \geq \frac{1}{n+\ln n}$ for all $n\geq 1$. The given series has terms \textit{less than} the terms of a divergent series, and we cannot conclude anything from this.
+
+Fortunately, we can apply another test to the given series to determine its convergence.\\
+
+\noindent\textbf{\large Limit Comparison Test}\\
+
+\theorem{thm:series_limit_compare}{Limit Comparison Test}
+{Let $\{a_n\}$ and $\{b_n\}$ be positive sequences.
+	\begin{enumerate}
+		\item If $\ds\lim_{n\to\infty} \frac{a_n}{b_n} = L$, where $L$ is a positive real number, then $\ds \sum_{n=1}^\infty a_n$ and $\ds \sum_{n=1}^\infty b_n$ either both converge or both diverge.
+		\item	If $\ds\lim_{n\to\infty} \frac{a_n}{b_n} = 0$, then if $\ds \sum_{n=1}^\infty b_n$ converges, then so does $\ds \sum_{n=1}^\infty a_n$.
+		\item	If $\ds\lim_{n\to\infty} \frac{a_n}{b_n} = \infty$, then if $\ds \sum_{n=1}^\infty b_n$ diverges, then so does $\ds \sum_{n=1}^\infty a_n$.
+	\end{enumerate}
+}\\
+
+It is helpful to remember that when using Theorem \ref{thm:series_limit_compare}, the terms of the series with known convergence go in the denominator of the fraction.
+
+We use the Limit Comparison Test in the next example to examine the series $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$ which motivated this new test.\\
+
+\example{ex_lct1}{Applying the Limit Comparison Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$ using the Limit Comparison Test.}
+{We compare the terms of $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$ to the terms of the Harmonic Sequence $\ds\sum_{n=1}^\infty \frac1{n}$:
+\begin{align*}
+\lim_{n\to\infty}\frac{1/(n+\ln n)}{1/n} &= \lim_{n\to\infty} \frac{n}{n+\ln n} \\
+			&= 1\quad \text{(after applying L'H\^opital's Rule)}.
+\end{align*}
+Since the Harmonic Series diverges, we conclude that $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$ diverges as well.
+}\\
+
+\example{ex_lct2}{Applying the Limit Comparison Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac1{3^n-n^2}$}
+{This series is similar to the one in Example \ref{ex_dct1}, but now we are considering ``$3^n-n^2$'' instead of ``$3^n+n^2$.'' This difference makes applying the Direct Comparison Test difficult.
+
+Instead, we use the Limit Comparison Test and compare with the series $\ds\sum_{n=1}^\infty \frac1{3^n}$:
+\begin{align*}
+\lim_{n\to\infty}\frac{1/(3^n-n^2)}{1/3^n} &= \lim_{n\to\infty}\frac{3^n}{3^n-n^2} \\
+		&= 1 \quad \text{(after applying L'H\^opital's Rule twice)}.
+\end{align*}
+We know $\ds\sum_{n=1}^\infty \frac1{3^n}$ is a convergent geometric series, hence $\ds\sum_{n=1}^\infty \frac1{3^n-n^2}$ converges as well.
+}\\
+
+As mentioned before, practice helps one develop the intuition to quickly choose a series with which to compare. A general rule of thumb is to pick a series based on the dominant term in the expression of $\{a_n\}$. It is also helpful to note that factorials dominate exponentials, which dominate algebraic functions (e.g., polynomials), which dominate logarithms. In the previous example, the dominant term of $\ds\frac{1}{3^n-n^2}$ was $3^n$, so we compared the series to $\ds \sum_{n=1}^\infty \frac1{3^n}$. It is hard to apply the Limit Comparison Test to series containing factorials, though, as we have not learned how to apply L'H\^opital's Rule to $n!$.\\
+
+\example{ex_lct3}{Applying the Limit Comparison Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac{\sqrt{x}+3}{x^2-x+1}$.}
+{We na\"ively attempt to apply the rule of thumb given above and note that the dominant term in the expression of the series is $1/x^2$. Knowing that $\ds \sum_{n=1}^\infty \frac1{n^2}$ converges, we attempt to apply the Limit Comparison Test:
+\begin{align*}
+\lim_{n\to\infty}\frac{(\sqrt{x}+3)/(x^2-x+1)}{1/x^2} &= \lim_{n\to\infty}\frac{x^2(\sqrt x+3)}{x^2-x+1}\\
+		&= \infty \quad \text{(Apply L'H\^opital's Rule)}.
+\end{align*}
+
+Theorem \ref{thm:series_limit_compare} part (3) only applies when $\ds\sum_{n=1}^\infty b_n$ diverges; in our case, it converges. Ultimately, our test has not revealed anything about the convergence of our series.
+
+The problem is that we chose a poor series with which to compare. Since the numerator and denominator of the terms of the series are both algebraic functions, we should have compared our series  to the dominant term of the numerator divided by the dominant term of the denominator.
+
+The dominant term of the numerator is $x^{1/2}$ and the dominant term of the denominator is $x^2$. Thus we should compare the terms of the given series to $x^{1/2}/x^2 = 1/x^{3/2}$:
+\begin{align*}
+\lim_{n\to\infty}\frac{(\sqrt{x}+3)/(x^2-x+1)}{1/x^{3/2}} &= \lim_{n\to \infty} \frac{x^{3/2}(\sqrt x+3)}{x^2-x+1} \\
+		&= 1\quad \text{(Applying L'H\^opital's Rule)}.
+\end{align*}
+Since the  $p$-series $\ds\sum_{n=1}^\infty \frac1{x^{3/2}}$ converges, we conclude that $\ds\sum_{n=1}^\infty \frac{\sqrt{x}+3}{x^2-x+1}$ converges as well.
+}\\
+
+
+
+
+
+
+
+
+
+
+\clearpage

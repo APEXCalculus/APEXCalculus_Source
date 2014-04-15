@@ -38,7 +38,7 @@ $$\ell_x(t) = \left\{\begin{array}{l} x=x_0+t \\ y=y_0\\z=z_0+f_x(x_0,y_0)t \end
 
 \clearpage
 
-\example{ex_tpl1}{\textbf{Finding directional tangent lines}\\
+\example{ex_tpl1}{Finding directional tangent lines}{
 Find the lines tangent to the surface $z=\sin x\cos y$ at $(\pi/2,\pi/2)$ in the $x$ and $y$ directions and also in the direction of $\vec v = \la -1,1\ra.$}
 {The partial derivatives with respect to $x$ and $y$ are:
 \begin{align*}
@@ -66,7 +66,7 @@ $$\ell_{\vec u}(t) = \left\{\begin{array}{l} x= \pi/2 -t/\sqrt{2}\\ y = \pi/2 + 
 The curve through $(\pi/2,\pi/2,0)$ in the direction of $\vec v$ is shown in Figure \ref{fig:partial4}(b) along with $\ell_{\vec u}(t)$.
 }\\
 
-\example{ex_tpl2}{\textbf{Finding directional tangent lines}\\
+\example{ex_tpl2}{Finding directional tangent lines}{
 Let $f(x,y) = 4xy-x^4-y^4$. Find the equations of \textit{all} directional tangent lines to $f$ at $(1,1)$.}
 {First note that $f(1,1) = 2$. We need to compute directional derivatives, so we need $\nabla f$. We begin by computing partial derivatives.
 $$f_x = 4y-4x^3 \Rightarrow f_x(1,1) = 0;\quad f_y = 4x-4y^3\Rightarrow f_y(1,1) = 0.$$
@@ -107,7 +107,7 @@ Thus the parametric equations of the normal line to a surface $f$ at $\big(x_0,y
 $$\ell_{n}(t) = \left\{\begin{array}{l} x= x_0+at\\ y = y_0 + bt \\ z = f(x_0,y_0) - t\end{array}\right..$$
 \vskip\baselineskip
 
-\example{ex_tpl3}{\textbf{Finding a normal line}\\
+\example{ex_tpl3}{Finding a normal line}{
 Find the equation of the normal line to $z=-x^2-y^2+2$ at $(0,1)$.
 }
 {We find $z_x(x,y) = -2x$ and $z_y(x,y) = -2y$; at $(0,1)$, we have $z_x = 0$ and $z_y = -2$. We take the direction of the normal line, following Definition \ref{def:normal_line_space}, to be $\vec n=\la 0,-2,-1\ra$. The line with this direction going through the point $(0,1,1)$ is 
@@ -120,7 +120,7 @@ The surface $z=-x^2+y^2$, along with the found normal line, is graphed in Figure
 
 The direction of the normal line has many uses, one of which is the definition of the \textbf{tangent plane} which we define shortly. Another use is in measuring distances from the surface to a point. Given a point $Q$ in space, it is general geometric concept to define the distance from $Q$ to the surface as being the length of the shortest line segment $\overline{PQ}$ over all points $P$ on the surface. This, in turn, implies that $\vv{PQ}$ will be orthogonal to the surface at $P$. Therefore we can measure the distance from $Q$ to the surface $f$ by finding a point $P$ on the surface such that $\vv{PQ}$ is parallel to the normal line to $f$ at $P$.\\
 
-\example{ex_tpl4}{\textbf{Finding the distance from a point to a surface}\\
+\example{ex_tpl4}{Finding the distance from a point to a surface}{
 Let $f(x,y) = 2-x^2-y^2$ and let $Q = (2,2,2)$. Find the distance from $Q$ to the surface defined by $f$.}
 {This surface used in Example \ref{ex_tpl2}, so we know that at $(x,y)$, the direction of the normal line will be $\vec d_n = \la -2x,-2y,-1\ra$. A point $P$ on the surface will have coordinates $(x,y,2-x^2-y^2)$, so $\vv{PQ} = \la 2-x,2-y,x^2+y^2\ra$. To find where $\vv{PQ}$ is parallel to $\vec d_n$, we need to find $x$, $y$ and $c$ such that $c\vv{PQ} = \vec d_n$.
 \begin{align*}
@@ -147,7 +147,7 @@ $$\norm{\vv{PQ}} = \sqrt{(2-0.689)^2 +(2-0.689)^2+(2-1.051)^2} = 2.083.$$
 
 We can take the concept of measuring the distance from a point to a surface to find a point $Q$ a particular distance from a surface at a given point $P$ on the surface.\\
 
-\example{ex_tpl5}{\textbf{Finding a point a set distance from a surface}\\
+\example{ex_tpl5}{Finding a point a set distance from a surface}{
 Let $f(x,y) = x-y^2+3$. Let $P = \big(2,1,f(2,1)\big) = (2,1,4)$. Find points $Q$ in space that is 4 units from the surface of $f$ at $P$. That is, find $Q$ such that $\norm{\vv{PQ}}=4$ and $\vv{PQ}$ is orthogonal to $f$ at $P$.}
 {We begin by finding partial derivatives:
 \begin{align*}
@@ -180,7 +180,7 @@ $$a(x-x_0) + b(y-y_0) - \big(z-f(x_0,y_0)\big) = 0.$$
 }
 %\clearpage
 
-\example{ex_tpl6}{\textbf{Finding tangent planes}\\
+\example{ex_tpl6}{Finding tangent planes}{
 Find the equation tangent plane to $z=-x^2-y^2+2$ at $(0,1)$.
 }
 {Note that this is the same surface and point used in Example \ref{ex_tpl3}. There we found $\vec n = \la 0,-2,-1\ra$ and $P = (0,1,1)$. Therefore the equation of the tangent plane is 
@@ -190,7 +190,7 @@ $$-2(y-1)-(z-1)=0.$$
 The surface $z=-x^2+y^2$ and tangent plane are graphed in Figure \ref{fig:tpl6}. 
 }\\
 
-\example{ex_tpl7}{\textbf{Using the tangent plane to approximate function values}\\
+\example{ex_tpl7}{Using the tangent plane to approximate function values}{
 The point $(3,-1,4)$ lies on the surface of an unknown differentiable function $f$ where $f_x(3,-1) = 2$ and $f_y(3,-1) = -1/2$. Find the equation of the tangent plane to $f$ at $P$, and use this to approximate the value of $f(2.9,-0.8)$.}
 {Knowing the partial derivatives at $(3,-1)$ allows us to form the normal vector to the tangent plane, $\vec n = \la 2,-1/2,-1\ra$. Thus the equation of the tangent line to $f$ at $P$ is:
 \begin{equation}
@@ -225,7 +225,7 @@ The vector $\nabla F(x_0,y_0,z_0)$ is orthogonal to the level surface $F(x,y,z)=
 
 The gradient at a point gives a vector orthogonal to the surface at that point. This direction can be used to find tangent planes and normal lines.\\
 
-\example{ex_tpl8}{\textbf{Using the gradient to find a tangent plane}\\
+\example{ex_tpl8}{Using the gradient to find a tangent plane}{
 Find the equation of the plane tangent to the ellipsoid $\ds \frac{x^2}{12} +\frac{y^2}{6}+\frac{z^2}{4}=1$ at $P = (1,2,1)$.}
 {We consider the equation of the ellipsoid as a level surface of a function $F$ of three variables, where $F(x,y,z) = \frac{x^2}{12} +\frac{y^2}{6}+\frac{z^2}{4}$.  The gradient is:
 \begin{align*}

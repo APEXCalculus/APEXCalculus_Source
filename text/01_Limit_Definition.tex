@@ -49,7 +49,7 @@ There is an emphasis here that we may have passed over before.  In the definitio
 
 It is time for an example.  Note that the explanation is long, but it will take you through all steps necessary to understand the ideas.\\
 
-\example{ex_compute_lim1}{\textbf{Evaluating a limit using the definition}\\
+\example{ex_compute_lim1}{Evaluating a limit using the definition}{
 Show that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 $.}
 {Before we use the formal definition, let's try some numerical tolerances.  What if the $y$ tolerance is 0.5, or $\epsilon =0.5$?  How close to 4 does $x$ have to be so that $y$ is within 0.5 units of 2 (or $1.5 < y < 2.5$)?  In this case, we can just square these values to get
 $1.5^2 < x < 2.5^2,$ or $$2.25 < x < 6.25.$$
@@ -108,7 +108,7 @@ So given any $\epsilon >0$, we can set $\delta = 4\epsilon - \epsilon^2$ and the
  
 If you are thinking this process is long, you would be right.  The previous example is also a bit unsatisfying in that $\sqrt{4}=2$; why work so hard to prove something so obvious? Many $\epsilon-\delta$ proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non--obvious examples are even harder.  That is why theorems about limits are so useful! After doing a few more $\epsilon$--$\delta$ proofs, you will really appreciate the analytical ``short cuts'' found in the next section.\\
 
-\example{ex_compute_lim2}{\textbf{Evaluating a limit using the definition}\\
+\example{ex_compute_lim2}{Evaluating a limit using the definition}{
 Show that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4$.}
 {Let's do this example symbolically from the start.  Let $\epsilon > 0$ be given; we want $|y-4| < \epsilon$, i.e.,  $|x^2-4| < \epsilon$.  How do we find $\delta$ such that when $|x-2| < \delta$, we are guaranteed that $|x^2-4|<\epsilon$?% for some $\delta$ (in terms of $\epsilon$)?
 
@@ -185,7 +185,7 @@ $|x^2 - 4|< \epsilon$ (i.e. $|y - 4|< \epsilon$) as desired.  We have shown that
 %\end{align*}
 %}
 
-\example{ex_compute_lim3}{\textbf{Evaluating a limit using the definition}\\Show that $\displaystyle \lim_{x\rightarrow 0} e^x = 1 $.}
+\example{ex_compute_lim3}{Evaluating a limit using the definition}{Show that $\displaystyle \lim_{x\rightarrow 0} e^x = 1 $.}
 {Symbolically, we want to take the equation $|e^x - 1| < \epsilon$ and unravel it to the form $|x-0| < \delta$.  Let's look at some calculations:
 \begin{eqnarray*}
 |e^x - 1| < \epsilon&\\

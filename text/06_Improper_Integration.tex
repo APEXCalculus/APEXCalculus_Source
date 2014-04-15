@@ -45,7 +45,7 @@ An improper integral is said to \textbf{converge} if its corresponding limit exi
 \restoreboxwidth
 \enlargethispage{2\baselineskip}
 
-\example{ex_impint1}{\textbf{Evaluating improper integrals}\\
+\example{ex_impint1}{Evaluating improper integrals}{
 Evaluate the following improper integrals.
 
 \noindent%
@@ -114,7 +114,7 @@ A graph of the area defined by this integral is given in Figure \ref{fig:impint1
 
 The previous section introduced l'H\^opital's Rule, a method of evaluating limits that return indeterminate forms. It is not uncommon for the limits resulting from improper integrals to need this rule as demonstrated next.\\
 
-\example{ex_impint2}{\textbf{Improper integration and l'H\^opital's Rule}\\
+\example{ex_impint2}{Improper integration and l'H\^opital's Rule}{
 Evaluate the improper integral $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx.$}
 {This integral will require the use of Integration by Parts. Let $u = \ln x$ and $dv = 1/x^2\ dx$. Then
 \mfigure{.8}{A graph of $f(x) = \frac{\ln x}{x^2}$ in Example \ref{ex_impint2}.}{fig:impint2}{figures/figeximpint2}
@@ -144,7 +144,7 @@ $$\int_a^b f(x)\ dx = \lim_{t\to c^-}\int_a^t f(x)\ dx + \lim_{t\to c^+}\int_t^b
 %The integral converges if both limits exist and diverges otherwise.
 } 
 
-\example{ex_impint3}{\textbf{Improper integration of functions with infinite range}\\
+\example{ex_impint3}{Improper integration of functions with infinite range}{
 Evaluate the following improper integrals:
 \vskip 10pt
 $\ds 1.\ \int_0^1\frac1{\sqrt{x}}\ dx \hskip 50pt 2. \ \int_{-1}^1\frac{1}{x^2}\ dx.$
@@ -190,7 +190,7 @@ Oftentimes we are interested in knowing simply whether or not an improper integr
 
 Our first tool is to understand the behavior of functions of the form $\ds \frac1{x\hskip1pt ^p}$.\\
 
-\example{ex_impint4}{\textbf{Improper integration of $1/x^p$}\\
+\example{ex_impint4}{Improper integration of $1/x^p$}{
 Determine the values of $p$ for which $\ds \int_1^\infty \frac1{x\hskip1pt ^p}\ dx$ converges.}
 {We begin by integrating and then evaluating the limit.
 \begin{align*}
@@ -251,7 +251,7 @@ Let $f$ and $g$ be continuous on $[a,\infty)$ where $0\leq f(x)\leq g(x)$ for al
 %\end{minipage}
 \restoreboxwidth
 
-\example{ex_impint5}{\textbf{Determining convergence of improper integrals}\\
+\example{ex_impint5}{Determining convergence of improper integrals}{
 Determine the convergence of the following improper integrals.
 
 %\noindent%
@@ -302,7 +302,7 @@ In cases like this (and many more) it is useful to employ the following theorem.
 %\end{minipage}
 \restoreboxwidth
 
-\example{ex_impint6}{\textbf{Determining convergence of improper integrals}\\
+\example{ex_impint6}{Determining convergence of improper integrals}{
 Determine the convergence of $\ds \int_3^{\infty} \frac{1}{\sqrt{x^2+2x+5}}\ dx$.
 }
 {As $x$ gets large, the quadratic inside the square root function will begin to behave much like $y=x$. So we compare $\ds\frac{1}{\sqrt{x^2+2x+5}}$ to $\ds\frac1x$ with the Limit Comparison Test:

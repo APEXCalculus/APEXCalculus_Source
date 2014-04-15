@@ -45,7 +45,7 @@ The function we want to find an antiderivative of is called the \textit{integran
 
 Let's practice using this notation.\\
 
-\example{ex_anti2}{\textbf{Evaluating indefinite integrals}\\
+\example{ex_anti2}{Evaluating indefinite integrals}{
 Evaluate $\displaystyle \int \sin x\ dx.$}
 {We are asked to find a function $F(x)$ such that $\Fp(x) = \sin x$. Some thought will lead us to one solution: $F(x) = -\cos x$, because $\frac{d}{dx}(-\cos x) = \sin x$.
 
@@ -66,7 +66,7 @@ Understanding all of this is more important later as we try to find antiderivati
 
 Let's practice once more before stating integration rules.\\
 
-\example{ex_anti3}{\textbf{Evaluating indefinite integrals}\\
+\example{ex_anti3}{Evaluating indefinite integrals}{
 Evaluate $\ds \int (3x^2 + 4x+5)\ dx$.}
 {We seek a function $F(x)$ whose derivative is $3x^2+4x+5$. When taking derivatives, we can consider functions term--by--term, so we can likely do that here.
 
@@ -96,7 +96,7 @@ Theorem \ref{thm:deriv_glossary} gave a list of the derivatives of common functi
 \settodepth{\bd}{$\frac{d}{dx}$}
 
 %\newcommand{\myrule}{\rule[-\bd]{0pt}{\bh+\bd}}%\ $\frac{d}{dx}$
-\newcommand{\myrule}{\rule[-4pt]{0pt}{13pt}}%\ $\frac{d}{dx}$
+%\newcommand{\myrule}{\rule[-4pt]{0pt}{13pt}}%\ $\frac{d}{dx}$
 
 \theorem{thm:indef_alg}{Derivatives and Antiderivatives}
 {\begin{minipage}[t]{.45\specialboxlength}
@@ -225,7 +225,7 @@ In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position f
 
 We can find \textit{the} answer if we provide more information with the question, as done in the following example.\\
 
-\example{ex_anti4}{\textbf{Solving initial value problems}\\
+\example{ex_anti4}{Solving initial value problems}{
 The acceleration due to gravity of a falling object is $-32$ ft/s$^2$. At time $t=3$, a falling object had a velocity of $-10$ ft/s. Find the equation of the object's velocity.}
 {We want to know a velocity function, $v(t)$. We know two things:
 	\begin{itemize}
@@ -249,7 +249,7 @@ $$-32t+86 = 0 \quad \Rightarrow\quad  t = \frac{43}{16}  \approx 2.69\text{s}.$$
 Recognize that we are able to determine quite a bit about the path of the object knowing just its acceleration and its velocity at a single point in time.
 }\\
 
-\example{ex_anti5}{\textbf{Solving initial value problems}\\
+\example{ex_anti5}{Solving initial value problems}{
 Find $f(t)$, given that $\fpp(t) = \cos t$, $\fp(0) = 3$ and $f(0) = 5$.}
 {We start by finding $\fp(t)$, which is an antiderivative of $\fpp(t)$:
 		$$\int \fpp(t)\ dt = \int \cos t\ dt = \sin t + C = \fp(t).$$

@@ -56,7 +56,7 @@ $$L = \int_a^b \sqrt{1+\fp(x)^2}\ dx.$$
 
 As the integrand contains a square root, it is often difficult to use the formula in Key Idea \ref{idea:arclength} to find the length exactly. When exact answers are difficult to come by, we resort to using numerical methods of approximating definite integrals. The following examples will demonstrate this.\\
 
-\example{ex_arc1}{\textbf{Finding arc length}\\
+\example{ex_arc1}{Finding arc length}{
 Find the arc length of $f(x) = x^{3/2}$ from $x=0$ to $x=4$. }
 {We begin by finding $\fp(x)= \frac32x^{1/2}$. Using the formula, we find the arc length $L$ as
 \begin{align*}
@@ -70,7 +70,7 @@ Find the arc length of $f(x) = x^{3/2}$ from $x=0$ to $x=4$. }
 	A graph of $f$ is given in Figure \ref{fig:arc1}. 
 }\\
 
-\example{ex_arc2}{\textbf{Finding arc length}\\
+\example{ex_arc2}{Finding arc length}{
 Find the arc length of $\ds f(x) =\frac18x^2-\ln x$ from $x=1$ to $x=2$.}
 {This function was chosen specifically because the resulting integral can be evaluated exactly. We begin by finding $\fp(x) = x/4-1/x$. The arc length is 
 \begin{align*}
@@ -91,7 +91,7 @@ A graph of $f$ is given in Figure \ref{fig:arc2}; the portion of the curve measu
 
 The previous examples found the arc length exactly through careful choice of the functions. In general, exact answers are much more difficult to come by and numerical approximations are necessary. \\
 
-\example{ex_arc3}{\textbf{Approximating arc length numerically}\\
+\example{ex_arc3}{Approximating arc length numerically}{
 Find the length of the sine curve from $x=0$ to $x=\pi$.}
 {This is somewhat of a mathematical curiosity; in Example \ref{ex_ftc4} we found the area under one ``hump'' of the sine curve is 2 square units; now we are measuring its arc length.
 
@@ -155,7 +155,7 @@ which is a Riemann Sum. Taking the limit as the subinterval lengths go to zero g
 
 (When revolving $y=f(x)$ about the $y$-axis, the radii of the resulting frustum are $x_i$ and $x_{i+1}$; their average value is simply the midpoint of the interval. In the limit, this midpoint is just $x$. This gives the second part of Key Idea \ref{idea:surface_area}.)\\
 
-\example{ex_sa1}{\textbf{Finding surface area of a solid of revolution}\\
+\example{ex_sa1}{Finding surface area of a solid of revolution}{
 Find the surface area of the solid formed by revolving $y=\sin x$ on $[0,\pi]$ around the $x$-axis, as shown in Figure \ref{fig:sa1}.
 \mfigure{.4}{Revolving $y=\sin x$ on $[0,\pi]$ about the $x$-axis.}{fig:sa1}{figures/figsa1}
 }
@@ -171,7 +171,7 @@ The integration step above is nontrivial, utilizing an integration method called
 It is interesting to see that the surface area of a solid, whose shape is defined by a trigonometric function, involves both a square root and an inverse hyperbolic trigonometric function.
 }\\
 
-\example{ex_sa2}{\textbf{Finding surface area of a solid of revolution}\\
+\example{ex_sa2}{Finding surface area of a solid of revolution}{
 Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,1]$ about:
 		\begin{enumerate}
 		\item		the $x$-axis
@@ -218,7 +218,7 @@ Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,
 This last example is a famous mathematical ``paradox.''\\
 \clearpage
 
-\example{ex_gabriel}{\textbf{The surface area and volume of Gabriel's Horn} \\
+\example{ex_gabriel}{The surface area and volume of Gabriel's Horn}{ \\
 Consider the solid formed by revolving $y=1/x$ about the $x$-axis on $[1,\infty)$. Find the volume and surface area of this solid. (This shape, as graphed in Figure \ref{fig:gabriel}, is known as ``Gabriel's Horn'' since it looks like a very long horn that only a supernatural person, such as an angel, could play.)
 \mfigure{.75}{A graph of Gabriel's Horn.}{fig:gabriel}{figures/figgabriel}
 }

@@ -13,7 +13,7 @@ This definition can be a bit cumbersome to remember. After an example we will gi
 
 Let's practice using this definition by computing a cross product.\\
 
-\example{ex_crossp1}{\textbf{Computing a cross product}\\
+\example{ex_crossp1}{Computing a cross product}{
 Let $\vec u = \la 2,-1,4\ra$ and $\vec v = \la 3,2,5\ra$. Find $\crossp uv$, and verify that it is orthogonal to both $\vec u$ and $\vec v$.
 }
 {Using Definition \ref{def:cross_product}, we have
@@ -52,7 +52,7 @@ $$\crossp uv = \big(-5\veci+12\vecj+4\veck\,\big) - \big(-3\veck+8\veci+10\vecj\
 
 We practice using this method.\\
 
-\example{ex_crossp2}{\textbf{Computing a cross product}\\
+\example{ex_crossp2}{Computing a cross product}{
 Let $\vecu=\la 1,3,6\ra$ and $\vec v = \la -1,2,1\ra$. Compute both $\crossp uv$ and $\crossp vu$.}
 {To compute $\crossp uv$, we form the matrix as prescribed above, complete with repeated first columns:
 $$\begin{array}{ccccc} \ \veci\ &\ \vecj\ &\ \veck\ &\ \veci\ &\ \vecj\ \\  1&3&6&1&3\\-1&2&1&-1&2\end{array}$$
@@ -115,7 +115,7 @@ Note that this theorem makes a statement about the \emph{magnitude} of the cross
 
 We demonstrate the truth of this theorem in the following example.\\
 
-\example{ex_crossp3}{\textbf{The cross product and angles}\\
+\example{ex_crossp3}{The cross product and angles}{
 Let $\vec u = \la 1,3,6\ra$ and $\vec v = \la -1,2,1\ra$ as in Example \ref{ex_crossp2}. Verify Theorem \ref{thm:cross_product} by finding $\theta$, the angle between $\vecu$ and $\vecv$, and the magnitude of $\crossp uv$.}
 {We use Theorem \ref{thm:dot_product} to find the angle between $\vecu$ and $\vecv$. 
 \begin{align*}
@@ -159,7 +159,7 @@ where the second equality comes from Theorem \ref{thm:cross_product}.
 }
 We illustrate using Equation \eqref{eq:crossp1} in the following example.\\
 
-\example{ex_crossp4}{\textbf{Finding the area of a parallelogram}\\
+\example{ex_crossp4}{Finding the area of a parallelogram}{
 \begin{enumerate}
 	\item Find the area of the parallelogram defined by the vectors $\vecu = \la 2,1\ra$ and $\vecv = \la 1,3\ra$.
 	\item	Verify that the points $A = (1,1,1)$, $B = (2,3,2)$, $C = (4,5,3)$ and $D = (3,3,2)$ are the vertices of a parallelogram. Find the area of the parallelogram.
@@ -184,7 +184,7 @@ We illustrate using Equation \eqref{eq:crossp1} in the following example.\\
 
 This application is perhaps more useful in finding the area of a triangle (in short, triangles are used more often than parallelograms). We illustrate this in the following example.\\
 
-\example{ex_crossp5}{\textbf{Area of a triangle}\\
+\example{ex_crossp5}{Area of a triangle}{
 Find the area of the triangle with vertices $A=(1,2)$, $B=(2,3)$ and $C=(3,1)$, as pictured in Figure \ref{fig:crossp5}.}
 {We found the area of this triangle in Example \ref{ex_abc4} to be $1.5$ using integration. There we discussed the fact that finding the area of a triangle can be inconvenient using the ``$\frac12bh$'' formula as one has to compute the height, which generally involves finding angles, etc. Using a cross product is much more direct.
 \mfigure{.8}{Finding the area of a triangle in Example \ref{ex_crossp5}.}{fig:crossp5}{figures/figcrossp5}
@@ -204,7 +204,7 @@ Thus the volume of a parallelepiped defined by vectors $\vecu$, $\vecv$ and $\ve
 Note how this is the Triple Scalar Product, first seen in Theorem \ref{thm:cross_prod_prop}. Applying the identities given in the theorem shows that we can apply the Triple Scalar Product in any ``order'' we choose to find the volume. That is,
 $$V = |\vecu\cdot(\crossp vw)| = |\vec u\cdot (\crossp wv)| = |(\crossp uv)\cdot \vecw|,\quad \text{etc.}$$
 
-\example{ex_crossp6}{\textbf{Finding the volume of parallelepiped}\\
+\example{ex_crossp6}{Finding the volume of parallelepiped}{
 Find the volume of the parallepiped defined by the vectors $\vecu = \la 1,1,0\ra$, $\vecv = \la -1,1,0\ra$ and $\vecw = \la 0,1,1\ra$. 
 }
 {We apply Equation \eqref{eq:crossp2}. We first find $\crossp vw =\la 1,1,-1\ra$. Then
@@ -221,7 +221,7 @@ While this application of the Triple Scalar Product is interesting, it is not us
 
 While a full understanding of torque is beyond the purposes of this book, when a force $\vec F$ is applied to a lever arm $\vec \ell$, the resulting torque is \begin{equation}\vec \tau = \crossp \ell F.\label{eq:crossp3}\end{equation}
 
-\example{ex_crossp7}{\textbf{Computing torque}\\
+\example{ex_crossp7}{Computing torque}{
 A lever of length 2ft makes an angle with the horizontal of $45^\circ$. Find the resulting torque when a force of 10lb is applied to the end of the level where:
 \mfigure{.6}{Showing a force being applied to a lever in Example \ref{ex_crossp7}.}{fig:crossp7}{figures/figcrossp7}
 \begin{enumerate}

@@ -32,7 +32,7 @@ $$ax+by+cz = d.$$
 
 A key to remember throughout this section is this: to find the equation of a plane, we need a point and a normal vector. We will give several examples of finding the equation of a plane, and in each one different types of information is given. In each case, we need to use the given information to find a point on the plane and a normal vector.\\
 
-\example{ex_planes1}{\textbf{Finding the equation of a plane.}\\
+\example{ex_planes1}{Finding the equation of a plane.}{
 Write the equation of the plane that passes through the points $P=(1,1,0)$, $Q = (1,2,-1)$ and $R = (0,1,2)$ in standard form.}
 {We need a vector $\vec n$ that is orthogonal to the plane. Since $P$, $Q$ and $R$ are in the plane, so are the vectors $\vv{PQ}$ and $\vv{PR}$; $\vv{PQ}\times\vv{PR}$ is orthogonal to $\vv{PQ}$ and $\vv{PR}$ and hence the plane itself.
 
@@ -44,7 +44,7 @@ The plane is sketched in Figure \ref{fig:planes1}.
 
 We have just demonstrated the fact that any three non-collinear points define a plane. (This is why a three-legged stool does not ``rock;'' it's three feet always lie in a plane. A four-legged stool will rock unless all four feet lie in the same plane.)\\
 
-\example{ex_planes2}{\textbf{Finding the equation of a plane.}\\
+\example{ex_planes2}{Finding the equation of a plane.}{
 Verify that lines $\ell_1$ and $\ell_2$, whose parametric equations are given below, intersect, then give the equation of the  plane that contains these two lines in general form.
 $$ \ell_1: \begin{array}{ccc} x&=&-5+2s \\ y&=&1+s \\ z&=&-4+2s\end{array} \qquad\qquad
 				\ell_2: \begin{array}{ccc} x &=& 2+3t\\ y&=&1-2t \\ z&=&1+t\end{array}$$
@@ -69,13 +69,13 @@ The plane's equation in general form is $5x+4y-7z=7$; it is sketched in Figure \
 \mfigure{.7}{Sketching the plane in Example \ref{ex_planes2}.}{fig:planes2}{figures/figplanes2}
 }\\
 
-\example{ex_planes3}{\textbf{Finding the equation of a plane}\\
+\example{ex_planes3}{Finding the equation of a plane}{
 Give the equation, in standard form, of the plane that passes through the point $P=(-1,0,1)$ and is orthogonal to the line with vector equation $\vec \ell(t) = \la -1,0,1\ra + t\la 1,2,2\ra$.}
 {As the plane is to be orthogonal to the line, the plane must be orthogonal to the direction of the line given by $\vec d = \la 1,2,2\ra$. We use this as our normal vector. Thus the plane's equation, in standard form, is $$(x+1) +2y+2(z-1)=0.$$ The line and plane are sketched in Figure \ref{fig:planes3}.
 \mfigure[scale=1.25,trim=5mm 0mm 5mm 5mm,clip=true]{.35}{The line and plane in Example \ref{ex_planes3}.}{fig:planes3}{figures/figplanes3}
 }\\
 
-\example{ex_planes4}{\textbf{Finding the intersection of two planes}\\
+\example{ex_planes4}{Finding the intersection of two planes}{
 Give the parametric equations of the line that is the intersection of the planes $p_1$ and $p_2$, where:
 \begin{gather*}
 p_1: x-(y-2)+(z-1) =0 \\
@@ -105,7 +105,7 @@ The planes and line are graphed in Figure \ref{fig:planes4}.
 \mfigure[scale=1.25,trim=5mm 0mm 5mm 5mm,clip=true]{.5}{Graphing the planes and their line of intersection in Example \ref{ex_planes4}.}{fig:planes4}{figures/figplanes4}
 }\\
 
-\example{ex_planes5}{\textbf{Finding the intersection of a plane and a line}\\
+\example{ex_planes5}{Finding the intersection of a plane and a line}{
 Find the point of intersection, if any, of the line $\ell(t) = \la 3,-3,-1\ra +t\la-1,2,1\ra$ and the plane with equation in general form $2x+y+z=4$.
 }
 {The equation of the plane shows that the vector $\vec n = \la 2,1,1\ra$ is a normal vector to the plane, and the equation of the line shows that the line moves parallel to $\vec d = \la -1,2,1\ra$. Since these are not orthogonal, we know there is a point of intersection. (If there were orthogonal, it would mean that the plane and line were parallel to each other, either never intersecting or the line was in the plane itself.)
@@ -138,7 +138,7 @@ $$h = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n},$$
 where $P$ is any point in the plane.
 }
 
-\example{ex_planes6}{\textbf{Distance between a point and a plane}\\
+\example{ex_planes6}{Distance between a point and a plane}{
 Find the distance bewteen the point $Q = (2,1,4)$ and the plane with equation $2x-5y+6z=9$.}
 {Using the equation of the plane, we find the normal vector $\vec n = \la 2,-5,6\ra$. To find a point on the plane, we can let $x$ and $y$ be anything we choose, then let $z$ be whatever satisfies the equation. Letting $x$ and $y$ be 0 seems simple; this makes $z = 1.5$. Thus we let $P = \la 0,0,1.5\ra$, and $\vv{PQ} = \la 2,1,2.5\ra.$
 

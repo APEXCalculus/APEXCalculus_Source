@@ -32,12 +32,12 @@ Figure \ref{fig:multilimit_intro} shows several sets in the $x$-$y$ plane. In ea
 
 The set depicted in Figure \ref{fig:multilimit_intro}(a) is a closed set as it contains all of its boundary points. The set in (b) is open, for all of its points are interior points (or, equivalently, it does not contain any of its boundary points). The set in (c) is neither open nor closed as it contains just some of its boundary points.\\
 
-\example{ex_multilimit1}{\textbf{Determining open/closed, bounded/unbounded}\\
+\example{ex_multilimit1}{Determining open/closed, bounded/unbounded}{
 Determine if the domain of the function $f(x,y)=\sqrt{1-\frac{x^2}9-\frac{y^2}4}$ is open, closed, or neither, and if it is bounded.}
 {This domain of this function was found in Example \ref{ex_multi2} to be $D = \{(x,y)\ |\ \frac{x^2}9+\frac{y^2}4\leq 1\}$, the region \textit{bounded} by the ellipse $\frac{x^2}9+\frac{y^2}4=1$. Since the region includes the boundary (indicated by the use of ``$\leq$''), the set contains all of its boundary points and hence is closed. The region is bounded as a disk of radius 4, centered at the origin, contains $D$.
 }\\
 
-\example{ex_multilimit2}{\textbf{Determining open/closed, bounded/unbounded}\\
+\example{ex_multilimit2}{Determining open/closed, bounded/unbounded}{
 Determine if the domain of $f(x,y) = \frac1{x-y}$ is open, closed, or neither.}
 {As we cannot divide by 0, we find the domain to be $D = \{(x,y)\ |\ x-y\neq 0\}$. In other words, the domain is the set of all points $(x,y)$ \emph{not} on the line $y=x$. 
 
@@ -85,7 +85,7 @@ The following limits hold.
 
 This theorem, combined with Theorems \ref{thm:poly_rat} and \ref{thm:lim_continuous} of Section \ref{sec:limit_analytically}, allows us to evaluate many limits.\\
 
-\example{ex_multilimit3}{\textbf{Evaluating a limit}\\
+\example{ex_multilimit3}{Evaluating a limit}{
 Evaluate the following limits:
 $$1. \lim_{(x,y)\to (1,\pi)} \frac yx + \cos(xy) \qquad\qquad 2. \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}$$
 }
@@ -110,7 +110,7 @@ Our theorems tell us that we can evaluate most limits quite simply, without worr
 
 %it can be difficult to show that the limit exists, for we need to show that the same limiting value is obtained regardless of the path taken.  we can often evaluate the limit along specific paths. If any of these limits differ, we say that \emph{the} limit does not exist.\\
 
-\example{ex_multilimit4}{\textbf{Showing limits do not exist}\\
+\example{ex_multilimit4}{Showing limits do not exist}{
 \begin{enumerate}
 	\item Show $\ds \lim_{(x,y)\to (0,0)} \frac{3xy}{x^2+y^2}$ does not exist by finding the limits along the lines $y=mx$.
 	\item	Show $\ds \lim_{(x,y)\to (0,0)} \frac{\sin(xy)}{x+y}$ does not exist by finding the limit along the path $y=-\sin x$. 	
@@ -150,7 +150,7 @@ Step back and consider what we have just discovered. Along any line $y=mx$ in th
 \vskip -1.5\baselineskip
 }\\
 
-\example{ex_multilimit5}{\textbf{Finding a limit}\\
+\example{ex_multilimit5}{Finding a limit}{
 Let $\ds f(x,y) = \frac{5x^2y^2}{x^2+y^2}$. Find $\ds\lim_{(x,y)\to (0,0)}  f(x,y) .$
 }
 {It is relatively easy to show that along any line $y=mx$, the limit is 0. This is not enough to prove that the limit exists, as demonstrated in the previous example, but it tells us that if the limit does exist then it must be 0.
@@ -183,7 +183,7 @@ Definition \ref{def:continuous} defines what it means for a function of one vari
 \end{enumerate}
 }
 
-\example{ex_multicont1}{\textbf{Continuity of a function of two variables}\\
+\example{ex_multicont1}{Continuity of a function of two variables}{
 Let $\ds f(x,y) = \left\{ \begin{array}{rl} \frac{\cos y\sin x}{x} & x\neq 0 \\
 																						\cos y & x=0
 													\end{array} \right.$. Is $f$ continuous at $(0,0)$? Is $f$ continuous everywhere?
@@ -229,7 +229,7 @@ The following theorem is very similar to Theorem \ref{thm:continuity_algebra}, g
 }
 \enlargethispage{\baselineskip}
 
-\example{ex_multicont2}{\textbf{Establishing continuity of a function}\\
+\example{ex_multicont2}{Establishing continuity of a function}{
 Let $f(x,y) = \sin (x^2\cos y)$. Show $f$ is continuous everywhere.}
 {We will apply both Theorems \ref{thm:continuity_algebra} and \ref{thm:multi_continuous_prop}. Let $f_1(x,y) = x^2$. Since $y$ is not actually used in the function, and polynomials are continuous (by Theorem \ref{thm:continuity_algebra}), we conclude $f_1$ is continuous everywhere. A similar statement can be made about $f_2(x,y) = \cos y$. Part 3 of Theorem \ref{thm:multi_continuous_prop} states that $f_3=f_1\cdot f_2$ is continuous everywhere, and Part 7 of the theorem states the composition of sine with $f_3$ is continuous: that is, $\sin (f_3) = \sin(x^2\cos y)$ is continuous everywhere.
 }\\

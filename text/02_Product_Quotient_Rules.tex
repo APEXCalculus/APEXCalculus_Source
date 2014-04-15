@@ -9,7 +9,7 @@ We begin with the Product Rule.
 
 We practice using this new rule in an example, followed by an example that demonstrates why this theorem is true.\\
 
-\example{ex_prod1}{\textbf{Using the Product Rule}\\
+\example{ex_prod1}{Using the Product Rule}{
 Use the Product Rule to compute the derivative of $y=5x^2\sin x$. Evaluate the derivative at $x=\pi/2$.}
 {To make our use of the Product Rule explicit, let's set $f(x) = 5x^2$ and $g(x) = \sin x$. We easily compute/recall that $\fp(x) = 10x$ and $g'(x) = \cos x$. Employing the rule, we have $$\frac{d}{dx}\Big(5x^2\sin x\Big) = 5x^2\cos x + 10x\sin x.$$
 
@@ -19,7 +19,7 @@ At $x=\pi/2$, we have $$y'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\fra
 
 We now investigate why the Product Rule is true.\\
 
-\example{ex_prove_product}{\textbf{A proof of the Product Rule}\\
+\example{ex_prove_product}{A proof of the Product Rule}{
 Use the definition of the derivative to prove Theorem \ref{thm:ProductRule}.}
 {By the limit definition, we have 
 		$$\frac{d}{dx}\Big(f(x)g(x)\Big) =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}.$$ We now do something a bit unexpected; add 0 to the numerator (so that nothing is changed) in the form of $-f(x+h)g(x)+f(x+h)g(x)$, then do some regrouping as shown.
@@ -38,7 +38,7 @@ Use the definition of the derivative to prove Theorem \ref{thm:ProductRule}.}
 
 It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed ``right.''\\
 
-\example{ex_prod2}{\textbf{Exploring alternate derivative methods}\\
+\example{ex_prod2}{Exploring alternate derivative methods}{
 Let $y = (x^2+3x+1)(2x^2-3x+1)$. Find $y'$ two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.}
 {We first expand the expression for $y$; a little algebra shows that $y = 2x^4+3x^3-6x^2+1$. It is easy to compute $y'$; $$y' = 8x^3+9x^2-12x.$$
 
@@ -53,7 +53,7 @@ The uninformed usually assume that ``the derivative of the product is the produc
 
 We consider one more example before discussing another derivative rule.\\
 
-\example{ex_deriv_ln}{\textbf{Using the Product Rule}\\
+\example{ex_deriv_ln}{Using the Product Rule}{
 Find the derivatives of the following functions. 
 
 			\begin{enumerate}
@@ -79,7 +79,7 @@ The Quotient Rule is not hard to use, although it might be a bit tricky to remem
 
 Let's practice using the Quotient Rule.\\
 
-\example{ex_quot1}{\textbf{Using the Quotient Rule}\\
+\example{ex_quot1}{Using the Quotient Rule}{
 Let $\ds f(x) = \frac{5x^2}{\sin x}$. Find $\fp(x)$.}
 {Directly applying the Quotient Rule gives:
 	\begin{align*}
@@ -91,7 +91,7 @@ Let $\ds f(x) = \frac{5x^2}{\sin x}$. Find $\fp(x)$.}
 
 The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.\\
 
-\example{ex_der_tan}{\textbf{Using the Quotient Rule to find $\frac{d}{dx}\big(\tan x\big)$.}\\
+\example{ex_der_tan}{Using the Quotient Rule to find $\frac{d}{{dx}\big(\tan x\big)$.}\\
 Find the derivative of $y=\tan x$.}
 {At first, one might feel unequipped to answer this question. But recall that $\tan x = \sin x/\cos x$, so we can apply the Quotient Rule.
 		\begin{align*}
@@ -127,7 +127,7 @@ We include this result in the following theorem about the derivatives of the tri
 
 To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with ``c'' have a minus sign in them.\\
 
-\example{ex_prod_quot}{\textbf{Exploring alternate derivative methods}\\
+\example{ex_prod_quot}{Exploring alternate derivative methods}{
 In Example \ref{ex_quot1} the derivative of $\ds f(x) = \frac{5x^2}{\sin x}$ was found using the Quotient Rule. Rewriting $f$ as $f(x) = 5x^2\csc x$, find $\fp$ using Theorem \ref{thm:deriv_trig} and verify the two answers are the same.}
 {We found in Example \ref{ex_quot1} that the $\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}$. We now find $\fp$ using the Product Rule, considering $f$ as $f(x) = 5x^2\csc x$.
 		\begin{align*}
@@ -142,7 +142,7 @@ Finding $\fp$ using either method returned the same result. At first, the answer
 
 The Quotient Rule gives other useful results, as show in the next example.\\
 
-\example{ex_deriv_power}{\textbf{Using the Quotient Rule to expand the Power Rule}\\
+\example{ex_deriv_power}{Using the Quotient Rule to expand the Power Rule}{
 Find the derivatives of the following functions. 
 		\begin{enumerate}
 		\item		$\ds f(x) = \frac{1}{x}$
@@ -172,7 +172,7 @@ This is reminiscent of the Power Rule: multiply by the power, then subtract 1 fr
 Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not ``the'' right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.\\
 
 %\enlargethispage{2\baselineskip}
-\example{ex_multiple_deriv}{\textbf{Exploring alternate derivative methods}\\
+\example{ex_multiple_deriv}{Exploring alternate derivative methods}{
 Let $\ds f(x) = \frac{x^2-3x+1}{x}$. Find $\fp(x)$ in each of the following ways:
 		\begin{enumerate}
 		\item		By applying the Quotient Rule,

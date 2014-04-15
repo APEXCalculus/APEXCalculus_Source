@@ -21,7 +21,7 @@ This, of course, is a Riemann sum. Taking a limit as the subinterval lengths go 
 $$W = \int_a^b F(x)\ dx.$$
 }
 \clearpage
-\example{ex_work1}{\textbf{Computing work performed: applying variable force}\\
+\example{ex_work1}{Computing work performed: applying variable force}{
 How much work is performed pulling a 60 m climbing rope up a cliff face, where the rope has a mass of 66 g/m?}
 {We need to create a force function $F(x)$ on the interval $[0,60]$. To do so, we must first decide what $x$ is measuring: it is the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that $x$ is the amount of rope pulled in. This seems to match intuition better; pulling up the first 10 meters of rope involves $x=0$ to $x=10$ instead of $x=60$ to $x=50$. 
 
@@ -33,7 +33,7 @@ $$W = \int_0^{60} 0.6468(60-x)\ dx = 1,164.24\ \text{J}.$$
 By comparison, consider the work done in lifting the entire rope 60 meters. The rope weights $60\times 0.066 \times 9.8 = 38.808$ N, so the work applying this force for 60 meters is $60\times 38.808 = 2,328.48$ J. This is exactly twice the work calculated before (and we leave it to the reader to understand why.)
 }\\
 
-\example{ex_work1_5}{\textbf{Computing work performed: applying variable force}\\
+\example{ex_work1_5}{Computing work performed: applying variable force}{
 Consider again pulling a 60 m rope up a cliff face, where the rope has a mass of 66 g/m. At what point is exactly half the work performed?}
 {From Example \ref{ex_work1} we know the total work performed is $11,642.4$ J. We want to find a height $h$ such that the work in pulling the rope from a height of $x=0$ to a height of $x=h$ is 5821.2, half the total work. Thus we want to solve the equation
 $$\int_0^h 6.468(60-x)\ dx = 5821.2$$ for $h$. 
@@ -49,7 +49,7 @@ As the rope is only 60 m long, the only sensible answer is $h=17.57$. Thus about
 \mnote{.85}{\textbf{Note:} In Example \ref{ex_work1_5}, we find that half of the work performed in pulling up a 60 m rope is done in the last 42.43 m. Why is it not coincidental that $60/\sqrt{2}=42.43$?}
 }\\
 
-\example{ex_work2}{\textbf{Computing work performed: applying variable force}\\
+\example{ex_work2}{Computing work performed: applying variable force}{
 A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft over 1 minute. The sand is leaking from the box at a rate of 1 lb/s. The box itself weighs 5 lb and is pulled by a rope weighing .2 lb/ft. 
 	\begin{enumerate}
 	\item		How much work is done lifting just the rope?
@@ -79,7 +79,7 @@ A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft
 
 Hooke's Law states that the force required to compress or stretch a spring $x$ units from its natural length is proportional to $x$; that is, this force is $F(x) = kx$ for some constant $k$. For example, if a force of 1 N stretches a given spring 2 cm, then a force of 5 N will stretch the spring 10 cm. Converting the distances to meters, we have that stretching a this spring 0.02 m requires a force of $F(0.02) = k(0.02) = 1$ N, hence $k = 1/0.02 = 50$ N/m. \\
 
-\example{ex_spring1}{\textbf{Computing work performed: stretching a spring}\\
+\example{ex_spring1}{Computing work performed: stretching a spring}{
 A force of 20 lb stretches a spring from a length of 7 inches to a length of 12 inches. How much work was performed in stretching the spring to this length?}
 {In many ways, we are not at all concerned with the actual length of the spring, only with the amount of its change. Hence, we do not care that 20 lb of force stretches the spring to a length of 12 inches, but rather that a force of 20 lb stretches the spring by 5 in. This is illustrated in Figure \ref{fig:spring1}; we only measure the change in the spring's length, not the overall length of the spring.
 
@@ -121,7 +121,7 @@ Water & 62.4 & 1000 \\
 
 We demonstrate how to compute the total work done in pumping a fluid out of the top of a tank in the next two examples.\\
 
-\example{ex_pump1}{\textbf{Computing work performed: pumping fluids}\\
+\example{ex_pump1}{Computing work performed: pumping fluids}{
 A cylindrical storage tank with a radius of 10 ft and a height of 30 ft is filled with water, which weighs approximately 62.4 lb/ft$^3$. Compute the amount of work performed by pumping the water up to a point 5 feet above the top of the tank.}
 {We will refer often to Figure \ref{fig:pump1a} which illustrates the salient aspects of this problem.
 \mfigure{.7}{Illustrating a water tank in order to compute the work required to empty it in Example \ref{ex_pump1}.}{fig:pump1a}{figures/figwork_pump1}
@@ -154,7 +154,7 @@ Instead, we just draw one differential element. This helps establish the height 
 
 We demonstrate the concepts again in the next examples.\\
 
-\example{ex_pump2}{\textbf{Computing work performed: pumping fluids}\\
+\example{ex_pump2}{Computing work performed: pumping fluids}{
 A conical water tank has its top at ground level and its base 10 feet below ground. The radius of the cone at ground level is 2 ft. It is filled with water weighing 62.4 lb/ft$^3$ and is to be emptied by pumping the water to a spigot 3 feet above ground level. Find the total amount of work performed in emptying the tank.}
 {The conical tank is sketched in Figure \ref{fig:pump2}. We can orient the tank in a variety of ways; we could let $y=0$ represent the base of the tank and $y=10$ represent the top of the tank, but we choose to keep the convention of the wording given in the problem and let $y=0$ represent ground level and hence $y=-10$ represents the bottom of the tank. The actual ``height'' of the water does not matter; rather, we are concerned with the distance the water travels. 
 \mfigure{.4}{A graph of the conical water tank in Example \ref{ex_pump2}.}{fig:pump2}{figures/figwork_pump3}
@@ -172,7 +172,7 @@ W	&=	\int_{-10}^0 62.4\pi(1/5y+2)^2(3-y)\ dy\\
 }\\
 \clearpage
 
-\example{ex_pump3}{\textbf{Computing work performed: pumping fluids}\\
+\example{ex_pump3}{Computing work performed: pumping fluids}{
 A rectangular swimming pool is 20 ft wide and has a 3 ft ``shallow end'' and a 6 ft ``deep end.'' It is to have its water pumped out to a point 2 ft above the current top of the water. 
 The cross--sectional dimensions of the water in the pool are given in Figure \ref{fig:pump3}; note that the dimensions are for the water, not the pool itself. Compute the amount of work performed in draining the pool.}
 {For the purposes of this problem we choose to set $y=0$ to represent the bottom of the pool, meaning the top of the water is at $y=6$. 

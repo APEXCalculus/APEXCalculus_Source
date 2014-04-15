@@ -1,0 +1,105 @@
+\section{Ratio and Root Tests}\label{sec:ratio_root_tests}
+
+The $n^\text{th}$--Term Test of Theorem \ref{thm:series_nth_term} states that in order for a series $\ds \sum_{n=1}^\infty a_n$ to converge, $\ds\lim_{n\to\infty}a_n = 0$. That is, the terms of $\{a_n\}$ must get very small. Not only must the terms approach 0, they must approach 0 ``fast enough'': while $\ds \lim_{n\to\infty}1/n=0$, the Harmonic Series $\ds\sum_{n=1}^\infty \frac1n$ diverges as the terms of $\{1/n\}$ do not approach 0 ``fast enough.''
+
+The comparison tests of the previous section determine convergence by comparing terms of a series to terms of another series whose convergence is known. This section introduces the Ratio and Root Tests, which determine convergence by analyzing the terms of a series to see if they approach 0 ``fast enough.''\\
+
+\noindent\textbf{\large Ratio Test}\\
+
+\theorem{thm:ratio_test}{Ratio Test}
+{Let $\{a_n\}$ be a positive sequence where $\ds \lim_{n\to\infty}\frac{a_{n+1}}{a_n} = L$.
+		\begin{enumerate}
+			\item If $L<1$, then $\ds\sum_{n=1}^\infty a_n$ converges.
+			\item	If $L>1$ or $L=\infty$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
+			\item If $L=1$, the Ratio Test is inconclusive.
+		\end{enumerate}
+}
+
+The principle of the Ratio Test is this: if $\ds\lim_{n\to\infty}\frac{a_{n+1}}{a_n} = L<1$, then for large $n$, each term of $\{a_n\}$ is significantly smaller than its previous term which is enough to ensure convergence.\\
+
+\example{ex_ratio1}{Applying the Ratio Test}{
+Use the Ratio Test to determine the convergence of the following series:\\
+
+$\ds 1.\ \sum_{n=1}^\infty \frac{2^n}{n!}\qquad\qquad 2.\ \sum_{n=1}^\infty \frac{3^n}{n^3} \qquad\qquad 3.\ \sum_{n=1}^\infty \frac{1}{n^2+1}.$
+}
+{\begin{enumerate}
+	\item $\ds \sum_{n=1}^\infty \frac{2^n}{n!}$:
+	\begin{align*}
+	\lim_{n\to\infty}\frac{2^{n+1}/(n+1)!}{2^n/n!} &= \lim_{n\to\infty} \frac{2^{n+1}n!}{2^n(n+1)!}\\
+				&= \lim_{n\to\infty} \frac{2}{n+1}\\
+				&=0.
+	\end{align*}
+	Since the limit is $0<1$, by the Ratio Test $\ds\sum_{n=1}^\infty \frac{2^n}{n!}$ converges.
+	
+	\item	$\ds\sum_{n=1}^\infty \frac{3^n}{n^3}$:
+	\begin{align*}
+	\lim_{n\to\infty} \frac{3^{n+1}/(n+1)^3}{3^n/n^3} &= \lim_{n\to\infty}\frac{3^{n+1}n^3}{3^n(n+1)^3}\\
+				&= \lim_{n\to\infty} \frac{3n^3}{(n+1)^3}\\
+				&= 3.
+	\end{align*}
+	Since the limit is $3>1$, by the Ratio Test $\ds\sum_{n=1}^\infty \frac{3^n}{n^3}$ diverges.
+	
+	\item  $\ds\sum_{n=1}^\infty \frac{1}{n^2+1}$:
+	\begin{align*}
+	\lim_{n\to\infty} \frac{1/\big((n+1)^2+1\big)}{1/(n^2+1)} &= \lim_{n\to\infty} \frac{n^2+1}{(n+1)^2+1}\\
+				&= 1.
+	\end{align*}
+	Since the limit is 1, the Ratio Test is inconclusive. We can easily show this series converges using the Direct or Limit Comparison Tests, with each comparing to the series $\ds \sum_{n=1}^\infty \frac{1}{n^2}$.
+\end{enumerate}
+}\\
+
+The Ratio Test is not effective when the terms of a series \textit{only} contain algebraic functions (e.g., polynomials). It is most effective when the terms contain some factorials or exponentials. The previous example also reinforces our developing intuition: factorials dominate exponentials, which dominate algebraic functions, which dominate logarithmic functions. Part 1 of the example, the factorial in the denominator dominated the exponential in the numerator, causing the series to converge. In Part 2, the exponential in the numerator dominated the algebraic function in the denominator, causing the series to diverge.
+
+While we have used factorials in previous sections, we have not explored them closely and one is likely to not yet have a strong intuitive sense for how they behave. The following example gives more practice with factorials.\\
+
+\example{ex_ratio2}{Applying the Ratio Test}{
+Determine the convergence of $\ds\sum_{n=1}^\infty \frac{n!n!}{(2n)!}$.}
+{Before we begin, be sure to note the difference between $(2n)!$ and $2n!$. When $n=4$, the former is $8!=8\cdot7\cdot\ldots\cdot 2\cdot1=40,320$, whereas the latter is $2(4\cdot3\cdot2\cdot1) = 48$.
+
+Applying the Ratio Test:
+\begin{align*}
+\lim_{n\to\infty} \frac{(n+1)!(n+1)!/\big(2(n+1)\big)!}{n!n!/(2n)!} &= \lim_{n\to\infty}\frac{(n+1)!(n+1)!(2n)!}{n!n!(2n+2)!}
+\intertext{Noting that $(2n+2)! = (2n+2)\cdot(2n+1)\cdot(2n)!$, we have}
+		&= \lim_{n\to\infty}\frac{(n+1)(n+1)}{(2n+2)(2n+1)}\\
+		&= 1/4.
+\end{align*}
+Since the limit is $1/4<1$, by the Ratio Test we conclude $\ds \sum_{n=1}^\infty \frac{n!n!}{(2n)!}$ converges.
+}\\
+
+\noindent\textbf{\large Root Test}\\
+
+The final test we introduce is the Root Test, which works particularly well on series whose terms have exponents (but not those that include factorials). 
+
+\theorem{thm:ratio_test}{Root Test}
+{Let $\{a_n\}$ be a sequence such that there is an $N\geq 1$ where for all $n\geq N$, $a_n\geq 0$, and let $\ds \lim_{n\to \infty} (a_n)^{1/n} = L$.
+		\begin{enumerate}
+			\item If $L<1$, then $\ds\sum_{n=1}^\infty a_n$ converges.
+			\item	If $L>1$ or $L=\infty$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
+			\item If $L=1$, the Root Test is inconclusive.
+		\end{enumerate}
+}
+
+\example{ex_root1}{Applying the Root Test}{
+Determine the convergence of the following series using the Root Test:\\
+
+\noindent$\ds1. \ \sum_{n=1}^\infty \left(\frac{3n+1}{5n-2}\right)^n\qquad\qquad 2.\ \sum_{n=1}^\infty\frac{n^4}{(\ln n)^n}\qquad\qquad 3.\ \sum_{n=1}^\infty \frac{2^n}{n^2}.$
+}
+{\begin{enumerate}
+	\item $\ds\lim_{n\to\infty} \left(\left(\frac{3n+1}{5n-2}\right)^n\right)^{1/n} = \lim_{n\to\infty} \frac{3n+1}{5n-2} = \frac 35.$ 
+	
+	Since the limit is less than 1, we conclude the series converges. Note: it is difficult to apply the Ratio Test to this series.
+	
+	\item		$\ds\lim_{n\to\infty} \left(\frac{n^4}{(\ln n)^n}\right)^{1/n} = \lim_{n\to\infty} \frac {\big(n^{1/n}\big)^4}{\ln n}  $. 
+	
+	As $n$ grows, the numerator approaches 1 (apply L'H\^opital's Rule) and the denominator 
+	grows to infinity.  Thus $$ \lim_{n\to\infty} \frac{\big(n^{1/n}\big)^4}{\ln n} = 0.$$ Since the limit is less than 1, we conclude the limit converges.
+	
+	\item		$\ds \lim_{n\to\infty} \left(\frac{2^n}{n^2}\right)^{1/n} = \lim_{n\to\infty} \frac{2}{\big(n^{1/n}\big)^2} = 2$. 
+	
+	Since this is greater than 2, we conclude the series diverges.
+\end{enumerate}
+}\\
+
+\clearpage
+
+

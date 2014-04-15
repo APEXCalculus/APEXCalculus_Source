@@ -11,7 +11,7 @@ We have since learned a number of integration techniques, including Substitution
 We start by demonstrating this method in evaluating the integral in \eqref{eq:trigsub1}. After the example, we will generalize the method and give more examples.\\
 \enlargethispage{3\baselineskip}
 
-\example{ex_trigsub1}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub1}{Using Trigonometric Substitution}{
 Evaluate $\ds \int_{-3}^3\sqrt{9-x^2}\ dx$.}
 {We begin by noting that $9\sin^2\theta + 9\cos^2\theta = 9$, and hence $9\cos^2\theta = 9-9\sin^2\theta$. If we let $x=3\sin\theta$, then $9-x^2 = 9-9\sin^2\theta = \cos^2\theta$. 
 
@@ -81,7 +81,7 @@ We now describe in detail Trigonometric Substitution. This method excels when de
 \restoreboxwidth
 \vskip \baselineskip
 
-\example{ex_trigsub3}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub3}{Using Trigonometric Substitution}{
 Evaluate $\ds \int \frac{1}{\sqrt{5+x^2}}\ dx.$}
 {Using Key Idea \ref{idea:trigsub}(b), we recognize $a=\sqrt{5}$ and  set $x= \sqrt{5}\tan \theta$. This makes $dx = \sqrt{5}\sec^2\theta\ d\theta$. We will use the fact that $\sqrt{5+x^2} = \sqrt{5+5\tan^2\theta} = \sqrt{5\sec^2\theta} = \sqrt{5}\sec\theta.$ Substituting, we have:
 \begin{align*}
@@ -108,7 +108,7 @@ We can leave this answer as is, or we can use a logarithmic identity to simplify
 where the $\ln\big(1/\sqrt{5}\big)$ term is absorbed into the constant $C$. (In Section \ref{sec:hyperbolic} we will learn another way of approaching this problem.)
 }\\
 
-\example{ex_trigsub2}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub2}{Using Trigonometric Substitution}{
 Evaluate $\ds \int \sqrt{4x^2-1}\ dx$.}
 {We start by rewriting the integrand so that it looks like $\sqrt{x^2-a^2}$ for some value of $a$:
 \begin{align*}
@@ -146,7 +146,7 @@ The final answer is given in the last line above, repeated here:
 $$\int \sqrt{4x^2-1}\ dx = \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.$$
 }\\
 
-\example{ex_trigsub4}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub4}{Using Trigonometric Substitution}{
 Evaluate $\ds \int \frac{\sqrt{4-x^2}}{x^2}\ dx$.}
 {We use Key Idea \ref{idea:trigsub}(a) with $a=2$, $x=2\sin \theta$, $dx = 2\cos \theta$ and hence $\sqrt{4-x^2} = 2\cos\theta$. This gives
 \begin{align*}
@@ -161,7 +161,7 @@ $$\int \frac{\sqrt{4-x^2}}{x^2}\ dx = -\frac{\sqrt{4-x^2}}x-\sin^{-1}\left(\frac
 
 Trigonometric Substitution can be applied in many situations, even those not of the form $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ or $\sqrt{x^2+a^2}$. In the following example, we apply it to an integral we already know how to handle.\\
 
-\example{ex_trigsub5}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub5}{Using Trigonometric Substitution}{
 Evaluate $\ds \int\frac1{x^2+1}\ dx$.}
 {We know the answer already as $\tan^{-1}x+C$. We apply Trigonometric Substitution here to show that we get the same answer without inherently relying on knowledge of the derivative of the arctangent function.
 
@@ -176,7 +176,7 @@ Since $x=\tan \theta$, $\theta = \tan^{-1}x$, and we conclude that $\ds \int\fra
 
 The next example is similar to the previous one in that it does not involve a square--root. It shows how several techniques and identities can be combined to obtain a solution.\\
 
-\example{ex_trigsub7}{\textbf{Using Trigonometric Substitution}\\
+\example{ex_trigsub7}{Using Trigonometric Substitution}{
 Evaluate $\ds\int\frac1{(x^2+6x+10)^2}\ dx.$
 }
 {We start by completing the square, then make the substitution $u=x+3$, followed by the trigonometric substitution of $u=\tan\theta$:
@@ -204,7 +204,7 @@ $$\int\frac1{(x^2+6x+10)^2}\ dx=\frac12\tan^{-1}(x+3) + \frac{x+3}{2(x^2+6x+10)}
 
 Our last example returns us to definite integrals, as seen in our first example. Given a definite integral that can be evaluated using Trigonometric Substitution, we could first evaluate the corresponding indefinite integral (by changing from an integral in terms of $x$ to one in terms of $\theta$, then converting back to $x$) and then evaluate using the original bounds. It is much more straightforward, though, to change the bounds as we substitute.\\
 
-\example{ex_trigsub6}{\textbf{Definite integration and Trigonometric Substitution}\\
+\example{ex_trigsub6}{Definite integration and Trigonometric Substitution}{
 Evaluate $\ds\int_0^5\frac{x^2}{\sqrt{x^2+25}}\ dx$.
 }
 {Using Key Idea \ref{idea:trigsub}(b), we set $x=5\tan\theta$, $dx = 5\sec^2\theta\ d\theta$, and note that $\sqrt{x^2+25} = 5\sec\theta$. As we substitute, we can also change the bounds of integration.

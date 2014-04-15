@@ -28,7 +28,7 @@ These are the three most common rules for determining the heights of approximati
 
 The following example will approximate the value of $\int_0^4 (4x-x^2)\ dx$ using these rules.\\
 
-\example{ex_rie2}{\textbf{Using the Left Hand, Right Hand and Midpoint Rules}\\
+\example{ex_rie2}{Using the Left Hand, Right Hand and Midpoint Rules}{
 Approximate the value of $\int_0^4 (4x-x^2)\ dx$ using the Left Hand Rule, the Right Hand Rule, and the Midpoint Rule, using 4 equally spaced subintervals.}
 {We break the interval $[0,4]$ into four subintervals as before. In Figure \ref{fig:rie2a} we see 4 rectangles drawn on $f(x) = 4x-x^2$ using the Left Hand Rule. (The areas of the rectangles are given in each figure.)
 
@@ -76,7 +76,7 @@ The upper case sigma represents the term ``sum.'' The index of summation in this
 
 Let's practice using this notation.\\
 
-\example{ex_rie3}{\textbf{Using summation notation}\\
+\example{ex_rie3}{Using summation notation}{
 Let the numbers $\{a_i\}$ be defined as $a_i = 2i-1$ for integers $i$, where $i\geq 1$. So $a_1 = 1$, $a_2 = 3$, $a_3 = 5$, etc. (The output is the positive odd integers). Evaluate the following summations:
 $$ 1.\ \sum_{i=1}^6 a_i \qquad\qquad\qquad 2.\ \sum_{i=3}^7 (3a_i-4)\qquad\qquad \qquad 3.\ \sum_{i=1}^4 (a_i)^2$$
 }
@@ -133,7 +133,7 @@ It might seem odd to stress a new, concise way of writing summations only to wri
 }
 \restoreboxwidth
 
-\example{ex_rie4}{\textbf{Evaluating summations using Theorem \ref{thm:summation}}\\
+\example{ex_rie4}{Evaluating summations using Theorem \ref{thm:summation}{}\\
 Revisit Example \ref{ex_rie3} and, using Theorem \ref{thm:summation}, evaluate $$\sum_{i=1}^6 a_i = \sum_{i=1}^6 (2i-1).$$
 }
 {\begin{align*}
@@ -211,7 +211,7 @@ We use these formulas in the next two examples.
 %One of the advantages of using a computer is that it can do a large number of calculations very quickly. Using 10,000 subintervals and the Left Hand Rule, \textit{Mathematica} took approximately $1/5^\text{ th}$ of a second to compute an approximation 10.66666656. It is worthwhile to ascertain what technology is available to you and to understand how to use it appropriately.
 The following example lets us practice using the Right Hand Rule and the summation formulas introduced in Theorem \ref{thm:summation}.\\
 
-\example{ex_rie7}{\textbf{Approximating definite integrals using sums}\\
+\example{ex_rie7}{Approximating definite integrals using sums}{
 Approximate $\int_0^4(4x-x^2)\ dx$ using the Right Hand Rule and summation formulas with 16 and 1000 equally spaced intervals.}
 {Using the formula derived before, using 16 equally spaced intervals and the Right Hand Rule, we can approximate the definite integral as $$\sum_{i=1}^{16}f(x_{i+1})\Delta x.$$
 We have $\Delta x = 4/16 = 0.25$. Since $x_i = 0+(i-1)\Delta x$, we have 
@@ -303,7 +303,7 @@ In this general form, the subintervals do not have be of equal length, and one c
 
 Let's do another example.\\
 
-\example{ex_rie8}{\textbf{Approximating definite integrals with sums}\\
+\example{ex_rie8}{Approximating definite integrals with sums}{
 Approximate $\int_{-2}^3 (5x+2)\ dx$ using the Midpoint Rule and 10 equally spaced intervals.}
 {Following Key Idea \ref{idea:riemann}, we have
 	$$\Delta x = \frac{3 - (-2)}{10} = 1/2 \quad \text{and} \quad x_i = (-2) + (1/2)(i-1) = i/2-5/2.$$
@@ -329,7 +329,7 @@ Note too that when the function is negative, the rectangles have a ``negative'' 
 
 Notice in the previous example that while we used 10 equally spaced intervals, the number ``10'' didn't play a big role in the calculations until the very end. Mathematicians love to abstract ideas; let's approximate another region using $n$ subintervals, where we do not specify a value of $n$ until the very end.\\
 
-\example{ex_rie9}{\textbf{Approximating definite integrals with a formula, using sums}\\
+\example{ex_rie9}{Approximating definite integrals with a formula, using sums}{
 Revisit $\int_0^4(4x-x^2)\ dx$ yet again. Approximate this definite integral using the Right Hand Rule with $n$ equally spaced subintervals.}
 {Using Key Idea \ref{idea:riemann}, we know $\Delta x = \frac{4-0}{n} = 4/n$. We also find $x_i = 0 + \Delta x(i-1) = 4(i-1)/n$. The Right Hand Rule uses $x_{i+1}$, which is $x_{i+1} = 4i/n$.
 
@@ -364,7 +364,7 @@ This section started with a fundamental calculus technique: make an approximatio
 
 Let's practice this again.\\
 
-\example{ex_rie10}{\textbf{Approximating definite integrals with a formula, using sums}\\
+\example{ex_rie10}{Approximating definite integrals with a formula, using sums}{
 Find a formula that approximates $\int_{-1}^5 x^3\ dx$ using the Right Hand Rule and $n$ equally spaced subintervals, then take the limit as $n\to\infty$ to find the exact area.}
 {Following Key Idea \ref{idea:riemann}, we have $\Delta x = \frac{5-(-1)}{n} = 6/n$. We have $x_i = (-1) + (i-1)\Delta x$; as the Right Hand Rule uses $x_{i+1}$, we have $x_{i+1} = (-1) + i\Delta x$.
 

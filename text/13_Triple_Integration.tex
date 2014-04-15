@@ -9,7 +9,7 @@ $$V =\iint_R \big(f(x,y)-g(x,y)\big)\ dA.$$
 }
 \enlargethispage{2\baselineskip}
 
-\example{ex_trip1}{\textbf{Finding volume between surfaces}\\
+\example{ex_trip1}{Finding volume between surfaces}{
 Find the volume of the space region bounded by the planes $z=3x+y-4$ and $z=8-3x-2y$ in the $1^\text{st}$ octant. In Figure \ref{fig:trip1}(a) the planes are drawn; in (b), only the defined region is given.
 \mtable{.45}{Finding the volume between the planes given in Example \ref{fig:trip1}.}{fig:trip1}{%
 \begin{tabular}{c}
@@ -102,7 +102,7 @@ the bounds $a\leq x\leq b$ and $g_1(x)\leq y\leq g_2(x)$ define a region $R$ in 
 
 Examples will help us understand triple integration, including integrating with various orders of integration.\\
 
-\example{ex_trip2}{\textbf{Finding the volume of a space region with triple integration}\\
+\example{ex_trip2}{Finding the volume of a space region with triple integration}{
 Find the volume of the space region in the $1^{\,st}$ octant bounded by the plane $z=2-y/3-2x/3$, shown in Figure \ref{fig:trip2}(a), using the order of integration $dz\ dy\ dx$. Set up the triple integrals that give the volume in the other 5 orders of integration.}
 {Starting with the order of integration $dx\ dy\ dx$, we need to first find bounds on $z$. The region $D$ is bounded below by the plane $z=0$ (because we are restricted to the first octant) and above by $z=2-y/3-2x/3$; $0\leq z\leq 2-y/3-2x/3$.
 
@@ -209,7 +209,7 @@ In the previous example, we collapsed the surface into the $x$-$y$, $x$-$z$, and
 
 The following example shows us how to do this when dealing with more complicated surfaces and curves.\\
 
-\example{ex_trip2b}{\textbf{Finding the projection of a curve in space onto the coordinate planes}\\
+\example{ex_trip2b}{Finding the projection of a curve in space onto the coordinate planes}{
 Consider the surfaces $z=3-x^2-y^2$ and $z=2y$, as shown in Figure \ref{fig:trip2bb}(a). The curve of their intersection is shown, along with the projection of this curve into the coordinate planes, shown dashed. Find the equations of the projections into the coordinate planes.}
 {The two surfaces are $z=3-x^2-y^2$ and $z=2y$. To find where they intersect, it is natural to set them equal to each other: $3-x^2-y^2=2y$. This is an implicit function of $x$ and $y$ that gives all points $(x,y)$ in the $x$, $y$ plane where the $z$ values of the two surfaces are equal. 
 
@@ -239,7 +239,7 @@ Finally, to project the curve of intersection into the $y$, $z$ plane, we solve 
 All three projections are shown in Figure \ref{fig:trip2bb}(b).
 }\\
 
-\example{ex_trip3}{\textbf{Finding the volume of a space region with triple integration}\\
+\example{ex_trip3}{Finding the volume of a space region with triple integration}{
 Set up the triple integrals that find the volume of the space region $D$ bounded by the surfaces $x^2+y^2=1$, $z=0$ and $z=-y$, as shown in Figure \ref{fig:trip3}(a), with the orders of integration $dz\ dy\ dx$, $dy\ dx\ dz$ and $dx\ dz\ dy$.
 \mtable{.6}{The region $D$ in Example \ref{ex_trip3} is shown in (a); in (b), it is collapsed onto the $x$, $y$ plane.}{fig:trip3}{%
 \begin{tabular}{c}
@@ -327,7 +327,7 @@ The following theorem states two things that should make ``common sense'' to us.
 
 We use this latter property in the next example.\\
 
-\example{ex_trip4}{\textbf{Finding the volume of a space region with triple integration}\\
+\example{ex_trip4}{Finding the volume of a space region with triple integration}{
 Find the volume of the space region $D$ bounded by the coordinate planes, $z=1-x/2$ and $z=1-y/4$, as shown in Figure \ref{fig:trip4}(a). Set up the triple integrals that find the volume of $D$ in all 6 orders of integration.
 \mtable{.5}{The region $D$ in Example \ref{ex_trip4} is shown in (a); in (b), it is collapsed onto the $x$, $y$ plane.}{fig:trip4}{%
 \begin{tabular}{c}
@@ -449,7 +449,7 @@ $$
 
 We give one more example of finding the volume of a space region.\\
 
-\example{ex_trip5}{\textbf{Finding the volume of a space region}\\
+\example{ex_trip5}{Finding the volume of a space region}{
 Set up a triple integral that gives the volume of the space region $D$ bounded by $z= 2x^2+2$ and $z=6-2x^2-y^2$. These surfaces are plotted in Figure \ref{fig:trip5}(a) and (b), respectively; the region $D$ is shown in part (c) of the figure.
 \mtable{.5}{The region $D$ is bounded by the surfaces shown in (a) and (b); $D$ is shown in (c). }{fig:trip5}{%
 \begin{tabular}{c}
@@ -556,7 +556,7 @@ The \textbf{iterated integral} $\ds \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)
 $$\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\ dy\ dx = \int_a^b\int_{g_1(x)}^{g_2(x)}\left(\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\right) dy\ dx.$$\normalsize
 }
 
-\example{ex_trip6}{\textbf{Evaluating a triple integral of a function of three variables}\\
+\example{ex_trip6}{Evaluating a triple integral of a function of three variables}{
 Evaluate $\ds \int_0^1\int_{x^2}^x\int_{x^2-y}^{2x+3y} \big(xy+2xz\big)\ dz\ dy\ dx.$
 }
 {We evaluate this integral according to Definition \ref{def:triple_integral_2}.\\
@@ -622,7 +622,7 @@ One may wish to review Section \ref{sec:center_of_mass} for a reminder of the re
 \end{itemize}
 }
 
-\example{ex_trip7}{\textbf{Finding the center of mass of a solid}\\
+\example{ex_trip7}{Finding the center of mass of a solid}{
 Find the mass, and center of mass, of the solid represented by the space region bounded by the coordinate planes and $z=2-y/3-2x/3$, shown in Figure \ref{fig:trip7}, with constant density $\delta(x,y,z)=3$gm/cm$^3$. (Note: this space region was used in Example \ref{ex_trip2}.)
 \mfigure[scale=1.1,trim=0mm 10mm 0mm 0mm,clip]{.4}{Finding the center of mass of this solid in Example \ref{ex_trip7}.}{fig:trip7}{figures/figtrip2}
 }
@@ -657,7 +657,7 @@ $$\big(\overline{x},\overline{y},\overline{z}\big) = \left(\frac{27/2}{18},\frac
 }\\
 
 
-\example{ex_trip8}{\textbf{Finding the center of mass of a solid}\\
+\example{ex_trip8}{Finding the center of mass of a solid}{
 Find the center of mass of the solid represented by the region bounded by the planes $z=0$ and $z=-y$ and the cylinder $x^2+y^2=1$, shown in Figure \ref{fig:trip8}, with density function $\delta(x,y,z) = 10+x^2+5y-5z$. (Note: this space region was used in Example \ref{ex_trip3}.)
 \mfigure[scale=1.25,trim=4mm 0mm 0mm 0mm,clip]{.4}{Finding the center of mass of this solid in Example \ref{ex_trip8}.}{fig:trip8}{figures/figtrip3}
 }

@@ -33,7 +33,7 @@ Using our new terminology, we can state that the series $\ds \sum_{n=1}^\infty 1
 
 We will explore a variety of series in this section. We start with two series that diverge, showing how we might discern divergence.\\
 
-\example{ex_series1}{\textbf{Showing series diverge}
+\example{ex_series1}{Showing series diverge}{
 \begin{enumerate}
 \item		Let $\{a_n\} = \{n^2\}$. Show $\ds \sum_{n=1}^\infty a_n$ diverges.
 \item		Let $\{b_n\} = \{(-1)^{n+1}\}$. Show $\ds \sum_{n=1}^\infty b_n$ diverges.
@@ -104,7 +104,7 @@ We started this section with a geometric series, although we dropped the first t
 According to Theorem \ref{thm:geom_series}, the series $\ds\sum_{n=0}^\infty \frac{1}{2^n} = 1+\frac12+\frac14+\cdots$ converges, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
 \clearpage
 
-\example{ex_series2}{\textbf{Exploring geometric series}\\
+\example{ex_series2}{Exploring geometric series}{
 Check the convergence of the following series. If the series converges, find its sum.\\
 
 \noindent 1. $\ds \sum_{n=2}^\infty \left(\frac34\right)^n$\qquad 2. $\ds \sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n$ \qquad 3. $\ds \sum_{n=0}^\infty 3^n$ 
@@ -146,9 +146,9 @@ Another important type of series is the \emph{p-series}.
 
 \definition{def:pseries}{$p$--Series, General $p$--Series}
 {\begin{itemize}
-\item	A \textbf{p--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
+\item	A \textbf{$p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
 
-\item	A \textbf{general p--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
+\item	A \textbf{general $p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
 \end{itemize}
 }
 
@@ -157,8 +157,9 @@ Like geometric series, one of the nice things about p--series is that they have 
 \theorem{thm:pseries}{Convergence of General $p$--Series}
 {A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ will converge if, and only if, $p>1$.
 }
+\mnote{.6}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
 
-\example{ex_series6}{\textbf{Determining convergence of series}\\
+\example{ex_series6}{Determining convergence of series}{
 Determine the convergence of the following series.\\
 
 \noindent\begin{minipage}[t]{.33\linewidth}
@@ -198,9 +199,9 @@ This series is a famous series, called the \emph{Harmonic Series}, so named beca
 }\\
 
 Later sections will provide tests by which we can determine whether or not a given series converges. This, in general, is much easier than determining \emph{what} a given series converges to. There are many cases, though, where the sum can be determined. \\
-\clearpage
 
-\example{ex_series3}{\textbf{Telescoping series}\\
+
+\example{ex_series3}{Telescoping series}{
 Evaluate the sum $\ds \sum_{n=1}^\infty \left(\frac1n-\frac1{n+1}\right)$.}
 {It will help to write down some of the first few partial sums of this series.
 \begin{align*}
@@ -217,7 +218,11 @@ The series in Example \ref{ex_series3} is an example of a \emph{telescoping seri
 
 When possible, seek a way to write an explicit formula for the $n^\text{th}$ partial sum $S_n$. This makes evaluating the limit $\ds\lim_{n\to\infty} S_n$ much more approachable. We do so in the next example.\\
 
-\example{ex_series4}{\textbf{Evaluating series}\\
+%\noindent\textbf{Note on notation:} Most of the series we encounter will start with $n=1$. For ease of notation, we will often write $\sum a_n$ instead of writing $\ds\sum_{n=1}^\infty a_n$.\\
+
+
+
+\example{ex_series4}{Evaluating series}{
 Evaluate each of the following infinite series.\\
 
 \noindent 1. $\ds \sum_{n=1}^\infty \frac{2}{n^2+2n}$ \qquad 2. $\ds \sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)$
@@ -248,7 +253,7 @@ This is illustrated in Figure \ref{fig:series4}(a).
 (b)
 \end{tabular}
 }
-\drawexampleline
+%\drawexampleline
 
 \item		We begin by writing the first few partial sums of the series:
 
@@ -261,13 +266,13 @@ S_4 &= \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\lef
 At first, this does not seem helpful, but recall the logarithmic identity: $\ln x+\ln y = \ln (xy).$ Applying this to $S_4$ gives:
 $$S_4 = \ln\left(2\right)+\ln\left(\frac32\right)+\ln\left(\frac43\right)+\ln\left(\frac54\right) = \ln\left(\frac21\cdot\frac32\cdot\frac43\cdot\frac54\right) = \ln\left(5\right).$$
 
-We can conclude that $\{S_n\} = \big\{\ln (n+1)\big\}$. This sequence  does not converge, as $\ds \lim_{n\to\infty}S_n=\infty$. Therefore  $\ds\sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)=\infty$; the series diverges. Note in Figure \ref{fig:series4}(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
+We can conclude that $\{S_n\} = \big\{\ln (n+1)\big\}$. This sequence  does not converge, as $\ds \lim_{n\to\infty}S_n=\infty$. Therefore  $\ds\sum_{n=1}^\infty  \ln\left(\frac{n+1}{n}\right)=\infty$; the series diverges. Note in Figure \ref{fig:series4}(b) how the sequence of partial sums grows slowly; after 100 terms, it is not yet over 5. Graphically we may be fooled into thinking the series converges, but our analysis above shows that it does not.
 %\mfigure{.35}{Scatter plots relating to the series of Example \ref{ex_series4} part 2.}{fig:series4b}{figures/figseries4b}
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
 
-\enlargethispage{3\baselineskip}
+%\enlargethispage{3\baselineskip}
 We are learning about a new mathematical object, the series. As done before, we apply ``old'' mathematics to this new topic.
 
 \theorem{thm:series_prop}{Properties of Infinite Series}
@@ -295,7 +300,7 @@ Before using this theorem, we provide a few ``famous'' series.
 %\end{minipage}
 \restoreboxwidth
 
-\example{ex_series5}{\textbf{Evaluating series}\\
+\example{ex_series5}{Evaluating series}{
 Evaluate the given series.\\
 
 \noindent 1. $\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}\big(n^2-n\big)}{n^3}$\qquad 2. $\ds\sum_{n=1}^\infty \frac{1000}{n!}$\qquad 3. $\ds \frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}+\cdots$
@@ -367,7 +372,7 @@ Note that the two statements in Theorem \ref{thm:series_nth_term} are really the
 
 Looking back, we can apply this theorem to the series in Example \ref{ex_series1}. In that example, the $n^\text{th}$ terms of both sequences do not converge to 0, therefore we can quickly conclude that each series diverges.
 
-\textbf{Important!} This theorem \emph{does not state} that if $\ds \lim_{n\to\infty} a_n = 0$ then $\ds \sum_{n=1}^\infty a_n $ converges. The standard example of this is the Harmonic Series, as given in Key Idea \ref{idea:famous_series}. The Harmonic Sequence, $\{1/n\}$, converges to 0; the Harmonic Series, $\ds \sum_{n=1}^\infty 1/n$, diverges.
+\textbf{Important!} This theorem \emph{does not state} that if $\ds \lim_{n\to\infty} a_n = 0$ then $\ds \sum_{n=1}^\infty  a_n $ converges. The standard example of this is the Harmonic Series, as given in Key Idea \ref{idea:famous_series}. The Harmonic Sequence, $\{1/n\}$, converges to 0; the Harmonic Series, $\ds \sum_{n=1}^\infty 1/n$, diverges.
 
 \theorem{thm:series_behavior}{Infinite Nature of Series}
 {The convergence or divergence remains unchanged by the addition or subtraction of any finite number of terms. That is:
@@ -377,7 +382,7 @@ Looking back, we can apply this theorem to the series in Example \ref{ex_series1
 	\end{enumerate}
 }
 
-Consider once more the Harmonic Series $\ds\sum_{n=1}^\infty \frac1n$ which diverges; that is, the sequence of partial sums $\{S_n\}$ grows (very, very slowly) without bound. One might think that by removing the ``large'' terms of the sequence that perhaps the series will converge. This is simply not the case. For instance, the sum of the first 10 million terms of the Harmonic Series is about 16.7. Removing the first 10 million terms from the Harmonic Series changes the $n^\text{th}$ partial sums,  effectively subtracting 16.7 from the sum. However, a sequence that is growing without bound will still grow without bound when 16.7 is subtracted from it. 
+Consider once more the Harmonic Series $\ds\sum_{n=1}^\infty  \frac1n$ which diverges; that is, the sequence of partial sums $\{S_n\}$ grows (very, very slowly) without bound. One might think that by removing the ``large'' terms of the sequence that perhaps the series will converge. This is simply not the case. For instance, the sum of the first 10 million terms of the Harmonic Series is about 16.7. Removing the first 10 million terms from the Harmonic Series changes the $n^\text{th}$ partial sums,  effectively subtracting 16.7 from the sum. However, a sequence that is growing without bound will still grow without bound when 16.7 is subtracted from it. 
 
 The equations below illustrate this. The first line shows the infinite sum of the Harmonic Series split into the sum of the first 10 million terms plus the sum of ``everything else.'' The next equation shows us subtracting these first 10 million terms from both sides. The final equation employs a bit of ``psuedo--math'': subtracting 16.7 from ``infinity'' still leaves one with ``infinity.''
 \begin{align*}

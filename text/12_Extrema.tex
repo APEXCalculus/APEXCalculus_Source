@@ -29,7 +29,7 @@ If $f$ has a relative or absolute maximum at $P=(x_0,y_0)$, it means every curve
 
 Therefore, to find relative extrema, we find the critical points of $f$ and determine which correspond to relative maxima, relative minima, or neither. The following examples demonstrate this process.\\
 
-\example{ex_multi_extreme1}{\textbf{Finding critical points and relative extrema}\\
+\example{ex_multi_extreme1}{Finding critical points and relative extrema}{
 Let $f(x,y) = x^2+y^2-xy-x-2$. Find the relative extrema of $f$.}
 {We start by computing the partial derivatives of $f$:
 $$f_x(x,y) = 2x-y-1 \qquad \text{and}\qquad f_y(x,y) = 2y-x.$$
@@ -41,7 +41,7 @@ This solution to this system is $x=2/3$, $y=1/3$. (Check that at $(2/3,1/3)$, bo
 The graph in Figure \ref{fig:multi_extreme1} shows $f$ along with this critical point. It is clear from the graph that this is a relative minimum; further consideration of the function shows that this is actually the absolute minimum.
 }\\
 
-\example{ex_multi_extreme2}{\textbf{Finding critical points and relative extrema}\\
+\example{ex_multi_extreme2}{Finding critical points and relative extrema}{
 Let $f(x,y) = -\sqrt{x^2+y^2}+2$. Find the relative extrema of $f$.}
 {We start by computing the partial derivatives of $f$:
 $$f_x(x,y) = \frac{-x}{\sqrt{x^2+y^2}}\qquad \text{and}\qquad f_y(x,y) = \frac{-y}{\sqrt{x^2+y^2}}.$$
@@ -53,7 +53,7 @@ The surface of $f$ is graphed in Figure \ref{fig:multi_extreme2} along with the 
 
 In each of the previous two examples, we found a critical point of $f$ and then determined whether or not it was a relative (or absolute) maximum or minimum by graphing. It would be nice to be able to determine whether a critical point corresponded to a max or a min without a graph. Before we develop such a test, we do one more example that sheds more light on the issues our test needs to consider.\\
 
-\example{ex_multi_extreme3}{\textbf{Finding critical points and relative extrema}\\
+\example{ex_multi_extreme3}{Finding critical points and relative extrema}{
 Let $f(x,y) = x^3-3x-y^2+4y$. Find the relative extrema of $f$.}
 {Once again we start by finding the partial derivatives of $f$:
 $$f_x(x,y) = 3x^2-3\qquad \text{and} \qquad f_y(x,y) = -2y+4.$$
@@ -106,7 +106,7 @@ $$D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)-f_{xy}^2(x_0,y_0).$$
 
 We first practice using this test with the function in the previous example, where we visually determined we had a relative maximum and a saddle point.\\
 
-\example{ex_multi_extreme4}{\textbf{Using the Second Derivative Test}\\
+\example{ex_multi_extreme4}{Using the Second Derivative Test}{
 Let $f(x,y) = x^3-3x-y^2+4y$ as in Example \ref{ex_multi_extreme3}. Determine whether the function has a relative minimum, maximum, or saddle point at each critical point.}
 {We determined previously that the critical points of $f$ are $(-1,2)$ and $(1,2)$. To use the Second Derivative Test, we must find the second partial derivatives of $f$:
 $$f_{xx} = 6x;\qquad f_{yy} = -2;\qquad f_{xy} = 0.$$
@@ -119,7 +119,7 @@ At $(1,2)$: $D(1,2) = -12 <0$. The Second Derivative Test states that $f$ has a 
 The Second Derivative Test confirmed what we determined visually.
 }\\
 
-\example{ex_multi_extreme5}{\textbf{Using the Second Derivative Test}\\
+\example{ex_multi_extreme5}{Using the Second Derivative Test}{
 Find the relative extrema of $f(x,y) = x^2y+y^2+xy$.}
 {We start by finding the first and second partial derivatives of $f$:
 $$\begin{array}{ccc}
@@ -171,7 +171,7 @@ A similar theorem and procedure applies to functions of two variables. A continu
 {Let $z=f(x,y)$ be a continuous function on a closed, bounded set $S$. Then $f$ has a maximum and minimum value on $S$.
 }
 
-\example{ex_conopt1}{\textbf{Finding extrema on a closed set}\\
+\example{ex_conopt1}{Finding extrema on a closed set}{
 Let $f(x,y) = x^2-y^2+5$ and let $S$ be the triangle with vertices $(-1,-2)$, $(0,1)$ and $(2,-2)$. Find the maximum and minimum values of $f$ on $S$.}
 {It can help to see a graph of $f$ along with the set $S$. In Figure \ref{fig:conopt1}(a) the triangle defining $S$ is shown in the $x$-$y$ plane in a dashed line. Above it is the surface of $f$; we are only concerned with the portion of $f$ enclosed by the ``triangle'' on its surface. 
 
@@ -236,7 +236,7 @@ However, solving constrained optimization problems is a very important topic in 
 
 We illustrate the technique once more with a classic problem.\\ 
 
-\example{ex_conopt2}{\textbf{Constrained Optimization}\\
+\example{ex_conopt2}{Constrained Optimization}{
 The U.S. Postal Service states that the girth+length of Standard Post Package must not exceed 130''. Given a rectangular box, the ``length'' is the longest side, and the ``girth'' is twice the width+height.
 
 Given a rectangular box where the width and height are equal, what are the dimensions of the box that give the maximum volume subject to the constraint of the size of a Standard Post Package?}

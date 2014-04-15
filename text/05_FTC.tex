@@ -14,7 +14,7 @@ We can also apply calculus ideas to $F(x)$; in particular, we can compute its de
 
 Initially this seems simple, as demonstrated in the following example.\\
 
-\example{ex_ftc2}{\textbf{Using the Fundamental Theorem of Calculus, Part 1}\\
+\example{ex_ftc2}{Using the Fundamental Theorem of Calculus, Part 1}{
 Let $\ds F(x) = \int_{-5}^x (t^2+\sin t)\ dt$. What is $\Fp(x)$?}
 {Using the Fundamental Theorem of Calculus, we have $\Fp(x) = x^2+\sin x$.
 }\\
@@ -33,7 +33,7 @@ We now see how indefinite integrals and definite integrals are related: we can e
 {Let $f$ be continuous on $[a,b]$ and let $F$ be \textit{any} antiderivative of $f$. Then $$\int_a^b f(x)\ dx = F(b) - F(a).$$
 }
 
-\example{ex_ftc3}{\textbf{Using the Fundamental Theorem of Calculus, Part 2}\\
+\example{ex_ftc3}{Using the Fundamental Theorem of Calculus, Part 2}{
 We spent a great deal of time in the previous section studying $\int_0^4(4x-x^2)\ dx$. Using the Fundamental Theorem of Calculus, evaluate this definite integral.}
 {We need an antiderivative of $f(x)=4x-x^2$. All antiderivatives of $f$ have the form $F(x) = 2x^2-\frac13x^3+C$; for simplicity, choose $C=0$.
 
@@ -47,7 +47,7 @@ This is the same answer we obtained using limits in the previous section, just w
 
 \noindent\textbf{The Constant $C$:} \textit{Any} antiderivative $F(x)$ can be chosen when using the Fundamental Theorem of Calculus to evaluate a definite integral, meaning any value of $C$ can be picked. The constant \textit{always} cancels out of the expression when evaluating $F(b)-F(a)$, so it does not matter what value is picked. This being the case, we might as well let $C=0$.\\
 
-\example{ex_ftc4}{\textbf{Using the Fundamental Theorem of Calculus, Part 2}\\
+\example{ex_ftc4}{Using the Fundamental Theorem of Calculus, Part 2}{
 Evaluate the following definite integrals.
 $$1.\ \int_{-2}^2 x^3\ dx \quad 2.\ \int_0^\pi \sin x\ dx \qquad 3.\ \int_0^5 e^t\ dt \qquad 4.\ \int_4^9 \sqrt{u}\ du\qquad 5.\ \int_1^5 2\ dx$$
 \vskip-10pt}
@@ -74,7 +74,7 @@ We established, starting with Key Idea \ref{idea:motion}, that the derivative of
 The Fundamental Theorem of Calculus states that
 $$\int_a^b v(t)\ dt = V(b) - V(a),$$ where $V(t)$ is any antiderivative of $v(t)$. Since $v(t)$ is a velocity function, $V(t)$ must be a position function, and $V(b) - V(a)$ measures a change in position, or \textbf{displacement}.\\
 
-\example{ex_ftcmotion1}{\textbf{Finding displacement}\\
+\example{ex_ftcmotion1}{Finding displacement}{
 A ball is thrown straight up with velocity given by $v(t) = -32t+20$ft/s, where $t$ is measured in seconds. Find, and interpret, $\ds \int_0^1 v(t)\ dt.$}
 {Using the Fundamental Theorem of Calculus, we have 
 \begin{align*}
@@ -98,7 +98,7 @@ Part 1 of the Fundamental Theorem of Calculus (FTC) states that given $\ds F(x) 
 It may be of further use to compose such a function with another. As an example, we may compose $F(x)$ with $g(x)$ to get $$F\big(g(x)\big) = \int_a^{g(x)} f(t)\ dt.$$ What is the derivative of such a function? The Chain Rule can be employed to state $$\frac{d}{dx}\Big(F\big(g(x)\big)\Big) = F'\big(g(x)\big)g'(x) = f\big(g(x)\big)g'(x).$$
 An example will help us understand this.\\
 
-\example{ex_ftc11}{\textbf{The FTC, Part 1, and the Chain Rule}\\
+\example{ex_ftc11}{The FTC, Part 1, and the Chain Rule}{
 Find the derivative of $\ds F(x) = \int_2^{x^2} \ln t\ dt$.}
 {We can view $F(x)$ as being the function $\ds G(x) = \int_2^x \ln t\ dt$ composed with $g(x) = x^2$; that is, $F(x) = G\big(g(x)\big)$. The Fundamental Theorem of Calculus states that $G'(x) = \ln x$. The Chain Rule gives us 
 \begin{align*}
@@ -112,7 +112,7 @@ Normally, the steps defining $G(x)$ and $g(x)$ are skipped.
 
 Practice this once more.\\
 
-\example{ex_ftc12}{\textbf{The FTC, Part 1, and the Chain Rule}\\
+\example{ex_ftc12}{The FTC, Part 1, and the Chain Rule}{
 Find the derivative of $\ds F(x) = \int_{\cos x}^5 t^3\ dt.$}
 {Note that $\ds F(x) = -\int_5^{\cos x} t^3\ dt$. Viewed this way, the derivative of $F$ is straightforward:
 $$F'(x) = \sin x \cos^3 x.$$
@@ -133,7 +133,7 @@ $$\int_a^b f(x)\ dx - \int_a^b g(x)\ dx.$$ Properties of the definite integral a
 {Let $f(x)$ and $g(x)$ be continuous functions defined on $[a,b]$ where $f(x)\geq g(x)$ for all $x$ in $[a,b]$. The area of the region bounded by the curves $y=f(x)$, $y=g(x)$ and the lines $x=a$ and $x=b$ is $$\int_a^b \big(f(x)-g(x)\big)\ dx.$$
 }
 
-\example{ex_ftc6}{\textbf{Finding area between curves}\\
+\example{ex_ftc6}{Finding area between curves}{
 Find the area of the region enclosed by $y=x^2+x-5$ and $y=3x-2$.}
 {It will help to sketch these two functions, as done in Figure \ref{fig:ftc6}. 
 \mfigure{.35}{Sketching the region enclosed by $y=x^2+x-5$ and $y=3x-2$ in Example \ref{ex_ftc6}.}{fig:ftc6}{figures/figftc6}
@@ -192,7 +192,7 @@ as Theorem \ref{thm:mvt}; we leave it to the reader to see how.
 
 We demonstrate the principles involved in this version of the Mean Value Theorem in the following example.\\
 
-\example{ex_ftc8}{\textbf{Using the Mean Value Theorem}\\
+\example{ex_ftc8}{Using the Mean Value Theorem}{
 Consider $\int_0^\pi \sin x\ dx$. Find a value $c$ guaranteed by the Mean Value Theorem.}
 {We first need to evaluate $\int_0^\pi \sin x\ dx$. (This was previously done in Example \ref{ex_ftc4}.)
 		$$\int_0^\pi\sin x\ dx =	-\cos x \Big|_0^\pi = 2.$$
@@ -244,7 +244,7 @@ An application of this definition is given in the following example.\\
 
 \enlargethispage{2\baselineskip}
 
-\example{ex_ftc10}{\textbf{Finding the average value of a function}\\
+\example{ex_ftc10}{Finding the average value of a function}{
 An object moves back and forth along a straight line with a velocity given by $v(t) = (t-1)^2$ on $[0,3]$, where $t$ is measured in seconds and $v(t)$ is measured in ft/s. 
 
 What is the average velocity of the object?

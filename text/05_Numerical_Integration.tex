@@ -37,7 +37,7 @@ We start with a review of notation. Let $f$ be a continuous function on the inte
 
 Key Idea \ref{idea:riemann} states that to use the Left Hand Rule we use the summation $\ds \sum_{i=1}^n f(x_i)\dx$ and to use the Right Hand Rule we use $\ds \sum_{i=1}^n f(x_{i+1})\dx$. We review the use of these rules in the context of examples.\\
 
-\example{ex_num1}{\textbf{Approximating definite integrals with rectangles}\\
+\example{ex_num1}{Approximating definite integrals with rectangles}{
 Approximate $\ds \int_0^1e^{-x^2}\ dx$ using the Left and Right Hand Rules with 5 equally spaced subintervals.}
 {We begin by partitioning the interval $[0,1]$ into 5 equally spaced intervals. We have $\dx = \frac{1-0}5 = 1/5=0.2$, so $$x_1 = 0,\ x_2 = 0.2,\ x_3 = 0.4,\ x_4 = 0.6,\ x_5 = 0.8,\ \text{and}\ x_6 = 1.$$
 
@@ -64,7 +64,7 @@ Using the Right Hand Rule, we have:
 Figure \ref{fig:num1} shows the rectangles used in each method to approximate the definite integral. These graphs show that in this particular case, the Left Hand Rule is an over approximation and the Right Hand Rule is an under approximation. To get a better approximation, we could use more rectangles, as we did in Section \ref{sec:riemann}. We could also average the Left and Right Hand Rule results together, giving $$ \frac{0.808 + 0.681}{2} = 0.7445.$$ The actual answer, accurate to 4 places after the decimal, is 0.7468, showing our average is a good approximation.
 }\\
 
-\example{ex_num2}{\textbf{Approximating definite integrals with rectangles}\\
+\example{ex_num2}{Approximating definite integrals with rectangles}{
 Approximate $\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx$ using the Left and Right Hand Rules with 10 equally spaced subintervals.}
 {We begin by finding \dx:
 $$\frac{b-a}{n} = \frac{\pi/2 - (-\pi/4)}{10} = \frac{3\pi}{40}\approx 0.236.$$
@@ -113,7 +113,7 @@ Instead of using rectangles to approximate the area, we can instead use \textit{
 
 The formula for the area of a trapezoid is given in Figure \ref{fig:trapezoid}. We approximate $\int_0^1 e^{-x^2}\ dx$ with these trapezoids in the following example.\\
 
-\example{ex_num3}{\textbf{Approximating definite integrals using trapezoids}\\
+\example{ex_num3}{Approximating definite integrals using trapezoids}{
 Use 5 trapezoids of equal width to approximate $\ds \int_0^1e^{-x^2}\ dx$.}
 {To compute the areas of the 5 trapezoids in Figure \ref{fig:num3a}, it will again be useful to create a table of values as shown in Figure \ref{fig:num3b}.
 
@@ -157,7 +157,7 @@ This is the heart of the \textbf{Trapezoidal Rule}, wherein a definite integral 
 									& = \frac{\dx}2\Big[f(x_1)+ 2\sum_{i=2}^n f(x_i) + f(x_{n+1})\Big].\\ 
 \end{align*}
 
-\example{ex_num4}{\textbf{Using the Trapezoidal Rule}\\
+\example{ex_num4}{Using the Trapezoidal Rule}{
 Revisit Example \ref{ex_num2} 
 and approximate $\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin (x^3)\ dx$ using the Trapezoidal Rule and 10 equally spaced subintervals.}
 {We refer back to Figure \ref{fig:num2a} for the table of values of $\sin(x^3)$. Recall that $\dx = 3\pi/40 \approx 0.236$. Thus we have:\small
@@ -199,7 +199,7 @@ Note how the coefficients of the terms in the summation have the pattern 1, 4, 2
 
 Let's demonstrate Simpson's Rule with a concrete example.\\
 
-\example{ex_num5}{\textbf{Using Simpson's Rule}\\
+\example{ex_num5}{Using Simpson's Rule}{
 Approximate $\ds\int_0^1 e^{-x^2}\ dx$ using Simpson's Rule and 4 equally spaced subintervals.}
 {We begin by making a table of values as we have in the past, as shown in Figure \ref{fig:num5a}(a).
 \mtable{.7}{A table of values to approximate $\int_0^1e^{-x^2}\ dx$, along with a graph of the function.}{fig:num5a}{%
@@ -225,7 +225,7 @@ Recall in Example \ref{ex_num1} we stated that the correct answer, accurate to 4
 Figure \ref{fig:num5a}(b) shows $f(x) = e^{-x^2}$ along with its approximating parabolas, demonstrating how good our approximation is. The approximating curves are nearly indistinguishable from the actual function.
 }\\
 
-\example{ex_num6}{\textbf{Using Simpson's Rule}\\
+\example{ex_num6}{Using Simpson's Rule}{
 Approximate $\ds\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx$ using Simpson's Rule and 10 equally spaced intervals.}
 {Figure \ref{fig:num6a} shows the table of values that we used in the past for this problem, shown here again for convenience. Again, $\dx = (\pi/2+\pi/4)/10 \approx 0.236$.
 
@@ -326,7 +326,7 @@ There are some key things to note about this theorem.
 
 We revisit Examples \ref{ex_num3} and \ref{ex_num5} and compute the error bounds using Theorem \ref{thm:numerical_error} in the following example.\\
 
-\example{ex_num7}{\textbf{Computing error bounds}\\
+\example{ex_num7}{Computing error bounds}{
 Find the error bounds when approximating $\ds \int_0^1 e^{-x^2}\ dx$ using the Trapezoidal Rule and 5 subintervals, and using Simpson's Rule with 4 subintervals.}
 {
 
@@ -357,7 +357,7 @@ $$0.74683-0.00026 = .74657 \leq \int_0^1e^{-x^2}\ dx \leq 0.74709 = 0.74683 + 0.
 
 At the beginning of this section we mentioned two main situations where numerical integration was desirable. We have considered the case where an antiderivative of the integrand cannot be computed. We now investigate the situation where the integrand is not known. This is, in fact, the most widely used application of Numerical Integration methods. ``Most of the time'' we observe behavior but do not know ``the'' function that describes it. We instead collect data about the behavior and make approximations based off of this data. We demonstrate this in an example.\\
 
-\example{ex_num8}{\textbf{Approximating distance traveled}\\
+\example{ex_num8}{Approximating distance traveled}{
 One of the authors drove his daughter home from school while she recorded their speed every 30 seconds. The data is given in Figure \ref{fig:num8}. Approximate the distance they traveled.}
 {Recall that by integrating a speed function we get distance traveled. We have information about $v(t)$; we will use Simpson's Rule to approximate $\ds \int_a^b v(t)\ dt.$ 
 

@@ -25,7 +25,7 @@ Note how the measurement of distance between real numbers is the absolute value 
 
 Theorem \ref{thm:vvf_limit} states that we compute limits component--wise.\\
 
-\example{ex_vvflimit1}{\textbf{Finding limits of vector--valued functions}\\
+\example{ex_vvflimit1}{Finding limits of vector--valued functions}{
 Let $\ds\vec r(t) = \la \frac{\sin t}{t},\, t^2-3t+3,\,\cos t\ra.$ Find $\ds \lim_{t\to 0}\vec r(t)$.
 }
 {We apply the theorem and compute limits component--wise.
@@ -52,7 +52,7 @@ We again have a theorem that lets us evaluate continuity component--wise.
 {Let $\vec r(t)$ be a vector--valued function defined on an open interval $I$ containing $c$. $\vec r(t)$ is continuous at $c$ if, and only if, each of its component functions is continuous at $c$.
 }\\
 
-\example{ex_vvflimit2}{\textbf{Evaluating continuity of vector--valued functions}\\
+\example{ex_vvflimit2}{Evaluating continuity of vector--valued functions}{
 Let $\ds\vec r(t) = \la \frac{\sin t}{t},\, t^2-3t+3,\,\cos t\ra.$ Determine whether $\vec r$ is continuous at $t=0$ and $t=1$.}
 {While the second and third components of $\vec r(t)$ are defined at $t=0$, the first component, $(\sin t)/t$, is not. Since the first component is not even defined at $t=0$, $\vec r(t)$ is not defined at $t=0$, and hence it is not continuous at $t=0$.
 
@@ -108,7 +108,7 @@ Once again we might view this definition as intimidating, but recall that we can
 \end{itemize}
 }\\
 
-\example{ex_vvflimit3}{\textbf{Derivatives of vector--valued functions}\\
+\example{ex_vvflimit3}{Derivatives of vector--valued functions}{
 Let $\vec r(t) = \la t^2,t\ra$. 
 \begin{enumerate}
 	\item Sketch $\vec r(t)$ and $\vrp(t)$ on the same axes.
@@ -134,7 +134,7 @@ $$\vrp(t) = \la 2t, 1\ra.$$ $\vec r(t)$ and $\vrp(t)$ are graphed together in Fi
 }\\
 \clearpage
 
-\example{ex_vvflimit4}{\textbf{Derivatives of vector--valued functions}\\
+\example{ex_vvflimit4}{Derivatives of vector--valued functions}{
 Let $\vec r(t) = \la \cos t, \sin t, t\ra$. Compute $\vrp(t)$ and $\vrp(\pi/2)$. Sketch $\vrp(\pi/2)$ with its initial point at the origin and at $\vec r(\pi/2)$.
 }
 {We compute $\vrp$ as $\vrp(t) = \la -\sin t, \cos t, 1\ra$. At $t= \pi/2$, we have $\vrp(\pi/2) = \la -1,0,1\ra$. Figure \ref{fig:vvflimit4} shows two graphs of $\vec r(t)$, from different perspectives, with $\vrp(\pi/2)$ plotted with its initial point at the origin and at $\vec r(\pi/2)$.
@@ -156,7 +156,7 @@ In Examples \ref{ex_vvflimit3} and \ref{ex_vvflimit4}, sketching a particular de
 \end{itemize}
 }\\
 
-\example{ex_vvfderiv1}{\textbf{Finding tangent lines to curves in space}\\
+\example{ex_vvfderiv1}{Finding tangent lines to curves in space}{
 Let $\vec r(t) = \la t,t^2,t^3\ra$ on $[-1.5,1.5]$. Find the vector equation of the line tangent to the graph of $\vec r$ at $t=-1$. }
 {To find the equation of a line, we need a point on the line and the line's direction. The point is given by $\vec r(-1) = \la -1,1,-1\ra$. (To be clear, $\la -1,1,-1\ra$ is a \emph{vector}, not a point, but we use the point ``pointed to'' by this vector.)
 
@@ -173,7 +173,7 @@ The direction comes from $\vrp(-1)$. We compute, component--wise, $\vrp(t) = \la
 The vector equation of the line is $\ell(t) = \la -1,1,-1\ra + t\la 1,-2,3\ra$. This line and $\vec r(t)$ are sketched, from two perspectives, in Figure \ref{fig:vvfderiv1} (a) and (b).
 }\\
 
-\example{ex_vvfderiv3}{\textbf{Finding tangent lines to curves}\\
+\example{ex_vvfderiv3}{Finding tangent lines to curves}{
 Find the equations of the lines tangent to $\vec r(t) = \la t^3,t^2\ra$ at $t=-1$ and $t=0$.}
 {We find that $\vrp(t) = \la 3t^2,2t\ra$. At $t=1$, we have
 $$\vec r(-1) = \la -1,1\ra\quad \text{and}\quad \vrp(1) = \la 3,-2\ra,$$
@@ -204,7 +204,7 @@ Having established derivatives of vector--valued functions, we now explore the r
 	\end{enumerate}
 }\\
 
-\example{ex_vvfderiv2}{\textbf{Using derivative properties of vector--valued functions}\\
+\example{ex_vvfderiv2}{Using derivative properties of vector--valued functions}{
 Let $\vec r(t) = \la t, t^2-1\ra$ and let $\vec u(t)$ be the unit vector that points in the direction of $\vec r(t)$.
 \begin{enumerate}
 	\item Graph $\vec r(t)$ and $\vec u(t)$ on the same axes, on $[-2,2]$.
@@ -269,7 +269,7 @@ Indefinite and definite integrals of vector--valued functions are also evaluated
 A similar statement holds for vector--valued functions in $\mathbb{R}^3$.
 }
 
-\example{ex_vvfint1}{\textbf{Evaluating a definite integral of a vector--valued function}\\
+\example{ex_vvfint1}{Evaluating a definite integral of a vector--valued function}{
 Let $\vec r(t) = \la e^{2t},\sin t\ra$. Evaluate $\ds \int_0^1 \vec r(t) \ dt$.
 }
 {We follow Theorem \ref{thm:vvf_integration}.
@@ -283,7 +283,7 @@ Let $\vec r(t) = \la e^{2t},\sin t\ra$. Evaluate $\ds \int_0^1 \vec r(t) \ dt$.
 \vskip-1.5\baselineskip
 }\\
 
-\example{ex_vvfint2}{\textbf{Solving an initial value problem}\\
+\example{ex_vvfint2}{Solving an initial value problem}{
 Let $\vrp'(t) = \la 2, \cos t, 12t\ra$. Find $\vec r(t)$ where:
 \begin{itemize}
 	\item $\vec r(0) = \la-7,-1,2\ra$ and

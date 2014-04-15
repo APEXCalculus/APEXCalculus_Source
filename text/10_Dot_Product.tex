@@ -13,7 +13,7 @@ The previous section introduced vectors and described how to add them together a
 
 Note how this product of vectors returns a \emph{scalar}, not another vector. We practice evaluating a dot product in the following example, then we will discuss why this product is useful.\\
 
-\example{ex_dotp1}{\textbf{Evaluating dot products}\\
+\example{ex_dotp1}{Evaluating dot products}{
 \begin{enumerate}
 	\item Let $\vec u=\la 1,2\ra$, $\vec v=\la 3,-1\ra$ in $\mathbb{R}^2$. Find \dotp uv.
 	\item Let $\vec x = \la 2,-2,5\ra $ and $\vec y = \la -1, 0, 3\ra$ in $\mathbb{R}^3$. Find \dotp xy.
@@ -79,7 +79,7 @@ $$\cos \theta = \frac{\dotp uv}{\norm{\vec u}\norm{\vec v}} \quad \Leftrightarro
 We practice using this theorem in the following example.\\
 
 \mfigure{.3}{Vectors used in Example \ref{ex_dotp2}.}{fig:dotp2}{figures/figdotp2}
-\example{ex_dotp2}{\textbf{Using the dot product to find angles}\\
+\example{ex_dotp2}{Using the dot product to find angles}{
 Let $\vec u = \la 3,1\ra$, $\vec v = \la -2,6\ra$ and $\vec w = \la -4,3\ra$, as shown in Figure \ref{fig:dotp2}. Find the angles $\alpha$, $\beta$ and $\theta$.
 }
 {We start by computing the magnitude of each vector.
@@ -105,7 +105,7 @@ We see from our computation that $\alpha + \beta = \theta$, as indicated by Figu
 We do a similar example next in the context of vectors in space.\\
 
 \mfigure{.4}{Vectors used in Example \ref{ex_dotp3}.}{fig:dotp3}{figures/figdotp3}
-\example{ex_dotp3}{\textbf{Using the dot product to find angles}\\
+\example{ex_dotp3}{Using the dot product to find angles}{
 Let $\vec u = \la 1,1,1\ra$, $\vec v = \la -1,3,-2\ra$ and $\vec w = \la -5,1,4\ra$, as illustrated in Figure \ref{fig:dotp3}. Find the angle between each pair of vectors.}
 {\begin{itemize}
 	\item Between $\vec u$ and $\vec v$:
@@ -139,7 +139,7 @@ All three angles between these vectors was $\pi/2$, or $90^\circ$. We know from 
 \mnote{.4}{\textbf{Note:} The term \textit{perpendicular} originally referred to lines. As mathematics progressed, the concept of ``being at right angles to'' was applied to other objects, such as vectors and planes, and the term \emph{orthogonal} was introduced. It is especially used when discussing objects that are hard, or impossible, to visualize: two vectors in 5-dimensional space are orthogonal if their dot product is 0. It is not wrong to say they are \textit{perpendicular}, but common convention gives preference to the word \textit{orthogonal}.
 }
 
-\example{ex_dotp8}{\textbf{Finding orthogonal vectors}\\
+\example{ex_dotp8}{Finding orthogonal vectors}{
 Let $\vec u = \la 3,5\ra$ and $\vec v = \la 1,2,3\ra$. 
 \begin{enumerate}
 	\item Find two vectors in $\mathbb{R}^2$ that are orthogonal to $\vec u$.
@@ -196,7 +196,7 @@ Since this construction is so important, it is given a special name.
 $$\proj uv = \frac{\dotp uv}{\dotp vv}\vec v.$$
 }
 
-\example{ex_dotp4}{\textbf{Computing the orthogonal projection}\\
+\example{ex_dotp4}{Computing the orthogonal projection}{
 \begin{enumerate}
 	\item Let $\vec u= \la -2,1\ra$ and $\vec v=\la 3,1\ra$. Find $\proj uv$, and sketch all three vectors with initial points at the origin.
 	\item	Let $\vec w = \la 2,1,3\ra$ and $\vec x = \la 1,1,1\ra$. Find $\proj wx$, and sketch all three vectors with initial points at the origin.
@@ -249,7 +249,7 @@ $$\vec u = \underbrace{\proj uv}_{\parallel\ \vec v}\ +\  (\underbrace{\vec u-\p
 
 We illustrate the use of this equality in the following example.\\
 
-\example{ex_dotp5}{\textbf{Orthogonal decomposition of vectors}\\
+\example{ex_dotp5}{Orthogonal decomposition of vectors}{
 \begin{enumerate}
 	\item Let $\vec u = \la -2,1\ra $ and $\vec v = \la 3,1\ra$ as in Example \ref{ex_dotp4}. Decompose $\vec u$ as the sum of a vector parallel to $\vec v$ and a vector orthogonal to $\vec v$.
 	\item	Let $\vec w =\la 2,1,3\ra$ and $\vec x  =\la 1,1,1\ra$ as in Example \ref{ex_dotp4}. Decompose $\vec w$ as the sum of a vector parallel to $\vec x$ and a vector orthogonal to $\vec x$.
@@ -280,7 +280,7 @@ We illustrate the use of this equality in the following example.\\
 
 We give an example of where this decomposition is useful.\\
 
-\example{ex_dotp6}{\textbf{Orthogonally decomposing a force vector}\\
+\example{ex_dotp6}{Orthogonally decomposing a force vector}{
 Consider Figure \ref{fig:dotp6} (a), showing a box weighing 50lb on a ramp that rises 5ft over a span of 20ft. Find the components of force, and their magnitudes, acting on the box (as sketched in part (b) of the figure):
 \mtable{.4}{Sketching the ramp and box in Example \ref{ex_dotp6}. Note: \textit{The vectors are not drawn to scale.}}{fig:dotp6}{%
 \begin{tabular}{c}
@@ -334,7 +334,7 @@ The expression $\dotp Fd$ will be positive if the angle between $\vec F$ and $\v
 {Let $\vec F$ be a constant force that moves an object in a straight line from point $P$ to point $Q$. Let $\vec d = \vv{PQ}$. The \textbf{work} $W$ done by $\vec F$ along $\vec d$ is $W = \dotp Fd$.
 }
 
-\example{ex_dotp7}{\textbf{Computing work}\\
+\example{ex_dotp7}{Computing work}{
 A man slides a box along a ramp that rises 3ft over a distance of 15ft by applying 50lb of force as shown in Figure \ref{fig:dotp7}. Compute the work done.}
 {The figure indicates that the force applied makes a $30^\circ$ angle with the horizontal, so $\vec F = 50\la \cos 30^\circ,\sin 30^\circ\ra \approx \la 43.3,25\ra.$ The ramp is represented by $\vec d  = \la 15,3\ra$. The work done is simply
 $$\dotp Fd = 50\la \cos 30^\circ,\sin 30^\circ\ra \cdot \la 15,3\ra \approx 724.5 \text{ft--lb}.$$

@@ -19,7 +19,7 @@ Consider Figure \ref{fig:mchain_intro} in which a surface is drawn, along with a
 
 We now practice applying the Multivariable Chain Rule.\\
 
-\example{ex_mchain1}{\textbf{Using the Multivariable Chain Rule}\\
+\example{ex_mchain1}{Using the Multivariable Chain Rule}{
 Let $z=x^2y+x$, where $x=\sin t$ and $y=e^{5t}$. Find $\ds \frac{dz}{dt}$ using the Chain Rule.}
 {Following Theorem \ref{thm:multi_chain}, we find
 $$f_x(x,y) = 2xy+1\qquad f_y(x,y) = x^2\qquad \frac{dx}{dt} = \cos t\qquad \frac{dy}{dt}= 5e^{5t}.$$
@@ -39,7 +39,7 @@ This may now make one wonder ``What's the point? If we could already find the de
 
 We apply the Chain Rule once more to solve a max/min problem.\\
 
-\example{ex_mchain2}{\textbf{Applying the Multivariable Chain Rule}\\
+\example{ex_mchain2}{Applying the Multivariable Chain Rule}{
 Consider the surface $z=x^2+y^2-xy$, on which a particle moves with $x$ and $y$ coordinates given by $x=\cos t$ and $y=\sin t$. Find $\frac{dz}{dt}$ when $t=0$, and find where the particle reaches its maximum/minimum $z$-values.}
 {It is straightforward to compute
 $$f_x(x,y) = 2x-y\qquad f_y(x,y) = 2y-x\qquad \frac{dx}{dt} = -\sin t\qquad \frac{dy}{dt} = \cos t.$$
@@ -76,7 +76,7 @@ We can extend the Chain Rule to include the situation where $z$ is a function of
 \end{itemize}
 }
 
-\example{ex_mchain3}{\textbf{Using the Multivarible Chain Rule, Part II}\\
+\example{ex_mchain3}{Using the Multivarible Chain Rule, Part II}{
 Let $z=x^2y+x$, $x=s^2+3t$ and $y=2s-t$. Find $\frac{\partial z}{\partial s}$ and $\frac{\partial z}{\partial t}$, and evaluate each when $s=1$ and $t=2$.}
 {Following Theorem \ref{thm:multi_chain2}, we compute the following partial derivatives:
 $$\frac{\partial f}{\partial x} = 2xy+1\qquad\qquad \frac{\partial f}{\partial y} = x^2,$$
@@ -88,7 +88,7 @@ When $s=1$ and $t=2$, $x= 7$ and $y= 0$, so
 $$\frac{\partial z}{\partial s} = 100\qquad \text{and}\qquad \frac{\partial z}{\partial t} = -46.$$
 \vskip-1.5\baselineskip}\\
 
-\example{ex_mchain4}{\textbf{Using the Multivarible Chain Rule, Part II}\\
+\example{ex_mchain4}{Using the Multivarible Chain Rule, Part II}{
 Let $w = xy+z^2$, where $x= t^2e^s$, $y= t\cos s$, and $z=s\sin t$. Find $\frac{\partial w}{\partial t}$ when $s=0$ and $t=\pi$.}
 {Following Theorem \ref{thm:multi_chain2}, we compute the following partial derivatives:
 $$\frac{\partial f}{\partial x} = y\qquad\qquad \frac{\partial f}{\partial y} = x\qquad\qquad \frac{\partial f}{\partial z} = 2z,$$
@@ -130,7 +130,7 @@ $$\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}.$$
 
 We practice using Theorem \ref{thm:implicit_deriv_chain} by applying it to a problem from Section \ref{sec:imp_deriv}.\\
 
-\example{ex_mchain5}{\textbf{Implicit Differentiation}\\
+\example{ex_mchain5}{Implicit Differentiation}{
 Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$. Note: this is the same problem as given in Example \ref{ex_implicit5} of Section \ref{sec:imp_deriv}, where the solution took about a full page to find.}
 {Let $f(x,y) = \sin(x^2y^2)+y^3-x-y$; the implicitly defined function above is equivalent to $f(x,y)=0$. We find $\frac{dy}{dx}$ by applying Theorem \ref{thm:implicit_deriv_chain}. We find 
 $$f_x(x,y) = 2xy^2\cos(x^2y^2)-1\qquad \text{and}\qquad f_y(x,y) = 2x^2y\cos(x^2y^2)-1,$$
@@ -139,7 +139,7 @@ $$\frac{dy}{dx} = -\frac{2xy^2\cos(x^2y^2)-1}{2x^2y\cos(x^2y^2)-1},$$
 which matches our solution from Example \ref{ex_implicit5}.
 }\\
 
-%\example{ex_implicit5}{\textbf{Using Implicit Differentiation}\\
+%\example{ex_implicit5}{Using Implicit Differentiation}{
 %Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$.}
 %$$y' = \frac{1 - 2xy^2\cos(x^2y^2)}{2x^2y\cos(x^2y^2)+3y^2-1}.$$
 

@@ -35,7 +35,7 @@ $$\iint_Rf(x,y)\ dA = \int_\alpha^\beta\int_{g_1(\theta)}^{g_2(\theta)} f\big(r\
 
 Examples will help us understand this Key Idea.\\
 
-\example{ex_doublepol1}{\textbf{Evaluating a double integral with polar coordinates}\\
+\example{ex_doublepol1}{Evaluating a double integral with polar coordinates}{
 Find the signed volume under the plane $z= 4-x-2y$ over the circle with equation $x^2+y^2=1$.}
 {The bounds of the integral are determined solely by the region $R$ over which we are integrating. In this case, it is a circle with equation $x^2+y^2=1$. We need to find polar bounds for this region. It may help to review Section \ref{sec:polar}; the bounds for this circle are $0\leq r\leq 1$ and $0\leq \theta\leq 2\pi$.
 
@@ -54,7 +54,7 @@ Finally, we replace $dA$ in the double integral with $r\ dr\ d\theta$. This give
 The surface and region $R$ are shown in Figure \ref{fig:doublepol1}.
 }\\
 
-\example{ex_doublepol2}{\textbf{Evaluating a double integral with polar coordinates}\\
+\example{ex_doublepol2}{Evaluating a double integral with polar coordinates}{
 Find the volume under the paraboloid $z=4-(x-2)^2-y^2$ over the region bounded by the circles $(x-1)^2+y^2=1$ and $(x-2)^2+y^2=4$.}
 {At first glance, this seems like a very hard volume to compute as the region $R$ (shown in Figure \ref{fig:doublepol2}(a)) has a hole in it, cutting out a strange portion of the surface, as shown in part (b) of the figure. However, by describing $R$ in terms of polar equations, the volume is not very difficult to compute.
 \mtable{.7}{Showing the region $R$ and surface used in Example \ref{ex_doublepol2}.}{fig:doublepol2}{%
@@ -88,7 +88,7 @@ Replacing $x$ with $r\cos\theta$ in the integrand, along with replacing $y$ with
 While this example was not trivial, the double integral would have been \textit{much} harder to evaluate had we used rectangular coordinates.
 }\\
 
-\example{ex_doublepol5}{\textbf{Evaluating a double integral with polar coordinates}\\
+\example{ex_doublepol5}{Evaluating a double integral with polar coordinates}{
 Find the volume under the surface $\ds f(x,y) =\frac1{x^2+y^2+1}$ over the  sector of the circle with radius $a$ centered at the origin in the first quadrant, as shown in Figure \ref{fig:doublepol5}.
 }
 {\mfigure[scale=1.2,trim=1mm 0mm 0mm 0mm,clip]{.5}{The surface and region $R$ used in Example \ref{ex_doublepol5}.}{fig:doublepol5}{figures/figdoublepol5}
@@ -106,7 +106,7 @@ Figure \ref{fig:doublepol5} clearly shows that $f$ shrinks to near 0 very quickl
 \mnote{.7}{\textbf{Note:} Previous work has shown that there is finite \textit{area} under $\frac{1}{x^2+1}$ over the entire $x$-axis. However, Example \ref{ex_doublepol5} shows that there is infinite \textit{volume} under $\frac{1}{x^2+y^2+1}$ over the entire $x$-$y$ plane.}
 }\\
 
-\example{ex_doublepol3}{\textbf{Finding the volume of a sphere}\\
+\example{ex_doublepol3}{Finding the volume of a sphere}{
 Find the volume of a sphere with radius $a$.}
 {The sphere of radius $a$, centered at the origin, has equation $x^2+y^2+z^2=a^2$; solving for $z$, we have $z=\sqrt{a^2-x^2-y^2}$. This gives the upper half of a sphere. We wish to find the volume under this top half, then double it to find the total volume. 
 
@@ -126,7 +126,7 @@ All together, the volume of a sphere with radius $a$ is:
 Generally, the formula for the volume of a sphere with radius $r$ is given as $4/3\pi r^3$; we have justified this formula with our calculation.
 }\\
 
-\example{ex_doublepol4}{\textbf{Finding the volume of a solid}\\
+\example{ex_doublepol4}{Finding the volume of a solid}{
 A sculptor wants to make a solid bronze cast of the solid shown in Figure \ref{fig:doublepol4}, where the base of the solid has boundary, in polar coordinates, $r=\cos\theta$, and the top is defined by the plane $z=1-x+0.1y$. Find the volume of the solid.
 \mtable{.5}{Finding the volume of the solid shown here from two perspectives.}{fig:doublepol4}{%
 \begin{tabular}{c}

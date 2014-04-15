@@ -34,7 +34,7 @@ We make a note about Property \#8: when $n$ is even, $L$ must be greater than 0.
 
 We apply the theorem to an example.\\
 
-\example{ex_basic_limit_1}{\textbf{Using basic limit properties}\\
+\example{ex_basic_limit_1}{Using basic limit properties}{
 Let $$\lim_{x\to 2} f(x)=2,\quad\lim_{x\to 2} g(x) = 3\quad \text{\ and \ }\quad p(x) = 3x^2-5x+7.$$ Find the following limits:
 
 \noindent\begin{minipage}[t]{.5\textwidth}
@@ -72,7 +72,7 @@ Part 3 of the previous example demonstrates how the limit of a quadratic polynom
 }
 \enlargethispage{1\baselineskip}
 
-\example{ex_limit_rat}{\textbf{Finding a limit of a rational function}\\
+\example{ex_limit_rat}{Finding a limit of a rational function}{
 Using Theorem \ref{thm:poly_rat}, find $$\lim_{x\to -1} \frac{3x^2-5x+1}{x^4-x^2+3}.$$}
 {Using Theorem \ref{thm:poly_rat}, we can quickly state that 
 	\begin{align*} \lim_{x\to -1}\frac{3x^2-5x+1}{x^4-x^2+3} &= \frac{3(-1)^2-5(-1)+1}{(-1)^4-(-1)^2+3} \\
@@ -120,7 +120,7 @@ Let $c$ be a real number in the domain of the given function and let $n$ be a po
 \normalsize
 \restoreboxwidth
 
-\example{ex_limit_1}{\textbf{Evaluating limits analytically}\\
+\example{ex_limit_1}{Evaluating limits analytically}{
 Evaluate the following limits. 
 
 \noindent\begin{minipage}[t]{.5\textwidth}
@@ -167,7 +167,7 @@ It can take some work to figure out appropriate functions by which to ``squeeze'
 
 We use the Squeeze Theorem in the following example to finally prove that $\ds \lim_{x\to 0} \frac{\sin x}{x} = 1$.\\
 
-\example{ex_limit_sinx_prove}{\textbf{Using the Squeeze Theorem}\\
+\example{ex_limit_sinx_prove}{Using the Squeeze Theorem}{
 Use the Squeeze Theorem to show that $$\ds \lim_{x\to 0} \frac{\sin x}{x} = 1.$$}
 {We begin by considering the unit circle. Each point on the unit circle has coordinates $(\cos \theta,\sin \theta)$ for some angle $\theta$ as shown in Figure \ref{fig:squeeze_sinx}. Using similar triangles, we can extend the line from the origin through the point to the point $(1,\tan \theta)$, as shown. (Here we are assuming that $0\leq \theta \leq \pi/2$. Later we will show that we can also consider $\theta \leq 0$.)
 
@@ -226,7 +226,7 @@ In the fourth limit, we see that as $x\to 0$, $e^x$ approaches 1 ``just as fast'
 
 Our final theorem for this section will be motivated by the following example.\\
 
-\example{ex_limit_onept}{\textbf{Using algebra to evaluate a limit}\\
+\example{ex_limit_onept}{Using algebra to evaluate a limit}{
 Evaluate the following limit: $$\lim_{x\to 1}\frac{x^2-1}{x-1}.$$}
 {We begin by attempting to apply Theorem \ref{thm:lim_continuous} and substituting 1 for $x$ in the quotient. This gives:
 		$$\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^1-1}{1-1} = \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\text{\ ''}},$$ and indeterminate form. We cannot apply the theorem.
@@ -247,7 +247,7 @@ The key to the above example is that the functions $y=(x^2-1)/(x-1)$ and $y=x+1$
 The Fundamental Theorem of Algebra tells us that when dealing with a rational function of the form $g(x)/f(x)$ and directly evaluating the limit $\ds \lim_{x\to c} \frac{g(x)}{f(x)}$ returns ``0/0'', % $\ds\raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\text{\ ''}}$, 
 then $(x-c)$ is a factor of both $g(x)$ and $f(x)$. One can then use algebra to factor this term out, cancel, then apply Theorem \ref{thm:limit_allbut1}. We demonstrate this once more.\\
 
-\example{ex_limit_allbut1}{\textbf{Evaluating a limit using Theorem \ref{thm:limit_allbut1}}\\
+\example{ex_limit_allbut1}{Evaluating a limit using Theorem \ref{thm:limit_allbut1}{}\\
 Evaluate $\ds \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}$.}
 {We begin by applying Theorem \ref{thm:lim_continuous} and substituting 3 for $x$. This returns the familiar indeterminate form of ``0/0''. %\zerooverzero. 
 Since the numerator and denominator are each polynomials, we know that $(x-3)$ is factor of each. Using whatever method is most comfortable to you, factor out $(x-3)$ from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that $$\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}.$$ We can cancel the $(x-3)$ terms as long as $x\neq 3$. Using Theorem \ref{thm:limit_allbut1} we conclude:
@@ -263,7 +263,7 @@ Since the numerator and denominator are each polynomials, we know that $(x-3)$ i
 
 We end this section by revisiting a limit first seen in Section \ref{sec:limit_intro}, a limit of a difference quotient. Let $f(x) = -1.5x^2+11.5x$; we approximated the limit $\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.$ We formally evaluate this limit in the following example.\\
 
-\example{ex_limit_diffquot}{\textbf{Evaluating the limit of a difference quotient}\\
+\example{ex_limit_diffquot}{Evaluating the limit of a difference quotient}{
 Let $f(x) = -1.5x^2+11.5x$; find $\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.$}
 {Since $f$ is a polynomial, our first attempt should be to employ Theorem \ref{thm:lim_continuous} and substitute 0 for $h$. However, we see that this gives us \zerooverzero. Knowing that we have a rational function hints that some algebra will help. Consider the following steps:
 		\begin{align*}

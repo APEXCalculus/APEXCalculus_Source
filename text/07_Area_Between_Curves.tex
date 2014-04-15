@@ -49,7 +49,7 @@ Taking the limit as $||\dx_i||\to 0$ gives the exact area as $\int_a^b \big(f(x)
 {Let $f(x)$ and $g(x)$ be continuous functions defined on $[a,b]$ where $f(x)\geq g(x)$ for all $x$ in $[a,b]$. The area of the region bounded by the curves $y=f(x)$, $y=g(x)$ and the lines $x=a$ and $x=b$ is $$\int_a^b \big(f(x)-g(x)\big)\ dx.$$
 }
 
-\example{ex_abc1}{\textbf{Finding area enclosed by curves}\\
+\example{ex_abc1}{Finding area enclosed by curves}{
 Find the area of the region bounded by $f(x) = \sin x+2$, $g(x) = \frac12\cos (2x)-1$, $x=0$ and $x=4\pi$, as shown in Figure \ref{fig:abc1}.}
 {The graph verifies that the upper boundary of the region is given by $f$ and the lower bound is given by $g$. Therefore the area of the region is the value of the integral
 \begin{align*} 
@@ -61,7 +61,7 @@ Find the area of the region bounded by $f(x) = \sin x+2$, $g(x) = \frac12\cos (2
 \mfigure{.8}{Graphing an enclosed region in Example \ref{ex_abc1}.}{fig:abc1}{figures/figabc1}
 }\\
 
-\example{ex_abc2}{\textbf{Finding total area enclosed by curves}\\
+\example{ex_abc2}{Finding total area enclosed by curves}{
 Find the total area of the region enclosed by the functions $f(x) = -2x+5$ and $g(x) = x^3-7x^2+12x-3$ as shown in Figure \ref{fig:abc2}.}
 {\mfigure{.55}{Graphing a region enclosed by two functions in Example \ref{ex_abc2}.}{fig:abc2}{figures/figabc2}
 A quick calculation shows that $f=g$ at $x=1, 2$ and 4. One can proceed thoughtlessly by computing $\ds \int_1^4\big(f(x)-g(x)\big)\ dx$, but this ignores the fact that on $[1,2]$, $g(x)>f(x)$. (In fact, the thoughtless integration returns $-9/4$, hardly the expected value of an \textit{area}.) Thus we compute the total area by breaking the interval $[1,4]$ into two subintervals, $[1,2]$ and $[2,4]$ and using the proper integrand in each.
@@ -78,7 +78,7 @@ The previous example makes note that we are expecting area to be \textit{positiv
 
 The previous example also demonstrates that we often have to break a given region into subregions before applying Theorem \ref{thm:areabetweencurves}. The following example shows another situation where this is applicable, along with an alternate view of applying the Theorem.\\
 
-\example{ex_abc3}{\textbf{Finding area: integrating with respect to $y$}\\
+\example{ex_abc3}{Finding area: integrating with respect to $y$}{
 Find the area of the region enclosed by the functions $y=\sqrt{x}+2$, $y=-(x-1)^2+3$ and $y=2$, as shown in Figure \ref{fig:abc3}.}
 {We give two approaches to this problem. In the first approach, we notice that the region's ``top'' is defined by two different curves. On $[0,1]$, the top function is $y=\sqrt{x}+2$; on $[1,2]$, the top function is $y=-(x-1)^2+3$. 
 \mfigure{.3}{Graphing a region for Example \ref{ex_abc3}.}{fig:abc3}{figures/figabc3}
@@ -107,7 +107,7 @@ The area is found by integrating the above function with respect to $y$ with the
 
 This calculus--based technique of finding area can be useful even with shapes that we normally think of as ``easy.'' Example \ref{ex_abc4} computes the area of a triangle. While the formula ``$\frac12\times\text{base}\times\text{height}$'' is well known, in arbitrary triangles it can be nontrivial to compute the height. Calculus makes the problem simple.\\
 
-\example{ex_abc4}{\textbf{Finding the area of a triangle}\\
+\example{ex_abc4}{Finding the area of a triangle}{
 Compute the area of the regions bounded by the lines 
 
 \noindent $y=x+1$, $y=-2x+7$ and $y=-\frac12x+\frac52$, as shown in Figure \ref{fig:abc4}.}
@@ -131,7 +131,7 @@ Of course, the final answer is the same. (It is interesting to note that the are
 
 While we have focused on producing exact answers, we are also able make approximations using the principle of Theorem \ref{thm:areabetweencurves}. The integrand in the theorem is a distance (``top minus bottom''); integrating this distance function gives an area. By taking discrete measurements of distance, we can approximate an area using Numerical Integration techniques developed in Section \ref{sec:numerical_integration}. The following example demonstrates this.\\
 
-\example{ex_abc5}{\textbf{Numerically approximating area}\\
+\example{ex_abc5}{Numerically approximating area}{
 To approximate the area of a lake, shown in Figure \ref{fig:abc5} (a),  the ``length'' of the lake is measured at 200-foot increments as shown in Figure \ref{fig:abc5} (b), where the lengths are given in hundreds of feet. Approximate the area of the lake.}
 {The measurements of length can be viewed as measuring ``top minus bottom'' of two functions. The exact answer is found by integrating $\ds \int_0^{12} \big(f(x)-g(x)\big)\ dx$, but of course we don't know the functions $f$ and $g$. Our discrete measurements instead allow us to approximate.
 

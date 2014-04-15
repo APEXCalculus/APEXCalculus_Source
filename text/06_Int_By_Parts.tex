@@ -23,7 +23,7 @@ $$\int_{x=a}^{x=b} u\ dv = uv\Big|_a^b - \int_{x=a}^{x=b}v\ du.$$
 Let's try an example to understand our new technique.\\
 \enlargethispage{\baselineskip}
 
-\example{ex_ibp1}{\textbf{Integrating using Integration by Parts}\\
+\example{ex_ibp1}{Integrating using Integration by Parts}{
 Evaluate $\ds\int x\cos{x}\ dx$.}
 {The key to Integration by Parts is to identify part of the integrand as ``$u$'' and part as ``$dv$.'' Regular practice will help one make good identifications, and later we will introduce some principles that help. For now, let  $u=x$ and $dv=\cos{x}\ dx$.
 
@@ -72,7 +72,7 @@ If the integrand contains both a logarithmic and an algebraic term, in general l
 
 We now consider another example.\\
 
-\example{ex_ibp2}{\textbf{Integrating using Integration by Parts}\\
+\example{ex_ibp2}{Integrating using Integration by Parts}{
 Evaluate $\displaystyle \int x e^x\,dx$.}
 {The integrand contains an algebraic term ($x$) and an exponential term ($e^x$). Our mnemonic suggests letting $u$ be the algebraic term, so we choose $u=x$ and $dv=e^x\,dx$.  Then $du=dx$ and $v=e^x$ as indicated by the tables below.\\
 
@@ -104,7 +104,7 @@ $$\int xe^x\ dx = xe^x - e^x + C.$$
 Note again how the antiderivatives contain a product term.
 }\\
 
-\example{ex_ibp3}{\textbf{Integrating using Integration by Parts}\\
+\example{ex_ibp3}{Integrating using Integration by Parts}{
 Evaluate $\displaystyle \int x^2\cos x \,dx$.}
 {The mnemonic suggests letting $u=x^2$ instead of the trigonometric function, hence $dv=\cos x\,dx$.  Then $du=2x\,dx$ and $v=\sin x$ as shown below.  \\
 
@@ -161,7 +161,7 @@ $$\int x^2\cos x\ dx = x^2\sin x  + 2x\cos x - 2\sin x + C.$$
 \vskip-15pt}\\
 
 
-\example{ex_ibp4}{\textbf{Integrating using Integration by Parts}\\
+\example{ex_ibp4}{Integrating using Integration by Parts}{
 Evaluate $\displaystyle \int e^x\cos x \,dx$.}
 {This is a classic problem.  Our mnemonic suggests letting $u$ be the trigonometric function instead of the exponential. In this particular example, one can let $u$ be either $\cos x$ or $e^x$; to demonstrate that we do not have to follow LIATE, we choose $u=e^x$ and hence $dv = \cos x\,dx$.  Then $du=e^x\,dx$ and $v=\sin x$ as shown below.\\
 
@@ -279,7 +279,7 @@ $$\int \arctan x\ dx = x\arctan x - \ln(1+x^2) + C.$$
 
 When taking derivatives, it was common to employ multiple rules (such as, using both the Quotient and the Chain Rules). It should then come as no surprise that some integrals are best evaluated by combining integration techniques. In particular, here we illustrate making an ``unusual'' substitution first before using Integration by Parts.\\
 
-\example{ex_ibp8}{\textbf{Integration by Parts after substitution}\\
+\example{ex_ibp8}{Integration by Parts after substitution}{
 Evaluate $\ds \int \cos(\ln x)\ dx$.}
 {The integrand contains a composition of functions, leading us to think Substitution would be beneficial. Letting $u=\ln x$, we have $du = 1/x\ dx$. This seems problematic, as we do not have a $1/x$ in the integrand. But consider:
 $$du = \frac 1x\ dx \Rightarrow x\cdot du = dx.$$
@@ -305,7 +305,7 @@ We evaluated this integral in Example \ref{ex_ibp4}. Using the result there, we 
 
 So far we have focused only on evaluating indefinite integrals. Of course, we can use Integration by Parts to evaluate definite integrals as well, as Theorem \ref{thm:IBP} states. We do so in the next example.\\
 
-\example{ex_ibp7}{\textbf{Definite integration using Integration by Parts}\\
+\example{ex_ibp7}{Definite integration using Integration by Parts}{
 Evaluate $\displaystyle \int_1^2 x^2 \ln x \,dx$.}
 {Once again, our mnemonic suggests we let $u=\ln x$.  (We could let $u = x^2$ and $dv = \ln x\ dx$, as we now know the antiderivatives of $\ln x$. However, letting $u = \ln x$ makes our next integral much simpler as it removes the logarithm from the integral entirely.)
 

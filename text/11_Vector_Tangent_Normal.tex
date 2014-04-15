@@ -9,7 +9,7 @@ Given a smooth vector--valued function \vrt, we defined in Definition \ref{def:v
 $$\vec T(t) = \frac{1}{\rule{0pt}{9pt}\norm{\vrp(t)}}\vrp(t).$$
 }
 
-\example{ex_tannorm1}{\textbf{Computing the unit tangent vector}\\
+\example{ex_tannorm1}{Computing the unit tangent vector}{
 Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$. Find $\vec T(t)$ and compute $\vec T(0)$ and $\vec T(1)$.}
 {We apply Definition \ref{def:unit_tangent} to find $\vec T(t)$. 
 \begin{align*}
@@ -29,7 +29,7 @@ We have rounded in our computation of $\vec T(1)$, so we don't get 1 exactly. We
 
 In many ways, the previous example was ``too nice.'' It turned out that $\vrp(t)$ was always of length 5. In the next example the length of $\vrp(t)$ is variable, leaving us with a formula that is not as clean.\\
 
-\example{ex_tannorm2}{\textbf{Computing the unit tangent vector}\\
+\example{ex_tannorm2}{Computing the unit tangent vector}{
 Let $\vrt=\la t^2-t,t^2+t\ra$. Find $\vec T(t)$ and compute $\vec T(0)$ and $\vec T(1)$.}
 {We find $\vrp(t) = \la 2t-1,2t+1\ra$, and $$\norm{\vrp(t)} = \sqrt{(2t-1)^2+(2t+1)^2} = \sqrt{8t^2+2}.$$
 Therefore $$\vec T(t) = \frac{1}{\sqrt{8t^2+2}}\la 2t-1,2t+1\ra = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra.$$
@@ -54,7 +54,7 @@ We'll see that $\vec T\,'(t)$ is more than just a convenient choice of vector th
 $$\vec N(t) = \frac1{\norm{\vec T\,'(t)}}\vec T\,'(t).$$
 }
 
-\example{ex_tannorm3}{\textbf{Computing the unit normal vector}\\
+\example{ex_tannorm3}{Computing the unit normal vector}{
 Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$ as in Example \ref{ex_tannorm1}. Sketch both $\vec T(\pi/2)$ and $\vec N(\pi/2)$ with initial points at $\vec r(\pi/2)$.}
 {In Example \ref{ex_tannorm1}, we found $\vec T(t) = \la \rule{0pt}{10pt} (-3/5)\sin t,(3/5)\cos t,4/5\ra$. Therefore 
 $$\vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra\quad \text{and} \quad \norm{\vec T\,'(t)} = \frac35.$$
@@ -65,7 +65,7 @@ We compute $\vec T(\pi/2) = \la -3/5,0,4/5\ra$ and $\vec N(\pi/2) = \la 0,-1,0\r
 
 The previous example was once again ``too nice.'' In general, the expression for $\vec T(t)$ contains fractions of square--roots, hence the expression of $\vec T\,'(t)$ is very messy. We demonstrate this in the next example.\\
 
-\example{ex_tannorm4}{\textbf{Computing the unit normal vector}\\
+\example{ex_tannorm4}{Computing the unit normal vector}{
 Let $\vrt=\la t^2-t,t^2+t\ra$ as in Example \ref{ex_tannorm2}. Find $\vec N(t)$ and sketch $\vrt$ with the unit tangent and normal vectors at $t=-1,0$ and 1.}
 {In Example \ref{ex_tannorm2}, we found
 $$\vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra.$$
@@ -132,7 +132,7 @@ a_\text{N} &= \vat\cdot \vec N(t) = \sqrt{\norm{\vec a(t)}^2-a_\text{T}^2} = \fr
 
 Note the second formula for $a_\text{T}$: $\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)$. This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.\\
 
-\example{ex_tannorm5}{\textbf{Computing $a_\text{T}$ and $a_\text{N}$}\\
+\example{ex_tannorm5}{Computing $a_\text{T}{$ and $a_\text{N}$}\\
 Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$ as in Examples \ref{ex_tannorm1} and \ref{ex_tannorm3}. Find $a_\text{T}$ and $a_\text{N}$.}
 {The previous examples give $\vat = \la -3\cos t,-3\sin t,0\ra$ and 
 $$\vec T(t) = \la -\frac35\sin t,\frac35\cos t,\frac45\ra \quad \text{and}\quad \vec N(t) = \la -\cos t,-\sin t,0\ra.$$
@@ -146,7 +146,7 @@ Thus $\vat = 0\vec T(t) + 3\vec N(t) = 3\vec N(t)$, which is clearly the case.
 What is the practical interpretation of these numbers? $a_\text{T}=0$ means the object is moving at a constant speed, and hence all acceleration comes in the form of direction change.
 }\\
 
-\example{ex_tannorm6}{\textbf{Computing $a_\text{T}$ and $a_\text{N}$}\\
+\example{ex_tannorm6}{Computing $a_\text{T}{$ and $a_\text{N}$}\\
 Let $\vrt=\la t^2-t,t^2+t\ra$ as in Examples \ref{ex_tannorm2} and \ref{ex_tannorm4}. Find $a_\text{T}$ and $a_\text{N}$.}
 {The previous examples give $\vat = \la 2,2\ra$ and
 $$\vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra \quad \text{and}\quad \vec N(t) = \la \frac{2t+1}{\sqrt{8t^2+2}},-\frac{2t-1}{\sqrt{8t^2+2}}\ra.$$
@@ -161,7 +161,7 @@ When $t=2$, $\ds a_\text{T} = \frac{16}{\sqrt{34}}\approx 2.74$ and $\ds a_\text
 Contrast this with $t=0$, where $a_\text{T} = 0$ and $a_\text{N} = 4/\sqrt{2}\approx 2.82$. Here the particle's speed is not changing and all acceleration is in the form of direction change.
 }\\
 
-\example{ex_tannorm7}{\textbf{Analyzing projectile motion}\\
+\example{ex_tannorm7}{Analyzing projectile motion}{
 A ball is thrown from a height of 240ft with an initial velocity of 64ft/s with an angle of elevation of $30^\circ$. Find the position function \vrt\ for the ball and analyze $a_\text{T}$ and $a_\text{N}$.
 }
 {Using Key Idea \ref{idea:projectile} of Section \ref{sec:vvf_motion} we form the position function of the ball:

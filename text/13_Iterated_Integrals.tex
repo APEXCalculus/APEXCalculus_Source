@@ -11,7 +11,7 @@ $$f(x,y) = \int f_x(x,y)\ dx  = x^2y+C(y).$$
 
 Using this process we can even evaluate definite integrals.\\
 
-\example{ex_iterated1}{\textbf{Integrating functions of more than one variable}\\
+\example{ex_iterated1}{Integrating functions of more than one variable}{
 Evaluate the integral $\ds \int_1^{2y} 2xy\ dx.$}
 {We find the indefinite integral as before, then apply the Fundamental Theorem of Calculus to evaluate the definite integral:
 \begin{align*}
@@ -29,7 +29,7 @@ $$\int_{g_1(x)}^{g_2(x)} f_y(x,y)\ dy = f(x,y)\Big|_{g_1(x)}^{g_2(x)} = f\big(x,
 
 Note that when integrating with respect to $x$, the bounds are functions of $y$ (of the form $x=h_1(y)$ and $x=h_2(y)$) and the final result is also a function of $y$. When integrating with respect to $y$, the bounds are functions of $x$ (of the form $y=g_1(x)$ and $y=g_2(x)$) and the final result is a function of $x$. Another example will help us understand this.\\
 
-\example{ex_iterated2}{\textbf{Integrating functions of more than one variable}\\
+\example{ex_iterated2}{Integrating functions of more than one variable}{
 Evaluate $\ds \int_1^x\big(5x^3y^{-3}+6y^2\big)\ dy$.}
 {We consider $x$ as staying constant and integrate with respect to $y$:
 \begin{align*}
@@ -42,7 +42,7 @@ Note how the bounds of the integral are from $y=1$ to $y=x$ and that the final a
 
 In the previous example, we integrated a function with respect to $y$ and ended up with a function of $x$. We can integrate this as well. This process is known as \textbf{iterated integration}, or \textbf{multiple integration.}\\
 
-\example{ex_iterated3}{\textbf{Integrating an integral}\\
+\example{ex_iterated3}{Integrating an integral}{
 Evaluate $\ds \int_1^2\left(\int_1^x\big(5x^3y^{-3}+6y^2\big)\ dy\right)\ dx.$}
 {We follow a standard ``order of operations'' and perform the operations inside parentheses first (which is the integral evaluated in Example \ref{ex_iterated2}.)
 \begin{align*}
@@ -101,7 +101,7 @@ We state this formally in a theorem.
 
 The following examples should help us understand this theorem.\\
 
-\example{ex_iterated4}{\textbf{Area of a rectangle}
+\example{ex_iterated4}{Area of a rectangle}{
 Find the area $A$ of the rectangle with corners $(-1,1)$ and $(3,3)$, as shown in Figure \ref{fig:iterated4}.}
 {Multiple integration is obviously overkill in this situation, but we proceed to establish its use.
 \mfigure{.6}{Calculating the area of a rectangle with an iterated integral in Example \ref{ex_iterated4}.}{fig:iterated4}{figures/figiterated4}
@@ -115,7 +115,7 @@ $$A = \int_1^3\int_{-1}^3 1\ dx \ dy =\int_1^3 \left(x\ \Big|_{-1}^3\right)\ dy 
 Clearly there are simpler ways to find this area, but it is interesting to note that this method works.
 }\\
 
-\example{ex_iterated5}{\textbf{Area of a triangle}\\
+\example{ex_iterated5}{Area of a triangle}{
 Find the area $A$ of the triangle with vertices at $(1,1)$, $(3,1)$ and $(5,5)$, as shown in Figure \ref{fig:iterated5}.
 \mfigure{.3}{Calculating the area of a triangle with iterated integrals in Example \ref{ex_iterated5}.}{fig:iterated5}{figures/figiterated5}}
 {The triangle is bounded by the lines as shown in the figure. Choosing to integrate with respect to $x$ first gives that $x$ is bounded by $x=y$ to $x = \frac{y+5}2$, while $y$ is bounded by $y=1$ to $y=5$. (Recall that since $x$-values increase from left to right, the leftmost curve, $x=y$, is the lower bound and the rightmost curve, $x=(y+5)/2$, is the upper bound.) The area is
@@ -138,7 +138,7 @@ A &= \int_1^3\int_1^x 1\ dy \ dx &+& & &\int_3^5\int_{2x-5}^x1\ dy\ dx\\
 As expected, we get the same answer both ways.
 }\\
 
-\example{ex_iterated6}{\textbf{Area of a plane region}\\
+\example{ex_iterated6}{Area of a plane region}{
 Find the area of the region enclosed by $y=2x$ and $y=x^2$, as shown in Figure \ref{fig:iterated6}. 
 \mfigure{.3}{Calculating the area of a plane region with iterated integrals in Example \ref{ex_iterated6}.}{fig:iterated6}{figures/figiterated6}
 }
@@ -165,7 +165,7 @@ When the inner integral's bounds are not constants, it is generally very useful 
 
 Examples will help us develop this skill.\\
 
-\example{ex_double5}{\textbf{Changing the order of integration}\\
+\example{ex_double5}{Changing the order of integration}{
 Rewrite the iterated integral $\ds \int_0^6\int_0^{x/3} 1\ dy\ dx$ with the order of integration $dx\ dy$.
 }
 {We need to use the bounds of integration to determine the region we are integrating over. %Recall Key Idea \ref{idea:bounds_on_double}: the region $R$ is completely determined by these bounds, and not influenced at all by the integrand. Therefore, to rewrite the integral, we ignore the integrand.
@@ -179,7 +179,7 @@ $\ds \int_0^2\int_{3y}^6 1\ dx \ dy.$
 \vskip 0pt
 }\\
 
-\example{ex_double7}{\textbf{Changing the order of integration}\\
+\example{ex_double7}{Changing the order of integration}{
 Change the order of integration of $\ds\int_0^4\int_{y^2/4}^{(y+4)/2}1\ dx\ dy$.}
 {We sketch the region described by the bounds to help us change the integration order. $x$ is bounded below and above (i.e., to the left and right) by $x=y^2/4$ and $x=(y+4)/2$ respectively, and $y$ is bounded between 0 and 4. Graphing the previous curves, we find the region $R$ to be that shown in Figure \ref{fig:double7}. 
 \mfigure{.75}{Drawing the region determined by the bounds of integration in Example \ref{ex_double7}.}{fig:double7}{figures/figdouble7}

@@ -50,7 +50,7 @@ The concept of surface area is \textit{defined} here, for while we already have 
 We test this definition by using it to compute surface areas of known surfaces. We start with a triangle.
 \enlargethispage{2\baselineskip}\\
 
-\example{ex_surfacearea1}{\textbf{Finding the surface area of a plane over a triangle}\\
+\example{ex_surfacearea1}{Finding the surface area of a plane over a triangle}{
 Let $f(x,y) = 4-x-2y$, and let $R$ be the region in the plane bounded by $x=0$, $y=0$ and $y=2-x/2$, as shown in Figure \ref{fig:surfacearea1}. Find the surface area of $f$ over $R$.
 \mfigure{.45}{Finding the area of a triangle in space in Example \ref{ex_surfacearea1}.}{fig:surfacearea1}{figures/figsurfacearea1}}
 {We follow Definition \ref{def:surfacearea}. We start by noting that $f_x(x,y) = -1$ and $f_y(x,y) = -2$. To define $R$, we use bounds $0\leq y\leq 2-x/2$ and $0\leq x\leq 4$. Therefore
@@ -68,7 +68,7 @@ We affirm the validity of our formula.
 
 It is ``common knowledge'' that the surface area of a sphere of radius $r$ is $4\pi r^2$. We confirm this in the following example, which involves using our formula with polar coordinates.\\
 
-\example{ex_surfacearea2}{\textbf{The surface area of a sphere.}\\
+\example{ex_surfacearea2}{The surface area of a sphere.}{
 Find the surface area of the sphere with radius $a$ centered at the origin, whose top hemisphere has equation $f(x,y)=\sqrt{a^2-x^2-y^2}$. 
 }
 {We start by computing partial derivatives and find 
@@ -90,7 +90,7 @@ S &= 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2\theta+r^2\sin^2\theta}{a^2-r
 Our work confirms our previous formula.
 }\\
 
-\example{ex_surfacearea3}{\textbf{Finding the surface area of a cone}\\
+\example{ex_surfacearea3}{Finding the surface area of a cone}{
 The general formula for a right cone with height $h$ and base radius $a$ is $$\ds f(x,y) = h-\frac{h}a\sqrt{x^2+y^2},$$ shown in Figure \ref{fig:surfacearea3}. Find the surface area of this cone.
 \mfigure[scale=1.5,trim=5mm 5mm 5mm 0mm, clip]{.7}{Finding the surface area of a cone in Example \ref{ex_surfacearea3}.}{fig:surfacearea3}{figures/figsurfacearea3}
 }
@@ -111,7 +111,7 @@ S &=	\int_0^{2\pi}\int_0^ar\frac1a\sqrt{a^2+h^2}\ dr\ d\theta\\
 This matches the formula found in the back of this text.
 }\\
 
-\example{ex_surfacearea4}{\textbf{Finding surface area over a region}\\
+\example{ex_surfacearea4}{Finding surface area over a region}{
 Find the area of the surface $f(x,y) = x^2-3y+3$ over the region $R$ bounded by $-x\leq y\leq x$, $0\leq x\leq 4$, as pictured in Figure \ref{fig:surfacearea4}.
 \mfigure[scale=1.2,trim=1mm 0mm 1mm 0mm, clip]{.3}{Graphing the surface in Example \ref{ex_surfacearea4}.}{fig:surfacearea4}{figures/figsurfacearea4}
 }

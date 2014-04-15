@@ -53,7 +53,7 @@ Consider Figure \ref{fig:extreme}. %y=2-x^2 on [-1,1] and (-1,1), with hole
 
 This theorem states that $f$ has extreme values, but it does not offer any advice about how/where to find these values. The process can seem to be fairly easy, as the next example illustrates. After the example, we will draw on lessons learned to form a more general and powerful method for finding extreme values.\\
 
-\example{ex_extval1}{\textbf{Approximating extreme values}\\
+\example{ex_extval1}{Approximating extreme values}{
 Consider $f(x) = 2x^3-9x^2$ on $I=[-1,5]$, as graphed in Figure \ref{fig:extval1}. Approximate the extreme values of $f$.
 
 \mfigure{.6}{A graph of $f(x) = 2x^3-9x^2$ as in Example \ref{ex_extval1}.}{fig:extval1}{figures/figextval1}}
@@ -84,7 +84,7 @@ The relative maximum and minimum values comprise the \textbf{relative extrema} o
 
 We briefly practice using these definitions.\\
 
-\example{ex_extval2}{\textbf{Approximating relative extrema}\\
+\example{ex_extval2}{Approximating relative extrema}{
 Consider $f(x) = (3x^4-4x^3-12x^2+5)/5$, as shown in Figure \ref{fig:extval2}. Approximate the relative extrema of $f$. At each of these points, evaluate $\fp$.
 
 \mfigure{.8}{A graph of $f(x) = (3x^4-4x^3-12x^2+5)/5$ as in Example \ref{ex_extval2}.}%
@@ -97,7 +97,7 @@ We approximate the relative minima to be $0$ and $-5.4$; we approximate the rela
 It is straightforward to evaluate $\fp(x) =\frac15(12x^3-12x^2-24x)$ at $x=0, 1$ and $2$. In each case, $\fp(x) = 0$. 
 }\\
 
-\example{ex_extval3}{\textbf{Approximating relative extrema}\\
+\example{ex_extval3}{Approximating relative extrema}{
 Approximate the relative extrema of $f(x) = (x-1)^{2/3}+2$, shown in Figure \ref{fig:extval3}. At each of these points, evaluate $\fp$.
 
 \mfigure{.55}{A graph of $f(x) = (x-1)^{2/3}+2$ as in Example \ref{ex_extval3}.}{fig:extval3}{figures/figextval3}
@@ -134,7 +134,7 @@ Theorem \ref{thm:extreme_val} states that a continuous function on a closed inte
 
 We practice these ideas in the next examples.\\
 
-\example{ex_extval4}{\textbf{Finding extreme values}\\
+\example{ex_extval4}{Finding extreme values}{
 Find the extreme values of $f(x) = 2x^3+3x^2-12x$ on $[0,3]$, graphed in Figure \ref{fig:extval4}.}
 {We follow the steps outlined in Key Idea \ref{idea:extrema}. We first evaluate $f$ at the endpoints: $$f(0) = 0 \quad \text{and}\quad f(3) =45.$$
 \mfigure{.35}{A graph of $f(x) = 2x^3+3x^2-12x$ on $[0,3]$ as in Example \ref{ex_extval4}.}{fig:extval4}{figures/figextval4}
@@ -152,7 +152,7 @@ Note that all this was done without the aid of a graph; this work followed an an
 
 We practice again.\\
 
-\example{ex_extval5}{\textbf{Finding extreme values}\\
+\example{ex_extval5}{Finding extreme values}{
 Find the maximum and minimum values of $f$ on $[-4,2]$, where $$f(x) = \left\{\begin{array}{cc} (x-1)^2 & x\leq 0 \\ x+1 & x>0 \end{array}\right. .$$
 }
 {Here $f$ is piecewise--defined, but we can still apply Key Idea \ref{idea:extrema}. Evaluating $f$ at the endpoints gives: 
@@ -167,7 +167,7 @@ So we have three important $x$ values to consider: $x= -4, 2$ and $0$. Evaluatin
 \mfigure{.4}{A graph of $f(x)$ on $[-4,2]$ as in Example \ref{ex_extval5}.}{fig:extval5}{figures/figextval5}
 }\\
 \clearpage
-\example{ex_extval6}{\textbf{Finding extreme values}\\
+\example{ex_extval6}{Finding extreme values}{
 Find the extrema of  $f(x) = \cos (x^2)$ on $[-2,2]$.}
 {We again use Key Idea \ref{idea:extrema}. Evaluating $f$ at the endpoints of the interval gives: $f(-2) = f(2) = \cos (4) \approx -0.6536.$ We now find the critical values of $f$.
 
@@ -186,7 +186,7 @@ From the table it is clear that the maximum value of $f$ on $[-2,2]$ is 1; the m
 We consider one more example.\\
 
 
-\example{ex_extval7}{\textbf{Finding extreme values}\\
+\example{ex_extval7}{Finding extreme values}{
 Find the extreme values of $f(x) = \sqrt{1-x^2}$.} 
 {A closed interval is not given, so we find the extreme values of $f$ on its domain. $f$ is defined whenever $1-x^2\geq 0$; thus the domain of $f$ is $[-1,1]$. Evaluating $f$ at either endpoint returns 0. 
 \mfigure{.35}{A graph of $f(x)=\sqrt{1-x^2}$ on $[-1,1]$ as in Example \ref{ex_extval7}.}{fig:extval7}{figures/figextval7}

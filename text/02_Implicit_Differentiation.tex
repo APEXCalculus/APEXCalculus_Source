@@ -14,7 +14,7 @@ We begin by reviewing the Chain Rule. Let $f$ and $g$ be functions of $x$. Then 
 
 Let's see how it works with the equation above.\\
 
-\example{ex_implicit1}{\textbf{Using Implicit Differentiation}\\
+\example{ex_implicit1}{Using Implicit Differentiation}{
 Find $y'$ given that $\sin(y) + y^3=6-x^3$.}
 {We start by taking the derivative of both sides (thus maintaining the equality.) We have :
 $$ \frac{dy}{dx}\Big(\sin(y) + y^3\Big)=\frac{dy}{dx}\Big(6-x^3\Big).$$
@@ -40,7 +40,7 @@ Implicit functions are generally harder to deal with than explicit functions. Wi
 
 For instance, we can affirm easily that the point $(\sqrt[3]{6},0)$ lies on the graph of the implicit function $\sin y + y^3=6-x^3$. Plugging in $0$ for $y$, we see the left hand side is $0$. Setting $x=\sqrt[3]6$, we see the right hand side is also $0$; the equation is satisfied. The following example finds the equation of the tangent line to this function at this point.\\
 
-\example{ex_implicit2}{\textbf{Using Implicit Differentiation to find a tangent line}\\
+\example{ex_implicit2}{Using Implicit Differentiation to find a tangent line}{
 Find the equation of the line tangent to the curve of the implicitly defined function $\sin y + y^3=6-x^3$ at the point $(\sqrt[3]6,0)$.}
 {In Example \ref{ex_implicit1} we found that $$y' = \frac{-3x^2}{\cos y +3y^2}.$$ We find the slope of the tangent line at the point  $(\sqrt[3]6,0)$ by substituting $\sqrt[3]6$ for $x$ and $0$ for $y$. Thus at the point $(\sqrt[3]6,0)$, we have the slope as $$y' = \frac{-3(\sqrt[3]{6})^2}{\cos 0 + 3\cdot0^2} = \frac{-3\sqrt[3]{36}}{1} \approx -9.91.$$
 
@@ -58,7 +58,7 @@ This suggests a general method for implicit differentiation.  For the steps belo
 
 \noindent\textbf{Practical Note:} When working by hand, it may be beneficial to use the symbol $\frac{dy}{dx}$ instead of $y'$, as the latter can be easily confused for $y$ or $y^1$.\\
 
-\example{ex_implicit3}{\textbf{Using Implicit Differentiation}\\
+\example{ex_implicit3}{Using Implicit Differentiation}{
 Given the implicitly defined function $y^3+x^2y^4=1+2x$, find $y'$.}
 {We will take the implicit derivatives term by term. The derivative of $y^3$ is $3y^2y'$.  
 
@@ -79,7 +79,7 @@ To confirm the validity of our work, let's find the equation of a tangent line t
 Notice how our function looks much different than other functions we have seen. For one, it fails the vertical line test. Such functions are important in many areas of mathematics, so developing tools to deal with them is also important.
 }\\
 
-\example{ex_implicit5}{\textbf{Using Implicit Differentiation}\\
+\example{ex_implicit5}{Using Implicit Differentiation}{
 Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$.}
 {Differentiating term by term, we find the most difficulty in the first term.  It requires both the Chain and Product Rules.
 		\begin{align*}
@@ -115,7 +115,7 @@ The tangent lines have been added to the graph of the function in Figure \ref{fi
 
 Quite a few ``famous'' curves have equations that are given implicitly.  We can use implicit differentiation to find the slope at various points on those curves. We investigate two such curves in the next examples.\\
 
-\example{ex_implicit7}{\textbf{Finding slopes of tangent lines to a circle}\\
+\example{ex_implicit7}{Finding slopes of tangent lines to a circle}{
 Find the slope of the tangent line to the circle $x^2+y^2=1$ at the point $(1/2, \sqrt{3}/2)$.}
 {%\myincludegraphics[scale=.4]{text/apex-implicit_differentiation1.png}
 Taking derivatives, we get $2x+2yy'=0$.  Solving for $y'$  gives: $$\ds y' = \frac{-x}{y}.$$ 
@@ -162,7 +162,7 @@ This theorem allows us to say the derivative of $x^\pi$ is $\pi x^{\pi -1}$.
 
 We now apply this final version of the Power Rule in the next example, the second investigation of a ``famous'' curve.\\
 
-\example{ex_implicit8}{\textbf{Using the Power Rule}\\
+\example{ex_implicit8}{Using the Power Rule}{
 Find the slope of $x^{2/3}+y^{2/3}=8$ at the point $(8,8)$.}
 {This is a particularly interesting curve called an \emph{astroid}.  It is the shape traced out by a point on the edge of a circle that is rolling around inside of a larger circle, as shown in Figure \ref{fig:implicit9}.
 
@@ -188,7 +188,7 @@ Plugging in $x=8$ and $y=8$, we get a slope of $-1$. The astroid, with its tange
 We can use implicit differentiation to find higher order derivatives. In theory, this is simple: first find $\frac{dy}{dx}$, then take its derivative with respect to $x$. In practice, it is not hard, but it often requires a bit of algebra. We demonstrate this in an example.\\
 \enlargethispage{\baselineskip}
 
-\example{ex_implicit9}{\textbf{Finding the second derivative}\\
+\example{ex_implicit9}{Finding the second derivative}{
 Given $x^2+y^2=1$, find $\frac{d^2y}{dx^2} = y''$. }
 {We found that $y' = \frac{dy}{dx} = -x/y$ in Example \ref{ex_implicit7}. To find $y''$, we apply implicit differentiation to $y'$.
 \begin{align*}
@@ -212,7 +212,7 @@ The function is not a power function: it has a ``power'' of $x$, not a constant.
 
 A differentiation technique known as \emph{logarithmic differentiation} becomes useful here. The basic principle is this: take the natural log of both sides of an equation $y=f(x)$, then use implicit differentiation to find $y'$. We demonstrate this in the following example.\\
 
-\example{ex_implicit10}{\textbf{Using Logarithmic Differentiation}\\
+\example{ex_implicit10}{Using Logarithmic Differentiation}{
 Given $y=x^x$, use logarithmic differentiation to find $y'$.}
 {As suggested above, we start by taking the natural log of both sides then applying implicit differentiation.
 \begin{align*}

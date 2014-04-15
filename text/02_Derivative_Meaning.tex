@@ -32,7 +32,7 @@ It is useful to recognize the \textit{units} of the derivative function. If $y$ 
 Let $P(t)$ represent the world population $t$ minutes after 12:00 a.m., January 1, 2012. It is fairly accurate to say that $P(0) = 7,028,734,178$ (\texttt{www.prb.org}). It is also fairly accurate to state that $P'(0) = 156$; that is, at midnight on January 1, 2012, the population of the world was growing by about 156 \textit{people per minute} (note the units). Twenty days later (or, 28,800 minutes later) we could reasonably assume the population grew by about $28,800\cdot156 = 4,492,800$ people. %If one were to plot the population of the world, with population on the $y$-axis and time, in minutes, on the $x$-axis, then when $x=0$, the tangent line to the graph would have a slope of 156.
 }\\
 
-\example{ex_der_meaning2}{\textbf{The meaning of the derivative: Manufacturing}\\
+\example{ex_der_meaning2}{The meaning of the derivative: Manufacturing}{
 
 The term \textit{widget} is an economic term for a generic unit of manufacturing output. Suppose a company produces widgets, and knows that the market supports a price of \$10 per widget. Let $P(n)$ give the profit, in dollars, earned by manufacturing and selling $n$ widgets. The company likely cannot make a (positive) profit making just one widget; the start--up costs will likely exceed \$10. Mathematically, we would write this as $P(1) < 0$.
 
@@ -80,7 +80,7 @@ Given a function $y=f(x)$, the difference quotient $\ds \frac{f(c+h)-f(c)}{h}$ g
 
 Lines have a constant rate of change, their slope. Nonlinear functions do not have a constant rate of change, but we can measure their \textit{instantaneous rate of change} at a given $x$ value $c$ by computing $\fp(c)$. We can get an idea of how $f$ is behaving by looking at the slopes of its tangent lines. We explore this idea in the following example.\\
 
-\example{ex_der_meaning3}{\textbf{Understanding the derivative: the rate of change}\\
+\example{ex_der_meaning3}{Understanding the derivative: the rate of change}{
 Consider $f(x) = x^2$ as shown in Figure \ref{fig:xsquared}. It is clear that at $x=3$ the function is growing faster than at $x=1$; how much faster?
 
 \mfigure{.6}{A graph of $f(x)=x^2$.}{fig:xsquared}{figures/figxsquared}
@@ -93,7 +93,7 @@ With practice, one can fairly effectively sketch tangent lines to a curve at a p
 
 
 
-\example{ex_der_meaning4}{\textbf{Understanding the graph of the derivative}\\
+\example{ex_der_meaning4}{Understanding the graph of the derivative}{
 Consider the graph of $f(x)$ (in blue)  and its derivative, $\fp(x)$ (in red) in Figure \ref{fig:fwithderiv}. %f[x_] := InterpolatingPolynomial[{-1, 0, 2}, x]*4,MAKE BIGGER, PLOT THIS WITH F' NO INTEGRATE,IDIOT
  Use these graphs to find the slopes of the tangent lines to $f$ at $x=1$, $x=2$, and $x=3$.
  
@@ -112,7 +112,7 @@ Using these slopes, the tangent lines to $f$ are sketched in Figure \ref{fig:fwi
 
 \mfigure{.55}{Graphs of $f$ and $\fp$ in Example \ref{ex_der_meaning4}, along with tangent lines.}{fig:fwithderivdots}{figures/figfwithderivdots}
 
-\example{ex_der_meaning5}{\textbf{Approximation with the derivative}\\
+\example{ex_der_meaning5}{Approximation with the derivative}{
 Consider again the graph of $f(x)$ and its derivative $\fp(x)$ in Example \ref{ex_der_meaning4}. Use the tangent line to $f$ at $x=3$ to approximate the value of $f(3.1)$. }
 {Figure \ref{fig:fwithderivzoom3} shows the graph of $f$ along with its tangent line, zoomed in at $x=3$. Notice that near $x=3$, the tangent line makes an excellent approximation of $f$. Since lines are easy to deal with, often it works well to approximate a function with its tangent line. (This is especially true when you don't actually know much about the function at hand, as we don't in this example.)
 

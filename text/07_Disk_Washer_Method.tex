@@ -38,7 +38,7 @@ Recognize that this is a Riemann Sum. By taking a limit (as the thickness of the
 $$V = \int_a^b A(x)\ dx.$$
 }
 
-\example{ex_disk0}{\textbf{Finding the volume of a solid}\\
+\example{ex_disk0}{Finding the volume of a solid}{
 Find the volume of a pyramid with a square base of side length 10 in and a height of 5 in.}
 {There are many ways to ``orient'' the pyramid along the $x$-axis; Figure \ref{fig:disk0} gives one such way, with the pointed top of the pyramid at the origin and the $x$-axis going through the center of the base.
 \mfigure{.35}{Orienting a pyramid along the $x$-axis in Example \ref{ex_disk0}.}{fig:disk0}{figures/figcross_area1}
@@ -66,7 +66,7 @@ Start with a function $y=f(x)$ from $x=a$ to $x=b$. Revolving this curve about a
 $$V = \pi \int_a^b R(x)^2\ dx.$$
 }
 
-\example{ex_disk1}{\textbf{Finding volume using the Disk Method}\\
+\example{ex_disk1}{Finding volume using the Disk Method}{
 Find the volume of the solid formed by revolving the curve $y=1/x$, from $x=1$ to $x=2$, around the $x$-axis.}
 {A sketch can help us understand this problem. In Figure \ref{fig:disk1} (a) the curve $y=1/x$ is sketched along with the differential element -- a disk -- at $x$ with radius $R(x)=1/x$. In Figure \ref{fig:disk1} (b) the whole solid is pictured, along with the differential element. 
 
@@ -91,7 +91,7 @@ Using Key Idea \ref{idea:disk_method}, we have
 
 While Key Idea \ref{idea:disk_method} is given in terms of functions of $x$, the principle involved can be applied to functions of $y$ when the axis of rotation is vertical, not horizontal. We demonstrate this in the next example.\\
 
-\example{ex_disk2}{\textbf{Finding volume using the Disk Method}\\
+\example{ex_disk2}{Finding volume using the Disk Method}{
 Find the volume of the solid formed by revolving the curve $y=1/x$, from $x=1$ to $x=2$, about the $y$-axis.}
 {Since the axis of rotation is vertical, we need to convert the function into a function of $y$ and convert the $x$-bounds to $y$-bounds. Since $y=1/x$ defines the curve, we rewrite it as $x=1/y$. The bound $x=1$ corresponds to the $y$-bound $y=1$, and the bound $x=2$ corresponds to the $y$-bound $y=1/2$. 
 
@@ -134,7 +134,7 @@ $$V = \pi\int_a^b \Big(R(x)^2-r(x)^2\Big)\ dx.$$
 
 Even though we introduced it first, the Disk Method is just a special case of the Washer Method with an inside radius of $r(x)=0$.		\\
 
-\example{ex_wash1}{\textbf{Finding volume with the Washer Method}\\
+\example{ex_wash1}{Finding volume with the Washer Method}{
 Find the volume of the solid formed by rotating the region bounded by $y=x^2-2x+2$ and $y=2x-1$ about the $x$-axis.}
 {A sketch of the region will help, as given in Figure \ref{fig:wash1a}.
 \mfigure{.29}{A sketch of the region used in Example \ref{ex_wash1}.}{fig:wash1a}{figures/figwash1} Rotating about the $x$-axis will produce cross sections in the shape of washers, as shown in Figure \ref{fig:wash1} (a); the complete solid is shown in part (b). The outside radius of this washer is $R(x) = 2x+1$; the inside radius is $r(x) = x^2-2x+4$. As the region is bounded from $x=1$ to $x=3$, we integrate as follows to compute the volume.
@@ -158,7 +158,7 @@ V &= \pi\int_1^3 \Big((2x-1)^2-(x^2-2x+2)^2\Big)\ dx \\
 
 When rotating about a vertical axis, the outside and inside radius functions must be functions of $y$.\\
 
-\example{ex_wash2}{\textbf{Finding volume with the Washer Method}\\
+\example{ex_wash2}{Finding volume with the Washer Method}{
 Find the volume of the solid formed by rotating the triangular region with vertices at $(1,1)$, $(2,1)$ and $(2,3)$ about the $y$-axis.}
 {The triangular region is sketched in Figure \ref{fig:wash2} (a); the differential element is sketched in (b) and the full solid is drawn in (c). They help us establish the outside and inside radii. Since the axis of rotation is vertical, each radius is a function of $y$. 
 

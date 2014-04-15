@@ -52,7 +52,7 @@ We now consider several examples that allow us explore different aspects of the 
 \mfigure{.4}{Graphically approximating a limit in Example \ref{ex_limit1}.}{fig:limit1}{figures/figlimit1}
 \mtable{.2}{Numerically approximating a limit in Example \ref{ex_limit1}.}{table:limit1}{\input{figures/table_limit1}}
 
-\example{ex_limit1}{\textbf{Approximating the value of a limit}\\
+\example{ex_limit1}{Approximating the value of a limit}{
 Use graphical and numerical methods to approximate $$\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3}.$$}%
 {To graphically approximate the limit, graph $$y = (x^2-x-6)/(6x^2-19x+3)$$ on a small interval that contains 3. To numerically approximate the limit, create a table of values where the $x$ values are near 3. This is done in Figures \ref{fig:limit1} and \ref{table:limit1}, respectively.
 
@@ -73,7 +73,7 @@ Graphs are useful since they give a visual understanding concerning the behavior
 
 Since tables and graphs are used only to \textit{approximate} the value of a limit, there is not a firm answer to how many data points are ``enough.'' Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In Example \ref{ex_limit1}, we used both values less than and greater than 3. Had we used just $x=3.001$, we might have been tempted to conclude that the limit had a value of $0.3$. While this is not far off, we could do better. Using values ``on both sides of 3'' helps us identify trends.\\
 
-\example{ex_limit2}{\textbf{Approximating the value of a limit}\\
+\example{ex_limit2}{Approximating the value of a limit}{
 Graphically and numerically approximate the limit of $f(x)$ as $x$ approaches 0, where $$f(x) = \left\{\begin{array}{rl} x+1 & x\leq 0 \\ -x^2+1 & x > 0 \end{array}\right..$$}{Again we graph $f(x)$ and create a table of its values near $x=0$ to approximate the limit. Note that this is a piecewise defined function, so it behaves differently on either side of 0. Figure \ref{fig:limit2} shows a graph of $f(x)$, and on either side of 0 it seems the $y$ values approach 1.
 
 \mfigure{.6}{Graphically approximating a limit in Example \ref{ex_limit2}.}{fig:limit2}{figures/figlimit2}
@@ -101,7 +101,7 @@ We'll explore each of these in turn.\\
 %\noindent
 %
 
-\example{ex_no_limit1}{\textbf{Different Values Approached From Left and Right}\\
+\example{ex_no_limit1}{Different Values Approached From Left and Right}{
 Explore why $\ds\lim_{x\to 1} f(x)$ does not exist, where $$f(x) = \left\{\begin{array}{cl} x^2-2x+3 & x\leq 1 \\ x & x>1 \end{array}\right..$$}%
 {
 A graph of $f(x)$ around $x=1$ and a table are given Figures \ref{fig:nolimit1} and \ref{table:nolimit1}, respectively. It is clear that as $x$ approaches 1, $f(x)$ does not seem to approach a single number. Instead, it seems as though $f(x)$ approaches two different numbers. When considering values of $x$ less than 1 (approaching 1 from the left), it seems that $f(x)$ is approaching 2; when considering values of $x$ greater than 1 (approaching 1 from the right), it seems that $f(x)$ is approaching 1. Recognizing this behavior is important; we'll study this in greater depth later. Right now, it suffices to say that the limit does not exist since $f(x)$ is not approaching one value as $x$ approaches 1.
@@ -114,7 +114,7 @@ A graph of $f(x)$ around $x=1$ and a table are given Figures \ref{fig:nolimit1} 
 %\noindent\textbf{The Function Grows Without Bound}\\
 
 %\input{figures/fig_nolimit2}
-\example{ex_no_limit2}{\textbf{The Function Grows Without Bound}\\
+\example{ex_no_limit2}{The Function Grows Without Bound}{
 Explore why $\ds\lim_{x\to 1} 1/(x-1)^2$ does not exist.}%
 {A graph and table of $f(x) = 1/(x-1)^2$ are given in Figures \ref{fig:nolimit2} and \ref{table:nolimit2}, respectively. Both show that as $x$ approaches 1, $f(x)$ grows larger and larger. 
 \mfigure{.4}{Observing no limit as $x\to 1$ in Example \ref{ex_no_limit2}.}{fig:nolimit2}{figures/fignolimit2}
@@ -127,7 +127,7 @@ Since $f(x)$ is not approaching a single number, we conclude that $$\lim_{x\to 1
 %\vskip \baselineskip
 %\noindent\textbf{The Function Oscillates}\\
 
-\example{ex_no_limit3}{\textbf{The Function Oscillates}\\
+\example{ex_no_limit3}{The Function Oscillates}{
 Explore why $\lim_{x\to 0}\sin(1/x)$ does not exist.}%
 {%\mfigure{.4}{Observing no limit as $x\to 0$ in Example \ref{ex_no_limit3}.}{fig:nolimit3a}{figures/figNoLimit3a}
 %\mfigure{.2}{Zooming in to observing no limit as $x\to 0$ in Example \ref{ex_no_limit3}.}{fig:nolimit3b}{figures/figNoLimit3b}

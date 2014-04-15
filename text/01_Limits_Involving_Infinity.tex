@@ -40,7 +40,7 @@ This is just like the $\epsilon$--$\delta$ definition from Section \ref{sec:limi
 
 It is important to note that by saying $\ds \lim_{x\to c}f(x) = \infty$ we are implicitly stating that \textit{the} limit of $f(x)$, as $x$ approaches $c$, \textit{does not exist.} A limit only exists when $f(x)$ approaches an actual numeric value. We use the concept of limits that approach infinity because they are helpful and descriptive.\\
 
-\example{ex_inflim1}{\textbf{Evaluating limits involving infinity}\\Find $\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}$ as shown in Figure \ref{fig:inflim1}.
+\example{ex_inflim1}{Evaluating limits involving infinity}{Find $\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}$ as shown in Figure \ref{fig:inflim1}.
 
 \mfigure{.4}{Observing infinite limit as $x\to 1$ in Example \ref{ex_inflim1}.}{fig:inflim1}{figures/fignolimit2}}
 {In Example \ref{ex_no_limit2} of Section \ref{sec:limit_intro}, by inspecting values of $x$ close to 1 we concluded that this limit does not exist.  That is, it cannot equal any real number.  But the limit could be infinite.  And in fact, we see that the function does appear to be growing larger and larger, as $f(.99)=10^4$, $f(.999)=10^6$, $f(.9999)=10^8$.  A similar thing happens on the other side of 1.  In general, let a ``large'' value $M$ be given. Let $\delta=1/\sqrt{M}$. If $x$ is within $\delta$ of 1, i.e., if $|x-1|<1/\sqrt{M}$, then:
@@ -52,7 +52,7 @@ It is important to note that by saying $\ds \lim_{x\to c}f(x) = \infty$ we are i
 	which is what we wanted to show.  So we may say $\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty$.
 }\\
 
-\example{ex_inflim2}{\textbf{Evaluating limits involving infinity}\\
+\example{ex_inflim2}{Evaluating limits involving infinity}{
 Find $\displaystyle\lim_{x\rightarrow 0}\frac1x$, as shown in Figure \ref{fig:oneoverx}.}
 {It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0.  Since its behavior is not consistent, we cannot say that $\ds \lim_{x\to 0}\frac{1}{x}=\infty$. However, we can make a statement about one--sided limits. We can state that $\ds \lim_{x\rightarrow 0^+}\frac1x=\infty$ and $\ds \lim_{x\rightarrow 0^-}\frac1x=-\infty$.  
 
@@ -64,7 +64,7 @@ Find $\displaystyle\lim_{x\rightarrow 0}\frac1x$, as shown in Figure \ref{fig:on
 
 If the limit of $f(x)$ as $x$ approaches $c$ from either the left or right (or both) is $\infty$ or $-\infty$, we say the function has a \emph{vertical asymptote} at $c$.\\
 
-\example{ex_vertasy1}{\textbf{Finding vertical asymptotes}\\
+\example{ex_vertasy1}{Finding vertical asymptotes}{
 Find the vertical asymptotes of $f(x)=\dfrac{3x}{x^2-4}$.}
 {Vertical asymptotes occur where the function grows without bound; this occurs at values of $c$ where the denominator is 0. The denominator is small near $x=c$, which in turn can make the function overall take on large values.  In the case of the given function, the denominator is 0 at $x=\pm 2$.  Substituting in values of $x$ close to $2$ and $-2$ seems to indicate that the function tends toward $\infty$ or $-\infty$ at those points.  We can graphically confirm this by looking at Figure \ref{fig:multipleasymptotes}.
 
@@ -131,7 +131,7 @@ Graphically, it concerns the behavior of the function to the ``far right'' of th
 %We can define $\lim_{x\rightarrow-\infty} f(x)=L$ in an analogous way.  
 We can also define limits such as $\ds\lim_{x\rightarrow\infty}f(x)=\infty$ by combining this definition with Definition \ref{def:limit_of_infinity}. \\ %It is a good exercise to try this.
 
-\example{ex_hzasy1}{\textbf{Approximating horizontal asymptotes}\\
+\example{ex_hzasy1}{Approximating horizontal asymptotes}{
 Approximate the horizontal asymptote(s) of $\ds f(x)=\frac{x^2}{x^2+4}$.}
 {We will approximate the horizontal asymptotes by approximating the limits $$\lim_{x\to-\infty} \frac{x^2}{x^2+4}\quad \text{and}\quad \lim_{x\to\infty} \frac{x^2}{x^2+4}.$$ Figure \ref{fig:hzasy1}(a) shows a sketch of $f$, and part (b) gives values of $f(x)$ for large magnitude values of $x$. It seems reasonable to conclude from both of these sources that $f$ has a horizontal asymptote at $y=1$.
 
@@ -226,7 +226,7 @@ Intuitively, as $x$ gets very large, all the terms in the numerator are small in
 
 With care, we can quickly evaluate limits at infinity for a large number of functions by considering the largest powers of $x$. For instance, consider again $\ds\lim_{x\to\pm\infty}\frac{x}{\sqrt{x^2+1}}.$ When $x$ is very large, $x^2+1 \approx x^2$. Thus $$\sqrt{x^2+1}\approx \sqrt{x^2} = |x|,\quad \text{and}\quad \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.$$ This expression is 1 when $x$ is positive and $-1$ when $x$ is negative. Hence we get asymptotes of $y=1$ and $y=-1$, respectively.\\
 
-\example{ex_hzasy2}{\textbf{Finding a limit of a rational function}\\
+\example{ex_hzasy2}{Finding a limit of a rational function}{
 Confirm analytically that $y=1$ is the horizontal asymptote of $\ds f(x) = \frac{x^2}{x^2+4}$, as approximated in Example \ref{ex_hzasy1}.}
 {Before using Theorem \ref{thm:lim_rational_fn_at_infty}, let's use the technique of evaluating limits at infinity of rational functions that led to that theorem. The largest power of $x$ in $f$ is 2, so divide the numerator and denominator of $f$ by $x^2$, then take limits.
 	\begin{align*}
@@ -239,7 +239,7 @@ Confirm analytically that $y=1$ is the horizontal asymptote of $\ds f(x) = \frac
 We can also use Theorem \ref{thm:lim_rational_fn_at_infty} directly; in this case $n=m$ so the limit is the ratio of the leading coefficients of the numerator and denominator, i.e., 1/1 = 1. 
 }\\
 
-\example{ex_hzasy3}{\textbf{Finding limits of rational functions}\\
+\example{ex_hzasy3}{Finding limits of rational functions}{
 Use Theorem \ref{thm:lim_rational_fn_at_infty} to evaluate each of the following limits.
 
 \noindent\begin{minipage}[t]{.5\textwidth}
