@@ -133,22 +133,108 @@ We learned that Taylor polynomials offer a way of approximating a ``difficult to
 
 While we should not overlook the mathematical beauty of Taylor series (which is reason enough to study them), there are practical uses as well. They provide a valuable tool for solving a variety of problems, including problems relating to integration and differential equations. 
 
-We start by giving a table of the Taylor series of a number of common functions. We then give a theorem about the ``algebra of power series,'' that is, how we can combine power series to create power series of new functions. This allows us to find the Taylor series of functions like $f(x) = e^x\cos x$ by knowing the Taylor series of $e^x$ and $\cos x$.
+On the next page we give  a table of the Taylor series of a number of common functions. We then give a theorem about the ``algebra of power series,'' that is, how we can combine power series to create power series of new functions. This allows us to find the Taylor series of functions like $f(x) = e^x\cos x$ by knowing the Taylor series of $e^x$ and $\cos x$.
 
+Before we investigate combining functions, consider the Taylor series for the arctangent function. Knowing that $\tan^{-1}(1) = \pi/4$, we can use this series to approximate the value of $\pi$:
+
+\begin{align*}
+\frac{\pi}4 &= \tan^{-1}(1) = 1-\frac13+\frac15-\frac17+\frac19-\cdots\\
+\pi &= 4\left(1-\frac13+\frac15-\frac17+\frac19-\cdots\right)
+\end{align*} 
+
+Unfortunately, this particular expansion of $\pi$ converges very slowly. The first 
+100 terms approximate $\pi$ as $3.13159$, which is not particularly good.
 \clearpage
 
-\setboxwidth{100pt}
+\setboxwidth{110pt}
 %\noindent\hskip-65pt
 \keyidea{idea:common_taylor}{Important Taylor Series Expansions}
-{\vskip10pt%
-\noindent\begin{tabular}{lll}
-\textbf{Function} & \textbf{First Few Terms} & \textbf{Interval of Convergence} \\
-$\ds e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$ & $\ds 1+ x+\frac{x^2}{2} + \frac{x^3}{6}+\cdots$ & $(-\infty,\infty)$\\
+{%\vskip10pt%
+\noindent\begin{tabular}{llc}
+\textbf{Function and Series} & \textbf{First Few Terms} & \parbox{50pt}{\centering\textbf{Interval of}\\\textbf{Convergence}} \\
+\rule{0pt}{25pt}$\ds e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$ & $\ds 1+ x+\frac{x^2}{2!} + \frac{x^3}{3!}+\cdots$ & $(-\infty,\infty)$\\
+\rule{0pt}{25pt}$\ds \sin x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}$ & $\ds x-\frac{x^3}{3!}+\frac{x^5}{5!} - \frac{x^7}{7!}+\cdots$ & $(-\infty,\infty)$\\
+\rule{0pt}{25pt}$\ds \cos x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$ & $\ds 1-\frac{x^2}{2!}+\frac{x^4}{4!} - \frac{x^6}{6!} +\cdots$ & $(-\infty,\infty)$\\
+\rule{0pt}{25pt}$\ds \ln x = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n}$ & $\ds (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots$& $(0,2]$\\
+\rule{0pt}{25pt}$\ds \frac{1}{1-x} = \sum_{n=0}^\infty x^n$ &$\ds 1+x+x^2+x^3+\cdots$& $(-1,1)$\\
+\rule{0pt}{25pt}\small$\ds (1+x)^k=\sum_{n=0}^\infty \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n$ \normalsize& $\ds 1+k+\frac{k(k-1)}{2!} + \cdots$ & $(-1,1)$\footnote{Convergence at $x=\pm1$ depends on the value of $k$.}\\
+\rule{0pt}{25pt}$\ds \tan^{-1}x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}$ & $\ds x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots$ & $[-1,1]$
 \end{tabular}
 }
-\restoreboxwidth
+%\restoreboxwidth
+\vskip -.5\baselineskip
+\enlargethispage{4\baselineskip}
+\theorem{thm:series_alg}{Algebra of Power Series}
+{Let $\ds f(x) = \sum_{n=0}^\infty a_nx^n$ and $\ds g(x) = \sum_{n=0}^\infty b_nx^n$ converge absolutely for $|x|<R$, and let $h(x)$ be continuous. 
+\begin{itemize}
+	\item $\ds f(x)\pm g(x) = \sum_{n=0}^\infty (a_n\pm b_n)x^n$ \quad for $|x|<R$.
+	\item	$\ds 	f(x)g(x) = \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right) = \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n
+		$ for $|x|<R$.
+	%\item	$\begin{aligned}[t]
+	%f(x)g(x) &= \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right)\\
+	      %&= \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n
+		%\end{aligned}$ for $|x|<R$.\hfill
+	
+	\item		$\ds f\big(h(x)\big) = \sum_{n=0}^\infty a_n\big(h(x)\big)^n$ \quad for $|h(x)|<R$.
 
+\end{itemize}
+}
 
+\example{ex_ts5}{Combining Taylor series}
+{Write out the first 3 terms of the Taylor Series for $f(x) = e^x\cos x$ using Key Idea \ref{idea:common_taylor} and Theorem \ref{thm:series_alg}.
+}
+{Key Idea \ref{idea:common_taylor} informs us that 
+$$e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\quad \text{and}\quad \cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots.$$
+Applying Theorem \ref{thm:series_alg}, we find that 
+\begin{align*}
+e^x\cos x &= \left(1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\right)\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right).
+\intertext{Distribute the right hand expression across the left:}
+	&= 1\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+x\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+\frac{x^2}{2!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)\\
+	&+\frac{x^3}{3!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right) + \frac{x^4}{4!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+\cdots
+	\intertext{Distribute again and collect like terms.}
+	&= 1 + x -\frac{x^3}{3}-\frac{x^4}{6} - \frac{x^5}{30}+\frac{x^7}{630}+\cdots
+	\end{align*}
+While this process is a bit tedious, it is much faster than evaluating all the necessary derivatives of $e^x\cos x$ and computing the Taylor series directly.
+
+Because the series for $e^x$ and $\cos x$ both converge on $(-\infty,\infty)$, so does the series expansion for $e^x\cos x$. 
+}\\
+
+\example{ex_ts6}{Creating new Taylor series}
+{Use Theorem \ref{thm:series_alg} to create series for $y=\sin(x^2)$ and $y=\ln (\sqrt{x})$. 
+}
+{Given that 
+$$\sin x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!} -\frac{x^7}{7!}+\cdots,$$
+we simply substitute $x^2$ for $x$ in the series, giving
+$$\sin (x^2) = \sum_{n=0}^\infty (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!} = x^2-\frac{x^6}{3!}+\frac{x^10}{5!} -\frac{x^{14}}{7!}\cdots.$$
+Since the Taylor series for $\sin x$ has an infinite radius of convergence, so does the Taylor series for $\sin(x^2)$.\\
+
+The Taylor expansion for $\ln x$ given in Key Idea \ref{idea:common_taylor} is centered at $x=1$, so we will center the series for $\ln (\sqrt{x})$ at $x=1$ as well.
+With 
+$$\ln x = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots,$$
+we substitute $\sqrt{x}$ for $x$ to obtain
+$$\ln (\sqrt{x}) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.$$
+While this is not strictly a power series, it is a series that allows us to study the function $\ln(\sqrt{x})$. Since the interval of convergence of $\ln x$ is $(0,2]$, and the range of $\sqrt{x}$ on $(0,4]$ is $(0,2]$, the interval of convergence of this series expansion of $\ln(\sqrt{x})$ is $(0,4]$.
+}\\
+
+\example{ex_ts7}{Using Taylor series to evaluate definite integrals}
+{Use the Taylor series of $e^{-x^2}$ to evaluate $\ds \int_0^1e^{-x^2}\ dx$.
+}
+{We learned, when studying Numerical Integration, that $e^{-x^2}$ does not have an antiderivative expressible in terms of elementary functions. This means any definite integral of this function must have its value approximated, and not computed exactly.
+
+We can quickly write out the Taylor series for $e^{-x^2}$ using the Taylor series of $e^x$:
+\begin{align*}
+e^x &= \sum_{n=0}^\infty \frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+\intertext{and so}
+e^{-x^2} &= \sum_{n=0}^\infty \frac{(-x^2)^n}{n!} \\
+				&= \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{n!}\\
+				&= 1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots
+\end{align*}
+We use Theorem \ref{thm:calc_power_series} to integrate:
+$$\int e^{-x^2}\ dx = C + x - \frac{x^3}{3}+\frac{x^5}{5\cdot2!}-\frac{x^7}{7\cdot3!}+\cdots +(-1)^n\frac{x^{2n+1}}{(2n+1)n!}+\cdots$$
+This \emph{is} the antiderivative of $e^{-x^2}$; while we can write it out as a series, we cannot write it out in terms of elementary functions. We can evaluate the definite integral $\ds \int_0^1e^{-x^2}\ dx$ using this antiderivative; substituting 1 and 0 for $x$ and subtracting gives
+$$\int_0^1e^{-x^2}\ dx = 1-\frac{1}{3}+\frac{1}{5\cdot 2!}-\frac{1}{7\cdot3!} + \frac{1}{9\cdot4!}\cdots.$$
+Summing the 5 terms shown above give the approximation of $0.74749.$ Since this is an alternating series, we can use the Alternating Series Approximation Theorem, (Theorem \ref{thm:alt_series_approx}), to determine how accurate this approximation is. The next term of the series is $ 1/(11\cdot5!) \approx 0.00075758$. Thus we know our approximation is within $0.00075758$ of the actual value of the integral. This is arguably much less work than using Simpson's Rule to approximate the value of the integral.
+}
 
 
 

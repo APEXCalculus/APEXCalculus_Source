@@ -1,0 +1,98 @@
+\thispagestyle {empty}
+\contentsline {chapter}{Preface}{iv}{section*.1}
+\contentsline {chapter}{Table of Contents}{v}{section*.1}
+\contentsline {chapter}{\numberline {1}Limits}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}An Introduction To Limits}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Epsilon-Delta Definition of a Limit}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Finding Limits Analytically}{16}{section.1.3}
+\contentsline {section}{\numberline {1.4}One Sided Limits}{28}{section.1.4}
+\contentsline {section}{\numberline {1.5}Continuity}{36}{section.1.5}
+\contentsline {section}{\numberline {1.6}Limits involving infinity}{45}{section.1.6}
+\contentsline {chapter}{\numberline {2}Derivatives}{57}{chapter.2}
+\contentsline {section}{\numberline {2.1}Instantaneous Rates of Change: The Derivative}{57}{section.2.1}
+\contentsline {section}{\numberline {2.2}Interpretations of the Derivative}{71}{section.2.2}
+\contentsline {section}{\numberline {2.3}Basic Differentiation Rules}{78}{section.2.3}
+\contentsline {section}{\numberline {2.4}The Product and Quotient Rules}{85}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Chain Rule}{95}{section.2.5}
+\contentsline {section}{\numberline {2.6}Implicit Differentiation}{105}{section.2.6}
+\contentsline {section}{\numberline {2.7}Derivatives of Inverse Functions}{116}{section.2.7}
+\contentsline {chapter}{\numberline {3}The Graphical Behavior of Functions}{123}{chapter.3}
+\contentsline {section}{\numberline {3.1}Extreme Values}{123}{section.3.1}
+\contentsline {section}{\numberline {3.2}The Mean Value Theorem}{131}{section.3.2}
+\contentsline {section}{\numberline {3.3}Increasing and Decreasing Functions}{136}{section.3.3}
+\contentsline {section}{\numberline {3.4}Concavity and the Second Derivative}{144}{section.3.4}
+\contentsline {section}{\numberline {3.5}Curve Sketching}{152}{section.3.5}
+\contentsline {chapter}{\numberline {4}Applications of the Derivative}{159}{chapter.4}
+\contentsline {section}{\numberline {4.1}Newton's Method}{159}{section.4.1}
+\contentsline {section}{\numberline {4.2}Related Rates}{166}{section.4.2}
+\contentsline {section}{\numberline {4.3}Optimization}{173}{section.4.3}
+\contentsline {section}{\numberline {4.4}Differentials}{180}{section.4.4}
+\contentsline {chapter}{\numberline {5}Integration}{189}{chapter.5}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {5.1}Antiderivatives and Indefinite Integration}{189}{section.5.1}
+\thispagestyle {empty}
+\contentsline {section}{\numberline {5.2}The Definite Integral}{199}{section.5.2}
+\contentsline {section}{\numberline {5.3}Riemann Sums}{210}{section.5.3}
+\contentsline {section}{\numberline {5.4}The Fundamental Theorem of Calculus}{227}{section.5.4}
+\contentsline {section}{\numberline {5.5}Numerical Integration}{239}{section.5.5}
+\contentsline {chapter}{\numberline {6}Techniques of Antidifferentiation}{253}{chapter.6}
+\contentsline {section}{\numberline {6.1}Substitution}{253}{section.6.1}
+\contentsline {section}{\numberline {6.2}Integration by Parts}{273}{section.6.2}
+\contentsline {section}{\numberline {6.3}Trigonometric Integrals}{284}{section.6.3}
+\contentsline {section}{\numberline {6.4}Partial Fraction Decomposition}{294}{section.6.4}
+\contentsline {section}{\numberline {6.5}Hyperbolic Functions}{302}{section.6.5}
+\contentsline {section}{\numberline {6.6}L'H\^opital's Rule}{312}{section.6.6}
+\contentsline {section}{\numberline {6.7}Improper Integration}{321}{section.6.7}
+\contentsline {chapter}{\numberline {7}Applications of Integration}{333}{chapter.7}
+\contentsline {section}{\numberline {7.1}Area Between Curves}{334}{section.7.1}
+\contentsline {section}{\numberline {7.2}Volume by Cross-Sectional Area; Disk and Washer Methods}{342}{section.7.2}
+\contentsline {section}{\numberline {7.3}The Shell Method}{350}{section.7.3}
+\contentsline {section}{\numberline {7.4}Arc Length and Surface Area}{358}{section.7.4}
+\contentsline {section}{\numberline {7.5}Work}{368}{section.7.5}
+\contentsline {section}{\numberline {7.6}Fluid Forces}{378}{section.7.6}
+\contentsline {chapter}{\numberline {8}Sequences and Series}{387}{chapter.8}
+\contentsline {section}{\numberline {8.1}Sequences}{387}{section.8.1}
+\contentsline {section}{\numberline {8.2}Infinite Series}{400}{section.8.2}
+\contentsline {section}{\numberline {8.3}Integral and Comparison Tests}{415}{section.8.3}
+\contentsline {section}{\numberline {8.4}Ratio and Root Tests}{422}{section.8.4}
+\contentsline {section}{\numberline {8.5}Alternating Series and Absolute Convergence}{426}{section.8.5}
+\contentsline {section}{\numberline {8.6}Power Series}{435}{section.8.6}
+\contentsline {section}{\numberline {8.7}Taylor Polynomials}{445}{section.8.7}
+\contentsline {section}{\numberline {8.8}Taylor Series}{456}{section.8.8}
+\contentsline {chapter}{\numberline {9}Curves in the Plane}{465}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conic Sections}{465}{section.9.1}
+\contentsline {section}{\numberline {9.2}Parametric Equations}{479}{section.9.2}
+\contentsline {section}{\numberline {9.3}Calculus and Parametric Equations}{489}{section.9.3}
+\contentsline {section}{\numberline {9.4}Introduction to Polar Coordinates}{500}{section.9.4}
+\contentsline {section}{\numberline {9.5}Calculus and Polar Functions}{513}{section.9.5}
+\contentsline {chapter}{\numberline {10}Vectors}{525}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introduction to Cartesian Coordinates in Space}{525}{section.10.1}
+\contentsline {section}{\numberline {10.2}An Introduction to Vectors}{540}{section.10.2}
+\contentsline {section}{\numberline {10.3}The Dot Product}{554}{section.10.3}
+\contentsline {section}{\numberline {10.4}The Cross Product}{567}{section.10.4}
+\contentsline {section}{\numberline {10.5}Lines}{577}{section.10.5}
+\contentsline {section}{\numberline {10.6}Planes}{587}{section.10.6}
+\thispagestyle {empty}
+\contentsline {chapter}{\numberline {11}Vector Valued Functions}{595}{chapter.11}
+\contentsline {section}{\numberline {11.1}Vector--Valued Functions}{595}{section.11.1}
+\contentsline {section}{\numberline {11.2}Calculus and Vector--Valued Functions}{601}{section.11.2}
+\contentsline {section}{\numberline {11.3}The Calculus of Motion}{614}{section.11.3}
+\contentsline {section}{\numberline {11.4}Unit Tangent and Normal Vectors}{626}{section.11.4}
+\contentsline {section}{\numberline {11.5}The Arc Length Parameter and Curvature}{635}{section.11.5}
+\contentsline {chapter}{\numberline {12}Functions of Several Variables}{645}{chapter.12}
+\contentsline {section}{\numberline {12.1}Introduction to Multivariable Functions}{645}{section.12.1}
+\contentsline {section}{\numberline {12.2}Limits and Continuity of Multivariable Functions}{652}{section.12.2}
+\contentsline {section}{\numberline {12.3}Partial Derivatives}{662}{section.12.3}
+\contentsline {section}{\numberline {12.4}Differentiability and the Total Differential}{674}{section.12.4}
+\contentsline {section}{\numberline {12.5}The Multivariable Chain Rule}{683}{section.12.5}
+\contentsline {section}{\numberline {12.6}Directional Derivatives}{690}{section.12.6}
+\contentsline {section}{\numberline {12.7}Tangent Lines, Normal Lines, and Tangent Planes}{699}{section.12.7}
+\contentsline {section}{\numberline {12.8}Extreme Values}{709}{section.12.8}
+\contentsline {chapter}{\numberline {13}Multiple Integration}{719}{chapter.13}
+\contentsline {section}{\numberline {13.1}Iterated Integrals and Area}{719}{section.13.1}
+\contentsline {section}{\numberline {13.2}Double Integration and Volume}{729}{section.13.2}
+\contentsline {section}{\numberline {13.3}Double Integration with Polar Coordinates}{739}{section.13.3}
+\contentsline {section}{\numberline {13.4}Center of Mass}{747}{section.13.4}
+\contentsline {section}{\numberline {13.5}Surface Area}{760}{section.13.5}
+\contentsline {section}{\numberline {13.6}Volume Between Surfaces and Triple Integration}{767}{section.13.6}
+\contentsline {chapter}{\numberline {A}Solutions To Selected Problems}{A.1}{appendix.A}

@@ -170,7 +170,7 @@
 
 %% This is the no-star (regular) version of
 %% the example command.
-\newcommand{\examplenostar}[3]{%
+\newcommand{\examplenostar}[4]{%
 %\ifthenelse{\boolean{in_color}}{renewcommand{\thelinecolor}{\colorlinecolor}}{\renewcommand{\thelinecolor}{\bwlinecolor}}%
 \noindent%
 \ifthenelse{\boolean{exampleisintext}}
@@ -210,7 +210,8 @@
 }% ends if example in text
 \ifthenelse{\pageref{#1}=\pageref{e#1}}% if the beginning and end are on the same page
 {%
-#2 \vskip \baselineskip%
+\textbf{#2}\\
+#3 \vskip \baselineskip%
 \ifthenelse{\boolean{exampleisintext}}
 {%solution is in text
 \parbox{65pt}{\textsc{\small\bfseries Solution}}% 
@@ -219,7 +220,7 @@
 \parbox{65pt}{\textsc{\small\bfseries Solution}}% 
 \hskip 15pt%
 }% end solution in margin
-#3\nopagebreak\label{e#1}% writes the full example then draws the lines
+#4\nopagebreak\label{e#1}% writes the full example then draws the lines
 \ifthenelse{\boolean{showexamplelines}}{%
 \begin{tikzpicture}[remember picture,overlay]%
 \ifthenelse{\boolean{showexamplemarks}}
@@ -244,7 +245,8 @@
 \end{tikzpicture}%
 }{}% ends if/then/else show lines
 % end drawing of line
-#2 \vskip \baselineskip%
+\textbf{#2}\\
+#3 \vskip \baselineskip%
 \ifthenelse{\boolean{exampleisintext}}%
 {%solution is in text
 \parbox{65pt}{\textsc{\small\bfseries Solution}}% 
@@ -253,7 +255,7 @@
 \parbox{65pt}{\textsc{\small\bfseries Solution}}% 
 \hskip 15pt%
 }% end solution in margin
-#3\label{e#1}% now write out full example
+#4\label{e#1}% now write out full example
 % now draw line from end to top of page
 \ifthenelse{\boolean{showexamplelines}}{%
 \begin{tikzpicture}[remember picture,overlay] 
@@ -271,7 +273,7 @@
 }%ends the definition of example
 
 
-\newcommand{\examplestarred}[2]{%
+\newcommand{\examplestarred}[3]{%
 %\ifthenelse{\boolean{in_color}}{renewcommand{\thelinecolor}{\colorlinecolor}}{\renewcommand{\thelinecolor}{\bwlinecolor}}%
 \noindent%
 \ifthenelse{\boolean{exampleisintext}}
@@ -306,7 +308,8 @@
 }% ends if example in text
 \ifthenelse{\pageref{#1}=\pageref{e#1}}% if the beginning and end are on the same page
 {%
-#2 \label{e#1}% writes the full example then draws the lines
+\textbf{#2}\\
+#3 \label{e#1}% writes the full example then draws the lines
 \ifthenelse{\boolean{showexamplelines}}{%
 \begin{tikzpicture}[remember picture,overlay]%
 \ifthenelse{\boolean{showexamplemarks}}
@@ -331,7 +334,8 @@
 \end{tikzpicture}%
 }{}% ends if/then/else show lines
 % end drawing of line
-#2 \label{e#1}% now write out full example
+\textbf{#2}\\
+#3 \label{e#1}% now write out full example
 % now draw line from end to top of page
 \ifthenelse{\boolean{showexamplelines}}{%
 \begin{tikzpicture}[remember picture,overlay] 
