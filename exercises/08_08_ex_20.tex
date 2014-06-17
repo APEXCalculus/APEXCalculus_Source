@@ -1,0 +1,9 @@
+{$\frac{d}{dx}\big(\cos x\big) = -\sin x$
+}
+{Given $\ds \cos x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$,
+
+$\ds\frac{d}{dx}\big(\cos x\big)  = \frac{d}{dx}\left(\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}\right)=\sum_{n=1}^\infty (-1)^n\frac{(2n)x^{2n-1}}{(2n)!}=\sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!}$. We can re-index this summation to start at $n=0$ by replacing $n$ with $n+1$ in the summation:
+$$ \sum_{n=1}^\infty (-1)^n\frac{x^{2n-1}}{(2n-1)!} =\sum_{n=0}^\infty (-1)^{n+1}\frac{x^{2n+1}}{(2n+1)!}.$$
+
+Note that this series has the opposite sign of the Taylor series for $\sin x$; thus $\frac{d}{dx}(\cos x) = -\sin x$.
+}

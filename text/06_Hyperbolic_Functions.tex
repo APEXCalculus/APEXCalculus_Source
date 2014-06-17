@@ -11,18 +11,18 @@ We begin with their definition.
 \definition{def:hyperbolic_functions}{Hyperbolic Functions}
 {\noindent%
 \begin{minipage}{.5\specialboxlength}
-\begin{itemize}
-\item		$\ds \cosh x = \frac{e^x+e^{-x}}2$
+\begin{enumerate}
+\item		$\ds \cosh x = \frac{e^x+e^{-x}}2$\index{hyperbolic function!definition}
 \item		$\ds \sinh x = \frac{e^x-e^{-x}}2$
 \item		$\ds \tanh x = \frac{\sinh x}{\cosh x}$
-\end{itemize}
+\end{enumerate}
 \end{minipage}
 \begin{minipage}{.5\specialboxlength}
-\begin{itemize}
+\begin{enumerate}\addtocounter{enumi}{3}
 \item		$\ds \sech x = \frac{1}{\cosh x}$
 \item		$\ds \csch x = \frac{1}{\sinh x}$
 \item		$\ds \coth x = \frac{\cosh x}{\sinh x}$
-\end{itemize}
+\end{enumerate}
 \end{minipage}
 }\\
 
@@ -136,7 +136,8 @@ The following Key Idea summarizes many of the important identities relating to h
 {\begin{minipage}[t]{.33\specialboxlength}
 \textbf{Basic Identities}\par
 \begin{enumerate}
-\item $\cosh^2x-\sinh^2x=1$
+\item $\cosh^2x-\sinh^2x=1$%
+\index{hyperbolic function!identities}\index{hyperbolic function!derivatives}\index{hyperbolic function!integrals}\index{derivative!hyperbolic funct.}\index{integration!hyperbolic funct.}%
 \item	$\tanh^2x+\sech^2x=1$
 \item	$\coth^2x-\csch^2x = 1$
 \item	$\cosh 2x=\cosh^2x+\sinh^2x$
@@ -203,12 +204,12 @@ $$ \int \sech^2 (7t-3)\ dt = \frac17\tanh (7t-3) + C.$$
 We can simplify this last expression as $\sinh x$ is based on exponentials:
 $$\sinh(\ln 2) = \frac{e^{\ln 2}-e^{-\ln 2}}2 = \frac{2-1/2}{2} = \frac34.$$
 \end{enumerate}
-\vskip-\baselineskip
+\vskip-1.5\baselineskip
 }\\
 
 \noindent\textbf{\large Inverse Hyperbolic Functions}\\
 
-Just as the inverse trigonometric functions are useful in certain integrations, the inverse hyperbolic functions are useful with others. Figure \ref{fig:hfinverse2} shows the restrictions on the domains to make each function one-to-one and the resulting domains and ranges of their inverse functions. Their graphs are shown in Figure \ref{fig:hfinverse1}.
+Just as the inverse trigonometric functions are useful in certain integrations, the inverse hyperbolic functions are useful with others. Figure \ref{fig:hfinverse2} shows the restrictions on the domains to make each function one-to-one and the resulting domains and ranges of their inverse functions. Their graphs are shown in Figure \ref{fig:hfinverse1}.\index{hyperbolic function!inverse}
 
 Because the hyperbolic functions are defined in terms of exponential functions, their inverses can be expressed in terms of logarithms as shown in Key Idea \ref{idea:hyperbolic_log}. It is often more convenient to refer to $\sinh^{-1}x$ than to $\ln\big(x+\sqrt{x^2+1}\big)$, especially when one is working on theory and does not need to compute actual values. On the other hand, when computations are needed, technology is often helpful but many hand-held calculators lack a \textit{convenient} $\sinh^{-1}x$ button. (Often it can be accessed under a menu system, but not conveniently.) In such a situation, the logarithmic representation is useful.
 \clearpage
@@ -257,8 +258,8 @@ $\coth^{-1} x$ & $(-\infty,-1) \cup (1,\infty)$ & $(-\infty,0) \cup (0,\infty)$
 \noindent
 \begin{minipage}{1.3\textwidth}
 \begin{tabular}{ccc}
-\myincludegraphics{figures/fighfarccosh} & \ \hskip 15pt\ &\myincludegraphics{figures/fighfarcsinh}\\[15pt]
-\myincludegraphics{figures/fighfarctanharccoth} & &\myincludegraphics{figures/fighfarcsecharccsch}
+\myincludegraphics[scale=0.95]{figures/fighfarccosh} & \ \hskip 15pt\ &\myincludegraphics[scale=0.95]{figures/fighfarcsinh}\\[15pt]
+\myincludegraphics[scale=0.95]{figures/fighfarctanharccoth} & &\myincludegraphics[scale=0.95]{figures/fighfarcsecharccsch}
 \end{tabular}
 \captionsetup{type=figure}%
 \caption{Graphs of the hyperbolic functions and their inverses.}\label{fig:hfinverse1}
@@ -270,18 +271,18 @@ $\coth^{-1} x$ & $(-\infty,-1) \cup (1,\infty)$ & $(-\infty,0) \cup (0,\infty)$
 \keyidea{idea:hyperbolic_log}{Logarithmic definitions of Inverse Hyperbolic Functions}
 {\noindent%
 \begin{minipage}[t]{.5\specialboxlength}
-\begin{itemize}
-\item $\ds\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big);\ x\geq1$\rule[-10pt]{0pt}{20pt}
+\begin{enumerate}
+\item $\ds\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big);\ x\geq1$\index{hyperbolic function!inverse!logarithmic def.}\rule[-10pt]{0pt}{20pt}
 \item $\ds\tanh^{-1}x = \frac12\ln\left(\frac{1+x}{1-x}\right);\ |x|<1$\rule[-10pt]{0pt}{20pt}
 \item $\ds \sech^{-1}x = \ln\left(\frac{1+\sqrt{1-x^2}}x\right);\ 0<x\leq1$\rule[-10pt]{0pt}{20pt}
-\end{itemize}
+\end{enumerate}
 \end{minipage}
 \begin{minipage}[t]{.5\specialboxlength}
-\begin{itemize}
+\begin{enumerate}\addtocounter{enumi}{3}
 \item $\ds\sinh^{-1}x = \ln\big(x+\sqrt{x^2+1}\big)$\rule[-10pt]{0pt}{20pt}
 \item	 $\ds\coth^{-1}x = \frac12\ln\left(\frac{x+1}{x-1}\right);\ |x|>1$\rule[-10pt]{0pt}{20pt}
 \item $\ds\csch^{-1}x = \ln\left(\frac1x+\frac{\sqrt{1+x^2}}{|x|}\right);\ x\neq0$\rule[-10pt]{0pt}{20pt}
-\end{itemize}
+\end{enumerate}
 \end{minipage}
 }
 \end{minipage}
@@ -309,7 +310,7 @@ The following Key Ideas give the derivatives and integrals relating to the inver
 {%
 \begin{minipage}[t]{.45\specialboxlength}
 \begin{enumerate}
-\item $\ds\frac{d}{dx}\big(\cosh^{-1} x\big) = \frac{1}{\sqrt{x^2-1}};\ x>1$
+\item $\ds\frac{d}{dx}\big(\cosh^{-1} x\big) = \frac{1}{\sqrt{x^2-1}};\ x>1$\index{derivative!inverse hyper.}\index{hyperbolic function!inverse!derivative}
 \item $\ds\frac{d}{dx}\big(\sinh^{-1} x\big) = \frac{1}{\sqrt{x^2+1}}$
 \item $\ds\frac{d}{dx}\big(\tanh^{-1} x\big) = \frac{1}{1-x^2};\ |x|<1$
 \end{enumerate}
@@ -332,7 +333,7 @@ The following Key Ideas give the derivatives and integrals relating to the inver
 \keyidea{idea:hyperbolic_inverse_integrals}{Integrals Involving Inverse Hyperbolic Functions}
 {%
 \begin{enumerate}
-\item \parbox{70pt}{$\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx$} \parbox{180pt}{$\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0<a<x$} $\ds=\ln\Big|x+\sqrt{x^2-a^2}\Big|+C$
+\item \parbox{70pt}{$\ds\int \frac{1}{\sqrt{x^2-a^2}}\ dx$} \parbox{180pt}{$\ds=\qquad \cosh^{-1}\left(\frac xa\right)+C;\ 0<a<x$} $\ds=\ln\Big|x+\sqrt{x^2-a^2}\Big|+C$\index{integration!inverse hyper.}\index{hyperbolic function!inverse!integration}
 
 \item \parbox{70pt}{$\ds\int \frac{1}{\sqrt{x^2+a^2}}\ dx$} \parbox{180pt}{$\ds=\qquad \sinh^{-1}\left(\frac xa\right)+C;\ a>0$} $\ds=\ln\Big|x+\sqrt{x^2+a^2}\Big|+C$
 

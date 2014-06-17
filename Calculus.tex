@@ -52,6 +52,8 @@
 	}
 	{}
 
+\makeindex
+
 %\renewcommand{\contentsname}{Contents of Calculus I \& II}
 
 %%%\tracingonline=1
@@ -59,12 +61,12 @@
 
 \printincolor
 %\printinblackandwhite
-%\printallanswers
+\printallanswers
 
 \input{text/front_matter_and_cover}
 
 \chapter{Limits}\label{chapter:limits}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 %
 \input{text/01_Limit_Introduction}
 \input{text/01_Limit_Definition}
@@ -78,7 +80,7 @@
 %
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Derivatives}\label{chapter:derivatives}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/02_Derivative}
 \input{text/02_Derivative_Meaning}
@@ -92,7 +94,7 @@
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{The Graphical Behavior of Functions}\label{chapter:graphbehavior}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/03_Extreme_Values}
 \input{text/03_Mean_Value_Theorem}
@@ -104,7 +106,7 @@
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Applications of the Derivative}\label{chapter:deriv_apps}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/04_NewtonsMethod}
 \input{text/04_Related_Rates}
@@ -117,7 +119,7 @@
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Integration}\label{chapter:integration}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 
 \input{text/05_Antiderivatives}
@@ -132,11 +134,12 @@
 %%
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Techniques of Antidifferentiation}\label{chapter:anti_tech}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/06_Substitution}
 \input{text/06_Int_By_Parts}
 \input{text/06_Trigonometric_Integrals}
+\input{text/06_Trig_Sub}
 \input{text/06_Partial_Fractions}
 \input{text/06_Hyperbolic_Functions}
 \input{text/06_LHopitals_Rule}
@@ -146,7 +149,7 @@
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Applications of Integration}\label{chapter:app_of_int}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/07_Area_Between_Curves}
 \input{text/07_Disk_Washer_Method}
@@ -158,7 +161,7 @@
 %%%\addtocounter{chapter}{7}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Sequences and Series}\label{chapter:sequences_series}
-\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+\thispagestyle{empty}
 
 \input{text/08_Sequences}
 \input{text/08_Series}
@@ -260,6 +263,12 @@
 %
 \qendheader
 \eendgeometry
+
+\phantomsection
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
 \cleardoublepage
 \input{text/Inside_Cover_Of_The_Text_Material_Complete}
 

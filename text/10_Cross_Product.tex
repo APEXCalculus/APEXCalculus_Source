@@ -2,10 +2,11 @@
 
 ``Orthogonality'' is immensely important. A quick scan of your current environment will undoubtedly reveal numerous surfaces and edges that are perpendicular to each other (including the edges of this page). The dot product provides a quick test for orthogonality: vectors $\vec u$ and $\vec v$ are perpendicular if, and only if, $\dotp uv=0$. 
 
-Given two, non--parallel vectors $\vec u$ and $\vec v$, it is very useful to find a vector $\vec w$ that is perpendicular to both $\vec u$ and $\vec v$. There is a operation, called the \textbf{cross product}, that creates such a vector. This section defines the cross product, then explores its properties and applications.
+Given two, non--parallel vectors $\vec u$ and $\vec v$ in space, it is very useful to find a vector $\vec w$ that is perpendicular to both $\vec u$ and $\vec v$. There is a operation, called the \textbf{cross product}, that creates such a vector. This section defines the cross product, then explores its properties and applications.
 
 \definition{def:cross_product}{Cross Product}
 {Let $\vec u =\la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$ be vectors in $\mathbb{R}^3$. The \textbf{cross product of $\vec u$ and $\vec v$}, denoted $\crossp uv$, is the vector
+\index{vectors!cross product}\index{cross product!definition}
 $$\crossp uv = \la u_2v_3-u_3v_2,-(u_1v_3-u_3v_1),u_1v_2-u_2v_1\ra.$$
 }
 
@@ -69,12 +70,13 @@ which is the opposite of $\crossp uv$. We leave it to the reader to verify that 
 
 \noindent\textbf{\large Properties of the Cross Product}\\
 
-It is not coincidence that $\crossp vu = -(\crossp uv)$ in the preceding example; one can show, using Definition \ref{def:cross_product} that this will always be the case. The following theorem states several useful properties of the cross product, each of which can be verified by referring to the definition.
+It is not coincidence that $\crossp vu = -(\crossp uv)$ in the preceding example; one can show using Definition \ref{def:cross_product} that this will always be the case. The following theorem states several useful properties of the cross product, each of which can be verified by referring to the definition.
 
 \setboxwidth{50pt}
-%\noindent\hskip-50pt\begin{minipage}{\linewidth}
+\noindent\hskip-50pt\begin{minipage}{\linewidth}
 \theorem{thm:cross_prod_prop}{Properties of the Cross Product}
 {Let $\vecu$, $\vecv$ and $\vecw$ be vectors in $\mathbb{R}^3$ and let $c$ be a scalar. The following identities hold:
+\index{vectors!cross product}\index{cross product!properties}
 \begin{enumerate}
 	\item \parbox{200pt}{$\crossp uv = -(\crossp vu)$} Anticommutative Property
 	\item	\begin{enumerate}
@@ -91,12 +93,12 @@ It is not coincidence that $\crossp vu = -(\crossp uv)$ in the preceding example
 	\item		\parbox{200pt}{$\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw$} Triple Scalar Product
 \end{enumerate}
 }
-%\end{minipage}
+\end{minipage}
 \restoreboxwidth
 
 We introduced the cross product as a way to find a vector orthogonal to two given vectors, but we did not give a proof that the construction given in Definition \ref{def:cross_product} satisfies this property. Theorem \ref{thm:cross_prod_prop} asserts this property holds; we leave it as a problem in the Exercise section to verify this.
 
-Property 6 from the theorem is also left to the reader to prove in the Exercise section, but it reveals something more interesting than ``the cross product of a vector with itself is $\vec 0$.'' Let $\vec u$ and $\vec v$ be parallel vectors; that is, let there be a scalar $c$ such that $\vecv = c\vecu$. Consider their cross product:
+Property 5 from the theorem is also left to the reader to prove in the Exercise section, but it reveals something more interesting than ``the cross product of a vector with itself is $\vec 0$.'' Let $\vec u$ and $\vec v$ be parallel vectors; that is, let there be a scalar $c$ such that $\vecv = c\vecu$. Consider their cross product:
 \begin{align*}
 \crossp uv &= \vecu \times (c\vec u) \\
 					&=	\parbox{50pt}{$c(\crossp uu)$}\text{(by Property 3 of Theorem \ref{thm:cross_prod_prop})}\\
@@ -109,9 +111,11 @@ We have just shown that the cross product of parallel vectors is $\vec 0$. This 
 {Let $\vec u$ and $\vec v$ be vectors in $\mathbb{R}^3$. Then
 $$\norm{\crossp uv} = \vnorm u\, \vnorm v \sin\theta,$$
 where $\theta$, $0\leq \theta \leq \pi$, is the angle between $\vecu$ and $\vecv$.
+\index{vectors!cross product}\index{cross product!properties}
 }
 
-Note that this theorem makes a statement about the \emph{magnitude} of the cross product. When the angle between $\vecu$ and $\vecv$ is 0 or $\pi$ (i.e., the vectors are parallel), the magnitude of the cross product is 0. The only vector with a magnitude of 0 is $\vec 0$ (see Property \ref{thm:zero_norm} of Theorem \ref{thm:vector_properties}), hence the cross product of parallel vectors is $\vec 0$.\\
+\mnote{.52}{\textbf{Note:} Definition \ref{def:orthogonal} (through Theorem \ref{thm:dot_product}) defines $\vec u$ and $\vec v$ to be orthogonal if $\vec u\cdot\vec v=0$. We could use Theorem \ref{thm:cross_product} to define $\vec u$ and $\vec v$ are parallel if $\vec u\times \vec v = 0$. By such a definition, $\vec 0$ would be both orthogonal and parallel to every vector. Apparent paradoxes such as this are not uncommon in mathematics and can be very useful. (See also the marginal note on page \pageref{note:parallel}.)\label{note:crossp}}
+Note that this theorem makes a statement about the \emph{magnitude} of the cross product. When the angle between $\vecu$ and $\vecv$ is 0 or $\pi$ (i.e., the vectors are parallel), the magnitude of the cross product is 0. The only vector with a magnitude of 0 is $\vec 0$ (see Property \ref{thm:zero_norm} of Theorem \ref{thm:vector_properties}), hence the cross product of nonzero parallel vectors is $\vec 0$.\\
 
 We demonstrate the truth of this theorem in the following example.\\
 
@@ -129,7 +133,8 @@ Our work in Example \ref{ex_crossp2} showed that $\crossp uv = \la -9,-7,5\ra$, 
 \norm{\crossp uv} &=\sqrt{155}  & \vnorm u\,\vnorm v \sin\theta & = \sqrt{46}\sqrt{6}\sin 0.8471\\
 									&\approx 12.45. & &\approx 12.45.
 \end{align*}
-Numerically, they seem equal. The Exercise section offers an opportunity to prove the validity of Theorem \ref{thm:cross_product} in general.
+Numerically, they seem equal. Using a right triangle, one can show that 
+$$\sin\left(\cos^{-1}\left(\frac{11}{\sqrt{46}\sqrt{6}}\right)\right) = \frac{\sqrt{155}}{\sqrt{46}\sqrt{6}},$$ which allows us to verify the theorem exactly.
 }\\
 
 \noindent\textbf{Right Hand Rule}\\
@@ -142,7 +147,9 @@ Another wonderful property of the cross product, as defined, is that it follows 
 \vskip\baselineskip
 \noindent\textbf{\large Applications of the Cross Product}\\
 
-There are a number of ways in which the cross product is useful in mathematics, physics and other areas of science beyond ``just'' finding a vector perpendicular to two others. We highlight a few here.\\
+There are a number of ways in which the cross product is useful in mathematics, physics and other areas of science beyond ``just'' finding a vector perpendicular to two others. We highlight a few here.\index{cross product!applications}\\
+\enlargethispage{\baselineskip}
+\clearpage\enlargethispage{2\baselineskip}
 
 \noindent\textbf{Area of a Parallelogram}\\
 
@@ -157,7 +164,8 @@ where the second equality comes from Theorem \ref{thm:cross_product}.
 (b) \\
 \end{tabular}
 }
-We illustrate using Equation \eqref{eq:crossp1} in the following example.\\
+We illustrate using Equation \eqref{eq:crossp1} in the following example.
+\index{cross product!applications!area of parallelogram}\\
 
 \example{ex_crossp4}{Finding the area of a parallelogram}{
 \begin{enumerate}
@@ -199,6 +207,7 @@ We arrive at the same answer as before with less work.
 The three dimensional analogue to the parallelogram is the \textbf{parallelepiped}. Each face is parallel to the face opposite face, as illustrated in Figure \ref{fig:crossp_parallelepiped}. By crossing $\vec v$ and $\vec w$, one gets a vector whose magnitude is the area of the base. Dotting this vector with $\vecu$ computes the volume of parallelepiped! (Up to a sign; take the absolute value.)
 \mnote{.65}{\textbf{Note:} The word ``parallelepiped'' is pronounced ``parallel--eh--pipe-ed.''}
 \mfigure{.53}{A parallelepiped is the three dimensional analogue to the parallelogram.}{fig:crossp_parallelepiped}{figures/figcrosspparallelpiped}
+\index{cross product!applications!volume of parallelepiped}
 
 Thus the volume of a parallelepiped defined by vectors $\vecu$, $\vecv$ and $\vec w$ is \begin{equation}V = |\vecu\cdot (\crossp vw)|.\label{eq:crossp2}\end{equation}
 Note how this is the Triple Scalar Product, first seen in Theorem \ref{thm:cross_prod_prop}. Applying the identities given in the theorem shows that we can apply the Triple Scalar Product in any ``order'' we choose to find the volume. That is,
@@ -209,7 +218,7 @@ Find the volume of the parallepiped defined by the vectors $\vecu = \la 1,1,0\ra
 }
 {We apply Equation \eqref{eq:crossp2}. We first find $\crossp vw =\la 1,1,-1\ra$. Then
 $$|\vec u\cdot(\crossp vw)| = |\la 1,1,0\ra \cdot \la1,1,-1\ra| = 2.$$
-So the volume of the parallelepiped is 2 units.
+So the volume of the parallelepiped is 2 cubic units.
 \mfigure{.3}{A parallelepiped in Example \ref{ex_crossp6}.}{fig:crossp6}{figures/figcrossp6}
 }\\
 
@@ -217,7 +226,7 @@ While this application of the Triple Scalar Product is interesting, it is not us
 
 \noindent\textbf{Torque}\\
 
-\textbf{Torque} is a measure of the turning force applied to an object. A classic scenario involving torque is the application of a wrench to a bolt. When a force is applied to the wrench, the bolt turns. When we represent the force and wrench with vectors $\vec F$ and $\vec \ell$, we see that the bolt moves (because of the threads) in a  direction orthogonal to $\vec F$ and $\vec \ell$. Torque is usually represented by the Greek letter $\tau$, or tau, and has units of N$\cdot$m, a Newton--meter, or ft$\cdot$lb, a foot--pound.
+\textbf{Torque} is a measure of the turning force applied to an object. A classic scenario involving torque is the application of a wrench to a bolt. When a force is applied to the wrench, the bolt turns. When we represent the force and wrench with vectors $\vec F$ and $\vec \ell$, we see that the bolt moves (because of the threads) in a  direction orthogonal to $\vec F$ and $\vec \ell$. Torque is usually represented by the Greek letter $\tau$, or tau, and has units of N$\cdot$m, a Newton--meter, or ft$\cdot$lb, a foot--pound.\index{cross product!applications!torque}
 
 While a full understanding of torque is beyond the purposes of this book, when a force $\vec F$ is applied to a lever arm $\vec \ell$, the resulting torque is \begin{equation}\vec \tau = \crossp \ell F.\label{eq:crossp3}\end{equation}
 
@@ -261,7 +270,7 @@ A lever of length 2ft makes an angle with the horizontal of $45^\circ$. Find the
 \vskip-\baselineskip
 }\\
 
-While the cross product has a variety of applications (as noted in this chapter), its fundamental use is finding a vector perpendicular to two others. Knowing a vector orthogonal to two others is of incredible importance, as it allows us to find the equations of lines and planes in a variety of contexts. The importance of the cross product, in some sense, relies on the importance of lines and planes, which see widespread use throughout engineering, physics and mathematics. 
+While the cross product has a variety of applications (as noted in this chapter), its fundamental use is finding a vector perpendicular to two others. Knowing a vector orthogonal to two others is of incredible importance, as it allows us to find the equations of lines and planes in a variety of contexts. The importance of the cross product, in some sense, relies on the importance of lines and planes, which see widespread use throughout engineering, physics and mathematics. We study lines and planes in the next two sections. 
 
 \printexercises{exercises/10_04_exercises}
 

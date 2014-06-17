@@ -66,13 +66,13 @@ As $h\to 0$, these secant lines approach the \textit{tangent line}, a line that 
 
 We have just introduced a number of important concepts that we will flesh out more within this section. First, we formally define two of them.
 
-\definition{def:derivative_at_a_point}{Derivative at a Point}{Let $f$ be a continuous function on an open interval $I$ and let $c$ be in $I$. The \textbf{derivative of $f$ at $c$}, denoted $\fp(c)$, is $$\lim_{h\to 0}\frac{f(c+h)-f(c)}{h},$$ provided the limit exists. If the limit exists, we say that \textbf{$f$ is differentiable at $c$}; if the limit does not exist, then \textbf{$f$ is not differentiable at $c$}. If $f$ is differentiable at every point in $I$, then \textbf{$f$ is differentiable on $I$}.
+\definition{def:derivative_at_a_point}{Derivative at a Point}{Let $f$ be a continuous function on an open interval $I$ and let $c$ be in $I$.\index{derivative!at a point} The \sword{derivative of $f$ at $c$}, denoted $\fp(c)$, is $$\lim_{h\to 0}\frac{f(c+h)-f(c)}{h},$$ provided the limit exists. If the limit exists, we say that \sword{$f$ is differentiable at $c$}; if the limit does not exist, then \sword{$f$ is not differentiable at $c$}. If $f$ is differentiable at every point in $I$, then \sword{$f$ is differentiable on $I$}.\index{differentiable}
 }
 
-\definition{def:tangent_line}{Tangent Line}{Let $f$ be continuous on an open interval $I$ and differentiable at $c$, for some $c$ in $I$. The line $\ell(x) = \fp(c)(x-c)+f(c)$ is the \textbf{tangent line} to $f$ at $c$; that is, it is the line through $(c,f(c))$ whose slope is the derivative of $f$ at $c$.}
+\definition{def:tangent_line}{Tangent Line}{Let $f$ be continuous on an open interval $I$ and differentiable at $c$, for some $c$ in $I$. The line with equation $\ell(x) = \fp(c)(x-c)+f(c)$ is the \textbf{tangent line} to the graph of $f$ at $c$; that is, it is the line through $(c,f(c))$ whose slope is the derivative of $f$ at $c$.\index{tangent line}\index{derivative!tangent line}}
 
 
-
+\enlargethispage{1\baselineskip}
 Some examples will help us understand these definitions.\\
 
 \example{ex_derv_point1}{Finding derivatives and tangent lines}{
@@ -81,13 +81,13 @@ Let $f(x) = 3x^2+5x-7$. Find:
 \noindent\begin{minipage}[t]{.5\textwidth}
 	\begin{enumerate}
 	\item		$\fp(1)$
-	\item		The tangent line to $f$ at $x=1$.
+	\item		The equation of the tangent line to the graph of $f$ at $x=1$.
 	\end{enumerate}
 	\end{minipage}
 	\noindent\begin{minipage}[t]{.5\textwidth}
 	\begin{enumerate}\addtocounter{enumi}{2}
 	\item		$\fp(3)$
-	\item		The tangent line to $f$ at $x=3$.
+	\item		The equation of the tangent line to the graph $f$ at $x=3$.
 	\end{enumerate}
 	\end{minipage}
 }
@@ -95,10 +95,12 @@ Let $f(x) = 3x^2+5x-7$. Find:
 	\item		We compute this directly using Definition \ref{def:derivative_at_a_point}.
 					\begin{align*}
 						\fp(1) &=	\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
-										&=	\lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h} \\
+										&=	\lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
+					%\end{align*}
+					%\begin{align*}
 										&=	\lim_{h\to 0} \frac{3h^2+11h}{h}\\
-										&= 	\lim_{h\to 0}	3h+11\\
-										&= 11.
+										&= 	\lim_{h\to 0}	3h+11=11.%\\
+										%&= 11.
 					\end{align*}
 	\item		The tangent line at $x=1$ has slope $\fp(1)$ and goes through the point $(1,f(1)) = (1,1)$. Thus the tangent line has equation, in point-slope form, $y = 11(x-1) + 1$. In slope-intercept form we have $y = 11x-10$.
 	
@@ -111,29 +113,29 @@ Let $f(x) = 3x^2+5x-7$. Find:
 									&= 23.
 					\end{align*}
 	
-	\item		The tangent line at $x=3$ has slope $23$ and goes through the point $(3,f(3)) = (3,35)$. Thus the tangent line is $y=23(x-3)+35 = 23x-34$.
+	\item		The tangent line at $x=3$ has slope $23$ and goes through the point $(3,f(3)) = (3,35)$. Thus the tangent line has equation $y=23(x-3)+35 = 23x-34$.
 		\end{enumerate}
 
 \mfigure{.7}{A graph of $f(x) = 3x^2+5x-7$ and its tangent lines at $x=1$ and $x=3$.}{fig:tangent1}{figures/figtangent1}
 
-A graph of $f$ is given in Figure \ref{fig:tangent1} along with its tangent lines at $x=1$ and $x=3$.
+A graph of $f$ is given in Figure \ref{fig:tangent1} along with the tangent lines at $x=1$ and $x=3$.
 }\\
 
-Another important line that can be created using information from the derivative is the \textbf{normal line.} It is perpendicular to the tangent line, hence its slope is the opposite--reciprocal of the tangent line's slope.
+Another important line that can be created using information from the derivative is the \sword{normal line.} It is perpendicular to the tangent line, hence its slope is the opposite--reciprocal of the tangent line's slope.
 
 \definition{def:normal_line}{Normal Line}
-{Let $f$ be continuous on an open interval $I$ and differentiable at $c$, for some $c$ in $I$. The \textbf{normal line} to $f$ at $c$ is the line 
-$$n(x) =\frac{-1}{\fp(c)}(x-c)+f(c),$$ where $\fp(c)\neq 0$. When $\fp(c)=0$, the normal line is the vertical line through $\big(c,f(c)\big)$; that is, $x=c$.
+{Let $f$ be continuous on an open interval $I$ and differentiable at $c$, for some $c$ in $I$. The \textbf{normal line} to the graph of $f$ at $c$ is the line with equation
+$$n(x) =\frac{-1}{\fp(c)}(x-c)+f(c),$$ where $\fp(c)\neq 0$. When $\fp(c)=0$, the normal line is the vertical line through $\big(c,f(c)\big)$; that is, $x=c$.\index{derivative!normal line}\index{normal line}
 }
 
 \example{ex_normal1}{Finding equations of normal lines}{
-Let $f(x) = 3x^2+5x-7$, as in Example \ref{ex_derv_point1}. Find the equations of the normal lines to $f$ at $x=1$ and $x=3$.
+Let $f(x) = 3x^2+5x-7$, as in Example \ref{ex_derv_point1}. Find the equations of the normal lines to the graph of $f$ at $x=1$ and $x=3$.
 }
 {In Example \ref{ex_derv_point1}, we found that $\fp(1)=11$. Hence at $x=1$, the normal line will have slope $-1/11$. An equation for the normal line is $$n(x) = \frac{-1}{11}(x-1)+1.$$
 The normal line is plotted with $y=f(x)$ in Figure \ref{fig:normal1}. Note how the line looks perpendicular to $f$. (A key word here is ``looks.'' Mathematically, we say that the normal line \emph{is} perpendicular to $f$ at $x=1$ as the slope of the normal line is the opposite--reciprocal of the slope of the tangent line. However, normal lines may not always \emph{look} perpendicular. The aspect ratio of the graph plays a big role in this.)
 \mfigure{.8}{A graph of $f(x)=3x^2+5x-7$, along with its normal line at $x=1$.}{fig:normal1}{figures/fignormal1}
 
-We also found that $\fp(3) = 23$, so the normal line to $f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is $$n(x) = \frac{-1}{23}(x-3)+35.$$ 
+We also found that $\fp(3) = 23$, so the normal line to the graph of $f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is $$n(x) = \frac{-1}{23}(x-3)+35.$$ 
 \vskip-\baselineskip
 }\\
 
@@ -156,16 +158,17 @@ We just found that $\fp(1) = 3$. That is, we found the \textit{instantaneous rat
 
 So given a line $f(x) = ax+b$, the derivative at any point $x$ will be $a$; that is, $\fp(x) = a$. 
 
-It is now easy to see that the tangent line to $f$ at $x=1$ is just $f$, with the same being true for $x=7$.
+It is now easy to see that the tangent line to the graph of $f$ at $x=1$ is just $f$, with the same being true for $x=7$.
 }\\
 
-We often desire to find the tangent line to a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.\\
+\enlargethispage{2\baselineskip}
+We often desire to find the tangent line to the graph of a function without knowing the actual derivative of the function. In these cases, the best we may be able to do is approximate the tangent line. We demonstrate this in the next example.\\
 %\enlargethispage{\baselineskip}
 \mfigure{.55}{$f(x) = \sin x$ graphed with an approximation to its tangent line at $x=0$.}{fig:tangentsinx}{figures/figtangentsinx}
 
-\example{ex_der_num_approx}{Numerical Approximation of the Tangent Line}{quad Give an approximation to the tangent line of $f(x)=\sin x$ at $x=0$.}
+\example{ex_der_num_approx}{Numerical Approximation of the Tangent Line}{Approximate the equation of the tangent line to the graph of $f(x)=\sin x$ at $x=0$.}
 {In order to find the equation of the tangent line, we need a slope and a point. The point is given to us: $(0,\sin 0) = (0,0)$. To compute the slope, we need the derivative. This is where we will make an approximation. Recall that $$\fp(0) \approx \frac{\sin(0+h)- \sin 0}{h}$$ for a small value of $h$. We choose (somewhat arbitrarily) to let $h=0.1$. Thus $$\fp(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.$$
-Thus our approximation to the tangent line is $y = 0.9983(x-0) +0 = 0.9983x$; it is graphed in Figure \ref{fig:tangentsinx}. The graph seems to imply the approximation is rather good.
+Thus our approximation of the equation of the tangent line is $y = 0.9983(x-0) +0 = 0.9983x$; it is graphed in Figure \ref{fig:tangentsinx}. The graph seems to imply the approximation is rather good.
 }\\
 
 Recall from Section \ref{sec:limit_analytically} that $\ds \lim_{x\to 0}\frac{\sin x}x =1$, meaning for values of $x$ near 0, $\sin x \approx x$. Since the slope of the line $y=x$ is 1 at $x=0$, it should seem reasonable that ``the slope of $f(x)=\sin x$'' is near 1 at $x=0$. In fact, since we \textit{approximated} the value of the slope to be $0.9983$, we might guess the \textit{actual value} is 1. We'll come back to this later.\\
@@ -198,9 +201,9 @@ The output is the ``derivative function,'' $\fp(x)$. The $\fp(x)$ function will 
 
 %\setlength{\specialboxlength}{\textwidth-10pt}
 \definition{def:the_derivative}{Derivative Function}
-{Let $f$ be a differentiable function on an open interval $I$. The function $$\fp(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is \textbf{the derivative of $f$}.\\
+{Let $f$ be a differentiable function on an open interval $I$. The function $$\fp(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is \sword{the derivative of $f$}.\index{derivative!as a function}\index{derivative!notation}\\
 
-\textbf{Notation:} 
+\sword{Notation:} 
 
 Let $y = f(x)$. The following notation all represents the derivative:
 $$\fp(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y). $$}

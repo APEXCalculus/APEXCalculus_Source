@@ -1,0 +1,12 @@
+{$f(x) = \tan^{-1}x$;\quad $c=0$
+}
+{The derivative of $\tan^{-1}x$ is $1/(1+x^2)$. Taking successive derivatives using the Quotient Rule, the derivatives of $\tan^{-1}x$ fall into two categories in terms of their evaluation at $x=0$. 
+
+When $n$ is even, $\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}$, where $p(x)$ is a polynomial such that $p(0) = 0$. Hence $f\,^{(n)}(0) = 0$ when $n$ is even.
+
+When $n$ is odd, $\ds f\,^{(n)}(x) = (-1)^{(n-1)/2}\frac{p(x)}{(1+x^2)^n}$, where $p(x)$ is a polynomial such that $p(0) = (n-1)!$. Hence $f\,^{(n)}(0) = (-1)^{(n-1)/2}(n-1)!$ when $n$ is odd. (The unusual power of $(-1)$ is such that every other odd term is negative.)
+ 
+The Taylor series starts $x-\frac13x^3+\frac15x^5+\cdots$; by reindexing to only obtain odd powers of $x$, we get 
+
+the Taylor series is $\ds \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}$.
+}

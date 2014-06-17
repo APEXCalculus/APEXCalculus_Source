@@ -30,9 +30,11 @@ So to evaluate $\iint_Rf(x,y)\ dA$, replace $dA$ with $r\ dr\ d\theta$. Convert 
 
 \keyidea{idea:doublepol}{Evaluating Double Integrals with Polar Coordinates}
 {Let $R$ be a plane region bounded by the polar equations $\alpha\leq\theta\leq\beta$ and  $g_1(\theta)\leq r\leq g_2(\theta)$. Then
+\index{double integral!in polar}
 $$\iint_Rf(x,y)\ dA = \int_\alpha^\beta\int_{g_1(\theta)}^{g_2(\theta)} f\big(r\cos\theta,r\sin\theta\big)\ r\ dr\ d\theta.$$
 }
 
+\enlargethispage{2\baselineskip}
 Examples will help us understand this Key Idea.\\
 
 \example{ex_doublepol1}{Evaluating a double integral with polar coordinates}{
@@ -96,7 +98,7 @@ While this example was not trivial, the double integral would have been \textit{
 \example{ex_doublepol5}{Evaluating a double integral with polar coordinates}{
 Find the volume under the surface $\ds f(x,y) =\frac1{x^2+y^2+1}$ over the  sector of the circle with radius $a$ centered at the origin in the first quadrant, as shown in Figure \ref{fig:doublepol5}.
 }
-{\mfigure[scale=1.2,trim=1mm 0mm 0mm 0mm,clip]{.5}{The surface and region $R$ used in Example \ref{ex_doublepol5}.}{fig:doublepol5}{figures/figdoublepol5}
+{\mfigure[scale=1.2,trim=1mm 0mm 0mm 0mm,clip]{.6}{The surface and region $R$ used in Example \ref{ex_doublepol5}.}{fig:doublepol5}{figures/figdoublepol5}
 The region $R$ we are integrating over is a circle with radius $a$, restricted to the first quadrant. Thus, in polar, the bounds on $R$ are $0\leq r\leq a$, $0\leq\theta\leq\pi/2$. The integrand is rewritten in polar as 
 $$\frac{1}{x^2+y^2+1} \Rightarrow \frac{1}{r^2\cos^2\theta+r^2\sin^2\theta+1} = \frac1{r^2+1}.$$
 We find the volume as follows:
@@ -108,7 +110,7 @@ We find the volume as follows:
 		&= \frac{\pi}{4}\ln(a^2+1).
 \end{align*}
 Figure \ref{fig:doublepol5} clearly shows that $f$ shrinks to near 0 very quickly. Regardless, as $a$ grows, so does the volume, without bound. 
-\mnote{.7}{\textbf{Note:} Previous work has shown that there is finite \textit{area} under $\frac{1}{x^2+1}$ over the entire $x$-axis. However, Example \ref{ex_doublepol5} shows that there is infinite \textit{volume} under $\frac{1}{x^2+y^2+1}$ over the entire $x$-$y$ plane.}
+\mnote{.35}{\textbf{Note:} Previous work has shown that there is finite \textit{area} under $\frac{1}{x^2+1}$ over the entire $x$-axis. However, Example \ref{ex_doublepol5} shows that there is infinite \textit{volume} under $\frac{1}{x^2+y^2+1}$ over the entire $x$-$y$ plane.}
 }\\
 
 \example{ex_doublepol3}{Finding the volume of a sphere}{
@@ -133,7 +135,7 @@ Generally, the formula for the volume of a sphere with radius $r$ is given as $4
 
 \example{ex_doublepol4}{Finding the volume of a solid}{
 A sculptor wants to make a solid bronze cast of the solid shown in Figure \ref{fig:doublepol4}, where the base of the solid has boundary, in polar coordinates, $r=\cos(3\theta)$, and the top is defined by the plane $z=1-x+0.1y$. Find the volume of the solid.
-\mtable{.5}{Finding the volume of the solid shown here from two perspectives.}{fig:doublepol4}{%
+\mtable{.4}{Finding the volume of the solid shown here from two perspectives.}{fig:doublepol4}{%
 \begin{tabular}{c}
 \myincludegraphics[scale=1.25,trim=2mm 10mm 2mm 0mm,clip]{figures/figdoublepol4}\\
 (a)\\

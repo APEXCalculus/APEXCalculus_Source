@@ -2,10 +2,10 @@
 
 In Section \ref{sec:interp_deriv} we explored the meaning and use of the derivative. This section starts by revisiting some of those ideas.
 
-Recall that the derivative of a function $f$ can be used to find the slopes of lines tangent to $f$. At $x=c$, the tangent line to $f$ is $$y = \fp(c)(x-c)+f(c).$$
-The tangent line can be used to find good approximations of $f(x)$ for some $x$ values near $c$. 
+Recall that the derivative of a function $f$ can be used to find the slopes of lines tangent to the graph of $f$. At $x=c$, the tangent line to the graph of $f$ has equation $$y = \fp(c)(x-c)+f(c).$$
+The tangent line can be used to find good approximations of $f(x)$ for values of $x$ near $c$. 
 
-For instance, we can approximate $\sin 1.1$ using the tangent line to $f(x)=\sin x$ at $x=\pi/3 \approx 1.05.$ Recall that $\sin (\pi/3) = \sqrt{3}/2 \approx 0.866$, and $\cos (\pi/3) = 1/2$. Thus the tangent line to $f(x) = \sin x$ at $x=\pi/3$ is: $$ y = \frac12(x-\pi/3)+0.866.$$
+For instance, we can approximate $\sin 1.1$ using the tangent line to the graph of $f(x)=\sin x$ at $x=\pi/3 \approx 1.05.$ Recall that $\sin (\pi/3) = \sqrt{3}/2 \approx 0.866$, and $\cos (\pi/3) = 1/2$. Thus the tangent line to $f(x) = \sin x$ at $x=\pi/3$ is: $$ \ell(x) = \frac12(x-\pi/3)+0.866.$$
 
 
 
@@ -34,18 +34,18 @@ In Figure \ref{fig:diffal1}(a), we see a graph of $f(x) = \sin x$ graphed along 
 
 Using this line to approximate $\sin 1.1$, we have:
 \begin{align*}
-	y(1.1) &= \frac12(1.1-\pi/3)+0.866 \\
+	\ell(1.1) &= \frac12(1.1-\pi/3)+0.866 \\
 					&= \frac12(0.053)+0.866 = 0.8925.
 \end{align*}
 (We leave it to the reader to see how good of an approximation this is.)\\
 
-We now generalize this concept. Given $f(x)$ and an $x$--value $c$,  the tangent line is $y = \fp(c)(x-c)+f(c)$. Clearly, $f(c) = y(c)$. Let $\dx$ be a small number, representing a small change in $x$ value. We assert that:
-$$f(c+\dx) \approx y(c+\dx),$$ since the tangent line to a function approximates well the values of that function near $x=c$. 
+We now generalize this concept. Given $f(x)$ and an $x$--value $c$,  the tangent line is $\ell(x) = \fp(c)(x-c)+f(c)$. Clearly, $f(c) = \ell(c)$. Let $\dx$ be a small number, representing a small change in $x$ value. We assert that:
+$$f(c+\dx) \approx \ell(c+\dx),$$ since the tangent line to a function approximates well the values of that function near $x=c$. 
 
 As the $x$ value changes from $c$ to $c+\dx$, the $y$ value of $f$ changes from $f(c)$ to $f(c+\dx)$. We call this change of $y$ value \dy. That is:
 $$\dy = f(c+\dx)-f(c).$$
 Replacing $f(c+\dx)$ with its tangent line approximation, we have 
-\begin{align} \dy &\approx y(c+\dx) - f(c) \notag\\
+\begin{align} \dy &\approx \ell(c+\dx) - f(c) \notag\\
 								&= \fp(c)\big((c+\dx)-c\big)+f(c) - f(c)\notag \\
 								&=\fp(c)\dx		\label{eq:differential}
 \end{align}
@@ -55,19 +55,19 @@ This final equation is important; we'll come back to it in a moment.
 We introduce two new variables, $dx$ and $dy$ in the context of a formal definition. %We defined $dx = \dx$; that is, it is a small change in $x$. We define
 
 \definition{def:differential}{Differentials of $x$ and $y$.}
-{Let $y=f(x)$ be differentiable. The \textbf{differential of $x$}, denoted $dx$, is any nonzero real number (usually taken to be a small number). The \textbf{differential of $y$}, denoted $dy$, is $$dy = \fp(x)dx.$$
+{Let $y=f(x)$ be differentiable. The \textbf{differential of $x$}, denoted $dx$, is any nonzero real number (usually taken to be a small number).\index{differential}\index{derivative!differential} The \textbf{differential of $y$}, denoted $dy$, is $$dy = \fp(x)dx.$$
 }
 
 It is helpful to organize our new concepts and notations in one place.
 
 \keyidea{idea:differential}{Differential Notation}
-{Let $y = f(x)$ be a differentiable function. Then:
-\begin{itemize}
+{Let $y = f(x)$ be a differentiable function. \index{differential!notation}
+\begin{enumerate}
 	\item $\dx$ represents a small, nonzero change in $x$ value.
 	\item	$dx$ represents a small, nonzero change in $x$ value (i.e., $\dx = dx$).
 	\item	$\dy$ is the change in $y$ value as $x$ changes by $\dx$; hence $$\dy = f(x+\dx)-f(x).$$
-	\item		$dy = \fp(x)dx$ which, by Equation (\ref{eq:differential}), is an \textit{approximate} change in $y$ value as $x$ changes by $\dx$; $dy \approx \dy$.
-\end{itemize}
+	\item		$dy = \fp(x)dx$ which, by Equation (\ref{eq:differential}), is an \textit{approximation} of the change in $y$ value as $x$ changes by $\dx$; $dy \approx \dy$.
+\end{enumerate}
 }
 
 What is the value of differentials? Like many mathematical concepts, differentials provide both practical and theoretical benefits. We explore both here.\\
@@ -91,7 +91,7 @@ So why bother?
 
 In ``most'' real life situations, we do not know the function that describes a particular behavior. Instead, we can only take measurements of how things change -- measurements of the derivative.
 
-Imagine water flowing down a winding channel. It is easy to measure the speed and direction (i.e., the \textit{velocity}) of water at any location. It is very hard to create a function that describes the overall flow, hence it is hard to predict where a floating object placed at the beginning of the channel will end up. However, we can \textit{approximate} the path of an object using differentials. Over small intervals, the path taken by a floating object is essentially linear. Differentials allow us to approximate the true path by piecing together lots of short, linear paths. This technique is called Euler's Method, studied in most introductory Differential Equations courses.
+Imagine water flowing down a winding channel. It is easy to measure the speed and direction (i.e., the \textit{velocity}) of water at any location. It is very hard to create a function that describes the overall flow, hence it is hard to predict where a floating object placed at the beginning of the channel will end up. However, we can \textit{approximate} the path of an object using differentials. Over small intervals, the path taken by a floating object is essentially linear. Differentials allow us to approximate the true path by piecing together lots of short, linear paths. This technique is called Euler's Method, studied in introductory Differential Equations courses.
 
 We use differentials once more to approximate the value of a function. Even though calculators are very accessible, it is neat to see how these techniques can sometimes be used to easily compute something that looks rather hard.\\
 
@@ -103,7 +103,7 @@ Approximate $\sqrt{4.5}$.}
 
 We approximate the difference between $f(4.5)$ and $f(4)$ using differentials, with $dx = 0.5$:
 $$f(4.5)-f(4) = \dy \approx dy = \fp(4)\cdot dx = 1/4 \cdot 1/2 = 1/8 = 0.125.$$
-So we approximate $\sqrt{4.5} \approx 2.125.$
+The approximate change in $f$ from $x=4$ to $x=4.5$ is $0.125$, so we approximate $\sqrt{4.5} \approx 2.125.$
 }\\
 
 Differentials are important when we discuss \textit{integration}. When we study that topic, we will use notation such as $$\int f(x)\ dx$$ quite often. While we don't discuss here what all of that notation means, note the existence of the differential $dx$. Proper handling of \textit{integrals} comes with proper handling of differentials. 
@@ -157,7 +157,7 @@ or $\pm 1.5$\%.
 
 \enlargethispage{\baselineskip}
 
-We leave it to the reader to confirm this, but the diameter of the ball was supposed to be 10cm, the same manufacturing tolerance would give a propagated error in mass of $\pm12.33$g, which corresponds to a \textit{percent error} of $\pm0.188$\%. While the amount of error is much greater ($12.33 > 0.493$), the percent error is much lower.
+We leave it to the reader to confirm this, but if the diameter of the ball was supposed to be 10cm, the same manufacturing tolerance would give a propagated error in mass of $\pm12.33$g, which corresponds to a \textit{percent error} of $\pm0.188$\%. While the amount of error is much greater ($12.33 > 0.493$), the percent error is much lower.
 }\\
 
 We first learned of the derivative in the context of instantaneous rates of change and slopes of tangent lines. We furthered our understanding of the power of the derivative by studying how it relates to the graph of a function (leading to ideas of increasing/decreasing and concavity). This chapter has put the derivative to yet more uses:
@@ -170,17 +170,17 @@ We first learned of the derivative in the context of instantaneous rates of chan
 
 In the next chapters, we will consider the ``reverse'' problem to computing the derivative: given a function $f$, can we find a function whose derivative is $f$? Be able to do so opens up an incredible world of mathematics and applications.
 
-\refstepcounter{definitioncounter}
-\label{lastdefcount1}
-\refstepcounter{theoremcounter}
-\label{lastthmcount1}
-\refstepcounter{keyideacounter}
-\label{lastideacount1}
-\addtocounter{definitioncounter}{-1}
-\addtocounter{theoremcounter}{-1}
-\addtocounter{keyideacounter}{-1}
-\refstepcounter{examplecounter}
-\label{lastexamplecount1}
-\addtocounter{examplecounter}{-1}
+%\refstepcounter{definitioncounter}
+%\label{lastdefcount1}
+%\refstepcounter{theoremcounter}
+%\label{lastthmcount1}
+%\refstepcounter{keyideacounter}
+%\label{lastideacount1}
+%\addtocounter{definitioncounter}{-1}
+%\addtocounter{theoremcounter}{-1}
+%\addtocounter{keyideacounter}{-1}
+%\refstepcounter{examplecounter}
+%\label{lastexamplecount1}
+%\addtocounter{examplecounter}{-1}
 
 \printexercises{exercises/04_04_exercises}

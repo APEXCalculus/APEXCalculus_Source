@@ -4,12 +4,13 @@ In Section \ref{sec:power_series}, we showed how certain functions can be repres
 
 \definition{def:taylor_series}{Taylor and Maclaurin Series}
 {Let $f(x)$ have derivatives of all orders at $x=c$.
-\begin{itemize}
+\index{Taylor Series!definition}\index{Maclaurin Series!definition}\index{Maclaurin Series|see{Taylor Series}}\index{series!Taylor}\index{series!Maclaurin}
+\begin{enumerate}
 	\item The \sword{Taylor Series of $f(x)$, centered at $c$} is
 	$$\sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n.$$
 	\item	Setting $c=0$ gives the \sword{Maclaurin Series of $f(x)$}:
 	$$\sum_{n=0}^\infty \frac{f\,^{(n)}(0)}{n!}x^n.$$
-\end{itemize}
+\end{enumerate}
 }
 
 The difference between a Taylor polynomial and a Taylor series is the former is a polynomial, containing only a finite number of terms, whereas the latter is a series, a summation of an infinite set of terms. When creating the Taylor polynomial of degree $n$ for a function $f(x)$ at $x=c$, we needed to evaluate $f$, and the first $n$ derivatives of $f$, at $x=c$. When creating the Taylor series of $f$, it helps to find a pattern that describes the $n^\text{th}$ derivative of $f$ at $x=c$. We demonstrate this in the next two examples.\\
@@ -41,7 +42,7 @@ $$\sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}.$$
 \example{ex_ts2}{The Taylor series of $f(x)=\ln x$ at $x=1$}
 {Find the Taylor series of $f(x) = \ln x$ centered at $x=1$.}
 {Figure \ref{fig:ts2} shows the $n^\text{th}$ derivative of $\ln x$ evaluated at $x=1$ for $n=0,\ldots,5$, along with an expression for the $n^\text{th}$ term: $$f\,^{(n)}(1) = (-1)^{n+1}(n-1)!\quad \text{for $n\geq 1$.}$$ Remember that this is what distinguishes Taylor series from Taylor polynomials; we are very interested in finding a pattern for the $n^\text{th}$ term, not just finding a finite set of coefficients for a polynomial.
-\mtable{.7}{Derivatives of $\ln x$ evaluated at $x=1$.}{fig:ts2}{%
+\mtable{.65}{Derivatives of $\ln x$ evaluated at $x=1$.}{fig:ts2}{%
 \begin{tabular}{lll}
 $f(x) = \ln x $&$\Rightarrow $&$f(1) = 0$\\
 $\fp(x) = 1/x $&$\Rightarrow $&$\fp(1) = 1$\\
@@ -69,6 +70,7 @@ If $R_n(x)$ goes to 0 for each $x$ in an interval $I$ as $n$ approaches infinity
 \theorem{thm:function_series_equality}{Function and Taylor Series Equality}
 {Let $f(x)$ have derivatives of all orders at $x=c$, let $R_n(x)$ be as stated in Theorem \ref{thm:taylorthm}, and let $I$ be an interval on which the Taylor series of $f(x)$ converges. 
 If $\ds\lim_{n\to\infty} R_n(x) = 0$ for all $x$ in $I$ containing $c$, then 
+\index{Taylor Series!equality with generating function}
 $$f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\quad \text{on $I$.}$$
 }
 
@@ -88,9 +90,9 @@ $$\cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}\quad \text{for all $x$
 
 It is natural to assume that a function is  equal to its Taylor series on the series' interval of convergence, but this is not the case. In order to properly establish equality, one must use Theorem \ref{thm:function_series_equality}. This is a bit disappointing, as we developed beautiful techniques for determining the interval of convergence of a power series, and proving that $R_n(x)\to 0$ can be cumbersome as it deals with high order derivatives of the function.
 
-There is good news. A function $f(x)$ that is equal to its Taylor series, centered at any point the domain of $f(x)$, is said to be an \sword{analytic function}, and most, if not all, functions that we encounter within this course are analytic functions. Generally speaking, any function that one creates with elementary functions (polynomials, exponentials, trigonometric functions, etc.) that is not piecewise defined is probably analytic. For most functions, we assume the function is equal to its Taylor series on the series' interval of convergence and only use Theorem \ref{thm:function_series_equality} when we suspect something may not work as expected.
+There is good news. A function $f(x)$ that is equal to its Taylor series, centered at any point the domain of $f(x)$, is said to be an \sword{analytic function},\index{analytic function} and most, if not all, functions that we encounter within this course are analytic functions. Generally speaking, any function that one creates with elementary functions (polynomials, exponentials, trigonometric functions, etc.) that is not piecewise defined is probably analytic. For most functions, we assume the function is equal to its Taylor series on the series' interval of convergence and only use Theorem \ref{thm:function_series_equality} when we suspect something may not work as expected.
 
-We develop the Taylor series for one more important function, then give a table of the Taylor series for a number of common functions.\\
+We develop the Taylor series for one more important function, then give a table of the Taylor series for a number of common functions.\index{Binomial Series}\index{series!Binomial}\\
 
 \example{ex_ts4}{The Binomial Series}
 {Find the Maclaurin series of $f(x) = (1+x)^k$, $k\neq 0$.
@@ -103,7 +105,8 @@ When $k=1/2$, we have $f(x) = \sqrt{1+x}$. Knowing a series representation of th
 
 To develop the Maclaurin series for $f(x) = (1+x)^k$ for any value of $k\neq0$, we consider the derivatives of $f$ evaluated at $x=0$:
 
-\noindent\begin{minipage}{1.3\linewidth}
+\noindent\hskip-30pt\begin{minipage}{1.3\linewidth}
+\small
 \begin{align*}
 f(x) &= (1+x)^k & f(0) &= 1\\
 \fp(x) &= k(1+x)^{k-1} & \fp(0) &=k\\
@@ -121,21 +124,24 @@ It is important to determine the interval of convergence of this series. With
 $$a_n = \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n,$$
 we apply the Ratio Test:
 \begin{align*}
-\lim_{n\to\infty}\frac{|a_{n+1}|}{|a_n|}&=\lim_{n\to\infty} \left|\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}\right|\Big/\left|\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n\right|\\
+\lim_{n\to\infty}\frac{|a_{n+1}|}{|a_n|}&=\lim_{n\to\infty} \left|\frac{k(k-1)\cdots(k-n)}{(n+1)!}x^{n+1}\right|\Bigg/\left|\frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n\right|\\
 		&=\lim_{n\to\infty} \left|\frac{k-n}{n}x\right|\\
 		&= |x|.
 \end{align*}
 
-The series converges absolutely when the limit of the Ratio Test is less than 1; therefore, we have absolute convergence when $|x|<1$. When $x=1$, we can apply the Alternating Series Test and find the series converges. When $x=-1$, it can be shown (with some difficulty) that the series also converges. Therefore the interval of convergence is $[-1,1]$. We can apply Theorem \ref{thm:function_series_equality} to prove equality between $f(x)$ and the series (or apply the discussion following the theorem). 
+The series converges absolutely when the limit of the Ratio Test is less than 1; therefore, we have absolute convergence when $|x|<1$. 
+
+While outside the scope of this text, the interval of convergence depends on the value of $k$. When $k>0$, the interval of convergence is $[-1,1]$. When $-1<k<0$, the interval of convergence is $[-1,1)$. If $k\leq -1$, the interval of convergence is $(-1,1)$.
+%When $x=1$, we can apply the Alternating Series Test and find the series converges. When $x=-1$, it can be shown (with some difficulty) that the series also converges. Therefore the interval of convergence is $[-1,1]$. We can apply Theorem \ref{thm:function_series_equality} to prove equality between $f(x)$ and the series (or apply the discussion following the theorem). 
 }\\
 
 We learned that Taylor polynomials offer a way of approximating a ``difficult to compute'' function with a polynomial. Taylor series offer a way of exactly representing a function with a series. One probably can see the use of a good approximation; is there any use of representing a function exactly as a series? 
 
 While we should not overlook the mathematical beauty of Taylor series (which is reason enough to study them), there are practical uses as well. They provide a valuable tool for solving a variety of problems, including problems relating to integration and differential equations. 
 
-On the next page we give  a table of the Taylor series of a number of common functions. We then give a theorem about the ``algebra of power series,'' that is, how we can combine power series to create power series of new functions. This allows us to find the Taylor series of functions like $f(x) = e^x\cos x$ by knowing the Taylor series of $e^x$ and $\cos x$.
+In Key Idea \ref{idea:common_taylor} (on the following page) we give  a table of the Taylor series of a number of common functions. We then give a theorem about the ``algebra of power series,'' that is, how we can combine power series to create power series of new functions. This allows us to find the Taylor series of functions like $f(x) = e^x\cos x$ by knowing the Taylor series of $e^x$ and $\cos x$.
 
-Before we investigate combining functions, consider the Taylor series for the arctangent function. Knowing that $\tan^{-1}(1) = \pi/4$, we can use this series to approximate the value of $\pi$:
+Before we investigate combining functions, consider the Taylor series for the arctangent function (see Key Idea \ref{idea:common_taylor}). Knowing that $\tan^{-1}(1) = \pi/4$, we can use this series to approximate the value of $\pi$:
 
 \begin{align*}
 \frac{\pi}4 &= \tan^{-1}(1) = 1-\frac13+\frac15-\frac17+\frac19-\cdots\\
@@ -145,9 +151,9 @@ Before we investigate combining functions, consider the Taylor series for the ar
 Unfortunately, this particular expansion of $\pi$ converges very slowly. The first 
 100 terms approximate $\pi$ as $3.13159$, which is not particularly good.
 \clearpage
-
+\enlargethispage{4\baselineskip}
 \setboxwidth{110pt}
-%\noindent\hskip-65pt
+\noindent\hskip-110pt\begin{minipage}{1.3\linewidth}
 \keyidea{idea:common_taylor}{Important Taylor Series Expansions}
 {%\vskip10pt%
 \noindent\begin{tabular}{llc}
@@ -157,16 +163,17 @@ Unfortunately, this particular expansion of $\pi$ converges very slowly. The fir
 \rule{0pt}{25pt}$\ds \cos x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$ & $\ds 1-\frac{x^2}{2!}+\frac{x^4}{4!} - \frac{x^6}{6!} +\cdots$ & $(-\infty,\infty)$\\
 \rule{0pt}{25pt}$\ds \ln x = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n}$ & $\ds (x-1)- \frac{(x-1)^2}{2} +\frac{(x-1)^3}{3}-\cdots$& $(0,2]$\\
 \rule{0pt}{25pt}$\ds \frac{1}{1-x} = \sum_{n=0}^\infty x^n$ &$\ds 1+x+x^2+x^3+\cdots$& $(-1,1)$\\
-\rule{0pt}{25pt}\small$\ds (1+x)^k=\sum_{n=0}^\infty \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n$ \normalsize& $\ds 1+k+\frac{k(k-1)}{2!} + \cdots$ & $(-1,1)$\footnote{Convergence at $x=\pm1$ depends on the value of $k$.}\\
+\rule{0pt}{25pt}\small$\ds (1+x)^k=\sum_{n=0}^\infty \frac{k(k-1)\cdots\big(k-(n-1)\big)}{n!}x^n$ \normalsize& $\ds 1+kx+\frac{k(k-1)}{2!}x^2 + \cdots$ & $(-1,1)$\footnote{Convergence at $x=\pm1$ depends on the value of $k$.}\\
 \rule{0pt}{25pt}$\ds \tan^{-1}x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}$ & $\ds x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots$ & $[-1,1]$
-\end{tabular}
+\end{tabular}\index{Taylor Series!common series}
 }
-%\restoreboxwidth
-\vskip -.5\baselineskip
-\enlargethispage{4\baselineskip}
+
+\vskip -1.5\baselineskip
+
 \theorem{thm:series_alg}{Algebra of Power Series}
-{Let $\ds f(x) = \sum_{n=0}^\infty a_nx^n$ and $\ds g(x) = \sum_{n=0}^\infty b_nx^n$ converge absolutely for $|x|<R$, and let $h(x)$ be continuous. 
-\begin{itemize}
+{Let $\ds f(x) = \sum_{n=0}^\infty a_nx^n$ and $\ds g(x) = \sum_{n=0}^\infty b_nx^n$ converge absolutely for $|x|<R$, and let $h(x)$ be continuous.
+\index{power series!algebra of} 
+\begin{enumerate}
 	\item $\ds f(x)\pm g(x) = \sum_{n=0}^\infty (a_n\pm b_n)x^n$ \quad for $|x|<R$.
 	\item	$\ds 	f(x)g(x) = \left(\sum_{n=0}^\infty a_nx^n\right)\left(\sum_{n=0}^\infty b_nx^n\right) = \sum_{n=0}^\infty\big(a_0b_n+a_1b_{n-1}+\ldots a_nb_0\big)x^n
 		$ for $|x|<R$.
@@ -177,8 +184,10 @@ Unfortunately, this particular expansion of $\pi$ converges very slowly. The fir
 	
 	\item		$\ds f\big(h(x)\big) = \sum_{n=0}^\infty a_n\big(h(x)\big)^n$ \quad for $|h(x)|<R$.
 
-\end{itemize}
+\end{enumerate}
 }
+\end{minipage}
+\restoreboxwidth
 
 \example{ex_ts5}{Combining Taylor series}
 {Write out the first 3 terms of the Taylor Series for $f(x) = e^x\cos x$ using Key Idea \ref{idea:common_taylor} and Theorem \ref{thm:series_alg}.
@@ -205,7 +214,7 @@ Because the series for $e^x$ and $\cos x$ both converge on $(-\infty,\infty)$, s
 {Given that 
 $$\sin x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x-\frac{x^3}{3!}+\frac{x^5}{5!} -\frac{x^7}{7!}+\cdots,$$
 we simply substitute $x^2$ for $x$ in the series, giving
-$$\sin (x^2) = \sum_{n=0}^\infty (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!} = x^2-\frac{x^6}{3!}+\frac{x^10}{5!} -\frac{x^{14}}{7!}\cdots.$$
+$$\sin (x^2) = \sum_{n=0}^\infty (-1)^n\frac{(x^2)^{2n+1}}{(2n+1)!} = x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!} -\frac{x^{14}}{7!}\cdots.$$
 Since the Taylor series for $\sin x$ has an infinite radius of convergence, so does the Taylor series for $\sin(x^2)$.\\
 
 The Taylor expansion for $\ln x$ given in Key Idea \ref{idea:common_taylor} is centered at $x=1$, so we will center the series for $\ln (\sqrt{x})$ at $x=1$ as well.
@@ -234,8 +243,37 @@ $$\int e^{-x^2}\ dx = C + x - \frac{x^3}{3}+\frac{x^5}{5\cdot2!}-\frac{x^7}{7\cd
 This \emph{is} the antiderivative of $e^{-x^2}$; while we can write it out as a series, we cannot write it out in terms of elementary functions. We can evaluate the definite integral $\ds \int_0^1e^{-x^2}\ dx$ using this antiderivative; substituting 1 and 0 for $x$ and subtracting gives
 $$\int_0^1e^{-x^2}\ dx = 1-\frac{1}{3}+\frac{1}{5\cdot 2!}-\frac{1}{7\cdot3!} + \frac{1}{9\cdot4!}\cdots.$$
 Summing the 5 terms shown above give the approximation of $0.74749.$ Since this is an alternating series, we can use the Alternating Series Approximation Theorem, (Theorem \ref{thm:alt_series_approx}), to determine how accurate this approximation is. The next term of the series is $ 1/(11\cdot5!) \approx 0.00075758$. Thus we know our approximation is within $0.00075758$ of the actual value of the integral. This is arguably much less work than using Simpson's Rule to approximate the value of the integral.
-}
+}\\
 
+\example{ex_ts8}{Using Taylor series to solve differential equations}
+{Solve the differential equation $y'=2y$ in terms of a power series, and use the theory of Taylor series to recognize the solution in terms of an elementary function.
+}
+{We found the first 5 terms of the power series solution to this differential equation in Example \ref{ex_ps5} in Section \ref{sec:power_series}. These are:
+$$a_0=1,\quad a_1 = 2,\quad a_2 = \frac42=2,\quad a_3=\frac{8}{2\cdot3}=\frac43,\quad a_4=\frac{16}{2\cdot3\cdot4} = \frac23.$$
+We include the ``unsimplified'' expressions for the coefficients found in Example \ref{ex_ps5} as we are looking for a pattern. It can be shown that $a_n = 2^n/n!$. Thus the solution, written as a power series, is
+$$y = \sum_{n=0}^\infty \frac{2^n}{n!}x^n = \sum_{n=0}^\infty \frac{(2x)^n}{n!}.$$
+Using Key Idea \ref{idea:common_taylor} and Theorem \ref{thm:series_alg}, we recognize $f(x) = e^{2x}$:
+$$e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \qquad \Rightarrow \qquad e^{2x} = \sum_{n=0}^\infty \frac{(2x)^n}{n!}.$$
+}\\
+\clearpage
+
+Finding a pattern in the coefficients that match the series expansion of a known function, such as those shown in Key Idea \ref{idea:common_taylor}, can be difficult. What if the coefficients in the previous example were given in their reduced form; how could we still recover the function $y=e^{2x}$?
+
+Suppose that all we know is that 
+$$a_0=1,\quad a_1=2,\quad a_2=2,\quad a_3=\frac43,\quad a_4=\frac23.$$
+Definition \ref{def:taylor_series} states that each term of the Taylor expansion of a function includes an $n!$. This allows us to say that
+$$a_2=2=\frac{b_2}{2!},\quad a_3 = \frac43=\frac{b_3}{3!},\quad \text{and}\quad a_4 = \frac23=\frac{b_4}{4!}$$
+for some values $b_2$, $b_3$ and $b_4$.
+Solving for these values, we see that $b_2=4$, $b_3 = 8$ and $b_4=16$. That is, we are recovering the pattern we had previously seen, allowing us to write 
+\begin{align*}
+f(x) = \sum_{n=0}^\infty a_nx^n &= \sum_{n=0}^\infty \frac{b_n}{n!}x^n \\
+			&= 1+2x+ \frac{4}{2!}x^2 + \frac{8}{3!}x^3+\frac{16}{4!}x^4 + \cdots
+\end{align*}
+From here it is easier to recognize that the series is describing an exponential function.
+
+There are simpler, more direct ways of solving the differential equation $y' = 2y$. We applied power series techniques to this equation to demonstrate its utility, and went on to show how \emph{sometimes} we are able to recover the solution in terms of elementary functions using the theory of Taylor series. Most differential equations faced in real scientific and engineering situations are much more complicated than this one, but power series can offer a valuable tool in finding, or at least approximating, the solution.
+
+\printexercises{exercises/08_08_exercises}
 
 
 

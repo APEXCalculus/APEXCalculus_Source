@@ -6,6 +6,7 @@ Any flat surface, such as a wall, table top or stiff piece of cardboard can be t
 This nail provides a ``handle'' for the cardboard. Moving the cardboard around moves $P$ to different locations in space. Tilting the nail (but keeping $P$ fixed) tilts the cardboard. Both moving and tilting the cardboard defines a different plane in space. In fact, we can define a plane by: 1) the location of $P$ in space, and 2) the direction of the nail.
 
 The previous section showed that one can define a line given a point on the line and the direction of the line (usually given by a vector). One can make a similar statement about planes: we can define a plane in space given a point on the plane and the direction the plane ``faces'' (using the description above, the direction of the nail). Once again, the direction information will be supplied by a vector, called a \textbf{normal vector}, that is orthogonal to the plane.
+\index{vectors!normal vector}\index{normal vector}\index{planes!normal vector}
 
 What exactly does ``orthogonal to the plane'' mean? Choose any two points $P$ and $Q$ in the plane, and consider the vector $\vv{PQ}$. We say a vector $\vec n$ is orthogonal to the plane if $\vec n$ is perpendicular to $\vv{PQ}$ for all choices of $P$ and $Q$; that is, if $\vec n\cdot \vv{PQ}=0$ for all $P$ and $Q$.
 
@@ -27,10 +28,11 @@ z &= \frac1c(d-ax-by).\label{eq:planes3}
 \definition{def:planes}{Equations of a Plane in Standard and General Forms}
 {The plane passing through the point $P=(x_0,y_0,z_0)$ with normal vector $\vec n=\la a,b,c\ra$ can be described by an equation with \textbf{standard form} $$a(x-x_0)+b(y-y_0)+c(z-z_0) =0;$$
 the equation's \textbf{general form} is 
+\index{planes!equations of}
 $$ax+by+cz = d.$$
 }
 
-A key to remember throughout this section is this: to find the equation of a plane, we need a point and a normal vector. We will give several examples of finding the equation of a plane, and in each one different types of information is given. In each case, we need to use the given information to find a point on the plane and a normal vector.\\
+A key to remember throughout this section is this: to find the equation of a plane, we need a point and a normal vector. We will give several examples of finding the equation of a plane, and in each one different types of information are given. In each case, we need to use the given information to find a point on the plane and a normal vector.\\
 
 \example{ex_planes1}{Finding the equation of a plane.}{
 Write the equation of the plane that passes through the points $P=(1,1,0)$, $Q = (1,2,-1)$ and $R = (0,1,2)$ in standard form.}
@@ -97,7 +99,7 @@ y &= \frac12(3x-1)
 \end{align*}
 We can choose any value for $x$; we choose $x=1$. This determines that $y=1$. We can now use the equations of either plane to find $z$: when $x=1$ and $y=1$, $z=-1$ on both planes. We have found a point $P$  on the line: $P= (1,1,-1)$. 
 
-We now need the direction of the line. Since the line lies in each plane, its direction is orthogonal to a normal vector for each plane. Considering the equations for $p_1$ and $p_2$, we can quickly determine a normal vector: for $p_1$: $\vec n_1 = \la 1,-1,1\ra$ and for $p_2$: $\vec n_2 = \la -2,1,1\ra.$ A direction orthogonal to both of these directions is their cross product: $\vec d = \vec n_1\times \vec n_2 = \la -2,-3,-1\ra.$
+We now need the direction of the line. Since the line lies in each plane, its direction is orthogonal to a normal vector for each plane. Considering the equations for $p_1$ and $p_2$, we can quickly determine a normal vector. For $p_1$, $\vec n_1 = \la 1,-1,1\ra$ and for $p_2$, $\vec n_2 = \la -2,1,1\ra.$ A direction orthogonal to both of these directions is their cross product: $\vec d = \vec n_1\times \vec n_2 = \la -2,-3,-1\ra.$
 
 The parametric equations of the line through $P=(1,1,-1)$ in the direction of $d=\la -2,-3,-1\ra$ is:
 $$\ell: \quad x= -2t+1\quad y = -3t+1\quad z=-t-1.$$
@@ -119,7 +121,7 @@ Replacing $x$, $y$ and $z$ in the equation of the plane with the expressions con
 t&=2.
 \end{align*}
 When $t=2$, the point on the line satisfies the equation of the plane; that point is $\ell(2) = \la 1,1,1\ra$. Thus the point $(1,1,1)$ is the point of intersection between the plane and the line, illustrated in Figure \ref{fig:planes5}.
-\mfigure[scale=1.25,trim=2mm 0mm 2mm 0mm,clip]{.5}{Illustrating the intersection of a line and a plane in Example \ref{ex_planes5}.}{fig:planes5}{figures/figplanes5}
+\mfigure[scale=1.25,trim=2mm 0mm 2mm 0mm,clip]{.7}{Illustrating the intersection of a line and a plane in Example \ref{ex_planes5}.}{fig:planes5}{figures/figplanes5}
 }\\
 
 \noindent\textbf{\large Distances}\\
@@ -130,12 +132,13 @@ Consider Figure \ref{fig:planes_dist}, where a plane with normal vector $\vec n$
 \begin{equation}\norm{\text{proj}_{\,\vec n}\,{\vv{PQ}}} = \snorm{\frac{\vec n\cdot \vv{PQ}}{\vnorm n^2}\vec n} = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n}\label{eq:plane_dist}
 \end{equation}
 Equation \eqref{eq:plane_dist} is important as it does more than just give the distance between a point and a plane. We will see how it allows us to find several other distances as well: the distance between parallel planes and the distance from a line and a plane. Because Equation \eqref{eq:plane_dist} is important, we restate it as a Key Idea.
-\mfigure[scale=1.25]{.8}{Illustrating finding the distance from a point to a plane.}{fig:planes_dist}{figures/figplanes_dist}
+\mfigure[scale=1.25]{.4}{Illustrating finding the distance from a point to a plane.}{fig:planes_dist}{figures/figplanes_dist}
 
 \keyidea{idea:planes_dist}{Distance from a Point to a Plane}
 {Let a plane with normal vector $\vec n$ be given, and let $Q$ be a point. The distance $h$ from $Q$ to the plane is 
 $$h = \frac{|\vec n\cdot \vv{PQ}|}{\vnorm n},$$
 where $P$ is any point in the plane.
+\index{planes!distance between point and plane}\index{distance!between point and plane}
 }
 
 \example{ex_planes6}{Distance between a point and a plane}{

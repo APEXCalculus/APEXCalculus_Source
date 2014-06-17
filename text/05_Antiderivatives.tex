@@ -16,7 +16,7 @@ Hopefully one was able to come up with at least one solution: $y = x^2$. ``Findi
 %\enlargethispage{3\baselineskip}
 
 \definition{def:antider}{Antiderivatives and Indefinite Integrals}
-{Let a function $f(x)$ be given. An \textbf{antiderivative} of $f(x)$ is a function $F(x)$ such that $\Fp(x) = f(x)$.\\
+{Let a function $f(x)$ be given. An \textbf{antiderivative} of $f(x)$ is a function $F(x)$ such that $\Fp(x) = f(x)$.\index{antiderivative}\index{indefinite integral}\index{integration!indefinite}\\
 
 The set of all antiderivatives of $f(x)$ is the \textbf{indefinite integral of $f$}, denoted by $$\int f(x) \ dx.$$
 }
@@ -31,7 +31,7 @@ Knowing one antiderivative of $f$ allows us to find infinitely more, simply by a
 
 Given a function $f$ and one of its antiderivatives $F$, we know \textit{all} antiderivatives of $f$ have the form $F(x) + C$ for some constant $C$. Using Definition \ref{def:antider}, we can say that $$\int f(x) \ dx = F(x) + C.$$
 
-Let's analyze this indefinite integral notation.
+Let's analyze this indefinite integral notation.\index{integration!notation}
 
 \begin{center}
 \myincludegraphics{figures/figanti1}
@@ -47,7 +47,7 @@ Let's practice using this notation.\\
 
 \example{ex_anti2}{Evaluating indefinite integrals}{
 Evaluate $\displaystyle \int \sin x\ dx.$}
-{We are asked to find a function $F(x)$ such that $\Fp(x) = \sin x$. Some thought will lead us to one solution: $F(x) = -\cos x$, because $\frac{d}{dx}(-\cos x) = \sin x$.
+{We are asked to find all functions $F(x)$ such that $\Fp(x) = \sin x$. Some thought will lead us to one solution: $F(x) = -\cos x$, because $\frac{d}{dx}(-\cos x) = \sin x$.
 
 The indefinite integral of $\sin x$ is thus $-\cos x$, plus a constant of integration. So:
 $$\int \sin x \ dx = -\cos x + C.$$
@@ -58,7 +58,8 @@ A commonly asked question is ``What happened to the $dx$?'' The unenlightened re
 
 This process of \textit{antidifferentiation} is really solving a \textit{differential} question. The integral $$\int \sin x\ dx$$ presents us with a differential, $dy = \sin x\ dx$. It is asking: ``What is $y$?'' We found lots of solutions, all of the form $y = -\cos x+C$.
 
-We can view integration in the following way. Let $dy = \sin x\ dx$ and rewrite 
+%We can view integration in the following way. 
+Letting $dy = \sin x\ dx$,  rewrite 
 $$\int \sin x \ dx \quad \text{as}\quad \int  dy.$$
 This is asking: ``What functions have a differential of the form $dy$?'' The answer is ``Functions of the form $y+C$, where $C$ is a constant.'' What is $y$? We have lots of choices, all differing by a constant; the simplest choice is $y = -\cos x$.
 
@@ -193,10 +194,10 @@ Common Indefinite Integral Rules\rule[-2pt]{0pt}{1pt}
 
 We highlight a few important points from Theorem \ref{thm:indef_alg}:
 \begin{itemize}
-	\item		Rule \#1 states $\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx$. We can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., $\frac{d}{dx}\big(3x^2\big)$ is just as easy to compute as $\frac{d}{dx}\big(x^2\big)$). An example:
+	\item		Rule \#1 states $\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx$. This is the Constant Multiple Rule: \index{Constant Multiple Rule!of integration} we can temporarily ignore constants when finding antiderivatives, just as we did when computing derivatives (i.e., $\frac{d}{dx}\big(3x^2\big)$ is just as easy to compute as $\frac{d}{dx}\big(x^2\big)$). An example:
 	$$\int 5\cos x\ dx = 5\cdot\int \cos x\ dx = 5\cdot (\sin x+C) = 5\sin x + C.$$
 	In the last step we can consider the constant as also being multiplied by 5, but ``5 times a constant'' is still a constant, so we just write ``$C$\,''.
-	\item		Rule \#2 states we can split integrals apart when the integrand contains terms that are added/subtracted, as we did in Example \ref{ex_anti3}. So:
+	\item		Rule \#2 is the Sum/Difference Rule:\index{integration!Sum/Difference Rule}\index{Sum/Difference Rule!of integration} we can split integrals apart when the integrand contains terms that are added/subtracted, as we did in Example \ref{ex_anti3}. So:
 	\begin{align*}
 	\int(3x^2+4x+5)\ dx &= \int 3x^2\ dx + \int 4x\ dx + \int 5\ dx \\
 											&= 3\int x^2\ dx + 4\int x\ dx + \int 5 \ dx\\
@@ -204,7 +205,7 @@ We highlight a few important points from Theorem \ref{thm:indef_alg}:
 											&= x^3+2x^2+5x+C
 	\end{align*}
 	In practice we generally do not write out all these steps, but we demonstrate them here for completeness.
-	\item		Rule \#5 is the Power Rule of indefinite integration. There are two important things to keep in mind:
+	\item		Rule \#5 is the Power Rule of indefinite integration.\index{integration!Power Rule}\index{Power Rule!integration} There are two important things to keep in mind:
 		\begin{enumerate}
 		\item		Notice the restriction that $n\neq -1$. This is important: $\int \frac{1}{x}\ dx \neq $ ``$\frac{1}{0}x^0+C$''; rather, see Rule \#14.
 		\item		We are presenting antidifferentiation as the ``inverse operation'' of differentiation. Here is a useful quote to remember:
@@ -221,7 +222,7 @@ We highlight a few important points from Theorem \ref{thm:indef_alg}:
 \noindent\textbf{\large Initial Value Problems}
 \vskip\baselineskip
 
-In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes the acceleration. We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinite antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
+In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes the acceleration.\index{initial value problem} We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinite antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
 
 We can find \textit{the} answer if we provide more information with the question, as done in the following example.\\
 

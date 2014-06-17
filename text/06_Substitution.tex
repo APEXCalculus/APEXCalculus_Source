@@ -40,20 +40,20 @@ Since $du = g'(x)dx$, we can rewrite the above integral as
 This concept is important so we restate it in the context of a theorem.
 
 \theorem{thm:subst}{Integration by Substitution}
-{Let $F$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ and the domain of $F$ is contained in $I$. Then 
+{Let $F$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ and the domain of $F$ is contained in $I$. Then \index{integration!by substitution}
 	$$\int \Fp(g(x))g'(x)\ dx = F(g(x)) + C.$$
 If $u = g(x)$, then $du = g'(x)dx$ and 
 	$$\int \Fp(g(x))g'(x)\ dx = \int \Fp(u)\ du = F(u)+C = F(g(x))+C.$$
 }
 
-The point of substitution is to make the integration step easy. Indeed, the step $\int \Fp(u)\ du = F(u) + C$ looks easy, as the antiderivative of the derivative of $F$ is just $F$, plus a constant. The ``work'' involved is making the proper substitution. There is not a step--by--step process that one can memorize; rather, experience will be one's guide as they proceed. To gain experience, we now embark on many examples.\\
+The point of substitution is to make the integration step easy. Indeed, the step $\int \Fp(u)\ du = F(u) + C$ looks easy, as the antiderivative of the derivative of $F$ is just $F$, plus a constant. The ``work'' involved is making the proper substitution. There is not a step--by--step process that one can memorize; rather, experience will be one's guide. To gain experience, we now embark on many examples.\\
 
 \example{ex_sub1}{Integrating by substitution}{
 Evaluate $\ds \int x\sin(x^2+5)\ dx$.}
 {Knowing that substitution is related to the Chain Rule, we choose to let $u$ be the ``inside'' function of $\sin(x^2+5)$. (This is not always a good choice, but it is often the best place to start.)
 
-Let $u = x^2+5$, hence $du = 2xdx$. The integrand has an $xdx$ term, but not a $2xdx$ term. (Recall that multiplication is commutative, so the $x$ does not physically have to be next to $dx$ for there to be an $xdx$ term.) We can divide both sides of the $du$ expression by 2:
-	$$du = 2xdx \quad \Rightarrow \quad \frac12du = xdx.$$ We can now substitute.
+Let $u = x^2+5$, hence $du = 2x\,dx$. The integrand has an $x\,dx$ term, but not a $2x\,dx$ term. (Recall that multiplication is commutative, so the $x$ does not physically have to be next to $dx$ for there to be an $x\,dx$ term.) We can divide both sides of the $du$ expression by 2:
+	$$du = 2x\,dx \quad \Rightarrow \quad \frac12du = x\,dx.$$ We can now substitute.
 	\begin{align*}\int x\sin(x^2+5)\ dx &= \int \sin(\underbrace{x^2+5}_u) \underbrace{x\ dx}_{\frac12du}\\
 						 &= \int \frac12\sin u\ du
 \end{align*}
@@ -137,7 +137,7 @@ Evaluate $\ds \int \frac{1}{x\ln x}\ dx$.}
 
 Choosing $u = 1/x$ makes $du = -1/x^2\ dx$; that does not seem helpful. However, setting $u = \ln x$ makes $du = 1/x\ dx$, which is part of the integrand. Thus:
 \begin{align*}
-	\int \frac1{x\ln x}\ dx 	&=	\int \frac{1}{\underbrace{\ln x}_u}\underbrace{\frac1x\ dx}_{du} \\
+	\int \frac1{x\ln x}\ dx 	&=	\int \frac{1}{\underbrace{\ln x}_{1/u}}\underbrace{\frac1x\ dx}_{du} \\
 												&= \int \frac1u\ du \\
 												&= \ln |u| + C \\
 												&= \ln | \ln x| + C.
@@ -148,7 +148,7 @@ The final answer is interesting; the natural log of the natural log. Take the de
 \noindent\textbf{\large Integrals Involving Trigonometric Functions}
 \vskip \baselineskip
 
-A later section will delve deeper into integrals of a variety of trigonometric functions; here we use substitution to establish a foundation that we will build upon. 
+Section \ref{sec:trigint} delves deeper into integrals of a variety of trigonometric functions; here we use substitution to establish a foundation that we will build upon. 
 
 The next three examples will help fill in some missing pieces of our antiderivative knowledge. We know the antiderivatives of the sine and cosine functions; what about the other standard functions tangent, cotangent, secant and cosecant? We discover these next.\\
 
@@ -195,7 +195,7 @@ This may seem like it came out of left field, but it works beautifully. Consider
 We can use similar techniques to those used in Examples \ref{ex_sub6} and \ref{ex_sub7} to find antiderivatives of $\cot x$ and $\csc x$ (which the reader can explore in the exercises.) We summarize our results here.
 
 \theorem{thm:triganti}{Antiderivatives of Trigonometric Functions}
-{\begin{minipage}{.45\specialboxlength}\small
+{\begin{minipage}{.45\specialboxlength}\small\index{integration!of trig. functions}
 	\begin{enumerate}
 	\item		$\ds \int \sin x \ dx = -\cos x +C$
 	\item		$\ds\int \cos x\ dx = \sin x + C$
@@ -386,7 +386,7 @@ $$ \int \frac{4-x}{\sqrt{16-x^2}}\ dx = 4\sin^{-1}\frac x4 + \sqrt{16-x^2}+C.$$
 
 This section has focused on evaluating indefinite integrals as we are learning a new technique for finding antiderivatives. However, much of the time integration is used in the context of a definite integral. Definite integrals that require substitution can be calculated using the following workflow:
 \begin{enumerate}
-\item		Start with definite integral $\ds \int_a^b f(x)\ dx$ that requires substitution.
+\item		Start with a definite integral $\ds \int_a^b f(x)\ dx$ that requires substitution.
 \item		Ignore the bounds; use substitution to evaluate $\ds \int f(x)\ dx$ and find an antiderivative $F(x)$.
 \item		Evaluate $F(x)$ at the bounds; that is, evaluate $F(x)\Big|_a^b = F(b) - F(a)$.
 \end{enumerate}
@@ -395,7 +395,7 @@ This workflow works fine, but substitution offers an alternative that is powerfu
 At its heart, (using the notation of Theorem \ref{thm:subst}) substitution converts integrals of the form $\int \Fp(g(x))g'(x)\ dx$ into an integral of the form $\int \Fp(u)\ du$ with the substitution of $u = g(x)$. The following theorem states how the bounds of a definite integral can be changed as the substitution is performed.
 
 \theorem{thm:subst_def_int}{Substitution with Definite Integrals}
-{Let $f$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ that contains the domain of $F$. Then
+{Let $f$ and $g$ be differentiable functions, where the range of $g$ is an interval $I$ that contains the domain of $F$. Then \index{integration!definite!and substitution}\index{definite integral!and substitution}
 $$\int_a^b F'\big(g(x)\big)g'(x)\ dx = \int_{g(a)}^{g(b)} \Fp(u)\ du.$$
 }
 

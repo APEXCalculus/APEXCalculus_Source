@@ -7,7 +7,8 @@ We commonly refer to a set of events that occur one after the other as a \textit
 For instance, the numbers 2, 4, 6, 8, \ldots, form a sequence. The order is important; the first number is 2, the second is 4, etc. It seems natural to seek a formula that describes a given sequence, and often this can be done. For instance, the sequence above could be described by the function $a(n) = 2n$, for the values of $n = 1, 2, \ldots$ To find the 10$^\text{th}$ term in the sequence, we would compute $a(10)$. This leads us to the following, formal definition of a sequence.
 
 \definition{def:sequence}{Sequence}
-{A \textbf{sequence} is a function $a(n)$ whose domain is $\mathbb{N}$. The \textbf{range} of a sequence is the set of all distinct values of $a(n)$.\\
+{A \textbf{sequence} is a function $a(n)$ whose domain is $\mathbb{N}$. The \textbf{range} of a sequence is the set of all distinct values of $a(n)$.
+\index{sequences!definition}\\
 
 The \textbf{terms} of a sequence are the values $a(1)$, $a(2)$, \ldots, which are usually denoted with subscripts as $a_1$, $a_2$, \ldots.\\
 
@@ -15,7 +16,9 @@ A sequence $a(n)$ is often denoted as $\{a_n\}$.}
 
 \mnote{.75}{\textbf{Notation:} We use \mathN\ to describe the set of natural numbers, that is, the integers 1, 2, 3, \ldots}
 
-\mnote{.62}{\textbf{Factorial:} The expression $3!$ refers to the number $3\cdot2\cdot1 = 6$.\\
+\mnote{.62}{\textbf{Factorial:} The expression $3!$ refers to the number $3\cdot2\cdot1 = 6$.
+\index{factorial}\index{aa@$"!$}
+\\
 
 In general, $n! = n\cdot (n-1)\cdot(n-2)\cdots 2\cdot1$, where $n$ is a natural number.\\
 
@@ -29,24 +32,27 @@ List the first four terms of the following sequences.\\
 {\begin{enumerate}
 \item		$\ds a_1=\frac{3^1}{1!} = 3$;\qquad	$\ds a_2= \frac{3^2}{2!} = \frac92$;\qquad $\ds a_3 = \frac{3^3}{3!} = \frac92$; \qquad $\ds a_4 = \frac{3^4}{4!} = \frac{27}8$
 
-We can plot the terms of a sequence with a scatter plot. The ``$x$''-axis is used for the values of $n$, and the values of the terms are plotted on the $y$-axis. To visualize this sequence, see Figure \ref{fig:seq1} (a).
+We can plot the terms of a sequence with a scatter plot. The ``$x$''-axis is used for the values of $n$, and the values of the terms are plotted on the $y$-axis. To visualize this sequence, see Figure \ref{fig:seq1}.
 
-\mtable{.3}{Plotting sequences in Example \ref{ex_seq1}.}{fig:seq1}{\begin{tabular}{c}
-\myincludegraphics{figures/figseq1a} \\ (a)\rule[-10pt]{0pt}{5pt} \\ \myincludegraphics{figures/figseq1b} \\ (b) \end{tabular}} 
+\mfigure{.35}{Plotting a sequence from Example \ref{ex_seq1}.}{fig:seq1}{figures/figseq1a}
+%\mtable{.3}{Plotting sequences in Example \ref{ex_seq1}.}{fig:seq1}{\begin{tabular}{c}
+%\myincludegraphics{figures/figseq1a} \\ (a)\rule[-10pt]{0pt}{5pt} \\ \myincludegraphics{figures/figseq1b} \\ (b) \end{tabular}} 
 %\enlargethispage{4\baselineskip}
 
 \item		$a_1= 4+(-1)^1 = 3$;\qquad $a_2 = 4+(-1)^2 = 5$; 
 
-\noindent $a_3=4+(-1)^3 = 3$; \qquad $a_4 = 4+(-1)^4 = 5$. Note that the range of this sequence is finite, consisting of only the values 3 and 5. This sequence is plotted in Figure \ref{fig:seq1} (b).
+\noindent $a_3=4+(-1)^3 = 3$; \qquad $a_4 = 4+(-1)^4 = 5$. Note that the range of this sequence is finite, consisting of only the values 3 and 5. This sequence is plotted in Figure \ref{fig:seq1b} (a).
 
-\item		$\ds a_1= \frac{(-1)^{1(2)/2}}{1^2} = -1$; \qquad $\ds a_2 = \frac{(-1)^{2(3)/2}}{2^2} =\frac14$
+\item		$\ds a_1= \frac{(-1)^{1(2)/2}}{1^2} = -1$; \qquad $\ds a_2 = \frac{(-1)^{2(3)/2}}{2^2} =-\frac14$
 
 \noindent $\ds a_3 = \frac{(-1)^{3(4)/2}}{3^2} = \frac19$ \qquad $\ds a_4 = \frac{(-1)^{4(5)/2}}{4^2} = \frac1{16}$; 
 
 \noindent $\ds a_5 = \frac{(-1)^{5(6)/2}}{5^2}=-\frac1{25}$.
 
-\noindent We gave one extra term to show how every 4$^\text{th}$ term is negative. This sequence is plotted in Figure \ref{fig:seq1b}.
-\mfigure{.8}{Plotting a sequence from Example \ref{ex_seq1}.}{fig:seq1b}{figures/figseq1c}
+\noindent We gave one extra term to begin to show the pattern of signs is ``$-$, $-$, $+$, $+$, $-$, $-$, $\ldots$, due to the fact that the exponent of $-1$ is a special quadratic. This sequence is plotted in Figure \ref{fig:seq1b} (b).
+\mtable{.7}{Plotting sequences in Example \ref{ex_seq1}.}{fig:seq1b}{\begin{tabular}{c}
+\myincludegraphics{figures/figseq1b} \\ (a)\rule[-10pt]{0pt}{5pt} \\ \myincludegraphics{figures/figseq1c} \\ (b) \end{tabular}} 
+%\mfigure{.8}{Plotting a sequence from Example \ref{ex_seq1}.}{fig:seq1b}{figures/figseq1c}
 \end{enumerate}
 \vskip -\baselineskip
 }\\
@@ -80,11 +86,11 @@ When $n=1$, we see that we indeed get $5/2$ as desired. When $n=2$, we get $10/4
 
 A common mathematical endeavor is to create a new mathematical object (for instance, a sequence) and then apply previously known mathematics to the new object. We do so here. The fundamental concept of calculus is the limit, so we will investigate what it means to find the limit of a sequence.
 
-\setboxwidth{80pt}
+%\setboxwidth{80pt}
 \definition{def:seq_limit}{Limit of a Sequence, Convergent, Divergent}
 {Let $\{a_n\}$ be a sequence and let $L$ be a real number. Given any $\epsilon>0$, if an $m$ can be found such that $|a_n-L|<\epsilon$ for all $n>m$, then we say the \textbf{limit of $\{a_n\}$, as $n$ approaches infinity, is $L$}, denoted $$\lim_{n\to\infty}a_n = L.$$
 
-If $\ds\lim_{n\to\infty} a_n$ exists, we say the sequence \textbf{converges}; otherwise, the sequence \emph{diverges}.
+If $\ds\lim_{n\to\infty} a_n$ exists, we say the sequence \sword{converges}; otherwise, the sequence \sword{diverges}.\index{limit!of sequence}\index{sequences!limit}\index{convergence!of sequence}\index{divergence!of sequence}\index{sequences!convergent}\index{sequences!divergent}
 }
 \restoreboxwidth
 %\enlargethispage{3\baselineskip}
@@ -93,19 +99,19 @@ If $\ds\lim_{n\to\infty} a_n$ exists, we say the sequence \textbf{converges}; ot
 This definition states, informally, that if the limit of a sequence is $L$, then if you go far enough out along the sequence, all subsequent terms will be \emph{really close} to $L$. Of course, the terms ``far enough'' and ``really close'' are subjective terms, but hopefully the intent is clear.
 
 This definition is reminiscent of the $\epsilon$--$\delta$ proofs of Chapter \ref{chapter:limits}. In that chapter we developed other tools to evaluate limits apart from the formal definition; we do so here as well.
-\clearpage
+%\clearpage
 
-\setboxwidth{30pt}
-\noindent\hskip-30pt
-\begin{minipage}{\specialboxlength}
+%\setboxwidth{30pt}
+%\noindent\hskip-30pt
+%\begin{minipage}{\specialboxlength}
 \theorem{thm:seq_limit}{Limit of a Sequence}
 {Let $\{a_n\}$ be a sequence and let $f(x)$ be a function where $f(n) = a_n$ for all $n$ in $\mathbb{N}$. 
-\begin{itemize}
+\begin{enumerate}
 \item		If $\ds \lim_{x\to\infty} f(x) = L$, then $\ds\lim_{n\to\infty} a_n = L$.
 \item		If $\ds \lim_{x\to\infty} f(x)$ does not exist, then $\{a_n\}$ diverges.
-\end{itemize}
+\end{enumerate}
 }
-\end{minipage}
+%\end{minipage}
 \restoreboxwidth
 
 When we considered limits before, the domain of the function was an interval of real numbers. Now, as we consider limits, the domain is restricted to $\mathbb{N}$, the natural numbers. Theorem \ref{thm:seq_limit} states that this restriction of the domain does not affect the outcome of the limit and whatever tools we developed in Chapter \ref{chapter:limits} to evaluate limits can be applied here as well.\\
@@ -143,7 +149,7 @@ Determine the convergence or divergence of the following sequences.\\
 It seems very clear that a sequence such as $\ds \left\{\frac{(-1)^n}{n}\right\}$ converges to 0 but we lack the formal tool to prove it. The following theorem gives us that tool.
 
 \theorem{thm:abs_val_seq}{Absolute Value Theorem}
-{Let $\{a_n\}$ be a sequence. If $\ds \lim_{n\to\infty} |a_n| = 0$, then $\ds \lim_{n\to\infty} a_n = 0$
+{Let $\{a_n\}$ be a sequence. If $\ds \lim_{n\to\infty} |a_n| = 0$, then $\ds \lim_{n\to\infty} a_n = 0$\index{Absolute Value Theorem}\index{limit!Absolute Value Theorem}\index{sequence!Absolute Value Theorem}
 }
 
 \enlargethispage{\baselineskip}
@@ -170,7 +176,7 @@ Since this limit is 0, we can apply Theorem \ref{thm:abs_val_seq} and state that
 \end{align*}
 We have concluded that when we ignore the alternating sign, the sequence approaches 1. This means we cannot apply Theorem \ref{thm:abs_val_seq}; it states the the limit must be 0 in order to conclude anything.
 
-\mfigure{.45}{A plot of a sequence in Example \ref{ex_seq5}, part 2.}{fig:seq5}{figures/figseq5}
+\mfigure{.8}{A plot of a sequence in Example \ref{ex_seq5}, part 2.}{fig:seq5}{figures/figseq5}
 In fact, since we know that the signs of the terms alternate \emph{and} we know that the limit of $|a_n|$ is 1, we know that as $n$ approaches infinity, the terms will alternate between values close to 1 and $-1$, meaning the sequence diverges. A plot of this sequence is given in Figure \ref{fig:seq5}.
 \end{enumerate}
 \vskip-\baselineskip
@@ -184,6 +190,7 @@ We continue our study of the limits of sequences by considering some of the prop
 \begin{minipage}[t]{.5\linewidth}
 \begin{enumerate}
 \item		$\ds \lim_{n\to\infty} (a_n\pm b_n) = L\pm K$
+\index{sequences!limit properties}
 \item		$\ds \lim_{n\to\infty} (a_n\cdot b_n) = L\cdot K$
 \end{enumerate}
 \end{minipage}
@@ -199,9 +206,9 @@ We continue our study of the limits of sequences by considering some of the prop
 Let the following sequences, and their limits, be given:
 
 \begin{itemize}
-\item	 	$\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}$, and $\ds \lim_{n\to\infty} a_n = 0$
-\item		$\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}$, and $\ds \lim_{n\to\infty} b_n = e$
-\item	  $\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}$, and $\ds \lim_{n\to\infty} c_n = 5$
+\item	 	$\ds \{a_n\} = \left\{\frac{n+1}{n^2}\right\}$, and $\ds \lim_{n\to\infty} a_n = 0$;
+\item		$\ds \{b_n\} = \left\{\left(1+\frac1n\right)^{n}\right\}$, and $\ds \lim_{n\to\infty} b_n = e$; and
+\item	  $\ds \{c_n\} = \big\{n\cdot \sin (5/n)\big\}$, and $\ds \lim_{n\to\infty} c_n = 5$.
 \end{itemize}
 
 Evaluate the following limits.\\
@@ -227,8 +234,10 @@ There is more to learn about sequences than just their limits. We will also stud
 A sequence $\{a_n\}$ is said to be \textbf{unbounded} if it is not bounded.\\
 
 A sequence $\{a_n\}$ is said to be \textbf{bounded above} if there exists an $M$ such that $a_n < M$ for all $n$ in $\mathbb{N}$; it is \textbf{bounded below} if there exists an $m$ such that $m<a_n$ for all $n$ in $\mathbb{N}$.
+\index{sequences!boundedness}\index{bounded sequence}\index{unbounded sequence}
 }
 
+\enlargethispage{2\baselineskip}
 It follows from this definition that an unbounded sequence may be bounded above or bounded below; a sequence that is both bounded above and below is simply a bounded sequence.\\
 
 \example{ex_seq3}{Determining boundedness of sequences}{
@@ -255,29 +264,32 @@ This logic implies that if a sequence converges, it must be bounded. This is ind
 
 \theorem{thm:converge_bounded}{Convergent Sequences are Bounded}
 {Let $\ds \left\{a_n\right\}$ be a convergent sequence. Then $\{a_n\}$ is bounded.
+\index{bounded sequence!convergence}\index{convergence!of sequence}\index{sequences!convergent}
 }
 
-\mnote{.85}{\textbf{Note:} Keep in mind what Theorem \ref{thm:converge_bounded} does \emph{not} say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.}
+\mnote{.71}{\textbf{Note:} Keep in mind what Theorem \ref{thm:converge_bounded} does \emph{not} say. It does not say that bounded sequences must converge, nor does it say that if a sequence does not converge, it is not bounded.}
 
 In Example \ref{ex_seq6} we saw the sequence $\ds \{b_n\} = \left\{\left(1+1/n\right)^{n}\right\}$, where it was stated that $\ds \lim_{n\to\infty} b_n = e$. (Note that this is simply restating part of Theorem \ref{thm:special_limits}.) Even though it may be difficult to intuitively grasp the behavior of this sequence, we know immediately that it is bounded.
 
 Another interesting concept to come out of Example \ref{ex_seq3} again involves the sequence $\{1/n\}$. We stated, without proof, that the terms of the sequence were decreasing. That is, that $a_{n+1} < a_n$ for all $n$. (This is easy to show. Clearly $n < n+1$. Taking reciprocals flips the inequality: $1/n > 1/(n+1)$. This is the same as $a_n > a_{n+1}$.) Sequences that either steadily increase or decrease are important, so we give this property a name.
 
 \definition{def:monotonic}{Monotonic Sequences}
-{\begin{itemize}
+{\begin{enumerate}
 \item		A sequence $\{a_n\}$ is \textbf{monotonically increasing} if $a_n \leq a_{n+1}$ for all $n$, i.e.,
  $$a_1 \leq a_2 \leq a_3 \leq \cdots a_n \leq a_{n+1} \cdots$$
  \item	A sequence $\{a_n\}$ is \textbf{monotonically decreasing} if $a_n \geq a_{n+1}$ for all $n$, i.e.,
  $$a_1 \geq a_2 \geq a_3 \geq \cdots a_n \geq a_{n+1} \cdots$$
  \item	A sequence is \textbf{monotonic} if it is monotonically increasing or monotonically decreasing.
- \end{itemize}
+\index{sequences!monotonic}\index{monotonic sequence}
+ \end{enumerate}
 }
 
-\mnote{.5}{\textbf{Note:} It is sometimes useful to call a monotonically increasing sequence \emph{strictly increasing} if $a_n < a_{n+1}$ for all $n$; i.e, we remove the possibility that subsequent terms are equal.
+\mnote{.4}{\textbf{Note:} It is sometimes useful to call a monotonically increasing sequence \emph{strictly increasing} if $a_n < a_{n+1}$ for all $n$; i.e, we remove the possibility that subsequent terms are equal.
 
 A similar statement holds for \emph{strictly decreasing.}
 }
 
+\clearpage
 \example{ex_seq7}{Determining monotonicity}{
 Determine the monotonicity of the following sequences.
 
@@ -362,11 +374,12 @@ When $n=1$, the above expression is $>0$; for $n\geq 2$, the above expression is
 Knowing that a sequence is monotonic can be useful. In particular, if we know that a sequence is bounded and monotonic, we can conclude it converges! Consider, for example, a sequence that is monotonically decreasing and is bounded below. We know the sequence is always getting smaller, but that there is a bound to how small it can become. This is enough to prove that the sequence will converge, as stated in the following theorem.
 
 \theorem{thm:monotonic_converge}{Bounded Monotonic Sequences are Convergent}
-{\begin{itemize}
+{\begin{enumerate}
 \item		Let $\{a_n\}$ be a bounded, monotonic sequence. Then $\{a_n\}$ converges; i.e., $\ds \lim_{n \to\infty}a_n$ exists.
 \item		Let $\{a_n\}$ be a monotonically increasing sequence that is bounded above. Then $\{a_n\}$ converges.
 \item		Let $\{a_n\}$ be a monotonically decreasing sequence that is bounded below. Then $\{a_n\}$ converges.
-\end{itemize}
+\index{sequences!convergent}\index{convergence!of monotonic sequences}
+\end{enumerate}
 }
 
 Consider once again the sequence $\{a_n\} = \{1/n\}$. It is easy to show it is monotonically decreasing and that it is always positive (i.e., bounded below by 0). Therefore we can conclude by Theorem \ref{thm:monotonic_converge} that the sequence converges. We already knew this by other means, but in the following section this theorem will become very useful.

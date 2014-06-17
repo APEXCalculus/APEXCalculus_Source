@@ -12,7 +12,7 @@ Currently, our vector--valued functions have defined points with a parameter $t$
 \end{tabular}
 }
 
-Now consider Figure \ref{fig:vvfarc_intro1} (b), where the same graph is parametrized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.
+Now consider Figure \ref{fig:vvfarc_intro1} (b), where the same graph is parametrized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.\index{arc length parameter}\index{arc length}
 
 How do we find the arc length parameter? 
 
@@ -65,7 +65,7 @@ Solving for $\vrp(s)$, we have
 where $\vec T(t)$ is the unit tangent vector. Equation \ref{eq:vvfarc2} is often misinterpreted, as one is tempted to think it states $\vrp(t) = \vec T(t)$, but there is a big difference between $\vrp(s)$ and $\vrp(t)$. The key to take from it is that $\vrp(s)$ is a unit vector. In fact, the following theorem states that this characterizes the arc length parameter.
 
 \theorem{thm:arclengthparam}{Arc Length Parameter}
-{Let $\vec r(s)$ be a vector--valued function. The parameter $s$ is the arc length parameter if, and only if, $\norm{\vrp(s)} = 1.$
+{Let $\vec r(s)$ be a vector--valued function. The parameter $s$ is the arc length parameter if, and only if, $\norm{\vrp(s)} = 1.$\index{arc length parameter}
 }
 
 \noindent\textbf{\large Curvature}\\
@@ -84,6 +84,7 @@ We derive this number in the following way. Consider Figure \ref{fig:curvaturein
 
 \definition{def:curvature}{Curvature}
 {Let $\vec r(s)$ be a vector--valued function where $s$ is the arc length parameter. The curvature $\kappa$ of the graph of $\vec r(s)$ is
+\index{curvature}\index{unit tangent vector!and curvature}
 $$\kappa = \snorm{\frac{d\vec T}{ds}} = \snorm{\vec T\,'(s)}.$$
 }\\
 
@@ -96,8 +97,8 @@ We already knew that $\vec T\,'(s)$ is in the same direction as $\vec N(s)$; tha
 
 We use  Definition \ref{def:curvature}  to find the curvature of the line in Example \ref{ex_vvfarc1}.\\
 
-\example{ex_curvature1}{Finding the curvature of a line\\
-Use Definition \ref{def:curvature} to find the curvature of $\vrt = \la 3t-1,4t+2\ra$.}
+\example{ex_curvature1}{Finding the curvature of a line}
+{Use Definition \ref{def:curvature} to find the curvature of $\vrt = \la 3t-1,4t+2\ra$.}
 {In Example \ref{ex_vvfarc1}, we found that the arc length parameter was defined by $s=5t$, so $\vec r(s) =\la 3t/5-1, 4t/5+2\ra$ parametrized $\vec r$ with the arc length parameter. To find $\kappa$, we need to find $\vec T\,'(s)$. 
 \begin{align*}
 \vec T(s) &= \vrp(s)\quad \text{(recall this is a unit vector)}\\
@@ -117,20 +118,22 @@ While the definition of curvature is a beautiful mathematical concept, it is nea
 
 \theorem{thm:curvature_formulas}{Formulas for Curvature}
 {Let $C$ be a smooth curve on an open interval $I$ in the plane or in space.
-\begin{itemize}
+\index{curvature!equations for}
+\begin{enumerate}
 	\item If $C$ is defined by $y=f(x)$, then 
 	$$\kappa = \frac{|\fp'(x)|}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.$$
 	\item	If $C$ is defined as a vector--valued function in the plane, $\vec r(t) = \la x(t), y(t)\ra$, then
 	$$\kappa = \frac{|x'y''-x''y'|}{\big((x')^2+(y')^2\big)^{3/2}}.$$
 	\item If $C$ is defined in space by a vector--valued function $\vec r(t)$, then
 $$\kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3} = \frac{\vec a(t)\cdot \vec N(t)}{\norm{\vec v(t)}^2}.$$
-\end{itemize}
+\end{enumerate}
 }
 
 We practice using these formulas.\\
 
 \example{ex_curvature2}{Finding the curvature of a circle}{
-Find the curvature of a circle with radius $r$, defined by $\vec r(t) = \la r\cos t,r\sin t\ra$.}
+Find the curvature of a circle with radius $r$, defined by $\vec r(t) = \la r\cos t,r\sin t\ra$.
+\index{curvature!of circle}}
 {Before we start, we should expect the curvature of a circle to be constant, and not dependent on $t$. (Why?)
 
 We compute $\kappa$ using the second part of Theorem \ref{thm:curvature_formulas}.
@@ -142,7 +145,8 @@ We compute $\kappa$ using the second part of Theorem \ref{thm:curvature_formulas
 We have found that a circle with radius $r$ has curvature $\kappa = 1/r$.
 }\\
 
-Example \ref{ex_curvature2} gives a great result. Before this example, if we were told ``The curve has a curvature of 5 at point $A$,'' we would have no idea what this really meant. Is 5 ``big'' -- does is correspond to a really sharp turn, or a not-so-sharp turn? Now we can think of 5 in terms of a circle with radius 1/5. Knowing the units (inches vs.\ miles, for instance) allows us to determine how sharply the curve is curving.\\
+Example \ref{ex_curvature2} gives a great result. Before this example, if we were told ``The curve has a curvature of 5 at point $A$,'' we would have no idea what this really meant. Is 5 ``big'' -- does is correspond to a really sharp turn, or a not-so-sharp turn? Now we can think of 5 in terms of a circle with radius 1/5. Knowing the units (inches vs.\ miles, for instance) allows us to determine how sharply the curve is curving.
+\\
 
 Let a point $P$ on a smooth curve $C$  be given, and let $\kappa$ be the curvature of the curve at $P$. A circle that:
 	\begin{itemize}
@@ -151,7 +155,8 @@ Let a point $P$ on a smooth curve $C$  be given, and let $\kappa$ be the curvatu
 		\item	has a common tangent line as $C$ at $P$ and
 		\item	has radius $r=1/\kappa$ (hence has curvature $\kappa$)
 	\end{itemize}
-is the \textbf{osculating circle}, or \textbf{circle of curvature}, to $C$ at $P$, and $r$ is the \textbf{radius of curvature}. Figure \ref{fig:curvature_osculate} shows the graph of the curve seen earlier in Figure \ref{fig:curvatureintro} and its osculating circles at $A$ and $B$. A sharp turn corresponds to a circle with a small radius; a gradual turn corresponds to a circle with a large radius. Being able to think of curvature in terms of the radius of a circle is very useful.
+is the \textbf{osculating circle}, or \textbf{circle of curvature}, to $C$ at $P$, and $r$ is the \textbf{radius of curvature}. \index{curvature!of circle}\index{osculating circle}\index{circle of curvature}\index{radius of curvature}\index{curvature!radius of}%
+Figure \ref{fig:curvature_osculate} shows the graph of the curve seen earlier in Figure \ref{fig:curvatureintro} and its osculating circles at $A$ and $B$. A sharp turn corresponds to a circle with a small radius; a gradual turn corresponds to a circle with a large radius. Being able to think of curvature in terms of the radius of a circle is very useful.
 \mfigure{.7}{Illustrating the osculating circles for the curve seen in Figure \ref{fig:curvatureintro}.}{fig:curvature_osculate}{figures/figcurvature_introc}
  %\\
 %\mnote{.65}{\textbf{Note:} 
@@ -191,7 +196,9 @@ While this is not a particularly ``nice'' formula, it does explictly tell us wha
 
 \noindent\textbf{\large Curvature and Motion}\\
 
-Let $\vec r(t)$ be a position function of an object, with velocity $\vvt = \vrp(t)$ and acceleration $\vec a(t)=\vrp'(t)$. In Section \ref{sec:tan_norm} we established that acceleration is in the plane formed by $\vec T(t)$ and $\vec N(t)$, and that we can find scalars $a_\text{T}$ and $a_\text{N}$ such that $$\vat = a_\text{T}\vec T(t) + a_\text{N}\vec N(t).$$ Theorem \ref{thm:acc_plane} gives formulas for $a_\text{T}$ and $a_\text{N}$:
+Let $\vec r(t)$ be a position function of an object, with velocity $\vvt = \vrp(t)$ and acceleration $\vec a(t)=\vrp'(t)$. In Section \ref{sec:tan_norm} we established that acceleration is in the plane formed by $\vec T(t)$ and $\vec N(t)$, and that we can find scalars $a_\text{T}$ and $a_\text{N}$ such that 
+\index{curvature!and motion}\index{unit tangent vector!and curvature}\index{unit normal vector!and curvature}\index{at@$a_\text{T}$}\index{an@$a_\text{N}$}
+$$\vat = a_\text{T}\vec T(t) + a_\text{N}\vec N(t).$$ Theorem \ref{thm:acc_plane} gives formulas for $a_\text{T}$ and $a_\text{N}$:
 $$a_\text{T} = \frac{d}{dt}\Big(\norm{\vvt}\Big) \quad \text{and} \quad a_\text{N} = \frac{\norm{\vvt\times \vat}}{\norm{\vvt}}.$$
 We understood that the amount of acceleration in the direction of $\vec T$ relates only to how the speed of the object is changing, and that the amount of acceleration in the direction of $\vec N$ relates to how the direction of travel of the object is changing. (That is, if the object travels at constant speed, $a_\text{T}=0$; if the object travels in a constant direction, $a_\text{N}=0$.)
 

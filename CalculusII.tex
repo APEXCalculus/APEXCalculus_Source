@@ -1,0 +1,308 @@
+%%%%
+% CreateSpace ISBN assigned June 20, 2013
+% ISBN-13: 978-1490492506 
+% ISBN-10: 149049250X
+%%%%
+\RequirePackage{ifthen}
+\newboolean{longpage}
+\setboolean{longpage}{false}
+\ifthenelse{\boolean{longpage}}%
+{\documentclass[10pt]{article}}%
+{\documentclass[10pt]{book}}
+
+\newboolean{printlabelname}
+\setboolean{printlabelname}{false}
+\ifthenelse{\boolean{printlabelname}}{\usepackage[notref,notcite]{showkeys}}{}
+
+
+
+%% end detour
+%\usepackage{amsmath}
+\usepackage{xr}
+\externaldocument{CalculusI}
+
+\input{headers/Page_Size_Calculus}
+\usepackage{APEX_format}
+\input{headers/Header_Calculus}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepackage{refcount}
+\usepackage{pdfpages}
+
+%\printexercisenames
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Calibri}
+	\setmainfont[Mapping=tex-text]{Calibri}
+	\setsansfont[Mapping=tex-text]{Calibri}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+	
+	\ifthenelse{\boolean{luatex}}%
+	{\sffamily
+	\usepackage{fontspec}
+	\usepackage{unicode-math}
+	%\usepackage{mathspec}
+	%\setallmainfonts[Mapping=tex-text]{Calibri}
+	\setmainfont{Calibri}
+	%\setsansfont[Mapping=tex-text]{Calibri}
+	\setmathfont[range=\mathup]{Calibri}
+	\setmathfont[range=\mathit]{Calibri Italic}
+	}
+	{}
+
+\makeindex
+
+%%%\tracingonline=1
+\begin{document}
+
+
+
+\printincolor
+%\printinblackandwhite
+%\printallanswers
+
+\input{text/front_matter_and_coverII}
+
+
+
+%\chapter{Limits}\label{chapter:limits}
+%\ifthenelse{\boolean{longpage}}{}{\thispagestyle{empty}}
+%%
+%\input{text/01_Limit_Introduction}
+%\input{text/01_Limit_Definition}
+%\input{text/01_Analytic_Limits}
+%\input{text/01_One_Sided_Limits}
+%\input{text/01_Continuity}
+%\input{text/01_Limits_Involving_Infinity}
+
+
+%%%\addtocounter{chapter}{1}
+%
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Derivatives}\label{chapter:derivatives}
+%\thispagestyle{empty}
+%
+%\input{text/02_Derivative}
+%\input{text/02_Derivative_Meaning}
+%\input{text/02_Derivative_Rules}
+%\input{text/02_Product_Quotient_Rules}
+%\input{text/02_Chain_Rule}
+%\input{text/02_Implicit_Differentiation}
+%\input{text/02_Derivative_Inverse_Functions}
+
+%%\addtocounter{chapter}{2}
+
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{The Graphical Behavior of Functions}\label{chapter:graphbehavior}
+%\thispagestyle{empty}
+%
+%\input{text/03_Extreme_Values}
+%\input{text/03_Mean_Value_Theorem}
+%\input{text/03_Increasing_Decreasing}
+%\input{text/03_Concavity}
+%\input{text/03_Curve_Sketching}
+
+%%\addtocounter{chapter}{3}
+%
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Applications of the Derivative}\label{chapter:deriv_apps}
+%\thispagestyle{empty}
+%
+%\input{text/04_NewtonsMethod}
+%\input{text/04_Related_Rates}
+%\input{text/04_Optimization}
+%\input{text/04_Differentials}
+
+
+\addtocounter{chapter}{4}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\setcounterref{definitioncounter}{lastdefcount1}
+\addtocounter{definitioncounter}{-1}
+\setcounterref{theoremcounter}{lastthmcount1}
+\addtocounter{theoremcounter}{-1}
+\setcounterref{keyideacounter}{lastideacount1}
+\addtocounter{keyideacounter}{-1}
+\setcounterref{examplecounter}{lastexamplecount1}
+\addtocounter{examplecounter}{-1}
+\setcounter{page}{184}
+\thispagestyle{empty}
+
+\chapter{Integration}\label{chapter:integration}
+\addtocontents{toc}{\protect\enlargethispage{2\baselineskip}}
+\thispagestyle{empty}
+%\setcounterpageref{page}{lastdefcount1}
+%\addtocounter{page}{4}
+\input{text/05_Antiderivatives}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\input{text/05_Definite_Integral}
+\input{text/05_Riemann_Sums}
+\input{text/05_FTC}
+\input{text/05_Numerical_Integration}
+
+%
+%%%\addtocounter{chapter}{5}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Techniques of Antidifferentiation}\label{chapter:anti_tech}
+\thispagestyle{empty}
+
+\input{text/06_Substitution}
+\input{text/06_Int_By_Parts}
+\input{text/06_Trigonometric_Integrals}
+\input{text/06_Trig_Sub}
+\input{text/06_Partial_Fractions}
+\input{text/06_Hyperbolic_Functions}
+\input{text/06_LHopitals_Rule}
+\input{text/06_Improper_Integration}
+
+%%%\addtocounter{chapter}{6}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Applications of Integration}\label{chapter:app_of_int}
+\thispagestyle{empty}
+
+\input{text/07_Area_Between_Curves}
+\input{text/07_Disk_Washer_Method}
+\input{text/07_Shell_Method}
+\input{text/07_Arc_Length}
+\input{text/07_Work}
+\input{text/07_Fluid_Force}
+
+%%%\addtocounter{chapter}{7}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\chapter{Sequences and Series}\label{chapter:sequences_series}
+\thispagestyle{empty}
+
+\input{text/08_Sequences}
+\input{text/08_Series}
+\input{text/08_Integral_Comparison_Tests}
+\input{text/08_Ratio_Root_Tests}
+\input{text/08_Alternating_Series}
+\input{text/08_Power_Series}
+\input{text/08_Taylor_Polynomials}
+\input{text/08_Taylor_Series}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+%%%
+%%%    Begins Calc III
+%
+
+%%
+%%%\addtocounter{chapter}{8}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Curves in the Plane}
+%\thispagestyle{empty}
+%\input{text/09_Conic_Sections}
+%\input{text/09_Parametric_Equations}
+%\input{text/09_Parametric_Calculus}
+%\input{text/09_Polar_Intro}
+%\input{text/09_Polar_Calculus}
+%
+%
+%%%\addtocounter{chapter}{9}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Vectors}
+%\thispagestyle{empty}
+%\input{text/10_Space_Intro}
+%\input{text/10_Vector_Introduction}
+%\input{text/10_Dot_Product}
+%\input{text/10_Cross_Product}
+%\input{text/10_Lines}
+%\input{text/10_Planes}
+
+%\addtocounter{chapter}{10}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Vector Valued Functions}\label{chap:vvf}
+%\thispagestyle{empty}
+%\input{text/11_Vector_Functions_Intro}
+%\input{text/11_Vector_Functions_Calc}
+%\input{text/11_Vector_Functions_Motion}
+%\input{text/11_Vector_Tangent_Normal}
+%\input{text/11_Arc_Length_Parameter_Curvature}
+%
+%%%\addtocounter{chapter}{11}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Functions of Several Variables}\label{chap:multi}
+%\thispagestyle{empty}
+%\input{text/12_Multivariable_Intro}
+%\input{text/12_Multivariable_Limit}
+%\input{text/12_Partial_Derivatives}
+%\input{text/12_Total_Differential}
+%\input{text/12_Multivariable_Chain_Rule}
+%\input{text/12_Directional_Derivatives}
+%\input{text/12_Tangent_Planes_Lines}
+%\input{text/12_Extrema}
+
+
+%
+%%%\addtocounter{chapter}{12}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\chapter{Multiple Integration}
+%\thispagestyle{empty}
+%\input{text/13_Iterated_Integrals}
+%\input{text/13_Double_Integrals_Volume}
+%\input{text/13_Double_Integrals_Polar}
+%\input{text/13_Center_of_Mass}
+%\input{text/13_Surface_Area}
+%\input{text/13_Triple_Integration}
+
+
+%%%\layout
+
+% counters are reset in the Taylor Polynomial section, not here
+% I do not recall why this didn't seem to work here
+%
+\refstepcounter{definitioncounter}
+\label{lastdefcount2}
+\refstepcounter{theoremcounter}
+\label{lastthmcount2}
+\refstepcounter{keyideacounter}
+\label{lastideacount2}
+\refstepcounter{examplecounter}
+\label{lastexamplecount2}
+%\clearpage
+
+
+\appendix
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%%%
+%%%%\makeexercisesection{Solutions To Selected Problems}
+\pagenumbering{arabic}\renewcommand{\thepage}{A.\arabic{page}}
+\makeexercisesection{Solutions To Selected Problems}
+%%%\printexercisesection
+
+
+%
+%
+%%%%
+%%%%%%%%%
+%%%%%%%		 The following makes the index and includes
+%%%%%%%		it in the file
+%%%%%%%%%
+%%%
+%%%\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%\phantomsection
+%%%\addcontentsline{toc}{chapter}{\indexname}
+%%%\printindex
+%%
+%
+\qendheader
+\eendgeometry
+
+\phantomsection
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+\cleardoublepage
+\input{text/Inside_Cover_Of_The_Text_Material_Complete}
+
+
+\end{document}
+

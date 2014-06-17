@@ -12,7 +12,7 @@ We are familiar with sketching  shapes, such as parabolas, by following this bas
 \end{tikzpicture}
 \end{center}
 
-The \textbf{rectangular equation} $y=f(x)$ works well for some shapes like a parabola with a vertical axis of symmetry, but in the previous section we encountered several shapes that could not be sketched in this manner. (To plot an ellipse using the above procedure, we need to plot the ``top'' and ``bottom'' separately.)
+The \textbf{rectangular equation} $y=f(x)$ works well for some shapes like a parabola with a vertical axis of symmetry, but in the previous section we encountered several shapes that could not be sketched in this manner. (To plot an ellipse using the above procedure, we need to plot the ``top'' and ``bottom'' separately.)\index{curve!rectangular equation}
 
 In this section we introduce a new sketching procedure:
 
@@ -33,29 +33,52 @@ Here, $x$ and $y$ are found separately but then plotted together. This leads us 
 
 \definition{def:param_eq}{Parametric Equations and Curves}
 {Let $f$ and $g$ be continuous functions on an interval $I$. The set of all points $\big(x,y\big) = \big(f(t),g(t)\big)$ in the Cartesian plane, as $t$ varies over $I$, is the \textbf{graph} of the \textbf{parametric equations} $x=f(t)$ and $y=g(t)$, where $t$ is the \textbf{parameter}. A \textbf{curve} is a graph along with the parametric equations that define it.
+\index{curve!parametrically defined}\index{parametric equations!definition}
 }
 
 This is a formal definition of the word \textit{curve}. When a curve lies in a plane (such as the Cartesian plane), it is often referred to as a \textbf{plane curve}. Examples will help us understand the concepts introduced in the definition.\\
 
 \example{ex_pareq1}{Plotting parametric functions}{ \\
 Plot the graph of the parametric equations $x=t^2$, $y=t+1$ for $t$ in $[-2,2]$.}
-{We plot the graphs of parametric equations in much the same manner as we plotted graphs of functions like $y=f(x)$: we make a table of values, plot points, then connect these points with a ``reasonable'' looking curve. Figure \ref{fig:pareq1table} shows such a table of values; note how we have 3 columns.
+{We plot the graphs of parametric equations in much the same manner as we plotted graphs of functions like $y=f(x)$: we make a table of values, plot points, then connect these points with a ``reasonable'' looking curve. Figure \ref{fig:pareq1}(a) shows such a table of values; note how we have 3 columns.
 
-The points $(x,y)$ from the table are plotted in Figure \ref{fig:pareq1}. The points have been connected with a smooth curve. Each point has been labeled with its corresponding $t$-value. These values, along with the two arrows along the curve, are used to indicate the \textbf{orientation} of the graph. This information helps us determine the direction in which the graph is ``moving.''
-\mtable{.85}{A table of values of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1table}{%
+The points $(x,y)$ from the table are plotted in Figure \ref{fig:pareq1}(b). The points have been connected with a smooth curve. Each point has been labeled with its corresponding $t$-value. These values, along with the two arrows along the curve, are used to indicate the \textbf{orientation} of the graph. This information helps us determine the direction in which the graph is ``moving.''
+%\mtable{.85}{A table of values of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1table}{%
+%\begin{tabular}{rrr}
+%$t$ & $x$ & $y$ \\ \hline
+%$-2$ & \phantom{$-$}4 & $-1$ \\  $-1$ & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 2 \\ 2 & 4 & 3
+%\end{tabular}}
+%\mfigure{.65}{Sketching the graph of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1}{figures/figpareq1}
+\mtable{.75}{A table of values of the parametric equations in Example \ref{ex_pareq1} along with a sketch of their graph.}{fig:pareq1}{%
+\begin{tabular}{c}
 \begin{tabular}{rrr}
 $t$ & $x$ & $y$ \\ \hline
 $-2$ & \phantom{$-$}4 & $-1$ \\  $-1$ & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 2 \\ 2 & 4 & 3
+\end{tabular}\\ \\
+(a)\\
+\myincludegraphics{figures/figpareq1}\\
+(b)
 \end{tabular}}
-\mfigure{.65}{Sketching the graph of the parametric equations in Example \ref{ex_pareq1}.}{fig:pareq1}{figures/figpareq1}
 }\\
 
 We often use the letter $t$ as the parameter as we often regard $t$ as representing \textit{time}. Certainly there are many contexts in which the parameter is not time, but it can be helpful to think in terms of time as one makes sense of parametric plots and their orientation (for instance, ``At time $t=0$ the position is $(1,2)$ and at time $t=3$ the position is $(5,1)$.'').
 \\
 
 \example{ex_pareq2}{Plotting parametric functions}{ \\ Sketch the graph of the parametric equations $x=\cos^2t$, $y=\cos t+1$ for $t$ in $[0,\pi]$.}
-{We again start by making a table of values in Figure \ref{fig:pareq2_table}, then plot the points $(x,y)$ on the Cartesian plane in Figure \ref{fig:pareq2}.
-\mtable{.46}{A table of values of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2_table}{%
+{We again start by making a table of values in Figure \ref{fig:pareq2}(a), then plot the points $(x,y)$ on the Cartesian plane in Figure \ref{fig:pareq2}(b).
+%\mtable{.46}{A table of values of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2_table}{%
+%\begin{tabular}{ccc}
+%$t$ & $x$ & $y$ \\ \hline
+%0 & 1 & 2 \\
+%$\pi/4$ & $1/2$ & $1+\sqrt{2}/2$ \\
+%$\pi/2$ & 0 & 1\\
+%$3\pi/4$ & $1/2$ & $1-\sqrt{2}/2$ \\
+%$\pi$ & 1 & 0
+%\end{tabular}
+%}
+%\mfigure{.28}{Sketching the graph of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2}{figures/figpareq2}
+\mtable{.35}{A table of values of the parametric equations in Example \ref{ex_pareq2} along with a sketch of their graph.}{fig:pareq2}{%
+\begin{tabular}{c}
 \begin{tabular}{ccc}
 $t$ & $x$ & $y$ \\ \hline
 0 & 1 & 2 \\
@@ -63,16 +86,19 @@ $\pi/4$ & $1/2$ & $1+\sqrt{2}/2$ \\
 $\pi/2$ & 0 & 1\\
 $3\pi/4$ & $1/2$ & $1-\sqrt{2}/2$ \\
 $\pi$ & 1 & 0
+\end{tabular}\\ \\
+(a)\\
+\myincludegraphics{figures/figpareq2}\\
+(b)
 \end{tabular}
 }
-\mfigure{.28}{Sketching the graph of the parametric equations in Example \ref{ex_pareq2}.}{fig:pareq2}{figures/figpareq2}
 
 It is not difficult to show that the curves in Examples \ref{ex_pareq1} and \ref{ex_pareq2} are portions of the same parabola. While the \textit{parabola} is the same, the \textit{curves} are different. In Example \ref{ex_pareq1}, if we let $t$ vary over all real numbers, we'd obtain the entire parabola. In this example, letting $t$ vary over all real numbers would still produce the same graph; this portion of the parabola would be traced, and re--traced, infinitely. The orientation shown in Figure \ref{fig:pareq2} shows the orientation on $[0,\pi]$, but this orientation is reversed on $[\pi,2\pi]$.
 
 These examples begin to illustrate the powerful nature of parametric equations. Their graphs are far more diverse than the graphs of functions produced by ``$y=f(x)$'' functions.
 }\\
 
-\noindent\textbf{Technology Note:} Most graphing utilities can graph functions given in parametric form. Often the word ``parametric'' is abbreviated as ``PAR'' or ``PARAM'' in the  options. The user usually needs to determine the graphing window (i.e, the minimum and maximum $x$- and $y$-values), along with the values of $t$ that are to be plotted. The user is often prompted to give a $t$ minimum, a $t$ maximum, and a ``$t$-step'' or ``$\Delta t$.'' Graphing utilities effectively plot parametric functions just as we've shown here: it plots lots of points. A smaller $t$-step plots more points, making for a smoother graph (but may take longer). In Figure \ref{fig:pareq1table}, the $t$-step is 1; in Figure \ref{fig:pareq2_table}, the $t$-step is $\pi/4$.\\
+\noindent\textbf{Technology Note:} Most graphing utilities can graph functions given in parametric form. Often the word ``parametric'' is abbreviated as ``PAR'' or ``PARAM'' in the  options. The user usually needs to determine the graphing window (i.e, the minimum and maximum $x$- and $y$-values), along with the values of $t$ that are to be plotted. The user is often prompted to give a $t$ minimum, a $t$ maximum, and a ``$t$-step'' or ``$\Delta t$.'' Graphing utilities effectively plot parametric functions just as we've shown here: they plots lots of points. A smaller $t$-step plots more points, making for a smoother graph (but may take longer). In Figure \ref{fig:pareq1}, the $t$-step is 1; in Figure \ref{fig:pareq2}, the $t$-step is $\pi/4$.\\
 
 One nice feature of parametric equations is that their graphs are easy to shift. While this is not too difficult in the ``$y=f(x)$'' context, the resulting function can look rather messy. (Plus, to shift to the right by two, we replace $x$ with $x-2$, which is counter--intuitive.) The following example demonstrates this.\\
 
@@ -127,7 +153,7 @@ These parametric equations make certain determinations about the object's locati
 \mfigure{.8}{Graphing projectile motion in Example \ref{ex_pareq6}.}{fig:pareq6}{figures/figpareq6}
 }\\
 
-It is also sometime necessary to convert given parametric equations into rectangular form. This can be decidedly more difficult, as some ``simple'' looking parametric equations can have very ``complicated'' rectangular equations. This conversion is often referred to as ``eliminating the parameter,'' as we are looking for a relationship between $x$ and $y$ that does not involve the parameter $t$.\\
+It is  sometimes necessary to convert given parametric equations into rectangular form. This can be decidedly more difficult, as some ``simple'' looking parametric equations can have very ``complicated'' rectangular equations. This conversion is often referred to as ``eliminating the parameter,'' as we are looking for a relationship between $x$ and $y$ that does not involve the parameter $t$.\\
 
 \example{ex_pareq7}{Eliminating the parameter}{
 Find a rectangular equation for the curve described by $$ x= \frac{1}{t^2+1}\quad \text{and}\quad y=\frac{t^2}{t^2+1}.$$ }
@@ -168,13 +194,15 @@ The Pythagorean Theorem can also be used to identify parametric equations for hy
 
 \keyidea{idea:par_ellipse}{Parametric Equations for Ellipses}
 {The parametric equations 
-$$ x=a\cos t+h, \quad y=b\sin t+k$$ define an ellipse with horizontal axis of length $2a$ and vertical axis of length $2b$, centered at $(h,k)$.\\
+$$ x=a\cos t+h, \quad y=b\sin t+k$$ define an ellipse with horizontal axis of length $2a$ and vertical axis of length $2b$, centered at $(h,k)$.
+\index{ellipse!parametric equations}%\\
 }
 
 \keyidea{idea:par_hyperbola}{Parametric Equations for Hyperbolas}
 {The parametric equations
 $$ x= a\tan t+h,\quad y=\pm b\sec t+k$$ define a hyperbola with vertical transverse axis centered at $(h,k)$, and 
 $$ x=\pm a\sec t+h, \quad y=b\tan t + k$$ defines a hyperbola with horizontal transverse axis. Each has asymptotes at $y=\pm b/a(x-h)+k$.
+\index{hyperbola!parametric equations}
 }
 %%%%% End with this??
 %%%%%
@@ -185,14 +213,6 @@ $$ x=\pm a\sec t+h, \quad y=b\tan t + k$$ defines a hyperbola with horizontal tr
 Figure \ref{fig:pareq_special} gives a small  gallery of ``interesting'' and ``famous'' curves along with parametric equations that produce them. Interested readers can begin learning more about these curves through internet searches.
 
 One might note a feature shared by two of these graphs: ``sharp corners,'' or \textbf{cusps}. We have seen graphs with cusps before and determined that such functions are not differentiable at these points. This leads us to a definition.
-
-\definition{def:smooth}{Smooth}
-{A curve $C$ defined by $x=f(t)$, $y=g(t)$ is \textbf{smooth} on an interval $I$ if $\fp$ and $g'$ are continuous on $I$ and not simultaneously 0 (except possibly at the endpoints of $I$). A curve is \textbf{piecewise smooth} on $I$ if $I$ can be partitioned into subintervals where $C$ is smooth on each subinterval.
-}
-
-Consider the astroid, given by $x=\cos^3t$, $y=\sin^3t$. Taking derivatives, we have:
-$$x' = -3\cos^2t\sin t\quad \text{and}\quad y' = 3\sin^2t\cos t.$$
-It is clear that each is 0 when $t=0,\ \pi/2,\ \pi,\ldots$. Thus the astroid is not smooth at these points, corresponding to the cusps seen in the figure.
 
 %\noindent
 %\begin{figure}%{\linewidth}
@@ -213,6 +233,16 @@ It is clear that each is 0 when $t=0,\ \pi/2,\ \pi,\ldots$. Thus the astroid is 
 %\caption{A gallery of interesting planar curves.}\label{fig:pareq_special}
 %\end{figure}
 
+\definition{def:smooth}{Smooth}
+{A curve $C$ defined by $x=f(t)$, $y=g(t)$ is \textbf{smooth} on an interval $I$ if $\fp$ and $g'$ are continuous on $I$ and not simultaneously 0 (except possibly at the endpoints of $I$). A curve is \textbf{piecewise smooth} on $I$ if $I$ can be partitioned into subintervals where $C$ is smooth on each subinterval.
+\index{curve!smooth}\index{smooth curve}\index{cusp}
+}
+
+Consider the astroid, given by $x=\cos^3t$, $y=\sin^3t$. Taking derivatives, we have:
+$$x' = -3\cos^2t\sin t\quad \text{and}\quad y' = 3\sin^2t\cos t.$$
+It is clear that each is 0 when $t=0,\ \pi/2,\ \pi,\ldots$. Thus the astroid is not smooth at these points, corresponding to the cusps seen in the figure.
+
+
 We demonstrate this once more.\\
 
 \example{ex_pareq9}{Determine where a curve is not smooth}{
@@ -225,7 +255,7 @@ $$\begin{array}{l}x' = 0 \Rightarrow 3t^2-12=0 \Rightarrow t=\pm 2\\
 	\end{array}
 	$$
 We see at $t=2$ both $x'$ and $y'$ are 0; thus $C$ is not smooth at $t=2$, corresponding to the point $(1,4)$. The curve is graphed in Figure \ref{fig:pareq9}, illustrating the cusp at $(1,4)$.
-\mfigure{.8}{Graphing the curve in Example \ref{ex_pareq9}; note it is not smooth at $(1,4)$.}{fig:pareq9}{figures/figpareq9}
+\mfigure{.7}{Graphing the curve in Example \ref{ex_pareq9}; note it is not smooth at $(1,4)$.}{fig:pareq9}{figures/figpareq9}
 }\\
 
 If a curve is not smooth at $t=t_0$, it means that $x'(t_0)=y'(t_0)=0$ as defined. This, in turn, means that rate of change of $x$ (and $y$) is 0; that is, at that instant, neither $x$ nor $y$ is changing. If the parametric equations describe the path of some object, this means the object is at rest at $t_0$. An object at rest can make a ``sharp'' change in direction, whereas moving objects tend to change direction in a ``smooth'' fashion.

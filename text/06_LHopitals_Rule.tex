@@ -11,7 +11,7 @@ Other indeterminate forms exist; they are: %Limits may seeming evaluate to
 This section introduces l'H\^opital's Rule, a method of resolving limits that produce the indeterminate forms 0/0 and $\infty/\infty$. We'll also show how algebraic manipulation can be used to convert other indeterminate expressions into one of these two form so that our new rule can be applied.
 
 \theorem{thm:LHR}{L'H\^opital's Rule, Part 1}
-{Let $\ds \lim_{x\to c}f(x) = 0$ and $\ds \lim_{x\to c}g(x)=0$, where $f$ and $g$ are differentiable functions on an open interval $I$ containing $c$, and $g'(x)\neq 0$ on $I$ except possibly at $c$. Then 
+{Let $\ds \lim_{x\to c}f(x) = 0$ and $\ds \lim_{x\to c}g(x)=0$, where $f$ and $g$ are differentiable functions on an open interval $I$ containing $c$, and $g'(x)\neq 0$ on $I$ except possibly at $c$. Then \index{limit!L'H\^opital's Rule}\index{L'H\^opital's Rule}
 $$ \lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c} \frac{\fp(x)}{g'(x)}.$$
 }
 
@@ -62,7 +62,7 @@ The following theorem extends our initial version of l'H\^opital's Rule in two w
 
 \theorem{thm:LHR2}{L'H\^opital's Rule, Part 2}
 {\begin{enumerate}
-\item		Let $\ds\lim_{x\to a}f(x) = \pm\infty$ and $\ds\lim_{x\to a}g(x)=\pm \infty$, where $f$ and $g$ are differentiable on an open interval $I$ containing $a$. Then 
+\item		Let $\ds\lim_{x\to a}f(x) = \pm\infty$ and $\ds\lim_{x\to a}g(x)=\pm \infty$, where $f$ and $g$ are differentiable on an open interval $I$ containing $a$. Then \index{limit!L'H\^opital's Rule}\index{L'H\^opital's Rule}
 $$\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a}\frac{\fp(x)}{g'(x)}.$$
 
 \item		Let $f$ and $g$ be differentiable functions on the open interval $(a,\infty)$ for some value $a$, where $g'(x)\neq 0$ on $(a,\infty)$ and $\ds\lim_{x\to\infty} f(x)/g(x)$ returns either 0/0 or $\infty/\infty$. Then
@@ -91,7 +91,8 @@ Recall that this means that the limit does not exist; as $x$ approaches $\infty$
 \noindent\textbf{\large Indeterminate Forms $0\cdot\infty$ and $\infty-\infty$}
 \vskip\baselineskip
 
-L'H\^opital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as $0\cdot\infty$ or $\infty-\infty$, we can sometimes apply algebra to rewrite the limit so that l'H\^opital's Rule can be applied. We demonstrate the general idea in the next example.\\
+L'H\^opital's Rule can only be applied to ratios of functions. When faced with an indeterminate form such as $0\cdot\infty$ or $\infty-\infty$, we can sometimes apply algebra to rewrite the limit so that l'H\^opital's Rule can be applied. We demonstrate the general idea in the next example.
+\index{limit!indeterminate form}\index{indeterminate form}\\
 
 \example{ex_LHR3}{Applying l'H\^opital's Rule to other indeterminate forms}{
 Evaluate the following limits.
@@ -152,7 +153,7 @@ When faced with an indeterminate form that involves a power, it often helps to e
 %\begin{minipage}{\specialboxlength}
 \keyidea{idea:LHR_power}{\parbox[t]{200pt}{Evaluating Limits Involving Indeterminate Forms $0^0$, $1^\infty$ and $\infty^0$}}
 {If $\ds \lim_{x\to c} \ln\big(f(x)\big) = L$,\quad then 
-$\ds \lim_{x\to c} f(x) = \lim_{x\to c} e^{\ln(f(x))} = e\,^L.$
+$\ds \lim_{x\to c} f(x) = \lim_{x\to c} e^{\ln(f(x))} = e\,^L.$ \index{limit!indeterminate form}\index{indeterminate form}
 }
 %\end{minipage}
 %\restoreboxwidth

@@ -23,20 +23,24 @@ $\fp(c) = \frac{f(b)-f(a)}{b-a}$ have to hold for some $a < c < b$?
 Let's look at two functions in an example.\\
 
 \example*{ex_mvt1}{Comparing average and instantaneous rates of change}
-{Consider functions $$f_1(x)=\frac{1}{x^2}\quad \text{and} \quad f_2(x) = |x|$$ with $a=-1$ and $b=1$ as shown in Figure \ref{fig:mvt1}.  Both functions have a value of 1 at $a$ and $b$.  Therefore the slope of the secant line connecting the end points is $0$ in each case.  But if you look at the plots of each (below), you can see that there are no points on either graph where the tangent lines have slope zero. Therefore we have found that there is no $c$ in $[-1,1]$ such that $$\fp(c) = \frac{f(1)-f(-1)}{1-(-1)} = 0.$$
+{Consider functions $$f_1(x)=\frac{1}{x^2}\quad \text{and} \quad f_2(x) = |x|$$ with $a=-1$ and $b=1$ as shown in Figure \ref{fig:mvt1}(a) and (b), respectively.  Both functions have a value of 1 at $a$ and $b$.  Therefore the slope of the secant line connecting the end points is $0$ in each case.  But if you look at the plots of each (below), you can see that there are no points on either graph where the tangent lines have slope zero. Therefore we have found that there is no $c$ in $[-1,1]$ such that $$\fp(c) = \frac{f(1)-f(-1)}{1-(-1)} = 0.$$
 %
-\ifthenelse{\boolean{longpage}}%
-{\noindent 
-\begin{minipage}{\textwidth}\centering
-\myincludegraphics{figures/figmvt1}%
-\hskip 20pt
-\noindent \myincludegraphics{figures/figmvt2}
-\captionsetup{type=figure}%
-			\caption{A  graph of $f_1(x) = 1/x^2$ and $f_2(x) = |x|$ in Example \ref{ex_mvt1}.}\label{fig:mvt1}
-\end{minipage}}%
-{\mtable{.73}{A graph of $f_1(x) = 1/x^2$ and $f_2(x) = |x|$ in Example \ref{ex_mvt1}.}{fig:mvt1}%
-{\noindent \centering \myincludegraphics{figures/figmvt1}
-\vskip 15pt \myincludegraphics{figures/figmvt2}}}%  else, not longpage
+%\ifthenelse{\boolean{longpage}}%
+%{\noindent 
+%\begin{minipage}{\textwidth}\centering
+%\myincludegraphics{figures/figmvt1}%
+%\hskip 20pt
+%\noindent \myincludegraphics{figures/figmvt2}
+%\captionsetup{type=figure}%
+			%\caption{A  graph of $f_1(x) = 1/x^2$ and $f_2(x) = |x|$ in Example \ref{ex_mvt1}.}\label{fig:mvt1}
+%\end{minipage}}%
+\mtable{.7}{A graph of $f_1(x) = 1/x^2$ and $f_2(x) = |x|$ in Example \ref{ex_mvt1}.}{fig:mvt1}%
+{\begin{tabular}{c}
+\myincludegraphics{figures/figmvt1}\\
+(a)\\
+\myincludegraphics{figures/figmvt2}\\
+(b)
+\end{tabular}}%  else, not longpage
 %
 %\mfigure{.8}{A graph of $f_1(x) = 1/x^2$ in Example \ref{ex_mvt1}.}{fig:mvt1}{figures/figmvt1}
 %
@@ -46,7 +50,7 @@ Let's look at two functions in an example.\\
 So what went ``wrong''?  It may not be surprising to find that the discontinuity of $f_1$ and the corner of $f_2$ play a role.  If our functions had been continuous and differentiable, would we have been able to find that special value $c$? This is our motivation for the following theorem.
 
 \theorem{thm:mvt}{The Mean Value Theorem of Differentiation}
-{Let $y=f(x)$ be continuous function on the closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. There exists a value $c$, $a < c < b$, such that
+{Let $y=f(x)$ be continuous function on the closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. There exists a value $c$, $a < c < b$, such that \index{Mean Value Theorem!of differentiation}\index{derivative!Mean Value Theorem}
 $$
 \fp(c) = \frac{f(b)-f(a)}{b-a}.
 $$
@@ -57,11 +61,11 @@ Note that the reasons that the functions in Example \ref{ex_mvt1} fail are indee
 We will give a proof of the Mean Value Theorem below. To do so, we use a fact, called Rolle's Theorem, stated here.
 
 \theorem{thm:rolles}{Rolle's Theorem}
-{Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$, where $f(a) = f(b)$. There is some $c$ in $(a,b)$ such that $\fp(c) = 0.$}
+{Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$, where $f(a) = f(b)$. There is some $c$ in $(a,b)$ such that $\fp(c) = 0.$\index{Rolle's Theorem}}
 
 Consider Figure \ref{fig:mvt3} where the graph of a function $f$ is given, where $f(a) = f(b)$. It should make intuitive sense that if $f$ is differentiable (and hence, continuous) that there would be a value $c$ in $(a,b)$ where $\fp(c)=0$; that is, there would be a relative maximum or minimum of $f$ in $(a,b)$. Rolle's Theorem guarantees at least one; there may be more. 
 
-\mfigure{.4}{A graph of $f(x) = x^3-5x^2+3x+5$, where $f(a) = f(b)$. Note the existence of $c$, where $a<c<b$, where $\fp(c)=0$.}{fig:mvt3}{figures/figmvt3}
+\mfigure{.34}{A graph of $f(x) = x^3-5x^2+3x+5$, where $f(a) = f(b)$. Note the existence of $c$, where $a<c<b$, where $\fp(c)=0$.}{fig:mvt3}{figures/figmvt3}
 
 Rolle's Theorem is really just a special case of the Mean Value Theorem. If $f(a) = f(b)$, then the \textit{average} rate of change on $(a,b)$ is $0$, and the theorem guarantees some $c$ where $\fp(c)=0$. We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.\\
 

@@ -1,0 +1,9 @@
+{$f(x) = \sin x$;\quad $c=\pi/4$
+}
+{The derivatives of $\sin x$ are $\pm \cos x$ and $\pm \sin x$; at $x=\pi/4$, these derivatives evaluate to $\pm \sqrt{2}/2$. 
+
+The Taylor series starts $\frac{\sqrt{2}}2+\frac{\sqrt{2}}2(x-\pi/4) - \frac{\sqrt{2}}2\frac{(x-\pi/4)^2}{2}-\frac{\sqrt{2}}2\frac{(x-\pi/4)^3}{3!}+\frac{\sqrt{2}}2\frac{(x-\pi/4)^4}{4!}+\frac{\sqrt{2}}2\frac{(x-\pi/4)^5}{5!}\cdots$. Note how the signs are ``even, even, odd, odd, even, even, odd, odd,$\ldots$ We saw signs like these in Example \ref{ex_seq1} of Section \ref{sec:sequences}; one way of producing such signs is to raise $(-1)$ to a special quadratic power. While many possibilities exist, 
+one such quadratic is $(n+3)(n+4)/2$. 
+
+Thus the Taylor series is $\ds \sum_{n=0}^\infty (-1)^{\frac{(n+3)(n+4)}{2}}\frac{\sqrt2}{2}\frac{(x-\pi/4)^n}{n!}$.
+}

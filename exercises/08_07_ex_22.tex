@@ -1,0 +1,4 @@
+{Find $n$ such that the  Maclaurin polynomial of degree $n$ of $f(x)= \cos x$ approximates $\cos \pi/3$ within $0.0001$ of the actual value.
+}
+{The $n^\text{th}$ derivative of $f(x)=\cos x$ is bounded by $1$ on intervals containing $0$ and $\pi/3$. Thus $|R_n(\pi/3)|\leq \frac{1}{(n+1)!}(\pi/3)^{(n+1)}$. When $n=7$, this is less than $0.0001$. Since the Maclaurin polynomial of $\cos x$ only uses even powers, we can actually just use $n=6$.
+}

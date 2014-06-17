@@ -5,6 +5,7 @@ $$V = \iint_R f(x,y)\ dA - \iint_R g(x,y)\ dA = \iint_R \big(f(x,y)-g(x,y)\big)\
 
 \theorem{thm:volume_between_surfaces}{Volume Between Surfaces}
 {Let $f$ and $g$ be continuous functions on a closed, bounded region $R$, where $f(x,y)\geq g(x,y)$ for all $(x,y)$ in $R$. The volume $V$ between $f$ and $g$ over $R$ is
+\index{volume}
 $$V =\iint_R \big(f(x,y)-g(x,y)\big)\ dA.$$
 }
 \enlargethispage{2\baselineskip}
@@ -63,7 +64,8 @@ Let $|\Delta D|$ represent the length of the longest diagonal of rectangular sol
 \noindent\hskip-100pt\begin{minipage}{\linewidth}
 \definition{def:triple_integral}{Triple Integrals, Iterated Integration (Part I)}
 {Let $D$ be a closed, bounded region in space. Let $a$ and $b$ be real numbers, let $g_1(x)$ and $g_2(x)$ be continuous functions of $x$, and let $f_1(x,y)$ and $f_2(x,y)$ be continuous functions of $x$ and $y$.
-\begin{itemize}
+\index{integration!triple}\index{triple integral}\index{iterated integration}
+\begin{enumerate}
 	\item	The volume $V$ of $D$ is denoted by a \textbf{triple integral},
 	$$V = \iiint_D dV.$$
 	
@@ -72,9 +74,10 @@ Let $|\Delta D|$ represent the length of the longest diagonal of rectangular sol
 	Evaluating the above iterated integral is \textbf{triple integration.}
 	
 	
-\end{itemize}
+\end{enumerate}
 }
-\end{minipage}\vskip-5pt
+\end{minipage}
+\vskip-5pt
 
 Our informal understanding of the notation $\iiint_D\ dV$ is ``sum up lots of little volumes over $D$,'' analogous to our understanding of $\iint_R\ dA$ and $\iint_R\ dm$.
 
@@ -83,7 +86,8 @@ We now state the major theorem of this section.\vskip-5pt
 \noindent\hskip-100pt\begin{minipage}{\linewidth}
 \theorem{thm:triple_integration}{Triple Integration (Part I)}
 {Let $D$ be a closed, bounded region in space and let $\Delta D$ be any subdivision of $D$ into $n$ rectangular solids, where the  $i^\text{\,th}$ subregion $D_i$ has dimensions $\dx_i\times\dy_i\times\ddz_i$ and volume $\Delta V_i$.
-\begin{itemize}
+\index{integration!triple}\index{triple integral}\index{iterated integration}
+\begin{enumerate}
 	\item The volume $V$ of $D$ is
 	$$V = \iiint_D\ dV = \lim_{|\Delta D|\to0} \sum_{i=1}^n \Delta V_i = \lim_{|\Delta D|\to0} \sum_{i=1}^n \dx_i\dy_i\ddz_i.$$
 	
@@ -91,7 +95,7 @@ We now state the major theorem of this section.\vskip-5pt
 	$$\iiint_D \ dV = \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)}^{f_2(x,y)} \ dz\ dy\ dx.$$
 	
 	\item		$V$ can be determined using iterated integration with other orders of integration (there are 6 total), as long as $D$ is defined by the region enclosed by a pair of planes, a pair of cylinders, and a pair of surfaces.
-\end{itemize}
+\end{enumerate}
 }
 \end{minipage}
 \restoreboxwidth
@@ -104,7 +108,7 @@ Examples will help us understand triple integration, including integrating with 
 
 \example{ex_trip2}{Finding the volume of a space region with triple integration}{
 Find the volume of the space region in the $1^{\,st}$ octant bounded by the plane $z=2-y/3-2x/3$, shown in Figure \ref{fig:trip2}(a), using the order of integration $dz\ dy\ dx$. Set up the triple integrals that give the volume in the other 5 orders of integration.}
-{Starting with the order of integration $dx\ dy\ dx$, we need to first find bounds on $z$. The region $D$ is bounded below by the plane $z=0$ (because we are restricted to the first octant) and above by $z=2-y/3-2x/3$; $0\leq z\leq 2-y/3-2x/3$.
+{Starting with the order of integration $dz\ dy\ dx$, we need to first find bounds on $z$. The region $D$ is bounded below by the plane $z=0$ (because we are restricted to the first octant) and above by $z=2-y/3-2x/3$; $0\leq z\leq 2-y/3-2x/3$.
 
 To find the bounds on $y$ and $x$, we ``collapse'' the region onto the $x$, $y$ plane, giving the triangle shown in Figure \ref{fig:trip2}(b). (We know the equation of the line $y=6-2x$ in two ways. First, by setting $z=0$, we have $0 = 2-y/3-2x/3 \Rightarrow y=6-2x$. Secondly, we know this is going to be a straight line between the points $(3,0)$ and $(0,6)$ in the $x$, $y$ plane.) 
 
@@ -319,10 +323,11 @@ The following theorem states two things that should make ``common sense'' to us.
 
 \theorem{thm:triple_int_prop}{Properties of Triple Integrals}
 {Let $D$ be a closed, bounded region in space, and let $D_1$ and $D_2$ be non-overlapping regions such that $D=D_1\bigcup D_2$.
-\begin{itemize}
+\index{triple integral!properties}\index{iterated integration!properties}
+\begin{enumerate}
 	\item $\ds \iiint_D \ dV \geq 0$
 	\item	$\ds \iiint_D\ dV = \iiint_{D_1}\ dV + \iiint_{D_2}\ dV.$
-\end{itemize}
+\end{enumerate}
 }
 
 We use this latter property in the next example.\\
@@ -552,6 +557,7 @@ There are uses for triple integration beyond merely finding volume, just as ther
 {Let $D$ be a closed, bounded region in space, over which $g_1(x)$, $g_2(x)$, $f_1(x,y)$, $f_2(x,y)$ and $h(x,y,z)$ are all continuous, and let $a$ and $b$ be real numbers.\\
 
 The \textbf{iterated integral} $\ds \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\ dy\ dx$ is evaluated as
+\index{integration!triple}\index{triple integral}\index{iterated integration}
 \small
 $$\int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\ dy\ dx = \int_a^b\int_{g_1(x)}^{g_2(x)}\left(\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\right) dy\ dx.$$\normalsize
 }
@@ -587,6 +593,7 @@ We now use the above limit to define the \textbf{triple integral}, give a theore
 
 \definition{def:triple_integral_3}{Triple Integral}
 {Let $w=h(x,y,z)$ be a continuous function over a closed, bounded space region $D$, and let $\Delta D$ be any partition of $D$ into $n$ rectangular solids with volume $V_i$. The \textbf{triple integral of $h$ over $D$} is
+\index{integration!triple}\index{triple integral}\index{iterated integration}
 $$\iiint_Dh(x,y,z)\ dV = \lim_{|\Delta D|\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i.$$
 }
 
@@ -594,14 +601,15 @@ The following theorem assures us that the above limit exists for continuous func
 
 \theorem{thm:triple_integration2}{Triple Integration (Part II)}
 {Let $w=h(x,y,z)$ be a continuous function over a closed, bounded space region $D$, and let $\Delta D$ be any partition of $D$ into $n$ rectangular solids with volume $V_i$.
+\index{integration!triple}\index{triple integral}\index{iterated integration}
 
-\begin{itemize}
+\begin{enumerate}
 \item		The limit $\ds \lim_{|\Delta D|\to 0}\sum_{i=1}^n h(x_i,y_i,z_i)\Delta V_i$ exists.
 
 \item		If $D$ is defined as the region bounded by the planes $x=a$ and $x=b$, the cylinders $y=g_1(x)$ and $y=g_2(x)$, and the surfaces $z=f_1(x,y)$ and $z=f_2(x,y)$, where $a<b$, $g_1(x)\leq g_2(x)$ and $f_1(x,y)\leq f_2(x,y)$ on $D$, then
 	$$\iiint_D h(x,y,z)\ dV = \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{f_1(x,y)}^{f_2(x,y)} h(x,y,z)\ dz\ dy\ dx.$$
 
-\end{itemize}
+\end{enumerate}
 }
 
  We now apply triple integration to find the centers of mass of solid objects.\\
@@ -612,14 +620,15 @@ One may wish to review Section \ref{sec:center_of_mass} for a reminder of the re
 
 \definition{def:mass_3d}{Mass, Center of Mass of Solids}
 {Let a solid be represented by a region $D$ in space with variable density function $\delta(x,y,z)$. 
-\begin{itemize}
+\index{moment}\index{center of mass}\index{mass}
+\begin{enumerate}
 	\item The \textbf{mass} of the object is $\ds M= \iiint_D \ dm=\iiint_D \delta(x,y,z)\ dV$.
 	\item	The \textbf{moment about the $x$,$y$ plane} is $\ds M_{xy}=\iiint_D z\delta(x,y,z)\ dV$.
 	\item	The \textbf{moment about the $x$,$z$ plane} is $\ds M_{xz}=\iiint_D y\delta(x,y,z)\ dV$.
 	\item	The \textbf{moment about the $y$,$z$ plane} is $\ds M_{yz}=\iiint_D x\delta(x,y,z)\ dV$.
 	\item The \textbf{center of mass} of the object is
 	$$\big(\overline{x},\overline{y},\overline{z}\big) = \left(\frac{M_{yz}}M,\frac{M_{xz}}M,\frac{M_{xy}}M\right).$$
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_trip7}{Finding the center of mass of a solid}{
@@ -665,16 +674,29 @@ Find the center of mass of the solid represented by the region bounded by the pl
 
 As one moves away from the origin in the $y$ or $z$ directions, the object becomes less dense, though there is more volume in these regions.  
 
-Though none of the integrals needed to compute the center of mass are particularly hard, they do require a number of steps. We emphasize here the importance of knowing how to set up the proper integrals; in complex situations we can appeal to technology for a good approximation, if not the exact answer. We use the order of integration $dz\ dy\ dx$, using the bounds found in Example \ref{ex_trip3}. 
+Though none of the integrals needed to compute the center of mass are particularly hard, they do require a number of steps. We emphasize here the importance of knowing how to set up the proper integrals; in complex situations we can appeal to technology for a good approximation, if not the exact answer. We use the order of integration $dz\ dy\ dx$, using the bounds found in Example \ref{ex_trip3}. (As these are the same for all four triple integrals, we explicitly show the bounds only for $M$.)
 
+%\begin{align*}
+%M &= \iiint_D \big(10+x^2+5y-5z\big)\ dV &	M_{yz}	&= \iiint_D x\big(10+x^2+5y-5z\big)\ dV\\
+	%&= \int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} \big(10+x^2+5y-5z\big)\ dV & &=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} x\big(10+x^2+5y-5z\big)\ dV\\
+	%&= \frac{64}5-\frac{15\pi}{16} \approx 3.855. & &= 0.\\
+	%& \\
+%M_{xy}	&= \iiint_D z\big(10+x^2+5y-5z\big)\ dV & M_{xz}	&= \iiint_D y\big(10+x^2+5y-5z\big)\ dV\\
+				%&=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} z\big(10+x^2+5y-5z\big)\ dV & &=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} y\big(10+x^2+5y-5z\big)\ dV\\
+				%&= \frac{61\pi}{96}-\frac{10}9\approx 0.885. & &= 2-\frac{61\pi}{48}\approx -1.99.
+%\end{align*}
 \begin{align*}
-M &= \iiint_D \big(10+x^2+5y-5z\big)\ dV &	M_{yz}	&= \iiint_D x\big(10+x^2+5y-5z\big)\ dV\\
-	&= \int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} \big(10+x^2+5y-5z\big)\ dV & &=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} x\big(10+x^2+5y-5z\big)\ dV\\
-	&= \frac{64}5-\frac{15\pi}{16} \approx 3.855. & &= 0.\\
-	& \\
-M_{xy}	&= \iiint_D z\big(10+x^2+5y-5z\big)\ dV & M_{xz}	&= \iiint_D y\big(10+x^2+5y-5z\big)\ dV\\
-				&=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} z\big(10+x^2+5y-5z\big)\ dV & &=\int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} y\big(10+x^2+5y-5z\big)\ dV\\
-				&= \frac{61\pi}{96}-\frac{10}9\approx 0.885. & &= 2-\frac{61\pi}{48}\approx -1.99.
+M &= \iiint_D \big(10+x^2+5y-5z\big)\ dV \\
+	&= \int_{-1}^1\int_{-\sqrt{1-x^2}}^0\int_0^{-y} \big(10+x^2+5y-5z\big)\ dV\\
+	&= \frac{64}5-\frac{15\pi}{16} \approx 3.855.\\
+%\end{align*}
+%\begin{align*}
+M_{yz}	&= \iiint_D x\big(10+x^2+5y-5z\big)\ dV \\%& M_{xy}	&= \iiint_D z\big(10+x^2+5y-5z\big)\ dV & M_{xz}\\
+	&=0.\\
+M_{xz} &= \iiint_D y\big(10+x^2+5y-5z\big)\ dV\\
+	&= 2-\frac{61\pi}{48}\approx -1.99.\\
+	M_{xy}	&= \iiint_D z\big(10+x^2+5y-5z\big)\ dV \\
+	&= \frac{61\pi}{96}-\frac{10}9\approx 0.885.
 \end{align*}
 Note how $M_{yz}=0$, as expected. The center of mass is
 $$\big(\overline{x},\overline{y},\overline{z}\big) = \left(0,\frac{-1.99}{3.855},\frac{0.885}{3.855}\right) \approx \big(0,-0.516, 0.230\big).$$

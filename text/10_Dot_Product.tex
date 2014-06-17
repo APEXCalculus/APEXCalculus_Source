@@ -3,12 +3,13 @@
 The previous section introduced vectors and described how to add them together and how to multiply them by scalars. This section introduces \emph{a} multiplication on vectors called the \textbf{dot product}.
 
 \definition{def:dot_product}{Dot Product}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ in $\mathbb{R}^2$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
+	\index{dot product!definition}\index{vectors!dot product}
 	$$\dotp uv = u_1v_1+u_2v_2.$$
 	\item Let $\vec u = \la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$ in $\mathbb{R}^3$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
 	$$\dotp uv = u_1v_1+u_2v_2+u_3v_3.$$
-\end{itemize}
+\end{enumerate}
 }
 
 Note how this product of vectors returns a \emph{scalar}, not another vector. We practice evaluating a dot product in the following example, then we will discuss why this product is useful.\\
@@ -30,7 +31,7 @@ Note how this product of vectors returns a \emph{scalar}, not another vector. We
 The dot product, as shown by the preceding example, is very simple to evaluate. It is only the sum of products. While the definition gives no hint as to why we would care about this operation, there is an amazing connection between the dot product and angles formed by the vectors. Before stating this connection, we give a theorem stating some of the properties of the dot product.
 
 \theorem{thm:dot_product_properties}{Properties of the Dot Product}
-{Let $\vec u$, $\vec v$ and $\vec w$ be vectors in $\mathbb{R}^2$ or $\mathbb{R}^3$ and let $c$ be a scalar.
+{Let $\vec u$, $\vec v$ and $\vec w$ be vectors in $\mathbb{R}^2$ or $\mathbb{R}^3$ and let $c$ be a scalar.\index{dot product!properties}\index{vectors!dot product}
 \begin{enumerate}
 	\item \parbox{150pt}{$\dotp uv = \dotp vu$}{Commutative Property}
 	\item \parbox{150pt}{$\vec u\cdot(\vec v+\vec w) = \dotp uv + \dotp uw$}{Distributive Property}
@@ -53,7 +54,7 @@ The next theorem extends this understanding by connecting the dot product to mag
 \end{tabular}
 }
 
-The same is actually true of 2 vectors in space: given $\vec u$ and $\vec v$ in $\mathbb{R}^3$ with the same initial point, there is a plane that contains both $\vec u$ and $\vec v$. (When $\vec u$ and $\vec v$ are co-linear, there are infinite planes that contain both vectors.) In that plane, we can again find an angle $\theta$ between them (and again, $0\leq \theta\leq \pi$). This is illustrated in Figure \ref{fig:dotpangle} (b).
+The same is also true of 2 vectors in space: given $\vec u$ and $\vec v$ in $\mathbb{R}^3$ with the same initial point, there is a plane that contains both $\vec u$ and $\vec v$. (When $\vec u$ and $\vec v$ are co-linear, there are infinite planes that contain both vectors.) In that plane, we can again find an angle $\theta$ between them (and again, $0\leq \theta\leq \pi$). This is illustrated in Figure \ref{fig:dotpangle} (b).
 
 The following theorem connects this angle $\theta$ to the dot product of $\vec u$ and $\vec v$.
 
@@ -61,6 +62,7 @@ The following theorem connects this angle $\theta$ to the dot product of $\vec u
 {Let $\vec u$ and $\vec v$ be vectors in $\mathbb{R}^2$ or $\mathbb{R}^3$. Then 
 $$\dotp uv = \norm{\vec u}\,\norm{\vec v} \cos\theta,$$
 where $\theta$, $0\leq\theta\leq \pi$, is the angle between $\vec u$ and $\vec v$.
+\index{dot product!properties}\index{vectors!dot product}
 }
 
 When $\theta$ is an acute angle (i.e., $0\leq \theta <\pi/2$), $\cos \theta$ is positive; when $\theta = \pi/2$, $\cos \theta = 0$; when $\theta$ is an obtuse angle ($\pi/2<\theta \leq \pi$), $\cos \theta$ is negative. Thus the sign of the dot product gives a general indication of the angle between the vectors, illustrated in Figure \ref{fig:dotpsign}.
@@ -107,7 +109,7 @@ We do a similar example next in the context of vectors in space.\\
 \mfigure{.4}{Vectors used in Example \ref{ex_dotp3}.}{fig:dotp3}{figures/figdotp3}
 \example{ex_dotp3}{Using the dot product to find angles}{
 Let $\vec u = \la 1,1,1\ra$, $\vec v = \la -1,3,-2\ra$ and $\vec w = \la -5,1,4\ra$, as illustrated in Figure \ref{fig:dotp3}. Find the angle between each pair of vectors.}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Between $\vec u$ and $\vec v$:
 	\begin{align*}
 	\theta &= \cos^{-1}\left(\frac{\dotp uv}{\norm{\vec u}\norm{\vec v}}\right)\\
@@ -126,7 +128,7 @@ Let $\vec u = \la 1,1,1\ra$, $\vec v = \la -1,3,-2\ra$ and $\vec w = \la -5,1,4\
 					&= \cos^{-1}\left(\frac{0}{\sqrt{14}\sqrt{42}}\right)\\
 					&= \frac{\pi}2.
 	\end{align*}
-\end{itemize}
+\end{enumerate}
 While our work shows that each angle is $\pi/2$, i.e.,  $90^\circ$, none of these angles looks to be a right angle in Figure \ref{fig:dotp3}. Such is the case when drawing three--dimensional objects on the page.
 }\\
 
@@ -134,6 +136,7 @@ All three angles between these vectors was $\pi/2$, or $90^\circ$. We know from 
 
 \definition{def:orthogonal}{Orthogonal}
 {Vectors $\vec u$ and $\vec v$ are \textbf{orthogonal} if their dot product is 0.
+\index{orthogonal}\index{perpendicular|see{orthogonal}}\index{vectors!orthogonal}
 }
 
 \mnote{.4}{\textbf{Note:} The term \textit{perpendicular} originally referred to lines. As mathematics progressed, the concept of ``being at right angles to'' was applied to other objects, such as vectors and planes, and the term \emph{orthogonal} was introduced. It is especially used when discussing objects that are hard, or impossible, to visualize: two vectors in 5-dimensional space are orthogonal if their dot product is 0. It is not wrong to say they are \textit{perpendicular}, but common convention gives preference to the word \textit{orthogonal}.
@@ -147,7 +150,7 @@ Let $\vec u = \la 3,5\ra$ and $\vec v = \la 1,2,3\ra$.
 \end{enumerate}
 }
 {\begin{enumerate}
-	\item Recall that a lines perpendicular to a line with slope $m$ have slope $-1/m$, the ``opposite reciprocal slope.'' We can think of the slope of $\vec u$ as $5/3$, its ``rise over run.'' A vector orthogonal to $\vec u$ will have slope $-3/5$. There are many such choices, though all parallel:
+	\item Recall that a line perpendicular to a line with slope $m$ have slope $-1/m$, the ``opposite reciprocal slope.'' We can think of the slope of $\vec u$ as $5/3$, its ``rise over run.'' A vector orthogonal to $\vec u$ will have slope $-3/5$. There are many such choices, though all parallel:
 	$$\la -5,3\ra \quad \text{or} \quad\la 5,-3\ra \quad \text{or} \quad \la -10,6\ra\quad \text{or} \quad \la 15,-9\ra,\text{etc.}$$
 	\item		There are infinite directions in space orthogonal to any given direction, so there are an infinite number of non--parallel vectors orthogonal to $\vec v$. Since there are so many, we have great leeway in finding some.
 	
@@ -193,6 +196,7 @@ Since this construction is so important, it is given a special name.
 
 \definition{def:orthogonal_projection}{Orthogonal Projection}
 {Let $\vec u$ and $\vec v$ be given. The \textbf{orthogonal projection of $\vec u$ onto $\vec v$}, denoted $\proj uv$, is 
+\index{orthogonal projection}\index{vectors!orthogonal projection}
 $$\proj uv = \frac{\dotp uv}{\dotp vv}\vec v.$$
 }
 
@@ -244,6 +248,7 @@ This is not nonsense, as pointed out in the following Key Idea. (Notation note: 
 
 \keyidea{idea:orthog_proj}{Orthogonal Decomposition of Vectors}
 {Let $\vec u$ and $\vec v$ be given. Then $\vec u$ can be written as the sum of two vectors, one of which is parallel to $\vec v$, and one of which is orthogonal to $\vec v$:
+\index{orthogonal decomposition of vectors}\index{orthogonal!decomposition}\index{vectors!orthogonal decomposition}
 $$\vec u = \underbrace{\proj uv}_{\parallel\ \vec v}\ +\  (\underbrace{\vec u-\proj uv}_{\perp\ \vec v}).$$
 }
 
@@ -332,6 +337,7 @@ The expression $\dotp Fd$ will be positive if the angle between $\vec F$ and $\v
 
 \definition{def:work}{Work}
 {Let $\vec F$ be a constant force that moves an object in a straight line from point $P$ to point $Q$. Let $\vec d = \vv{PQ}$. The \textbf{work} $W$ done by $\vec F$ along $\vec d$ is $W = \dotp Fd$.
+\index{work}
 }
 
 \example{ex_dotp7}{Computing work}{

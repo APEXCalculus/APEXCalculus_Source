@@ -1,8 +1,8 @@
 \section{Continuity}\label{sec:continuity}
 As we have studied limits, we have gained the intuition that limits measure ``where a function is heading.'' That is, if $\ds \lim_{x\to 1} f(x) = 3$, then as $x$ is close to 1, $f(x)$ is close to 3. We have seen, though, that this is not necessarily a good indicator of what $f(1)$ actually this. This can be problematic; functions can tend to one value but attain another. This section focuses on functions that \textit{do not} exhibit such behavior.
 
-\definition{def:continuous}{Continuous}
-{Let $f$ be a function defined on an open interval $I$ containing $c$. 
+\definition{def:continuous}{Continuous Function}
+{Let $f$ be a function defined on an open interval $I$ containing $c$. \index{continuous function} 
 	\begin{enumerate}
 	\item		$f$ is \textbf{continuous at $c$} if $\ds \lim_{x\to c}f(x) = f(c)$.
 	\item		$f$ is \textbf{continuous on $I$} if $f$ is continuous at $c$ for all values of $c$ in $I$. If $f$ is continuous on $(-\infty,\infty)$, we say $f$ is \textbf{continuous everywhere}.
@@ -108,7 +108,7 @@ Continuity is inherently tied to the properties of limits. Because of this, the 
 }
 
 \theorem{thm:continuous_functions}{Continuous Functions}{%
-The following functions are continuous on their domains.
+The following functions are continuous on their domains. \index{continuous function!properties}
 
 \noindent\begin{minipage}[t]{.5\specialboxlength}
 \begin{enumerate}
@@ -168,7 +168,7 @@ This intuitive notion of continuity does help us understand another important co
 
 While this notion seems intuitive, it is not trivial to prove and its importance is profound. Therefore the concept is stated in the form of a theorem.
 
-\theorem{thm:IVT}{Intermediate Value Theorem}{Let $f$ be a continuous function on $[a,b]$ and, without loss of generality, let $f(a) < f(b)$. Then for every value $y$, where $f(a) < y < f(b)$, there is a value $c$ in $[a,b]$ such that $f(c) = y$.}
+\theorem{thm:IVT}{Intermediate Value Theorem}{Let $f$ be a continuous function on $[a,b]$ and, without loss of generality, let $f(a) < f(b)$. Then for every value $y$, where $f(a) < y < f(b)$, there is a value $c$ in $[a,b]$ such that $f(c) = y$. \index{Intermediate Value Theorem}}
 
 One important application of the Intermediate Value Theorem is root finding. Given a function $f$, we are often interested in finding values of $x$ where $f(x) = 0$. These roots may be very difficult to find exactly. Good approximations can be found through successive applications of this theorem. Suppose through direct computation we find that $f(a) <0 $ and $f(b)>0$, where $a<b$. The Intermediate Value Theorem states that there is a $c$ in $[a,b]$ such that $f(c) = 0$. The theorem does not give us any clue as to where that value is in the interval $[a,b]$, just that it exists. 
 
@@ -180,7 +180,7 @@ There is a technique that produces a good approximation of $c$. Let $d$ be the m
 	\end{enumerate}
 
 \enlargethispage{2\baselineskip}	
-Successively applying this technique is called the \textbf{Bisection Method} of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.\\
+Successively applying this technique is called the \sword{Bisection Method} \index{Bisection Method} of root finding. We continue until the interval is sufficiently small. We demonstrate this in the following example.\\
 
 \example{ex_bisect_method}{Using the Bisection Method}{
 Approximate the root of $f(x) = x-\cos x$, accurate to three places after the decimal.}

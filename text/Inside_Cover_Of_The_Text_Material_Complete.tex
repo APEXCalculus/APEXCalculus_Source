@@ -33,8 +33,8 @@
 
 %\begin{document}
 \noindent\textbf{\large Differentiation Rules}\\
-
-\noindent\begin{minipage}[t]{.33\linewidth}
+\footnotesize
+\noindent\begin{minipage}[t]{.20\linewidth}
 \begin{enumerate}
 \item \deriv{cx}{c}
 \item	\deriv{u\pm v}{u'\pm v'}
@@ -44,11 +44,11 @@
 \item	\deriv{c}{0}
 \item	\deriv{x}{1}
 \item	\deriv{x^n}{nx^{n-1}}
+\item	\deriv{e^x}{e^x}
 \end{enumerate}
 \end{minipage}
-\begin{minipage}[t]{.33\linewidth}
-\begin{enumerate}\addtocounter{enumi}{8}
-\item	\deriv{e^x}{e^x}
+\begin{minipage}[t]{.23\linewidth}
+\begin{enumerate}\addtocounter{enumi}{9}
 \item	\deriv{a^x}{\ln a\cdot a^x}
 \item	\deriv{\ln x}{\frac{1}{x}}
 \item	\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}
@@ -56,42 +56,59 @@
 \item	\deriv{\cos x}{-\sin x}
 \item	\deriv{\csc x}{-\csc x\cot x}
 \item	\deriv{\sec x}{\sec x\tan x}
-\end{enumerate}
-\end{minipage}
-\begin{minipage}[t]{.33\linewidth}
-\begin{enumerate}\addtocounter{enumi}{16}
 \item	\deriv{\tan x}{\sec^2 x}
 \item	\deriv{\cot x}{-\csc^2 x}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.25\linewidth}
+\begin{enumerate}\addtocounter{enumi}{18}
 \item	\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}
 \item	\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}
 \item	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
 \item	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
 \item	\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}
 \item	\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}
+\item	\deriv{\cosh x}{\sinh x}
+\item \deriv{\sinh x}{\cosh x}
+\item \deriv{\tanh x}{\sech^2 x}
 \end{enumerate}
 \end{minipage}
-
-\vskip\baselineskip
+\begin{minipage}[t]{.25\linewidth}
+\begin{enumerate}\addtocounter{enumi}{27}
+\item \deriv{\sech x}{-\sech x\tanh x}
+\item	\deriv{\csch x}{-\csch x\coth x}
+\item	\deriv{\coth x}{-\csch^2 x}
+\item	\deriv{\cosh^{-1}x}{\frac1{\sqrt{x^2-1}}}
+\item	\deriv{\sinh^{-1}x}{\frac1{\sqrt{x^2+1}}}
+\item	\deriv{\sech^{-1}x}{\frac{-1}{x\sqrt{1-x^2}}}
+\item	\deriv{\csch^{-1}x}{\frac{-1}{|x|\sqrt{1+x^2}}}
+\item	\deriv{\tanh^{-1}x}{\frac1{1-x^2}}
+\item	\deriv{\coth^{-1}x}{\frac1{1-x^2}}
+\end{enumerate}
+\end{minipage}
+\vskip4\baselineskip
 \noindent\textbf{\large Integration Rules}\\
 
 \noindent%
-\begin{minipage}[t]{.49\linewidth}
+\begin{minipage}[t]{.30\linewidth}
 \begin{enumerate}
 \item	\myint{c\cdot f(x)}{c\int f(x)\ dx}
-\item	\myint{f(x)\pm g(x)}{\int f(x)\ dx \pm \int g(x)\ dx}
+\item	\myint{f(x)\pm g(x)}{}\\
+$\ds \int f(x)\ dx \pm \int g(x)\ dx$
 \item	\myint{0}{C}
 \item	\myint{1}{x+C}
-\item	\myint{x^n}{\frac{1}{n+1}x^{n+1}+C,\ n\neq -1}
+\item	\myint{x^n}{\frac{1}{n+1}x^{n+1}+C, \ n\neq -1}\\
+$\ n\neq -1$
 \item	\myint{e^x}{e^x+C}
 \item	\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}
 \item	\myint{\frac{1}{x}}{\ln |x| + C}
 \item	\myint{\cos x}{\sin x+C}
 \item	\myint{\sin x}{-\cos x+C}
-\item	\myint{\tan x}{-\ln |\cos x|+C}
 \end{enumerate}
 \end{minipage}
-\begin{minipage}[t]{.49\linewidth}
-\begin{enumerate}\addtocounter{enumi}{11}
+\begin{minipage}[t]{.31\linewidth}
+\begin{enumerate}\addtocounter{enumi}{10}
+\item	\myint{\tan x}{-\ln |\cos x|+C}
 \item	\myint{\sec x}{\ln |\sec x+\tan x|+C}
 \item	\myint{\csc x}{-\ln |\csc x+\cot x|+C}
 \item	\myint{\cot x}{\ln |\sin x|+C}
@@ -99,11 +116,27 @@
 \item	\myint{\csc^2x}{-\cot x+C}
 \item	\myint{\sec x\tan x}{\sec x+C}
 \item	\myint{\csc x\cot x}{-\csc x+C}
+\item	\myint{\cos^2x}{\frac12x+\frac14\sin\big(2x\big)+C}
+\item	\myint{\sin^2x}{\frac12x-\frac14\sin\big(2x\big)+C}
 \item	\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}
-\item	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
-\item	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
 \end{enumerate}
 \end{minipage}
+\begin{minipage}[t]{.38\linewidth}
+\begin{enumerate}\addtocounter{enumi}{21}
+\item	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
+\item	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
+\item	\myint{\cosh x}{\sinh x+C}
+\item	\myint{\sinh x}{\cosh x+C}
+\item	\myint{\tanh x}{\ln(\cosh x)+C}
+\item	\myint{\coth x}{\ln |\sinh  x|+C}
+\item	\myint{\frac{1}{\sqrt{x^2-a^2}}}{\ln\big|x+\sqrt{x^2-a^2}\big|+C}
+\item	\myint{\frac{1}{\sqrt{x^2+a^2}}}{\ln\big|x+\sqrt{x^2+a^2}\big|+C}
+\item	\myint{\frac{1}{a^2-x^2}}{\frac12\ln\left|\frac{a+x}{a-x}\right|+C}
+\item	\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}
+\item	\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}
+\end{enumerate}
+\end{minipage}
+\normalsize
 
 \clearpage
 
@@ -147,7 +180,8 @@
 \begin{minipage}[t]{.45\linewidth}
 \noindent\textbf{\large Definitions of the Trigonometric Functions}\\
 
-\noindent\small
+\noindent%
+\small
 %\begin{minipage}[t]{.48\linewidth}
 \textbf{\normalsize Unit Circle Definition}
 
@@ -589,7 +623,7 @@ $\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}$ & $\ds\sum^n_{i=1}{i\hs
 \end{tabular}\\[5pt]
 \vskip2\baselineskip
 
-\noindent\textbf{\large Trapezoidal Rule (Area):}\\
+\noindent\textbf{\large Trapezoidal Rule:}\\
 
 \noindent$\ds%\begin{eqnarray*}
 \int_a^b{f(x)}\ dx  \approx \frac{\Delta x}{2}\big[f(x_1)+2f(x_2) + 2f(x_3) + ... + 2f(x_{n}) + f(x_{n+1})\big]$ \\[5pt]
@@ -597,7 +631,7 @@ $\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}$ & $\ds\sum^n_{i=1}{i\hs
 with  $\displaystyle \text{Error} \leq \frac{(b-a)^3}{12n^2}\big[ \max \big| \ifthenelse{\boolean{xetex}}{f\,''(x)}{f''(x)} \big|\big]$
 \vskip2\baselineskip
 
-\noindent\textbf{\large Simpson's Rule (Area):}\\
+\noindent\textbf{\large Simpson's Rule:}\\
 
 \noindent$\ds\int_a^b{f(x)}\ dx  \approx  \frac{\Delta x}{3}\big[f(x_1)+4f(x_2) + 2f(x_3) + 4f(x_4) + ... + 2f(x_{n-1}) + 4f(x_{n}) + f(x_{n+1})\big] 
 $\\[5pt]
@@ -620,12 +654,12 @@ $\\[5pt]
 \\[5pt]
 $\displaystyle
 S = 2\pi \int_a^b{f(x) \sqrt{1+ f\,'(x)^2}}\phantom{a}dx  
-$\\
+$\\[3pt]
 {\small (where $f(x)\geq 0$)}\\[5pt]
 
 $\displaystyle
 S = 2\pi \int_a^b{x \sqrt{1+ f\,'(x)^2}}\phantom{a}dx 
-$\\
+$\\[3pt]
 {\small (where $a,b \geq 0$)}
 \end{minipage}
 \vskip2\baselineskip
@@ -664,9 +698,27 @@ $n$th-Term & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=1}{a_n}}$ &  &
 
 Geometric Series & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=0}{r^n}}$ & $ \left| r \right| < 1$ & $\left| r \right| \geq 1$ &  $\displaystyle{\text{Sum} = \frac{1}{1-r}}$ \\ \hline
 
-Telescoping Series &\rule[-15pt]{0pt}{33pt} $\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+1})}}$ & $\displaystyle{\lim_{n \to \infty} b_n = L}$ & & $\text{Sum}= b_1 -L$ \\ \hline
+Telescoping Series &\rule[-15pt]{0pt}{33pt} $\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+a})}}$ & $\displaystyle{\lim_{n \to \infty} b_n = L}$ & & $\displaystyle\text{Sum}= \left(\sum^a_{n=1}b_n\right) -L$ \\ \hline
 
 $p$-Series & \rule[-15pt]{0pt}{33pt}$\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}$ & $p>1$ & $p\leq 1$ & \\ \hline
+
+Integral Test & \rule[-20pt]{0pt}{40pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \rule[-15pt]{0pt}{40pt}\parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is convergent} & \parbox{1in}{\centering$\displaystyle \int_1^\infty a(n)\ dn$\\[3pt] is divergent} & \parbox{1.2in}{$a_n = a(n)$ must be continuous}\\ \hline
+
+Direct Comparison & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] converges and \\[3pt] $0\leq a_n\leq b_n$}%
+& \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] diverges and \\[3pt] $0\leq b_n\leq a_n$} & \\ \hline
+
+Limit Comparison & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ & \parbox{1.3in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] converges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0$}%
+& \parbox{1in}{\centering$\displaystyle \sum_{n=0}^\infty b_n $\\[3pt] diverges and \\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n > 0$}  & \parbox{1.5in}{\centering Also diverges if\\[3pt] $\displaystyle \lim_{n\to\infty} a_n/b_n=\infty$}\\ \hline
+
+Ratio Test & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ &%
+ \parbox{1.3in}{\centering$\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  < 1$}%
+& \parbox{1.3in}{\centering$\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} > 1$} & 
+\parbox{1.5in}{\centering $\{a_n\}$ must be positive\\[3pt] Also diverges if\\[3pt] $\displaystyle \lim_{n\to\infty} a_{n+1}/a_n=\infty$}\\ \hline
+
+Root Test & \rule[-30pt]{0pt}{65pt}$\displaystyle{\sum^\infty_{n=0}{a_n}}$ &%
+ \parbox{1.3in}{\centering$\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}  < 1$}%
+& \parbox{1.3in}{\centering$\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n} > 1$} & 
+\parbox{1.5in}{\centering $\{a_n\}$ must be positive\\[3pt] Also diverges if\\[3pt] $\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}=\infty$}\\ \hline
 
 \end{tabular}
 

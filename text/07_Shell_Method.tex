@@ -43,14 +43,16 @@ This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 
 
 
 \keyidea{idea:shell_method}{The Shell Method}
-{Let a solid be formed by revolving a region $R$, bounded by $x=a$ and $x=b$, around a vertical axis. Let $r(x)$ represent the distance from the axis of rotation to $x$ (i.e., the radius of a sample shell) and let $h(x)$ represent the height of the solid at $x$ (i.e., the height of the shell). The volume of the solid is $$V = 2\pi\int_a^b r(x)h(x)\ dx.$$
+{Let a solid be formed by revolving a region $R$, bounded by $x=a$ and $x=b$, around a vertical axis. Let $r(x)$ represent the distance from the axis of rotation to $x$ (i.e., the radius of a sample shell) and let $h(x)$ represent the height of the solid at $x$ (i.e., the height of the shell). The volume of the solid is 
+\index{integration!volume!Shell Method}\index{Shell Method}
+$$V = 2\pi\int_a^b r(x)h(x)\ dx.$$
 }
 
 \textbf{Special Cases:}
-	\begin{itemize}
+	\begin{enumerate}
 	\item		When the region $R$ is bounded above by $y=f(x)$ and below by $y=g(x)$, then $h(x) = f(x)-g(x)$.
 	\item		When the axis of rotation is the $y$-axis (i.e., $x=0$) then $r(x) = x$.
-	\end{itemize}
+	\end{enumerate}
 	
 Let's practice using the Shell Method.\\
 
@@ -154,6 +156,7 @@ We end this section with a table summarizing the usage of the Washer and Shell M
  \parbox{50pt}{\centering Horizontal Axis}  & $\ds \pi\int_a^b \big(R(x)^2-r(x)^2\big)\ dx$ & & $\ds 2\pi\int_c^d r(y)h(y)\ dy$ \\ \\
  \parbox{40pt}{\centering Vertical Axis} &  $\ds\pi \int_c^d\big(R(y)^2-r(y)^2\big)\ dy$ & & $\ds 2\pi\int_a^b r(x)h(x)\ dx$
  \end{tabular}
+\index{integration!volume!Washer Method}\index{Washer Method}\index{integration!volume!Shell Method}\index{Shell Method}
  }
  
 \printexercises{exercises/07_03_exercises}

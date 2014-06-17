@@ -17,15 +17,16 @@ Now consider the following limit: $\ds \lim_{n\to\infty}S_n = \lim_{n\to\infty}\
 
 This example illustrates some interesting concepts that we explore in this section. We begin this exploration with some definitions.
 
-\setboxwidth{10pt}
+\setboxwidth{50pt}
 \definition{def:series}{Infinite Series, $n^\text{th}$ Partial Sums, Convergence, Divergence}
 {Let $\{a_n\}$ be a sequence.
-\begin{itemize}
+\begin{enumerate}
 \item		The sum $\ds \sum_{n=1}^\infty a_n$ is an \textbf{infinite series} (or, simply \textbf{series}).
 \item		Let $\ds S_n = \sum_{i=1}^n a_i$; the sequence $\{S_n\}$ is the sequence of \textbf{$n^\text{th}$ partial sums} of $\{a_n\}$.
 \item		If the sequence $\{S_n\}$ converges to $L$, we say the series $\ds \sum_{n=1}^\infty a_n$ \textbf{converges} to $L$, and we write $\ds \sum_{n=1}^\infty a_n = L$.
 \item		If the sequence $\{S_n\}$ diverges, the series $\ds \sum_{n=1}^\infty a_n$ \textbf{diverges}.
-\end{itemize}
+\index{series!definition}\index{series!partial sums}\index{series!convergent}\index{series!divergent}\index{convergence!of series}\index{divergence!of series}
+\end{enumerate}
 }
 \restoreboxwidth
 
@@ -88,21 +89,24 @@ One important type of series is a \emph{geometric series}.
 \definition{def:geom_series}{Geometric Series}
 {A \textbf{geometric series} is a series of the form 
 $$\sum_{n=0}^\infty r^n = 1+r+r^2+r^3+\cdots+r^n+\cdots$$
-Note that the index starts at $n=0$, not $n=1$.
+Note that the index starts at $n=0$, not $n=1$.%
+\index{series!geometric}\index{geometric series}
 }
 
 We started this section with a geometric series, although we dropped the first term of $1$. One reason geometric series are important is that they have nice convergence properties.
 
 \theorem{thm:geom_series}{Convergence of Geometric Series}
 {Consider the geometric series $\ds \sum_{n=0}^\infty r^n$.
-\begin{itemize}
+\begin{enumerate}
 \item		The $n^\text{th}$ partial sum is: $\ds S_n = \frac{1-r\,^{n+1}}{1-r}$.
-\item		The series converges if, and only if, $|r| < 1$. When $|r|<1$, $$\sum_{n=0}^\infty r^n = \frac{1}{1-r}.$$
-\end{itemize}
+\item		The series converges if, and only if, $|r| < 1$. When $|r|<1$, 
+\index{series!geometric}\index{geometric series}\index{convergence!of geometric series}\index{divergence!of geometric series}
+$$\sum_{n=0}^\infty r^n = \frac{1}{1-r}.$$
+\end{enumerate}
 }
 
 According to Theorem \ref{thm:geom_series}, the series $\ds\sum_{n=0}^\infty \frac{1}{2^n} = 1+\frac12+\frac14+\cdots$ converges, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
-\clearpage
+%\clearpage
 
 \example{ex_series2}{Exploring geometric series}{
 Check the convergence of the following series. If the series converges, find its sum.\\
@@ -113,27 +117,28 @@ Check the convergence of the following series. If the series converges, find its
 \item		Since $r=3/4<1$, this series converges. By Theorem \ref{thm:geom_series}, we have that
 $$\sum_{n=0}^\infty \left(\frac34\right)^n = \frac{1}{1-3/4} = 4.$$ However, note the subscript of the summation in the given series: we are to start with $n=2$. Therefore we subtract off the first two terms, giving:
 $$\sum_{n=2}^\infty \left(\frac34\right)^n = 4 - 1 - \frac34 = \frac94.$$
-This is illustrated in Figure \ref{fig:series2}(a).
+This is illustrated in Figure \ref{fig:series2a}.
+\mfigure{.35}{Scatter plots relating to the series in Example \ref{ex_series2}.}{fig:series2a}{figures/figseries2a}
 
 %\mfigure{.8}{Scatter plots relating to the series of Example \ref{ex_series2} part 1.}{fig:series2a}{figures/figseries2a}
 
 \item	Since $|r| = 1/2 < 1$, this series converges, and by Theorem \ref{thm:geom_series},
 $$\sum_{n=0}^\infty \left(\frac{-1}{2}\right)^n = \frac{1}{1-(-1/2)} = \frac23.$$
-The partial sums of this series are plotted in Figure \ref{fig:series2}(b). Note how the partial sums are not purely increasing as some of the terms of the sequence $\{(-1/2)^n\}$ are negative.
+The partial sums of this series are plotted in Figure \ref{fig:series2}(a). Note how the partial sums are not purely increasing as some of the terms of the sequence $\{(-1/2)^n\}$ are negative.
 
 %\mfigure{.55}{Scatter plots relating to the series of Example \ref{ex_series2} part 2.}{fig:series2b}{figures/figseries2b}
 
-\item		Since $r>1$, the series diverges. (This makes ``common sense''; we expect the sum $$1+3+9+27 + 81+243+\cdots$$ to diverge.) This is illustrated in Figure \ref{fig:series2}(c).
+\item		Since $r>1$, the series diverges. (This makes ``common sense''; we expect the sum $$1+3+9+27 + 81+243+\cdots$$ to diverge.) This is illustrated in Figure \ref{fig:series2}(b).
 
 %\mfigure{.3}{Scatter plots relating to the series of Example \ref{ex_series2} part 3.}{fig:series2c}{figures/figseries2c}
-\mtable{.55}{Scatter plots relating to the series in Example \ref{ex_series2}.}{fig:series2}{%
+\mtable{.67}{Scatter plots relating to the series in Example \ref{ex_series2}.}{fig:series2}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figseries2a}\\[10pt]
-(a)\\[15pt]
+%\myincludegraphics{figures/figseries2a}\\[10pt]
+%(a)\\[15pt]
 \myincludegraphics{figures/figseries2b}\\[10pt]
-(b)\\[15pt]
+(a)\\[15pt]
 \myincludegraphics{figures/figseries2c}\\[10pt]
-(c)
+(b)
 \end{tabular}
 }
 \end{enumerate}
@@ -145,19 +150,22 @@ The partial sums of this series are plotted in Figure \ref{fig:series2}(b). Note
 Another important type of series is the \emph{p-series}.
 
 \definition{def:pseries}{$p$--Series, General $p$--Series}
-{\begin{itemize}
+{\begin{enumerate}
 \item	A \textbf{$p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{n^p}, \qquad \text{where $p>0$.}$$
 
-\item	A \textbf{general $p$--series} is a series of the form $$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
-\end{itemize}
+\item	A \textbf{general $p$--series} is a series of the form 
+\index{series!p@$p$-series}\index{p@$p$-series}
+$$\sum_{n=1}^\infty \frac{1}{(an+b)^p}, \qquad \text{where $p>0$ and $a$, $b$ are real numbers.}$$
+\end{enumerate}
 }
 
 Like geometric series, one of the nice things about p--series is that they have easy to determine convergence properties.
 
 \theorem{thm:pseries}{Convergence of General $p$--Series}
-{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ will converge if, and only if, $p>1$.
+{A general $p$--series $\ds\sum_{n=1}^\infty \frac{1}{(an+b)^p}$ will converge if, and only if, $p>1$.\index{series!p@$p$-series}\index{p@$p$-series}
+\index{convergence!of p@of $p$-series}\index{divergence!of p@of $p$-series}
 }
-\mnote{.6}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
+\mnote{.3}{\textbf{Note:} Theorem \ref{thm:pseries} assumes that $an+b\neq 0$ for all $n$. If $an+b=0$ for some $n$, then of course the series does not converge regardless of $p$ as not all of the terms of the sequence are defined.}
 
 \example{ex_series6}{Determining convergence of series}{
 Determine the convergence of the following series.\\
@@ -202,7 +210,8 @@ Later sections will provide tests by which we can determine whether or not a giv
 
 
 \example{ex_series3}{Telescoping series}{
-Evaluate the sum $\ds \sum_{n=1}^\infty \left(\frac1n-\frac1{n+1}\right)$.}
+Evaluate the sum $\ds \sum_{n=1}^\infty \left(\frac1n-\frac1{n+1}\right)$.
+\index{series!telescoping}\index{telescoping series}}
 {It will help to write down some of the first few partial sums of this series.
 \begin{align*}
 S_1 &=	\frac11-\frac12 & & = 1-\frac12\\
@@ -211,10 +220,10 @@ S_3 &=	\left(\frac11-\frac12\right) + \left(\frac12-\frac13\right)+\left(\frac13
 S_4 &=	\left(\frac11-\frac12\right) + \left(\frac12-\frac13\right)+\left(\frac13-\frac14\right) +\left(\frac14-\frac15\right)& &= 1-\frac15
 \end{align*}
 Note how most of the terms in each partial sum are canceled out! In general, we see that $\ds S_n = 1-\frac{1}{n+1}$. The sequence $\{S_n\}$ converges,  as $\ds \lim_{n\to\infty}S_n = \lim_{n\to\infty}\left(1-\frac1{n+1}\right) = 1$, and so we conclude that $\ds \sum_{n=1}^\infty \left(\frac1n-\frac1{n+1}\right) = 1$. Partial sums of the series are plotted in Figure \ref{fig:series3}.
-\mfigure{.7}{Scatter plots relating to the series of Example \ref{ex_series3}.}{fig:series3}{figures/figseries3}
+\mfigure{.75}{Scatter plots relating to the series of Example \ref{ex_series3}.}{fig:series3}{figures/figseries3}
 }\\
 
-The series in Example \ref{ex_series3} is an example of a \emph{telescoping series}. Informally, a telescoping series is one in which the partial sums reduce to just a finite number of terms. The partial sum $S_n$ did not contain $n$ terms, but rather just two: 1 and $1/(n+1)$.
+The series in Example \ref{ex_series3} is an example of a \sword{telescoping series}. Informally, a telescoping series is one in which the partial sums reduce to just a finite number of terms. The partial sum $S_n$ did not contain $n$ terms, but rather just two: 1 and $1/(n+1)$.\index{series!telescoping}\index{telescoping series}
 
 When possible, seek a way to write an explicit formula for the $n^\text{th}$ partial sum $S_n$. This makes evaluating the limit $\ds\lim_{n\to\infty} S_n$ much more approachable. We do so in the next example.\\
 
@@ -231,7 +240,7 @@ Evaluate each of the following infinite series.\\
 \item		We can decompose the fraction $2/(n^2+2n)$ as $$\frac2{n^2+2n} = \frac1n-\frac1{n+2}.$$ (See Section \ref{sec:partial_fraction}, Partial Fraction Decomposition, to recall how  this is done, if necessary.)
 
 Expressing the terms of $\{S_n\}$ is now more instructive:
-\small
+\footnotesize
 \begin{align*}
 S_1 &= 1-\frac13 &&= 1-\frac13\\
 S_2 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right) &&= 1+\frac12-\frac13-\frac14\\
@@ -278,24 +287,27 @@ We are learning about a new mathematical object, the series. As done before, we 
 \theorem{thm:series_prop}{Properties of Infinite Series}
 {Let \quad$\ds \sum_{n=1}^\infty a_n = L$,\quad  $\ds\sum_{n=1}^\infty b_n = K$, and let $c$ be a constant.
 \begin{enumerate}
-\item  Constant Multiple Rule: $\ds\sum_{n=1}^\infty c\cdot a_n = c\cdot\sum_{n=1}^\infty a_n = c\cdot L.$
+\item  Constant Multiple Rule: $\ds\sum_{n=1}^\infty c\cdot a_n = c\cdot\sum_{n=1}^\infty a_n = c\cdot L.$\index{Constant Multiple Rule!of series}
 \item		Sum/Difference Rule: $\ds\sum_{n=1}^\infty \big(a_n\pm b_n\big) = \sum_{n=1}^\infty a_n \pm \sum_{n=1}^\infty b_n = L \pm K.$
+\index{series!properties}\index{Sum/Difference Rule!of series}
 \end{enumerate} 
 }
 
+\enlargethispage{2\baselineskip}
 Before using this theorem, we provide a few ``famous'' series.
 
 \setboxwidth{20pt}
 %\hskip-35pt
 %\begin{minipage}{\specialboxlength}
 \keyidea{idea:famous_series}{Important Series}
-{\begin{itemize}
+{\begin{enumerate}
 \item	\parbox{90pt}{$\ds\sum_{n=0}^\infty \frac1{n!} = e$. } (Note that the index starts with $n=0$.)
 \item	$\ds\sum_{n=1}^\infty \frac1{n^2} = \frac{\pi^2}{6}$.
 \item	$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}$.
-\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{1}{n} $ \quad diverges.} (This is called the \emph{Harmonic Series}.)
-\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2$.} (This is called the \emph{Alternating Harmonic Series}.)
-\end{itemize}
+\item	$\ds\sum_{n=0}^\infty \frac{(-1)^{n}}{2n+1} = \frac{\pi}{4}$.
+\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{1}{n} $ \quad diverges.} (This is called the \emph{Harmonic Series}.)\index{Harmonic Series}
+\item	\parbox{90pt}{$\ds\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \ln 2$.} (This is called the \emph{Alternating Harmonic Series}.)\index{Alternating Harmonic Series}
+\end{enumerate}
 }
 %\end{minipage}
 \restoreboxwidth
@@ -349,7 +361,7 @@ It may take a while before one is comfortable with this statement, whose truth l
 As one contemplates the behavior of series, a few facts become clear. 
 \begin{enumerate}
 \item		In order to add an infinite list of nonzero numbers and get a finite result, ``most'' of those numbers must be ``very near'' 0. 
-\item		If a series diverges, it means that the sum of an infinite list of numbers is not finite (it may approach $\pm \infty$, or it may oscillate), and:
+\item		If a series diverges, it means that the sum of an infinite list of numbers is not finite (it may approach $\pm \infty$ or it may oscillate), and:
 		\begin{enumerate}
 		\item		The series will still diverge if the first term is removed.
 		\item		The series will still diverge if the first 10 terms are removed.
@@ -362,13 +374,14 @@ These concepts are very important and lie at the heart of the next two theorems.
 
 \theorem{thm:series_nth_term}{$n^\text{th}$--Term Test for Convergence/Divergence}
 {Consider the series $\ds\sum_{n=1}^\infty a_n$. 
+\index{series!nth@$n^\text{th}$--term test}\index{nth@$n^\text{th}$--term test}\index{convergence!nth@$n^\text{th}$--term test}\index{divergence!nth@$n^\text{th}$--term test}
 \begin{enumerate}
 \item		If $\ds\sum_{n=1}^\infty a_n$ converges, then $\ds \lim_{n\to\infty}a_n =0$.
 \item		If $\ds \lim_{n\to\infty}a_n \neq 0$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
 \end{enumerate}
 }
 
-Note that the two statements in Theorem \ref{thm:series_nth_term} are really the same. In order to converge, the limit of the terms of the sequence must approach 0; if they do not, series will not converge. 
+Note that the two statements in Theorem \ref{thm:series_nth_term} are really the same. In order to converge, the limit of the terms of the sequence must approach 0; if they do not, the series will not converge. 
 
 Looking back, we can apply this theorem to the series in Example \ref{ex_series1}. In that example, the $n^\text{th}$ terms of both sequences do not converge to 0, therefore we can quickly conclude that each series diverges.
 

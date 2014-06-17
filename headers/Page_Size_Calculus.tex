@@ -20,13 +20,6 @@
 						inner=1in,textheight=7in,textwidth=320pt,marginparwidth=150pt,%
 						marginparsep=32pt,bottom=3in,footskip=1.5in]{geometry}}
 
-% old stuff about TABLETSIZE. Don't like it, so removed it for simplicity
-%\ifthenelse{\boolean{tabletsize}}%
-%						{\usepackage[paperheight=11in,paperwidth=8.5in,%
-%						inner=1in,includeheadfoot,textheight=9in,textwidth=345pt,%
-%						marginparwidth=150pt]{geometry}}%
-
-
 \ifthenelse{\boolean{longpage}}%
 {% longpage - do not make changes to the text height for exercises
 \newcommand{\exercisegeometry}{%
@@ -35,22 +28,35 @@
 															}
 }% ends if longpage
 {% not longpage - regular sized exercise sets
+%%
+%% the old size of exercises
+%
+%\newcommand{\exercisegeometry}{%
+%\newgeometry{inner=72pt,%
+						%outer=72pt,textheight=545pt,%textwidth=320pt,
+						%marginparwidth=150pt,%
+						%marginparsep=32pt,
+						%}
+															%}
+%%
+%% the new size of exercises
+%%
 \newcommand{\exercisegeometry}{%
 \newgeometry{inner=72pt,%
-						outer=72pt,textheight=545pt,%textwidth=320pt,
+						outer=72pt,textheight=9in,%textwidth=320pt,
 						marginparwidth=150pt,%
 						marginparsep=32pt,
-						%bottom=3in,footskip=1.5in
+						bottom=1in,
 						}
 															}
 }% ends if/then/else longpage
 
 \newcommand{\eendgeometry}{%
 \newgeometry{inner=72pt,%
-						outer=72pt,textheight=10in,%textwidth=320pt,
+						outer=36pt,textheight=10in,%textwidth=320pt,
 						marginparwidth=150pt,%
-						marginparsep=32pt
-						%bottom=3in,footskip=1.5in
+						marginparsep=32pt,
+						%bottom=1in%,footskip=1.5in
 						}%
 													}
 

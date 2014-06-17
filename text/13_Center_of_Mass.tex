@@ -11,6 +11,7 @@ We now extend these ideas to other contexts.\\
 \noindent\textbf{\large Mass and Weight}\\
 
 Consider a thin sheet of material with constant thickness and finite area. Mathematicians (and physicists and engineers) call such a sheet a \textbf{lamina}. So consider a lamina, as shown in Figure \ref{fig:mass_intro}(a),  with the shape of some planar region $R$, as shown in part (b).
+\index{lamina}\index{mass}
 \mtable{.6}{Illustrating the concept of a lamina.}{fig:mass_intro}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figmass_intro1b}\\
@@ -36,7 +37,7 @@ $$M \approx \sum_{i=1}^n \Delta m_i = \sum_{i=1}^n \delta(x_i,y_i)\Delta A_i.$$
 Taking the limit as the size of the subregions shrinks to 0 gives us the actual mass; that is, integrating $\delta(x,y)\ dA$ over $R$ gives the mass of the lamina.
 
 \definition{def:mass}{Mass of a Lamina with Vairable Density}
-{Let $\delta(x,y)$ be a continuous density function of a lamina corresponding to a plane region $R$. The mass $M$ of the lamina is
+{Let $\delta(x,y)$ be a continuous density function of a lamina corresponding to a plane region $R$. The mass $M$ of the lamina is\index{mass}
 $$\text{mass } M = \iint_R\ dm = \iint_R \delta(x,y)\ dA.$$
 }
 
@@ -115,6 +116,7 @@ Knowing the mass of a lamina is one of several important measures. Another is th
 \noindent\textbf{\large Center of Mass}\\
 
 Consider a disk of radius 1 with uniform density. It is common knowledge that the disk will balance on a point if the point is placed at the center of the disk. What if the disk does not have a uniform density? Through trial-and-error, we should still be able to find a spot on the disk at which the disk will balance on a point. This balance point is referred to as the \textbf{center of mass}, or \textbf{center of gravity}. It is though all the mass is ``centered'' there. In fact, if the disk has a mass of 3kg, the disk will behave physically as though it were a point-mass of 3kg located at its center of mass. For instance, the disk will naturally spin with an axis through its center of mass (which is why it is important to ``balance'' the tires of your car: if they are ``out of balance'', their center of mass will be outside of the axle and it will shake terribly).
+\index{center of mass}\index{mass!center of}
 
 We find the center of mass based on the principle of a \textbf{weighted average}. Consider a college class in which your homework average is 90\%, your test average is 73\%, and your final exam grade is an 85\%. Experience tells us that our final grade \textit{is not} the \textit{average} of these three grades: that is, it is not:
 $$\frac{0.9+0.73+0.85}{3} \approx 0.837 = 83.7\text{\%}.$$
@@ -131,6 +133,7 @@ How this relates to center of mass is given in the following theorem.
 
 \theorem{thm:center_mass_points}{Center of Mass of Discrete Linear System}
 {Let point masses $m_1,m_2,\ldots,m_n$ be distributed along the $x$-axis at locations $x_1,x_2,\ldots,x_n$, respectively. The center of mass $\overline{x}$ of the system is located at
+\index{center of mass}
 $$\overline{x} = \sum_{i=1}^nm_ix_i\Bigg/\sum_{i=1}^n m_i.$$
 }
 
@@ -165,13 +168,13 @@ In a discrete system (i.e., mass is located at individual points, not along a co
 We can extend the concept of the center of mass of discrete points along a line to the center of mass of discrete points in the plane rather easily. To do so, we define some terms then give a theorem.
 
 \definition{def:moment}{Moments about the $x$- and $y$- Axes.}
-{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2)\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane. 
-\begin{itemize}
+{Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2)\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane. \index{moment}
+\begin{enumerate}
 	\item The \textbf{moment about the $y$-axis}, $M_y$, is 
 	$\ds M_y = \sum_{i=1}^n m_ix_i.$
 	\item The \textbf{moment about the $x$-axis}, $M_x$, is 
 	$\ds M_x = \sum_{i=1}^n m_iy_i.$
-	\end{itemize}
+	\end{enumerate}
 }
 
 One can think that these definitions are ``backwards'' as $M_y$ sums up ``$x$'' distances. But remember, ``$x$'' distances are measurements of distance from the $y$-axis, hence defining the moment about the $y$-axis.
@@ -180,6 +183,7 @@ We now define the center of mass of discrete points in the plane.
 
 \theorem{thm:center_mass_points_plane}{Center of Mass of Discrete Planar System}
 {Let point masses $m_1$, $m_2,\ldots,m_n$ be located at points $(x_1,y_1)$, $(x_2,y_2)\ldots,(x_n,y_n)$, respectively, in the $x$-$y$ plane, and let $\ds M = \sum_{i=1}^n m_i$.  
+\index{center of mass}
 
 The center of mass of the system is at $(\overline{x},\overline{y})$, where 
 $$\overline{x}= \frac{M_y}{M}\quad \text{and}\quad \overline{y} = \frac{M_x}{M}.$$
@@ -205,7 +209,7 @@ M_y &=  \sum_{i=1}^n m_ix_i \\
 		&= 19.
 \end{align*}
 \end{minipage}
-\mfigure{.8}{Illustrating the center of mass of a discrete planar system in Example \ref{ex_mass5}.}{fig:mass5}{figures/figmass5}
+\mfigure{.3}{Illustrating the center of mass of a discrete planar system in Example \ref{ex_mass5}.}{fig:mass5}{figures/figmass5}
 \vskip .5\baselineskip
 Thus the center of mass is $\ds (\overline{x},\overline{y}) = \left(\frac{M_y}{M},\frac{M_x}M\right) = \left(\frac{{19}}8,\frac78\right)  =(2.375,0.875),$ illustrated in Figure \ref{fig:mass5}.
 }\\
@@ -222,14 +226,14 @@ We begin by representing a planar lamina with a region $R$ in the $x$-$y$ plane 
 By taking limits, where size of each subregion shrinks to 0 in both the $x$ and $y$ directions, we arrive at the double integrals given in the following theorem.
 
 \theorem{thm:center_of_mass}{Center of Mass of a Planar Lamina, Moments}
-{Let a planar lamina be represented by a region $R$ in the $x$-$y$ plane with density function $\delta(x,y)$. 
-\begin{itemize}
+{Let a planar lamina be represented by a region $R$ in the $x$-$y$ plane with density function $\delta(x,y)$. \index{center of mass}\index{moment}
+\begin{enumerate}
 	\item $\ds \text{mass: } M = \iint_R\delta(x,y)\ dA$
 	\item	$\ds \text{moment about the $x$-axis: } M_x = \iint_Ry\delta(x,y)\ dA$
 	\item	$\ds \text{moment about the $y$-axis: } M_y = \iint_Rx\delta(x,y)\ dA$
 	\item The center of mass  of the lamina is
 	$$(\overline{x},\overline{y}) = \left(\frac{M_y}{M},\frac{M_x}M\right).$$
-\end{itemize}
+\end{enumerate}
 }
 
 We start our practice of finding centers of mass by revisiting some of the lamina used previously in this section when finding mass. We will mostly just set up the integrals needed to compute $M$, $M_x$ and $M_y$ and leave the details of the integration to the reader.\\
@@ -252,7 +256,7 @@ Thus the center of mass is $\ds (\overline{x},\overline{y}) = \left(\frac{M_y}M,
 Find the center of mass of a square lamina, represented by the unit square with lower lefthand corner at the origin (see Figure \ref{fig:mass6}), with variable density $\delta(x,y) = (x+y+2)$gm/cm$^2$. (Note: this is the lamina from Example \ref{ex_mass2}.)}
 {We follow Theorem \ref{thm:center_of_mass}, to find $M$, $M_x$ and $M_y$:
 \begin{align*}
-M &= \iint_R (x+y+2)\ dA = \int_0^1\int_0^1 3\ dx\ dy =3\text{gm}.\\
+M &= \iint_R (x+y+2)\ dA = \int_0^1\int_0^1 (x+y+2)\ dx\ dy =3\text{gm}.\\
 M_x &= \iint_R y(x+y+2)\ dA = \int_0^1\int_0^1 y(x+y+2)\ dx\ dy =\frac{19}{12}.\\
 M_y &= \iint_R x(x+y+2)\ dA = \int_0^1\int_0^1 x(x+y+2)\ dx\ dy =\frac{19}{12}.
 \end{align*}

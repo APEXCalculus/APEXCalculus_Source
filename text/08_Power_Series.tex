@@ -4,13 +4,14 @@ So far, our study of series has examined the question of ``Is the sum of these i
 
 \definition{def:power_series}{Power Series}
 {Let $\{a_n\}$ be a sequence, let $x$ be a variable, and let $c$ be a real number.
-	\begin{itemize}
+\index{power series}\index{series!power}
+	\begin{enumerate}
 		\item The \sword{power series in $x$} is the series
 		$$\sum_{n=0}^\infty a_nx^n = a_0+a_1x+a_2x^2+a_3x^3+\ldots$$
 		
 		\item The \sword{power series in $x$ centered at $c$} is the series
 		$$\sum_{n=0}^\infty a_n(x-c)^n = a_0+a_1(x-c)+a_2(x-c)^2+a_3(x-c)^3+\ldots$$
-	\end{itemize}
+	\end{enumerate}
 }
 
 \example{ex_ps1}{Examples of power series}{
@@ -38,6 +39,7 @@ This raises the question: ``For what values of $x$ will a given power series con
 
 \theorem{thm:radius_converge}{Convergence of Power Series}
 {Let a power series $\ds \sum_{n=0}^\infty a_n(x-c)^n$ be given. Then one of the following is true:
+\index{convergence!of power series}\index{power series!convergence}\index{series!power}
 \begin{enumerate}
 	\item The series converges only at $x=c$.
 	\item	There is an $R>0$ such that the series converges for all $x$ in \\	
@@ -56,10 +58,11 @@ This raises the question: ``For what values of $x$ will a given power series con
 	The value of $R$ is important when understanding a power series, hence it is given a name in the following definition. Also, note that part 2 of Theorem \ref{thm:radius_converge} makes a statement about the interval $(c-R,c+R)$, but the not the endpoints of that interval. A series may/may not converge at these endpoints.
 	
 	\definition{def:radius_converge}{Radius and Interval of Convergence}
-	{  \begin{itemize}
-		\item The number $R$ given in Theorem \ref{thm:radius_converge} is the \sword{radius of convergence} of a given series. When a series only converges for $x=c$, we say the radius of convergence is 0, i.e.,  $R=0$. When a series converges for all $x$, we say the series has an infinite radius of convergence, i.e., $R=\infty$.
+	{  \begin{enumerate}
+		\item The number $R$ given in Theorem \ref{thm:radius_converge} is the \sword{radius of convergence} of a given series. When a series converges for only $x=c$, we say the radius of convergence is 0, i.e.,  $R=0$. When a series converges for all $x$, we say the series has an infinite radius of convergence, i.e., $R=\infty$.
 			\item	The \sword{interval of convergence} is the set of all values of $x$ for which the series converges.
-	\end{itemize}
+			\index{convergence!radius of}\index{convergence!interval of}\index{radius of convergence}\index{interval of convergence}\index{series!radius of convergence}\index{series!interval of convergence}
+	\end{enumerate}
 	}
 
 To find the values of $x$ for which a given series converges, we will use the convergence tests we studied previously (especially the Ratio Test). However, the tests all required that the terms of a series be positive. The following theorem gives us a work--around to this problem.
@@ -94,12 +97,13 @@ Find the radius and interval of convergence for each of the following series:\\
 			&= \lim_{n\to\infty} |x|\frac{n}{n+1}\\
 			&= |x|.
 	\end{align*}
-	The Ratio Test states a series converges if the limit of $|a_{n+1}/a_n| = L<1$. We found the limit above to be $|x|$; therefore, the power series converges when $|x| <1$, or when $x$ is in $(-1,1)$. Thus the radius of convergence is $R=1$. 
+	The Ratio Test states a series converges if the limit of $|a_{n+1}/a_n| = L<1$. We found the limit above to be $|x|$; therefore, the power series converges when $|x| <1$, or when $x$ is in $(-1,1)$. Thus the radius of convergence is $R=1$.
+	\drawexampleline
 	
 	To determine the interval of convergence, we need to check the endpoints of $(-1,1)$. When $x=-1$, we have the series
 	\begin{align*}
-	\sum_{n=1}^\infty (-1)^{n+1}\frac{(-1)^n}{n} &= \sum_{n=1}^\infty \frac{1}{n}\\
-				&= \infty.
+	\sum_{n=1}^\infty (-1)^{n+1}\frac{(-1)^n}{n} &= \sum_{n=1}^\infty \frac{-1}{n}\\
+				&= -\infty.
 	\end{align*}
 	The series diverges when $x=-1$.
 	
@@ -141,6 +145,7 @@ where the domain of $f$ is a subset of the interval of convergence of the power 
 		\item $f(x)$ is continuous and differentiable on $(c-R,c+R)$.
 		\item	$\ds \fp(x) = \sum_{n=1}^\infty a_n\cdot n\cdot (x-c)^{n-1}$, with radius of convergence $R$.
 		\item	$\ds \int f(x)\ dx = C+\sum_{n=0}^\infty a_n\frac{(x-c)^{n+1}}{n+1}$, with radius of convergence $R$.
+		\index{series!power!derivatives and integrals}\index{integration!of power series}\index{derivative!power series}\index{power series!derivatives and integrals}
 	\end{enumerate}
 }
 
@@ -148,7 +153,7 @@ A few notes about Theorem \ref{thm:calc_power_series}:
 		\begin{enumerate}
 			\item The theorem states that differentiation and integration do not change the radius of convergence. It does not state anything about the \emph{interval} of convergence. They are not always the same.
 			\item		Notice how the summation for $\fp(x)$ starts with $n=1$. This is because the constant term $a_0$ of $f(x)$ goes to 0.
-			\item	Differentiation and integration are simply calculated term--by--term.
+			\item	Differentiation and integration are simply calculated term--by--term using the Power Rules.
 		\end{enumerate}
 
 \example{ex_ps3}{Derivatives and indefinite integrals of power series}{
@@ -156,11 +161,11 @@ Let $\ds f(x) = \sum_{n=0}^\infty x^n$. Find $\fp(x)$ and $\ds F(x) =\int f(x)\ 
 }
 {We find the derivative and indefinite integral of $f(x)$, following Theorem \ref{thm:calc_power_series}.\\
 
-\begin{itemize}
+\begin{enumerate}
 
 \item $\ds \fp(x) = \sum_{n=1}^\infty nx^{n-1} = 1+2x+3x^2+4x^3+\cdots.$
 
-In Example \ref{ex_ps1}, we recognized that $\ds \sum_{n=0}^\infty x^n$ is a geometric series in $x$. We know that such a geometric series converges when $|x|<1$; that is, the radius of convergence is $R=1$.
+In Example \ref{ex_ps1}, we recognized that $\ds \sum_{n=0}^\infty x^n$ is a geometric series in $x$. We know that such a geometric series converges when $|x|<1$; that is, the interval of convergence is $(-1,1)$.
 
 To determine the interval of convergence of $\fp(x)$, we consider the endpoints of $(-1,1)$:
 $$\fp(-1) =  1-2+3-4+\cdots,\quad \text{which diverges.}$$
@@ -175,7 +180,7 @@ $$F(-1) = C-1+1/2-1/3+1/4+\cdots$$
 The value of $C$ is irrelevant; notice that the rest of the series is an Alternating Series that whose terms converge to 0. By the Alternating Series Test, this series converges. (In fact, we can recognize that the terms of the series after $C$ are the opposite of the Alternating Harmonic Series. We can thus say that $F(-1) = C-\ln 2$.)
 $$F(1) = C+1+1/2+1/3+1/4+\cdots$$
 Notice that this summation is $C\ +$ the Harmonic Series, which diverges. Since $F$ converges for $x=-1$ and diverges for $x=1$, the interval of convergence of $F(x)$ is $[-1,1)$.
-\end{itemize}
+\end{enumerate}
 \vskip-1.5\baselineskip
 }\\
 
@@ -197,7 +202,7 @@ We established in Example \ref{ex_ps3} that the series on the left converges at 
 $$-1+\frac12-\frac13+\frac14-\frac15+\cdots = -\ln 2.$$
 On the left we have the opposite of the Alternating Harmonic Series; on the right, we have $-\ln 2$. We conclude that 
 $$1-\frac12+\frac13-\frac14+\cdots = \ln 2.$$
-\sword{Important:} We stated in Key Idea \ref{idea:famous_series} (in Section \ref{sec:series}) that the Alternating Harmonic Series converges to $\ln 2$, and referred to this fact again in Example \ref{ex_alt1} of Section \ref{sec:alt_series}. However, we never gave an argument for why this was the case. The work above finally shows how we conclude that the Alternating Harmonic Series converges to $\ln 2$. 
+\sword{Important:} We stated in Key Idea \ref{idea:famous_series} (in Section \ref{sec:series}) that the Alternating Harmonic Series converges to $\ln 2$, and referred to this fact again in Example \ref{ex_alt1} of Section \ref{sec:alt_series}. However, we never gave an argument for why this was the case. The work above finally shows how we conclude that the Alternating Harmonic Series converges to $\ln 2$. \index{Alternating Harmonic Series}
 
 We use this type of analysis in the next example.\\
 
@@ -210,7 +215,7 @@ Let $\ds f(x) = \sum_{n=0}^\infty \frac{x^n}{n!}$. Find $\ds \fp(x)$ and $\ds \i
 We now find the derivative:
 \begin{align*}
 \fp(x) &= \sum_{n=1}^\infty n\frac{x^{n-1}}{n!} \\
-&=\sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!}. 
+&=\sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!} = 1+x+\frac{x^2}{2!}+\cdots. 
 \intertext{Since the series starts at $n=1$ and each term refers to $(n-1)$, we can re-index the series starting with $n=0$:}
 		&= \sum_{n=0}^\infty \frac{x^{n}}{n!}\\
 		&= f(x).
@@ -230,8 +235,38 @@ The integral of $f(x)$ differs from $f(x)$ only by a constant, again indicating 
 }\\
 
 
-Example  \ref{ex_ps4} and the work following Example \ref{ex_ps3} established relationships between a power series function and ``regular'' functions that we have dealt with in the past. In general, given a power series function, it is difficult (if not impossible) to express the function in terms of elementary functions. We choose examples where things worked out nicely.
+Example  \ref{ex_ps4} and the work following Example \ref{ex_ps3} established relationships between a power series function and ``regular'' functions that we have dealt with in the past. In general, given a power series function, it is difficult (if not impossible) to express the function in terms of elementary functions. We chose examples where things worked out nicely.
 
-It is far easier to start with a known function, expressed in terms of elementary functions, and represent it as a power series function. One may wonder why we would bother doing so, as the latter function probably seems more complicated. In the next two sections, we show both \emph{how} to do this and  \emph{why} such a process can be beneficial. 
+In this section's last example, we show how to solve a simple differential equation with a power series.\\
 
-\clearpage
+\example{ex_ps5}{Solving a differential equation with a power series.}
+{Give the first 4 terms of the power series solution to $y' = 2y$, where $y(0) = 1$.
+}
+{The differential equation $y' = 2y$ describes a function $y=f(x)$ where the derivative of $y$ is twice $y$ and $y(0)=1$. This is a rather simple differential equation; with a bit of thought one should realize that if $y=Ce^{2x}$, then $y' = 2Ce^{2x}$, and hence $y' = 2y$. By letting $C=1$ we satisfy the initial condition of $y(0)=1$.
+
+Let's ignore the fact that we already know the solution and find a power series function that satisfies the equation. The solution we seek will have the form
+$$f(x)  = \sum_{n=0}^\infty a_nx^n = a_0+a_1x+a_2x^2+a_3x^3+\cdots$$
+for unknown coefficients $a_n$. We can find $\fp(x)$ using Theorem \ref{thm:calc_power_series}:
+$$\fp(x) = \sum_{n=1}^\infty a_n\cdot n\cdot x^{n-1} = a_1+2a_2x+3a_3x^2+4a_4x^3\cdots.$$
+Since $\fp(x) = 2f(x)$, we have
+\begin{align*}
+a_1+2a_2x+3a_3x^2+4a_4x^3\cdots &= 2\big(a_0+a_1x+a_2x^2+a_3x^3+\cdots\big)\\
+			&=2a_0+2a_1x+2a_2x^2+2a_3x^3+\cdots
+\end{align*}
+The coefficients of like powers of $x$ must be equal, so we find that
+$$a_1 = 2a_0,\quad 2a_2 = 2a_1,\quad 3a_3 = 2a_2,\quad 4a_4 = 2a_3,\quad \text{etc.}$$
+The initial condition $y(0) = f(0) = 1$ indicates that $a_0 = 1$; with this, we can find the values of the other coefficients:
+\begin{align*}
+a_0 = 1 \text{ and } a_1=2a_0 &\Rightarrow a_1 = 2;\\
+a_1 = 2 \text{ and } 2a_2 = 2a_1 &\Rightarrow a_2=4/2 =2;\\
+a_2=2 \text{ and } 3a_3 = 2a_2 &\Rightarrow a_3=8/(2\cdot3)=4/3;\\
+a_3=4/3 \text{ and } 4a_4 = 2a_3 &\Rightarrow a_4 =16/(2\cdot3\cdot4)= 2/3. 
+\end{align*}
+Thus the first 5 terms of the power series solution to the differential equation $y'=2y$ is 
+$$f(x) = 1+ 2x+2x^2 + \frac43x^3+\frac23x^4+\cdots$$
+In Section \ref{sec:taylor_series}, as we study Taylor Series, we will learn how to recognize this series as describing $y=e^{2x}$. 
+}\\
+
+Our last example illustrates that it can be difficult to recognize an elementary function by its power series expansion. It is far easier to start with a known function, expressed in terms of elementary functions, and represent it as a power series function. One may wonder why we would bother doing so, as the latter function probably seems more complicated. In the next two sections, we show both \emph{how} to do this and  \emph{why} such a process can be beneficial. 
+
+\printexercises{exercises/08_06_exercises}

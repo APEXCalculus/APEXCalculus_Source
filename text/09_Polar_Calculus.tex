@@ -1,7 +1,7 @@
 \section{Calculus and Polar Functions} \label{sec:polarcalc}
 The previous section defined polar coordinates, leading to polar functions. We investigated plotting these functions and solving a fundamental question about their graphs, namely, where do two polar graphs intersect?
 
-We now turn our attention to solving other questions, whose solutions require the use of calculus. A basis for much of what is done in this section is the ability to turn a polar function $r=f(\theta)$ into a set of parametric equations. Using the identities $x=r\cos \theta$ and $y=r\sin \theta$, we can create the parametric equations $x=f(\theta)\cos\theta$, $y=f(\theta)\sin\theta$ and apply the concepts of Section \ref{sec:par_calc}.\\
+We now turn our attention to answering other questions, whose solutions require the use of calculus. A basis for much of what is done in this section is the ability to turn a polar function $r=f(\theta)$ into a set of parametric equations. Using the identities $x=r\cos \theta$ and $y=r\sin \theta$, we can create the parametric equations $x=f(\theta)\cos\theta$, $y=f(\theta)\sin\theta$ and apply the concepts of Section \ref{sec:par_calc}.\\
 
 \noindent\textbf{\large Polar Functions and $\ds \frac{dy}{dx}$}\\
 
@@ -11,14 +11,15 @@ Using Key Idea \ref{idea:dydxpar} we have $$\frac{dy}{dx} = \frac{dy}{d\theta}\B
 
 \keyidea{idea:dydxpol}{Finding $\frac{dy}{dx}$ with Polar Functions}
 {Let $r=f(\theta)$ be a polar function. With $x=f(\theta)\cos\theta$ and $y=f(\theta)\sin\theta$,
+\index{polar!functions!finding $\frac{dy}{dx}$}\index{tangent line}
 $$\frac{dy}{dx} = \frac{\fp(\theta)\sin\theta+f(\theta)\cos\theta}{\fp(\theta)\cos\theta-f(\theta)\sin\theta}.$$
 }
 
 \example{ex_polcalc1}{Finding $\frac{dy}{dx}$ with polar functions.}
-{Consider the lima\c con $r=1+2\sin\theta$ on $[0,2\pi]$. Find:
+{Consider the lima\c con $r=1+2\sin\theta$ on $[0,2\pi]$.
 \begin{enumerate}
-	\item The equations of the tangent and normal lines to the graph at $\theta=\pi/4$.
-	\item		Where the graph has vertical and horizontal tangent lines.
+	\item Find the equations of the tangent and normal lines to the graph at $\theta=\pi/4$.
+	\item		Find where the graph has vertical and horizontal tangent lines.
 \end{enumerate}
 }
 {\begin{enumerate}
@@ -82,7 +83,7 @@ Thus the equations of the tangent lines, in polar, are $\theta = 7\pi/6$ and $\t
 
 \noindent\textbf{\large Area}\\
 
-When using rectangular coordinates, the equations $x=h$ and $y=k$ defined vertical and horzontal lines, respectively, and combinations of these lines create rectangles (hence the name ``rectangular coordinates''). It is then somewhat natural to use rectangles to approximate area as we did when learning about the definite integral.
+When using rectangular coordinates, the equations $x=h$ and $y=k$ defined vertical and horzontal lines, respectively, and combinations of these lines create rectangles (hence the name ``rectangular coordinates''). It is then somewhat natural to use rectangles to approximate area as we did when learning about the definite integral.\index{polar!functions!area}
 
 When using polar coordinates, the equations $\theta=\alpha$ and $r=c$ form lines through the origin and circles centered at the origin, respectively, and combinations of these curves form sectors of circles. It is then somewhat natural to calculate the area of regions defined by polar functions by first approximating with sectors of circles. 
 
@@ -134,14 +135,14 @@ Find the area of the circle defined by $r=\cos \theta$.}
 Of course, we already knew the area of a circle with radius $1/2$. We did this example to demonstrate that the area formula is correct.
 }\\
 
-\mnote{.7}{\textbf{Note:} Example \ref{ex_polcalc3} required the use of the integral $\ds\int \cos^2\theta\ d\theta$. This is handled well by using the power reducing formula as found in the back of this text. Due to the nature of the area formula, integrating $\cos^2\theta$ and $\sin^2\theta$ is required often. We offer here these indefinite integrals as a time--saving measure.\\
+\mnote{.7}{\textbf{Note:} Example \ref{ex_polcalc3} requires the use of the integral $\ds\int \cos^2\theta\ d\theta$. This is handled well by using the power reducing formula as found in the back of this text. Due to the nature of the area formula, integrating $\cos^2\theta$ and $\sin^2\theta$ is required often. We offer here these indefinite integrals as a time--saving measure.\\
 $$\int\cos^2\theta\ d\theta = \frac12\theta+\frac14\sin(2\theta)+C$$
 $$\int\sin^2\theta\ d\theta = \frac12\theta-\frac14\sin(2\theta)+C$$
 }
 
 \example{ex_polcalc4}{Area of a polar region}{
 Find the area of the cardiod $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $\theta=\pi/3$, as shown in Figure \ref{fig:polcalc4}.
-\mfigure{.45}{Finding the area of the shaded region of a cardiod in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
+\mfigure{.3}{Finding the area of the shaded region of a cardiod in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
 }
 {This is again a direct appliation of Theorem \ref{thm:polar_area}. 
 \begin{align*}
@@ -155,11 +156,11 @@ Find the area of the cardiod $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $
 
 \noindent\textbf{Area Between Curves}\\
 
-Our study of area in the context of rectangular functions led naturally to finding area bounded between curves. We consider the same in the context of polar functions.
+Our study of area in the context of rectangular functions led naturally to finding area bounded between curves. We consider the same in the context of polar functions. \index{polar!functions!area between curves}
 
 Consider the shaded region shown in Figure \ref{fig:polarea3}. We can find the area of this region by computing the area bounded by $r_2=f_2(\theta)$ and subtracting the area bounded by $r_1=f_1(\theta)$ on $[\alpha,\beta]$. Thus
 $$\text{Area}\ = \ \frac12\int_\alpha^\beta r_2^{\,2}\ d\theta - \frac12\int_\alpha^\beta r_1^{\,2}\ d\theta = \frac12\int_\alpha^\beta \big(r_2^{\,2}-r_1^{\,2}\big)\ d\theta.$$
-\mfigure{.8}{Illustrating area bound between two polar curves.}{fig:polarea3}{figures/figpolarea3}
+\mfigure{.6}{Illustrating area bound between two polar curves.}{fig:polarea3}{figures/figpolarea3}
 
 \keyidea{idea:area_between_polar}{Area Between Polar Curves}
 {The area $A$ of the region bounded by $r_1=f_1(\theta)$ and $r_2=f_2(\theta)$, $\theta=\alpha$ and $\theta=\beta$, where $f_1(\theta)\leq f_2(\theta)$ on $[\alpha,\beta]$, is
@@ -169,7 +170,7 @@ $$A = \frac12\int_\alpha^\beta \big(r_2^{\,2}-r_1^{\,2}\big)\ d\theta.$$
 \enlargethispage{2\baselineskip}
 \example{ex_polcalc5}{Area between polar curves}{
 Find the area bounded between the curves $r=1+\cos \theta$ and $r=3\cos\theta$, as shown in Figure \ref{fig:polcalc5}.
-\mfigure{.5}{Finding the area between polar curves in Example \ref{ex_polcalc5}.}{fig:polcalc5}{figures/figpolcalc5}
+\mfigure{.3}{Finding the area between polar curves in Example \ref{ex_polcalc5}.}{fig:polcalc5}{figures/figpolcalc5}
 }
 {We need to find the points of intersection between these two functions. Setting them equal to each other, we find:
 \begin{align*}
@@ -191,7 +192,7 @@ Amazingly enough, the area between these curves has a ``nice'' value.
 Find the area bounded between the polar curves $r=1$ and $r=2\cos(2\theta)$, as shown in Figure \ref{fig:polcalc6} (a).}
 {We need to find the point of intersection between the two curves. Setting the two functions equal to each other, we have
 $$2\cos(2\theta) = 1 \quad \Rightarrow \quad \cos(2\theta) = \frac12 \quad \Rightarrow \quad 2\theta = \pi/3\quad \Rightarrow \quad \theta=\pi/6.$$
-\mtable{.7}{Graphing the region bounded by the functions in Example \ref{ex_polcalc6}.}{fig:polcalc6}{%
+\mtable{.4}{Graphing the region bounded by the functions in Example \ref{ex_polcalc6}.}{fig:polcalc6}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figpolcalc6}\\
 (a)\\[10pt]
@@ -211,10 +212,12 @@ We omit the integration details and let the reader verify that $A_1 = \pi/12$ an
 \noindent\textbf{\large Arc Length}\\
 
 As we have already considered the arc length of curves defined by rectangular and parametric equations, we now consider it in the context of polar equations. Recall that the arc length $L$ of the graph defined by the parametric equations $x=f(t)$, $y=g(t)$ on $[a,b]$ is
+\index{arc length}\index{polar!function!arc length}
 \begin{equation}L = \int_a^b \sqrt{\fp(t)^2 + g'(t)^2}\ dt = \int_a^b \sqrt{x'(t)^2+y'(t)^2}\ dt.\label{eq:polar_arclength}\end{equation}
+
 Now consider the polar function $r=f(\theta)$. We again use the identities $x=f(\theta)\cos\theta$ and $y=f(\theta)\sin\theta$ to create parametric equations based on the polar function. We compute $x'(\theta)$ and $y'(\theta)$ as done before when computing $\frac{dy}{dx}$, then apply Equation \eqref{eq:polar_arclength}.
 
-The expression $x'(\theta)^2+y'(\theta)^2$ can be simplified a great deal; we leave this as an exercise and state that $$x'(\theta)^2+y'(\theta)^2 = \fp(\theta)^2+f(\theta)^2.$$ This leads us to the full arc length formula.
+The expression $x'(\theta)^2+y'(\theta)^2$ can be simplified a great deal; we leave this as an exercise and state that $$x'(\theta)^2+y'(\theta)^2 = \fp(\theta)^2+f(\theta)^2.$$ This leads us to the  arc length formula.
 
 \keyidea{idea:polar_arclength}{Arc Length of Polar Curves}
 {Let  $r=f(\theta)$ be a polar function with $\fp$ continuous on an open interval $I$ containing $[\alpha,\beta]$, on which the graph traces itself only once. The arc length $L$ of the graph on $[\alpha,\beta]$ is
@@ -230,7 +233,7 @@ L 	&= \int_0^{2\pi} \sqrt{(2\cos\theta)^2+(1+2\sin\theta)^2}\ d\theta \\
 		&=	\int_0^{2\pi} \sqrt{4\sin\theta+5}\ d\theta\\
 		&\approx 13.3649.
 \end{align*}
-\mfigure{.5}{The lima\c con in Example \ref{ex_polcalc7} whose arc length is measured.}{fig:polcalc7}{figures/figpolcalc7}
+\mfigure{.8}{The lima\c con in Example \ref{ex_polcalc7} whose arc length is measured.}{fig:polcalc7}{figures/figpolcalc7}
 The final integral cannot be solved in terms of elementary functions, so we resorted to a numerical approximation. (Simpson's Rule, with $n=4$, approximates the value with $13.0608$. Using $n=22$ gives the value above, which is accurate to 4 places after the decimal.) 
 }\\
 
@@ -240,17 +243,19 @@ The formula for arc length leads us to a formula for surface area. The following
 
 \keyidea{idea:surface_area_polar}{Surface Area of a Solid of Revolution}
 {Consider the graph of the polar equation $r=f(\theta)$, where $\fp$ is continuous on an open interval containing $[\alpha,\beta]$ on which the graph does not cross itself.
-	\begin{itemize}
+\index{surface area!solid of revolution}\index{polar!function!surface area}\index{integration!surface area}
+	\begin{enumerate}
 		\item The surface area of the solid formed by revolving the graph about the initial ray ($\theta=0$) is:
 		$$\text{Surface Area} = 2\pi\int_\alpha^\beta f(\theta)\sin\theta\sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta.$$
 		\item The surface area of the solid formed by revolving the graph about the line $\theta=\pi/2$ is:
 		$$\text{Surface Area} = 2\pi\int_\alpha^\beta f(\theta)\cos\theta\sqrt{\fp(\theta)^2+f(\theta)^2}\ d\theta.$$
-	\end{itemize}
+	\end{enumerate}
 }
+\clearpage
 
 \example{ex_polcalc8}{Surface area determined by a polar curve}{
 Find the surface area formed by revolving one petal of the rose curve $r=\cos(2\theta)$ about its central axis (see Figure \ref{fig:polcalc8}).}
-{\mtable{.5}{Finding the surface area of a rose--curve petal that is revolved around its central axis.}{fig:polcalc8}{%
+{\mtable{.7}{Finding the surface area of a rose--curve petal that is revolved around its central axis.}{fig:polcalc8}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figpolcalc8}\\
 (a)\\[10pt]
@@ -264,7 +269,7 @@ We choose, as implied by the figure, to revolve the portion of the curve that li
 \text{Surface Area} &= 2\pi\int_0^{\pi/4} \cos(2\theta)\sin(\theta)\sqrt{\big(-2\sin(2\theta)\big)^2+\big(\cos(2\theta)\big)^2}\ d\theta \\
 &\approx 1.36707.
 \end{align*}
-The integral is another that cannot be evaluated in terms of elementary functions. Simpson's Rule, with $n=4$, approximates the value at $1.36751$; with $n=10$, the value is accurate to 4 decimal places.
+The integral is another that cannot be evaluated in terms of elementary functions. Simpson's Rule, with $n=4$, approximates the value at $1.36751$.%; with $n=10$, the value is accurate to 4 decimal places.
 }\\
 
 \printexercises{exercises/09_05_exercises}

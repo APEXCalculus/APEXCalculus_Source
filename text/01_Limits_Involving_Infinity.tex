@@ -33,7 +33,7 @@ We explore both types of use of $\infty$ in turn.
 %We can make more precise this notion precise as follows:
 
 \definition{def:limit_of_infinity}{Limit of Infinity, $\infty$}
-{We say $\ds \lim_{x\rightarrow c} f(x)=\infty$ if for every $M>0$ there exists $\delta>0$ such that if $0<|x-c|<\delta$ then $f(x)\geq M$.  
+{We say $\ds \lim_{x\rightarrow c} f(x)=\infty$ if for every $M>0$ there exists $\delta>0$ such that if $0<|x-c|<\delta$ then $f(x)\geq M$. \index{limit!of infinity}  
 }
 
 This is just like the $\epsilon$--$\delta$ definition from Section \ref{sec:limit_def}.  In that definition, given any (small) value $\epsilon$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$) then $f(x)$ is guaranteed to be within $\epsilon$ of $f(c)$.  Here, given any (large) value $M$, if we let $x$ get close enough to $c$ (within $\delta$ units of $c$), then $f(x)$ will be at least as large as $M$.  In other words, if we get close enough to $c$, then we can make $f(x)$ as large as we want.  We can define limits equal to $-\infty$ in a similar way.
@@ -49,18 +49,18 @@ It is important to note that by saying $\ds \lim_{x\to c}f(x) = \infty$ we are i
 	(x-1)^2 &< \frac{1}{M}\\
 	\frac{1}{(x-1)^2} &> M,
 	\end{align*}
-	which is what we wanted to show.  So we may say $\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty$.
+	which is what we wanted to show.  So we may say $\ds\lim_{x\rightarrow 1}1/{(x-1)^2}=\infty$.
 }\\
 
 \example{ex_inflim2}{Evaluating limits involving infinity}{
 Find $\displaystyle\lim_{x\rightarrow 0}\frac1x$, as shown in Figure \ref{fig:oneoverx}.}
 {It is easy to see that the function grows without bound near 0, but it does so in different ways on different sides of 0.  Since its behavior is not consistent, we cannot say that $\ds \lim_{x\to 0}\frac{1}{x}=\infty$. However, we can make a statement about one--sided limits. We can state that $\ds \lim_{x\rightarrow 0^+}\frac1x=\infty$ and $\ds \lim_{x\rightarrow 0^-}\frac1x=-\infty$.  
 
-\mfigure{.65}{Evaluating $\lim_{x\rightarrow 0}\frac1x$.}{fig:oneoverx}{figures/figoneoverx}
+\mfigure{.65}{Evaluating $\ds\lim_{x\rightarrow 0}\frac1x$.}{fig:oneoverx}{figures/figoneoverx}
 }
 
 \vskip \baselineskip
-\noindent\textbf{\large Vertical asymptotes}\\
+\noindent\textbf{\large Vertical asymptotes}\index{asymptote!vertical}\\
 
 If the limit of $f(x)$ as $x$ approaches $c$ from either the left or right (or both) is $\infty$ or $-\infty$, we say the function has a \emph{vertical asymptote} at $c$.\\
 
@@ -82,7 +82,7 @@ The above example may seem a little contrived.  Another example demonstrating th
 If the denominator is 0 at a certain point but the numerator is not, then there will usually be a vertical asymptote at that point.  On the other hand,  if the numerator and denominator are both zero at that point, then there may or may not be a vertical asymptote at that point.  This case where the numerator and denominator are both zero returns us to an important topic.
 
 \vskip\baselineskip
-\noindent\textbf{Indeterminate Forms}\\
+\noindent\textbf{Indeterminate Forms}\index{limit!indeterminate form}\index{indeterminate form}\\
 
 %When working with limits and infinity, it is important not to go beyond what the rules of algebra and limits allow.  Consider again the limit below:
 We have seen how the limits 
@@ -115,14 +115,14 @@ Graphically, it concerns the behavior of the function to the ``far right'' of th
 %\noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -65pt}%
 %\noindent\begin{minipage}{\specialboxlength}
 \definition{def:limit_at_infinity}{Limits at Infinity and Horizontal Asymptote}
-{\begin{itemize}
-\item We say $\ds\lim_{x\rightarrow\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M>0$ such that if $x\geq M$, then $|f(x)-L|<\epsilon$. \\
+{\begin{enumerate}
+\item We say $\ds\lim_{x\rightarrow\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M>0$ such that if $x\geq M$, then $|f(x)-L|<\epsilon$.\index{limit!at infinity}\index{asymptote!horizontal} \\
 
-\item We say $lim_{x\rightarrow-\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M<0$ such that if $x\leq M$, then $|f(x)-L|<\epsilon$. \\
+\item We say $\ds\lim_{x\rightarrow-\infty} f(x)=L$ if for every $\epsilon>0$ there exists $M<0$ such that if $x\leq M$, then $|f(x)-L|<\epsilon$. \\
 
  %In other words, the limit is $L$ if no matter how close you want to get to $L$, for large enough values of $x$ ($x>M$), you can get that close.
 \item  If $\ds\lim_{x\rightarrow\infty} f(x)=L$ or $\ds\lim_{x\rightarrow-\infty} f(x)=L$, we say that $y=L$ is a \textbf{horizontal asymptote} of $f$.
-\end{itemize}
+\end{enumerate}
 }
 %\end{minipage}
 \restoreboxwidth

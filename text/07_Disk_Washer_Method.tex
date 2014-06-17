@@ -34,7 +34,7 @@ of the $i\,^\text{th}$ slice, and let $\dx_i$ represent the thickness of this sl
 Recognize that this is a Riemann Sum. By taking a limit (as the thickness of the slices goes to 0) we can find the volume exactly. 
 
 \theorem{thm:volume_by_cross_section}{Volume By Cross-Sectional Area}
-{The volume $V$ of a solid, oriented along the $x$-axis with cross-sectional area $A(x)$ from $x=a$ to $x=b$, is
+{The volume $V$ of a solid, oriented along the $x$-axis with cross-sectional area $A(x)$ from $x=a$ to $x=b$, is \index{integration!volume!cross-sectional area}
 $$V = \int_a^b A(x)\ dx.$$
 }
 
@@ -63,6 +63,7 @@ Start with a function $y=f(x)$ from $x=a$ to $x=b$. Revolving this curve about a
 
 \keyidea{idea:disk_method}{The Disk Method}
 {Let a solid be formed by revolving the curve $y=f(x)$ from $x=a$ to $x=b$ around a horizontal axis, and let $R(x)$ be the radius of the cross-sectional disk at $x$. The volume of the solid is
+\index{integration!volume!Disk Method}\index{Disk Method}
 $$V = \pi \int_a^b R(x)^2\ dx.$$
 }
 
@@ -129,6 +130,7 @@ One can generate a solid of revolution with a hole in the middle by revolving a 
 
 \keyidea{idea:washermethod}{The Washer Method}
 {Let a region bounded by $y=f(x)$, $y=g(x)$, $x=a$ and $x=b$ be rotated about a horizontal axis that does not intersect the region, forming a solid. Each cross section at $x$ will be a washer with outside radius $R(x)$ and inside radius $r(x)$. The volume of the solid is
+\index{integration!volume!Washer Method}\index{Washer Method}
 $$V = \pi\int_a^b \Big(R(x)^2-r(x)^2\Big)\ dx.$$ 
 }
 

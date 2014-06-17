@@ -39,7 +39,7 @@ We'll come back to this example after giving the formal statements of the Chain 
 
 
 \theorem{thm:chain_rule}{The Chain Rule}
-{Let $y = f(u)$ be a differentiable function of $u$ and let $u = g(x)$ be a differentiable function of $x$. Then $y=f(g(x))$ is a differentiable function of $x$, and $$y' = \fp(g(x))\cdot g'(x).$$
+{Let $y = f(u)$ be a differentiable function of $u$ and let $u = g(x)$ be a differentiable function of $x$.\index{derivative!Chain Rule}\index{Chain Rule} Then $y=f(g(x))$ is a differentiable function of $x$, and $$y' = \fp(g(x))\cdot g'(x).$$
 }
   
  
@@ -74,7 +74,7 @@ Finally, when $y = (1-x)^4$, we have $f(x)= x^4$ and $g(x) = (1-x)$. Thus $\fp(x
 Example \ref{ex_chain2} demonstrated a particular pattern: when $f(x)=x^n$, then $y' =n\cdot (g(x))^{n-1}\cdot g'(x)$. This  is called the Generalized Power Rule.\\
 
 
-\theorem{thm:gen_power_rule}{Generalized Power Rule}{Let $g(x)$ be a differentiable function and let $n\neq 0$ be an integer. Then $$\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g'(x).$$
+\theorem{thm:gen_power_rule}{Generalized Power Rule}{Let $g(x)$ be a differentiable function and let $n\neq 0$ be an integer.\index{derivative!Generalized Power Rule}\index{Generalized Power Rule} Then $$\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g'(x).$$
 }
 
 This allows us to quickly find the derivative of functions like $y = (3x^2-5x+7+\sin x)^{20}$. While it may look intimidating, the Generalized Power Rule states that $$y' = 20(3x^2-5x+7+\sin x)^{19}\cdot (6x-5+\cos x).$$
@@ -118,7 +118,7 @@ Find the derivatives of the following functions:
 }\\
 
 \example{ex_chain7}{Using the Chain Rule to find a tangent line}{
-Let $f(x) = \cos x^2$. Find the equation of the line tangent to $f$ at $x=1$.}
+Let $f(x) = \cos x^2$. Find the equation of the line tangent to the graph of $f$ at $x=1$.}
 {The tangent line goes through the point $(1,f(1)) \approx (1,0.54)$ with slope $\fp(1)$. To find $\fp$, we need the Chain Rule.
 
 $\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin x^2$. Evaluated at $x=1$, we have $\fp(1) = -2\sin 1\approx -1.68$. Thus the equation of the tangent line is $$y = -1.68(x-1)+0.54 .$$
@@ -267,7 +267,7 @@ The Chain Rule, coupled with the derivative rule of $e^x$, allows us to find the
 The previous example produced a result worthy of its own ``box.''
 
 \theorem{thm:exponentials}{Derivatives of Exponential Functions}
-{Let $f(x)=a^x$, for $a>0, a\neq 1$. Then $f$ is differentiable for all real numbers and $$\fp(x) = \ln a\cdot a^x.$$
+{Let $f(x)=a^x$, for $a>0, a\neq 1$.\index{derivative!exponential functions} Then $f$ is differentiable for all real numbers and $$\fp(x) = \ln a\cdot a^x.$$
 }
 
 %{\bf Hard Examples:} For constants $a$ and $\nu,$ find the derivatives of 
@@ -338,7 +338,7 @@ The previous example produced a result worthy of its own ``box.''
 \vskip \baselineskip
 \noindent\textbf{\large Alternate Chain Rule Notation}\\
 
-It is instructive to understand what the  Chain Rule ``looks like'' using ``$\frac{dy}{dx}$'' notation instead of $y'$ notation.  Suppose that $y=f(u)$ is a function of $u$, where $u=g(x)$ is a function of $x$ (as stated in Theorem \ref{thm:chain_rule}.  Then, through the composition $f \circ g$, we can think of $y$ as a function of $x$, as $y=f(g(x))$. Thus the derivative of $y$ with respect to $x$ makes sense; we can talk about $\frac{dy}{dx}.$  This leads to an interesting progression of notation:
+It is instructive to understand what the  Chain Rule ``looks like'' using ``$\frac{dy}{dx}$'' notation instead of $y'$ notation.  Suppose that $y=f(u)$ is a function of $u$, where $u=g(x)$ is a function of $x$ (as stated in Theorem \ref{thm:chain_rule}.  Then, through the composition $f \circ g$, we can think of $y$ as a function of $x$, as $y=f(g(x))$. Thus the derivative of $y$ with respect to $x$ makes sense; we can talk about $\frac{dy}{dx}.$  This leads to an interesting progression of notation:\index{Chain Rule!notation}\index{derivative!Chain Rule}
 
 \begin{align*}
 y' &= \fp(g(x))\cdot g'(x) \\

@@ -30,7 +30,7 @@ The three ``most interesting'' conic sections are given in the top row of Figure
 
 
 
-When the plane does contain the origin, three \textbf{degenerate} cones can be formed as shown the bottom row of  Figure \ref{fig:nondeg_conic}: a point, a line, and crossed lines. We focus here on the nondegenerate cases. 
+When the plane does contain the origin, three \textbf{degenerate} cones can be formed as shown the bottom row of  Figure \ref{fig:nondeg_conic}: a point, a line, and crossed lines. We focus here on the nondegenerate cases. \index{conic sections}\index{conic sections!degenerate}
 
 While the above geometric constructs define the conics in an intuitive, visual way, these constructs are not very helpful when trying to analyze the shapes algebraically or consider them as the graph of a function. It can be shown that all conics can be defined by the general second--degree equation $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0.$$ While this algebraic definition has its uses, most find another geometric perspective of the conics more beneficial.
 
@@ -42,6 +42,7 @@ Each nondegenerate conic can be defined as the \textbf{locus}, or set, of points
 %
 \definition{def:parabola}{Parabola}
 {A \textbf{parabola} is the locus of all points equidistant from a point (called a \textbf{focus}) and a line (called the \textbf{directrix}) that does not contain the focus.
+\index{conic sections!parabola}\index{parabola!definition}\index{directrix}\index{focus}
 }
 
 \mfigure{.5}{Illustrating the definition of the parabola and establishing an algebraic formula.}{fig:parabola_def}{figures/figparabola_def}
@@ -66,17 +67,18 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 	The geometric definition of the parabola has led us to the familiar quadratic function whose graph is a parabola with vertex at the origin. When we allow the vertex to not be at $(0,0)$, we get the following standard form of the parabola.
 	
 	\keyidea{idea:parabola}{General Equation of a Parabola}
-	{\begin{itemize}
+	{\begin{enumerate}
 	\item		\textbf{Vertical Axis of Symmetry:} The equation of the parabola with vertex at $(h,k)$ and directrix $y=k-p$ in standard form is $$y=\frac{1}{4p}(x-h)^2+k.$$ The focus is at $(h,k+p)$.
 	\item		\textbf{Horizontal Axis of Symmetry:} The  equation of the parabola with vertex at $(h,k)$ and directrix $x=h-p$ in standard form is $$x=\frac{1}{4p}(y-k)^2+h.$$ The focus is at $(h+p,k)$.
-	\end{itemize}
+	\end{enumerate}
 	Note: $p$ is not necessarily a positive number.
+	\index{parabola!general equation}
 	}
 	\enlargethispage{2\baselineskip}
 	
 	\example{ex_conic1}{Finding the equation of a parabola}{
 	Give the equation of the parabola with focus at $(1,2)$ and directrix at $y=3$.}
-	{The vertex is located halfway between the focus and directrix, so $(h,k) = (1,4)$. This gives $p=-0.5$. Using Key Idea \ref{idea:parabola} we have the equation of the parabola as $$y=\frac{1}{4(-0.5)}(x-1)^2+4 = -\frac12(x-1)^2+2.5.$$
+	{The vertex is located halfway between the focus and directrix, so $(h,k) = (1,2.5)$. This gives $p=-0.5$. Using Key Idea \ref{idea:parabola} we have the equation of the parabola as $$y=\frac{1}{4(-0.5)}(x-1)^2+2.5 = -\frac12(x-1)^2+2.5.$$
 	\mfigure{.35}{The parabola described in Example \ref{ex_conic1}.}{fig:conic1}{figures/figconic1}
 	The parabola is sketched in Figure \ref{fig:conic1}.
 	}\\
@@ -102,7 +104,7 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 	\noindent\textbf{\large Reflective Property}
 	\vskip\baselineskip
 	
-	One of the fascinating things about the nondegenerate conic sections is their reflective properties. For a parabola, the reflective property is this:
+	One of the fascinating things about the nondegenerate conic sections is their reflective properties. Parabolas have the following reflective property:
 	
 	\hskip 20pt \begin{minipage}[t]{.8\linewidth}
 	Any ray emanating from the focus that intersects the parabola reflects off along a line perpendicular to the directrix.
@@ -116,6 +118,7 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 		\begin{enumerate}
 		\item		The line containing $P$ and the focus $F$, and
 		\item		The line perpendicular to the directrix through $P$.
+		\index{parabola!reflective property}
 		\end{enumerate}
 	}
 	
@@ -125,7 +128,7 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 	\vskip \baselineskip
 	
 	\definition{def:ellipse}{Ellipse}
-	{An \textbf{ellipse} is the locus of all points whose sum of distances from two fixed points, each a \textbf{focus} of the ellipse, is constant.
+	{An \textbf{ellipse} is the locus of all points whose sum of distances from two fixed points, each a \textbf{focus} of the ellipse, is constant.\index{conic sections!ellipse}\index{ellipse!definition}\index{focus}
 	}
 	
 	An easy way to visualize this construction of an ellipse is to pin both ends of a string to a board. The pins become the foci. Holding a pencil tight against the string places the pencil on the ellipse; the sum of distances from the pencil to the pins is constant: the length of the string. See Figure \ref{fig:ellipse_def}.
@@ -138,18 +141,19 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 	$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.$$ This choice of $a$ and $b$ is not without reason; as shown in Figure \ref{fig:ellipse_label}, the values of $a$ and $b$ have geometric meaning in the graph of the ellipse. 
 \mfigure{.75}{Labeling the significant features of an ellipse.}{fig:ellipse_label}{figures/figellipse_label}
 	
-	In general, the two foci of an ellipse lie on the \textbf{major axis} of the ellipse, and the midpoint of the segment joining the two foci is the \textbf{center}. The major axis intersects the ellipse at two points, each of which is a \textbf{vertex}. The line segment through the center and perpendicular to the major axis is the \textbf{minor axis}. The ``constant sum of distances'' that defines the ellipse is the length of the major axis.
+	In general, the two foci of an ellipse lie on the \textbf{major axis} of the ellipse, and the midpoint of the segment joining the two foci is the \textbf{center}. The major axis intersects the ellipse at two points, each of which is a \textbf{vertex}. The line segment through the center and perpendicular to the major axis is the \textbf{minor axis}. The ``constant sum of distances'' that defines the ellipse is the length of the major axis, i.e., $2a$.
 	
 	Allowing for the shifting of the ellipse gives the following standard equations.
 	
 	\keyidea{idea:ellipse}{Standard Equation of the Ellipse}
 	{The equation of an ellipse centered at $(h,k)$ with major axis of length $2a$ and minor axis of length $2b$ in standard form is:
-	\begin{itemize}
+	\begin{enumerate}
 	\item	\textbf{Horizontal major axis:} $\ds \frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1.$
 	
 	\item	\textbf{Vertical major axis:} $\ds \frac{(x-h)^2}{b^2}+\frac{(y-k)^2}{a^2}=1.$
-	\end{itemize}
+	\end{enumerate}
 	The foci lie along the major axis, $c$ units from the center, where $c^2=a^2-b^2$.
+	\index{ellipse!standard equation}
 	}
 	
 	\example{ex_conic3}{Finding the equation of an ellipse}{
@@ -160,7 +164,7 @@ These two distances are equal. Setting $d_1=d_2$, we can solve for $y$ in terms 
 	
 \example{ex_conic4}{Graphing an ellipse}{
 Graph the ellipse defined by $4x^2+9y^2-8x-36y=-4$.}
-{It is simple to graph an ellipse once it is in general form. In order to put the given equation in general form, we must complete the square with both the $x$ and $y$ terms. We first rewrite the equation by regrouping:
+{It is simple to graph an ellipse once it is in standard form. In order to put the given equation in standard form, we must complete the square with both the $x$ and $y$ terms. We first rewrite the equation by regrouping:
 $$4x^2+9y^2-8x-36y=-4 \quad \Rightarrow \quad (4x^2-8x) + (9y^2-36y) = -4.$$
 Now we complete the squares.
 \begin{align*}
@@ -200,23 +204,24 @@ Consider Figure \ref{fig:ellipse_ecc}, where several ellipses are graphed with $
 
 \definition{def:eccentricity_ellipse}{Eccentricity of an Ellipse}
 {The eccentricity $e$ of an ellipse  is $\ds e=\frac{c}{a}$.
+\index{ellipse!eccentricity}\index{eccentricity}
 }
 
 The eccentricity of a circle is 0; that is, a circle has no ``noncircularness.'' As $c$ approaches $a$, $e$ approaches 1, giving rise to a very noncircular ellipse, as seen in Figure \ref{fig:ellipse_ecc} (d). 
 
-It was long assumed that planets had circular orbits. This is known to be incorrect; the orbits are elliptical. Earth has an eccentricity of $0.0167$ -- it has a nearly circular orbit.   Mercury's orbit is the most eccentric, with $e=0.2056$. (Pluto's eccentricity is greater, at $e=0.248$, the greatest of all the dwarf planets.) The planet with the most circular orbit is Venus, with $e=0.0068$. The Earth's moon has an eccentricity of $e=0.0549$, also very circular.\\
+It was long assumed that planets had circular orbits. This is known to be incorrect; the orbits are elliptical. Earth has an eccentricity of $0.0167$ -- it has a nearly circular orbit.   Mercury's orbit is the most eccentric, with $e=0.2056$. (Pluto's eccentricity is greater, at $e=0.248$, the greatest of all the currently known dwarf planets.) The planet with the most circular orbit is Venus, with $e=0.0068$. The Earth's moon has an eccentricity of $e=0.0549$, also very circular.\\
 
 
 
 \noindent \textbf{\large Reflective Property}
 \vskip\baselineskip
 
-The ellipse also possesses an interesting reflective property Any ray emanating from one focus of an ellipse reflects off the ellipse along a line through the other focus, as illustrated in Figure \ref{fig:ellipse_reflect}. This property is given formally in the following theorem.
+The ellipse also possesses an interesting reflective property. Any ray emanating from one focus of an ellipse reflects off the ellipse along a line through the other focus, as illustrated in Figure \ref{fig:ellipse_reflect}. This property is given formally in the following theorem.
 
 \mfigure{.6}{Illustrating the reflective property of an ellipse.}{fig:ellipse_reflect}{figures/figellipse_reflect}
 
 \theorem{thm:ellipse_reflect}{Reflective Property of an Ellipse}
-{Let $P$ be a point on a ellipse with foci $F_1$ and $F_2$. The tangent line to the ellipse at $P$ makes equal angles with the following two lines:
+{Let $P$ be a point on a ellipse with foci $F_1$ and $F_2$. The tangent line to the ellipse at $P$ makes equal angles with the following two lines:\index{ellipse!reflective property}
 \begin{enumerate}
 	\item The line through $F_1$ and $P$, and
 	\item	The line through $F_2$ and $P$. 
@@ -233,15 +238,17 @@ The definition of a hyperbola is very similar to the definition of an ellipse; w
 
 \definition{def:hyperbola}{Hyperbola}
 {A \textbf{hyperbola} is the locus of all points where the absolute value of difference of distances from two fixed points, each a focus of the hyperbola, is constant.
+\index{conic sections!hyperbola}\index{hyperbola!definition}\index{focus}
 }
 
 We do not have a convenient way of visualizing the construction of a hyperbola as we did for the ellipse. The geometric definition does allow us to find an algebraic expression that describes it. It will be useful to define some terms first.
 
-The two foci lie on the \textbf{transverse axis} of the hyperbola; the midpoint of the line segment joining the foci is the \textbf{center} of the ellipse. The transverse axis intersects the hyperbola at two points, each a \textbf{vertex} of the hyperbola. The line through the center and perpendicular to the transverse axis is the \textbf{conjugate axis.} This is illustrated in Figure \ref{fig:hyperbola_def}. It is easy to show that the constant difference of distances used in the definition of the hyperbola is the distance between the vertices.
+The two foci lie on the \textbf{transverse axis} of the hyperbola; the midpoint of the line segment joining the foci is the \textbf{center} of the hyperbola. The transverse axis intersects the hyperbola at two points, each a \textbf{vertex} of the hyperbola. The line through the center and perpendicular to the transverse axis is the \textbf{conjugate axis.} This is illustrated in Figure \ref{fig:hyperbola_def}. It is easy to show that the constant difference of distances used in the definition of the hyperbola is the distance between the vertices, i.e., $2a$.
 \mfigure{.8}{Labeling the significant features of a hyperbola.}{fig:hyperbola_def}{figures/fighyperbola_def}
 
 \keyidea{idea:hyperbola}{Standard Equation of a Hyperbola}
 {The equation of a hyperbola centered at $(h,k)$ in standard form is:
+\index{hyperbola!standard equation}
 \begin{enumerate}
 	\item \parbox{120pt}{\textbf{Horizontal Transverse Axis:}} $\ds \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1.$
 	
@@ -292,12 +299,13 @@ x^2 - \frac{(y-1)^2}{9} &=1
 
 We see the hyperbola is centered at $(0,1)$, with a horizontal transverse axis, where $a=1$ and $b=3$. The appropriate rectangle is sketched in Figure \ref{fig:conic6} along with the asymptotes of the hyperbola. The vertices are located at $(\pm 1,1)$. We have $c=\sqrt{10}\approx 3.2$, so the foci are located at $(\pm 3.2,1)$ as shown in the figure.
 }\\
+\clearpage
 
 \noindent\textbf{\large Eccentricity}
 \vskip\baselineskip
 
 \definition{def:hyperbola_eccentricity}{Eccentricity of a Hyperbola}
-{The eccentricity of a hyperbola is $\ds e=\frac ca$.
+{The eccentricity of a hyperbola is $\ds e=\frac ca$.\index{hyperbola!eccentricity}\index{eccentricity}
 }
 
 \mtable{.5}{Understanding the eccentricity of a hyperbola.}{fig:hyperbola_ecc}{%
@@ -320,7 +328,7 @@ Note that this is the definition of eccentricity as used for the ellipse.  When 
 Hyperbolas share a similar reflective property with ellipses. However, in the case of a hyperbola, a ray emanating from a focus that intersects the hyperbola reflects along a line containing the other focus, but moving \textit{away} from that focus. This is illustrated in Figure \ref{fig:hyperbola_reflect} (on the next page). Hyperbolic mirrors are commonly used in telescopes because of this reflective property. It is stated formally in the following theorem.
 
 \theorem{thm:reflective_hyperbola}{Reflective Property of Hyperbolas}
-{Let $P$ be a point on a hyperbola with foci $F_1$ and $F_2$. The tangent line to the hyperbola at $P$ makes equal angles with the following two lines:
+{Let $P$ be a point on a hyperbola with foci $F_1$ and $F_2$. The tangent line to the hyperbola at $P$ makes equal angles with the following two lines:\index{hyperbola!reflective property}
 	\begin{enumerate}
 		\item The line through $F_1$ and $P$, and
 		\item	The line through $F_2$ and $P$.
@@ -340,7 +348,7 @@ A key to this method is knowing distances. What if this information is not avail
 
 If each location has a clock set to the same time, hyperbolas can be used to determine the location. Suppose the microphone at position $A$ records the sound at exactly 12:00, location $B$ records the time exactly 1 second later, and location $C$ records the noise exactly 2 seconds after that. We are interested in the \textit{difference} of times. Since the speed of sound is approximately 340 m/s, we can conclude quickly that the sound was created 340 meters closer to position $A$ than position $B$. If $A$ and $B$ are a known distance apart (as shown in Figure \ref{fig:hyperbola_locate} (a)), then we can determine a hyperbola on which $D$ must lie. 
 
-The ``difference of distances'' is 340; this is also the distance between vertices of the hyperbola. So we know $2a= 340$. Positions $A$ and $B$ lie on the foci, so $2c=1000$. From this we can find $b\approx 470$ and can sketch the hyperbola, given in part (b) of the figure. We only care about the side closest to $A$. 
+The ``difference of distances'' is 340; this is also the distance between vertices of the hyperbola. So we know $2a= 340$. Positions $A$ and $B$ lie on the foci, so $2c=1000$. From this we can find $b\approx 470$ and can sketch the hyperbola, given in part (b) of the figure. We only care about the side closest to $A$. (Why?)
 
 We can also find the hyperbola defined by positions $B$ and $C$. In this case, $2a = 680$ as the sound traveled an extra 2 seconds to get to $C$. We still have $2c=1000$, centering this hyperbola at $(-500,500)$. We find $b\approx 367$. This hyperbola is sketched in part (c) of the figure. The intersection point of the two graphs is the location of the sound, at approximately $(188,-222.5)$.\\
 

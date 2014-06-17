@@ -8,11 +8,13 @@ $$\vec r(t) = \la\, f(t),g(t)\,\ra \quad \text{or}\quad \vec r(t) = \la \,f(t),g
 where $f$, $g$ and $h$ are real valued functions.\\
 
 The \textbf{domain} of $\vec r$ is the set of all values of $t$ for which $\vec r(t)$ is defined. The \textbf{range} of $\vec r$ is the set of all possible output vectors $\vec r(t)$.
+\index{vector--valued function!definition}\index{function!vector--valued}
 }
 
 \noindent\textbf{Evaluating and Graphing Vector--Valued Functions}\\
 
 Evaluating a vector--valued function at a specific value of $t$ is straightforward; simply evaluate each component function at that value of $t$. For instance, if $\vec r(t) = \la t^2,t^2+t-1\ra$, then $\vec r(-2) = \la 4,1\ra$. We can sketch this vector, as is done in Figure \ref{fig:vvfintro1} (a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The \textbf{graph} of a vector--valued function is the set of all terminal points of $\vec r(t)$, where the initial point of each vector is always the origin. In Figure \ref{fig:vvfintro1} (b) we sketch the graph of $\vec r$\,; we can indicate individual points on the graph with their respective vector, as shown.
+\index{vector--valued function!graphing}
 \mtable{.5}{Sketching the graph of a vector--valued function.}{fig:vvfintro1}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figvvfintro1a}\\
@@ -23,6 +25,8 @@ Evaluating a vector--valued function at a specific value of $t$ is straightforwa
 }
 
 Vector--valued functions are closely related to parametric equations of graphs. While in both methods we plot points $\big(x(t), y(t)\big)$ or $\big(x(t),y(t),z(t)\big)$ to produce a graph, in the context of vector--valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.\\
+
+\clearpage
 
 \example{ex_vvf1}{Graphing vector--valued functions}{
 Graph $\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra$, for $-2\leq t\leq 2$. Sketch $\vec r(-1)$ and $\vec r(2)$.}
@@ -50,12 +54,14 @@ Graph $\vec r(t) = \la \cos t,\sin t,t\ra$ for $0\leq t\leq 4\pi$.}
 
 \definition{def:vvf_algebra}{Operations on Vector--Valued Functions}
 {Let $\vec r_1(t)=\la f_1(t),g_1(t)\ra$ and $\vec r_2(t)=\la f_2(t),g_2(t)\ra$ be vector--valued functions in $\mathbb{R}^2$ and let $c$ be a scalar. Then:
-\begin{itemize}
+\begin{enumerate}
 	\item $\vec r_1(t) \pm \vec r_2(t) = \la\, f_1(t)\pm f_2(t),g_1(t)\pm g_2(t)\,\ra$.
 	\item	$c\vec r_1(t) = \la\, cf_1(t),cg_1(t)\,\ra$.
-\end{itemize}
+\end{enumerate}
 A similar definition holds for vector--valued functions in $\mathbb{R}^3$.
+\index{vector--valued function!algebra of}
 }
+
 This definition states that we add, subtract and scale vector-valued functions component--wise. Combining vector--valued functions in this way can be very useful (as well as create interesting graphs).\\
 
 \example{ex_vvf3}{Adding and scaling vector--valued functions.}{
@@ -83,6 +89,7 @@ Multiplying $\vec r(t)$ by 5 scales the function by 5, producing $5\vec r(t) =  
 
 \example{ex_vvf4}{Adding and scaling vector--valued functions.}{
 A \textbf{cycloid} is a graph traced by a point $p$ on a rolling circle, as shown in Figure \ref{fig:vvf4}. Find an equation describing the cycloid, where the circle has radius 1.
+\index{cycloid}
 \begin{center}
 \myincludegraphics{figures/figvvf4}
 \captionsetup{type=figure}
@@ -102,7 +109,7 @@ We now combine $\vec p$ and $\vec c$ together to form the equation of the cycloi
 
 \mfigure{.8}{The cycloid in Example \ref{ex_vvf4}.}{fig:vvfa}{figures/figvvf4a}
 
-A vector--valued function $\vec r(t)$ is often used to describe the position of a moving object at time $t$. At $t=t_0$, the object is at $\vec r(t_0)$; at $t=t_1$, the object is at $\vec r(t_1)$. Knowing the locations $\vec r(t_0)$ and $\vec r(t_1)$ give no indication of the path taken between them, but often we only care about the difference of the locations, $\vec r(t_1)-\vec r(t_0)$, the \textbf{displacement}.
+A vector--valued function $\vec r(t)$ is often used to describe the position of a moving object at time $t$. At $t=t_0$, the object is at $\vec r(t_0)$; at $t=t_1$, the object is at $\vec r(t_1)$. Knowing the locations $\vec r(t_0)$ and $\vec r(t_1)$ give no indication of the path taken between them, but often we only care about the difference of the locations, $\vec r(t_1)-\vec r(t_0)$, the \sword{displacement}.\index{displacement}\index{vector--valued function!displacement}
 
 \definition{def:displacement}{Displacement}
 {Let $\vec r(t)$ be a vector--valued function and let $t_0<t_1$ be values in the domain. The \textbf{displacement} $\vec d$ of $\vec r$, from $t=t_0$ to $t=t_1$, is $$\vec d=\vec r(t_1)-\vec r(t_0).$$
@@ -122,6 +129,7 @@ Measuring displacement makes us contemplate related, yet very different, concept
 
 \definition{def:av_rate_of_change_vect}{Average Rate of Change}
 {Let $\vec r(t)$ be a vector--valued function, where each of its component functions is continuous on its domain, and let $t_0<t_1$. The \textbf{average rate of change} of $\vec r(t)$ on $[t_0,t_1]$ is
+\index{average rate of change}\index{vector--valued function!average rate of change}
 $$\text{average rate of change} = \frac{\vec r(t_1) - \vec r(t_0)}{t_1-t_0}.$$
 }\\
 

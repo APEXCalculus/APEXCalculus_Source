@@ -15,8 +15,8 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 
 \addplot [thick, {\colorone},smooth] {cos(deg(x))-x};
 
-\addplot [dashed,{\colortwo},smooth] {cos(deg(x))};
-\addplot [{\colortwo},dashed,smooth] {x};
+\addplot [dashed,thick,{\colortwo},smooth] {cos(deg(x))};
+\addplot [{\colortwo},thick,dashed,smooth] {x};
 \end{axis}
 
 \node [right] at (myplot.right of origin) {\scriptsize $x$};

@@ -1,11 +1,13 @@
 \section{One Sided Limits}\label{sec:limit_continuity}
 
-\noindent\hskip-50pt\hskip-45pt\parbox{45pt}{\textbf{\itshape Review:}}
-\begin{minipage}[t]{\textwidth+50pt}
-We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for computing them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''
-\end{minipage}\\
+%\noindent\hskip-50pt\hskip-45pt\parbox{45pt}{\textbf{\itshape Review:}}
+%\begin{minipage}[t]{\textwidth+50pt}
+%We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for computing them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''
+%\end{minipage}\\
+%
+%\vskip \baselineskip
 
-\vskip \baselineskip
+We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for computing them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''\\
 
 In Section \ref{sec:limit_intro} we explored the three ways in which limits of functions failed to exist: 
 	\begin{enumerate}
@@ -25,7 +27,7 @@ In this section we explore in depth the concepts behind \#1 by introducing the \
 \noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -115pt}%
 \noindent\begin{minipage}{\specialboxlength}
 \definition{def:onesidedlimit}{One Sided Limits}
-{\textbf{Left-Hand Limit}\\
+{\textbf{Left-Hand Limit} \index{limit!one sided}\index{limit!right handed}\index{limit!left handed}\\
 
 Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^-} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the left is $L$,'' or ``the \textit{left-hand limit of $f$ at $c$ is L}'' 
 means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
@@ -84,7 +86,7 @@ Let $\ds f(x) = \left\{\begin{array}{cc} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{ar
 Note how the left and right-hand limits were different; this, of course, causes \textit{the} limit to not exist. The following theorem states what is fairly intuitive: \textit{the} limit exists precisely when the left and right-hand limits are equal.
 
 \theorem{thm:leftrightlimits}{Limits and One Sided Limits}
-{Let $f$ be a function defined on an open interval $I$ containing $c$. Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{and} \quad \lim_{x\to c^+}f(x) = L.$$}
+{Let $f$ be a function defined on an open interval $I$ containing $c$. \index{limit!does not exist} Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{and} \quad \lim_{x\to c^+}f(x) = L.$$}
 
 The phrase ``if, and only if'' means the two statements are \textit{equivalent}: they are either both true or both false. If the limit equals $L$, then the left and right hand limits both equal $L$. If the limit is not equal to $L$, then at least one of the left and right-hand limits is not equal to $L$ (it may not even exist).
 			

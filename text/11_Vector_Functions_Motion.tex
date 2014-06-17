@@ -4,11 +4,12 @@ A common use of vector--valued functions is to describe the motion of an object 
 
 \definition{def:vvf_motion}{Velocity, Speed and Acceleration}
 {Let $\vec r(t)$ be a position function in $\mathbb{R}^2$ or $\mathbb{R}^3$.
-\begin{itemize}
+\begin{enumerate}
 	\item \textbf{Velocity}, denoted $\vec v(t)$, is the instantaneous rate of position change; that is, $\vec v(t) = \vrp(t)$.
 	\item	\textbf{Speed} is the magnitude of velocity, $\norm{\vec v(t)}$.
 	\item	\textbf{Acceleration}, denoted $\vec a(t)$, is the instantaneous rate of velocity change; that is, $\vec a(t) = \vec v\,'(t) = \vrp'(t)$.
-\end{itemize}
+	\index{velocity}\index{speed}\index{acceleration}\index{vector--valued function!describing motion}
+\end{enumerate}
 }
 
 \example{ex_motion1}{Finding velocity and acceleration}{
@@ -138,20 +139,22 @@ An object moves in spiral with position function $\vrt = \la \cos t, \sin t, t\r
 The speed of the object is $\norm{\vvt} = \sqrt{(-\sin t)^2+\cos^2t+1} = \sqrt{2}$m/min; it moves at a constant speed. Note that the object does not accelerate in the $z$-direction, but rather moves up at a constant rate of 1m/min.
 }\\
 
-The objects in Examples \ref{ex_motion3} and \ref{ex_motion4} traveled at a constant speed. That is, $\norm{\vvt} = c$ for some constant $c$. Recall Theorem \ref{thm:vects_of_constant_length}, which states that if a vector--valued function \vrt\ has constant length, then \vrt\ is perpendicular to its derivative: $\vrt\cdot\vrp(t) = 0$. In these examples, the velocity function has constant length, therefore we can conclude that the velocity is perpendicular to the acceleration: $\vvt\cdot\vat = 0$. A quick check verifies this.
+The objects in Examples \ref{ex_motion3} and \ref{ex_motion4} traveled at a constant speed. That is, $\norm{\vvt} = c$ for some constant $c$. Recall Theorem \ref{thm:vects_of_constant_length}, which states that if a vector--valued function \vrt\ has constant length, then \vrt\ is perpendicular to its derivative: $\vrt\cdot\vrp(t) = 0$. In these examples, the velocity function has constant length, therefore we can conclude that the velocity is perpendicular to the acceleration: $\vvt\cdot\vat = 0$. A quick check verifies this.\index{vector--valued function!of constant length}
 
 There is an intuitive understanding of this. If acceleration is parallel to velocity, then it is only affecting the object's speed; it does not change the direction of travel. (For example, consider a dropped stone. Acceleration and velocity are parallel -- straight down -- and the direction of velocity never changes, though speed does increase.) If acceleration is not perpendicular to velocity, then there is some acceleration in the direction of travel, influencing the speed. If speed is constant, then acceleration must be orthogonal to velocity, as it then only affects direction, and not speed.
 
 \keyidea{idea:constant_speed}{Objects With Constant Speed}
 {If an object moves with constant speed, then its velocity and acceleration vectors are orthogonal. That is, $\vvt\cdot\vat=0$.
+\index{vector--valued function!of constant length}
 }
 
 
 \noindent\textbf{\large Projectile Motion}\\
 
 An important application of vector--valued position functions is \emph{projectile motion}: the motion of objects under the influence of gravity. We will measure time in seconds, and distances will either be in meters or feet. We will show that we can completely describe the path of such an object knowing its initial position and initial velocity (i.e., where it \emph{is} and where it \emph{is going.})
+\index{vector--valued function!projectile motion}\index{projectile motion}
 
-Suppose an object has initial position $\vec r(0) = \la x_0,y_0\ra$ and initial velocity $\vec v(0) = \la v_x,v_y\ra$. It is customary to rewrite $\vec v(0)$ in terms of its speed $v_0$ and direction $\vec u$, where $\vec u$ is a unit vector. Recall all unit vectors in $\mathbb{R}^2$ can be written as $\la \cos \theta,\sin \theta\ra$, where $\theta$ is an angle measure counter--clockwise from the $x$-axis. (We refer to $\theta$ as the \textbf{angle of elevation.}) Thus $\vec v(0) = v_0\la \cos \theta,\sin \theta\ra.$ 
+Suppose an object has initial position $\vec r(0) = \la x_0,y_0\ra$ and initial velocity $\vec v(0) = \la v_x,v_y\ra$. It is customary to rewrite $\vec v(0)$ in terms of its speed $v_0$ and direction $\vec u$, where $\vec u$ is a unit vector. Recall all unit vectors in $\mathbb{R}^2$ can be written as $\la \cos \theta,\sin \theta\ra$, where $\theta$ is an angle measure counter--clockwise from the $x$-axis. (We refer to $\theta$ as the \textbf{angle of elevation.}\index{angle of elevation}) Thus $\vec v(0) = v_0\la \cos \theta,\sin \theta\ra.$ 
 
 Since the acceleration of the object is known, namely $\vat = \la 0,-g\ra$, where $g$ is the gravitational constant, we can find $\vrt$ knowing our two initial conditions. We first find $\vvt$:
 \mnote{.5}{\textbf{Note:} In this text we use $g=32$ft/s when using Imperial units, and $g=9.8$m/s when using SI units.}
@@ -175,6 +178,7 @@ We integrate once more to find $\vrt$:
 
 \keyidea{idea:projectile}{Projectile Motion}
 {The position function of a projectile propelled from an initial position of $\vec r_0=\la x_0,y_0\ra$, with initial speed $v_0$, with angle of elevation $\theta$ and neglecting all accelerations but gravity is 
+\index{vector--valued function!projectile motion}\index{projectile motion}
 $$\vrt = \la \big(v_0\cos \theta\big)t+x_0\ , -\frac12gt^2+\big(v_0\sin\theta\big)t+y_0\ \ra.$$
 Letting $\vec v_0 = v_0\la \cos \theta,\sin \theta\ra$,\ \ $\vrt$ can be written as
 $$\vrt = \la 0,-\frac12gt^2\ra + \vec v_0t+\vec r_0.$$
@@ -243,6 +247,7 @@ This highlights an important fact: to compute distance traveled, we need only to
 
 \theorem{thm:distance_traveled}{Distance Traveled}
 {Let $\vvt$ be a velocity function for a moving object. The distance traveled by the object on $[a,b]$ is:
+\index{distance!traveled}\index{vector--valued function!distance traveled}\index{integration!distance traveled}
 $$\text{distance traveled} = \int_a^b \norm{\vvt}\ dt.$$
 }
 Note that this is just a restatement of Theorem \ref{thm:vvf_arc_length}: arc length is the same as distance traveled, just viewed in a different context.\\
@@ -287,6 +292,15 @@ A particle moves in space with position function $\vrt = \la t,t^2,\sin (\pi t)\
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
+
+In Definition \ref{def:av_val} we defined the average value of a function $f(x)$ on $[a,b]$ to be $$ \frac{1}{b-a}\int_a^bf(x)\ dx.$$
+Note how in Example \ref{ex_motion6} we computed the average speed as
+$$\frac{\text{distance traveled}}{\text{travel time}} = \frac1{2-(-2)}\int_{-2}^2\norm{\vvt}\ dt;$$
+that is, we just found the average value of $\norm{\vvt}$ on $[-2,2]$.
+
+Likewise, given position function $\vrt$, the average velocity on $[a,b]$ is
+$$\frac{\text{displacement}}{\text{travel time}} = \frac1{b-a}\int_a^b \vec{r}\,'(t)\ dt = \frac{\vec r(b)-\vec r(a)}{b-a};$$
+that is, it is the average value of $\vec r\,'(t)$, or $\vvt$, on $[a,b]$.\\
 
 The next two sections investigate more properties of the graphs of vector--valued functions and we'll apply these new ideas to what we just learned about motion.
 

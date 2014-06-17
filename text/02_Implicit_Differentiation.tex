@@ -4,7 +4,7 @@ In the previous sections we learned to find the derivative, $\ds \frac{dy}{dx}$,
 
 Sometimes the relationship between $y$ and $x$ is not explicit; rather, it is \textit{implicit}. For instance, we might know that $x^2-y=4$. This equality defines a relationship between $x$ and $y$; if we know $x$, we could figure out $y$. Can we still find $y'$?  In this case, sure; we  solve for $y$ to get $y=x^2-4$ (hence we now know $y$ explicitly)  and then differentiate to get $y'=2x$.
 
-Sometimes the \textit{implicit} relationship between $x$ and $y$ is complicated.  Suppose we are given $\sin(y)+y^3=6-x^3$. A graph of this implicit function is given in Figure \ref{fig:implicit1}. In this case there is absolutely no way to solve for $y$ in terms of elementary functions.  The surprising thing is, however, that we can still find $y'$ via a process known as \emph{implicit differentiation}.
+Sometimes the \textit{implicit} relationship between $x$ and $y$ is complicated.  Suppose we are given $\sin(y)+y^3=6-x^3$. A graph of this implicit function is given in Figure \ref{fig:implicit1}. In this case there is absolutely no way to solve for $y$ in terms of elementary functions.  The surprising thing is, however, that we can still find $y'$ via a process known as \sword{implicit differentiation}.\index{implicit differentiation}\index{derivative!implicit}
 
 \mfigure{.7}{A graph of the implicit function $\sin (y)+y^3=6-x^3$.}{fig:implicit1}{figures/figimplicit1}
 
@@ -17,13 +17,13 @@ Let's see how it works with the equation above.\\
 \example{ex_implicit1}{Using Implicit Differentiation}{
 Find $y'$ given that $\sin(y) + y^3=6-x^3$.}
 {We start by taking the derivative of both sides (thus maintaining the equality.) We have :
-$$ \frac{dy}{dx}\Big(\sin(y) + y^3\Big)=\frac{dy}{dx}\Big(6-x^3\Big).$$
+$$ \frac{d}{dx}\Big(\sin(y) + y^3\Big)=\frac{d}{dx}\Big(6-x^3\Big).$$
 The right hand side is easy; it returns $-3x^2$. 
 
-The left hand side requires more consideration. We take the derivative term--by--term.  Using the technique derived from Equation \ref{eq:implicit1} above, we can see that $$\frac{dy}{dx}\Big(\sin y\Big) = \cos y \cdot y'.$$ %The derivative of $\sin(y)$ is $\cos(y)y'$.  The reason for this is the chain rule. Since $y$ itself depends on $x$, the term $\sin(y)$ is really a function inside of a function, $y$ being a function of $x$.
+The left hand side requires more consideration. We take the derivative term--by--term.  Using the technique derived from Equation \ref{eq:implicit1} above, we can see that $$\frac{d}{dx}\Big(\sin y\Big) = \cos y \cdot y'.$$ %The derivative of $\sin(y)$ is $\cos(y)y'$.  The reason for this is the chain rule. Since $y$ itself depends on $x$, the term $\sin(y)$ is really a function inside of a function, $y$ being a function of $x$.
 
 We apply the same process to the $y^3$ term. 
-$$\frac{dy}{dx}\Big(y^3\Big) = \frac{dy}{dx}\Big((y)^3\Big) = 3(y)^2\cdot y'.$$
+$$\frac{d}{dx}\Big(y^3\Big) = \frac{d}{dx}\Big((y)^3\Big) = 3(y)^2\cdot y'.$$
 %Similarly, the derivative of $y^3$ is $3y^2y'$.  
 Putting this together with the right hand side, we have
 $$\cos(y)y'+3y^2y' = -3x^2.$$
@@ -83,7 +83,7 @@ Notice how our function looks much different than other functions we have seen. 
 Given the implicitly defined function $\sin(x^2y^2)+y^3=x+y$, find $y'$.}
 {Differentiating term by term, we find the most difficulty in the first term.  It requires both the Chain and Product Rules.
 		\begin{align*}
-		\frac{dy}{dx}\Big(\sin(x^2y^2)\Big) &= \cos(x^2y^2)\cdot\frac{dy}{dx}\Big(x^2y^2\Big) \\
+		\frac{d}{dx}\Big(\sin(x^2y^2)\Big) &= \cos(x^2y^2)\cdot\frac{d}{dx}\Big(x^2y^2\Big) \\
 																				&= \cos(x^2y^2)\cdot\big(x^2(2yy')+2xy^2\big)\\
 																				&= 2(x^2yy'+xy^2)\cos(x^2y^2).
 		\end{align*}  
@@ -143,8 +143,8 @@ y &= x^{m/n} \\
 y^n &= x^m \\
 \frac{d}{dx}\big(y^n\big) &= \frac{d}{dx}\big(x^m\big) \\
 n\cdot y^{n-1}\cdot y' &= m\cdot x^{m-1} \\
-y' 	&= \frac{m}{n} \frac{x^{m-1}}{y^{n-1}} \quad \mbox{\small (now substitute $y=x^{m/n}$ for $y$)} \\
- 		&= \frac{m}{n} \frac{x^{m-1}}{(x^{m/n})^{n-1}} \quad \mbox{\small (now apply lots of algebra)}\\
+y' 	&= \frac{m}{n} \frac{x^{m-1}}{y^{n-1}} \quad \mbox{\small (now substitute $x^{m/n}$ for $y$)} \\
+ 		&= \frac{m}{n} \frac{x^{m-1}}{(x^{m/n})^{n-1}} \quad \mbox{\small (apply lots of algebra)}\\
 %		&= \frac{m}{n} \frac{x^{m-1}}{x^{m(n-1)/n}} \\
 %		&=	\frac{m}n	x^{(m-1)-m(n-1)/n} \\
 %		&=	\frac{m}n x^{((m-1)n-m(n-1))/n} \\
@@ -152,10 +152,10 @@ y' 	&= \frac{m}{n} \frac{x^{m-1}}{y^{n-1}} \quad \mbox{\small (now substitute $y
 		&= \frac{m}n x^{m/n -1}\rule{0pt}{18pt}
 \end{align*}
 
-We have just proved the Power Rule for rational powers. Using limits, we can extend this once more to include \textit{all} powers, including irrational (even transcendental!) powers, giving the following theorem.
+The above derivation is the key to the proof extending the Power Rule to rational powers. Using limits, we can extend this once more to include \textit{all} powers, including irrational (even transcendental!) powers, giving the following theorem.
 
 \theorem{thm:finalpower}{Power Rule for Differentiation}
-{Let $f(x) = x^n$, where $n\neq 0$ is a real number. Then $f$ is a differentiable function, and $\fp(x) = n\cdot x^{n-1}$.
+{Let $f(x) = x^n$, where $n\neq 0$ is a real number. Then $f$ is a differentiable function, and $\fp(x) = n\cdot x^{n-1}$.\index{derivative!Power Rule}\index{Power Rule!differentiation}
 }
 
 This theorem allows us to say the derivative of $x^\pi$ is $\pi x^{\pi -1}$. 
@@ -189,7 +189,7 @@ We can use implicit differentiation to find higher order derivatives. In theory,
 \enlargethispage{\baselineskip}
 
 \example{ex_implicit9}{Finding the second derivative}{
-Given $x^2+y^2=1$, find $\frac{d^2y}{dx^2} = y''$. }
+Given $x^2+y^2=1$, find $\ds\frac{d^2y}{dx^2} = y''$. }
 {We found that $y' = \frac{dy}{dx} = -x/y$ in Example \ref{ex_implicit7}. To find $y''$, we apply implicit differentiation to $y'$.
 \begin{align*}
 y'' &= \frac{d}{dx}\big(y'\big) \\
@@ -205,8 +205,8 @@ While this is not a particularly simple expression, it is usable. We can see tha
 \noindent\textbf{\large Logarithmic Differentiation}
 \vskip\baselineskip
 
-Consider the function $y=x^x$; it is graphed in Figure \ref{fig:logdiffa}. It is well--defined for $x>0$ and we might be interested in finding equations of lines tangent and normal to its graph. How do we take its derivative?
-\mfigure{.6}{A plot of $y=x^x$.}{fig:logdiffa}{figures/figlogdiffa}
+Consider the function $y=x^x$; it is graphed in Figure \ref{fig:logdiffa}. It is well--defined for $x>0$ and we might be interested in finding equations of lines tangent and normal to its graph. How do we take its derivative?\index{logarithmic differentiation}
+\mfigure{.45}{A plot of $y=x^x$.}{fig:logdiffa}{figures/figlogdiffa}
 
 The function is not a power function: it has a ``power'' of $x$, not a constant. It is not an exponential function: it has a ``base'' of $x$, not a constant. 
 

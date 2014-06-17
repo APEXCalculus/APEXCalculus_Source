@@ -9,7 +9,7 @@ Let $F(x) = \int_a^x f(t)\ dt$. It computes the area under $f$ on $[a,x]$ as ill
 We can also apply calculus ideas to $F(x)$; in particular, we can compute its derivative. While this may seem like an innocuous thing to do, it has far--reaching implications, as demonstrated by the fact that the result is given as an important theorem.
 
 \theorem{thm:FTC1}{The Fundamental Theorem of Calculus, Part 1}
-{Let $f$ be continuous on $[a,b]$ and let $F(x) = \int_a^x f(t)\ dt$. Then $F$ is a differentiable function on $(a,b)$, and $$\Fp(x)=f(x).$$
+{Let $f$ be continuous on $[a,b]$ and let $F(x) = \int_a^x f(t)\ dt$. Then $F$ is a differentiable function on $(a,b)$, and\index{Fundamental Theorem of Calculus}\index{integration!Fun. Thm. of Calc.} $$\Fp(x)=f(x).$$
 }
 
 Initially this seems simple, as demonstrated in the following example.\\
@@ -30,7 +30,7 @@ We have done more than found a complicated way of computing an antiderivative. C
 We now see how indefinite integrals and definite integrals are related: we can evaluate a definite integral using antiderivatives! This is the second part of the Fundamental Theorem of Calculus.
 
 \theorem{thm:FTC2}{The Fundamental Theorem of Calculus, Part 2}
-{Let $f$ be continuous on $[a,b]$ and let $F$ be \textit{any} antiderivative of $f$. Then $$\int_a^b f(x)\ dx = F(b) - F(a).$$
+{Let $f$ be continuous on $[a,b]$ and let $F$ be \textit{any} antiderivative of $f$. Then\index{Fundamental Theorem of Calculus}\index{integration!Fun. Thm. of Calc.} $$\int_a^b f(x)\ dx = F(b) - F(a).$$
 }
 
 \example{ex_ftc3}{Using the Fundamental Theorem of Calculus, Part 2}{
@@ -42,7 +42,7 @@ The Fundamental Theorem of Calculus states
 This is the same answer we obtained using limits in the previous section, just with much less work.
 }\\
 
-\noindent\textbf{Notation:} A special notation is often used in the process of evaluating definite integrals using the Fundamental Theorem of Calculus. Instead of explicitly writing $F(b)-F(a)$, the notation $F(x)\Big|_a^b$ is used. Thus the solution to Example \ref{ex_ftc3} would be written as:
+\noindent\textbf{Notation:}\index{integration!notation} A special notation is often used in the process of evaluating definite integrals using the Fundamental Theorem of Calculus. Instead of explicitly writing $F(b)-F(a)$, the notation $F(x)\Big|_a^b$ is used. Thus the solution to Example \ref{ex_ftc3} would be written as:
 	$$\int_0^4(4x-x^2)\ dx = \left.\left(2x^2-\frac13x^3\right)\right|_0^4 = \big(2(4)^2-\frac134^3\big)-\big(0-0\big) =  32/3.$$
 
 \noindent\textbf{The Constant $C$:} \textit{Any} antiderivative $F(x)$ can be chosen when using the Fundamental Theorem of Calculus to evaluate a definite integral, meaning any value of $C$ can be picked. The constant \textit{always} cancels out of the expression when evaluating $F(b)-F(a)$, so it does not matter what value is picked. This being the case, we might as well let $C=0$.\\
@@ -69,7 +69,7 @@ In general, if $c$ is a constant, then $\int_a^b c\ dx = c(b-a)$.
 
 \noindent\textbf{\large Understanding Motion with the Fundamental Theorem of Calculus}\\
 
-We established, starting with Key Idea \ref{idea:motion}, that the derivative of a position function is a velocity function, and the derivative of a velocity function is an acceleration function. Now consider definite integrals of velocity and acceleration functions. Specifically, if $v(t)$ is a velocity function, what does $\ds \int_a^b v(t)\ dt$ mean?
+We established, starting with Key Idea \ref{idea:motion}, that the derivative of a position function is a velocity function, and the derivative of a velocity function is an acceleration function. Now consider definite integrals of velocity and acceleration functions. Specifically, if $v(t)$ is a velocity function, what does $\ds \int_a^b v(t)\ dt$ mean?\index{integration!displacement}\index{displacement}
 
 The Fundamental Theorem of Calculus states that
 $$\int_a^b v(t)\ dt = V(b) - V(a),$$ where $V(t)$ is any antiderivative of $v(t)$. Since $v(t)$ is a velocity function, $V(t)$ must be a position function, and $V(b) - V(a)$ measures a change in position, or \textbf{displacement}.\\
@@ -95,7 +95,7 @@ means the velocity has increased by 15m/h from $t=0$ to $t=3$.
 
 Part 1 of the Fundamental Theorem of Calculus (FTC) states that given $\ds F(x) = \int_a^x f(t)\ dt$,  $F'(x) = f(x)$. Using other notation, $\ds \frac{d}{dx}\big(F(x)\big) = f(x)$. While we have just practiced evaluating definite integrals, sometimes finding antiderivatives is impossible and we need to rely on other techniques to approximate the value of a definite integral. Functions written as $F(x) = \int_a^x f(t)\ dt$ are useful in such situations.
 
-It may be of further use to compose such a function with another. As an example, we may compose $F(x)$ with $g(x)$ to get $$F\big(g(x)\big) = \int_a^{g(x)} f(t)\ dt.$$ What is the derivative of such a function? The Chain Rule can be employed to state $$\frac{d}{dx}\Big(F\big(g(x)\big)\Big) = F'\big(g(x)\big)g'(x) = f\big(g(x)\big)g'(x).$$
+It may be of further use to compose such a function with another. As an example, we may compose $F(x)$ with $g(x)$ to get $$F\big(g(x)\big) = \int_a^{g(x)} f(t)\ dt.$$ What is the derivative of such a function?\index{Fundamental Theorem of Calculus!and Chain Rule} The Chain Rule can be employed to state $$\frac{d}{dx}\Big(F\big(g(x)\big)\Big) = F'\big(g(x)\big)g'(x) = f\big(g(x)\big)g'(x).$$
 An example will help us understand this.\\
 
 \example{ex_ftc11}{The FTC, Part 1, and the Chain Rule}{
@@ -122,7 +122,7 @@ $$F'(x) = \sin x \cos^3 x.$$
 \noindent\textbf{\large Area Between Curves}
 \vskip\baselineskip
 
-Consider continuous functions $f(x)$ and $g(x)$ defined on $[a,b]$, where $f(x) \geq g(x)$ for all $x$ in $[a,b]$, as demonstrated in Figure \ref{fig:ftc5}. What is the area of the shaded region bounded by the two curves over $[a,b]$?
+Consider continuous functions $f(x)$ and $g(x)$ defined on $[a,b]$, where $f(x) \geq g(x)$ for all $x$ in $[a,b]$, as demonstrated in Figure \ref{fig:ftc5}. What is the area of the shaded region bounded by the two curves over $[a,b]$?\index{integration!area between curves}
 
 \mtable{.73}{Finding the area bounded by two functions on an interval; it is found by subtracting the area under $g$ from the area under $f$.}{fig:ftc5}{\myincludegraphics{figures/figftc5}\hfill \myincludegraphics{figures/figftc5a}}
 
@@ -163,20 +163,25 @@ In (b), the height of the rectangle is smaller than $f$ on $[1,4]$, hence the ar
 
 \mtable{.4}{Differently sized rectangles give upper and lower bounds on $\int_1^4 f(x)\ dx$; the last rectangle matches the area exactly.}{fig:ftc7b}%
 {%draw figures, begin ifthen else
-\ifthenelse{\boolean{longpage}}% if longpage
-{\begin{tabular}{cc}
-(a)\myincludegraphics{figures/figftc7b2} & (b)\myincludegraphics{figures/figftc7b1}
-\end{tabular}
-
+%\ifthenelse{\boolean{longpage}}% if longpage
+%{\begin{tabular}{cc}
+%(a)\myincludegraphics{figures/figftc7b2} & (b)\myincludegraphics{figures/figftc7b1}
+%\end{tabular}
+%
+%\begin{tabular}{c}
+%(c)\myincludegraphics{figures/figftc7b3}
+%\end{tabular}
+%} % now if not longpage
+%{
 \begin{tabular}{c}
-(c)\myincludegraphics{figures/figftc7b3}
+\myincludegraphics{figures/figftc7b2}\\
+(a)\\
+\myincludegraphics{figures/figftc7b1}\\
+(b)\\
+\myincludegraphics{figures/figftc7b3}\\
+(c)
 \end{tabular}
-} % now if not longpage
-{\begin{tabular}{c}
-(a)\myincludegraphics{figures/figftc7b2}\\
-(b)\myincludegraphics{figures/figftc7b1}\\
-(c)\myincludegraphics{figures/figftc7b3}
-\end{tabular}}
+%}
 } %ends figure drawing
 
 Finally, in (c) the height of the rectangle is such that the area of the rectangle is \textit{exactly} that of $\int_0^4 f(x)\ dx$. Since rectangles that are ``too big'', as in (a), and rectangles that are ``too little,'' as in (b), give areas greater/lesser than $\int_1^4 f(x)\ dx$, it makes sense that there is a rectangle, whose top intersects $f(x)$ somewhere on $[1,4]$, whose area is \textit{exactly} that of the definite integral.
@@ -184,10 +189,10 @@ Finally, in (c) the height of the rectangle is such that the area of the rectang
 We state this idea formally in a theorem.
 
 \theorem{thm:mvt2}{The Mean Value Theorem of Integration}
-{Let $f$ be continuous on $[a,b]$. There exists a value $c$ in $[a,b]$ such that $$\int_a^bf(x)\ dx = f(c)(b-a).$$
+{Let $f$ be continuous on $[a,b]$.\index{Mean Value Theorem!of integration}\index{integration!Mean Value Theorem} There exists a value $c$ in $[a,b]$ such that $$\int_a^bf(x)\ dx = f(c)(b-a).$$
 }
 
-This is an \textit{existential} statement; $c$ exists, but we do not provide a method of finding it. Theorem \ref{thm:mvt2} is directly connected to the Mean Value Theorem of Differentiation, given %in Section \ref{sec:mvt} 
+This is an \emph{existential} statement; $c$ exists, but we do not provide a method of finding it. Theorem \ref{thm:mvt2} is directly connected to the Mean Value Theorem of Differentiation, given %in Section \ref{sec:mvt} 
 as Theorem \ref{thm:mvt}; we leave it to the reader to see how.
 
 We demonstrate the principles involved in this version of the Mean Value Theorem in the following example.\\
@@ -236,7 +241,7 @@ This tells us this: when we evaluate $f$ at $n$ (somewhat) equally spaced points
 This leads us to a definition.
 
 \definition{def:av_val}{The Average Value of $f$ on $[a,b]$}
-{Let $f$ be continuous on $[a,b]$. The \textbf{average value of\ \ $f$\ \ on $[a,b]$} is $f(c)$, where $c$ is a value in $[a,b]$ guaranteed by the Mean Value Theorem. I.e., 
+{Let $f$ be continuous on $[a,b]$. The \textbf{average value of\ \ $f$\ \ on $[a,b]$} is $f(c)$, where $c$ is a value in $[a,b]$ guaranteed by the Mean Value Theorem.\index{integration!average value}\index{average value of function} I.e., 
 $$\text{Average Value of $f$ on $[a,b]$} = \frac{1}{b-a}\int_a^b f(x)\ dx.$$
 }
 

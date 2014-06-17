@@ -1,6 +1,6 @@
 \section{Introduction to Cartesian Coordinates in Space}\label{sec:space_coord}
 
-Up to this point in this text we have considered mathematics in a 2--dimensional world. We have plotted graphs on the $x$-$y$ plane using rectangular and polar coordinates and found area of regions in the plane. We have considered properties of \textit{solid} objects, such as volume and surface area, but only by first defining a curve in the plane and then rotating it out of the plane.
+Up to this point in this text we have considered mathematics in a 2--dimensional world. We have plotted graphs on the $x$-$y$ plane using rectangular and polar coordinates and found the area of regions in the plane. We have considered properties of \textit{solid} objects, such as volume and surface area, but only by first defining a curve in the plane and then rotating it out of the plane.
 
 While there is wonderful mathematics to explore in ``2D,'' we live in a ``3D'' world and eventually we will want to apply mathematics involving this third dimension. In this section we introduce Cartesian coordinates in space and explore basic surfaces. This will lay a foundation for much of what we do in the remainder of the text.\\
 
@@ -8,12 +8,12 @@ Each point $P$ in space can be represented with an ordered triple, $P=(a,b,c)$, 
 
 Visualizing points in space on paper can be problematic, as we are trying to represent a 3-dimensional concept on a 2--dimensional medium. We cannot draw three line representing the three axes in which each line is perpendicular to the other two. Despite this issue, standard conventions exist for plotting shapes in space that we will discuss that are more than adequate.
 
-One convention is that the axes must conform to the \textbf{right hand rule}. This rule states that when the index finger of the right hand is extended in the direction of the positive $x$-axis, and the middle finger (bent ``inward'' so it is perpendicular to the palm) points along the positive $y$ axis, then the extended thumb will point in the direction of the positive $z$-axis. (It may take some thought to verify this, but this system is inherently different from the one created by using the ``left hand rule.'')
+One convention is that the axes must conform to the \sword{right hand rule}. This rule states that when the index finger of the right hand is extended in the direction of the positive $x$-axis, and the middle finger (bent ``inward'' so it is perpendicular to the palm) points along the positive $y$ axis, then the extended thumb will point in the direction of the positive $z$-axis. (It may take some thought to verify this, but this system is inherently different from the one created by using the ``left hand rule.'')\index{right hand rule!of Cartesian coordinates}
 
 As long as the coordinate axes are positioned so that they follow this rule, it does not matter how the axes are drawn on paper. There are two popular methods that we briefly discuss.
 \mfigure{.4}{Plotting the point $P=(2,1,3)$ in space.}{fig:cartcoord1}{figures/figcartcoord1}
 
-In Figure \ref{fig:cartcoord1} we see the point $P=(2,1,3)$ plotted on a set of axes. The basic convention here is that the $x$-$y$ plane is drawn in its standard way, with the $z$-axis down to the left. The perspective here is that the paper represents the $x$-$y$ plane and the positive $z$ axis is coming up, off the page. This method is preferred by many engineers. Because it can be hard to tell where a single point lies in relation to all the axes, dashed lines have been added to let one see how far along each axis the point lies.
+In Figure \ref{fig:cartcoord1} we see the point $P=(2,1,3)$ plotted on a set of axes. The basic convention here is that the $x$-$y$ plane is drawn in its standard way, with the $z$-axis down to the left. The perspective  is that the paper represents the $x$-$y$ plane and the positive $z$ axis is coming up, off the page. This method is preferred by many engineers. Because it can be hard to tell where a single point lies in relation to all the axes, dashed lines have been added to let one see how far along each axis the point lies.
 
 One can also consider the $x$-$y$ plane as being a horizontal plane in, say, a room, where the positive $z$-axis is pointing up. When one steps back and looks at this room, one might draw the axes as shown in Figure \ref{fig:cartcoord2}. The same point $P$ is drawn, again with dashed lines. This point of view is preferred by most mathematicians, and is the convention adopted by this text.
 \mtable{.8}{Plotting the point $P=(2,1,3)$ in space with a perspective used in this text.}{fig:cartcoord2}{\myincludegraphics[scale=1.5,trim=5mm 5mm 3mm 5mm,clip=true]{figures/figcartcoord2}} \\
@@ -23,7 +23,7 @@ One can also consider the $x$-$y$ plane as being a horizontal plane in, say, a r
 It is of critical importance to know how to measure distances between points in space. The formula for doing so is based on measuring distance in the plane, and is known (in both contexts) as the Euclidean measure of distance.
 
 \definition{def:space_distance}{Distance In Space}
-{Let $P=(x_1,y_1,z_1)$ and $Q = (x_2,y_2,z_2)$ be points in space. The distance $D$ between $P$ and $Q$ is 
+{Let $P=(x_1,y_1,z_1)$ and $Q = (x_2,y_2,z_2)$ be points in space. The distance $D$ between $P$ and $Q$ is \index{distance!between points in space}
 $$D = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.$$
 }
 
@@ -39,7 +39,7 @@ $$||\overline{PQ}|| = \sqrt{(2-1)^2+(1-4)^2+(1-(-1))^2} = \sqrt{14}\approx 3.74.
 
 \noindent\textbf{\large Spheres}\\
 
-Just as a circle is the set of all points in the \textit{plane} equidistant from a given point (its center), a sphere is the set of all points in \textit{space} that are equidistant from a given point. Definition \ref{def:space_distance} allows us to write an equation of the sphere.
+\index{sphere}Just as a circle is the set of all points in the \textit{plane} equidistant from a given point (its center), a sphere is the set of all points in \textit{space} that are equidistant from a given point. Definition \ref{def:space_distance} allows us to write an equation of the sphere.
 
 We start with a point $C = (a,b,c)$ which is to be the center of a sphere with radius $r$. If a point $P=(x,y,z)$ lies on the sphere, then $P$ is $r$ units from $C$; that is, 
 $$||\overline{PC}|| = \sqrt{(x-a)^2+(y-b)^2+(z-c)^2} = r.$$
@@ -67,6 +67,7 @@ The equation of a sphere is an example of an implicit function defining a surfac
 \noindent\textbf{\large Introduction to Planes in Space}\\
 
 The coordinate axes naturally define three planes (shown in Figure \ref{fig:coordplanes}), the \textbf{coordinate planes}: the $x$-$y$ plane, the $y$-$z$ plane and the $x$-$z$ plane. The $x$-$y$ plane is characterized as the set of all points in space where the $z$-value is 0. %(Likewise, the $x$-$z$ plane is all points where the $y$-value is 0.) 
+\index{planes!coordinate plane}\index{planes!introduction}
 This, in fact, gives us an equation that describes this plane: $z=0$. Likewise, the $x$-$z$ plane is all points where the $y$-value is 0, characterized by $y=0$.
 \mtable{.4}{The coordinate planes.}{fig:coordplanes}{%
 \begin{tabular}{c}
@@ -84,7 +85,7 @@ The equation $x=2$ describes all points in space where the $x$-value is 2. This 
 
 \example{ex_space3}{Regions defined by planes}{
 Sketch the region defined by the inequalities $-1\leq y\leq 2$.}
-{The region is all points between the planes $y=-1$ and $y=2$. These planes are sketched in Figure \ref{fig:space3}, which are parallel to the $x$-$z$ plane. Thus the region extended infinitely in the $x$ and $z$ directions, and is bounded by planes in the $y$ direction.
+{The region is all points between the planes $y=-1$ and $y=2$. These planes are sketched in Figure \ref{fig:space3}, which are parallel to the $x$-$z$ plane. Thus the region extends infinitely in the $x$ and $z$ directions, and is bounded by planes in the $y$ direction.
 \mfigure[scale=1.25,trim=5mm 2mm 5mm 5mm,clip=true]{.83}{The plane $x=2$.}{fig:space2}{figures/figspace2}
 \mfigure[scale=1.25,trim=5mm 2mm 5mm 2mm,clip=true]{.63}{Sketching the boundaries of a region in Example \ref{ex_space3}.}{fig:space3}{figures/figspace3}
 }\\
@@ -106,7 +107,7 @@ The equation $x=1$ obviously lacks the $y$ and $z$ variables, meaning it defines
 This surface looks like a ``tube,'' or a ``cylinder''; mathematicians call this surface a \textbf{cylinder} for an entirely different reason.\\
 
 \definition{def:cylinder}{Cylinder}
-{Let $C$ be a curve in a plane and let $L$ be a line not parallel to $C$. A \textbf{cylinder} is the set of all lines parallel to $L$ that pass through $C$. The curve $C$ is the \textbf{directrix} of the cylinder, and the lines are the \textbf{rulings}.
+{Let $C$ be a curve in a plane and let $L$ be a line not parallel to $C$. A \textbf{cylinder} is the set of all lines parallel to $L$ that pass through $C$. The curve $C$ is the \textbf{directrix} of the cylinder, and the lines are the \textbf{rulings}.\index{cylinder}\index{directrix}
 }
 
 In this text, we consider curves $C$ that lie in planes parallel to one of the coordinate planes, and lines $L$ that are perpendicular to these planes, forming \textbf{right cylinders}. Thus the directrix can be defined using equations involving 2 variables, and the rulings will be parallel to the axis of the 3$^\text{rd}$ variable.
@@ -114,8 +115,11 @@ In this text, we consider curves $C$ that lie in planes parallel to one of the c
 In the example preceding the definition, the curve $x^2+y^2=1$ in the $x$-$y$ plane is the directrix and the rulings are lines parallel to the $z$-axis. (Any circle shown in Figure \ref{fig:spacecylinder1} can be considered a directrix; we simply choose the one where $z=0$.) Sample rulings can also be viewed in part (b) of the figure. More examples will help us understand this definition.\\
 
 \example{ex_space4}{Graphing cylinders}{
-Graph the cylinder described by:\qquad 1.\quad $z=y^2$ \qquad 2.\quad $x=\sin z$ \hfill \par
-}
+Graph the cylinder following cylinders. %\qquad 1.\quad $z=y^2$ \qquad 2.\quad $x=\sin z$ \hfill \par
+	\begin{enumerate}
+		\item $z=y^2$
+		\item	$x=\sin z$
+	\end{enumerate}}
 {\begin{enumerate}
 	\item We can view the equation $z=y^2$ as a parabola in the $y$-$z$ plane, as illustrated in Figure \ref{fig:space4a} (a). As $x$ does not appear in the equation, the rulings are lines through this parabola parallel to the $x$-axis, shown in (b). These rulings give a general idea as to what the surface looks like, drawn in (c).
 	\
@@ -174,16 +178,16 @@ Consider the surface formed by revolving $y=\sqrt{x}$ about the $x$-axis. Cross-
 We generalize the above principles to give the equations of surfaces formed by revolving curves about the coordinate axes.
 
 \keyidea{idea:surf_of_revol}{Surfaces of Revolution, Part 1}
-{Let $r$ be a radius function. 
-\begin{itemize}
+{Let $r$ be a radius function. \index{surface of revolution}
+\begin{enumerate}
 	\item The equation of the surface formed by revolving $y=r(x)$ or $z=r(x)$ about the $x$-axis is $y^2+z^2=r(x)^2$.
 	\item The equation of the surface formed by revolving $x=r(y)$ or $z=r(y)$ about the $y$-axis is $x^2+z^2=r(y)^2$.
 	\item The equation of the surface formed by revolving $x=r(z)$ or $y=r(z)$ about the $z$-axis is $x^2+y^2=r(z)^2$.
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_surfrev1}{Finding equation of a surface of revolution}{
-Let $y=\sin z$ on $[0,\pi]$. Find the equation of the surface of revolution formed by revolving $f$ about the $z$-axis.}
+Let $y=\sin z$ on $[0,\pi]$. Find the equation of the surface of revolution formed by revolving $y=\sin z$ about the $z$-axis.}
 {Using Key Idea \ref{idea:surf_of_revol}, we find the surface has equation $x^2+y^2=\sin^2z$. The curve is sketched in Figure \ref{fig:surfrev1}a and the surface is drawn in Figure \ref{fig:surfrev1}b.
 
 Note how the surface (and hence the resulting equation) is the same if we began with the curve $x=\sin z$, which is also drawn in Figure \ref{fig:surfrev1}a.
@@ -205,7 +209,7 @@ What we desire is a way of writing the surface of revolution formed by rotating 
 A value of $x$ is a measurement of distance from the $z$-axis. At the distance $r$, we plot a $z$-height of $f(r)$. When rotating $f(x)$ about the $z$-axis, we want all points a distance of $r$ from the $z$-axis in the $x$-$y$ plane to have a $z$-height of $f(r)$. All such points satisfy the equation $r^2=x^2+y^2$; hence $r=\sqrt{x^2+y^2}$. Replacing $r$ with $\sqrt{x^2+y^2}$ in $f(r)$ gives $z=f(\sqrt{x^2+y^2})$. This is the equation of the surface.
 
 \keyidea{idea:surf_of_revol2}{Surfaces of Revolution, Part 2}
-{Let $z=f(x)$, $x\geq 0$, be a curve in the $x$-$z$ plane. The surface formed by revolving this curve about the $z$-axis has equation $z=f\big(\sqrt{x^2+y^2}\big)$.
+{Let $z=f(x)$, $x\geq 0$, be a curve in the $x$-$z$ plane. The surface formed by revolving this curve about the $z$-axis has equation $z=f\big(\sqrt{x^2+y^2}\big)$.\index{surface of revolution}
 }
 
 \example{ex_surfrev2}{Finding equation of surface of revolution}{
@@ -226,14 +230,16 @@ Spheres, planes and cylinders are important surfaces to understand. We now consi
 
 \definition{def:quadric}{Quadric Surface}
 {A \textbf{quadric surface} is the graph of the general second--degree equation in three variables:
+\index{quadric surface!definition}
 $$Ax^2+By^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz+J=0.$$
 }
 
 When the coefficients $D$, $E$ or $F$ are not zero, the basic shapes of the quadric surfaces are rotated in space. We will focus on quadric surfaces where these coeffiecients are 0; we will not consider rotations. There are six basic quadric surfaces: the elliptic paraboloid, elliptic cone, ellipsoid, hyperboloid of one sheet, hyperboloid of two sheets, and the hyperbolic paraboloid.
 
-\mfigure[scale=1.4,trim=2mm 1mm 2mm 0mm,clip]{.5}{The elliptic paraboloid $z=x^2/4+y^2$.}{fig:quadric1}{figures/figquadric_parb}
+\mfigure[scale=1.4,trim=2mm 1mm 2mm 0mm,clip]{.7}{The elliptic paraboloid $z=x^2/4+y^2$.}{fig:quadric1}{figures/figquadric_parb}
 
-We study each shape by considering \textbf{traces}, that is, intersections of each surface with a plane parallel to a coordinate plane. For instance, consider the elliptic paraboloid $z= x^2/4+y^2$, shown in Figure \ref{fig:quadric1}. If we intersect this shape with the plane $z=d$\ \  (i.e., replace $z$ with $d$), we have the equation:
+We study each shape by considering \sword{traces}, \index{trace}\index{quadric surface!trace}%
+that is, intersections of each surface with a plane parallel to a coordinate plane. For instance, consider the elliptic paraboloid $z= x^2/4+y^2$, shown in Figure \ref{fig:quadric1}. If we intersect this shape with the plane $z=d$\ \  (i.e., replace $z$ with $d$), we have the equation:
 \begin{align*}
 d &= \frac{x^2}4+y^2.
 \intertext{Divide both sides by $d$:}
@@ -242,7 +248,7 @@ d &= \frac{x^2}4+y^2.
 This describes an ellipse -- so cross sections parallel to the $x$-$y$ coordinate plane are ellipses. This ellipse is drawn in the figure.
 
 Now consider cross sections parallel to the $x$-$z$ plane. For instance, letting $y=0$ gives the equation $z=x^2/4$, clearly a parabola. Intersecting with the plane $x=0$ gives a cross section defined by $z=y^2$, another parabola. These parabolas are also sketched in the figure. 
-\enlargethispage{\baselineskip}
+%\enlargethispage{\baselineskip}
 
 Thus we see where the elliptic paraboloid gets its name: some cross sections are ellipses, and others are parabolas. 
 
@@ -250,7 +256,7 @@ Such an analysis can be made with each of the quadric surfaces. We give a sample
 
 \clearpage\exercisegeometry\exerciseheader
 \ \vskip0pt
-\vskip-1in
+%\vskip-1in
 
 \noindent \textbf{Elliptic Paraboloid, \quad$\ds z=\frac{x^2}{a^2}+\frac{y^2}{b^2}$}\\
 \vskip \baselineskip
@@ -283,7 +289,7 @@ $z=d$ & & Ellipse
 \begin{minipage}[t]{.75\linewidth}
 One variable in the equation of the elliptic paraboloid will be raised to the first power; above, this is the $z$ variable. The paraboloid will ``open'' in the direction of this variable's axis. Thus $x= y^2/a^2+z^2/b^2$ is an elliptic paraboloid that opens along the $x$-axis.\\
 
-Multiplying the right hand side by $(-1)$ defines an elliptic paraboloid that ``opens'' in the opposite direction.
+Multiplying the right hand side by $(-1)$ defines an elliptic paraboloid that ``opens'' in the opposite direction.\index{quadric surface!gallery|(}\index{quadric surface!elliptic paraboloid}
 \end{minipage}
 \end{minipage}
 
@@ -323,7 +329,7 @@ $z=d$ & & Ellipse
 \end{minipage}
 
 \begin{minipage}[t]{.75\linewidth}
-One can rewrite the equation as $z^2-x^2/a^2-y^2/{b^2} = 0$. The one variable with a positive coefficient corresponds to the axis that the cones ``open'' along. 
+One can rewrite the equation as $z^2-x^2/a^2-y^2/{b^2} = 0$. The one variable with a positive coefficient corresponds to the axis that the cones ``open'' along. \index{quadric surface!elliptic cone}
 \end{minipage}
 \end{minipage}
 
@@ -360,7 +366,7 @@ $z=d$ & & Ellipse
 \end{minipage}
 \vskip2\baselineskip
 \begin{minipage}[t]{.75\linewidth}
-If $a=b=c\neq0$, the ellipsoid is a sphere with radius $a$; compare to Key Idea \ref{idea:sphere}.
+If $a=b=c\neq0$, the ellipsoid is a sphere with radius $a$; compare to Key Idea \ref{idea:sphere}.\index{quadric surface!ellipsoid}\index{quadric surface!sphere}
 \end{minipage}
 \end{minipage}
 
@@ -397,12 +403,13 @@ $z=d$ & & Ellipse
 \end{minipage}
 \vskip2\baselineskip
 \begin{minipage}[t]{.75\linewidth}
-The one variable with a negative coefficient corresponds to the axis that the hyperboloid ``opens'' along.
+The one variable with a negative coefficient corresponds to the axis that the hyperboloid ``opens'' along.\index{quadric surface!hyperboloid of one sheet}
 \end{minipage}
 \end{minipage}
 
 \clearpage
 
+\enlargethispage{2\baselineskip}
 \noindent \textbf{Hyperboloid of Two Sheets, \quad$\ds \frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$}\\
 \vskip \baselineskip
 
@@ -430,7 +437,7 @@ $z=d$ & & Ellipse
 \end{minipage}
 \vskip\baselineskip
 \begin{minipage}[t]{.75\linewidth}
-The one variable with a positive coefficient corresponds to the axis that the hyperboloid ``opens'' along. In the case illustrated, when $|d|<|c|$, there is no trace.
+The one variable with a positive coefficient corresponds to the axis that the hyperboloid ``opens'' along. In the case illustrated, when $|d|<|c|$, there is no trace.\index{quadric surface!hyperboloid of two sheets}
 \end{minipage}
 \end{minipage}
 
@@ -440,7 +447,7 @@ The one variable with a positive coefficient corresponds to the axis that the hy
 %\vskip1\baselineskip
 \vspace{\stretch{1}}
 
-\noindent \textbf{Hyperbolic Parboloid, \quad$\ds z=\frac{x^2}{a^2}-\frac{y^2}{b^2}$}\\
+\noindent \textbf{Hyperbolic Paraboloid, \quad$\ds z=\frac{x^2}{a^2}-\frac{y^2}{b^2}$}\\
 \vskip \baselineskip
 
 \noindent
@@ -473,7 +480,7 @@ $z=d$ & & Hyperbola
 \vskip2\baselineskip
 \begin{minipage}[t]{.75\linewidth}
 The parabolic traces will open along the axis of the one variable that is raised to the first power.
-
+\index{quadric surface!gallery|)}\index{quadric surface!hyperbolic paraboloid}
 
 \end{minipage}
 \end{minipage}

@@ -5,6 +5,7 @@ In this section we extend the Chain Rule to functions of more than one variable.
 
 \theorem{thm:multi_chain}{Multivariable Chain Rule, Part I}
 {Let $z=f(x,y)$, $x=g(t)$ and $y=h(t)$, where $f$, $g$ and $h$ are differentiable functions. Then $z = f(x,y) = f\big(g(t),h(t)\big)$ is a function of $t$, and 
+\index{derivative!Chain Rule}\index{Chain Rule!multivariable}
 \begin{align*}
 \frac{dz}{dt} = \frac{df}{dt} &= f_x(x,y)\frac{dx}{dt}+f_y(x,y)\frac{dy}{dt}\\[5pt]
 		&= \frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.
@@ -13,7 +14,7 @@ In this section we extend the Chain Rule to functions of more than one variable.
 
 It is good to understand what the situation of $z=f(x,y)$, $x=g(t)$ and $y=h(t)$ describes. We know that $z=f(x,y)$ describes a surface; we also recognize that $x=g(t)$ and $y=h(t)$ are parametric equations for a curve in the $x$-$y$ plane. Combining these together, we are describing a curve that lies on the surface described by $f$. The parametric equations for this curve are $x=g(t)$, $y=h(t)$ and $z=f\big(g(t),h(t)\big)$.
 
-Consider Figure \ref{fig:mchain_intro} in which a surface is drawn, along with a dashed curve in the $x$-$y$ plane. Restricting $f$ to just the points on this circle gives the curve shown on the surface.
+Consider Figure \ref{fig:mchain_intro} in which a surface is drawn, along with a dashed curve in the $x$-$y$ plane. Restricting $f$ to just the points on this circle gives the curve shown on the surface. The derivative $\frac{df}{dt}$ gives the instantaneous rate of change of $f$ with respect to $t$.
 
 \mfigure[scale=1.25,trim=1mm 0mm 0mm 0mm,clip]{.5}{Understanding the application of the Multivariable Chain Rule.}{fig:mchain_intro}{figures/figmchain_intro} 
 
@@ -45,7 +46,7 @@ Consider the surface $z=x^2+y^2-xy$, on which a particle moves with $x$ and $y$ 
 $$f_x(x,y) = 2x-y\qquad f_y(x,y) = 2y-x\qquad \frac{dx}{dt} = -\sin t\qquad \frac{dy}{dt} = \cos t.$$
 Combining these according to the Chain Rule gives:
 $$\frac{dz}{dt} = -(2x-y)\sin t + (2y-x)\cos t.$$
-\mfigure{.5}{Plotting the path of a particle on a surface in Example \ref{ex_mchain2}.}{fig:mchain2}{figures/figmchain2}
+\mfigure{.4}{Plotting the path of a particle on a surface in Example \ref{ex_mchain2}.}{fig:mchain2}{figures/figmchain2}
 
 When $t=0$, $x=1$ and $y=0$. Thus $\ds\frac{dz}{dt} = -(2)(0)+ (-1)(1) = -1$. When $t=0$, the particle is moving down, as shown in Figure \ref{fig:mchain2}. 
 
@@ -64,16 +65,17 @@ We can use the First Derivative Test to find that on $[0,2\pi]$, $z$ has reaches
 We can extend the Chain Rule to include the situation where $z$ is a function of more than one variable, and each of these variables is also a function of more than one variable. The basic case of this is where $z=f(x,y)$, and $x$ and $y$ are functions of two variables, say $s$ and $t$. \\
 
 \theorem{thm:multi_chain2}{Multivariable Chain Rule, Part II}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Let $z=f(x,y)$, $x=g(s,t)$ and $y=h(s,t)$, where $f$, $g$ and $h$ are differentiable functions. Then $z$ is a function of $s$ and $t$, and
 		\begin{itemize}
 			\item $\ds \frac{\partial z}{\partial s} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial s}$\ , \quad and 
 			\item $\ds \frac{\partial z}{\partial t} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial t}.$
+			\index{derivative!Chain Rule}\index{Chain Rule!multivariable}
 		\end{itemize}
 		
 		\item		Let $z = f(x_1,x_2,\ldots,x_m)$ be a differentiable function of $m$ variables, where each of the $x_i$ is a differentiable function of the variables $t_1,t_2,\ldots,t_n$. Then $z$ is a function of the $t_i$, and 
 		$$\frac{\partial z}{\partial t_i} = \frac{\partial f}{\partial x_1}\frac{\partial x_1}{\partial t_i} + \frac{\partial f}{\partial x_2}\frac{\partial x_2}{\partial t_i} + \cdots +  \frac{\partial f}{\partial x_m}\frac{\partial x_m}{\partial t_i}.$$
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_mchain3}{Using the Multivarible Chain Rule, Part II}{
@@ -125,6 +127,7 @@ We state the above as a theorem.
 
 \theorem{thm:implicit_deriv_chain}{Implicit Differentiation}
 {Let $f$ be a differentiable function of $x$ and $y$, where $f(x,y)=c$ defines $y$ as  an implicit function of $x$, for some constant $c$. Then
+\index{derivative!implicit}\index{implicit differentiation}
 $$\frac{dy}{dx} = - \frac{f_x(x,y)}{f_y(x,y)}.$$
 }
 

@@ -1,0 +1,11 @@
+{$f(x) = \sin x$
+}
+{The following argument is essentially the same as that given for $f(x) = \cos x$ in Example \ref{ex_ts3}.
+
+Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|.$$
+Since all derivatives of $\sin x$ are $\pm \cos x$ or $\pm\sin x$, whose magnitudes are bounded by $1$, we can state
+$$ \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{(n+1)}\big|.$$
+For any $x$, $\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+$$\sin x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n+1}}{(2n+1)!}\quad \text{for all $x$}.$$
+}

@@ -5,7 +5,8 @@
 Given a smooth vector--valued function \vrt, we defined in Definition \ref{def:vector_tangent} that any vector parallel to $\vrp(t_0)$ is \emph{tangent} to the graph of \vrt\ at $t=t_0$. It is often useful to consider just the \emph{direction} of $\vrp(t)$ and not its magnitude. Therefore we are interested in the unit vector in the direction of $\vrp(t)$. This leads to a definition.
 
 \definition{def:unit_tangent}{Unit Tangent Vector}
-{Let \vrt\ be a smooth function on an open interval $I$. The unit tangent vector $\vec T(t)$ is 
+{Let \vrt\ be a smooth function on an open interval $I$. The unit tangent vector $\vec T(t)$ is
+\index{unit tangent vector!definition} \index{unit vector!unit tangent vector}
 $$\vec T(t) = \frac{1}{\rule{0pt}{9pt}\norm{\vrp(t)}}\vrp(t).$$
 }
 
@@ -44,13 +45,14 @@ Just as knowing the direction tangent to a path is important, knowing a directio
 
 Given \vrt\ in $\mathbb{R}^3$, however, there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder ``Is one of these infinite choices preferable over the others? Is one of these the `right' choice?''
 
-The answer in both $\mathbb{R}^2$ and $\mathbb{R}^3$ is ``Yes, there is one vector that is not only preferable, it is the `right' one to choose.'' Recall Theorem \ref{thm:vects_of_constant_length}, which states that if \vrt\ has constant length, then \vrt\ is orthogonal to $\vrp(t)$ for all $t$. We know $\vec T(t)$, the unit tangent vector has constant length. Therefore $\vec T(t)$ is orthogonal to $\vec T\,'(t)$.
+The answer in both $\mathbb{R}^2$ and $\mathbb{R}^3$ is ``Yes, there is one vector that is not only preferable, it is the `right' one to choose.'' Recall Theorem \ref{thm:vects_of_constant_length}, which states that if \vrt\ has constant length, then \vrt\ is orthogonal to $\vrp(t)$ for all $t$. We know $\vec T(t)$, the unit tangent vector, has constant length. Therefore $\vec T(t)$ is orthogonal to $\vec T\,'(t)$.\index{vector--valued function!of constant length}
 
 We'll see that $\vec T\,'(t)$ is more than just a convenient choice of vector that is orthogonal to $\vrp(t)$; rather, it is the ``right'' choice. Since all we care about is the direction, we define this newly found vector to be a unit vector.
 \mnote{.28}{\textbf{Note:} $\vec T(t)$ is a unit vector, by definition. This \emph{does not} imply that $\vec T\,'(t)$ is also a unit vector.}
 
 \definition{def:unit_normal}{Unit Normal Vector}
 {Let \vrt\ be a vector--valued function where the unit tangent vector, $\vec T(t)$, is smooth on an open interval $I$. The \textbf{unit normal vector} $\vec N(t)$ is
+\index{unit normal vector!definition}\index{unit vector!unit normal vector}
 $$\vec N(t) = \frac1{\norm{\vec T\,'(t)}}\vec T\,'(t).$$
 }
 
@@ -72,7 +74,8 @@ $$\vec T(t) = \la \frac{2t-1}{\sqrt{8t^2+2}},\frac{2t+1}{\sqrt{8t^2+2}}\ra.$$
 Finding $\vec T\,'(t)$ requires two applications of the Quotient Rule:
 
 \begin{align*}
-T\,'(t) &= \la \frac{\sqrt{8t^2+2}(2)-(2t-1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2}, \frac{\sqrt{8t^2+2}(2)-(2t+1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2} \ra \\
+T\,'(t) &= \la \frac{\sqrt{8t^2+2}(2)-(2t-1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2},\right.\\
+		&\phantom{xxxxxxxxx} \left.\frac{\sqrt{8t^2+2}(2)-(2t+1)\left(\frac12(8t^2+2)^{-1/2}(16t)\right)}{8t^2+2} \ra \\
 				&= \la \frac{4 (2 t+1)}{\left(8 t^2+2\right)^{3/2}},\frac{4
    (1-2 t)}{\left(8 t^2+2\right)^{3/2}}\ra
 \end{align*}
@@ -102,13 +105,16 @@ Consider again Figure \ref{fig:tannorm4}, where we have plotted some unit tangen
 \theorem{thm:concave}{Unit Normal Vectors in $\mathbb{R}^2$}
 {Let $\vec r(t)$ be a vector--valued function in $\mathbb{R}^2$ where $\vec T\,'(t)$ is smooth on an open interval $I$. Let $\vec T(t) = \la t_1,t_2\ra$. Then $\vec N(t)$ is either
 $$\vec N(t) = \la -t_2,t_1\ra \quad \text{or}\quad \vec N(t) = \la t_2,-t_1\ra,$$ whichever is the vector that points to the concave side of the graph of $\vec r$.
+\index{unit tangent vector!in $\mathbb{R}^2$}\index{unit normal vector!in $\mathbb{R}^2$}
 }
 
 \noindent\textbf{\large Application to Acceleration}\\
 
-Let \vrt\ be a position function. It is a fact (stated in Theorem \ref{thm:acc_plane} and proved in the Exercises) that acceleration, \vat, lies in the plane defined by $\vec T$ and $\vec N$. That is, there are scalars $a_{\text{T}}$ and $a_{\text{N}}$ such that 
+Let \vrt\ be a position function. It is a fact (stated later in Theorem \ref{thm:acc_plane}) % and proved in the Exercises) 
+ that acceleration, \vat, lies in the plane defined by $\vec T$ and $\vec N$. That is, there are scalars $a_{\text{T}}$ and $a_{\text{N}}$ such that 
 $$\vat = a_{\text{T}}\vec T(t) + a_{\text{N}}\vec N(t).$$
 The scalar $a_{\text{T}}$ measures ``how much'' acceleration is in the direction of travel, that is, it measures the component of acceleration that affects the speed. The scalar $a_{\text{N}}$ measures ``how much'' acceleration is perpendicular to the direction of travel, that is, it measures the component of acceleration that affects the direction of travel.
+\index{unit tangent vector!and acceleration}\index{unit normal vector!and acceleration}
 
 We can find $a_{\text{T}}$ using the orthogonal projection of $\vec a(t)$ onto $\vec T(t)$ (review Definition \ref{def:orthogonal_projection} in Section \ref{sec:dot_product} if needed).
 Recalling that since $\vec T(t)$ is a unit vector, $\vec T(t)\cdot\vec T(t)=1$, so we have 
@@ -120,7 +126,7 @@ While this is a fine way of computing $a_{\text{T}}$, there are simpler ways of 
 
 \setboxwidth{20pt}
 \theorem{thm:acc_plane}{Acceleration in the Plane Defined by $\vec T$ and $\vec N$}
-{Let \vrt\ be a position function with acceleration \vat\ and unit tangent and normal vectors $\vec T(t)$ and $\vec N(t)$. Then $\vat$ lies in the plane defined by $\vec T(t)$ and $\vec N(t)$, that is, there exists scalars $a_\text{T}$ and $a_\text{N}$ such that
+{Let \vrt\ be a position function with acceleration \vat\ and unit tangent and normal vectors $\vec T(t)$ and $\vec N(t)$. Then $\vat$ lies in the plane defined by $\vec T(t)$ and $\vec N(t)$; that is, there exists scalars $a_\text{T}$ and $a_\text{N}$ such that
 $$\vat = a_\text{T}\vec T(t) + a_\text{N}\vec N(t).$$
 Moreover,
 \begin{align*}
@@ -129,6 +135,7 @@ a_\text{N} &= \vat\cdot \vec N(t) = \sqrt{\norm{\vec a(t)}^2-a_\text{T}^2} = \fr
 \end{align*}
 }
 \restoreboxwidth
+\index{unit tangent vector!and acceleration}\index{unit normal vector!and acceleration}\index{an@$a_\text{N}$}\index{at@$a_\text{T}$}\index{unit normal vector!an@$a_\text{N}$}\index{unit tangent vector!at@$a_\text{T}$}
 
 Note the second formula for $a_\text{T}$: $\ds \frac{d}{dt}\Big(\norm{\vvt}\Big)$. This measures the rate of change of speed, which again is the amount of acceleration in the direction of travel.\\
 
@@ -162,7 +169,7 @@ Contrast this with $t=0$, where $a_\text{T} = 0$ and $a_\text{N} = 4/\sqrt{2}\ap
 }\\
 
 \example{ex_tannorm7}{Analyzing projectile motion}{
-A ball is thrown from a height of 240ft with an initial velocity of 64ft/s with an angle of elevation of $30^\circ$. Find the position function \vrt\ for the ball and analyze $a_\text{T}$ and $a_\text{N}$.
+A ball is thrown from a height of 240ft with an initial velocity of 64ft/s with an angle of elevation of $30^\circ$. Find the position function \vrt\ for the ball and analyze $a_\text{T}$ and $a_\text{N}$.\index{projectile motion}
 }
 {Using Key Idea \ref{idea:projectile} of Section \ref{sec:vvf_motion} we form the position function of the ball:
 $$\vrt = \la \big(64\cos 30^\circ\big)t, -16t^2+\big(64\sin 30^\circ\big)t+240\ra,$$

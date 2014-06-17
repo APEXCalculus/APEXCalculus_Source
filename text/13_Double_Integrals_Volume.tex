@@ -29,6 +29,7 @@ In general, each rectangle could have a different width $\dx_j$ and height $\dy_
 {Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. The \textbf{signed volume} $V$ under $f$ over $R$ is denoted by the \textbf{double integral}
 $$V = \iint_R f(x,y)\ dA.$$
 Alternate notations for the double integral are
+\index{integration!double}\index{double integral}\index{iterated integration}\index{signed volume}\index{volume}
 $$\iint_R f(x,y)\ dA=\iint_R f(x,y)\ dx\ dy=\iint_R f(x,y)\ dy\ dx.$$
 }
 
@@ -57,14 +58,15 @@ $$V = \int_a^b A(x)\ dx = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\right)
 This gives a concrete method for finding signed volume under a surface. We could do a similar procedure where we started with $y$ fixed, resulting in a iterated integral with the order of integration $dx\ dy$. The following theorem states that both methods give the same result, which is the value of the double integral. It is such an important theorem it has a name associated with it.
 
 \theorem{thm:fubini}{Fubini's Theorem}
-{Let $R$ be a closed, bounded region in the $x$-$y$ plane and let $z=f(x,y)$ be a continuous function on $R$.
-\begin{itemize}
+{Let $R$ be a closed, bounded region in the $x$-$y$ plane and let $z=f(x,y)$ be a continuous function on $R$.%
+\index{double integral}\index{iterated integration}\index{signed volume}\index{volume}\index{Fubini's Theorem}
+\begin{enumerate}
 	\item If $R$ is bounded by $a\leq x\leq b$ and $g_1(x)\leq y\leq g_2(x)$, where $g_1$ and $g_2$ are continuous functions on $[a,b]$, then
 	$$\iint_R f(x,y)\ dA = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\ dx.$$
 	
 	\item If $R$ is bounded by $c\leq y\leq d$ and $h_1(y)\leq x\leq h_2(y)$, where $h_1$ and $h_2$ are continuous functions on $[c,d]$, then
 	$$\iint_R f(x,y)\ dA = \int_c^d\int_{h_1(y)}^{h_2(y)} f(x,y)\ dx\ dy.$$
-\end{itemize}
+\end{enumerate}
 }
 
 Note that once again the bounds of integration follow the ``curve to curve, point to point'' pattern discussed in the previous section. In fact, one of the main points of the previous section is developing the skill of describing a region $R$ with the bounds of an iterated integral. Once this skill is developed, we can use double integrals to compute many quantities, not just signed volume under a surface.\\
@@ -82,7 +84,8 @@ Using the order $dy\ dx$:
 			&= \frac {21}4+ e^2-e\approx 9.92.
 \end{align*}
 
-\mfigure[scale=1.25,trim= 1mm 0mm 2mm 0mm,clip]{.75}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
+\enlargethispage{2\baselineskip}
+\mfigure[scale=1.25,trim= 1mm 0mm 2mm 0mm,clip]{.7}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
 
 Now we check the validity of Fubini's Theorem by using the order $dx\ dy$:
 \begin{align*}
@@ -123,15 +126,15 @@ Both orders of integration return the same result, as expected.
 %}\\
 
 \example{ex_double2}{Evaluating a double integral}{
-Evaluate $\iint_R 3xy-x^2-y^2+6\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $\frac12x+y=1$, as shown in Figure \ref{fig:double2}.
-\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
+Evaluate $\iint_R \big(3xy-x^2-y^2+6\big)\ dA$, where $R$ is the triangle bounded by $x=0$, $y=0$ and $x/2+y=1$, as shown in Figure \ref{fig:double2}.
 }
 {While it is not specified which order we are to use, we will evaluate the double integral using both orders to help drive home the point that it does not matter which order we use.\\
 
+\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
 Using the order $dy\ dx$:
 The bounds on $y$ go from ``curve to curve,'' i.e., $0\leq y\leq 1-x/2$, and the bounds on $x$ go from ``point to point,'' i.e., $0\leq x\leq 2$.
 \begin{align*}
-\iint_R 3xy-x^2-y^2\ dA &= \int_0^2\int_0^{-\frac x2+1} 3xy-x^2-y^2\ dy\ dx\\
+\iint_R (3xy-x^2-y^2+6\big)\ dA &= \int_0^2\int_0^{-\frac x2+1} (3xy-x^2-y^2+6\big)\ dy\ dx\\
 		&= \int_0^2\left.\left(\frac32xy^2-x^2y-\frac13y^3+6y\right)\right|_0^{-\frac x2+1}dx\\
 		&= \int_0^2 \left(\frac{11}{12}x^3-\frac{11}{4}x^2-x-\frac{17}3\right)dx \\
 		&= \left.\left(\frac{11}{48}x^4-\frac{11}{12}x^3-\frac12x^2-\frac{17}3x\right)\right|_0^2\\
@@ -140,7 +143,7 @@ The bounds on $y$ go from ``curve to curve,'' i.e., $0\leq y\leq 1-x/2$, and the
 
 Now lets consider the order $dx \ dy$. Here $x$ goes from ``curve to curve,'' $0\leq x\leq 2-2y$, and $y$ goes from ``point to point,'' $0\leq y\leq 1$:
 \begin{align*}
-\iint_R 3xy-x^2-y^2\ dA &= \int_0^1\int_0^{2-2y} 3xy-x^2-y^2+6\ dx\ dy\\
+\iint_R (3xy-x^2-y^2+6\big)\ dA &= \int_0^1\int_0^{2-2y} (3xy-x^2-y^2+6\big)\ dx\ dy\\
 		&= \int_0^1\left.\left(\frac32x^2y-\frac13x^3-xy^2+6x\right)\right|_0^{2-2y} dy\\
 		&= \int_0^1\left(\frac{32}3y^3-22y^2+2y+\frac{28}3\right)dy\\
 		&=\left.\left(\frac83y^4-\frac{22}3y^3+y^2+\frac{28}3y\right)\right|_0^1\\
@@ -159,6 +162,7 @@ Before doing another example, we give some properties of double integrals. Each 
 
 \theorem{thm:double_prop}{Properties of Double Integrals}
 {Let $f$ and $g$ be continuous functions over a closed, bounded plane region $R$, and let $c$ be a constant.
+\index{double integral!properties}\index{iterated integration!properties}
 \begin{enumerate}
 	\item $\ds \iint_Rcf(x,y)\ dA = c\iint_Rf(x,y)\ dA.$
 	\item	$\ds \iint_R \big(f(x,y)\pm g(x,y)\big)\ dA = \iint_R f(x,y)\ dA \pm \iint_R g(x,y)\ dA $
@@ -172,7 +176,7 @@ Before doing another example, we give some properties of double integrals. Each 
 
 \example{ex_double3}{Evaluating a double integral}{
 Let $f(x,y) = \sin x\cos y$ and $R$ be the triangle with vertices $(-1,0)$, $(1,0)$ and $(0,1)$ (see Figure \ref{fig:double3}). Evaluate the double integral $\iint_Rf(x,y)\ dA$.
-\mfigure[trim=0mm 15mm 0mm 0mm,clip]{.35}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
+\mfigure[trim=0mm 15mm 0mm 0mm,clip]{.3}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
 }
 {If we attempt to integrate using an iterated integral with the order $dy\ dx$, note how there are two upper bounds on $R$ meaning we'll need to use two iterated integrals. We can split the triangle into to regions along the $y$-axis, then use Theorem \ref{thm:double_prop}, part \ref{thm:double_prop_regions}.
 
@@ -275,10 +279,32 @@ This last integral is easy to evaluate with substitution, giving a final answer 
 In short, evaluating one iterated integral is impossible; the other iterated integral is relatively simple.
 }\\
 
+Definition \ref{def:av_val} defines the average value of a single--variable function $f(x)$ on the interval $[a,b]$ as
+$$\text{average value of $f(x)$ on $[a,b]$} = \frac1{b-a}\int_a^b f(x)\ dx;$$
+that is, it is the ``area under $f$ over an interval divided by the length of the interval.'' We make an analogous statement here: the average value of $z=f(x,y)$ over a region $R$ is the volume under $f$ over $R$ divided by the area of $R$.
+
+\definition{def:av_val2}{The Average Value of $f$ on $R$}
+{Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. The \sword{average value of $f$ on $R$} is \index{average value of a function}
+$$\text{average value of $f$ on $R$} = \frac{\ds \iint_R f(x,y)\ dA}{\ds\iint_R \ dA}.$$
+}
+
+\example{ex_double8}{Finding average value of a function over a region $R$}
+{Find the average value of $f(x,y) = 4-y$ over the region $R$, which is bounded by the parabolas $y^2=4x$ and $x^2=4y$. Note: this is the same function and region as used in Example \ref{ex_double4}.
+}
+{In Example \ref{ex_double4} we found 
+$$\iint_R f(x,y)\ dA = \int_0^4\int_{y^2/4}^{2\sqrt{y}}(4-y)\ dx\ dy = \frac{176}{15}.$$ 
+We find the area of $R$ by computing $\iint_R \ dA$:
+$$\iint_R \ dA = \int_0^4\int_{y^2/4}^{2\sqrt{y}} \ dx\ dy = \frac{16}{3}.$$
+Dividing the volume under the surface by the area gives the average value:
+$$\text{average value of $f$ on $R$} = \frac{176/15}{16/3} = \frac{11}5 = 2.2.$$
+While the surface, as shown in Figure \ref{fig:double8}, covers $z$-values from $z=0$ to $z=4$, the ``average'' $z$-value on $R$ is 2.2.
+\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.75}{Finding the average value of $f$ in Example \ref{ex_double8}.}{fig:double8}{figures/figdouble4}
+}\\
+
 The previous section introduced the iterated integral in the context of finding the area of plane regions. This section has extended our understanding of iterated integrals; now we see they can be used to find the signed volume under a surface. 
 
 This new understanding allows us to revisit what we did in the previous section. Given a region $R$ in the plane, we computed $\iint_R 1\ dA$; again, our understanding at the time was that we were finding the area of $R$. However, we can now view the function $z=1$ as a surface, a flat surface with constant $z$-value of 1. The double integral $\iint_R 1\ dA$ finds the volume, under $z=1$, over $R$, as shown in Figure \ref{fig:double_summary}. Basic geometry tells us that if the base of a general right cylinder has area $A$, its volume is $A\cdot h$, where $h$ is the height. In our case, the height is 1. We were ``actually'' computing the volume of a solid, though we interpreted the number as an area.
-\mfigure[scale=1.25,trim=1mm 0mm 1mm 0mm,clip]{.5}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
+\mfigure[scale=1.25,trim=1mm 0mm 1mm 0mm,clip]{.4}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
 
 The next section extends our abilities to find ``volumes under surfaces.'' Currently, some integrals are hard to compute because either the region $R$ we are integrating over is hard to define with rectangular curves, or the integrand itself is hard to deal with. Some of these problems can be solved by converting everything into polar coordinates.
 

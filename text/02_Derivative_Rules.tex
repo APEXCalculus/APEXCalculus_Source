@@ -22,7 +22,7 @@ In this section (and in some sections to follow) we will learn some of what math
 \theorem{thm:deriv_common}{Derivatives of Common Functions}{
 		\noindent\begin{minipage}[t]{175pt}
 		\begin{enumerate}
-		\item		Constant Rule: 
+		\item		\sword{Constant Rule:}\index{derivative!Constant Rule} 
 		
 		$\ds \frac{d}{dx}\big( c\big) = 0$, where $c$ is a constant.\addtocounter{enumi}{1}
 		\item		$\ds \frac{d}{dx}(\sin x) = \cos x$\addtocounter{enumi}{1}
@@ -31,12 +31,12 @@ In this section (and in some sections to follow) we will learn some of what math
 		\end{minipage}
 		\begin{minipage}[t]{210pt}
 		\begin{enumerate}\addtocounter{enumi}{1}
-		\item		Power Rule: 
+		\item		\sword{Power Rule:}\index{derivative!Power Rule}\index{Power Rule!differentiation}
 		
 		$\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}$, where $n$ is an integer, $n>0$.\addtocounter{enumi}{1}
 		\item		$\ds \frac{d}{dx}(\cos x) = -\sin x$\addtocounter{enumi}{1}
 		\item		$\ds \frac{d}{dx}(\ln x) = \frac{1}{x}$
-		\end{enumerate}
+		\end{enumerate}\index{derivative!basic rules}
 		\end{minipage}
 }
 \end{minipage}
@@ -55,7 +55,7 @@ Let's practice using this theorem.\\
 		%\noindent\begin{minipage}[t]{.5\textwidth}
 		\begin{enumerate}
 		\item		Find $\fp(x)$.
-		\item		Find the equation of the line tangent to $f$ at $x=-1$. 
+		\item		Find the equation of the line tangent to the graph of $f$ at $x=-1$. 
 %		\end{enumerate}
 %		\end{minipage}
 %		\begin{minipage}[t]{.5\textwidth}
@@ -69,7 +69,7 @@ Let's practice using this theorem.\\
 \enlargethispage{\baselineskip}
 		\item		The Power Rule states that if $f(x) = x^3$, then $\fp(x) = 3x^2$. 
 
-		\item		To find the equation of the line tangent to $f$ at $x=-1$, we need a point and the slope. The point is $(-1,f(-1)) = (-1, -1)$. The slope is $\fp(-1)= 3$. Thus the tangent line is $y = 3(x-(-1))+(-1) = 3x+2$. 
+		\item		To find the equation of the line tangent to the graph of $f$ at $x=-1$, we need a point and the slope. The point is $(-1,f(-1)) = (-1, -1)$. The slope is $\fp(-1)= 3$. Thus the tangent line has equation $y = 3(x-(-1))+(-1) = 3x+2$. 
 		
 		\item		We can use the tangent line to approximate $(-1.1)^3$ as $-1.1$ is close to $-1$. We have $$(-1.1)^3 \approx 3(-1.1)+2 = -1.3.$$
 			We can easily find the actual answer; $(-1.1)^3 = -1.331$. 
@@ -79,19 +79,22 @@ Let's practice using this theorem.\\
 		\end{enumerate}
 \vskip-1.5\baselineskip
 }\\
+\clearpage
 
 Theorem \ref{thm:deriv_common} gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of $y=x^3$, but it does not tell how to compute the derivative of $y=2x^3$, $y=x^3+\sin x$ nor $y=x^3\sin x$. The following theorem helps with the first two of these examples (the third is answered in the next section).
+\enlargethispage{\baselineskip}
 
 \theorem{thm:deriv_prop}{Properties of the Derivative}
 {Let $f$ and $g$ be differentiable on an open interval $I$ and let $c$ be a real number. Then:
 	\begin{enumerate}
 	%\item		\parbox{75pt}{\textbf{Sum/Difference Rule:}}\parbox[t]{176pt}{$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g'(x)$}
-	\item	\textbf{Sum/Difference Rule:}
+	\item	\sword{Sum/Difference Rule:}
 	
 	$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g'(x)$
-	\item		\textbf{Constant Multiple Rule:}
+	\index{derivative!Sum/Difference Rule}\index{Sum/Difference Rule!of derivatives}
+	\item		\sword{Constant Multiple Rule:}
 	
-	$\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)$.
+	$\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)$.\index{derivative!Constant Multiple Rule}\index{Constant Multiple Rule!of derivatives}
 	\end{enumerate}
 }
 
@@ -112,24 +115,24 @@ In the ``real world,'' people solving problems deal with these issues all time. 
 
 Since $3$ is close to $\pi$, we can assume $\sin 3\approx \sin \pi = 0$. Thus one guess is $f(3) \approx 7$. Can we do better? Let's use a tangent line as instructed and examine the results; it seems best to find the tangent line at $x=\pi$. 
 
-Using Theorem \ref{thm:deriv_common} we find $\fp(x) = \cos x + 2$. The slope of the tangent line is thus $\fp(\pi) = \cos \pi + 2 =1$. Also, $f(\pi) = 2\pi+1 \approx 7.28$. So the tangent line to $f$ at $x=\pi$ is $y=1(x-\pi)+ 2\pi+1 =x+\pi+1 \approx x+4.14$. Evaluated at $x=3$, our tangent line gives $y=3+4.14 = 7.14$. Using the tangent line, our final approximation is that $f(3) \approx 7.14$.
+Using Theorem \ref{thm:deriv_common} we find $\fp(x) = \cos x + 2$. The slope of the tangent line is thus $\fp(\pi) = \cos \pi + 2 =1$. Also, $f(\pi) = 2\pi+1 \approx 7.28$. So the tangent line to the graph of $f$ at $x=\pi$ is $y=1(x-\pi)+ 2\pi+1 =x+\pi+1 \approx x+4.14$. Evaluated at $x=3$, our tangent line gives $y=3+4.14 = 7.14$. Using the tangent line, our final approximation is that $f(3) \approx 7.14$.
 
 Using a calculator, we get an answer accurate to 4 places after the decimal: $f(3) = 7.1411$. Our initial guess was $7$; our tangent line approximation was more accurate, at $7.14$.
 
 The point is \textit{not} ``Here's a cool way to do some math without a calculator.'' Sure, that might be handy sometime, but your phone could probably give you the answer. Rather, the point is to say that tangent lines are a good way of approximating, and many scientists, engineers and mathematicians often face problems too hard to solve directly. So they approximate.
 }\\
 
-\enlargethispage{2\baselineskip}
+%\enlargethispage{2\baselineskip}
 %\vskip \baselineskip
 \noindent\textbf{\large Higher Order Derivatives}\\
 
 \mnote{.4}{\textbf{Note:} Definition \ref{def:Higher_Deriv} comes with the caveat ``Where the corresponding limits exist.'' With $f$ differentiable on $I$, it is possible that $\fp$ is \textit{not} differentiable on all of $I$, and so on.}
 The derivative of a function $f$ is itself a function, therefore we can take its derivative. The following definition gives a name to this concept and introduces its notation.
-
+\enlargethispage{2\baselineskip}
 %\clearpage
 %\small
 \definition{def:Higher_Deriv}{Higher Order Derivatives}
-{Let $y=f(x)$ be a differentiable function on $I$. 
+{Let $y=f(x)$ be a differentiable function on $I$. \index{derivative!higher order}\index{derivative!notation}
 		\begin{enumerate}
 		\item		The \textit{second derivative} of $f$ is: 
 						$$ \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d^2y}{dx^2}=y''.$$
@@ -173,7 +176,7 @@ Find the first four derivatives of the following functions:
 \vskip \baselineskip
 \noindent\textbf{\large Interpreting Higher Order Derivatives}\\
 
-What do higher order derivatives \textit{mean}? What is the practical interpretation? 
+What do higher order derivatives \textit{mean}? What is the practical interpretation? \index{derivative!higher order!interpretation}
 
 Our first answer is a bit wordy, but is technically correct and beneficial to understand. That is,
 	\begin{quote}

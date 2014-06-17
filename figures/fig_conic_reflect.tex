@@ -14,18 +14,19 @@ tick label style={font=\scriptsize},axis y line=none,axis x line=none,name=myplo
 
 \coordinate (focus) at (axis cs: 1,4);
 
-\addplot [thick, {\colorone},smooth,domain=-6:14] ({x^2/8-x+1},x);
-\addplot [thick, {\colortwo},smooth,domain=-6:14] (-3,x);
-\filldraw [{\colortwo}] (focus) circle (1.5pt);
+\addplot [very thick, {\colorone},smooth,domain=-6:14] ({x^2/8-x+1},x);
+\addplot [very thick, {\colortwo},smooth,domain=-6:14] (-3,x);
 
-\draw [thin]%(axis cs: 12,10) -- (axis cs: 3.5,10) -- (focus)
+
+\draw [thick]%(axis cs: 12,10) -- (axis cs: 3.5,10) -- (focus)
 			(axis cs: 12,12) -- (axis cs: 7,12) -- (focus)
 			(axis cs: 12,8) -- (axis cs: 1,8) -- (focus)
-			(axis cs: 12,3) -- (axis cs: -.875,3) -- (focus)
+			(axis cs: 12,3) -- (axis cs: -.875,3)
+			(axis cs: -.875,3)-- (focus)
 			%(axis cs: 12,0) -- (axis cs: 1,0) -- (focus)
 			(axis cs: 12,-3) -- (axis cs: 5.125,-3) -- (focus);
 			
-
+\filldraw [{\colortwo}] (focus) circle (1.5pt);
 
 \end{axis}
 

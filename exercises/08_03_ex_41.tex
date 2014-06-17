@@ -1,0 +1,17 @@
+{Given that $\ds \sum_{n=1}^\infty a_n$ converges, state which of the following series converges, may converge, or does not converge.
+\begin{enumerate}
+	\item $\ds \sum_{n=1}^\infty \frac{a_n}n$
+	\item	$\ds \sum_{n=1}^\infty a_na_{n+1}$
+	\item	$\ds \sum_{n=1}^\infty (a_n)^2$
+	\item $\ds \sum_{n=1}^\infty na_n$
+	\item	$\ds \sum_{n=1}^\infty \frac{1}{a_n}$
+\end{enumerate}
+}
+{\begin{enumerate}
+	\item Converges; use Direct Comparison Test as $\frac{a_n}{n}<n$.
+	\item	Converges; since original series converges, we know $\lim_{n\to\infty}a_n = 0$. Thus for large $n$, $a_na_{n+1} < a_n$.
+	\item		Converges; similar logic to part (b) so $(a_n)^2<a_n$.
+	\item		May converge; certainly $na_n > a_n$ but that does not mean it does not converge.
+	\item		Does not converge, using logic from (b) and $n^{th}$ Term Test.
+\end{enumerate}
+}

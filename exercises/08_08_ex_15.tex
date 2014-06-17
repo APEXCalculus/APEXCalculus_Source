@@ -1,0 +1,24 @@
+{$f(x) = \ln x$
+}
+{Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-1)^{(n+1)}\big|,$$
+where $z$ is between $1$ and $x$. 
+
+Note that $\big|f\,^{(n+1)}(x)\big| = \frac{n!}{x^{n+1}}$. 
+
+We consider the cases when $x>1$ and when $x<1$ separately.
+
+If $x>1$, then $1<z<x$ and $f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}<n!$. Thus
+$$ \big|R_n(x)\big| \leq \frac{n!}{(n+1)!}\big|(x-1)^{(n+1)}\big|= \frac{(x-1)^{n+1}}{n+1}.$$
+For a fixed $x$,
+$$\lim_{n\to\infty} \frac{(x-1)^{n+1}}{n+1}=0.$$
+
+
+If $0<x<1$, then $x<z<1$ and $f\,^{(n+1)}(z) =\frac{n!}{z^{n+1}}<\frac{n!}{x^{n+1}}$. Thus
+$$ \big|R_n(x)\big| \leq \frac{n!/x^{n+1}}{(n+1)!}\big|(x-1)^{(n+1)}\big| = \frac{x^{n+1}}{n+1}(1-x)^{n+1}.$$
+Since $0<x<1$, $x^{n+1}<1$ and $(1-x)^{n+1}<1$. We can then extend the inequality from above to state
+$$\big|R_n(x)\big| \leq \frac{x^{n+1}}{n+1}(1-x)^{n+1}<\frac1{n+1}.$$
+
+As $n\to\infty$, $1/(n+1)\to0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+$$\ln x = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n}\quad \text{for all $0<x\leq 2$}.$$
+}

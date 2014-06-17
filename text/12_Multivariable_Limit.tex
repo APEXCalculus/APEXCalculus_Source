@@ -15,7 +15,8 @@ A set $S$ is \textbf{open} if every point in $S$ is an interior point.\\
 
 A set $S$ is \textbf{closed} if it contains all of its boundary points.\\
 
-A set $S$ is \textbf{bounded} if there is $M>0$ such that the open disk, centered at the origin, with radius $M$ contains $S$. A set that is not bounded is \textbf{unbounded}.
+A set $S$ is \textbf{bounded} if there is an $M>0$ such that the open disk, centered at the origin, with radius $M$ contains $S$. A set that is not bounded is \textbf{unbounded}.
+\index{open}\index{closed}\index{open disk}\index{closed disk}\index{boundary point}\index{interior point}\index{bounded set}\index{unbounded set}
 }
 
 Figure \ref{fig:multilimit_intro} shows several sets in the $x$-$y$ plane. In each set, point $P_1$ lies on the boundary of the set as all open disks centered there contain both points in, and not in, the set. In contrast, point $P_2$ is an interior point for there is an open disk centered there that lies entirely within the set.
@@ -31,6 +32,7 @@ Figure \ref{fig:multilimit_intro} shows several sets in the $x$-$y$ plane. In ea
 }
 
 The set depicted in Figure \ref{fig:multilimit_intro}(a) is a closed set as it contains all of its boundary points. The set in (b) is open, for all of its points are interior points (or, equivalently, it does not contain any of its boundary points). The set in (c) is neither open nor closed as it contains just some of its boundary points.\\
+\clearpage
 
 \example{ex_multilimit1}{Determining open/closed, bounded/unbounded}{
 Determine if the domain of the function $f(x,y)=\sqrt{1-\frac{x^2}9-\frac{y^2}4}$ is open, closed, or neither, and if it is bounded.}
@@ -48,6 +50,7 @@ The domain is sketched in Figure \ref{fig:multilimit2}. Note how we can draw an 
 \noindent\textbf{\large Limits}\\
 
 Recall a pseudo--definition of the limit of a function of one variable: ``$\ds \lim_{x\to c}f(x) = L$'' means that if $x$ is ``really close'' to $c$, then $f(x)$ is ``really close'' to $L$. A similar pseudo--definition holds for functions of two variables. We'll say that 
+\enlargethispage{3\baselineskip}
 
 \begin{center}
 ``$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L$'' \end{center}
@@ -56,19 +59,23 @@ means ``if the point $(x,y)$ is really close to the point $(x_0,y_0)$, then $f(x
 \definition{def:multilimit}{Limit of a Function of Two Variables}
 {Let $f(x,y)$ be a function of two variables and let $(x_0,y_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y)$ as $(x,y)$ approaches $(x_0,y_0)$ is $L$, denoted $$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L,$$
 if, for every $\epsilon>0$ there is a $\delta>0$ such that if $(x,y)$ is in the open disk centered at $(x_0,y_0)$ with radius $\delta$, then $|f(x,y) - L|<\epsilon.$
+\index{limit!of multivariable function}\index{multivariable function!limit}
 }
 
-\mfigure[scale=1.25]{.35}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
 
 The concept behind Definition \ref{def:multilimit} is sketched in Figure \ref{fig:multilimitdef}. Given $\epsilon>0$, find $\delta>0$ such that if $(x,y)$ is any point in the open disk centered at $(x_0,y_0)$ in the $x$-$y$ plane with radius $\delta$, then $f(x,y)$ should be within $\epsilon$ of $L$. 
 
 Computing limits using this definition is rather cumbersome. The following theorem allows us to evaluate limits much more easily.
+
+\mfigure[scale=1.25]{.77}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
+
 
 \setboxwidth{0pt}
 \theorem{thm:multi_limit_algebra}{Basic Limit Properties of Functions of Two Variables}{%\small
 Let $b$, $x_0$, $y_0$, $L$ and $K$ be real numbers,  let $n$ be a positive integer, and let $f$ and $g$ be functions with the following limits:
 $$\lim_{(x,y)\to (x_0,y_0)}f(x,y) = L \quad \text{\ and\ } \lim_{(x,y)\to (x_0,y_0)} g(x,y) = K.$$
 The following limits hold.
+\index{limit!of multivariable function}\index{limit!properties}\index{multivariable function!limit}
 \begin{enumerate}
 \item \parbox{80pt}{Constants:} $\displaystyle \lim_{(x,y)\to (x_0,y_0)} b = b$
 \item	\parbox{80pt}{Identity }	$\displaystyle \lim_{(x,y)\to (x_0,y_0)} x = x_0$;\qquad $\displaystyle \lim_{(x,y)\to (x_0,y_0)} y = y_0$
@@ -179,6 +186,7 @@ Definition \ref{def:continuous} defines what it means for a function of one vari
 
 \begin{enumerate}
 	\item $f$ is \textbf{continuous} at $(x_0,y_0)$ if $\ds\lim_{(x,y)\to(x_0,y_0)} f(x,y) = f(x_0,y_0)$.
+	\index{continuous function}\index{multivariable function!continuity}
 	\item	$f$ is \textbf{continuous on $B$} if $f$ is continuous at all points in $B$. If $f$ is continuous at all points in $\mathbb{R}^2$, we say that $f$ is \textbf{continuous everywhere}.
 \end{enumerate}
 }
@@ -217,6 +225,7 @@ The following theorem is very similar to Theorem \ref{thm:continuity_algebra}, g
 
 \theorem{thm:multi_continuous_prop}{Properties of Continuous Functions}
 {Let $f$ and $g$ be continuous on an open disk $B$, let $c$ be a real number, and let $n$ be a positive integer. The following functions are continuous on $B$.
+\index{continuous function!properties}\index{multivariable function!continuity}
 		\begin{enumerate}
 		\item		\parbox{80pt}{Sums/Differences:}	$f\pm g$
 		\item		\parbox{80pt}{Constant Multiples:}	$c\cdot f$
@@ -241,15 +250,17 @@ The definitions and theorems given in this section can be extended in a natural 
 \setboxwidth{20pt}
 \definition{def:multi3defs}{Open Balls, Limit, Continuous}
 { 
-\begin{itemize}
-\item An \textbf{open ball} in $\mathbb{R}^3$ centered at $(x_0,y_0,z_0)$ with radius $r$ is the set of all points $(x,y,z)$ such that $\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2} = r$.\\
+\begin{enumerate}
+\item An \textbf{open ball} in $\mathbb{R}^3$ centered at $(x_0,y_0,z_0)$ with radius $r$ is the set of all points $(x,y,z)$ such that $\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2} = r$.
+\index{multivariable function!limit}\index{limit!of multivariable function}\index{multivariable function!continuity}\index{open ball}
+\\
 
 \item Let $f(x,y,z)$ be a function of three variables and let $(x_0,y_0,z_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y,z)$ as $(x,y,z)$ approaches $(x_0,y_0,z_0)$ is $L$, denoted 
 $$\lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = L,$$
 if, for every $\epsilon >0$ there is a $\delta >0$ such that if $(x,y,z)$ is in the open ball centered at $(x_0,y_0,z_0)$ with radius $\delta$, then $|f(x,y,z) - L|< \epsilon$.\\
 
 \item Let $f(x,y,z)$ be defined on an open ball $B$ containing $(x_0,y_0,z_0)$. $f$ is \textbf{continuous} at $(x_0,y_0,z_0)$ if $\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)$.
-\end{itemize}
+\end{enumerate}
 }
 \restoreboxwidth
 

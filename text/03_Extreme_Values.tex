@@ -4,16 +4,16 @@ This chapter explores many of the ways we can take advantage of the information 
 
 \section{Extreme Values}\label{sec:extreme_values}
 
-\enlargethispage{\baselineskip}
+\enlargethispage{2\baselineskip}
 Given any quantity described by a function, we are often interested in the largest and/or smallest values that quantity attains. For instance, if a function describes the speed of an object, it seems reasonable to want to know the fastest/slowest the object traveled. If a function describes the value of a stock, we might want to know how the highest/lowest values the stock attained over the past year. We call such values \textit{extreme values.}
 
 \definition{def:extreme_values}{Extreme Values}%
-{Let $f$ be defined on an interval $I$ containing $c$.
+{Let $f$ be defined on an interval $I$ containing $c$.\index{extreme values}\index{absolute minimum}\index{minimum!absolute}\index{absolute maximum}\index{maximum!absolute}
 	\begin{enumerate}
 	\item		$f(c)$ is the \textbf{minimum} (also, \textbf{absolute minimum}) of $f$ on $I$ if $f(c) \leq f(x)$ for all $x$ in $I$.
 	\item		$f(c)$ is the \textbf{maximum} (also, \textbf{absolute maximum}) of $f$ on $I$ if $f(c) \geq f(x)$ for all $x$ in $I$.
 	\end{enumerate}
-	The maximum and minimum values are the \textbf{extreme values}, or \textbf{extrema}, of $f$ on $I$.
+	The maximum and minimum values are the \textbf{extreme values}, or \textbf{extrema}, of $f$ on $I$.\index{extrema!absolute}
 	}
 
 	
@@ -22,48 +22,50 @@ Given any quantity described by a function, we are often interested in the large
 Consider Figure \ref{fig:extreme}. %y=2-x^2 on [-1,1] and (-1,1), with hole
  The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the ``natural'' place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed. 
  
-\ifthenelse{\boolean{longpage}}% if longpage
-			{% longpage
-				\begin{center}
-				\begin{minipage}{.45\textwidth}\centering
-				\myincludegraphics{figures/figextreme1}
-				\par (a)
-				\end{minipage}\hskip .10\textwidth
-				\begin{minipage}{.45\textwidth}\centering
-				\myincludegraphics{figures/figextreme2}
-				\par (b)
-				\end{minipage}
-				
-				\begin{minipage}{\textwidth}\centering
-				\myincludegraphics{figures/figextreme3}
-				\par (c)
-				\captionsetup{type=figure}%
-				\caption{Graphs of functions with and without extreme values.}\label{fig:extreme}
-				\end{minipage}
-				\end{center}
-			} %end longpage
-			{% not longpage
+%\ifthenelse{\boolean{longpage}}% if longpage
+			%{% longpage
+				%\begin{center}
+				%\begin{minipage}{.45\textwidth}\centering
+				%\myincludegraphics{figures/figextreme1}
+				%\par (a)
+				%\end{minipage}\hskip .10\textwidth
+				%\begin{minipage}{.45\textwidth}\centering
+				%\myincludegraphics{figures/figextreme2}
+				%\par (b)
+				%\end{minipage}
+				%
+				%\begin{minipage}{\textwidth}\centering
+				%\myincludegraphics{figures/figextreme3}
+				%\par (c)
+				%\captionsetup{type=figure}%
+				%\caption{Graphs of functions with and without extreme values.}\label{fig:extreme}
+				%\end{minipage}
+				%\end{center}
+			%} %end longpage
+			%{% not longpage
 				\mtable{.55}{Graphs of functions with and without extreme values.}{fig:extreme}{\begin{tabular}{c} \myincludegraphics{figures/figextreme1} \\ \rule{0pt}{10pt}(a) \\ \\ \myincludegraphics{figures/figextreme2}  \\  \rule{0pt}{10pt}(b)\\ \\  \myincludegraphics{figures/figextreme3} \\ \rule{0pt}{10pt}(c) \end{tabular}}
-			}
+			%}
  
  It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval \textit{always} have a maximum and minimum value.
  
 \theorem{thm:extreme_val}{The Extreme Value Theorem}%
-{Let $f$ be a continuous function defined on a closed interval $I$. Then $f$ has both a maximum and minimum value on $I$.}
+{Let $f$ be a continuous function defined on a closed interval $I$. Then $f$ has both a maximum and minimum value on $I$.
+\index{Extreme Value Theorem}
+}
 
 This theorem states that $f$ has extreme values, but it does not offer any advice about how/where to find these values. The process can seem to be fairly easy, as the next example illustrates. After the example, we will draw on lessons learned to form a more general and powerful method for finding extreme values.\\
 
 \example{ex_extval1}{Approximating extreme values}{
 Consider $f(x) = 2x^3-9x^2$ on $I=[-1,5]$, as graphed in Figure \ref{fig:extval1}. Approximate the extreme values of $f$.
 
-\mfigure{.6}{A graph of $f(x) = 2x^3-9x^2$ as in Example \ref{ex_extval1}.}{fig:extval1}{figures/figextval1}}
+\mfigure{.65}{A graph of $f(x) = 2x^3-9x^2$ as in Example \ref{ex_extval1}.}{fig:extval1}{figures/figextval1}}
 {The graph is drawn in such a way to draw attention to certain points. It certainly seems that the smallest $y$ value is $-27$, found when $x=3$. It also seems that the largest $y$ value is 25, found at the endpoint of $I$, $x=5$. We use the word \textit{seems}, for by the graph alone we cannot be sure the smallest value is not less than $-27$. Since the problem asks for an approximation, we approximate the extreme values to be $25$ and $-27$.
 }\\
 
 Notice how the minimum value came at ``the bottom of a hill,'' and the maximum value came at an endpoint. Also note that while $0$ is not an extreme value, it would be if we narrowed our interval to $[-1,4]$. The idea that the point $(0,0)$ is the location of an extreme value for some interval is important, leading us to a definition.
 
 \enlargethispage{2\baselineskip}
-\mnote{.45}{\textbf{Note:} The terms \textit{local minimum} and \textit{local maximum} are often used as synonyms for \textit{relative minimum} and \textit{relative maximum}.}
+\mnote{.48}{\textbf{Note:} The terms \textit{local minimum} and \textit{local maximum} are often used as synonyms for \textit{relative minimum} and \textit{relative maximum}.}
 
 \setboxwidth{70pt}
 \noindent\hskip-70pt
@@ -72,8 +74,8 @@ Notice how the minimum value came at ``the bottom of a hill,'' and the maximum v
 \definition{def:rel_ext}{Relative Minimum and Relative Maximum}%
 {Let $f$ be defined on an interval $I$ containing $c$. 
 		\begin{enumerate}
-		\item		If there is an open interval containing $c$ such that $f(c)$ is the minimum value, then $f(c)$ is a \textbf{relative minimum} of $f$. We also say that $f$ has a relative minimum at $(c,f(c))$. 
-		\item		If there is an open interval containing $c$ such that $f(c)$ is the maximum value, then $f(c)$ is a \textbf{relative maximum} of $f$. We also say that $f$ has a relative maximum at $(c,f(c))$. 
+		\item		If there is an open interval containing $c$ such that $f(c)$ is the minimum value, then $f(c)$ is a \textbf{relative minimum} of $f$. We also say that $f$ has a relative minimum at $(c,f(c))$. \index{minimum!relative/local}
+		\item		If there is an open interval containing $c$ such that $f(c)$ is the maximum value, then $f(c)$ is a \textbf{relative maximum} of $f$. We also say that $f$ has a relative maximum at $(c,f(c))$. \index{maximum!relative/local}\index{extrema!relative}
 		\end{enumerate}
 		
 The relative maximum and minimum values comprise the \textbf{relative extrema} of $f$.
@@ -109,7 +111,7 @@ We compute $\fp(x) = \frac23(x-1)^{-1/3}$. When $x=1$, $\fp$ is undefined.}\\
 What can we learn from the previous two examples? We were able to visually approximate relative extrema, and at each such point, the derivative was either 0 or it was not defined. This observation holds for all functions, leading to a definition and a theorem.
 
 \definition{def:criticalnum}{Critical Numbers and Critical Points}%
-{Let $f$ be defined at $c$. The value $c$ is a \textbf{critical number} (or \textbf{critical value}) of $f$ if $\fp(c)=0$ or $\fp(c)$ is not defined. \\
+{Let $f$ be defined at $c$. The value $c$ is a \textbf{critical number} (or \textbf{critical value}) of $f$ if $\fp(c)=0$ or $\fp(c)$ is not defined.\index{critical number}\index{critical point} \\
 
 If $c$ is a critical number of $f$, then the point $(c,f(c))$ is a \textbf{critical point} of $f$.}
 
@@ -123,7 +125,7 @@ Be careful to understand that this theorem states  ``All relative extrema occur 
 Theorem \ref{thm:extreme_val} states that a continuous function on a closed interval will have absolute extrema, that is, both an absolute maximum and an absolute minimum. These extrema occur either at the endpoints or at critical values in the interval. We combine these concepts to offer a strategy for finding extrema.
 
 \keyidea{idea:extrema}{Finding Extrema on a Closed Interval}%
-{Let $f$ be a continuous function defined on a closed interval $[a,b]$. To find the maximum and minimum values of $f$ on $[a,b]$:
+{Let $f$ be a continuous function defined on a closed interval $[a,b]$. To find the maximum and minimum values of $f$ on $[a,b]$:\index{extrema!finding}
 	\begin{enumerate}
 	\item		Evaluate $f$ at the endpoints $a$ and $b$ of the interval.
 	\item		Find the critical numbers of $f$ in $[a,b]$.

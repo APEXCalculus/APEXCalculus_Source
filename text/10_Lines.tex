@@ -1,5 +1,6 @@
 \section{Lines}\label{sec:lines}
 
+\index{lines}
 To find the equation of a line in the $x-y$ plane, we need two pieces of information: a point and the slope. The slope conveys \textit{direction} information. As vertical lines have an undefined slope, the following statement is more accurate:
 
 \begin{quotation}
@@ -88,24 +89,24 @@ Each representation has its own advantages, depending on the context. We summari
 \clearpage
 
 \definition{def:lines}{Equations of Lines in Space}
-{Consider the line in space that passes through $\vec p = \la x_0,y_0,z_0\ra$ in the direction of $\vec d = \la a,b,c\ra.$
-\begin{itemize}
+{Consider the line in space that passes through $\vec p = \la x_0,y_0,z_0\ra$ in the direction of $\vec d = \la a,b,c\ra.$\index{lines!equations for}
+\begin{enumerate}
 	\item The \textbf{vector equation} of the line is $$\vec \ell(t) = \vec p+t\vec d.$$
 	\item	The \textbf{parametric equations} of the line are
 	$$x = x_0+at, \quad y=y_0+bt, \quad z = z_0+ct .$$
 	\item	The \textbf{symmetric equations} of the line are
 	$$\frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}.$$
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_lines1}{Finding the equation of a line}{
 Give all three equations, as given in Definition \ref{def:lines}, of the line through $P = (2,3,1)$ in the direction of $\vec d = \la -1,1,2\ra$. Does the point $Q=(-1,6,6)$ lie on this line?}
-{We identify the point $P=(2,3,1)$ with the vector $\vec p =\la 2,3,1\ra$. Following the definition, we have:
+{We identify the point $P=(2,3,1)$ with the vector $\vec p =\la 2,3,1\ra$. Following the definition, we have
 \begin{itemize}
 	\item the vector equation of the line is $\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra$;
-	\item	the parametric equations of the line are:
-	$$x = 2-t,\quad y = 3+t\quad z = 1+2t;$$
-	\item	the symmetric equations of the line are:
+	\item	the parametric equations of the line are
+	$$x = 2-t,\quad y = 3+t\quad z = 1+2t; \text{ and}$$
+	\item	the symmetric equations of the line are
 	$$\frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}.$$
 \end{itemize}
 \mfigure[scale=1.25,trim=2mm 2mm 2mm 2mm,clip=true]{.5}{Graphing a line in Example \ref{ex_lines1}.}{fig:lines1}{figures/figlines1}
@@ -123,7 +124,7 @@ Find the parametric equations of the line through the points $P=(2,-1,2)$ and $Q
 
 The parametric equations of the line $\ell$ through $P$ in the direction of $\vv{PQ}$ are:
 $$\ell: \quad x= 2-t\quad y=-1+4t \quad z=2-3t.$$
-\mfigure{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
+\mfigure[scale=1.25]{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
 
 A graph of the points and line are given in Figure \ref{fig:lines6}. Note how in the given parametrization of the line, $t=0$ corresponds to the point $P$, and $t=1$ corresponds to the point $Q$. This relates to the understanding of the vector equation of a line described in Figure \ref{fig:lines_eq}. The parametric equations ``start'' at the point $P$, and $t$ determines how far in the direction of $\vv{PQ}$ to travel. When $t=0$, we travel 0 lengths of $\vv{PQ}$; when $t=1$, we travel one length of $\vv{PQ}$, resulting in the point $Q$.
 }\\
@@ -131,13 +132,14 @@ A graph of the points and line are given in Figure \ref{fig:lines6}. Note how in
 \noindent \textbf{\large Parallel, Intersecting and Skew Lines}\\
 
 In the plane, two \emph{distinct} lines can either be parallel or they will intersect at exactly one point. In space, given equations of two lines, it can sometimes be difficult to tell whether the lines are distinct or not (i.e., the same line can be represented in different ways). Given lines $\vec\ell_1(t) = \vec p_1 + t\vec d_1$ and $\vec \ell_2(t) = \vec p_2+t\vec d_2$, we have four possibilities: $\vec \ell_1$ and $\vec \ell_2$ are
+\index{lines!skew}\index{lines!parallel}\index{lines!intersecting}
 
 \begin{center}
 \begin{tabular}{p{100pt}p{150pt}}
-the same line & they share all points \\
-intersecting lines & share only 1 point\\
-parallel lines & $\vec d_1\parallel \vec d_2$, no points in common \\
-skew lines & $\vec d_1\nparallel \vec d_2$, no points in common 
+the same line & they share all points; \\
+intersecting lines & share only 1 point;\\
+parallel lines & $\vec d_1\parallel \vec d_2$, no points in common; or \\
+skew lines & $\vec d_1\nparallel \vec d_2$, no points in common. 
 \end{tabular}
 \end{center}
 
@@ -174,6 +176,7 @@ We again start by deciding whether or not each line has the same direction. The 
  \vec u_2 &= \frac{\vec d_2}{\norm{\vec d_2}} = \la -0.3471,-0.5901,0.7289\ra.
 \end{align*}
 
+\enlargethispage{\baselineskip}
 The two vectors seem to be parallel (at least, their components are equal to 4 decimal places). In most situations, it would suffice to conclude that the lines are at least parallel, if not the same. One way to be sure is to rewrite $\vec d_1$ and $\vec d_2$ in terms of fractions, not decimals. We have 
 $$\vec d_1 =\la \frac{16}{10},\frac{272}{100},-\frac{336}{100}\ra \qquad \vec d_2 = \la -\frac{29}{10},-\frac{493}{100},\frac{609}{100}\ra.$$
 One can then find the magnitudes of each vector in terms of fractions, then compute the unit vectors likewise. After a lot of manual arithmetic (or after briefly using a computer algebra system), one finds that 
@@ -192,6 +195,7 @@ The point $P_1$ lies on both lines, so we conclude they are the same line, just 
 \noindent\textbf{\large Distances}\\
 
 Given a point $Q$ and a line $\vec\ell(t) = \vec p+t\vec d$ in space, it is often useful to know the distance from the point to the line. (Here we use the standard definition of ``distance,'' i.e., the length of the shortest line segment from the point to the line.) Identifying $\vec p$ with the point $P$, Figure \ref{fig:lines_dist1} will help establish a general method of computing this distance $h$.
+
 \mfigure{.75}{Establishing the distance from a point to a line.}{fig:lines_dist1}{figures/figlines_dist1}
 
 From trigonometry, we know $h = \norm{\vv{PQ}}\sin\theta$. We have a similar identity involving the cross product: $\norm{\vv{PQ}\times \vec d} = \norm{\vv{PQ}}\, \vnorm{d}\sin\theta.$ Divide both sides of this latter equation by $\vnorm{d}$ to obtain $h$:
@@ -214,12 +218,13 @@ A problem in the Exercise section is to show that this distance is 0 when the li
 The following Key Idea restates these two distance formulas.
 
 \keyidea{idea:line_distance}{Distances to Lines}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Let $P$ be a point on a line $\ell$ that is parallel to $\vec d$. The distance $h$ from a point $Q$ to the line $\ell$ is:
+	\index{distance!between point and line}\index{distance!between lines}\index{lines!distances between}
 	$$h =\frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}.$$
 	\item	Let $P_1$ be a point on line $\ell_1$ that is parallel to $\vec d_1$, and let $P_2$ be a point on line $\ell_2$ parallel to $\vec d_2$, and let $\vec c = \vec d_1\times \vec d_2$, where lines $\ell_1$ and $\ell_2$ are not parallel. The distance $h$ between the two lines is:
 	$$h=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}.$$
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_lines4}{Finding the distance from a point to a line}{
@@ -247,7 +252,7 @@ h &= \frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}\\
 The lines are approximately 5.334 units apart.
 }\\
 
-One of the key points to understand from this section is this: to describe a line, we need a point and a direction. Whenever a problem is posed concerning a line, one often needs to take whatever information is offered and glean point and direction information. Many questions can be asked (and \emph{are} asked in the Exercise section) whose answer immediately follows from this understanding. 
+One of the key points to understand from this section is this: to describe a line, we need a point and a direction. Whenever a problem is posed concerning a line, one  needs to take whatever information is offered and glean point and direction information. Many questions can be asked (and \emph{are} asked in the Exercise section) whose answer immediately follows from this understanding. 
 
 \printexercises{exercises/10_05_exercises}
 

@@ -9,7 +9,7 @@ $$\text{Pressure} = \frac{\text{Force}}{\text{Area}}\quad  \Leftrightarrow \quad
 In the context of fluids, we have the following definition.
 
 \definition{def:fluid_pressure}{Fluid Pressure}
-{Let $w$ be the weight--density of a fluid. The \textbf{pressure} $p$ exerted on an object at depth $d$ in the fluid is $p = w\cdot d.$
+{Let $w$ be the weight--density of a fluid. The \textbf{pressure} $p$ exerted on an object at depth $d$ in the fluid is $p = w\cdot d.$\index{fluid pressure/force}\index{integration!fluid force}
 }
 
 We use this definition to find the \textbf{force} exerted on a horizontal sheet by considering the sheet's area.\\
@@ -56,11 +56,12 @@ $$F = \sum_{i=1}^n F_i \approx \sum_{i=1}^n -w\cdot y_i\cdot\ell(c_i)\cdot\Delta
 
 \keyidea{idea:fluid_force}{Fluid Force on a Vertically Oriented Plate}
 {Let a vertically oriented plate be submerged in a fluid with weight--density $w$ where the top of the plate is at $y=b$ and the bottom is at $y=a$. Let $\ell(y)$ be the length of the plate at $y$.
-	\begin{itemize}
+\index{fluid pressure/force}\index{integration!fluid force}
+	\begin{enumerate}
 	\item		If $y=0$ corresponds to the surface of the fluid, then the force exerted on the plate by the fluid is $$F=\int_a^b w\cdot(-y)\cdot\ell(y)\ dy.$$
 	\item		In general, let $d(y)$ represent the distance between the surface of the fluid and the plate at $y$. Then the force exerted on the plate by the fluid is 
 	$$F=\int_a^b w\cdot d(y)\cdot\ell(y)\ dy.$$
-	\end{itemize}
+	\end{enumerate}
 }
 
 \example{ex_fluid2}{Finding fluid force}{
@@ -115,7 +116,7 @@ The equation of a circle with a radius of 1.5 is $x^2+y^2=2.25$; solving for $x$
 \begin{align*}
 F 		&= 62.4\int_{-1.5}^{1.5} 2(50-y)\sqrt{2.25-y^2}\ dy \\
 			&= 62.4\int_{-1.5}^{1.5} \big(100\sqrt{2.25-y^2} - 2y\sqrt{2.25-y^2}\big)\ dy \\
-			&= 6240\int_{-1.5}^{1.5} \big(\sqrt{2.25-y^2}\ dy - 62.4\int_{-1.5}^{1.5} 2y\sqrt{2.25-y^2}\big)\ dy \\
+			&= 6240\int_{-1.5}^{1.5} \big(\sqrt{2.25-y^2}\big)\ dy - 62.4\int_{-1.5}^{1.5} \big(2y\sqrt{2.25-y^2}\big)\ dy \\
 \end{align*}			
 The second integral above can be evaluated using Substitution. Let $u=2.25-y^2$ with $du = -2y\,dy$. The new bounds are: $u(-1.5)=0$ and $u(1.5)=0$; the new integral will integrate from $u=0$ to $u=0$, hence the integral is 0.
 

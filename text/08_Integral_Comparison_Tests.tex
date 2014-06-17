@@ -1,15 +1,16 @@
 \section{Integral and Comparison Tests}\label{sec:int_comp_tests}
 
-Knowing whether or not a series converges is very important, especially when we discuss Power Series in Sections \ref{}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$- series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
+Knowing whether or not a series converges is very important, especially when we discuss Power Series in Section \ref{sec:power_series}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$- series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
 
 %\mnote{.85}{\textbf{Note:} Recall we often use $\sum a_n$ to write $\ds \sum_{n=1}^\infty a_n$.}
 
 \noindent\textbf{\large Integral Test}\\
 
-We stated in Section \ref{sec:sequences} that a sequence $\{a_n\}$ is a function $a(n)$ whose domain is $\mathN$, the set of natural numbers. If we can extend $a(n)$ to $\mathbb{R}$, the real numbers, and $a(x)$ is both positive and decreasing on $[1,\infty)$, then the convergence of $\ds \sum_{n=1}^\infty a_n$ is the same as $\ds\int_1^\infty a(x)\ dx$. 
+We stated in Section \ref{sec:sequences} that a sequence $\{a_n\}$ is a function $a(n)$ whose domain is $\mathN$, the set of natural numbers. If we can extend $a(n)$ to $\mathbb{R}$, the real numbers, and it is both positive and decreasing on $[1,\infty)$, then the convergence of $\ds \sum_{n=1}^\infty a_n$ is the same as $\ds\int_1^\infty a(x)\ dx$. 
 
 \theorem{thm:integral_test}{Integral Test}
 {Let a sequence $\{a_n\}$ be defined by $a_n=a(n)$, where $a(n)$ is continuous, positive and decreasing on $[1,\infty)$. Then $\ds \sum_{n=1}^\infty a_n$ converges, if, and only if, $\ds\int_1^\infty a(x)\ dx$ converges.
+\index{series!Integral Test}\index{Integral Test}\index{convergence!Integral Test}\index{divergence!Integral Test}
 }
 \mnote{.65}{\textbf{Note:} Theorem \ref{thm:integral_test} does not state that the integral and the summation have the same value.}
 
@@ -59,7 +60,8 @@ Note how the sequence $\{a_n\}$ is not strictly decreasing; it increases from $n
 
 Theorem \ref{thm:pseries} was given without justification, stating that the general $p$-series $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$. In the following example, we prove this to be true by applying the Integral Test.\\
 
-\example{ex_itest2}{Using the Integral Test to establish Theorem \ref{thm:pseries}{.}\\
+\example{ex_itest2}{Using the Integral Test to establish Theorem \ref{thm:pseries}.}
+{
 Use the Integral Test to prove that $\ds \sum_{n=1}^\infty \frac1{(an+b)^p}$ converges if, and only if, $p>1$.
 }
 {Consider the integral $\ds\int_1^\infty \frac1{(ax+b)^p}\ dx$; assuming $p\neq 1$,
@@ -74,11 +76,13 @@ Therefore $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $
 }\\
 
 We consider two more convergence tests in this section, both \textit{comparison} tests. That is, we determine the convergence of one series by  comparing it to another series with known convergence. 
+\clearpage
 
 \noindent\textbf{\large Direct Comparison Test}\\
 
 \theorem{thm:series_direct_compare}{Direct Comparison Test}
 {Let $\{a_n\}$ and $\{b_n\}$ be positive sequences where $a_n\leq b_n$ for all $n\geq N$, for some $N\geq 1$. 
+\index{series!Direct Comparison Test}\index{Direct Comparison Test!for series}\index{convergence!Direct Comparison Test}\index{divergence!Direct Comparison Test}
 	\begin{enumerate}
 		\item If $\ds \sum_{n=1}^\infty b_n$ converges, then $\ds \sum_{n=1}^\infty a_n$ converges.
 		\item	If $\ds \sum_{n=1}^\infty a_n$ diverges, then $\ds \sum_{n=1}^\infty b_n$ diverges.
@@ -87,7 +91,9 @@ We consider two more convergence tests in this section, both \textit{comparison}
 
 \mnote{.8}{\textbf{Note:} A sequence $\{a_n\}$ is a \textbf{positive sequence} if $a_n>0$ for all $n$.\\ 
 
-Because of Theorem \ref{thm:series_behavior}, any theorem that relies on a positive sequence still holds true when $a_n>0$ for all but a finite number of values of $n$.}
+Because of Theorem \ref{thm:series_behavior}, any theorem that relies on a positive sequence still holds true when $a_n>0$ for all but a finite number of values of $n$.
+\index{sequence!positive}
+}
 
 \example{ex_dct1}{Applying the Direct Comparison Test}{
 Determine the convergence of $\ds\sum_{n=1}^\infty \frac1{3^n+n^2}$.
@@ -116,6 +122,7 @@ Fortunately, we can apply another test to the given series to determine its conv
 
 \theorem{thm:series_limit_compare}{Limit Comparison Test}
 {Let $\{a_n\}$ and $\{b_n\}$ be positive sequences.
+\index{series!Limit Comparison Test}\index{Limit Comparison Test!for series}\index{convergence!Limit Comparison Test}\index{divergence!Limit Comparison Test}
 	\begin{enumerate}
 		\item If $\ds\lim_{n\to\infty} \frac{a_n}{b_n} = L$, where $L$ is a positive real number, then $\ds \sum_{n=1}^\infty a_n$ and $\ds \sum_{n=1}^\infty b_n$ either both converge or both diverge.
 		\item	If $\ds\lim_{n\to\infty} \frac{a_n}{b_n} = 0$, then if $\ds \sum_{n=1}^\infty b_n$ converges, then so does $\ds \sum_{n=1}^\infty a_n$.
@@ -173,11 +180,4 @@ Since the  $p$-series $\ds\sum_{n=1}^\infty \frac1{x^{3/2}}$ converges, we concl
 
 
 
-
-
-
-
-
-
-
-\clearpage
+\printexercises{exercises/08_03_exercises}

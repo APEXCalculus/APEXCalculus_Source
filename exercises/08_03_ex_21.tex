@@ -1,4 +1,5 @@
-{Find $n$ such that the  Maclaurin polynomial of degree $n$ of $f(x)= e^x$ approximates $e$ within $0.0001$ of the actual value.
+{$\ds \sum_{n=2}^\infty \frac{n}{n^2-1}$
 }
-{The $n^\text{th}$ derivative of $f(x)=e^x$ is bounded by $3$ on intervals containing $0$ and 1. Thus $|R_n(1)|\leq \frac{3}{(n+1)!}1^{(n+1)}$. When $n=7$, this is less than $0.0001$. 
+{Diverges; compare to $\ds \sum_{n=1}^\infty \frac 1n$. Note that 
+$$\frac{n}{n^2-1} = \frac{n^2}{n^2-1}\cdot\frac1n > \frac 1n,$$ as $\frac{n^2}{n^2-1}>1$, for all $n\geq 2$.
 }

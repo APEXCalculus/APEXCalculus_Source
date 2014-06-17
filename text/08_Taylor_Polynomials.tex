@@ -37,14 +37,15 @@ The polynomials we have created are examples of \emph{Taylor polynomials}, named
 %\noindent\hskip-50pt
 %\begin{minipage}{\specialboxlength}
 \definition{def:taypoly}{Taylor Polynomial, Maclaurin Polynomial}
-{Let $f$ be a function whose first $n$ derivatives exist at $x=c$. 
-\begin{itemize}
+{Let $f$ be a function whose first $n$ derivatives exist at $x=c$.
+\index{Taylor Polynomial!definition}\index{Maclaurin Polynomial!definition} \index{Maclaurin Polynomial|see{Taylor Polynomial}}
+\begin{enumerate}
 \item		The \textbf{Taylor polynomial of degree $n$ of $f$ at $x=c$} is 
 				{$$p_n(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+\frac{\fp''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^{(n)}(c)}{n!}(x-c)^n.$$}
 
 \item		A special case of the Taylor polynomial is the Maclaurin polynomial, where $c=0$. That is, the \textbf{Maclaurin polynomial of degree $n$ of $f$} is 
 {$$p_n(x) = f(0) + \fp(0)x + \frac{\fpp(0)}{2!}x^2+\frac{\fp''(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n.$$}
-\end{itemize}
+\end{enumerate}
 }
 %\end{minipage}
 \restoreboxwidth
@@ -108,11 +109,12 @@ $\ds \rule{0pt}{15pt}\frac{(-1)^{n+1}(n-1)!}{x^n} $ & & $(-1)^{n+1}(n-1)!$
 %\end{tabular}
 }
 
-Using Definition \ref{def:taypoly}, we have 
+Using Definition \ref{def:taypoly}, we have \small
 \begin{align*}
 	p_n(x) &=	f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+\frac{\fp''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^n(c)}{n!}(x-c)^n\\
 					&= 0+(x-1)-\frac12(x-1)^2+\frac13(x-1)^3-\frac14(x-1)^4+\cdots+\frac{(-1)^{n+1}}{n}(x-1)^n.
 \end{align*}
+\normalsize
 Note how the coefficients of the $(x-1)$ terms turn out to be ``nice.''
 
 \item		We can compute $p_6(x)$ using our work above:
@@ -141,7 +143,7 @@ p_6(2) &= (2-1)-\frac12(2-1)^2+\frac13(2-1)^3-\frac14(2-1)^4+\cdots \\
 This approximation is not terribly impressive: a hand held calculator shows that $\ln 2 \approx 0.693147.$ The graph in Figure \ref{fig:taypoly2b} shows that $p_6(x)$ provides less accurate approximations of $\ln x$ as $x$ gets close to 0 or 2. 
 
 Surprisingly enough, even the 20$^\text{th}$ degree Taylor polynomial fails to approximate $\ln x$ for $x>2$, as shown in Figure \ref{fig:taypoly2c}. We'll soon discuss why this is.
-\mfigure{.55}{A plot of $y=\ln x$ and its 20$^\text{th}$ degree Taylor polynomial at $x=1$.}{fig:taypoly2c}{figures/figtaypoly2c}
+\mfigure{.45}{A plot of $y=\ln x$ and its 20$^\text{th}$ degree Taylor polynomial at $x=1$.}{fig:taypoly2c}{figures/figtaypoly2c}
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
@@ -163,13 +165,14 @@ We had the same problem when studying Numerical Integration. Theorem \ref{thm:nu
 \noindent\hskip-65pt
 \begin{minipage}[t]{\specialboxlength}
 \theorem{thm:taylorthm}{Taylor's Theorem}
-{\begin{itemize}
+{\begin{enumerate}
 \item	Let $f$ be a function whose $n+1^\text{th}$ derivative exists on an interval $I$ and let $c$ be in $I$. Then, for each $x$ in $I$, there exists $z_x$ between $x$ and $c$ such that
 $$f(x) = f(c) + \fp(c)(x-c) + \frac{\fpp(c)}{2!}(x-c)^2+ \cdots +\frac{f\,^{(n)}(c)}{n!}(x-c)^n+R_n(x),$$
 where $\ds R_n(x) = \frac{f\,^{(n+1)}(z_x)}{(n+1)!}(x-c)^{(n+1)}.$
+\index{Taylor Polynomial!Taylor's Theorem}\index{Taylor's Theorem}
 
 \item		$\ds \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|(x-c)^{(n+1)}\big|$
-\end{itemize}
+\end{enumerate}
 }
 \end{minipage}
 \restoreboxwidth
@@ -191,7 +194,7 @@ The theorem references $\max\big|f\,^{(n+1)}(z)\big|$. In our situation, this is
 					&\approx 0.0023.
 \end{align*}
 
-\noindent\drawexampleline
+\noindent%\drawexampleline
 We computed $p_6(1.5) = 0.404688$; using a calculator, we find $\ln 1.5 \approx 0.405465$, so the actual error is about $0.000778$, which is less than our bound of $0.0023$. This affirms Taylor's Theorem; the theorem states that our approximation would be within about 2 thousandths of the actual value, whereas the approximation was actually closer.
 
 \item		We again find an interval $I$ that contains both $c=1$ and $x=2$; we choose $I = (0.9,2.1)$. The maximum value of the seventh derivative of $f$ on this interval is again about 1506 (as the largest values come near $x=0.9$). Thus 
@@ -270,6 +273,7 @@ These values allow us to form the Taylor polynomial $p_4(x)$:
 $$p_4(x) = 2 + \frac14(x-4) +\frac{-1/32}{2!}(x-4)^2+\frac{3/256}{3!}(x-4)^3+\frac{-15/2048}{4!}(x-4)^4.$$
 
 \item		As $p_4(x) \approx \sqrt{x}$ near $x=4$, we approximate $\sqrt{3}$ with $p_4(3) = 1.73212$.
+%\enlargethispage{3\baselineskip}
 
 \item		To find a bound on the error, we need an open interval that contains $x=3$ and $x=4$. We set $I = (2.9,4.1)$. The largest value the fifth derivative of $f(x)=\sqrt{x}$ takes on this interval is near $x=2.9$, at about $0.0273$. Thus 
 $$\big|R_4(3)\big| \leq \frac{0.0273}{5!}\big|(3-4)^5\big| \approx 0.00023.$$
@@ -278,7 +282,7 @@ This shows our approximation is accurate to at least the first 2 places after th
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
-%\clearpage
+\clearpage
 
 Our final example gives a brief introduction to using Taylor polynomials to solve differential equations.\\
 
@@ -330,13 +334,13 @@ It is beyond the scope of this text to pursue error analysis when using Taylor p
 Most of this chapter has been devoted to the study of infinite series. This section has taken a step back from this study, focusing instead on finite summation of terms. In the next section, we explore \sword{Taylor Series}, where we represent a function with an infinite series.
 
 
-\refstepcounter{definitioncounter}
-\label{lastdefcount2}
-\refstepcounter{theoremcounter}
-\label{lastthmcount2}
-\refstepcounter{keyideacounter}
-\label{lastideacount2}
-\refstepcounter{examplecounter}
-\label{lastexamplecount2}
+%\refstepcounter{definitioncounter}
+%\label{lastdefcount2}
+%\refstepcounter{theoremcounter}
+%\label{lastthmcount2}
+%\refstepcounter{keyideacounter}
+%\label{lastideacount2}
+%\refstepcounter{examplecounter}
+%\label{lastexamplecount2}
 
-\printexercises{exercises/08_03_exercises}
+\printexercises{exercises/08_07_exercises}

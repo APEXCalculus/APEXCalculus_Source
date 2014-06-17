@@ -15,8 +15,8 @@ We generalize this integral and consider integrals of the form $\int \sin^mx\cos
 \noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -60pt}
 \begin{minipage}{\specialboxlength}
 \keyidea{idea:trig_int_1}{Integrals Involving Powers of Sine and Cosine}
-{Consider $\ds \int \sin^mx\cos^nx\ dx$, where $m,n$ are nonnegative integers.
-	\begin{itemize}
+{Consider $\ds \int \sin^mx\cos^nx\ dx$, where $m,n$ are nonnegative integers.\index{integration!of trig. powers}
+	\begin{enumerate}
 	\item		If $m$ is odd, then $m=2k+1$ for some integer $k$. Rewrite \small
 			$$ \sin^mx = \sin^{2k+1}x = \sin^{2k}x\sin x = (\sin^2x)^k\sin x = (1-\cos^2x)^k\sin x.$$\normalsize
 			Then \small
@@ -29,7 +29,7 @@ We generalize this integral and consider integrals of the form $\int \sin^mx\cos
 	\item		If both $m$ and $n$ are even, use the power--reducing identities
 		\small$$  \cos^2x = \frac{1+\cos (2x)}{2} \quad \text{and}\quad \sin^2x = \frac{1-\cos(2x)}2$$\normalsize
 	to reduce the degree of the integrand. Expand the result and apply the principles of this Key Idea again.
-	\end{itemize}
+	\end{enumerate}
 }
 \end{minipage}
 \restoreboxwidth
@@ -146,9 +146,9 @@ When evaluating integrals of the form $\int \sin^mx\cos^nx\ dx$, the Pythagorean
 
 The same basic strategy applies to integrals of the form $\int \tan^mx\sec^n x\ dx$, albeit a bit more nuanced. The following three facts will prove useful:
 \begin{itemize}
-\item $\frac{d}{dx}(\tan x) = \sec^2x$ 
-\item $\frac{d}{dx}(\sec x) = \sec x\tan x$ 
-\item	$1+\tan^2x = \sec^2x$ (the Pythagorean Theorem)
+\item $\frac{d}{dx}(\tan x) = \sec^2x$, 
+\item $\frac{d}{dx}(\sec x) = \sec x\tan x$ , and 
+\item	$1+\tan^2x = \sec^2x$ (the Pythagorean Theorem).
 \end{itemize}
 
 If the integrand can be manipulated to separate a $\sec^2x$ term with the remaining secant power even, or if a $\sec x\tan x$ term can be separated with the remaining $\tan x$ power even, the Pythagorean Theorem can be employed, leading to a simple substitution. This strategy is outlined in the following Key Idea.
@@ -157,7 +157,7 @@ If the integrand can be manipulated to separate a $\sec^2x$ term with the remain
 %\hskip-145pt
 %\begin{minipage}{\specialboxlength}
 \keyidea{idea:trig_int_2}{Integrals Involving Powers of Tangent and Secant}
-{Consider $\ds\int\tan^mx\sec^nx\ dx$, where $m,n$ are nonnegative integers.
+{Consider $\ds\int\tan^mx\sec^nx\ dx$, where $m,n$ are nonnegative integers.\index{integration!of trig. powers}
 \begin{enumerate}
 \item		If $n$ is even, then $n=2k$ for some integer $k$. Rewrite $\sec^nx$ as 
 $$\sec^nx = \sec^{2k}x = \sec^{2k-2}x\sec^2x = (1+\tan^2x)^{k-1}\sec^2x.$$

@@ -10,7 +10,8 @@ $$\frac{dy}{dx} = \frac{dy}{dt}\Big/\frac{dx}{dt} = \frac{g'(t)}{\fp(t)},$$
 provided that $\fp(t)\neq 0$. This is important so we label it a Key Idea.
 
 \keyidea{idea:dydxpar}{Finding $\frac{dy}{dx}$ with Parametric Equations.}
-{Let $x=f(t)$ and $y=g(t)$, where $f$ and $g$ are differentiable on some open interval $I$ and $\fp(t)\neq 0$ on $I$. Then $$\frac{dy}{dx} = \frac{g'(t)}{\fp(t)}.$$
+{Let $x=f(t)$ and $y=g(t)$, where $f$ and $g$ are differentiable on some open interval $I$ and $\fp(t)\neq 0$ on $I$. Then \index{parametric equations!finding $\frac{dy}{dx}$}\index{derivative!parametric equations}
+$$\frac{dy}{dx} = \frac{g'(t)}{\fp(t)}.$$
 }
 
 We use this to define the tangent line.
@@ -18,16 +19,16 @@ We use this to define the tangent line.
 \definition{def:tangent_par}{Tangent and Normal Lines}
 {Let a curve $C$ be parametrized by $x=f(t)$ and $y=g(t)$, where $f$ and $g$ are differentiable functions on some interval $I$ containing $t=t_0$. The \textbf{tangent line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=g'(t_0)/\fp(t_0)$, provided $\fp(t_0)\neq 0$.\\
 
-The \textbf{normal line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=-\fp(t_0)/g'(t_0)$, provided $g'(t_0)\neq 0$.
+The \textbf{normal line} to $C$ at $t=t_0$ is the line through $\big(f(t_0),g(t_0)\big)$ with slope $m=-\fp(t_0)/g'(t_0)$, provided $g'(t_0)\neq 0$.\index{tangent line}\index{normal line}\index{parametric equations!tangent line}\index{parametric equations!normal line}
 }
 
 The definition leaves two special cases to consider. When the tangent line is horizontal, the normal line is undefined by the above definition as $g'(t_0)=0$. Likewise, when the normal line is horizontal, the tangent line is undefined. It seems reasonable that these lines be defined (one can draw a line tangent to the ``right side'' of a circle, for instance), so we add the following to the above definition.
 
 	
-\begin{itemize}
+\begin{enumerate}
 	\item If the tangent line at $t=t_0$ has a slope of 0, the normal line to $C$ at $t=t_0$ is the line $x=f(t_0)$.
 	\item		If the normal line at $t=t_0$ has a slope of 0, the tangent line to $C$ at $t=t_0$ is the line $x=f(t_0)$.
-	\end{itemize}
+	\end{enumerate}
 	
 \example{ex_parcalc1}{Tangent and Normal Lines to Curves}{
 Let $x=5t^2-6t+4$ and $y=t^2+6t-1$, and let $C$ be the curve defined by these equations.
@@ -40,17 +41,17 @@ Let $x=5t^2-6t+4$ and $y=t^2+6t-1$, and let $C$ be the curve defined by these eq
 		\item We start by computing $\fp(t) = 10t-6$ and $g'(t) =2t+6$. Thus $$\frac{dy}{dx} = \frac{2t+6}{10t-6}.$$
 		Make note of something that might seem unusual: $\frac{dy}{dx}$ is a function of $t$, not $x$. Just as points on the curve are found in terms of $t$, so are the slopes of the tangent lines.
 		
-		The point on $C$ at $t=3$ is $(31,26)$. The slope of the tangent line is $m=1/2$ and the slope of the normal line is $m=-2$. Thus:
+		The point on $C$ at $t=3$ is $(31,26)$. The slope of the tangent line is $m=1/2$ and the slope of the normal line is $m=-2$. Thus,
 		\begin{itemize}
-			\item The equation of the tangent line is $\ds y=\frac12(x-31)+26$.
-			\item	The equation of the normal line is $\ds y=-2(x-31)+26$.
+			\item the equation of the tangent line is $\ds y=\frac12(x-31)+26$, and
+			\item	the equation of the normal line is $\ds y=-2(x-31)+26$.
 		\end{itemize}
 		This is illustrated in Figure \ref{fig:parcalc1}.
 		\mfigure{.5}{Graphing tangent and normal lines in Example \ref{ex_parcalc1}.}{fig:parcalc1}{figures/figparcalc1}
 		
 		\item		To find where $C$ has a horizontal tangent line, we set $\frac{dy}{dx}=0$ and solve for $t$. In this case, this amounts to setting $g'(t)=0$ and solving for $t$ (and making sure that $\fp(t)\neq 0$). 
 		$$g'(t)=0 \quad \Rightarrow \quad 2t+6=0 \quad \Rightarrow \quad t=-3.$$
-		The point on $C$ corresponding to $t=-3$ is $(67,-10)$; the tangent line at that point is horizontal (hence with equation $y=-10$.
+		The point on $C$ corresponding to $t=-3$ is $(67,-10)$; the tangent line at that point is horizontal (hence with equation $y=-10$).
 		
 		To find where $C$ has a vertical tangent line, we find where it has a horizontal normal line, and set $-\frac{\fp(t)}{g'(t)}=0$. This amounts to setting $\fp(t)=0$ and solving for $t$ (and making sure that $g'(t)\neq 0$). 
 		$$\fp(t)=0 \quad \Rightarrow \quad 10t-6=0 \quad \Rightarrow \quad t=0.6.$$
@@ -77,7 +78,7 @@ Let $x=5t^2-6t+4$ and $y=t^2+6t-1$, and let $C$ be the curve defined by these eq
 							&= (\tan t_0)x,
 \end{align*}
 as long as $\cos t_0\neq 0$. It is an important fact to recognize that the normal lines to a circle pass through its center, as illustrated in Figure \ref{fig:parcalc2}. Stated in another way, any line that passes through the center of a circle intersects the circle at right angles.
-\mfigure{.8}{Illustrating how a circle's normal lines pass through its center.}{fig:parcalc2}{figures/figparcalc2}
+\mfigure{.4}{Illustrating how a circle's normal lines pass through its center.}{fig:parcalc2}{figures/figparcalc2}
 		\end{enumerate}
 	\vskip-1.5\baselineskip
 		}\\
@@ -100,14 +101,14 @@ We can, however, examine the slopes of tangent lines near $t=0$, and take the li
 					&= 0.
 \end{align*}
 We have accomplished something significant. When the derivative $\frac{dy}{dx}$ returns an indeterminate form at $t=t_0$, we can define its value by setting it to be $\ds \lim_{t\to t_0} \frac{dy}{dx}$, if that limit exists. This allows us to find slopes of tangent lines at cusps, which can be very beneficial. 
-\mfigure{.5}{A graph of an astroid.}{fig:parcalc3}{figures/figplanecurve1}
+\mfigure{.8}{A graph of an astroid.}{fig:parcalc3}{figures/figplanecurve1}
 
 We found the slope of the tangent line at $t=0$ to be 0; therefore the tangent line is $y=0$, the $x$-axis. 
 }\\
 
 \noindent\textbf{\large Concavity}\\
 
-We continue to analyze curves in the plane by considering their concavity; that is, we are interested in $\frac{d^2y}{dx^2}$, ``the second derivative of $y$ with respect to $x$.'' To find this, we need to find the derivative of $\frac{dy}{dx}$ with respect to $x$; that is,  $$\frac{d^2y}{dx^2}=\frac{d}{dx}\left[\frac{dy}{dx}\right],$$ but recall that $\frac{dy}{dx}$ is a function of $t$, not $x$, making this computation not straightforward.
+We continue to analyze curves in the plane by considering their concavity; that is, we are interested in $\frac{d^2y}{dx^2}$, ``the second derivative of $y$ with respect to $x$.'' To find this, we need to find the derivative of $\frac{dy}{dx}$ with respect to $x$; that is,  $$\frac{d^2y}{dx^2}=\frac{d}{dx}\left[\frac{dy}{dx}\right],$$ but recall that $\frac{dy}{dx}$ is a function of $t$, not $x$, making this computation not straightforward. \index{concavity}\index{parametric equations!concavity}
 
 To make the upcoming notation a bit simpler, let $h(t) = \frac{dy}{dx}$. We want $\frac{d}{dx}[h(t)]$; that is, we want $\frac{dh}{dx}$. We again appeal to the Chain Rule. Note:
 $$\frac{dh}{dt} = \frac{dh}{dx}\cdot\frac{dx}{dt} \quad \Rightarrow \quad \frac{dh}{dx} = \frac{dh}{dt}\Bigg/\frac{dx}{dt}.$$
@@ -116,6 +117,7 @@ In words, to find $\frac{d^2y}{dx^2}$, we first take the derivative of $\frac{dy
 
 \keyidea{idea:second_der_par}{Finding $\frac{d^2y}{dx^2}$ with Parametric Equations}
 {Let $x=f(t)$ and $y=g(t)$ be twice differentiable functions on an open interval $I$. Then 
+\index{parametric equations!finding $\frac{d^2y}{dx^2}$}
 $$\frac{d^2y}{dx^2}\quad = \quad\frac{d}{dt}\left[\frac{dy}{dx}\right]\Bigg/\frac{dx}{dt} \quad=\quad \frac{d}{dt}\left[\frac{dy}{dx}\right]\Bigg/\fp(t).$$ 
 }
 
@@ -158,7 +160,7 @@ The points of inflection are found by setting $\frac{d^2y}{dx^2}=0$. This is not
 
 In Figure \ref{fig:parcalc5b} we see a plot of the second derivative. It shows that it has zeros at approximately $t=0.5,\ 3.5,\ 6.5,\ 9.5,\ 12.5$ and $16$. These approximations are not very good, made only by looking at the graph. Newton's Method provides more accurate approximations. Accurate to 2 decimal places, we have:
 $$t=0.65,\ 3.29,\ 6.36,\ 9.48,\ 12.61\ \text{and}\ 15.74.$$
-The corresponding points have been plotted on the graph of the parametric equations in Figure \ref{fig:parcalc5}. Note how each occurs near the $x$-axis, but not exactly on the axis. 
+The corresponding points have been plotted on the graph of the parametric equations in Figure \ref{fig:parcalc5}. Note how most occur near the $x$-axis, but not exactly on the axis. 
 \mfigure{.65}{A graph of $\frac{d^2y}{dx^2}$, showing where it is approximately 0.}{fig:parcalc5b}{figures/figparcalc5b}
 \mfigure{.4}{A graph of the parametric equations in Example \ref{ex_parcalc5} along with the points of inflection.}{fig:parcalc5}{figures/figparcalc5}
 }\\
@@ -181,10 +183,11 @@ Note the new bounds (no longer ``$x$'' bounds, but ``$t$'' bounds). They are fou
 
 \theorem{thm:arc_length_parametric}{Arc Length of Parametric Curves}
 {Let $x=f(t)$ and $y=g(t)$ be parametric equations with $\fp$ and $g'$ continuous on some open interval $I$ containing $t_1$ and $t_2$ on which the graph traces itself only once. The arc length of the graph, from $t=t_1$ to $t=t_2$, is
+\index{parametric equations!arc length}\index{arc length}
 $$L = \int_{t_1}^{t_2} \sqrt{\fp(t)^2+g'(t)^2}\ dt.$$
 }
 
-As before, these integrals are often not easy to compute. We start with a simple example then another where we approximate the solution.\\
+As before, these integrals are often not easy to compute. We start with a simple example, then give  another where we approximate the solution.\\
 
 \example{ex_parcalc6}{Arc Length of a Circle}{
 Find the arc length of the circle parametrized by $x=3\cos t$, $y=3\sin t$ on $[0,3\pi/2]$. 
@@ -211,22 +214,25 @@ L 	&= \int_{-1}^1\sqrt{(3t^2-1)^2+(2t)^2}\ dt\\
 Unfortunately, the integrand does not have an antiderivative expressible by elementary functions. We turn to numerical integration to approximate its value. Using 4 subintervals, Simpson's Rule approximates the value of the integral as $2.65051$. Using a computer, more subintervals are easy to employ, and $n=20$ gives a value of $2.71559$. Increasing $n$ shows that this value is stable and a good approximation of the actual value.
 \mfigure{.45}{A graph of the parametric equations in Example \ref{ex_parcalc7}, where the arc length of the teardrop is calculated.}{fig:parcalc7}{figures/figparcalc7}
 }\\
-
+\clearpage
+\enlargethispage{2\baselineskip}
 \noindent\textbf{\large Surface Area of a Solid of Revolution}\\
 
 Related to the formula for finding arc length is the formula for finding surface area. We can adapt the formula found in Key Idea \ref{idea:surface_area} from Section \ref{sec:arc_length} in a similar way as done to produce the formula for arc length done before.
 
+\setboxwidth{100pt}
 \keyidea{idea:surface_area_parametric}{Surface Area of a Solid of Revolution}
-{Consider the graph of the parametric equations $x=f(t)$ and $y=g(t)$, where $\fp$ and $g'$ are continuous on an open interval $I$ containing $t_1$ and $t_2$ on which the graph does not cross itself.
-\begin{itemize}
-	\item	The surface area of the solid formed by revolving the graph about the $x$-axis is (where $g(t)\geq 0$ on $[t_1,t_2]$):
+{Consider the graph of the parametric equations $x=f(t)$ and $y=g(t)$, where $\fp$ and $g'$ are continuous on an open interval $I$ containing $t_1$ and $t_2$ on which the graph does not cross itself.\index{surface area!solid of revolution}\index{integration!surface area}\index{parametric equations!surface area}
+\begin{enumerate}
+	\item	The surface area of the solid formed by revolving the graph about the $x$-axis is (where $g(t)\geq~0$ on $[t_1,t_2]$):
 	$$\text{Surface Area} = 2\pi\int_{t_1}^{t_2} g(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.$$
 	
-	\item	The surface area of the solid formed by revolving the graph about the $y$-axis is (where $f(t)\geq 0$ on $[t_1,t_2]$):
+	\item	The surface area of the solid formed by revolving the graph about the $y$-axis is (where $f(t)\geq~0$ on $[t_1,t_2]$):
 	$$\text{Surface Area} = 2\pi\int_{t_1}^{t_2} f(t)\sqrt{\fp(t)^2+g'(t)^2}\ dt.$$
-	\end{itemize}
+	\end{enumerate}
+\vskip-\baselineskip
 }
-
+\restoreboxwidth
 
 \example{ex_parcalc8}{Surface Area of a Solid of Revolution}{
 Consider the teardrop shape formed by the parametric equations $x=t(t^2-1)$, $y=t^2-1$ as seen in Example \ref{ex_parcalc7}. Find the surface area if this shape is rotated about the $x$-axis, as shown in Figure \ref{fig:parcalc8}.}

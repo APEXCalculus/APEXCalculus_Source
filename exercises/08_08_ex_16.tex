@@ -1,0 +1,29 @@
+{$f(x) = 1/(1-x)$ (show equality only on $(-1,0)$)
+}
+{Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,$$
+where $z$ is between $0$ and $x$. 
+
+Note that $\big|f\,^{(n+1)}(x)\big| = \frac{(n+1)!}{(1-x)^{n+2}}$. 
+
+%We consider the cases when $x>0$ and when $x<0$ separately.
+
+If $0<x<1$, then $0<z<x$ and $f\,^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}<\frac{(n+1)!}{(1-x)^{n+2}}$.
+Thus
+$$ \big|R_n(x)\big| \leq \frac{(n+1)!}{(1-x)^{n+2}}\frac{1}{(n+1)!}\big|x^{n+1}\big|= \frac{(x-1)^{n+1}}{n+1}.$$
+For a fixed $x$,
+$$\lim_{n\to\infty} \frac{(x-1)^{n+1}}{n+1}=0,$$
+hence
+$$\frac{1}{1-x} = \sum_{n=0}^\infty x^n \text{ on } (-1,0).$$
+ 
+%If $-1<x<0$, then $x<z<0$ and $f\,^{(n+1)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}<(n+1)!$. 
+%Thus
+%$$ \big|R_n(x)\big| \leq \frac{(n+1)!}{(n+1)!}\big|x^{n+1}\big|= \big|x^{n+1}\big|.$$
+%For a fixed $x$,
+%$$\lim_{n\to\infty} \big|x^{n+1}\big|=0 \text{ as } |x|<1.$$
+
+
+
+%As $n\to\infty$, $1/(n+1)\to0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+%$$\ln x = \sum_{n=1}^\infty (-1)^{n+1}\frac{(x-1)^{n}}{n}\quad \text{for all $0<x\leq 2$}.$$
+}

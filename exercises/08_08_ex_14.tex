@@ -1,0 +1,12 @@
+{$f(x) = e^x$
+}
+{Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|,$$
+where $z$ is between $0$ and $x$. 
+
+If $x>0$, then $z<x$ and $f\,^{(n+1)}(z) =e^z<e^x$. If $x<0$, then $x<z<0$ and $f\,^{(n+1)}(z) =e^z<1$. So given a fixed $x$ value, let $M = \max\{e^x,1\}$; $f\,^{(n)}(z)<M.$ This allows us to state
+
+$$ \big|R_n(x)\big| \leq \frac{M}{(n+1)!}\big|x^{(n+1)}\big|.$$
+For any $x$, $\ds\lim_{n\to\infty} \frac{M}{(n+1)!}\big|x^{(n+1)}\big|= 0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+$$e^x = \sum_{n=0}^\infty \frac{x^{n}}{n!}\quad \text{for all $x$}.$$
+}

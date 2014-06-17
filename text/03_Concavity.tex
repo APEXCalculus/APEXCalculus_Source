@@ -13,7 +13,7 @@ We begin with a definition, then explore its meaning.
 
 \definition{def:concavity}{Concave Up and Concave Down}%
 {Let $f$ be differentiable on an interval $I$. 
-The graph of $f$ is \textbf{concave up} on $I$ if $\fp$ is increasing. The graph of $f$ is \textbf{concave down} on $I$ if $\fp$ is decreasing. If $\fp$ is constant then the graph of $f$ is said to have \textbf{no concavity}.
+The graph of $f$ is \textbf{concave up} on $I$ if $\fp$ is increasing. The graph of $f$ is \textbf{concave down} on $I$ if $\fp$ is decreasing. If $\fp$ is constant then the graph of $f$ is said to have \textbf{no concavity}.\index{concavity}\index{concave up}\index{concave down}
 }
 
 \mnote{.62}{\textbf{Note:} We often state that ``$f$ is concave up'' instead of ``the graph of $f$ is concave up'' for simplicity.}
@@ -44,7 +44,7 @@ A mnemonic for remembering how to pronounce ``mnemonic'' is to recall it begins 
 Our definition of concave up and concave down is given in terms of when the first derivative is increasing or decreasing. We can apply the results of the previous section and to find intervals on which a graph is concave up or down. That is, we recognize that $\fp$ is increasing when $\fpp>0$, etc. 
 
 \theorem{thm:concavity}{Test for Concavity}%
-{Let $f$ be twice differentiable on an interval $I$. The graph of $f$ is concave up if $\fpp>0$ on $I$, and is concave down if $\fpp<0$ on $I$. 
+{Let $f$ be twice differentiable on an interval $I$. The graph of $f$ is concave up if $\fpp>0$ on $I$, and is concave down if $\fpp<0$ on $I$. \index{concavity!test for}\index{concavity!inflection point}
 }
 
 \mfigure{.77}{Demonstrating the 4 ways that concavity interacts with increasing/decreasing, along with the relationships with the first and second derivatives.}{fig:concavity3}{figures/figconcavity3}
@@ -65,7 +65,7 @@ Our definition of concave up and concave down is given in terms of when the firs
 If knowing where a graph is concave up/down is important, it makes sense that the places where the graph changes from one to the other is also important. This leads us to a definition.
 
 \definition{def:infl}{Point of Inflection}
-{A \textbf{point of inflection} is a point on the graph of $f$ at which the concavity of $f$ changes.
+{A \textbf{point of inflection} is a point on the graph of $f$ at which the concavity of $f$ changes.\index{point of inflection}\index{inflection point}
 }
 
 Figure \ref{fig:concavity4} shows a graph of a function with inflection points labeled.
@@ -139,7 +139,7 @@ We utilize this concept in the next example.\\
 \example{ex_conc3}{Understanding inflection points}{
 The sales of a certain product over a three-year span are modeled by $S(t)= t^4-8t^2+20$, where $t$ is the time in years, shown in Figure \ref{fig:conc3}.  Over the first two years, sales are decreasing.  Find the point at which sales are decreasing at their greatest rate.
 
-\mfigure{.55}{A graph of $S(t)$ in Example \ref{ex_conc3}, modeling the sale of a product over time.}{fig:conc3}{figures/figconc3}
+\mfigure{.37}{A graph of $S(t)$ in Example \ref{ex_conc3}, modeling the sale of a product over time.}{fig:conc3}{figures/figconc3}
 }
 {We want to maximize the rate of decrease, which is to say, we want to find where $S'$ has a minimum.  To do this, we find where $S''$ is 0.  We find $S'(t)=4t^3-16t$ and $S''(t)=12t^2-16$.  Setting $S''(t)=0$ and solving, we get $t=\sqrt{4/3}\approx 1.16$ (we ignore the negative value of $t$ since it does not lie in the domain of our function $S$).
 
@@ -172,11 +172,11 @@ The first derivative of a function gave us a test to find if a critical value co
 \mfigure{.3}{Demonstrating the fact that relative maxima occur when the graph is concave down and relative minima occur when the graph is concave up.}{fig:concavity6}{figures/figconcavity6}
 
 \theorem{thm:second_der}{The Second Derivative Test}%
-{ Let $c$ be a critical value of $f$ where  $\fpp(c)$ is defined. 
-\begin{itemize}
+{ Let $c$ be a critical value of $f$ where  $\fpp(c)$ is defined. \index{derivative!Second Deriv. Test}\index{Second Derivative Test}\index{extrema!and Second Deriv. Test}\index{maximum!and Second Deriv. Test}\index{minimum!and First Deriv. Test}
+\begin{enumerate}
 \item If $\fpp(c)>0$, then $f$ has a local minimum at $(c,f(c))$.
 \item If $\fpp(c)<0$, then $f$ has a local maximum at $(c,f(c))$.
-\end{itemize}
+\end{enumerate}
 }
 
 

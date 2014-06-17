@@ -1,7 +1,7 @@
 \section{Integration by Parts}\label{sec:IBP}
 
 Here's a simple integral that we can't yet do:
-$$\int x\cos x \,dx$$
+$$\int x\cos x \,dx.$$
 It's a simple matter to take the derivative of the integrand using the Product Rule, but there is no Product Rule for integrals.  However, this section introduces \textit{Integration by Parts}, a method of integration that is based on the Product Rule for derivatives. It will enable us to evaluate this integral.
 
 The Product Rule says that if $u$ and $v$ are functions of $x$, then  $(uv)' = u'v + uv'$.  For simplicity, we've written $u$ for $u(x)$ and $v$ for $v(x)$.  Suppose we integrate both sides with respect to $x$.  This gives
@@ -16,7 +16,7 @@ This is the Integration by Parts formula. For reference purposes, we state this 
 
 \theorem{thm:IBP}{Integration by Parts}
 {Let $u$ and $v$ be differentiable functions of $x$ on an interval $I$ containing $a$ and $b$. Then 
-$$\int u\ dv = uv - \int v\ du,$$ and 
+$$\int u\ dv = uv - \int v\ du,$$ and \index{integration!by parts}
 $$\int_{x=a}^{x=b} u\ dv = uv\Big|_a^b - \int_{x=a}^{x=b}v\ du.$$
 }
 
@@ -131,7 +131,7 @@ du&= 2x\ dx & dv&=\cos x\ dx
 
 The Integration by Parts formula gives
 $$\int x^2\cos x\,dx = x^2\sin x - \int 2x\sin x\,dx.$$
-At this point, the integral on the right is indeed simpler than the one we started with, but to evaluate it, we need to do Integration by Parts again. Here we choose $u=2x$ and $dv=\sin x$ and fill in the rest below.
+At this point, the integral on the right is indeed simpler than the one we started with, but to evaluate it, we need to do Integration by Parts again. Here we choose $u=2x$ and $dv=\sin x$ and fill in the rest below.\\
 
 \noindent\begin{minipage}{\textwidth}
 \noindent\begin{minipage}[t]{.45\textwidth}
@@ -230,8 +230,8 @@ $$\int e^x\cos x\ dx = \frac12e^x\left(\sin x + \cos x\right)+C.$$
 \vskip-15pt
 }\\
 
-\example{ex_ibp5}{\parbox{270pt}{\textbf{Integrating using Integration by Parts: antiderivatives of $\ln x$}}\\
-Evaluate $\displaystyle \int \ln x\,dx$.}
+\example{ex_ibp5}{Integrating using Integration by Parts: antiderivative of $\ln x$}
+{Evaluate $\displaystyle \int \ln x\,dx$.}
 {One may have noticed that we have rules for integrating the familiar trigonometric functions and $e^x$, but we have not yet given a rule for integrating $\ln x$.  That is because $\ln x$ can't easily be done with any of the rules we have learned up to this point.  But it can be done by a clever application of Integration by Parts.  Set $u=\ln x$ and $dv=dx$.  This is a good, sneaky trick to learn as it can help in other situations. This determines $du=(1/x)\,dx$ and $v=x$ as shown below.\\
 
 \noindent\begin{minipage}{\textwidth}
@@ -262,8 +262,8 @@ $$\int \ln x\ dx = x\ln{x} - x + C.$$
 }\\
 
 
-\example{ex_ibp6}{\parbox[t]{220pt}{\textbf{Integrating using Integration by Parts: antiderivatives of $\arctan x$}}\\
-Evaluate $\displaystyle \int \arctan x  \,dx$.}
+\example{ex_ibp6}{Integrating using Int. by Parts: antiderivative of $\arctan x$}
+{Evaluate $\displaystyle \int \arctan x  \,dx$.}
 {The same sneaky trick we used above works here.  Let $u=\arctan x$ and $dv=dx$.  Then $du=1/(1+x^2)\,dx$ and $v=x$.  The Integration by Parts formula gives
 $$\int \arctan x \,dx = x\arctan x - \int \frac x{1+x^2}\,dx.$$
 The integral on the right can be done by substitution.  Taking $u=1+x^2$, we get $du=2x\,dx$.  The integral then becomes

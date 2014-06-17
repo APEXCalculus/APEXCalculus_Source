@@ -30,7 +30,7 @@ In this section we consider integrals where one or both of the above conditions 
 \begin{minipage}{\specialboxlength}
 \definition{def:imp_int1}{Improper Integrals with Infinite Bounds; Coverge, Diverge}
 {\begin{enumerate}
-\item		Let $f$ be a continuous function on $[a,\infty)$. Define
+\item		Let $f$ be a continuous function on $[a,\infty)$. Define \index{integration!improper}\index{improper integration}\index{convergence!of improper int.}\index{divergence!of improper int.}
 $$\int_a^\infty f(x)\ dx \quad \text{to be}\quad \lim_{b\to\infty}\int_a^b f(x)\ dx.$$
 
 \item		Let $f$ be a continuous function on $(-\infty,b]$. Define
@@ -139,7 +139,7 @@ We have just considered definite integrals where the interval of integration was
 
 
 \definition{def:imp_int2}{Improper Integration with Infinite Range}
-{Let $f(x)$ be a continuous function on $[a,b]$ except at $c$, $a\leq c\leq b$, where $x=c$ is a vertical asymptote of $f$. Define
+{Let $f(x)$ be a continuous function on $[a,b]$ except at $c$, $a\leq c\leq b$, where $x=c$ is a vertical asymptote of $f$. Define\index{integration!improper}\index{improper integration}
 $$\int_a^b f(x)\ dx = \lim_{t\to c^-}\int_a^t f(x)\ dx + \lim_{t\to c^+}\int_t^b f(x)\ dx.$$
 %The integral converges if both limits exist and diverges otherwise.
 } 
@@ -215,10 +215,10 @@ The result of Example \ref{ex_impint4} provides an important tool in determining
 %\hskip-95pt%
 %\begin{minipage}{\specialboxlength}
 \keyidea{idea:impint1}{Convergence of Improper Integrals $\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx$ and $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$.}
-{\begin{itemize}
-\item		The improper integral $\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx$ converges when $p>1$ and diverges when $p\leq 1.$
+{\begin{enumerate}
+\item		The improper integral $\ds \int_1^\infty\frac1{x\hskip1pt ^p}\ dx$ converges when $p>1$ and diverges when $p\leq 1.$\index{convergence!of improper int.}\index{divergence!of improper int.}
 \item		The improper integral $\ds \int_0^1\frac1{x\hskip1pt ^p}\ dx$ converges when $p<1$ and diverges when $p\geq 1.$
-\end{itemize}
+\end{enumerate}
 }
 %\end{minipage}
 \restoreboxwidth
@@ -229,17 +229,18 @@ A basic technique in determining convergence of improper integrals is to compare
 \mnote{.49}{\textbf{Note:} We used the upper and lower bound of ``1'' in Key Idea \ref{idea:impint1} for convenience. It can be replaced by any $a$ where $a>0$. 
 }
 
-\setboxwidth{30pt}%
+%\setboxwidth{30pt}%
 %\hskip-45pt%
 %\begin{minipage}{\specialboxlength}
 \theorem{thm:impint_comparison}{Direct Comparison Test for Improper Integrals}
 {%\begin{itemize}
 %\item		
 Let $f$ and $g$ be continuous on $[a,\infty)$ where $0\leq f(x)\leq g(x)$ for all $x$ in $[a,\infty)$. 
-	\begin{itemize}
+	\begin{enumerate}
 	\item		If $\ds \int_a^\infty g(x)\ dx$ converges, then $\ds \int_a^\infty f(x)\ dx$ converges.
+	\index{integration!improper}\index{convergence!Direct Comparison Test!for integration}\index{divergence!Direct Comparison Test!for integration}\index{Direct Comparison Test!for integration}\index{convergence!of improper int.}\index{divergence!of improper int.}
 	\item		If $\ds \int_a^\infty f(x)\ dx$ diverges, then $\ds \int_a^\infty g(x)\ dx$ diverges.
-	\end{itemize}
+	\end{enumerate}
 
 %\item		Let $f$ and $g$ be continuous functions on $[a,b]$ except at $x=c$, where each has a vertical asymptote, and $0\leq f(x)\leq g(x)$ for all $x$ in $[a,b]$, $x\neq c$.  
 %	\begin{itemize}
@@ -249,7 +250,7 @@ Let $f$ and $g$ be continuous on $[a,\infty)$ where $0\leq f(x)\leq g(x)$ for al
 %\end{itemize}
 }
 %\end{minipage}
-\restoreboxwidth
+%\restoreboxwidth
 
 \example{ex_impint5}{Determining convergence of improper integrals}{
 Determine the convergence of the following improper integrals.
@@ -293,7 +294,8 @@ In cases like this (and many more) it is useful to employ the following theorem.
 {
 %\begin{itemize}
 		Let $f$ and $g$ be continuous functions on $[a,\infty)$ where $f(x)>0$ and $g(x)>0$ for all $x$. If $$\lim_{x\to\infty} \frac{f(x)}{g(x)} = L,\qquad 0<L<\infty,$$
-	then $$\int_a^\infty f(x)\ dx \quad \text{and} \quad \int_a^\infty g(x)\ dx$$ either both converge or both diverge.
+	then $$\int_a^\infty f(x)\ dx \quad \text{and} \quad \int_a^\infty g(x)\ dx$$ either both converge or both diverge.%
+	\index{integration!improper}\index{convergence!Limit Comparison Test!for integration}\index{divergence!Limit Comparison Test!for integration}\index{Limit Comparison Test!for integration}\index{convergence!of improper int.}\index{divergence!of improper int.}
 %	\item		Let $f$ and $g$ be continuous functions on $[a,b]$ except at $x=c$, where each has a vertical asymptote, and $f(x)>0$ and $g(x)>0$ for all $x$ in $[a,b]$, $x\neq c$. If
 %	$$\lim_{x\to c^-} \frac{f(x)}{g(x)} = L_1 \quad \text{and} \quad \lim_{x\to c^+}\frac{f(x)}{g(x)} = L_2,\qquad 0<L_1,L_2<\infty,$$
 %	then $$\int_a^b f(x)\ dx \quad \text{and} \quad \int_a^b g(x)\ dx$$ either both converge or both diverge.

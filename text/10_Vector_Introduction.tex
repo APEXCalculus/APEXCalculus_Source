@@ -7,11 +7,12 @@ One ``bare--bones'' definition of a vector is based on what we wrote above: ``a 
 \definition{def:vector}{Vector}
 {A \textbf{vector} is a directed line segment.\\
 
-Given points $P$ and $Q$ (either in the plane or in space), we denote with $\vv{PQ}$ the vector \textit{from $P$ to $Q$}. The point $P$ is said to be the \textbf{initial} point of the vector, and the point $Q$ is the \textbf{terminal point}. \\
+Given points $P$ and $Q$ (either in the plane or in space), we denote with $\vv{PQ}$ the vector \textit{from $P$ to $Q$}. The point $P$ is said to be the \textbf{initial point} of the vector, and the point $Q$ is the \textbf{terminal point}. \\
 
 The \textbf{magnitude}, or \textbf{norm} of $\vv{PQ}$ is the length of the line segment $\overline{PQ}$: $\norm{\vv{PQ}} = \norm{\overline{PQ}}$.\\
 
 Two vectors are \textbf{equal} if they have the same magnitude and direction.
+\index{vectors}\index{vectors!definition}\index{vectors!norm}\index{vectors!magnitude}\index{norm}\index{magnitude of vector}\index{terminal point}\index{initial point}
 }
 
 Figure \ref{fig:vectintro1} shows multiple instances of the same vector. Each directed line segment has the same direction and length (magnitude), hence each is the same vector.
@@ -19,7 +20,7 @@ Figure \ref{fig:vectintro1} shows multiple instances of the same vector. Each di
 
 %Given two points $P$ and $Q$ (either in the plane or in space), the line segment that starts at $P$ and ends at $Q$ is a vector, denoted $\vv{PQ}$. The point $P$ is said to be the \textbf{initial} point of the vector, and the point $Q$ is the \textbf{terminal point}. We define the magnitude of $\vv{PQ}$ as the length of the line segment $\overline{PQ}$: $||\vv{PQ}|| = \norm{\overline{PQ}}$.
 
-We use $\mathbb{R}^2$ (pronounced ``r two'') to represent all the vectors in the plane, and use $\mathbb{R}^3$ (pronounced ``r three'') to represent all the vectors in space.
+We use $\mathbb{R}^2$ (pronounced ``r two'') to represent all the vectors in the plane, and use $\mathbb{R}^3$ (pronounced ``r three'') to represent all the vectors in space.\index{r@$\mathbb{R}$}
 
 \mfigure{.35}{Illustrating how equal vectors have the same displacement.}{fig:vectintro2}{figures/figvectintro2}
 Consider the vectors $\vv{PQ}$ and $\vv{RS}$ as shown in Figure \ref{fig:vectintro2}. The vectors look to be equal; that is, they seem to have the same length and direction. Indeed, they are. Both vectors move 2 units to the right and 1 unit up from the initial point to reach the terminal point. One can analyze this movement to measure the magnitude of the vector, and the movement itself gives direction information (one could also measure the slope of the line passing through $P$ and $Q$ or $R$ and $S$). Since they have the same length and direction, these two vectors are equal.
@@ -27,15 +28,16 @@ Consider the vectors $\vv{PQ}$ and $\vv{RS}$ as shown in Figure \ref{fig:vectint
 This demonstrates that inherently all we care about is \textit{displacement}; that is, how far in the $x$, $y$ and possibly $z$ directions the terminal point is from the initial point. Both the vectos $\vv{PQ}$ and $\vv{RS}$ in Figure \ref{fig:vectintro2} have an $x$-displacement of 2 and a $y$-displacement of 1. This suggests a standard way of describing vectors in the plane. A vector whose $x$-displacement is $a$ and whose $y$-displacement is $b$ will have terminal point $(a,b)$ when the initial point is the origin, $(0,0)$. This leads us to a definition of a standard and concise way of referring to vectors.
 
 \definition{def:vector_component}{Component Form of a Vector}
-{\begin{itemize}
+{\begin{enumerate}
 	\item The \textbf{component form} of a vector $\vec{v}$ in $\mathbb{R}^2$, whose terminal point is $(a,b)$ when its initial point is $(0,0)$, is $\la a,b\ra.$ 
 	
 	\item	The \textbf{component form} of a vector $\vec{v}$ in $\mathbb{R}^3$, whose terminal point is $(a,b,c)$ when its initial point is $(0,0,0)$, is $\la a,b,c\ra.$ 
 	
 	%The component form of the vector $\vv{PQ}$, where $P=(x_1,y_1,z_1)$ and $Q=(x_2,y_2,z_2)$ is 
 	%$$\vv{PQ} = \la x_2-x_1, y_2-y_1,z_2-z_1\ra.$$
-\end{itemize}
+\end{enumerate}
 The numbers $a$, $b$ (and $c$, respectively) are the \textbf{components} of $\vec v$.
+\index{vectors!component form}
 }
 
 It follows from the definition that the component form of the vector $\vv{PQ}$, where $P=(x_1,y_1)$ and $Q=(x_2,y_2)$ is $$\vv{PQ} = \la x_2-x_1, y_2-y_1\ra;$$ in space, where $P=(x_1,y_1,z_1)$ and $Q=(x_2,y_2,z_2)$, the component form of $\vv{PQ}$ is	$$\vv{PQ} = \la x_2-x_1, y_2-y_1,z_2-z_1\ra.$$
@@ -78,22 +80,22 @@ Now that we have defined vectors, and have created a nice notation by which to d
 \clearpage
 
 \definition{def:vector_algebra}{Vector Algebra}
-{\begin{itemize}
-	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ be vectors in $\mathbb{R}^2$, and let $c$ be a scalar. 
-				\begin{itemize}
+{\begin{enumerate}
+	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ be vectors in $\mathbb{R}^2$, and let $c$ be a scalar. \index{vectors!algebra of}
+				\begin{enumerate}
 					\item The addition, or sum, of the vectors $\vec u$ and $\vec v$ is the vector
 					$$\vec u+\vec v = \la u_1+v_1, u_2+v_2\ra.$$
 					\item	The scalar product of $c$ and $\vec v$ is the vector 
 					$$c\vec v = c\la v_1,v_2\ra = \la cv_1,cv_2\ra.$$
-				\end{itemize}
+				\end{enumerate}
 	\item Let $\vec u = \la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$ be vectors in $\mathbb{R}^3$, and let $c$ be a scalar. 
-				\begin{itemize}
+				\begin{enumerate}
 					\item The addition, or sum, of the vectors $\vec u$ and $\vec v$ is the vector
 					$$\vec u+\vec v = \la u_1+v_1, u_2+v_2, u_3+v_3\ra.$$
 					\item	The scalar product of $c$ and $\vec v$ is the vector 
 					$$c\vec v = c\la v_1,v_2\ra = \la cv_1,cv_2,cv_3\ra.$$
-				\end{itemize}
-\end{itemize}
+				\end{enumerate}
+\end{enumerate}
 }
 
 In short, we say addition and scalar multiplication are computed ``component--wise.''\\
@@ -114,7 +116,7 @@ As vectors convey magnitude and direction information, the sum of vectors also c
 ``Starting at an initial point, go out $\vec u$, then go out $\vec v$.''
 \end{quotation}
 
-This idea is sketched in Figure \ref{fig:vect2b}, where the initial point of $\vec v$ is the terminal point of $\vec u$. This is known as the ``Head to Tail Rule'' of adding vectors. Vector addition is very important. For instance, if the vectors $\vec u$ and $\vec v$ represent forces acting on a body, the sum $\vec u+\vec v$ gives the resulting force. Because of various physical applications of vector addition, the sum $\vec u+\vec v$ is often referred to as the \textbf{resultant vector}, or just the ``resultant.''
+This idea is sketched in Figure \ref{fig:vect2b}, where the initial point of $\vec v$ is the terminal point of $\vec u$. This is known as the ``Head to Tail Rule'' of adding vectors. Vector addition is very important. For instance, if the vectors $\vec u$ and $\vec v$ represent forces acting on a body, the sum $\vec u+\vec v$ gives the resulting force. Because of various physical applications of vector addition, the sum $\vec u+\vec v$ is often referred to as the \sword{resultant vector}, or just the ``resultant.''\index{vectors!resultant}\index{Parallelogram Law}\index{vectors!Parallelogram Law}\index{Head To Tail Rule}\index{vectors!Head To Tail Rule}\index{vectors!zero vector}
 \mfigure{.75}{Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law.}{fig:vect2b}{figures/figvect2b}
 
 Analytically, it is easy to see that $\vec u+\vec v = \vec v+\vec u$. Figure \ref{fig:vect2b} also gives a graphical representation of this, using gray vectors. Note that the vectors $\vec u$ and $\vec v$, when arranged as in the figure, form a parallelogram. Because of this, the Head to Tail Rule is also known as the Parallelogram Law: the vector $\vec u+\vec v$ is defined by forming the parallelogram defined by the vectors $\vec u$ and $\vec v$; the initial point of $\vec u+\vec v$ is the common initial point of parallelogram, and the terminal point of the sum is the common terminal point of the parallelogram.
@@ -170,7 +172,7 @@ Our examples have illustrated key principles in vector algebra: how to add and s
 \clearpage
 
 \theorem{thm:vector_properties}{Properties of Vector Operations}
-{The following are true for all scalars $c$ and $d$, and for all vectors $\vec u$, $\vec v$ and $\vec w$, where $\vec u$, $\vec v$ and $\vec w$ are all in $\mathbb{R}^2$ or where $\vec u$, $\vec v$ and $\vec w$ are all in $\mathbb{R}^3$:
+{The following are true for all scalars $c$ and $d$, and for all vectors $\vec u$, $\vec v$ and $\vec w$, where $\vec u$, $\vec v$ and $\vec w$ are all in $\mathbb{R}^2$ or where $\vec u$, $\vec v$ and $\vec w$ are all in $\mathbb{R}^3$:\index{vectors!algebraic properties}
 \begin{enumerate}
 	\item \parbox{150pt}{$\vec u+\vec v = \vec v+\vec u$}Commutative Property
 	\item \parbox{150pt}{$(\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)$}Associative Property
@@ -194,7 +196,9 @@ Our examples have illustrated key principles in vector algebra: how to add and s
 As stated before, each vector $\vec v$ conveys magnitude and direction information. We have a method of extracting the magnitude, which we write as $\norm{\vec v}$. \textit{Unit vectors} are a way of extracting just the direction information from a vector.
 
 \definition{def:unit_vector}{Unit Vector}
-{A \textbf{unit vector} is a vector $\vec v$ with a magnitude of 1; that is, $$\norm{\vec v}=1.$$
+{A \textbf{unit vector} is a vector $\vec v$ with a magnitude of 1; that is, 
+\index{vectors!unit vector}\index{unit vector}
+$$\norm{\vec v}=1.$$
 }
 
 Consider this scenario: you are given a vector $\vec v$ and are told to create a vector of length 10 in the direction of $\vec v$. How does one do that? If we knew that $\vec u$ was the unit vector in the direction of $\vec v$, the answer would be easy: $10\vec u$. So how do we find $\vec u$\,?
@@ -231,25 +235,32 @@ $$\vec v = \underbrace{\rule[-9.5pt]{0pt}{15pt}\norm{\vec v}}_{\text{\scriptsize
 This equation illustrates the fact that a vector has both magnitude and direction, where we view a unit vector as supplying \textit{only} direction information. Identifying unit vectors with direction allows us to define \textbf{parallel vectors}.
 
 \definition{def:parallel_vectors}{Parallel Vectors}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Unit vectors $\vec u_1$ and $\vec u_2$ are \textbf{parallel} if $\vec u_1 = \pm \vec u_2$.
-	\item	Vectors $\vec v_1$ and $\vec v_2$ are \textbf{parallel} if their respective unit vectors are parallel.
-\end{itemize}
+	\index{vectors!parallel}\index{parallel vectors}
+	\item	Nonzero vectors $\vec v_1$ and $\vec v_2$ are \textbf{parallel} if their respective unit vectors are parallel.
+\end{enumerate}
 }
 
-It is equivalent to say that vectors $\vec v_1$ and $\vec v_2$ are parallel if there is a scalar $c\neq 0$ such that $\vec v_1 = c\vec v_2$.
+It is equivalent to say that vectors $\vec v_1$ and $\vec v_2$ are parallel if there is a scalar $c\neq 0$ such that $\vec v_1 = c\vec v_2$ (see marginal note).
+\mnote{.8}{\textbf{Note:} $\vec 0$ is directionless; because $\vnorm{0}=0$, there is no unit vector in the ``direction'' of $\vec 0$. 
 
+Some texts define two vectors as being parallel if one is a scalar multiple of the other. By this definition, $\vec 0$ is parallel to all vectors as $\vec 0 = 0\vec v$ for all $\vec v$.
+
+We prefer the given definition of parallel as it is grounded in the fact that unit vectors provide direction information. One may adopt the convention that $\vec 0$ is parallel to all vectors if they desire. (See also the marginal note on page \pageref{note:crossp}.)\label{note:parallel}}
 
 If one graphed all unit vectors in $\mathbb{R}^2$ with the initial point at the origin, then the terminal points would all lie on the unit circle. Based on what we know from trigonometry, we can then say that the component form of all unit vectors in $\mathbb{R}^2$ is $\la \cos\theta,\sin\theta\ra$ for some angle $\theta$.
 
 A similar construction in $\mathbb{R}^3$ shows that the terminal points all lie on the unit sphere. These vectors also have a particular component form, but its derivation is not as straightforward as the one for unit vectors in $\mathbb{R}^2$. Important concepts about unit vectors are given in the  following Key Idea. 
 
 \keyidea{idea:unit_vectors}{Unit Vectors}
-{\begin{itemize}
+{\begin{enumerate}
 \item		The unit vector in the direction of $\vec v$ is $$ \vec u = \frac1{\norm{\vec v}} \vec v.$$
-	\item A vector $\vec u$ in $\mathbb{R}^2$ is a unit vector if, and only if, its component form is $\la \cos\theta,\sin\theta\ra$ for some angle $\theta$.
+
+\item A vector $\vec u$ in $\mathbb{R}^2$ is a unit vector if, and only if, its component form is $\la \cos\theta,\sin\theta\ra$ for some angle $\theta$.
+\index{unit vector!properties}\index{vectors!unit vector}
 	\item		A vector $\vec u$ in $\mathbb{R}^3$ is a unit vector if, and only if, its component form is $\la \sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta\ra$ for some angles $\theta$ and $\varphi$.
-\end{itemize}
+\end{enumerate}
 }
 
 These formulas can come in handy in a variety of situations, especially the formula for unit vectors in the plane.\\
@@ -280,18 +291,19 @@ m_1\sin120^\circ + m_2\sin45^\circ &=50
 This is a simple 2-equation, 2-unkown system of linear equations. We leave it to the reader to verify that the solution is 
 $$m_1=50(\sqrt{3}-1) \approx 36.6;\qquad m_2=\frac{50\sqrt{2}}{1+\sqrt{3}} \approx 25.88.$$
 
-It might seem odd that the sum of the forces applied to the chains is more than 50lb. We leave it to a physics class to discuss the full details, but offer this short explanation. Our equations were established so that the \textit{vertical} components of each force sums to 50lb, thus supporting the weight. Since the chains are at an angle, the weight tends to pull the chains apart. Each chain exerts an ``additional'' horizontal force holding the weight in place.
+It might seem odd that the sum of the forces applied to the chains is more than 50lb. We leave it to a physics class to discuss the full details, but offer this short explanation. Our equations were established so that the \textit{vertical} components of each force sums to 50lb, thus supporting the weight. Since the chains are at an angle, they also pull against each other, creating an ``additional'' horizontal force while holding the weight in place.
 }\\
 
 Unit vectors were very important in the previous calculation; they allowed us to define a vector in the proper direction but with an unknown magnitude. Our computations were then computed component--wise. Because such calculations are often necessary, the \textit{standard unit vectors} can be useful.
 
 \definition{def:standard_unit}{Standard Unit Vectors}
-{\begin{itemize}
+{\begin{enumerate}
 	\item In $\mathbb{R}^2$, the standard unit vectors are
+	\index{vectors!standard unit vector}\index{unit vector!standard unit vector}
 	$$\vec i = \la 1,0\ra \quad \text{and}\quad \vec j = \la 0,1\ra.$$
 	\item In $\mathbb{R}^3$, the standard unit vectors are
 	$$\vec i = \la 1,0,0\ra \quad \text{and}\quad \vec j = \la 0,1,0\ra \quad \text{and}\quad \vec k = \la 0,0,1\ra.$$
-\end{itemize}
+\end{enumerate}
 }
 
 \example{ex_vect7}{Using standard unit vectors}{
@@ -318,7 +330,7 @@ These two examples demonstrate that converting from component form to/from using
 }\\
 
 \example{ex_vect8}{Finding Component Force}{
-A weight of 25 is suspended from a chain of length 2ft while a wind pushes the weight to the right with constant force of 5lb as shown in Figure \ref{fig:vect8}. What angle will the chain make with the vertical as a result of the wind's pushing? How much higher will the weight be?
+A weight of 25lb is suspended from a chain of length 2ft while a wind pushes the weight to the right with constant force of 5lb as shown in Figure \ref{fig:vect8}. What angle will the chain make with the vertical as a result of the wind's pushing? How much higher will the weight be?
 \mfigure{.3}{A figure of a weight being pushed by the wind in Example \ref{ex_vect8}.}{fig:vect8}{figures/figvect8}
 }
 {The force of the wind is represented by the vector $\vec F_w = 5\vec i$. The force of gravity on the weight is represented by $\vec F_g = -25\vec j$. The direction and magnitude of the vector representing the force on the chain are both unknown. We represent this force with $$\vec F_c = m\la \cos\varphi,\sin\varphi\ra = m\cos\varphi\, \vec i + m\sin\varphi\,\vec j$$ for some magnitude $m$ and some angle with the horizontal $\varphi$. (Note: $\theta$ is the angle the chain makes with the \emph{vertical}; $\varphi$ is the angle with the \emph{horizontal}.)
@@ -337,7 +349,7 @@ m\cos\varphi\, \vec i + m\sin\varphi\,\vec j + 5\vec i - 25\vec j &=\vec 0
 \end{split}\label{eq:vect8}
 \end{equation}
 
-This is enough to determine $\vec F_c$ already! We know that $F_c = \la -5,25\ra.$ We can use this to find the magnitude $m$:
+This is enough to determine $\vec F_c$ already, as we know $m\cos \varphi = -5$ and $m\sin\varphi =25$. Thus $F_c = \la -5,25\ra.$ We can use this to find the magnitude $m$:
 $$m = \sqrt{(-5)^2+25^2} = 5\sqrt{26}.$$
 We can then use either equality from Equation \eqref{eq:vect8} to solve for $\varphi$. We choose the first equality as using arccosine will return an angle in the $2^\text{nd}$ quadrant:
 $$5 + 5\sqrt{26}\cos \varphi = 0 \quad \Rightarrow \quad \varphi = \cos^{-1}\left(\frac{-5}{5\sqrt{26}}\right) \approx 1.7682\approx 101.31^\circ.$$

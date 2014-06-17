@@ -8,12 +8,14 @@ The comparison tests of the previous section determine convergence by comparing 
 
 \theorem{thm:ratio_test}{Ratio Test}
 {Let $\{a_n\}$ be a positive sequence where $\ds \lim_{n\to\infty}\frac{a_{n+1}}{a_n} = L$.
+\index{series!Ratio Comparison Test}\index{Ratio Comparison Test!for series}\index{convergence!Ratio Comparison Test}\index{divergence!Ratio Comparison Test}
 		\begin{enumerate}
 			\item If $L<1$, then $\ds\sum_{n=1}^\infty a_n$ converges.
 			\item	If $L>1$ or $L=\infty$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
 			\item If $L=1$, the Ratio Test is inconclusive.
 		\end{enumerate}
 }
+\mnote{.5}{\textbf{Note:} Theorem \ref{thm:series_behavior} allows us to apply the Ratio Test to series where $\{a_n\}$ is positive for all but a finite number of terms.}
 
 The principle of the Ratio Test is this: if $\ds\lim_{n\to\infty}\frac{a_{n+1}}{a_n} = L<1$, then for large $n$, each term of $\{a_n\}$ is significantly smaller than its previous term which is enough to ensure convergence.\\
 
@@ -48,7 +50,7 @@ $\ds 1.\ \sum_{n=1}^\infty \frac{2^n}{n!}\qquad\qquad 2.\ \sum_{n=1}^\infty \fra
 \end{enumerate}
 }\\
 
-The Ratio Test is not effective when the terms of a series \textit{only} contain algebraic functions (e.g., polynomials). It is most effective when the terms contain some factorials or exponentials. The previous example also reinforces our developing intuition: factorials dominate exponentials, which dominate algebraic functions, which dominate logarithmic functions. Part 1 of the example, the factorial in the denominator dominated the exponential in the numerator, causing the series to converge. In Part 2, the exponential in the numerator dominated the algebraic function in the denominator, causing the series to diverge.
+The Ratio Test is not effective when the terms of a series \textit{only} contain algebraic functions (e.g., polynomials). It is most effective when the terms contain some factorials or exponentials. The previous example also reinforces our developing intuition: factorials dominate exponentials, which dominate algebraic functions, which dominate logarithmic functions. In Part 1 of the example, the factorial in the denominator dominated the exponential in the numerator, causing the series to converge. In Part 2, the exponential in the numerator dominated the algebraic function in the denominator, causing the series to diverge.
 
 While we have used factorials in previous sections, we have not explored them closely and one is likely to not yet have a strong intuitive sense for how they behave. The following example gives more practice with factorials.\\
 
@@ -68,10 +70,12 @@ Since the limit is $1/4<1$, by the Ratio Test we conclude $\ds \sum_{n=1}^\infty
 
 \noindent\textbf{\large Root Test}\\
 
-The final test we introduce is the Root Test, which works particularly well on series whose terms have exponents (but not those that include factorials). 
+The final test we introduce is the Root Test, which works particularly well on series where each term is raised to a power, and does not work well with terms containing factorials. %(but not those that include factorials). 
 
-\theorem{thm:ratio_test}{Root Test}
-{Let $\{a_n\}$ be a sequence such that there is an $N\geq 1$ where for all $n\geq N$, $a_n\geq 0$, and let $\ds \lim_{n\to \infty} (a_n)^{1/n} = L$.
+\theorem{thm:root_test}{Root Test}
+{Let $\{a_n\}$ be a positive sequence, %such that there is an $N\geq 1$ where for all $n\geq N$, $a_n\geq 0$, 
+and let $\ds \lim_{n\to \infty} (a_n)^{1/n} = L$.
+\index{series!Root Comparison Test}\index{Root Comparison Test!for series}\index{convergence!Root Comparison Test}\index{divergence!Root Comparison Test}
 		\begin{enumerate}
 			\item If $L<1$, then $\ds\sum_{n=1}^\infty a_n$ converges.
 			\item	If $L>1$ or $L=\infty$, then $\ds\sum_{n=1}^\infty a_n$ diverges.
@@ -92,14 +96,17 @@ Determine the convergence of the following series using the Root Test:\\
 	\item		$\ds\lim_{n\to\infty} \left(\frac{n^4}{(\ln n)^n}\right)^{1/n} = \lim_{n\to\infty} \frac {\big(n^{1/n}\big)^4}{\ln n}  $. 
 	
 	As $n$ grows, the numerator approaches 1 (apply L'H\^opital's Rule) and the denominator 
-	grows to infinity.  Thus $$ \lim_{n\to\infty} \frac{\big(n^{1/n}\big)^4}{\ln n} = 0.$$ Since the limit is less than 1, we conclude the limit converges.
+	grows to infinity.  Thus $$ \lim_{n\to\infty} \frac{\big(n^{1/n}\big)^4}{\ln n} = 0.$$ Since the limit is less than 1, we conclude the series converges.
 	
 	\item		$\ds \lim_{n\to\infty} \left(\frac{2^n}{n^2}\right)^{1/n} = \lim_{n\to\infty} \frac{2}{\big(n^{1/n}\big)^2} = 2$. 
 	
 	Since this is greater than 2, we conclude the series diverges.
 \end{enumerate}
+\vskip -1.5\baselineskip
 }\\
+\mnote{.8}{\textbf{Note:} Theorem \ref{thm:series_behavior} allows us to apply the Root Test to series where $\{a_n\}$ is positive for all but a finite number of terms.}
 
-\clearpage
+
+\printexercises{exercises/08_04_exercises}
 
 

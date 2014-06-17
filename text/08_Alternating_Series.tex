@@ -6,6 +6,7 @@ In this section we explore series whose summation includes negative terms. We st
 
 \definition{def:alt_series}{Alternating Series}
 {Let $\{a_n\}$ be a positive sequence. An \sword{alternating series} is a series of either the form
+\index{series!alternating}
 $$\sum_{n=1}^\infty (-1)^na_n\qquad \text{or}\qquad \sum_{n=1}^\infty (-1)^{n+1}a_n.$$
 }
 
@@ -22,6 +23,7 @@ A powerful convergence theorem exists for other alternating series that meet a f
 
 \theorem{thm:alt_series_test}{Alternating Series Test}
 {Let $\{a_n\}$ be a positive, decreasing sequence where $\ds \lim_{n\to\infty}a_n=0$. Then
+\index{series!Alternating Series Test}\index{Alternating Series Test!for series}\index{convergence!Alternating Series Test}\index{divergence!Alternating Series Test}
 $$\sum_{n=1}^\infty (-1)^{n}a_n \qquad \text{and}\qquad \sum_{n=1}^\infty (-1)^{n+1}a_n$$ converge.
 }
 
@@ -64,12 +66,13 @@ While there are many factors involved when studying rates of convergence, the al
 
 \theorem{thm:alt_series_approx}{The Alternating Series Approximation Theorem}
 {Let $\{a_n\}$ be a sequence that satisfies the hypotheses of the Alternating Series Test, and let $S_n$ and $L$ be the $n^\text{th}$ partial sums and sum, respectively, of either $\ds \sum_{n=1}^\infty (-1)^{n}a_n$ or $\ds \sum_{n=1}^\infty (-1)^{n+1}a_n$. Then
+\index{series!alternating!Approximation Theorem}
 \begin{enumerate}
 	\item $|S_n-L| < a_{n+1}$, and
 	\item	$L$ is between $S_n$ and $S_{n+1}$.
 \end{enumerate}
 }
-Part 1 of Theorem \ref{thm:alt_series_approx} states that the $n^\text{th}$ partial sum of a convergent alternating series will be within $a_{n+1}$ of its total sum. Consider the alternating series we looked at before the statement of the theorem, $\ds \sum{n=1}^\infty \frac{(-1)^{n+1}}{n^2}$. Since $a_{14} = 1/14^2 \approx 0.0051$, we know that $S_{13}$ is within $0.0051$ of the total sum. That is, we know $S_{13}$ is accurate to at least 1 place after the decimal. (The ``5'' in the third place after the decimal could cause a carry meaning $S_{13}$ isn't accurate to two places after the decimal; in this particular case, that doesn't happen.) 
+Part 1 of Theorem \ref{thm:alt_series_approx} states that the $n^\text{th}$ partial sum of a convergent alternating series will be within $a_{n+1}$ of its total sum. Consider the alternating series we looked at before the statement of the theorem, $\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}$. Since $a_{14} = 1/14^2 \approx 0.0051$, we know that $S_{13}$ is within $0.0051$ of the total sum. That is, we know $S_{13}$ is accurate to at least 1 place after the decimal. (The ``5'' in the third place after the decimal could cause a carry meaning $S_{13}$ isn't accurate to two places after the decimal; in this particular case, that doesn't happen.) 
 
 Moreover, Part 2 of the theorem states that since $S_{13} \approx 0.8252$ and $S_{14}\approx 0.8201$, we know the sum $L$ lies between $0.8201$ and $0.8252$, assuring us that $S_{13}$ is indeed accurate to two decimal places.
 
@@ -103,24 +106,25 @@ Approximate the sum of the following series, accurate to two places after the de
 \vskip-1.5\baselineskip
 }\\
 
-One of the famous results of mathematics is that the Harmonic Series, $\ds \sum_{n=1}^\infty \frac1n$ diverges, yet the Alternating Harmonic Series, $\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n$, converges. The notion that subtracting some terms in a series can make a series converge leads us to the following definitions.
+One of the famous results of mathematics is that the Harmonic Series, $\ds \sum_{n=1}^\infty \frac1n$ diverges, yet the Alternating Harmonic Series, $\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n$, converges. The notion that alternating the signs of the terms in a series can make a series converge leads us to the following definitions.\index{Alternating Harmonic Series}
 
 \definition{def:abs_converge}{Absolute and Conditional Convergence}
 {%Let $\{a_n\}$ be a sequence where $\ds \sum_{n=1}^\infty a_n$ converges.
-\begin{itemize}
+\begin{enumerate}
 	\item A series $\ds \sum_{n=1}^\infty a_n$ \sword{converges absolutely} if $\ds \sum_{n=1}^\infty |a_n|$ converges.
+	\index{convergence!absolute}\index{convergence!conditional}\index{series!absolute convergence}\index{series!conditional convergence}
 	\item A series $\ds \sum_{n=1}^\infty a_n$ \sword{converges conditionally} if $\ds \sum_{n=1}^\infty a_n$ converges but $\ds \sum_{n=1}^\infty |a_n|$ diverges.
-\end{itemize}
+\end{enumerate}
 }
 
-\mnote{.85}{\sword{Note:} In Definition \ref{def:abs_converge}, $\ds \sum_{n=1}^\infty a_n$ is not necessarily an alternating series; it just may have negative terms.}
+\mnote{.85}{\sword{Note:} In Definition \ref{def:abs_converge}, $\ds \sum_{n=1}^\infty a_n$ is not necessarily an alternating series; it just may have some negative terms.}
 
 Thus we say the Alternating Harmonic Series converges conditionally. \\
 
 \example{ex_alt_series2}{Determining absolute and conditional convergence.}{
 Determine if the following series converges absolutely, conditionally, or diverges.\\
 
-\noindent$\ds 1.\ \sum_{n=1}^\infty (-1)^n\frac{n+3}{n^2+2n+5}\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}\qquad 3.\ \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}$
+\noindent$\ds 1.\ \sum_{n=1}^\infty (-1)^n\frac{n+3}{n^2+2n+5}\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}\qquad 3.\ \sum_{n=3}^\infty (-1)^n\frac{3n-3}{5n-10}$
 }
 {\begin{enumerate}
 	\item We can show the series $$\ds \sum_{n=1}^\infty \left|(-1)^n\frac{n+3}{n^2+2n+5}\right|= \sum_{n=1}^\infty \frac{n+3}{n^2+2n+5}$$ diverges using the Limit Comparison Test, comparing with $1/n$. 
@@ -131,23 +135,24 @@ Determine if the following series converges absolutely, conditionally, or diverg
 	
 	Therefore we conclude $\ds \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}$ converges absolutely.
 	
-	\item	The series $$\ds \sum_{n=1}^\infty \left|(-1)^n\frac{3n-3}{5n-10}\right| = \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}$$ diverges using the $n^\text{th}$ Term Test, so it does not converge absolutely. 
+	\item	The series $$\ds \sum_{n=3}^\infty \left|(-1)^n\frac{3n-3}{5n-10}\right| = \sum_{n=3}^\infty \frac{3n-3}{5n-10}$$ diverges using the $n^\text{th}$ Term Test, so it does not converge absolutely. 
 	
-	The series $\ds \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}$ fails the conditions of the Alternating Series Test as $(3n-3)/(5n-10)$ does not approach $0$ as $n\to\infty$. We can state further that this series diverges; as $n\to\infty$, the series effectively adds and subtracts $3/5$ over and over. This causes the sequence of partial sums to oscillate and not converge.
+	The series $\ds \sum_{n=3}^\infty (-1)^n\frac{3n-3}{5n-10}$ fails the conditions of the Alternating Series Test as $(3n-3)/(5n-10)$ does not approach $0$ as $n\to\infty$. We can state further that this series diverges; as $n\to\infty$, the series effectively adds and subtracts $3/5$ over and over. This causes the sequence of partial sums to oscillate and not converge.
 	
 	Therefore the series $\ds \sum_{n=1}^\infty (-1)^n\frac{3n-3}{5n-10}$ diverges.
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
 
-Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first says that absolute convergence is  ``stronger'' than regular convergence. That is, just because $\ds \sum_{n=1}^\infty a_n$ converges, we cannot conclude that $\ds \sum_{n=1}^\infty |a_n|$ will converge, but knowing a series converges absolutely tells us that $\ds \sum_{n=1}^\infty a_n$ will converge. 
+Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first is that absolute convergence is  ``stronger'' than regular convergence. That is, just because $\ds \sum_{n=1}^\infty a_n$ converges, we cannot conclude that $\ds \sum_{n=1}^\infty |a_n|$ will converge, but knowing a series converges absolutely tells us that $\ds \sum_{n=1}^\infty a_n$ will converge. 
 
-One reason this is important is that our convergence tests all require that the underlying sequence of terms be positive. By taking the absolute value of the terms of a series where not all terms are positive, we are often able apply an appropriate test and determine absolute convergence. This, in turn, determines that the series we are given also converges.
+One reason this is important is that our convergence tests all require that the underlying sequence of terms be positive. By taking the absolute value of the terms of a series where not all terms are positive, we are often able to apply an appropriate test and determine absolute convergence. This, in turn, determines that the series we are given also converges.
 
-The second statement relates to \sword{rearrangements} of series. When dealing with a finite set of numbers, the sum of the numbers does not depend on the order which they are added. (So $1+2+3 = 3+1+2$.) One may be surprised to find out that when dealing with an infinite set of numbers, the same statement does not always hold true: an infinite list of numbers may be rearranged in different orders to achieve different sums. The theorem states that the terms of an absolutely convergent series can be rearranged in any way without affecting the sum.
+The second statement relates to \sword{rearrangements}\index{rearrangements of series}\index{series!rearrangements} of series. When dealing with a finite set of numbers, the sum of the numbers does not depend on the order which they are added. (So $1+2+3 = 3+1+2$.) One may be surprised to find out that when dealing with an infinite set of numbers, the same statement does not always hold true: some infinite lists of numbers may be rearranged in different orders to achieve different sums. The theorem states that the terms of an absolutely convergent series can be rearranged in any way without affecting the sum.
 
 \theorem{thm:abs_convergence}{Absolute Convergence Theorem}
 {Let $\ds \sum_{n=1}^\infty a_n$ be a series that converges absolutely.
+\index{convergence!absolute}\index{Absolute Convergence Theorem}\index{series!Absolute Convergence Theorem}\index{rearrangements of series}\index{series!rearrangements}
 \begin{enumerate}
 	\item $\ds \sum_{n=1}^\infty a_n$ converges.
 	
@@ -156,7 +161,7 @@ The second statement relates to \sword{rearrangements} of series. When dealing w
 \end{enumerate}
 }
 
-In Example \ref{ex_alt_series2}, we determined the series in part 2 converges absolutely. Theorem \ref{thm:abs_convergence} tells us the series converges (which we could also determine using the Alternate Series Test).
+In Example \ref{ex_alt_series2}, we determined the series in part 2 converges absolutely. Theorem \ref{thm:abs_convergence} tells us the series converges (which we could also determine using the Alternating Series Test).
 
 The theorem states that rearranging the terms of an absolutely convergent series does not affect its sum. This implies that perhaps the sum of a conditionally convergent series can change based on the arrangement of terms. Indeed, it can. The Riemann Rearrangement Theorem (named after Bernhard Riemann) states that any conditionally convergent series can have its terms rearranged so that the sum is any desired value, including $\infty$!
 
@@ -170,13 +175,15 @@ $$
 $$
 (Convince yourself that these are exactly the same numbers as appear in the Alternating Harmonic Series, just in a different order.) Now group some terms and simplify:
 \begin{align*}
-\left(1-\frac12\right)-\frac14+\left(\frac13-\frac16\right)-\frac18+\left(\frac15-\frac1{10}\right)-\frac1{12}\cdots & \\
-\frac12-\frac14+\frac16-\frac18+\frac1{10}\cdots & \\
-\frac12\left(1-\frac12+\frac13-\frac14+\frac15+\cdots\right) & = \frac12\ln 2.
+\left(1-\frac12\right)-\frac14+\left(\frac13-\frac16\right)-\frac18+\left(\frac15-\frac1{10}\right)-\frac1{12}+\cdots &= \\
+\frac12-\frac14+\frac16-\frac18+\frac1{10}-\frac{1}{12}+\cdots &= \\
+\frac12\left(1-\frac12+\frac13-\frac14+\frac15-\frac16+\cdots\right) & = \frac12\ln 2.
 \end{align*}
 
-By rearranging the terms of the series, we have arrived at a different sum. (One could \textit{try} to argue that the Alternating Harmonic Series does not actually converge to $\ln 2$, because rearranging the terms of the series \emph{shouldn't} change the sum. However, the Alternating Series Test proves this series converges to $L$, for some number $L$, and if the rearrangement does not change the sum, then $L = L/2$, implying $L=0$. But the Alternating Series Approximation Theorem quickly shows that $L>0$. The only conclusion is that the rearrangement \emph{did} change the sum.)
+By rearranging the terms of the series, we have arrived at a different sum! (One could \textit{try} to argue that the Alternating Harmonic Series does not actually converge to $\ln 2$, because rearranging the terms of the series \emph{shouldn't} change the sum. However, the Alternating Series Test proves this series converges to $L$, for some number $L$, and if the rearrangement does not change the sum, then $L = L/2$, implying $L=0$. But the Alternating Series Approximation Theorem quickly shows that $L>0$. The only conclusion is that the rearrangement \emph{did} change the sum.) This is an incredible result.\\
+
+We end here our study of tests to determine convergence. The back cover of this text contains a table summarizing the tests that one may find useful. 
 
 While series are worthy of study in and of themselves, our ultimate goal within calculus is the study of Power Series, which we will consider in the next section. We will use power series to create functions where the output is the result of an infinite summation. %A special type of power series is something called a Taylor Series; in the context of Taylor Series we will finally show the Alternating Harmonic Series converges to $\ln 2$.
 
-\clearpage
+\printexercises{exercises/08_05_exercises}

@@ -5,7 +5,7 @@
 
 The previous section defined the derivative of a function and gave examples of how to compute it using its definition (i.e., using limits). The section also started with a brief motivation for this definition, that is, finding the instantaneous velocity of a falling object given its position function. The next section will give us more accessible tools for computing the derivative, tools that are easier to use than repeated use of limits.
 
-This section falls in between the ``What is the definition of the derivative?'' and ``How do I compute the derivative?'' sections. Here we are concerned with ``What does the derivative mean?'', or perhaps, when read with the right emphasis, ``What \textit{is} the derivative?'' We offer two interconnected interpretations of the derivative, hopefully explaining why we care about it and why it is worthy of study.\\
+This section falls in between the ``What is the definition of the derivative?'' and ``How do I compute the derivative?'' sections. Here we are concerned with ``What does the derivative mean?'', or perhaps, when read with the right emphasis, ``What \textit{is} the derivative?'' We offer two interconnected interpretations of the derivative, hopefully explaining why we care about it and why it is worthy of study.\index{derivative!interpretation}\\
 
 \vskip \baselineskip
 \noindent\textbf{\large Interpretation of the Derivative \#1: Instantaneous Rate of Change}\\
@@ -53,10 +53,10 @@ The previous examples made use of an important approximation tool that we first 
 
 One of the most fundamental applications of the derivative is the study of motion. Let $s(t)$ be a position function, where $t$ is time and $s(t)$ is  distance. For instance, $s$ could measure the height of a projectile or the distance an object has traveled. 
 
-Let's let $s(t)$ measure the distance traveled, in feet, of an object after $t$ seconds of travel. Then $s'(t)$ has units ``feet per second,'' and $s'(t)$ measures the \textit{instantaneous rate of distance change} -- it measures \textbf{velocity}. 
+Let's let $s(t)$ measure the distance traveled, in feet, of an object after $t$ seconds of travel. Then $s'(t)$ has units ``feet per second,'' and $s'(t)$ measures the \textit{instantaneous rate of distance change} -- it measures \textbf{velocity}.\index{velocity} 
 
 Now consider $v(t)$, a velocity function. That is, at time $t$, $v(t)$ gives the velocity of an object. The derivative of $v$, $v'(t)$, gives the \textit{instantaneous rate of velocity change} --
-\textbf{acceleration}. (We often think of acceleration in terms of cars: a car may ``go from 0 to 60 in 4.8 seconds.'' This is an \textit{average} acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of $v'(t)$) are ``feet per second per second,'' or $($ft/s$)$/s. We often shorten this to ``feet per second squared,'' or ft/s$^2$, but this tends to obscure the meaning of the units.
+\textbf{acceleration}. (We often think of acceleration in terms of cars: a car may ``go from 0 to 60 in 4.8 seconds.'' This is an \textit{average} acceleration, a measurement of how quickly the velocity changed.) If velocity is measured in feet per second, and time is measured in seconds, then the units of acceleration (i.e., the units of $v'(t)$) are ``feet per second per second,'' or $($ft/s$)$/s. We often shorten this to ``feet per second squared,'' or ft/s$^2$, but this tends to obscure the meaning of the units.\index{acceleration}
 
 Perhaps the most well known acceleration is that of gravity. In this text, we use $g=32$ft/s$^2$ or $g=9.8$m/s$^2$. What do these numbers mean?
 
@@ -65,10 +65,10 @@ A constant acceleration of 32$($ft/s$)$/s means that the velocity changes by 32f
 These ideas are so important we write them out as a Key Idea.
 
 \keyidea{idea:motion}{The Derivative and Motion}
-{\begin{itemize}
+{\begin{enumerate}
 	\item Let $s(t)$ be the position function of an object. Then $s'(t)$ is the velocity function of the object.
 	\item	Let $v(t)$ be the velocity function of an object. Then $v'(t)$ is the acceleration function of the object.
-\end{itemize}
+\end{enumerate}\index{derivative!motion}\index{derivative!velocity}\index{derivative!acceleration}
 }
 
 We now consider the second interpretation of the derivative given in this section. This interpretation is not independent from the first by any means; many of the same concepts will be stressed, just from a slightly different perspective.
@@ -95,11 +95,11 @@ With practice, one can fairly effectively sketch tangent lines to a curve at a p
 
 \example{ex_der_meaning4}{Understanding the graph of the derivative}{
 Consider the graph of $f(x)$ (in blue)  and its derivative, $\fp(x)$ (in red) in Figure \ref{fig:fwithderiv}. %f[x_] := InterpolatingPolynomial[{-1, 0, 2}, x]*4,MAKE BIGGER, PLOT THIS WITH F' NO INTEGRATE,IDIOT
- Use these graphs to find the slopes of the tangent lines to $f$ at $x=1$, $x=2$, and $x=3$.
+ Use these graphs to find the slopes of the tangent lines to the graph of $f$ at $x=1$, $x=2$, and $x=3$.
  
  \mfigure{.8}{Graphs of $f$ and $\fp$ in Example \ref{ex_der_meaning4}.}{fig:fwithderiv}{figures/figfwithderiv}
  }%Because of interp poly, we have f' = -1, 0, 2 respectively
-{To find the appropriate slopes of tangent lines to $f$, we need to look at the corresponding values of $\fp$.
+{To find the appropriate slopes of tangent lines to the graph of $f$, we need to look at the corresponding values of $\fp$.
 
 The slope of the tangent line to $f$ at $x=1$ is $\fp(1)$; this looks to be about $-1$. %It also appears that 
 

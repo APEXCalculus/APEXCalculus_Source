@@ -14,7 +14,7 @@ tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=m
 
 %\addplot [thick,{\colorone},smooth,domain=-.5:2.5] {(x+1)^2};
 \addplot [thick, {\colorone},smooth,domain=-80:-5] ({2*cos(x)-.3},{2*sin(x)+2.3});
-\addplot [dashed] coordinates { ({2*cos(-75)-.3},{2*sin(-75)+2.3}) ({2*cos(-10)-.3},{2*sin(-10)+2.3})};
+\addplot [dashed,thick] coordinates { ({2*cos(-75)-.3},{2*sin(-75)+2.3}) ({2*cos(-10)-.3},{2*sin(-10)+2.3})};
 \filldraw (axis cs:.218,0.368) node [below ] {\tiny $(a,f(a))$} circle (1pt);
 \filldraw (axis cs:1.67,1.95) node [ left] {\tiny $(b,f(b))$} circle (1pt);
 \end{axis}

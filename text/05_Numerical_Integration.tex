@@ -1,6 +1,6 @@
 \section{Numerical Integration}\label{sec:numerical_integration}
 
-The Fundamental Theorem of Calculus gives a concrete technique for finding the exact value of a definite integral. That technique is based on computing antiderivatives. Despite the power of this theorem, there are still situations where we must \textit{approximate} the value of the definite integral instead of finding its exact value. The first situation we explore is where we \textit{cannot} compute the antiderivative of the integrand. The second case is when we actually do not know the integrand, but only its value when evaluated at certain points.\\ %While we handle both situations in the same way, we address them separately here.\\
+The Fundamental Theorem of Calculus gives a concrete technique for finding the exact value of a definite integral. That technique is based on computing antiderivatives. Despite the power of this theorem, there are still situations where we must \textit{approximate} the value of the definite integral instead of finding its exact value. The first situation we explore is where we \textit{cannot} compute the antiderivative of the integrand. The second case is when we actually do not know the integrand, but only its value when evaluated at certain points.\index{integration!numerical}\index{numerical integration}\\ %While we handle both situations in the same way, we address them separately here.\\
 
 %\noindent\textbf{\large An Antiderivative Cannot Be Computed}
 %\vskip\baselineskip
@@ -8,7 +8,7 @@ The Fundamental Theorem of Calculus gives a concrete technique for finding the e
 %Section \ref{sec:antider} introduced antiderivatives and the indefinite integral; given a function, its indefinite integral is a set of \textit{functions}. In Section \ref{sec:def_int}, we learned about definite integrals: given a function and two bounds, the definite integral computes the ``area under the curve,'' i.e., a \textit{number}. The Fundamental Theorem of Calculus states that these two concepts are related: we use antiderivatives to evaluate definite integrals. Definite integrals have immense importance in mathematics, science and engineering. We will explore some of these applications in Chapter \ref{SEVEN}. 
 %
 %This method of evaluating definite integrals has one significant shortcoming: not all functions have an antiderivative expressible in terms of elementary functions.  (Elementary functions are combinations of polynomials, $n^{\text{th}}$ root, rational, exponential, logarithmic and trigonometric functions.). To be clear, we are not claiming that the antiderivatives are just \textit{hard} to find; rather, we are saying that we \textit{cannot} write them out using functions that we normally use. 
-An \textbf{elementary function} is any function that is a combination of polynomials, $n^{\text{th}}$ roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions that we cannot compute the antiderivative of. For example, the following functions do not have antiderivatives that we can express with elementary functions:
+An \sword{elementary function}\index{elementary function} is any function that is a combination of polynomials, $n^{\text{th}}$ roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions that we cannot compute an antiderivative of. For example, the following functions do not have antiderivatives that we can express with elementary functions:
 
 $$
 e^{-x^2}, \quad \sin(x^3)\quad \text{and} \quad \frac{\sin x}{x}.
@@ -31,7 +31,7 @@ as pictured in Figure \ref{fig:numerical1}.
 \vskip\baselineskip
 \noindent\textbf{\large The Left and Right Hand Rule Methods}\\
 
-In Section \ref{sec:riemann} we addressed the problem of evaluating definite integrals by approximating the area under the curve using rectangles. We revisit those ideas here before introducing other methods of approximating definite integrals. 
+In Section \ref{sec:riemann} we addressed the problem of evaluating definite integrals by approximating the area under the curve using rectangles. We revisit those ideas here before introducing other methods of approximating definite integrals. \index{numerical integration!Left/Right Hand Rule}\index{Right Hand Rule}\index{Left Hand Rule}\index{integration!numerical!Left/Right Hand Rule}
 
 We start with a review of notation. Let $f$ be a continuous function on the interval $[a,b]$. We wish to approximate $\ds \int_a^b f(x)\ dx$. We partition $[a,b]$ into $n$ equally spaced subintervals, each of length $\ds\dx = \frac{b-a}{n}$. The endpoints of these subintervals are labeled as $$x_1=a,\ x_2 = a+\dx,\ x_3 = a+ 2\dx,\ \ldots,\ x_i = a+(i-1)\dx,\ \ldots,\ x_{n+1} = b.$$
 
@@ -105,7 +105,7 @@ The actual answer, accurate to 3 places after the decimal, is 0.460. Our approxi
 \noindent\textbf{\large The Trapezoidal Rule}
 \vskip\baselineskip
 
-In Example \ref{ex_num1} we approximated the value of $\ds \int_0^1 e^{-x^2}\ dx$ with 5 rectangles of equal width. Figure \ref{fig:num1} shows the rectangles used in the Left and Right Hand Rules. These graphs clearly show that rectangles do not match the shape of the graph all that well, and that accurate approximations will only come by using lots of rectangles. 
+In Example \ref{ex_num1} we approximated the value of $\ds \int_0^1 e^{-x^2}\ dx$ with 5 rectangles of equal width. Figure \ref{fig:num1} shows the rectangles used in the Left and Right Hand Rules. These graphs clearly show that rectangles do not match the shape of the graph all that well, and that accurate approximations will only come by using lots of rectangles. \index{Trapezoidal Rule}\index{numerical integration!Trapezoidal Rule}\index{integration!numerical!Trapezoidal Rule}
 
 Instead of using rectangles to approximate the area, we can instead use \textit{trapezoids.} In Figure \ref{fig:num3a}, we show the region under $f(x) = e^{-x^2}$ on $[0,1]$ approximated with 5 trapezoids of equal width; the top ``corners'' of each trapezoid lies on the graph of $f(x)$. It is clear from this figure that these trapezoids more accurately approximate the area under $f$ and hence should give a better approximation of $\int_0^1 e^{-x^2}\ dx$. (In fact, these trapezoids seem to give a \textit{great} approximation of the area!)
 
@@ -118,7 +118,7 @@ Use 5 trapezoids of equal width to approximate $\ds \int_0^1e^{-x^2}\ dx$.}
 {To compute the areas of the 5 trapezoids in Figure \ref{fig:num3a}, it will again be useful to create a table of values as shown in Figure \ref{fig:num3b}.
 
 \mfigure{.55}{The area of a trapezoid.}{fig:trapezoid}{figures/figtrapezoid}
-\mtable{.3}{A table of values of $e^{-x^2}$.}{fig:num3b}{%
+\mtable{.4}{A table of values of $e^{-x^2}$.}{fig:num3b}{%
 \begin{tabular}{cc}
 $x_i$ & $e^{-x_i^2}$ \\ \hline
 0 & 1\\
@@ -162,7 +162,7 @@ Revisit Example \ref{ex_num2}
 and approximate $\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin (x^3)\ dx$ using the Trapezoidal Rule and 10 equally spaced subintervals.}
 {We refer back to Figure \ref{fig:num2a} for the table of values of $\sin(x^3)$. Recall that $\dx = 3\pi/40 \approx 0.236$. Thus we have:\small
 \begin{align*}
-\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx &\approx \frac{0.236}{2}\Big[-0.466 + 2\big(-0.165+(-0.031)+\ldots+0.971+0.69\big)+(-0.67)\Big]\\
+\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx &\approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+0.971+0.69\Big)+(-0.67)\Big]\\
 			&= 0.4275.
 \end{align*}
 \normalsize
@@ -180,7 +180,7 @@ So we have a progression: we start by approximating $f$ with a constant function
 \noindent\textbf{\large Simpson's Rule}
 \vskip\baselineskip
 
-Given one point, we can create a constant function that goes through that point. Given two points, we can create a linear function that goes through those points. Given three points, we can create a quadratic function that goes through those three points (given that no two have the same $x$--value).
+Given one point, we can create a constant function that goes through that point. Given two points, we can create a linear function that goes through those points. Given three points, we can create a quadratic function that goes through those three points (given that no two have the same $x$--value).\index{Simpson's Rule}\index{numerical integration!Simpson's Rule}\index{integration!numerical!Simpson's Rule}
 
 Consider three points $(x_1,y_1)$, $(x_2,y_2)$ and $(x_3,y_3)$ whose $x$--values are equally spaced and $x_1<x_2<x_3$. Let $f$ be the quadratic function that goes through these three points. It is not hard to show that 
 \begin{equation}
@@ -266,7 +266,9 @@ We summarize the key concepts of this section thus far in the following Key Idea
 \noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -120pt}%
 \noindent\begin{minipage}{\specialboxlength}
 \keyidea{idea:numerical}{Numerical Integration}
-{Let $f$ be a continuous function on $[a,b]$, let $n$ be a positive integer, and let $\ds\dx = \frac{b-a}{n}$. 
+{Let $f$ be a continuous function on $[a,b]$, let $n$ be a positive integer, and let $\ds\dx = \frac{b-a}{n}$. \index{integration!numerical!Left/Right Hand Rule}\index{integration!numerical!Trapezoidal Rule}\index{integration!numerical!Simpson's Rule}
+\index{Left/Right Hand Rule}\index{Trapezoidal Rule}\index{Simpson's Rule}
+\index{numerical integration!Left/Right Hand Rule}\index{numerical integration!Trapezoidal Rule}\index{numerical integration!Simpson's Rule}
 
 Set $x_1=a$, $x_2 = a+\dx$, $\ldots$, $x_i = a+(i-1)\dx$, $x_{n+1}=b$.
 
@@ -294,7 +296,8 @@ These are good questions, and their answers are educational. In the examples, \t
 
 Since the exact answer cannot be found, approximation still has its place. How are we to tell if the approximation is any good?
 
-Trial and error provides one way. (No, this does not refer to seeing whether or not the bridge collapses.) Using technology, make an approximation with, say, 10, 100, and 200 subintervals. This likely will not take much time at all, and a trend should emerge. If a trend does not emerge, try using yet more subintervals. Keep in mind that trial and error is never foolproof; you might stumble upon a problem in which a trend will not emerge.
+``Trial and error'' provides one way. %(No, this does not refer to seeing whether or not the bridge collapses.) 
+Using technology, make an approximation with, say, 10, 100, and 200 subintervals. This likely will not take much time at all, and a trend should emerge. If a trend does not emerge, try using yet more subintervals. Keep in mind that trial and error is never foolproof; you might stumble upon a problem in which a trend will not emerge.
 
 A second method is to use Error Analysis. While the details are beyond the scope of this text, there are some formulas that give \textit{bounds} for how good your approximation will be. For instance, the formula might state that the approximation is within 0.1 of the correct answer. If the approximation is 1.58, then one knows that the correct answer is between 1.48 and 1.68. By using lots of subintervals, one can get an approximation as accurate as one likes. Theorem \ref{thm:numerical_error} states what these bounds are.
 
@@ -302,7 +305,9 @@ A second method is to use Error Analysis. While the details are beyond the scope
 \ifthenelse{\isodd{\thepage}}{}{\hskip -65pt}%
 \noindent\begin{minipage}{\specialboxlength}
 \theorem{thm:numerical_error}{Error Bounds in the Trapezoidal Rule and Simpson's Rule}%
-{\begin{itemize}
+{\begin{enumerate}\index{integration!numerical!Trapezoidal Rule}\index{integration!numerical!Simpson's Rule}
+\index{Trapezoidal Rule!error bounds}\index{Simpson's Rule!error bounds}
+\index{numerical integration!Trapezoidal Rule!error bounds}\index{numerical integration!Simpson's Rule!error bounds}
 \item	Let $E_T$ be the error in approximating $\ds \int_a^b f(x)\ dx$ using the Trapezoidal Rule. 
 
 If $f$ has a continuous 2$^\text{nd}$ derivative on $[a,b]$ and $M$ is any upper bound of $\big|\fpp(x)\big|$ on $[a,b]$, then
@@ -312,7 +317,7 @@ $$\ds E_T \leq \frac{(b-a)^3}{12n^2}M.$$
 
 If $f$ has a continuous 4$^\text{th}$ derivative on $[a,b]$ and $M$ is any upper bound of $\big|f\,^{(4)}\big|$ on $[a,b]$, then
 $$E_S \leq \frac{(b-a)^5}{180n^4}M.$$
-\end{itemize}
+\end{enumerate}
 }
 \end{minipage}
 \restoreboxwidth
@@ -363,7 +368,7 @@ One of the authors drove his daughter home from school while she recorded their 
 
 The most difficult aspect of this problem is converting the given data into the form we need it to be in. The speed is measured in miles per hour, whereas the time is measured in 30 second increments. 
 
-\mtable{.55}{Speed data collected at 30 second intervals for Example \ref{ex_num8}.}{fig:num8}{%
+\mtable{.45}{Speed data collected at 30 second intervals for Example \ref{ex_num8}.}{fig:num8}{%
 \begin{tabular}{cc}
 Time & \parbox{30pt}{\centering Speed \\ (mph)}\rule[-9pt]{0pt}{5pt} \\ \hline
 0 & 0 \\

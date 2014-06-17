@@ -8,6 +8,7 @@ We begin with a definition.
 
 \definition{def:direct_deriv}{Directional Derivatives}
 {Let $z=f(x,y)$ be continuous on an open set $S$ and let $\vec u = \la u_1,u_2\ra$ be a unit vector. For all points $(x,y)$, the \textbf{directional derivative of $f$ at $(x,y)$ in the direction of $\vec u$} is
+\index{derivative!directional}\index{directional derivative}
 $$D_{\vec u\,}f(x,y) = \lim_{h\to 0} \frac{f(x+hu_1,y+hu_2) - f(x,y)}h.$$
 }
 
@@ -18,6 +19,7 @@ The partial derivatives $f_x$ and $f_y$ are defined with similar limits, but onl
 
 \theorem{thm:direct_deriv1}{Directional Derivatives}
 {Let $z=f(x,y)$ be differentiable on an open set $S$ containing $(x_0,y_0)$, and let $\vec u = \la u_1,u_2\ra$ be a unit vector. The directional derivative of $f$ at $(x_0,y_0)$ in the direction of $\vec u$ is
+\index{derivative!directional}\index{directional derivative}
 $$D_{\vec u\,}f(x_0,y_0)=f_x(x_0,y_0)u_1 + f_y(x_0,y_0)u_2.$$
 }
 
@@ -52,11 +54,12 @@ The surface is plotted in Figure \ref{fig:direct1}, where the point $P=(1,2)$ is
 As we study directional derivatives, it will help to make an important connection between the unit vector $\vec u = \la u_1,u_2\ra$ that describes the direction and the partial derivatives $f_x$ and $f_y$. We start with a definition and follow this with a Key Idea.
 
 \definition{def:gradient}{Gradient}
-{Let $z=f(x,y)$ be differentiable on an open set $S$ that contains the point $(x_0,y_0)$. 
-\begin{itemize}
+{Let $z=f(x,y)$ be differentiable on an open set $S$ that contains the point $(x_0,y_0)$.
+\index{gradient} 
+\begin{enumerate}
 	\item The \textbf{gradient of $f$} is $\nabla f(x,y) = \la f_x(x,y),f_y(x,y)\ra$.
 	\item The \textbf{gradient of $f$ at $(x_0,y_0)$ is $\nabla f(x_0,y_0) = \la f_x(x_0,y_0),f_y(x_0,y_0)\ra$.}
-\end{itemize}
+\end{enumerate}
 }
 
 \mnote{.7}{\textbf{Note:} The symbol ``$\nabla$'' is named ``nabla,'' derived from the Greek name of a Jewish harp. Oddly enough, in mathematics the expression $\nabla f$ is pronounced ``del $f$.''}
@@ -66,6 +69,7 @@ To simplify notation, we often express the gradient as $\nabla f = \la f_x, f_y\
 \keyidea{idea:gradient_direct}{The Gradient and Directional Derivatives}
 {%Let $z=f(x,y)$ be differentiable on an open set $S$ and let $\vec u$ be a unit vector. 
 The directional derivative of $z=f(x,y)$ in the direction of $\vec u$ is
+\index{gradient}\index{directional derivative}\index{derivative!directional}
 $$D_{\vec u\,}f = \nabla f\cdot \vec u.$$
 }
 
@@ -73,7 +77,7 @@ The properties of the dot product previously studied allow us to investigate the
 \begin{enumerate}
 	\item In what direction(s) is the change in $z$ the greatest (i.e., the ``steepest uphill'')?
 	\item In what direction(s) is the change in $z$ the least (i.e.,  the ``steepest downhill'')?
-	\item In what direction(s) is the change in $z$ 0?
+	\item In what direction(s) is there no change in $z$?
 \end{enumerate}
 
 Using the key property of the dot product, we have
@@ -81,14 +85,14 @@ Using the key property of the dot product, we have
 where $\theta$ is the angle between the gradient and $\vec u$. (Since $\vec u$ is a unit vector, $\vnorm{u} = 1$.) This equation allows us to answer the three questions stated previously.
 
 \begin{enumerate}
-	\item Equation \ref{eq:gradient} is maximized when $\cos \theta =1$, i.e., when the gradient and $\vec u$ have the same direction.
-	\item	Equation \ref{eq:gradient} is minimized when $\cos \theta = -1$, i.e., when the gradient and $\vec u$ have opposite directions.
-	\item Equation \ref{eq:gradient} is 0 when $\cos \theta = 0$, i.e., when the gradient and $\vec u$ are orthogonal to each other. 
+	\item Equation \ref{eq:gradient} is maximized when $\cos \theta =1$, i.e., when the gradient and $\vec u$ have the same direction; the gradient points in the direction of greatest $z$ change.
+	\item	Equation \ref{eq:gradient} is minimized when $\cos \theta = -1$, i.e., when the gradient and $\vec u$ have opposite directions; the gradient points in the opposite direction of the least $z$ change.
+	\item Equation \ref{eq:gradient} is 0 when $\cos \theta = 0$, i.e., when the gradient and $\vec u$ are orthogonal to each other; the gradient is orthogonal to directions of no $z$ change. 
 \end{enumerate}
 
 This result is rather amazing. Once again imagine standing in a rolling meadow and face the  direction that leads you steepest uphill. Then the direction that leads steepest downhill is directly behind you, and side--stepping either left or right (i.e., moving perpendicularly to the direction you face) does not change your elevation at all.
 
-Recall that a level curve is defined by a path in the $x$-$y$ plane along which the $z$-values of a function do not change. This is analogous to walking along a path in the rolling meadow along which the elevation does not change. The gradient at a point is orthogonal to the direction where the $z$ does not change; i.e., the gradient is orthogonal to level curves.
+Recall that a level curve is defined by a path in the $x$-$y$ plane along which the $z$-values of a function do not change; the directional derivative in the direction of a level curve is 0. This is analogous to walking along a path in the rolling meadow along which the elevation does not change. The gradient at a point is orthogonal to the direction where the $z$ does not change; i.e., the gradient is orthogonal to level curves.
 
 We restate these ideas in a theorem, then use them in an example.
 
@@ -98,6 +102,7 @@ We restate these ideas in a theorem, then use them in an example.
 	\item The maximum value of $D_{\vec u\,}f$ is $\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla f$.
 	\item The minimum value of $D_{\vec u\,}f$ is $-\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla f$.
 	\item $D_{\vec u\,}f = 0$ when $\nabla f$ and $\vec u$ are orthogonal.
+	\index{gradient}\index{directional derivative}\index{derivative!directional}\index{level curves}\index{gradient!and level curves}
 \end{enumerate}
 }
 
@@ -152,6 +157,7 @@ This implies
 $$-2cx = \frac{dx}{dt} \quad \text{and} \quad  -4cy =\frac{dy}{dt}, \text{ i.e.,}$$
 $$c = -\frac{1}{2x}\frac{dx}{dt} \quad \text{and} \quad  c =-\frac{1}{4y}\frac{dy}{dt}.$$
 As $c$ equals both expressions, we have
+\drawexampleline%
 $$\frac{1}{2x}\frac{dx}{dt} =\frac{1}{4y}\frac{dy}{dt}.$$
 To find an explicit relationship between $x$ and $y$, we can integrate both sides with respect to $t$. Recall from our study of differentials that $\ds \frac{dx}{dt}dt = dx$. Thus:
 \begin{align*}
@@ -179,17 +185,18 @@ Thus the water follows the curve $y=x^2/4$ in the $x$-$y$ plane. The surface and
 The concepts of directional derivatives and the gradient are easily extended to three (and more) variables. We combine the concepts behind Definitions \ref{def:direct_deriv} and \ref{def:gradient} and Theorem \ref{thm:direct_deriv1} into one set of definitions.
 
 \definition{def:direct_deriv3}{Directional Derivatives and Gradient with Three Variables}
-{Let $w=F(x,y,z)$ be differentiable on an open ball $B$ and let $\vec u $ be a unit vector in $\mathbb{R}^3$.
-\begin{itemize}
+{Let $w=F(x,y,z)$ be differentiable on an open ball $B$ and let $\vec u $ be a unit vector in $\mathbb{R}^3$.\index{gradient}\index{directional derivative}\index{derivative!directional}
+\begin{enumerate}
 	\item	The \textbf{gradient} of $F$ is $\nabla F = \la F_x,F_y,F_z\ra$.
 	\item The \textbf{directional derivative of $F$ in the direction of $\vec u$} is $$D_{\vec u\,}F=\nabla F\cdot \vec u.$$
-\end{itemize}
+\end{enumerate}
 }
 
 The same properties of the gradient given in Theorem \ref{thm:gradient}, when $f$ is a function of two variables, hold for $F$, a function of three variables.
 
+\enlargethispage{2\baselineskip}
 \theorem{thm:gradient3}{The Gradient and Directional Derivatives with Three Variables}
-{Let $w=F(x,y,z)$ be differentiable on an open ball $B$, let $\nabla F$ be the gradient of $F$, and let $\vec u$ be a unit vector.
+{Let $w=F(x,y,z)$ be differentiable on an open ball $B$, let $\nabla F$ be the gradient of $F$, and let $\vec u$ be a unit vector.\index{gradient}\index{directional derivative}\index{derivative!directional}
 \begin{enumerate}
 	\item The maximum value of $D_{\vec u\,}F$ is $\norm{\nabla F}$, obtained when the angle between $\nabla F$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla F$.
 	\item The minimum value of $D_{\vec u\,}F$ is $-\norm{\nabla F}$, obtained when the angle between $\nabla F$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla F$.

@@ -1,10 +1,10 @@
 \section{Arc Length and Surface Area}\label{sec:arc_length}
 
 In previous sections we have used integration to answer the following questions:
-	\begin{itemize}
+	\begin{enumerate}
 	\item		Given a region, what is its area?
 	\item		Given a solid, what is its volume?
-	\end{itemize}
+	\end{enumerate}
 	
 In this section, we address a related question: Given a curve, what is its length? This is often referred to as \textbf{arc length}. 
 
@@ -51,6 +51,7 @@ In the above expression factor out a $\dx_i^2$ term:
 
 \keyidea{idea:arclength}{Arc Length}
 {Let $f$ be differentiable on an open interval containing $[a,b]$, where $\fp$ is also continuous on $[a,b]$. Then the arc length of $f$ from $x=a$ to $x=b$ is
+\index{integration!arc length}\index{arc length}
 $$L = \int_a^b \sqrt{1+\fp(x)^2}\ dx.$$
 }
 
@@ -144,13 +145,13 @@ $$\text{Surface Area}\approx \sum_{i=1}^n 2\pi f(d_i)\sqrt{1+\fp(c_i)^2}\dx_i,$$
 which is a Riemann Sum. Taking the limit as the subinterval lengths go to zero gives us the exact surface area, given in the following Key Idea.
 
 \keyidea{idea:surface_area}{Surface Area of a Solid of Revolution}
-{Let $f$ be differentiable on an open interval containing $[a,b]$ where $\fp$ is also continuous on $[a,b]$. 
-	\begin{itemize}
+{Let $f$ be differentiable on an open interval containing $[a,b]$ where $\fp$ is also continuous on $[a,b]$. \index{integration!surface area}\index{surface area!solid of revolution}
+	\begin{enumerate}
 	\item	The surface area of the solid formed by revolving the graph of $y=f(x)$, where $f(x)\geq0$, about the $x$-axis is
 	$$\text{Surface Area} = 2\pi\int_a^b f(x)\sqrt{1+\fp(x)^2}\ dx.$$
 	\item	The surface area of the solid formed by revolving the graph of $y=f(x)$ about the $y$-axis, where $a,b\geq0$, is
 	$$\text{Surface Area} = 2\pi\int_a^b x\sqrt{1+\fp(x)^2}\ dx.$$
-	\end{itemize}
+	\end{enumerate}
 }
 
 (When revolving $y=f(x)$ about the $y$-axis, the radii of the resulting frustum are $x_i$ and $x_{i+1}$; their average value is simply the midpoint of the interval. In the limit, this midpoint is just $x$. This gives the second part of Key Idea \ref{idea:surface_area}.)\\
@@ -218,8 +219,7 @@ Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,
 This last example is a famous mathematical ``paradox.''\\
 \clearpage
 
-\example{ex_gabriel}{The surface area and volume of Gabriel's Horn}{ \\
-Consider the solid formed by revolving $y=1/x$ about the $x$-axis on $[1,\infty)$. Find the volume and surface area of this solid. (This shape, as graphed in Figure \ref{fig:gabriel}, is known as ``Gabriel's Horn'' since it looks like a very long horn that only a supernatural person, such as an angel, could play.)
+\example{ex_gabriel}{The surface area and volume of Gabriel's Horn}{Consider the solid formed by revolving $y=1/x$ about the $x$-axis on $[1,\infty)$. Find the volume and surface area of this solid. (This shape, as graphed in Figure \ref{fig:gabriel}, is known as ``Gabriel's Horn'' since it looks like a very long horn that only a supernatural person, such as an angel, could play.)\index{Gabriel's Horn}
 \mfigure{.75}{A graph of Gabriel's Horn.}{fig:gabriel}{figures/figgabriel}
 }
 {To compute the volume it is natural to use the Disk Method. We have:

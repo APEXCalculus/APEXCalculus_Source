@@ -4,19 +4,20 @@ Given a function $z=f(x,y)$, we are often interested in points where $z$ takes o
 
 \definition{def:multi_extrema}{Relative and Absolute Extrema}
 {Let $z=f(x,y)$ be defined on a set $S$ containing the point $P=(x_0,y_0)$.
-\begin{itemize}
+\index{maximum!relative/local}\index{minimum!relative/local}\index{extrema!relative}\index{extrema!absolute}\index{maximum!absolute}\index{minimum!absolute}
+\begin{enumerate}
 	\item If there is an open disk $D$ containing $P$ such that $f(x_0,y_0) \geq f(x,y)$ for all $(x,y)$ in $D$, then $f$ has a \textbf{relative maximum} at $P$; if $f(x_0,y_0) \leq f(x,y)$ for all $(x,y)$ in $D$, then $f$ has a \textbf{relative minimum} at $P$.
 	
 	\item	If $f(x_0,y_0)\geq f(x,y)$ for all $(x,y)$ in $S$, then $f$ has an \textbf{absolute maximum} at $P$; if $f(x_0,y_0)\leq f(x,y)$ for all $(x,y)$ in $S$, then $f$ has an \textbf{absolute minimum} at $P$.
 	
 	\item		If $f$ has a relative maximum or minimum at $P$, then $f$ has a \textbf{relative extrema} at $P$; if $f$ has an absolute maximum or minimum at $P$, then $f$ has a \textbf{absolute extrema} at $P$.
-\end{itemize}
+\end{enumerate}
 }
 
 If $f$ has a relative or absolute maximum at $P=(x_0,y_0)$, it means every curve on the surface of $f$ through $P$ will also have a relative or absolute maximum at $P$. Recalling what we learned in Section \ref{sec:extreme_values}, the slopes of the tangent lines to these curves at $P$ must be 0 or undefined. Since directional derivatives are computed using $f_x$ and $f_y$, we are led to the following definition and theorem.
 
 \definition{def:multi_critical_point}{Critical Point}
-{Let $z = f(x,y)$ be continuous on an open set $S$. A \textbf{critical point} $P=(x_0,y_0)$ of $f$ is a point in $S$ such that 
+{Let $z = f(x,y)$ be continuous on an open set $S$. A \textbf{critical point} $P=(x_0,y_0)$ of $f$ is a point in $S$ such that \index{critical point}
 \begin{itemize}
 	\item $f_x(x_0,y_0) = 0$ and $f_y(x_0,y_0) = 0$, or
 	\item	$f_x(x_0,y_0)$ and/or $f_y(x_0,y_0)$ is undefined.
@@ -24,7 +25,7 @@ If $f$ has a relative or absolute maximum at $P=(x_0,y_0)$, it means every curve
 }
 
 \theorem{thm:multi_critical_point}{Critical Points and Relative Extrema}
-{Let $z=f(x,y)$ be defined on an open set $S$ containing $P=(x_0,y_0)$. If $f$ has a relative extrema at $P$, then $P$ is a critical point of $f$.
+{Let $z=f(x,y)$ be defined on an open set $S$ containing $P=(x_0,y_0)$. If $f$ has a relative extrema at $P$, then $P$ is a critical point of $f$.\index{extrema!relative}\index{critical point}
 }
 
 Therefore, to find relative extrema, we find the critical points of $f$ and determine which correspond to relative maxima, relative minima, or neither. The following examples demonstrate this process.\\
@@ -72,6 +73,7 @@ If one walks parallel to the $y$-axis towards this critical point, then this poi
 
 \definition{def:saddle_point}{Saddle Point}
 {Let $P=(x_0,y_0)$ be in the domain of $f$ where $f_x=0$ and $f_y=0$ at $P$. $P$ is a \textbf{saddle point} of $f$ if, for every open disk $D$ containing $P$, there are points $(x_1,y_1)$ and $(x_2,y_2)$ in $D$ such that $f(x_0,y_0)>f(x_1,y_1)$ and $f(x_0,y_0)<f(x_2,y_2)$.
+\index{saddle point}\index{critical point}
 }
 
 At a saddle point, the instantaneous rate of change in all directions is 0 and there are points nearby with $z$-values both less than and greater than the $z$-value of the saddle point.
@@ -95,16 +97,18 @@ To account for this, consider $D = f_{xx}f_{yy}-f_{xy}f_{yx}$. Since $f_{xy}$ an
 
 \theorem{thm:multi_second_test}{Second Derivative Test}
 {Let $z=f(x,y)$ be differentiable on an open set containing $P = (x_0,y_0)$, and let 
+\index{Second Derivative Test}\index{maximum!relative/local}\index{minimum!relative/local}\index{saddle point}
 $$D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)-f_{xy}^2(x_0,y_0).$$
-\begin{itemize}
+\begin{enumerate}
 	\item If $D>0$ and $f_{xx}(x_0,y_0)>0$, then $P$ is a relative minimum of $f$.
 	\item If $D>0$ and $f_{xx}(x_0,y_0)<0$, then $P$ is a relative maximum of $f$.
 	\item	If $D<0$, then $P$ is a saddle point of $f$.
 	\item If $D=0$, the test is inconclusive.
-\end{itemize}
+\end{enumerate}
 }
 
-We first practice using this test with the function in the previous example, where we visually determined we had a relative maximum and a saddle point.\\
+We first practice using this test with the function in the previous example, where we visually determined we had a relative maximum and a saddle point.
+\clearpage
 
 \example{ex_multi_extreme4}{Using the Second Derivative Test}{
 Let $f(x,y) = x^3-3x-y^2+4y$ as in Example \ref{ex_multi_extreme3}. Determine whether the function has a relative minimum, maximum, or saddle point at each critical point.}
@@ -164,11 +168,13 @@ Figure \ref{fig:multi_extreme5} shows a graph of $f$ and the three critical poin
 \noindent\textbf{\large Constrained Optimization}\\
 
 When optimizing functions of one variable such as $y=f(x)$, we made use of Theorem \ref{thm:extreme_val}, the Extreme Value Theorem, that said that over a closed interval $I$, a continuous function has both a maximum and minimum value. To find these maximum and minimum values, we evaluated $f$ at all critical points in the interval, as well as at the endpoints (the ``boundary'') of the interval.
+\index{constrained optimization}\index{optimization!constrained}
 
 A similar theorem and procedure applies to functions of two variables. A continuous function over a closed set also attains a maximum and minimum value (see the following theorem). We can find these values by evaluating the function at the critical values in the set and over the boundary of the set. After formally stating this extreme value theorem, we give examples.
 
 \theorem{thm:extreme_val3}{Extreme Value Theorem}
 {Let $z=f(x,y)$ be a continuous function on a closed, bounded set $S$. Then $f$ has a maximum and minimum value on $S$.
+\index{Extreme Value Theorem}
 }
 
 \example{ex_conopt1}{Finding extrema on a closed set}{

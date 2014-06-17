@@ -36,7 +36,7 @@ The point is that $\delta$ and $\epsilon$, being tolerances, can be any positive
 \definition{def:limit}{The Limit of a Function $f$}
 {Let $f$ be a function defined on an open interval containing $c$. The notation $$\displaystyle \lim_{x\rightarrow c} f(x) = L,$$ read as ``the limit of $f(x)$, as $x$ approaches $c$, is $L$,'' 
 means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
-whenever $|x - c| < \delta$, we have $|f(x) - L| < \epsilon$.
+whenever $|x - c| < \delta$, we have $|f(x) - L| < \epsilon$.\index{limit!definition}
 }
 
 (Mathematicians often enjoy writing ideas without using any words. Here is the wordless definition of the limit:\\
@@ -56,24 +56,24 @@ $1.5^2 < x < 2.5^2,$ or $$2.25 < x < 6.25.$$
 So, what is the desired $x$ tolerance?  Remember, we want to find a symmetric interval of $x$ values, namely
 $4 - \delta < x < 4 + \delta$.  The lower bound of $2.25$ is $1.75$ units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances; we must have $\delta = 1.75$. See Figure \ref{fig:choose_e_d}.\\
 
-\ifthenelse{\boolean{longpage}}%
-{\mtable{.4}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
-		\begin{tabular}{cc} 
-		\myincludegraphics{figures/figLimitProof1a}&
-		\myincludegraphics{figures/figLimitProof1b}
-		\end{tabular}
-		\vskip \baselineskip
-		\parbox{200pt}{\centering With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
-		}
-}
-{\mtable{.5}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
+%\ifthenelse{\boolean{longpage}}%
+%{\mtable{.4}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
+		%\begin{tabular}{cc} 
+		%\myincludegraphics{figures/figLimitProof1a}&
+		%\myincludegraphics{figures/figLimitProof1b}
+		%\end{tabular}
+		%\vskip \baselineskip
+		%\parbox{200pt}{\centering With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
+		%}
+%}
+\mtable{.45}{Illustrating the $\epsilon-\delta$ process.}{fig:choose_e_d}{%
 %		\begin{tabular}{c} 
 		\myincludegraphics{figures/figLimitProof1a}\\
 		\myincludegraphics{figures/figLimitProof1b}\\
 		\noindent\parbox{200pt}{With $\epsilon=0.5$, we pick any $\delta < 1.75$.}
 %		\end{tabular}
 	}
-}
+
 		
 
 Now read it in the correct way:  For the $y$ tolerance $\epsilon =0.5$, we have found an $x$ tolerance, $\delta = 1.75$, so that whenever $x$ is within $\delta$ units of 4, then $y$ is within $\epsilon$ units of 2.  That's what we were trying to find.\\
@@ -139,7 +139,7 @@ We have arrived at $|x^2 - 4|<\epsilon$ as desired.  Note again, in order to mak
 
 We have also picked $\delta$ to be smaller than ``necessary.'' We could get by with a slightly larger $\delta$, as shown in Figure \ref{fig:limit_eover5}. The dashed, red lines show the boundaries defined by our choice of $\epsilon$. The gray, dashed lines show the boundaries defined by setting $\delta = \epsilon/5$. Note how these gray lines are within the red lines. That is perfectly fine; by choosing $x$ within the gray lines we are guaranteed that $f(x)$ will be within $\epsilon$ of 4.%If the value we eventually used for $\delta$, namely $\epsilon/5$, is not less than 1, this proof won't work.  For the final fix, we instead set $\delta$ to be the minimum of 1 and $\epsilon/5$. This way all calculations above work.  
 
-\mfigure{.75}{Choosing $\delta = \epsilon/5$ in Example \ref{ex_compute_lim2}.}{fig:limit_eover5}{figures/figLimitProof2a}
+\mfigure{.8}{Choosing $\delta = \epsilon/5$ in Example \ref{ex_compute_lim2}.}{fig:limit_eover5}{figures/figLimitProof2a}
 
 In summary, given $\epsilon > 0$, set $\delta=\epsilon/5$.  Then $|x - 2| < \delta$ implies 
 $|x^2 - 4|< \epsilon$ (i.e. $|y - 4|< \epsilon$) as desired.  We have shown that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4 $. Figure \ref{fig:limit_eover5} gives a visualization of this; by restricting $x$ to values within $\delta = \epsilon/5$ of 2, we see that $f(x)$ is within $\epsilon$ of $4$.

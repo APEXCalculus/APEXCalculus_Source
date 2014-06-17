@@ -13,12 +13,12 @@ Consider the function $z=f(x,y) = x^2+2y^2$, as graphed in Figure \ref{fig:parti
 \end{tabular}
 }
 
-The key notion to extract from this example is: by treating $y$ as a constant (it does not vary) we can consider how $z$ changes with respect to $x$. In a similar fashion, we can hold $x$ constant and consider how $z$ changes with respect to $y$. This is the underlying principle of \textbf{partial derivatives}. We state the formal, limit--based definition first, then show how to compute these partial derivatives without directly taking limits.
+The key notion to extract from this example is: by treating $y$ as  constant (it does not vary) we can consider how $z$ changes with respect to $x$. In a similar fashion, we can hold $x$ constant and consider how $z$ changes with respect to $y$. This is the underlying principle of \textbf{partial derivatives}. We state the formal, limit--based definition first, then show how to compute these partial derivatives without directly taking limits.
 
 %\enlargethispage{4\baselineskip}
-\definition{def:partial_derivative}{Partial Derivative, Differentiable}
+\definition{def:partial_derivative}{Partial Derivative}
 {Let $z=f(x,y)$ be a continuous function on an open set $S$ in $\mathbb{R}^2$.
-\begin{itemize}
+\begin{enumerate}
 	\item The \textbf{partial derivative of $f$ with respect to $x$} is:
 	$$f_x(x,y) = \lim_{h\to 0} \frac{f(x+h,y) - f(x,y)}h.$$
 	%Alternate notations for $\frac{\partial z}{\partial x}$ include: $\ds\frac{\partial}{\partial x}f(x,y),\ f_x(x,y),\ \text{and}\ z_x.$
@@ -26,7 +26,8 @@ The key notion to extract from this example is: by treating $y$ as a constant (i
 	$$f_y(x,y) = \lim_{h\to 0} \frac{f(x,y+h) - f(x,y)}h.$$
 	
 	%\item		If $f_x$ and $f_y$ are continuous on $S$, then $f$ is \textbf{differentiable} on $S$.\footnote{This definition of differentiability is mathematically ``weak'' but easy to understand; see Section \ref{sec:total_differential} for a stronger definition that is less intuitive.}
-	\end{itemize}
+	\end{enumerate}
+	\index{partial derivative}\index{derivative!partial}
 }
 \mnote{.35}{Alternate notations for $f_x(x,y)$ include: $$\frac{\partial}{\partial x}f(x,y),\ \ \frac{\pf}{\px},\ \ \frac{\pz}{\px},\ \ \text{and}\ z_x,$$ with similar notations for $f_y(x,y).$ For ease of notation, $f_x(x,y)$ is often abbreviated $f_x$.}
 
@@ -84,7 +85,7 @@ Find $f_x(x,y)$ and $f_y(x,y)$ in each of the following.
 \vskip-1.5\baselineskip
 }\\
 
-We have shown \textit{how} to compute a partial derivative, but it may still not be clear what a partial derivative \textit{means}. Given $z=f(x,y)$, $f_x(x,y)$ measures the rate at which $z$ changes as only $x$ varies: $y$ is held constant. 
+We have shown \textit{how} to compute a partial derivative, but it may still not be clear what a partial derivative \textit{means}. Given $z=f(x,y)$, $f_x(x,y)$ measures the rate at which $z$ changes as only $x$ varies: $y$ is held constant. \index{partial derivative!meaning}
 
 Imagine standing in a rolling meadow, then beginning to walk due east. Depending on your location, you might walk up, sharply down, or perhaps not change elevation at all. This is similar to measuring $z_x$: you are moving only east (in the ``$x$''-direction) and not north/south at all. Going back to your original location, imagine now walking due north (in the ``$y$''-direction). Perhaps walking due north does not change your elevation at all. This is analogous to $z_y=0$: $z$ does not change with respect to $y$. We can see that $z_x$ and $z_y$ do not have to be the same, or even similar, as it is easy to imagine circumstances where walking east means you walk downhill, though walking north makes you walk uphill. 
 
@@ -120,7 +121,7 @@ Let $z=f(x,y)$. We have learned to find the partial derivatives $f_x(x,y)$ and $
 
 \definition{def:second_partial}{Second Partial Derivative, Mixed Partial Derivative}
 {Let $z=f(x,y)$ be continuous on an open set $S$.
-\begin{itemize}
+\begin{enumerate}
 	\item The \textbf{second partial derivative of $f$ with respect to $x$ then $x$} is $$\frac{\partial}{\partial x}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2 f}{\px^2} = \big(\,f_x\,\big)_x = f_{xx}$$
 
 \item The \textbf{second partial derivative of $f$ with respect to $x$ then $y$} is $$\frac{\partial}{\partial y}\left(\frac{\partial f}{\px}\right) = \frac{\partial^2f}{\py\px} = \big(\,f_x\,\big)_y = f_{xy}$$
@@ -129,11 +130,12 @@ Let $z=f(x,y)$. We have learned to find the partial derivatives $f_x(x,y)$ and $
 %
 %\item The \textbf{second partial derivative of $f$ with respect to $y$ then $x$} is $$\frac{\partial}{\partial x}\left(\frac{\partial f}{\py}\right) = \frac{\partial^2f}{\px\py} = \big(\,f_y\,\big)_x = f_{yx}$$
 
-\end{itemize}
+\end{enumerate}
 
 Similar definitions hold for $\ds \frac{\partial^2f}{\py^2} = f_{yy}$ and $\ds \frac{\partial^2f}{\px\py} = f_{yx}$. \\
 
 The second partial derivatives $f_{xy}$ and $f_{yx}$ are \textbf{mixed partial derivatives}.
+\index{partial derivative!mixed}\index{partial derivative!second derivative}\index{derivative!mixed partial}
 }
 
 The notation of second partial derivatives gives some insight into the notation of the second derivative of a function of a single variable. If $y=f(x)$, then $\ds \fp'(x) = \frac{d^2 y}{dx^2}$. The ``$d^2y$'' portion means ``take the derivative of $y$ twice,'' while ``$dx^2$'' means ``with respect to $x$ both times.'' When we only know of functions of a single variable, this latter phrase seems silly: there is only one variable to take the derivative with respect to. Now that we understand functions of multiple variables, we see the importance of specifying which variables we are referring to.\\
@@ -264,6 +266,7 @@ The \textbf{partial derivative of $f$ with respect to $x$} is:
 	Similar definitions hold for $f_y(x,y,z)$ and $f_z(x,y,z)$.
 	%\item The \textbf{second partial derivative of $f$ }
 %\end{itemize}
+\index{derivative!partial}\index{partial derivative}
 }
 
 By taking partial derivatives of partial derivatives, we can find second partial derivatives of $f$ with respect to $z$ then $y$, for instance, just as before.\\
@@ -292,10 +295,11 @@ For each of the following, find $f_x$,\ \ $f_y$,\ \ $f_z$,\ \  $f_{xz}$,\ \  $f_
 \noindent\textbf{\large Higher Order Partial Derivatives}\\
 
 We can continue taking partial derivatives of partial derivatives of partial derivatives of \ldots; we do not have to stop with second partial derivatives. These higher order partial derivatives do not have a tidy graphical interpretation; nevertheless they are not hard to compute and worthy of some practice. 
+\index{partial derivative!high order}
 
 We do not formally define each higher order derivative, but rather give just a few examples of the notation.\\
 $$f_{xyx}(x,y)  =\frac{\partial}{\px}\left(\frac{\partial}{\py}\left(\frac{\pf}{\px}\right)\right) \quad \text{and}$$
-$$f_{xyz}(x,y,z)  =\frac{\partial}{\partial z}\left(\frac{\partial}{\py}\left(\frac{\pf}{\px}\right)\right) \quad $$
+$$f_{xyz}(x,y,z)  =\frac{\partial}{\partial z}\left(\frac{\partial}{\py}\left(\frac{\pf}{\px}\right)\right)  .$$
 
 \example{ex_partial9}{Higher order partial derivatives}{
 \begin{enumerate}
