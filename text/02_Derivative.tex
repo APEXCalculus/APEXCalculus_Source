@@ -14,7 +14,7 @@ However, we do know from common experience how to calculate an \textit{average v
 We can approximate the instantaneous velocity at $t=2$ by considering the average velocity over some time period containing $t=2$. If we make the time interval small, we will get a good approximation. (This fact is commonly used. For instance, high speed cameras are used to track fast moving objects. Distances are measured over a fixed number of frames to generate an accurate approximation of the velocity.)
 
 Consider the interval from $t=2$ to $t=3$ (just before the riders hit the ground). On that interval, the average velocity is 
-		$$\frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(3)}{1} =-80\ \text{ft/s},$$
+		$$\frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \text{ft/s},$$
 where the minus sign indicates that the riders are moving \textit{down}. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On $[2,2.5]$ we have 
 	$$\frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \text{ft/s}.$$
 
@@ -143,7 +143,7 @@ Linear functions are easy to work with; many functions that arise in the course 
 
 One type of function that does not benefit from a tangent--line approximation is a line; it is rather simple to recognize that the tangent line to a line is the line itself. We look at this in the following example.\\
 
-\example{ex_der_line}{Finding the Derivative of a Line}{quad Consider $f(x) = 3x+5$. Find the equation of the tangent line to $f$ at $x=1$ and $x=7$.}
+\example{ex_der_line}{Finding the Derivative of a Line}{Consider $f(x) = 3x+5$. Find the equation of the tangent line to $f$ at $x=1$ and $x=7$.}
 {We find the slope of the tangent line by using Definition \ref{def:derivative_at_a_point}.
 
 	\begin{align*}
@@ -234,8 +234,8 @@ Let $\ds f(x) = \frac{1}{x+1}$. Find $\fp(x)$.}
 						&=	\lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \intertext{Now find common denominator then subtract; pull $1/h$ out front to facilitate reading.}
 						&= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
 						&=	\lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
-	\end{align*}%\\
-	\begin{align*}
+	%\end{align*}%\\
+	%\begin{align*}
 						&=	\lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
 						&=	\lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)} \\
 						&= \frac{-1}{(x+1)(x+1)}\\
