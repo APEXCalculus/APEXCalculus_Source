@@ -30,7 +30,7 @@ Setting $x=3\sin \theta$ gives  $dx = 3\cos\theta\ d\theta$. We are almost ready
 This matches our answer from before.
 }\\
 
-We now describe in detail Trigonometric Substitution. This method excels when dealing with integrands that contain $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ and $\sqrt{x^2+a^2}$. The following Key Idea outlines the procedure for each case, followed by more examples.
+We now describe in detail Trigonometric Substitution. This method excels when dealing with integrands that contain $\sqrt{a^2-x^2}$, $\sqrt{x^2-a^2}$ and $\sqrt{x^2+a^2}$. The following Key Idea outlines the procedure for each case, followed by more examples. Each right triangle acts as a reference to help us understand the relationships between $x$ and $\theta$.
 \enlargethispage{2\baselineskip}
 
 \setboxwidth{100pt}
@@ -127,18 +127,21 @@ We now rewrite the integral with these substitutions:
 \end{align*}
 We integrated $\sec^3\theta$ in Example \ref{ex_trigint6}, finding its antiderivatives to be
 $$\int \sec^3\theta\ d\theta = \frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big)+C.$$
+\enlargethispage{2\baselineskip}
 Thus
 \begin{align*}
 \int \sqrt{4x^2-1}\ dx &=\frac12\int \big(\sec^3\theta - \sec\theta\big)\ d\theta\\
 			&= \frac12\left(\frac12\Big(\sec \theta\tan \theta + \ln|\sec \theta+\tan \theta|\Big) -\ln|\sec \theta + \tan\theta|\right) + C\\
+			%\end{align*}
+			%\begin{align*}
 			&= \frac14\left(\sec\theta\tan\theta -\ln|\sec\theta+\tan\theta|\right)+C.
 \end{align*}
 We are not yet done. Our original integral is given in terms of $x$, whereas our final answer, as given, is in terms of $\theta$. We need to rewrite our answer in terms of $x$. With $a=1/2$, and $x=\frac12\sec\theta$, the reference triangle in Key Idea \ref{idea:trigsub}(c) shows that 
-$$\tan \theta = \sqrt{x^2-1/4}/(1/2) = 2\sqrt{x^2-1/4}\quad \text{and}\quad \sec\theta = 2x.$$
+$$\tan \theta = \sqrt{x^2-1/4}\Big/(1/2) = 2\sqrt{x^2-1/4}\quad \text{and}\quad \sec\theta = 2x.$$
 Thus\small 
 \begin{align*}
-\frac14\big(\sec\theta\tan\theta -\ln\big|\sec\theta+\tan\theta\big|\big)+C &=
-				\frac14\big(2x\cdot 2\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\big)+C\\
+\frac14\Big(\sec\theta\tan\theta -\ln\big|\sec\theta+\tan\theta\big|\Big)+C &=
+				\frac14\Big(2x\cdot 2\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C\\
 				&= \frac14\Big(4x\sqrt{x^2-1/4} - \ln\big|2x + 2\sqrt{x^2-1/4}\big|\Big)+C.
 \end{align*}
 \normalsize 
@@ -181,7 +184,7 @@ Evaluate $\ds\int\frac1{(x^2+6x+10)^2}\ dx.$
 }
 {We start by completing the square, then make the substitution $u=x+3$, followed by the trigonometric substitution of $u=\tan\theta$:
 \begin{align}
-\int \frac1{(x^2+6x+10)^2}\ dx &= \int \frac1{(u^2+1)^2}\ du. \notag
+\int \frac1{(x^2+6x+10)^2}\ dx =\int \frac1{\big((x+3)^2+1\big)^2}\ dx&= \int \frac1{(u^2+1)^2}\ du. \notag
 \intertext{Now make the substitution $u=\tan\theta$, $du=\sec^2\theta\ d\theta$:}
    &=	\int \frac1{(\tan^2\theta+1)^2}\sec^2\theta\ d\theta\notag\\
 	&= \int\frac 1{(\sec^2\theta)^2}\sec^2\theta\ d\theta\notag\\
@@ -238,6 +241,8 @@ The following equalities are very useful when evaluating integrals using Trigono
 	\item	$\ds \int \cos^2\theta\ d\theta = \int \frac12\big(1+\cos(2\theta)\big)\ d\theta = \frac12\big(\theta+\sin\theta\cos\theta\big)+C.$
 \end{enumerate}
 }
+
+The next section introduces Partial Fraction Decomposition, which is an algebraic technique that turns ``complicated'' fractions into sums of ``simpler'' fractions, making integration easier.
 
 \printexercises{exercises/06_08_exercises}
 

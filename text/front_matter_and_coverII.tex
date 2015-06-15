@@ -53,16 +53,21 @@
 %%%%\input{text/thanks}
 %%%%\addcontentsline{toc}{chapter}{Thanks} 
 %%%%\clearpage{\pagestyle{empty}\cleardoublepage}
-\phantomsection
-\addcontentsline{toc}{chapter}{Preface}
-\input{text/prefaceII}
-\clearpage{\pagestyle{empty}\cleardoublepage}
+
 %%%%\phantomsection
 %%%%
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \addtocontents{toc}{\protect\enlargethispage\baselineskip}
 \addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\phantomsection
+\prefacegeometry
+\addcontentsline{toc}{chapter}{Preface}
+\input{text/prefaceII}
+\restoregeometry
 \clearpage{\pagestyle{empty}\cleardoublepage}
 %%%%%
 %\includepdf[pages={1,2}]{CalculusTOC.pdf}

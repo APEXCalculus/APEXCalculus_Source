@@ -37,7 +37,14 @@ $$f_x(x,y) = 2x-y-1 \qquad \text{and}\qquad f_y(x,y) = 2y-x.$$
 Each is never undefined. A critical point occurs when $f_x$ and $f_y$ are simultaneously 0, leading us to solve the following system of linear equations:
 $$2x-y-1 = 0\qquad \text{and}\qquad -x+2y = 0.$$
 This solution to this system is $x=2/3$, $y=1/3$. (Check that at $(2/3,1/3)$, both $f_x$ and $f_y$ are 0.)
-\mfigure[scale=1.25]{.65}{The surface in Example \ref{ex_multi_extreme1} with its absolute minimum indicated.}{fig:multi_extreme1}{figures/figmulti_extreme1}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.6824884414672852 0.7120449542999268 0.16492848098278046,
+3Dcoo=-1.6988685131072998 -2.1742968559265137 37.693851470947266,
+3Droo=149.99999652386037,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.65}{The surface in Example \ref{ex_multi_extreme1} with its absolute minimum indicated.}{fig:multi_extreme1}{figures/figmulti_extreme1}
+%\mfigure[scale=1.25]{.65}{The surface in Example \ref{ex_multi_extreme1} with its absolute minimum indicated.}{fig:multi_extreme1}{figures/figmulti_extreme1}
 
 The graph in Figure \ref{fig:multi_extreme1} shows $f$ along with this critical point. It is clear from the graph that this is a relative minimum; further consideration of the function shows that this is actually the absolute minimum.
 }\\
@@ -46,8 +53,15 @@ The graph in Figure \ref{fig:multi_extreme1} shows $f$ along with this critical 
 Let $f(x,y) = -\sqrt{x^2+y^2}+2$. Find the relative extrema of $f$.}
 {We start by computing the partial derivatives of $f$:
 $$f_x(x,y) = \frac{-x}{\sqrt{x^2+y^2}}\qquad \text{and}\qquad f_y(x,y) = \frac{-y}{\sqrt{x^2+y^2}}.$$
-It is clear that $f_x=0$ when $x=0$ and that $f_y=0$ when $y=0$. At $(0,0)$, both $f_x$ and $f_y$ are \textit{not} $0$, but rather undefined. The point $(0,0)$ is still a critical point, though, because the partial derivatives are undefined.
-\mfigure[scale=1.25]{.4}{The surface in Example \ref{ex_multi_extreme2} with its absolute maximum indicated.}{fig:multi_extreme2}{figures/figmulti_extreme2}
+It is clear that $f_x=0$ when $x=0$ \& $y\neq0$, and that $f_y=0$ when $y=0$ \& $x\neq0$. At $(0,0)$, both $f_x$ and $f_y$ are \textit{not} $0$, but rather undefined. The point $(0,0)$ is still a critical point, though, because the partial derivatives are undefined. This is the only critical point of $f$.
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005137228406965733,
+3Dc2c=0.6936245560646057 0.5807817578315735 0.4261191189289093,
+3Dcoo=-10.144089698791504 -8.685287475585938 24.90442657470703,
+3Droo=150.00000093140036,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.4}{The surface in Example \ref{ex_multi_extreme2} with its absolute maximum indicated.}{fig:multi_extreme2}{figures/figmulti_extreme2}
+%\mfigure[scale=1.25]{.4}{The surface in Example \ref{ex_multi_extreme2} with its absolute maximum indicated.}{fig:multi_extreme2}{figures/figmulti_extreme2}
 
 The surface of $f$ is graphed in Figure \ref{fig:multi_extreme2} along with the point $(0,0,2)$. The graph shows that this point is the absolute maximum of $f$.
 }\\
@@ -64,7 +78,14 @@ f_x(x,y) = 0 \quad &\Rightarrow x=\pm 1\\
 f_y(x,y) = 0\quad &\Rightarrow y = 2.
 \end{align*}
 We have two critical points: $(-1,2)$ and $(1,2)$. To determine if they correspond to a relative maximum or minimum, we consider the graph of $f$ in Figure \ref{fig:multi_extreme3}.
-\mfigure[scale=1.1]{.7}{The surface in Example \ref{ex_multi_extreme3} with both critical points marked.}{fig:multi_extreme3}{figures/figmulti_extreme3}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0051372298039495945,
+3Dc2c=0.3608144223690033 0.8669211864471436 0.3438902795314789,
+3Dcoo=-26.171857833862305 -6.6333465576171875 36.54817199707031,
+3Droo=200.99999267271468,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.1}{.7}{The surface in Example \ref{ex_multi_extreme3} with both critical points marked.}{fig:multi_extreme3}{figures/figmulti_extreme3}
+%\mfigure[scale=1.1]{.7}{The surface in Example \ref{ex_multi_extreme3} with both critical points marked.}{fig:multi_extreme3}{figures/figmulti_extreme3}
 
 The critical point $(-1,2)$ clearly corresponds to a relative maximum. However, the critical point at $(1,2)$ is neither a maximum nor a minimum, displaying a different, interesting characteristic. 
 
@@ -93,12 +114,12 @@ It would be nice if the following were true:
 
 However, this is not the case. Functions $f$ exist where $f_{xx}$ and $f_{yy}$ are both positive  but a saddle point still exists. In such a case, while the concavity in the $x$-direction is up (i.e., $f_{xx}>0$) and the concavity in the $y$-direction is also up (i.e., $f_{yy}>0$), the concavity switches somewhere in between the $x$- and $y$-directions.
 
-To account for this, consider $D = f_{xx}f_{yy}-f_{xy}f_{yx}$. Since $f_{xy}$ and $f_{yx}$ are equal when continuous (refer back to Theorem \ref{thm:mixed_partial}), we can rewrite this as $D = f_{xx}f_{yy}-f_{xy}^2$. $D$ can be used to test whether the concavity at a point changes depending on direction. If $D>0$, the concavity does not switch (i.e., at that point, the graph is concave up or down in all directions). If $D<0$, the concavity does switch. If $D=0$, our test fails to determine whether concavity switches or not. We state the use of $D$ in the following theorem.
+To account for this, consider $D = f_{xx}f_{yy}-f_{xy}f_{yx}$. Since $f_{xy}$ and $f_{yx}$ are equal when continuous (refer back to Theorem \ref{thm:mixed_partial}), we can rewrite this as $D = f_{xx}f_{yy}-f_{xy}^{\,2}$. $D$ can be used to test whether the concavity at a point changes depending on direction. If $D>0$, the concavity does not switch (i.e., at that point, the graph is concave up or down in all directions). If $D<0$, the concavity does switch. If $D=0$, our test fails to determine whether concavity switches or not. We state the use of $D$ in the following theorem.
 
 \theorem{thm:multi_second_test}{Second Derivative Test}
 {Let $z=f(x,y)$ be differentiable on an open set containing $P = (x_0,y_0)$, and let 
 \index{Second Derivative Test}\index{maximum!relative/local}\index{minimum!relative/local}\index{saddle point}
-$$D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)-f_{xy}^2(x_0,y_0).$$
+$$D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0)-f_{xy}^{\,2}(x_0,y_0).$$
 \begin{enumerate}
 	\item If $D>0$ and $f_{xx}(x_0,y_0)>0$, then $P$ is a relative minimum of $f$.
 	\item If $D>0$ and $f_{xx}(x_0,y_0)<0$, then $P$ is a relative maximum of $f$.
@@ -160,7 +181,14 @@ At $(-1,0)$, $D <0$, so $(-1,0)$ is a saddle point.
 At $(0,0)$, $D<0$, so $(0,0)$ is also a saddle point.
 
 At $(-1/2,1/8)$, $D>0$ and $f_{xx} > 0$, so $(-1/2,1/8)$ is a relative minimum.
-\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.7}{Graphing $f$ from Example \ref{ex_multi_extreme5} and its relative extrema.}{fig:multi_extreme5}{figures/figmulti_extreme5}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.0,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.7690940499305725 0.052982430905103683 0.636935830116272,
+3Dcoo=-7.478764533996582 19.195676803588867 15.916007995605469,
+3Droo=150.0000019671413,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=1mm 0mm 2mm 0mm,clip}{.7}{Graphing $f$ from Example \ref{ex_multi_extreme5} and its relative extrema.}{fig:multi_extreme5}{figures/figmulti_extreme5}
+%\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.7}{Graphing $f$ from Example \ref{ex_multi_extreme5} and its relative extrema.}{fig:multi_extreme5}{figures/figmulti_extreme5}
 
 Figure \ref{fig:multi_extreme5} shows a graph of $f$ and the three critical points. Note how this function does not vary much near the critical points -- that is, visually it is difficult to determine whether a point is a saddle point or relative minimum (or even a critical point at all!). This is one reason why the Second Derivative Test is so important to have.
 }\\
@@ -183,7 +211,14 @@ Let $f(x,y) = x^2-y^2+5$ and let $S$ be the triangle with vertices $(-1,-2)$, $(
 
 \mtable{.7}{Plotting the surface of $f$ along with the restricted domain $S$.}{fig:conopt1}{%
 \begin{tabular}{c}
-\myincludegraphics[scale=1.25,trim=0mm 2mm 0mm 0mm,clip]{figures/figconopt1}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004952129442244768,
+3Dc2c=0.4829294979572296 -0.6089988350868225 0.6292055249214172,
+3Dcoo=16.360477447509766 -11.452425956726074 60.48027038574219,
+3Droo=150.000003217617,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 2mm 0mm 0mm,clip}{figures/figconopt1}\\
+%\myincludegraphics[scale=1.25,trim=0mm 2mm 0mm 0mm,clip]{figures/figconopt1}\\
 (a)\\[15pt]
 \myincludegraphics[scale=1]{figures/figconopt1b}\\
 (b)
@@ -232,11 +267,18 @@ f_3(2) = 5 \qquad&\Rightarrow \qquad f(2,-2) = 5.
 \end{align*}
 One last point to test: the critical point of $f$, $(0,0)$. We find $f(0,0) = 5$.
 
-\mfigure[scale=1.25]{.7}{The surface of $f$ along with important points along the boundary of $S$ and the interior.}{fig:conopt1b}{figures/figconopt1c}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.00476991618052125,
+3Dc2c=0.2722506821155548 -0.5407805442810059 0.7958868741989136,
+3Dcoo=2.6561195850372314 25.95724868774414 7.351059436798096,
+3Droo=200.99999823503413,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.7}{The surface of $f$ along with important points along the boundary of $S$ and the interior.}{fig:conopt1b}{figures/figconopt1c}
+%\mfigure[scale=1.25]{.7}{The surface of $f$ along with important points along the boundary of $S$ and the interior.}{fig:conopt1b}{figures/figconopt1c}
 We have evaluated $f$ at a total of 7 different places, all shown in Figure \ref{fig:conopt1b}. We checked each vertex of the triangle twice, as each showed up as the endpoint of an interval twice. Of all the $z$-values found, the maximum is 5.8, found at $(1.2,-0.8)$; the minimum is 1, found at $(0,-2)$. 
 }\\
 
-This portion of the text is entitled ``Constrained Optimization'' because we want to optimize a function (i.e., find its maximum and/or minimum values) subject to a \textit{constraint} -- some limit to what values the function can attain. In the previous example, we constrained ourselves to considering a function only within the boundary of a triangle. This was largely arbitrary; the function and the boundary were chosen just as an example, with no real ``meaning'' behind the function or the chosen constraint.
+This portion of the text is entitled ``Constrained Optimization'' because we want to optimize a function (i.e., find its maximum and/or minimum values) subject to a \textit{constraint} -- some limit to what values the function can attain. In the previous example, we constrained ourselves by considering a function only within the boundary of a triangle. This was largely arbitrary; the function and the boundary were chosen just as an example, with no real ``meaning'' behind the function or the chosen constraint.
 
 However, solving constrained optimization problems is a very important topic in applied mathematics. The techniques developed here are the basis for solving larger problems, where more than two variables are involved.
 
@@ -259,7 +301,14 @@ $$V\,'_1(w) = 260w-12w^2 = 0 \quad \Rightarrow \quad w(260-12w)= 0 \quad \Righta
 
 We found two critical values: when $w=0$ and when $w=21.67$. We again ignore the $w=0$ solution; the maximum volume, subject to the constraint, comes at $w=h=21.67$, $\ell = 130-4(21.6) =43.33.$ This gives a volume of $V(21.67,43.33) \approx 19,408$in$^3$. 
 
-\mfigure[scale=1.25]{.75}{Graphing the volume of a box with girth $4w$ and length $\ell$, subject to a size constraint.}{fig:conopt2}{figures/figconopt2}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005153999198228121,
+3Dc2c=0.31346064805984497 -0.9024837017059326 0.2954072952270508,
+3Dcoo=45.312767028808594 65.24303436279297 62.16134262084961,
+3Droo=149.9999931723703,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.75}{Graphing the volume of a box with girth $4w$ and length $\ell$, subject to a size constraint.}{fig:conopt2}{figures/figconopt2}
+%\mfigure[scale=1.25]{.75}{Graphing the volume of a box with girth $4w$ and length $\ell$, subject to a size constraint.}{fig:conopt2}{figures/figconopt2}
 
 The volume function $V(w,\ell)$ is shown in Figure \ref{fig:conopt2} along with the constraint $\ell = 130-4w$. As done previously, the constraint is drawn dashed in the $x$-$y$ plane and also along the surface of the function. The point where the volume is maximized is indicated.
 }\\

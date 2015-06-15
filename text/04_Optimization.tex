@@ -45,7 +45,7 @@ Clearly $A(0)=0$ and $A(50)=0$, whereas $A(25) = 625 \text{ft}^2$. This is the m
 
 This example is very simplistic and a bit contrived. (After all, most people create a design then buy fencing to meet their needs, and not buy fencing and plan later.) But it models well the necessary process: create equations that describe a situation, reduce an equation to a single variable, then find the needed extreme value.
 
-``In real life'' the problems are much more complex. The equations are often \textit{not} reducible to a single variable (hence multi--variable calculus is needed) and the equations themselves may be difficult to form. Understanding the principles here will provide a good foundation for the mathematics you will likely encounter later.
+``In real life,'' problems are much more complex. The equations are often \textit{not} reducible to a single variable (hence multi--variable calculus is needed) and the equations themselves may be difficult to form. Understanding the principles here will provide a good foundation for the mathematics you will likely encounter later.
 
 We outline here the basic process of solving these optimization problems.
 \enlargethispage{2\baselineskip}
@@ -77,25 +77,17 @@ Here is another classic calculus problem: A woman has a 100 feet of fencing, a s
 	\begin{enumerate}
 	\item		We are maximizing \textit{area}. A sketch of the region will help; Figure \ref{fig:opt2} gives two sketches of the proposed enclosed area. A key feature of the sketches is to acknowledge that one side is not fenced. 
 	
-\ifthenelse{\boolean{longpage}}% longpage
-{\noindent\hskip -20pt\begin{minipage}{\textwidth}\centering
-\myincludegraphics{figures/figopt2b}
-\captionsetup{type=figure}%
-\caption{A sketch of the enclosure in Example \ref{ex_opt2}.}\label{fig:opt2}
-\end{minipage}
-} % end longpage
-{\mfigure{.4}{A sketch of the enclosure in Example \ref{ex_opt2}.}{fig:opt2}{figures/figopt2a}
-} %end regular page
+\mfigure{.4}{A sketch of the enclosure in Example \ref{ex_opt2}.}{fig:opt2}{figures/figopt2a}
 	
 	\item		We want to maximize the area; as in the example before, $$\text{Area} = xy.$$ This is our fundamental equation. This defines area as a function of two variables, so we need another equation to  reduce it to one variable. 
 	
 	We again appeal to the perimeter; here the perimeter is $$\text{Perimeter} = 100 = x+2y.$$ Note how this is different than in our previous example.
-	\item		We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for $y$: $y = 50 - 1/2x$. We can now write Area as $$\text{Area} = A(x) = x(50-1/2x) = 50x - 1/2x^2.$$ Area is now defined as a function of one variable.
-	\item		We want the area to be nonnegative. Since $A(x) = x(50-1/2x)$, we want $x\geq 0$ and $50-1/2x\geq 0$. The latter inequality implies that $x\leq100$, so $0\leq x\leq 100$. 
+	\item		We now reduce the fundamental equation to a single variable. In the perimeter equation, solve for $y$: $y = 50 - x/2$. We can now write Area as $$\text{Area} = A(x) = x(50-x/2) = 50x - \frac12x^2.$$ Area is now defined as a function of one variable.
+	\item		We want the area to be nonnegative. Since $A(x) = x(50-x/2)$, we want $x\geq 0$ and $50-x/2\geq 0$. The latter inequality implies that $x\leq100$, so $0\leq x\leq 100$. 
 	\item		We now find the extreme values. At the endpoints, the minimum is found, giving an area of 0. 
 	
 	Find the critical points. We have $A'(x) = 50-x$; setting this equal to 0 and solving for $x$ returns $x=50$. This gives an area of $$A(50) = 50(25) = 1250.$$
-	\item		We earlier set $y = 50-1/2x$; thus $y = 25$. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft$^2$.
+	\item		We earlier set $y = 50-x/2$; thus $y = 25$. Thus our rectangle will have two sides of length 25 and one side of length 50, with a total area of 1250 ft$^2$.
 	\end{enumerate}
 \vskip-\baselineskip
 }\\
@@ -132,10 +124,10 @@ $$
 So we have $c(x) = 50(5000-x)+ 130\sqrt{x^2+1000^2}$. This function only makes sense on the interval $[0,5000]$. While we are fairly certain the endpoints will not give a minimal cost, we still evaluate $c(x)$ at each to verify.
 $$c(0) = 380,000 \quad\quad c(5000) \approx 662,873.$$
 
-We now find the critical values of $c(x)$. We compute $c'(x)$ as 
-$$c'(x) = -50+\frac{130x}{\sqrt{x^2+1000^2}}.$$
+We now find the critical values of $c(x)$. We compute $c\primeskip'(x)$ as 
+$$c\primeskip'(x) = -50+\frac{130x}{\sqrt{x^2+1000^2}}.$$
 
-Recognize that this is never undefined. Setting $c'(x)=0$ and solving for $x$, we have:
+Recognize that this is never undefined. Setting $c\primeskip'(x)=0$ and solving for $x$, we have:
 \begin{align*}
 -50+\frac{130x}{\sqrt{x^2+1000^2}} &= 0 \\
 \frac{130x}{\sqrt{x^2+1000^2}}  &= 50\\
@@ -145,7 +137,7 @@ Recognize that this is never undefined. Setting $c'(x)=0$ and solving for $x$, w
 (130^2-50^2)x^2 &= 50,000^2\\
 x^2 &= \frac{50,000^2}{130^2-50^2}\\
 x &= \frac{50,000}{\sqrt{130^2-50^2}}\\
-x & = \frac{50,000}{120} =416\frac23
+x & = \frac{50,000}{120} =416\frac23\approx 416.67.
 \end{align*}
 
 Evaluating $c(x)$ at $x=416.67$ gives a cost of about \$370,000. The distance the power line is laid along land is $5000-416.67 = 4583.33$ ft., and the underwater distance is $\sqrt{416.67^2+1000^2} \approx 1083$ ft.
@@ -153,6 +145,8 @@ Evaluating $c(x)$ at $x=416.67$ gives a cost of about \$370,000. The distance th
 }\\
 
 In the exercises you will see a variety of situations that require you to combine problem--solving skills with calculus. Focus on the \textit{process}; learn how to form equations from situations that can be manipulated into what you need. Eschew memorizing how to do ``this kind of problem'' as opposed to ``that kind of problem.'' Learning a process will benefit one far longer than memorizing a specific technique.
+
+The next section introduces our final application of the derivative: \textit{differentials}. Given $y=f(x)$, they offer a method of approximating the change in $y$ after $x$ changes by a small amount. 
 
 \printexercises{exercises/04_03_exercises}
 		

@@ -2,7 +2,7 @@
 
 Partial derivatives give us an understanding of how a surface changes when we move in the $x$ and $y$ directions. We made the comparison to standing in a rolling meadow and heading due east: the amount of rise/fall in doing so is comparable to $f_x$. Likewise, the rise/fall in  moving due north is comparable to $f_y$. The steeper the slope, the greater in magnitude $f_y$.
 
-But what if we didn't move due north or east? What if we needed to move northeast and wanted to measure the amount of rise/fall? Our partial derivatives alone cannot measure this. This section investigates \textbf{directional derivatives}, which are a measure of this. 
+But what if we didn't move due north or east? What if we needed to move northeast and wanted to measure the amount of rise/fall? Partial derivatives alone cannot measure this. This section investigates \textbf{directional derivatives}, which do measure this rate of change. 
 
 We begin with a definition.
 
@@ -31,7 +31,15 @@ Let $z= 14-x^2-y^2$ and let $P=(1,2)$. Find the directional derivative of $f$, a
 	\item toward the origin.
 \end{enumerate}
 }
-{\mfigure[scale=1.1]{.8}{Understanding the directional derivative in Example \ref{ex_direct1}.}{fig:direct1}{figures/figdirect1}
+{
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=-0.45935076561172045,
+3Dortho=0.00494238780811429,
+3Dc2c=0.8379672765731812 0.26980355381965637 0.4743594527244568,
+3Dcoo=-27.334510803222656 46.63825988769531 23.82315444946289,
+3Droo=130.00000000067573,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.1}{.8}{Understanding the directional derivative in Example \ref{ex_direct1}.}{fig:direct1}{figures/figdirect1}
+%\mfigure[scale=1.1]{.8}{Understanding the directional derivative in Example \ref{ex_direct1}.}{fig:direct1}{figures/figdirect1}
 The surface is plotted in Figure \ref{fig:direct1}, where the point $P=(1,2)$ is indicated in the $x,y$-plane as well as the point $(1,2,9)$ which lies on the surface of $f$. We find that $f_x(x,y) = -2x$ and $f_x(1,2) = -2$; $f_y(x,y) = -2y$ and $f_y(1,2) = -4$. 
 \begin{enumerate}
 	\item Let $\vec u_1$ be the unit vector that points from the point $(1,2)$ to the point $Q=(3,4)$, as shown in the figure. The vector $\vv{PQ} = \la 2,2\ra$; the unit vector in this direction is $\vec u_1=\la 1/\sqrt{2}, 1/\sqrt{2}\ra$. Thus the directional derivative of $f$ at $(1,2)$ in the direction of $\vec u_1$ is
@@ -85,23 +93,39 @@ Using the key property of the dot product, we have
 where $\theta$ is the angle between the gradient and $\vec u$. (Since $\vec u$ is a unit vector, $\vnorm{u} = 1$.) This equation allows us to answer the three questions stated previously.
 
 \begin{enumerate}
-	\item Equation \ref{eq:gradient} is maximized when $\cos \theta =1$, i.e., when the gradient and $\vec u$ have the same direction; the gradient points in the direction of greatest $z$ change.
-	\item	Equation \ref{eq:gradient} is minimized when $\cos \theta = -1$, i.e., when the gradient and $\vec u$ have opposite directions; the gradient points in the opposite direction of the least $z$ change.
-	\item Equation \ref{eq:gradient} is 0 when $\cos \theta = 0$, i.e., when the gradient and $\vec u$ are orthogonal to each other; the gradient is orthogonal to directions of no $z$ change. 
+	\item Equation \ref{eq:gradient} is maximized when $\cos \theta =1$, i.e., when the gradient and $\vec u$ have the same direction. We conclude the gradient points in the direction of greatest $z$ change.
+	\item	Equation \ref{eq:gradient} is minimized when $\cos \theta = -1$, i.e., when the gradient and $\vec u$ have opposite directions. We conclude the gradient points in the opposite direction of the least $z$ change.
+	\item Equation \ref{eq:gradient} is 0 when $\cos \theta = 0$, i.e., when the gradient and $\vec u$ are orthogonal to each other. We conclude the gradient is orthogonal to directions of no $z$ change. 
 \end{enumerate}
 
 This result is rather amazing. Once again imagine standing in a rolling meadow and face the  direction that leads you steepest uphill. Then the direction that leads steepest downhill is directly behind you, and side--stepping either left or right (i.e., moving perpendicularly to the direction you face) does not change your elevation at all.
 
-Recall that a level curve is defined by a path in the $x$-$y$ plane along which the $z$-values of a function do not change; the directional derivative in the direction of a level curve is 0. This is analogous to walking along a path in the rolling meadow along which the elevation does not change. The gradient at a point is orthogonal to the direction where the $z$ does not change; i.e., the gradient is orthogonal to level curves.
+%Recall that a level curve is defined by a path in the $x$-$y$ plane along which the $z$-values of a function do not change; the directional derivative in the direction of a level curve is 0. This is analogous to walking along a path in the rolling meadow along which the elevation does not change. The gradient at a point is orthogonal to the direction where the $z$ does not change; i.e., the gradient is orthogonal to level curves.
+
+Recall that a level curve is defined as a curve in the $x$-$y$ plane along which the $z$-values of a function do not change. Let a surface $z=f(x,y)$ be given, and let's represent one such level curve as a vector--valued function, $\vrt = \la x(t), y(t)\ra$. As the output of $f$ does not change along this curve, $f\big(x(t),y(t)\big) = c$ for all $t$, for some constant $c$.
+
+Since $f$ is constant for all $t$, $\frac{df}{dt} = 0$. By the Multivariable Chain Rule, we also know
+\begin{align*}
+\frac{df}{dt} &= f_x(x,y)x\primeskip'(t) + f_y(x,y)y\primeskip'(t)\\						
+						&= \la f_x(x,y),f_y(x,y)\ra \cdot \la x\primeskip'(t),y\primeskip'(t)\ra\\
+						&= \nabla f \cdot \vrp(t)\\
+						&=0.
+\end{align*}
+
+This last equality states $\nabla f \cdot \vrp(t) = 0$: the gradient is orthogonal to the derivative of $\vec r$, meaning the gradient is orthogonal to $\vec r$ itself. Our conclusion: at any point on a surface, the gradient at that point is orthogonal to the level curve that passes through that point.
 
 We restate these ideas in a theorem, then use them in an example.
+\enlargethispage{4\baselineskip}
 
 \theorem{thm:gradient}{The Gradient and Directional Derivatives}
-{Let $z=f(x,y)$ be differentiable on an open set $S$ with gradient $\nabla f$ and let $\vec u$ be a unit vector.
+{Let $z=f(x,y)$ be differentiable on an open set $S$ with gradient $\nabla f$, let $P=(x_0,y_0)$ be a point in $S$ and let $\vec u$ be a unit vector.
 \begin{enumerate}
-	\item The maximum value of $D_{\vec u\,}f$ is $\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla f$.
-	\item The minimum value of $D_{\vec u\,}f$ is $-\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla f$.
-	\item $D_{\vec u\,}f = 0$ when $\nabla f$ and $\vec u$ are orthogonal.
+	\item The maximum value of $D_{\vec u\,}f(x_0,y_0)$ is $\norm{\nabla f(x_0,y_0)}$; the direction of maximal $z$ increase is $\nabla f(x_0,y_0)$.
+	%obtained when the angle between $\nabla f$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla f$.
+	\item   The minimum value of $D_{\vec u\,}f(x_0,y_0)$ is $-\norm{\nabla f(x_0,y_0)}$; the direction of minimal $z$ increase is $-\nabla f(x_0,y_0)$.
+	%The minimum value of $D_{\vec u\,}f$ is $-\norm{\nabla f}$, obtained when the angle between $\nabla f$ and $\vec u$ is $\pi$, i.e., the direction of minimal increase is $-\nabla f$.
+	\item At $P$, $\nabla f(x_0,y_0)$ is orthogonal to the level curve passing through $\big(x_0,y_0,f(x_0,y_0)\big)$.
+	%$D_{\vec u\,}f = 0$ when $\nabla f$ and $\vec u$ are orthogonal.
 	\index{gradient}\index{directional derivative}\index{derivative!directional}\index{level curves}\index{gradient!and level curves}
 \end{enumerate}
 }
@@ -118,11 +142,25 @@ Figure \ref{fig:direct2} shows the surface plotted from two different perspectiv
 %Compare the $z$-values at $P$ and $R$:
 %$$f\left(\frac{\pi}3,\frac{\pi}3\right) = \frac{\sqrt{3}}4 \approx 0.433.$$
 
-\mtable{.73}{Graphing the surface and important directions in Example \ref{ex_direct2}.}{fig:direct2}{%
+\mtable{.71}{Graphing the surface and important directions in Example \ref{ex_direct2}.}{fig:direct2}{%
 \begin{tabular}{c}
-\myincludegraphics[scale=1.,trim = 0mm 5mm 0mm 0mm,clip]{figures/figdirect2}\\
-(a)\\[15pt]
-\myincludegraphics[scale=1.]{figures/figdirect2b}\\
+\myincludegraphicsthree{width=130pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0051408205181360245,
+3Dc2c=0.6666666865348816 0.6666666865348816 0.3333333432674408,
+3Dcoo=-1.1194640398025513 -3.250971794128418 8.740827560424805,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.,trim = 0mm 5mm 0mm 0mm,clip}{figures/figdirect2}\\
+%\myincludegraphics[scale=1.,trim = 0mm 5mm 0mm 0mm,clip]{figures/figdirect2}\\
+(a)\\%[15pt]
+\myincludegraphicsthree{width=130pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.008940433152019978,
+3Dc2c=0.6666666865348816 0.6666666865348816 0.3333333134651184,
+3Dcoo=-6.498621940612793 -16.487354278564453 45.97212600708008,
+3Droo=149.9999987284343,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1}{figures/figdirect2b}\\
+%\myincludegraphics[scale=1.]{figures/figdirect2b}\\
 (b)
 \end{tabular}
 }
@@ -139,18 +177,25 @@ According to Theorem \ref{thm:gradient}, this is the direction of maximal increa
 Figure \ref{fig:direct9} helps us understand what this means. We can see that $P$ lies at the top of a paraboloid. In all directions, the instantaneous rate of change is 0. 
 
 So what is the direction of maximal increase? It is fine to give an answer of $\vec 0 = \la 0,0\ra$, as this indicates that all directional derivatives are 0.
-\mfigure{.4}{At the top of a paraboloid, all directional derivatives are 0.}{fig:direct9}{figures/figdirect9}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.641848137510025,
+3Dortho=0.00471429293975234,
+3Dc2c=0.8800624012947083 0.28546664118766785 0.3794717788696289,
+3Dcoo=-34.139766693115234 45.736881256103516 38.29633712768555,
+3Droo=200.00000572048617,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.35}{At the top of a paraboloid, all directional derivatives are 0.}{fig:direct9}{figures/figdirect9}
+%\mfigure{.4}{At the top of a paraboloid, all directional derivatives are 0.}{fig:direct9}{figures/figdirect9}
 }\\
 
 The fact that the gradient of a surface always points in the direction of steepest increase/decrease is very useful, as illustrated in the following example.\\
 
 \example{ex_direct3}{The flow of water downhill}{
 Consider the surface given by $f(x,y)= 20-x^2-2y^2$. Water is poured on the surface at $(1,1/4)$. What path does it take as it flows downhill?}
-{Let $\vrt = \la x(t), y(t)\ra$ be the vector--valued function describing the path of the water in the $x$-$y$ plane; we seek $x(t)$ and $y(t)$. We know that water will always flow downhill in the steepest direction; therefore, at any point on its path, it will be moving in the direction of $-\nabla f$. (We ignore the physical effects of momentum on the water.) Thus $\vrp(t)$ will be parallel to $\nabla f$, and there is some constant $c$ such that $c\nabla f = \vrp(t) = \la x'(t), y'(t)\ra$. 
+{Let $\vrt = \la x(t), y(t)\ra$ be the vector--valued function describing the path of the water in the $x$-$y$ plane; we seek $x(t)$ and $y(t)$. We know that water will always flow downhill in the steepest direction; therefore, at any point on its path, it will be moving in the direction of $-\nabla f$. (We ignore the physical effects of momentum on the water.) Thus $\vrp(t)$ will be parallel to $\nabla f$, and there is some constant $c$ such that $c\nabla f = \vrp(t) = \la x\primeskip'(t), y\primeskip'(t)\ra$. 
 
-We find $\nabla f = \la -2x, -4y\ra$ and write $x'(t)$ as $\frac{dx}{dt}$ and $y'(t)$ as $\frac{dy}{dt}$. Then 
+We find $\nabla f = \la -2x, -4y\ra$ and write $x\primeskip'(t)$ as $\frac{dx}{dt}$ and $y\primeskip'(t)$ as $\frac{dy}{dt}$. Then 
 \begin{align*}
-c\nabla f &= \la x'(t), y'(t)\ra \\
+c\nabla f &= \la x\primeskip'(t), y\primeskip'(t)\ra \\
 \la -2cx, -4cy \ra & = \la \frac{dx}{dt}, \frac{dy}{dt}\ra.
 \end{align*}
 This implies
@@ -163,15 +208,31 @@ To find an explicit relationship between $x$ and $y$, we can integrate both side
 \begin{align*}
 \int \frac{1}{2x}\frac{dx}{dt}\ dt &=\int \frac{1}{4y}\frac{dy}{dt}\ dt \\
 \int \frac{1}{2x}\ dx &=\int\frac{1}{4y}\ dy \\
-\frac 12\ln|x| +C &= \frac14\ln|y|\\
-2\ln|x| + C &= \ln|y|\\
-Cx^2 &= y,
+\frac 12\ln|x| &= \frac14\ln|y| +C_1\\
+2\ln|x| &= \ln|y| +C_1\\
+\ln |x^2| &= \ln|y|+C_1% &= y,
+\intertext{Now raise both sides as a power of $e$:}
+%\end{align*}
+%where we skip some algebra in the last step. 
+%\begin{align*}
+x^2 &= e^{\ln |y|+C_1}\\
+x^2 &= e^{\ln |y|}e^{C_1}\qquad \text{(Note that $e^{C_1}$ is just a constant.)}\\
+x^2 &= yC_2\\
+\frac1{C_2}x^2 &=y   \qquad \text{(Note that $1/C_2$ is just a constant.)}\\
+Cx^2 &= y.
 \end{align*}
-where we skip some algebra in the last step. As the water started at the point $(1,1/4)$, we can solve for $C$:
+As the water started at the point $(1,1/4)$, we can solve for $C$:
 $$C(1)^2 = \frac14 \quad \Rightarrow \quad C = \frac14.$$
 \mtable{.65}{A graph of the surface described in Example \ref{ex_direct3} along with the path in the $x$-$y$ plane with the level curves.}{fig:direct3}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figdirect3}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.03187335123623557,
+3Dortho=0.004501350689679384,
+3Dc2c=0.37703937292099 0.8674991130828857 0.3244788944721222,
+3Dcoo=31.472492218017578 -33.2381477355957 46.63370132446289,
+3Droo=150.00001038122664,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdirect3}\\
+%\myincludegraphics{figures/figdirect3}\\
 (a)\\[15pt]
 \myincludegraphics{figures/figdirect3b}\\
 (b)
@@ -184,7 +245,7 @@ Thus the water follows the curve $y=x^2/4$ in the $x$-$y$ plane. The surface and
 
 The concepts of directional derivatives and the gradient are easily extended to three (and more) variables. We combine the concepts behind Definitions \ref{def:direct_deriv} and \ref{def:gradient} and Theorem \ref{thm:direct_deriv1} into one set of definitions.
 
-\definition{def:direct_deriv3}{Directional Derivatives and Gradient with Three Variables}
+\definition{def:direct_deriv3}{\parbox[t]{195pt}{Directional Derivatives and Gradient with Three Variables}}
 {Let $w=F(x,y,z)$ be differentiable on an open ball $B$ and let $\vec u $ be a unit vector in $\mathbb{R}^3$.\index{gradient}\index{directional derivative}\index{derivative!directional}
 \begin{enumerate}
 	\item	The \textbf{gradient} of $F$ is $\nabla F = \la F_x,F_y,F_z\ra$.
@@ -195,7 +256,7 @@ The concepts of directional derivatives and the gradient are easily extended to 
 The same properties of the gradient given in Theorem \ref{thm:gradient}, when $f$ is a function of two variables, hold for $F$, a function of three variables.
 
 \enlargethispage{2\baselineskip}
-\theorem{thm:gradient3}{The Gradient and Directional Derivatives with Three Variables}
+\theorem{thm:gradient3}{\parbox[t]{225pt}{The Gradient and Directional Derivatives with Three Variables}}
 {Let $w=F(x,y,z)$ be differentiable on an open ball $B$, let $\nabla F$ be the gradient of $F$, and let $\vec u$ be a unit vector.\index{gradient}\index{directional derivative}\index{derivative!directional}
 \begin{enumerate}
 	\item The maximum value of $D_{\vec u\,}F$ is $\norm{\nabla F}$, obtained when the angle between $\nabla F$ and $\vec u$ is 0, i.e.,  the direction of maximal increase is $\nabla F$.
@@ -206,7 +267,7 @@ The same properties of the gradient given in Theorem \ref{thm:gradient}, when $f
 
 We interpret the third statement of the theorem as ``the gradient is orthogonal to level surfaces,'' the three--variable analogue to level curves.\\
 
-\example{ex_direct5}{Finding directional derivatives with functions of three variables}{
+\example{ex_direct5}{\parbox[t]{225pt}{Finding directional derivatives with functions of three variables\rule[-5pt]{0pt}{5pt}}}{
 If a point source $S$ is radiating energy, the intensity $I$ at a given point $P$ in space is inversely proportional to the square of the distance between $S$ and $P$. That is, when $S=(0,0,0)$,  $\ds I(x,y,z) = \frac{k}{x^2+y^2+z^2}$ for some constant $k$.
 
 Let $k=1$, let $\vec u = \la 2/3, 2/3, 1/3\ra$ be a unit vector, and let $P = (2,5,3).$ Measure distances in inches. Find the directional derivative of $I$ at $P$ in the direction of $\vec u$, and find the direction of greatest intensity increase at $P$.
@@ -228,4 +289,5 @@ The gradient gives the direction of greatest intensity increase. Notice that
 That is, the gradient at $(2,5,3)$ is pointing in the direction of $\la -2,-5,-3\ra$, that is, towards the origin. That should make intuitive sense: the greatest increase in intensity is found by moving towards to source of the energy.
 }\\
 
+The directional derivative allows us to find the instantaneous rate of $z$ change in any direction at a point. We can use these instantaneous rates of change to define lines and planes that are \emph{tangent} to a surface at a point, which is the topic of the next section.
 \printexercises{exercises/12_05_exercises}

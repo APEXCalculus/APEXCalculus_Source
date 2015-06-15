@@ -1,3 +1,5 @@
+In the previous chapter, we learned about vectors and were introduced to the power of vectors within mathematics. In this chapter, we'll build on this foundation to define functions whose input is a real number and whose output is a vector. We'll see how to graph these functions and apply calculus techniques to analyze their behavior. Most importantly, we'll see \textit{why} we are interested in doing this: we'll see beautiful applications to the study of moving objects.
+
 \section{Vector--Valued Functions}\label{sec:vvf}
 
 We are very familiar with \textbf{real valued functions}, that is, functions whose output is a real number. This section introduces \textbf{vector--valued functions} -- functions whose output is a vector. 
@@ -13,7 +15,7 @@ The \textbf{domain} of $\vec r$ is the set of all values of $t$ for which $\vec 
 
 \noindent\textbf{Evaluating and Graphing Vector--Valued Functions}\\
 
-Evaluating a vector--valued function at a specific value of $t$ is straightforward; simply evaluate each component function at that value of $t$. For instance, if $\vec r(t) = \la t^2,t^2+t-1\ra$, then $\vec r(-2) = \la 4,1\ra$. We can sketch this vector, as is done in Figure \ref{fig:vvfintro1} (a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The \textbf{graph} of a vector--valued function is the set of all terminal points of $\vec r(t)$, where the initial point of each vector is always the origin. In Figure \ref{fig:vvfintro1} (b) we sketch the graph of $\vec r$\,; we can indicate individual points on the graph with their respective vector, as shown.
+Evaluating a vector--valued function at a specific value of $t$ is straightforward; simply evaluate each component function at that value of $t$. For instance, if $\vec r(t) = \la t^2,t^2+t-1\ra$, then $\vec r(-2) = \la 4,1\ra$. We can sketch this vector, as is done in Figure \ref{fig:vvfintro1}(a). Plotting lots of vectors is cumbersome, though, so generally we do not sketch the whole vector but just the terminal point. The \textbf{graph} of a vector--valued function is the set of all terminal points of $\vec r(t)$, where the initial point of each vector is always the origin. In Figure \ref{fig:vvfintro1}(b) we sketch the graph of $\vec r$\,; we can indicate individual points on the graph with their respective vector, as shown.
 \index{vector--valued function!graphing}
 \mtable{.5}{Sketching the graph of a vector--valued function.}{fig:vvfintro1}{%
 \begin{tabular}{c}
@@ -24,13 +26,14 @@ Evaluating a vector--valued function at a specific value of $t$ is straightforwa
 \end{tabular}
 }
 
+\enlargethispage{4\baselineskip}
 Vector--valued functions are closely related to parametric equations of graphs. While in both methods we plot points $\big(x(t), y(t)\big)$ or $\big(x(t),y(t),z(t)\big)$ to produce a graph, in the context of vector--valued functions each such point represents a vector. The implications of this will be more fully realized in the next section as we apply calculus ideas to these functions.\\
 
 \clearpage
 
 \example{ex_vvf1}{Graphing vector--valued functions}{
 Graph $\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra$, for $-2\leq t\leq 2$. Sketch $\vec r(-1)$ and $\vec r(2)$.}
-{We start by making a table of $t$, $x$ and $y$ values as shown in Figure \ref{fig:vvf1} (a). Plotting these points gives an indication of what the graph looks like. In Figure \ref{fig:vvf1} (b), we indicate these points and sketch the full graph. We also highlight $\vec r(-1)$ and $\vec r(2)$ on the graph.
+{We start by making a table of $t$, $x$ and $y$ values as shown in Figure \ref{fig:vvf1}(a). Plotting these points gives an indication of what the graph looks like. In Figure \ref{fig:vvf1}(b), we indicate these points and sketch the full graph. We also highlight $\vec r(-1)$ and $\vec r(2)$ on the graph.
 \mtable{.72}{Sketching the vector--valued function of Example \ref{ex_vvf1}.}{fig:vvf1}{%
 \begin{tabular}{c}
 		\begin{tabular}{ccc}
@@ -47,7 +50,14 @@ Graph $\ds \vec r(t) = \la t^3-t, \frac{1}{t^2+1}\ra$, for $-2\leq t\leq 2$. Ske
 \example{ex_vvf2}{Graphing vector--valued functions.}{
 Graph $\vec r(t) = \la \cos t,\sin t,t\ra$ for $0\leq t\leq 4\pi$.}
 {We can again plot points, but careful consideration of this function is very revealing. Momentarily ignoring the third component, we see the $x$ and $y$ components trace out a circle of radius 1 centered at the origin. Noticing that the $z$ component is $t$, we see that as the graph winds around the $z$-axis, it is also increasing at a constant rate in the positive $z$ direction, forming a spiral. This is graphed in Figure \ref{fig:vvf2}. In the graph $\vec r(7\pi/4)\approx (0.707,-0.707,5.498) $ is highlighted to help us understand the graph.
-\mfigure[scale=1.25]{.4}{The graph of $\vec r(t)$ in Example \ref{ex_vvf2}.}{fig:vvf2}{figures/figvvf2} 
+%\mfigure[scale=1.25]{.4}{The graph of $\vec r(t)$ in Example \ref{ex_vvf2}.}{fig:vvf2}{figures/figvvf2}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=1.5110919487882861,
+3Dortho=0.0044999998062849045,
+3Dc2c=0.6482614874839783 0.682218074798584 0.338135302066803,
+3Dcoo=1.5296688079833984 -8.776086807250977 69.70178985595703,
+3Droo=399.99999354879714,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.4}{Viewing a vector--valued function, and its derivative at one point.}{fig:vvf2}{figures/figvvf2} 
 }\\
 
 \noindent\textbf{\large Algebra of Vector--Valued Functions}\\
@@ -70,9 +80,9 @@ Let $\vec r_1(t) = \la\,0.2t,0.3t\,\ra$, $\vec r_2(t) = \la\,\cos t,\sin t\,\ra$
 
 We can rewrite $\vec r_1(t) = \la\, 0.2t,0.3t\,\ra$ as $ \vec r_1(t) = t\la 0.2,0.3\ra$. That is, the function $\vec r_1$ scales the vector $\la 0.2,0.3\ra$ by $t$. This scaling of a vector produces a line in the direction of $\la 0.2,0.3\ra$. 
 
-We are familiar with $\vec r_2(t) = \la\, \cos t,\sin t\,\ra$; it traces out a circle, centered at the origin, of radius 1. Figure \ref{fig:vvf3} (a) graphs $\vec r_1(t)$ and $\vec r_2(t)$.
+We are familiar with $\vec r_2(t) = \la\, \cos t,\sin t\,\ra$; it traces out a circle, centered at the origin, of radius 1. Figure \ref{fig:vvf3}(a) graphs $\vec r_1(t)$ and $\vec r_2(t)$.
 
-Adding $\vec r_1(t)$ to $\vec r_2(t)$ produces $\vec r(t) = \la\,\cos t + 0.2t,\sin t+0.3t\,\ra$, graphed in Figure \ref{fig:vvf3} (b). The linear movement of the line combines with the circle to create loops that move in the direction of $\la 0.2,0.3\ra$.  (We encourage the reader to experiment by changing $\vec r_1(t)$ to $\la 2t,3t\ra$, etc., and observe the effects on the loops.)
+Adding $\vec r_1(t)$ to $\vec r_2(t)$ produces $\vec r(t) = \la\,\cos t + 0.2t,\sin t+0.3t\,\ra$, graphed in Figure \ref{fig:vvf3}(b). The linear movement of the line combines with the circle to create loops that move in the direction of $\la 0.2,0.3\ra$.  (We encourage the reader to experiment by changing $\vec r_1(t)$ to $\la 2t,3t\ra$, etc., and observe the effects on the loops.)
 
 \mtable{.62}{Graphing the functions in Example \ref{ex_vvf3}.}{fig:vvf3}{%
 \begin{tabular}{c}
@@ -84,17 +94,18 @@ Adding $\vec r_1(t)$ to $\vec r_2(t)$ produces $\vec r(t) = \la\,\cos t + 0.2t,\
 (c)
 \end{tabular}
 }
-Multiplying $\vec r(t)$ by 5 scales the function by 5, producing $5\vec r(t) =  \langle 5\cos t+1,5\sin t+1.5\rangle$, which is graphed in Figure \ref{fig:vvf3} (c) along with $\vec r(t)$. The new function is ``5 times bigger'' than $\vec r(t)$. Note how the graph of $5\vec r(t)$ in (c) looks identical to the graph of $\vec r(t)$ in $(b)$. This is due to the fact that the $x$ and $y$ bounds of the plot in $(c)$ are exactly 5 times larger than the bounds in (b).
+Multiplying $\vec r(t)$ by 5 scales the function by 5, producing $5\vec r(t) =  \langle 5\cos t+1,5\sin t+1.5\rangle$, which is graphed in Figure \ref{fig:vvf3}(c) along with $\vec r(t)$. The new function is ``5 times bigger'' than $\vec r(t)$. Note how the graph of $5\vec r(t)$ in (c) looks identical to the graph of $\vec r(t)$ in $(b)$. This is due to the fact that the $x$ and $y$ bounds of the plot in $(c)$ are exactly 5 times larger than the bounds in (b).
 }\\
 
 \example{ex_vvf4}{Adding and scaling vector--valued functions.}{
 A \textbf{cycloid} is a graph traced by a point $p$ on a rolling circle, as shown in Figure \ref{fig:vvf4}. Find an equation describing the cycloid, where the circle has radius 1.
-\index{cycloid}
+\index{cycloid}\addtocounter{figure}{1}
 \begin{center}
 \myincludegraphics{figures/figvvf4}
 \captionsetup{type=figure}
 \caption{Tracing a cycloid.}\label{fig:vvf4}
-\end{center}}
+\end{center}\addtocounter{figure}{-2}%
+}
 {This problem is not very difficult if we approach it in a clever way. We start by letting $\vec p(t)$ describe the position of the point $p$ on the circle, where the circle is centered at the origin and only rotates clockwise (i.e., it  does not roll). This is relatively simple given our previous experiences with parametric equations; $\vec p(t) = \la \cos t, -\sin t\ra$. 
 
 We now want the circle to roll. We represent this by letting $\vec c(t)$ represent the location of the center of the circle. It should be clear that the $y$ component of $\vec c(t)$ should be 1; the center of the circle is always going to be 1 if it rolls on a horizontal surface.
@@ -107,6 +118,7 @@ We now combine $\vec p$ and $\vec c$ together to form the equation of the cycloi
 
 \noindent\textbf{\large Displacement}\\
 
+\addtocounter{figure}{1}
 \mfigure{.8}{The cycloid in Example \ref{ex_vvf4}.}{fig:vvfa}{figures/figvvf4a}
 
 A vector--valued function $\vec r(t)$ is often used to describe the position of a moving object at time $t$. At $t=t_0$, the object is at $\vec r(t_0)$; at $t=t_1$, the object is at $\vec r(t_1)$. Knowing the locations $\vec r(t_0)$ and $\vec r(t_1)$ give no indication of the path taken between them, but often we only care about the difference of the locations, $\vec r(t_1)-\vec r(t_0)$, the \sword{displacement}.\index{displacement}\index{vector--valued function!displacement}
@@ -144,6 +156,6 @@ $$\frac{\vec r(5)-\vec r(-1)}{5-(-1)} = \frac{\la 0,2\ra}{6} = \la 0,1/3\ra.$$
 As it took ``3 times as long'' to arrive at the same place, this average rate of change on $[-1,5]$ is $1/3$ the average rate of change on $[-1,1]$.
 }\\
 
-We considered average rates of change in Sections \ref{sec:limit_intro} and \ref{sec:derivative} as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector--valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us an understanding of integration.
+We considered average rates of change in Sections \ref{sec:limit_intro} and \ref{sec:derivative} as we studied limits and derivatives. The same is true here; in the following section we apply calculus concepts to vector--valued functions as we find limits, derivatives, and integrals. Understanding the average rate of change will give us an understanding of the derivative; displacement gives us one application of integration.
 
 \printexercises{exercises/11_01_exercises}

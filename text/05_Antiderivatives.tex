@@ -1,18 +1,18 @@
-We have spent considerable time considering the derivatives of a function and their applications. In the following chapters, we are going to starting thinking in ``the other direction.'' That is, given a function $f(x)$, we are going to consider functions $F(x)$ such that $F'(x) = f(x)$.
+We have spent considerable time considering the derivatives of a function and their applications. In the following chapters, we are going to starting thinking in ``the other direction.'' That is, given a function $f(x)$, we are going to consider functions $F(x)$ such that $F\primeskip'(x) = f(x)$. There are numerous reasons this will prove to be useful: these functions will help us compute areas, volumes, mass, force, pressure, work, and much more.
 
 
 
 \section{Antiderivatives and Indefinite Integration}\label{sec:antider}
 
-Given a function $y=f(x)$, a \textit{differential equation} is one that incorporates $y$, $x$, and the derivatives of $y$. For instance, a simple differential equation is: $$y\,' = 2x.$$
+Given a function $y=f(x)$, a \textit{differential equation} is one that incorporates $y$, $x$, and the derivatives of $y$. For instance, a simple differential equation is: $$y\primeskip' = 2x.$$
 
-Solving a differential equation amounts to finding a function $y$ that satisfies the given equation. Take a moment and consider that equation; can you find a function $y$ such that $y\,' = 2x$?
+Solving a differential equation amounts to finding a function $y$ that satisfies the given equation. Take a moment and consider that equation; can you find a function $y$ such that $y\primeskip' = 2x$?
 
 Can you find another?
 
 And yet another?
 
-Hopefully one was able to come up with at least one solution: $y = x^2$. ``Finding another'' may have seemed impossible until one realizes that a function like $y=x^2+1$ also has a derivative of $2x$. Once that discovery is made, finding ``yet another'' is not difficult; the function $y = x^2 + 123,456,789$ also has a derivative of $2x$. The differential equation $y\,' = 2x$ has many solutions. This leads us to some definitions.
+Hopefully one was able to come up with at least one solution: $y = x^2$. ``Finding another'' may have seemed impossible until one realizes that a function like $y=x^2+1$ also has a derivative of $2x$. Once that discovery is made, finding ``yet another'' is not difficult; the function $y = x^2 + 123,456,789$ also has a derivative of $2x$. The differential equation $y\primeskip' = 2x$ has many solutions. This leads us to some definitions.
 %\enlargethispage{3\baselineskip}
 
 \definition{def:antider}{Antiderivatives and Indefinite Integrals}
@@ -222,18 +222,18 @@ We highlight a few important points from Theorem \ref{thm:indef_alg}:
 \noindent\textbf{\large Initial Value Problems}
 \vskip\baselineskip
 
-In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes the acceleration.\index{initial value problem} We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinite antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
+In Section \ref{sec:basic_diff_rules} we saw that the derivative of a position function gave a velocity function, and the derivative of a velocity function describes  acceleration.\index{initial value problem} We can now go ``the other way:'' the antiderivative of an acceleration function gives a velocity function, etc. While there is just one derivative of a given function, there are infinite antiderivatives. Therefore we cannot ask ``What is \textit{the} velocity of an object whose acceleration is $-32$ft/s$^2$?'', since there is more than one answer. 
 
-We can find \textit{the} answer if we provide more information with the question, as done in the following example.\\
+We can find \textit{the} answer if we provide more information with the question, as done in the following example. Often the additional information comes in the form of an \textit{initial value}, a value of the function that one knows beforehand.\\
 
 \example{ex_anti4}{Solving initial value problems}{
 The acceleration due to gravity of a falling object is $-32$ ft/s$^2$. At time $t=3$, a falling object had a velocity of $-10$ ft/s. Find the equation of the object's velocity.}
 {We want to know a velocity function, $v(t)$. We know two things:
 	\begin{itemize}
-		\item		The acceleration, i.e., $v'(t)= -32$, and
+		\item		The acceleration, i.e., $v\primeskip'(t)= -32$, and
 		\item		the velocity at a specific time, i.e., $v(3) = -10$.
 	\end{itemize}
-Using the first piece of information, we know that $v(t)$ is an antiderivative of $v'(t)=-32$. So we begin by finding the indefinite integral of $-32$:
+Using the first piece of information, we know that $v(t)$ is an antiderivative of $v\primeskip'(t)=-32$. So we begin by finding the indefinite integral of $-32$:
 		$$\int (-32)\ dt = -32t+C=v(t).$$
 Now we use the fact that $v(3)=-10$ to find $C$:
 \begin{align*}
@@ -262,7 +262,7 @@ Find $f(t)$, given that $\fpp(t) = \cos t$, $\fp(0) = 3$ and $f(0) = 5$.}
 We now find $f(t)$ by integrating again.
 
 %\enlargethispage{3\baselineskip}
-$$\int \fp(t) \ dt = \int (\sin t+3)\ dt = -\cos t + 3t + C.$$ 
+$$f(t)=\int \fp(t) \ dt = \int (\sin t+3)\ dt = -\cos t + 3t + C.$$ 
 We are given that $f(0) = 5$, so
 \begin{align*}
 -\cos 0 + 3(0) + C &= 5 \\

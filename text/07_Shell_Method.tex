@@ -2,16 +2,37 @@
 
 Often a given problem can be solved in more than one way. A particular method may be chosen out of convenience, personal preference, or perhaps necessity. Ultimately, it is good to have options.
 
-The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross-sectional area of the solid. This section develops another method of computing volume, the \textbf{Shell Method.} Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating ``shells.''
+The previous section introduced the Disk and Washer Methods, which computed the volume of solids of revolution by integrating the cross--sectional area of the solid. This section develops another method of computing volume, the \textbf{Shell Method.} Instead of slicing the solid perpendicular to the axis of rotation creating cross-sections, we now slice it parallel to the axis of rotation, creating ``shells.''
 
-Consider Figure \ref{fig:shell_intro}, where the region shown in (a) rotated around the $y$-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a \textbf{cylindrical shell}, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells. 
+Consider Figure \ref{fig:shell_intro}, where the region shown in (a) is rotated around the $y$-axis forming the solid shown in (b). A small slice of the region is drawn in (a), parallel to the axis of rotation. When the region is rotated, this thin slice forms a \textbf{cylindrical shell}, as pictured in part (c) of the figure. The previous section approximated a solid with lots of thin disks (or washers); we now approximate a solid with many thin cylindrical shells. 
 \mtable{.6}{Introducing the Shell Method.}{fig:shell_intro}{%
 \noindent\begin{tabular}{c}
-\myincludegraphics{figures/figshell_intro_b}\\
-(a)\\
-\myincludegraphics{figures/figshell_intro_a}\\
-(b)\\
-\myincludegraphics{figures/figshell_intro_d}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=134.9923368693739,
+3Dortho=0.00484071671962738,
+3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
+3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
+3Droo=149.99997892897957,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell_intro_b}\\
+%\\myincludegraphics{figures/figshell_intro_b}\\
+(a)\\[5pt]
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=134.9923368693739,
+3Dortho=0.00484071671962738,
+3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
+3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
+3Droo=149.99997892897957,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell_intro_a}\\
+%\myincludegraphics{figures/figshell_intro_a}\\
+(b)\\[5pt]
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=134.9923368693739,
+3Dortho=0.00484071671962738,
+3Dc2c=0.3376615047454834 0.4032796025276184 0.8504999876022339,
+3Dcoo=3.760643243789673 66.28701782226562 -12.64914608001709,
+3Droo=149.99997892897957,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell_intro_d}\\
+%\myincludegraphics{figures/figshell_intro_d}\\
 (c)
 \end{tabular}
 }
@@ -27,7 +48,7 @@ $$V = \sum_{i=1}^n 2\pi r_ih_i\dx_i,$$ where $r_i$, $h_i$ and $\dx_i$ are the ra
 This is a Riemann Sum. Taking a limit as the thickness of the shells approaches 0 leads to a definite integral.
 \clearpage
 %\vskip 7pt
-%\noindent \hskip-\marginparwidth \hskip -\marginparsep%
+\noindent \hskip-\marginparwidth \hskip -\marginparsep%
 \begin{minipage}{\textwidth+\marginparwidth+\marginparsep}
 \begin{tabular}{cc}
 \myincludegraphics[scale=.9]{figures/figshell_soupcan} & \myincludegraphics[scale=.9]{figures/figshell_unwrapshell}\\
@@ -63,10 +84,10 @@ Find the volume of the solid formed by rotating the region bounded by $y=0$, $y=
 
 The distance this line is from the axis of rotation determines $r(x)$; as the distance from $x$ to the $y$-axis is $x$, we have $r(x)=x$. The height of this line determines $h(x)$; the top of the line is at $y=1/(1+x^2)$, whereas the bottom of the line is at $y=0$. Thus $h(x) = 1/(1+x^2)-0 = 1/(1+x^2)$. The region is bounded from $x=0$ to $x=1$, so the volume is 
 \begin{align*}
-V 	&= 2\pi\int_0^1 \frac{x}{1+x^2}\ dx. \\
-\end{align*}
-This requires substitution. Let $u=1+x^2$, so $du = 2x\ dx$. We also change the bounds: $u(0) = 1$ and $u(1) = 2$. Thus we have:
-\begin{align*}
+V 	&= 2\pi\int_0^1 \frac{x}{1+x^2}\ dx.
+%\end{align*}
+\intertext{This requires substitution. Let $u=1+x^2$, so $du = 2x\ dx$. We also change the bounds: $u(0) = 1$ and $u(1) = 2$. Thus we have:}
+%\begin{align*}
 		&= \pi\int_1^2 \frac{1}{u}\ du \\
 		&= \pi\ln u\Big|_1^2\\
 		&= \pi\ln 2 \approx 2.178 \ \text{units}^3.
@@ -78,13 +99,29 @@ With the Shell Method, nothing special needs to be accounted for to compute the 
 
 \example{ex_shell2}{Finding volume using the Shell Method}{
 Find the volume of the solid formed by rotating the triangular region determined by the points $(0,1)$, $(1,1)$ and $(1,3)$ about the line $x=3$.}
-{The region is sketched in Figure \ref{fig:shell2} (a) along with the differential element, a line within the region parallel to the axis of rotation. 
+{The region is sketched in Figure \ref{fig:shell2}(a) along with the differential element, a line within the region parallel to the axis of rotation. In part (b) of the figure, we see the shell traced out by the differential element, and in part (c) the whole solid is shown.
+
 \mtable{.4}{Graphing a region in Example \ref{ex_shell2}.}{fig:shell2}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figshell2a}\\
 (a)\\ \\
-\myincludegraphics{figures/figshell2b}\\
-(b)
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=138.26595091591264,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.16831636428833008 0.19470007717609406 0.966313362121582,
+3Dcoo=74.36175537109375 71.21556854248047 -40.660457611083984,
+3Droo=149.9999886313645,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell2b}\\
+%\myincludegraphics{figures/figshell2b}\\
+(b)\\ \\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=138.26595091591264,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.16831636428833008 0.19470007717609406 0.966313362121582,
+3Dcoo=74.36175537109375 71.21556854248047 -40.660457611083984,
+3Droo=149.9999886313645,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell2c}\\
+(c)
 \end{tabular}
 }
 The height of the differential element is the distance from $y=1$ to $y=2x+1$, the line that connects the points $(0,1)$ and $(1,3)$. Thus $h(x) = 2x+1-1 = 2x$. The radius of the shell formed by the differential element is the distance from $x$ to $x=3$; that is, it is $r(x)=3-x$. The $x$-bounds of the region are $x=0$ to $x=1$, giving
@@ -94,21 +131,37 @@ V &=	2\pi\int_0^1 (3-x)(2x)\ dx \\
 	&= 2\pi\left(3x^2-\frac23x^3\right)\Big|_0^1\\
 	&= \frac{14}{3}\pi\approx 14.66 \ \text{units}^3.
 \end{align*}
+\vskip-1.5\baselineskip
 }\\
 
 When revolving a region around a horizontal axis, we must consider the radius and height functions in terms of $y$, not $x$.\\
 
 \example{ex_shell3}{Finding volume using the Shell Method}{
 Find the volume of the solid formed by rotating the region given in Example \ref{ex_shell2} about the $x$-axis.}
-{The region is sketched in Figure \ref{fig:shell3} (a) with a sample differential element and the solid is sketched in (b). (Note that the region looks slightly different than it did in the previous example as the bounds on the graph have changed.)
+{The region is sketched in Figure \ref{fig:shell3}(a) with a sample differential element. In part (b) of the figure the shell formed by the differential element is drawn, and the solid is sketched in (c). (Note that the triangular region looks ``short and wide'' here, whereas in the previous example the same region looked ``tall and narrow.'' This is because the bounds on the graphs are different.)
 
 The height of the differential element is an $x$-distance, between $x=\frac12y-\frac12$ and $x=1$. Thus $h(y) = 1-(\frac12y-\frac12) = -\frac12y+\frac32.$ The radius is the distance from $y$ to the $x$-axis, so $r(y) =y$. The $y$ bounds of the region are $y=1$ and $y=3$, leading to the integral
 \mtable{.45}{Graphing a region in Example \ref{ex_shell3}.}{fig:shell3}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figshell3a}\\
 (a) \\
-\myincludegraphics{figures/figshell3b}\\
-(b)
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell3b}\\
+%\myincludegraphics{figures/figshell3b}\\
+(b)\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell3c}\\
+(c)
 \end{tabular}}
 
 \begin{align*}
@@ -125,13 +178,28 @@ At the beginning of this section it was stated that ``it is good to have options
 
 \example{ex_shell4}{Finding volume using the Shell Method}{
 Find the volume of the solid formed by revolving the region bounded by $y= \sin x$ and the $x$-axis from $x=0$ to $x=\pi$ about the $y$-axis.}
-{The region and the resulting solid are given in Figure \ref{fig:shell4}.
-\mtable{.6}{Graphing a region in Example \ref{ex_shell4}.}{fig:shell4}{%
+{The region and a differential element, the shell formed by this differential element, and the resulting solid are given in Figure \ref{fig:shell4}.
+\mtable{.55}{Graphing a region in Example \ref{ex_shell4}.}{fig:shell4}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figshell4a}\\
 (a) \\
-\myincludegraphics{figures/figshell4b}\\
-(b)
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell4c}\\
+%\myincludegraphics{figures/figshell4b}\\
+(b)\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.25039174241927,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.34401965141296387 0.04830114170908928 0.9377192854881287,
+3Dcoo=71.46640014648438 9.081968307495117 -11.759183883666992,
+3Droo=149.99998743176678,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figshell4b}\\
+(c)
 \end{tabular}}
 The radius of a sample shell is $r(x) = x$; the height of a sample shell is $h(x) = \sin x$, each from $x=0$ to $x=\pi$. Thus the volume of the solid is 
 \begin{align*}
@@ -159,4 +227,7 @@ We end this section with a table summarizing the usage of the Washer and Shell M
 \index{integration!volume!Washer Method}\index{Washer Method}\index{integration!volume!Shell Method}\index{Shell Method}
  }
  
+As in the previous section, the real goal of this section is not to be able to compute volumes of certain solids. Rather, it is to be able to solve a problem by first approximating, then using limits to refine the approximation to give the exact value. In this section, we approximate the volume of a solid by cutting it into thin cylindrical shells. By summing up the volumes of each shell, we get an approximation of the volume. By taking a limit as the number of equally spaced shells goes to infinity, our summation can be evaluated as a definite integral, giving the exact value.
+
+We use this same principle again in the next section, where we find the length of curves in the plane.
 \printexercises{exercises/07_03_exercises}

@@ -100,7 +100,7 @@ Find the radius and interval of convergence for each of the following series:\\
 	The Ratio Test states a series converges if the limit of $|a_{n+1}/a_n| = L<1$. We found the limit above to be $|x|$; therefore, the power series converges when $|x| <1$, or when $x$ is in $(-1,1)$. Thus the radius of convergence is $R=1$.
 	\drawexampleline
 	
-	To determine the interval of convergence, we need to check the endpoints of $(-1,1)$. When $x=-1$, we have the series
+	To determine the interval of convergence, we need to check the endpoints of $(-1,1)$. When $x=-1$, we have the opposite of the Harmonic Series:
 	\begin{align*}
 	\sum_{n=1}^\infty (-1)^{n+1}\frac{(-1)^n}{n} &= \sum_{n=1}^\infty \frac{-1}{n}\\
 				&= -\infty.
@@ -139,7 +139,7 @@ We can use a power series to define a function:
 $$f(x) = \sum_{n=0}^\infty a_nx^n$$
 where the domain of $f$ is a subset of the interval of convergence of the power series. One can apply calculus techniques to such functions; in particular, we can find derivatives and antiderivatives. 
 
-\theorem{thm:calc_power_series}{Derivatives and Indefinite Integrals of Power Series Functions}
+\theorem{thm:calc_power_series}{\parbox[t]{210pt}{Derivatives and Indefinite Integrals of Power Series Functions}}
 {Let $\ds f(x) = \sum_{n=0}^\infty a_n(x-c)^n$ be a function defined by a power series, with radius of convergence $R$.
 	\begin{enumerate}
 		\item $f(x)$ is continuous and differentiable on $(c-R,c+R)$.
@@ -240,9 +240,9 @@ Example  \ref{ex_ps4} and the work following Example \ref{ex_ps3} established re
 In this section's last example, we show how to solve a simple differential equation with a power series.\\
 
 \example{ex_ps5}{Solving a differential equation with a power series.}
-{Give the first 4 terms of the power series solution to $y' = 2y$, where $y(0) = 1$.
+{Give the first 4 terms of the power series solution to $y\primeskip' = 2y$, where $y(0) = 1$.
 }
-{The differential equation $y' = 2y$ describes a function $y=f(x)$ where the derivative of $y$ is twice $y$ and $y(0)=1$. This is a rather simple differential equation; with a bit of thought one should realize that if $y=Ce^{2x}$, then $y' = 2Ce^{2x}$, and hence $y' = 2y$. By letting $C=1$ we satisfy the initial condition of $y(0)=1$.
+{The differential equation $y\primeskip' = 2y$ describes a function $y=f(x)$ where the derivative of $y$ is twice $y$ and $y(0)=1$. This is a rather simple differential equation; with a bit of thought one should realize that if $y=Ce^{2x}$, then $y\primeskip' = 2Ce^{2x}$, and hence $y\primeskip' = 2y$. By letting $C=1$ we satisfy the initial condition of $y(0)=1$.
 
 Let's ignore the fact that we already know the solution and find a power series function that satisfies the equation. The solution we seek will have the form
 $$f(x)  = \sum_{n=0}^\infty a_nx^n = a_0+a_1x+a_2x^2+a_3x^3+\cdots$$
@@ -262,7 +262,7 @@ a_1 = 2 \text{ and } 2a_2 = 2a_1 &\Rightarrow a_2=4/2 =2;\\
 a_2=2 \text{ and } 3a_3 = 2a_2 &\Rightarrow a_3=8/(2\cdot3)=4/3;\\
 a_3=4/3 \text{ and } 4a_4 = 2a_3 &\Rightarrow a_4 =16/(2\cdot3\cdot4)= 2/3. 
 \end{align*}
-Thus the first 5 terms of the power series solution to the differential equation $y'=2y$ is 
+Thus the first 5 terms of the power series solution to the differential equation $y\primeskip'=2y$ is 
 $$f(x) = 1+ 2x+2x^2 + \frac43x^3+\frac23x^4+\cdots$$
 In Section \ref{sec:taylor_series}, as we study Taylor Series, we will learn how to recognize this series as describing $y=e^{2x}$. 
 }\\

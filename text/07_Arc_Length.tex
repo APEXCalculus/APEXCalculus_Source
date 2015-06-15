@@ -77,12 +77,12 @@ Find the arc length of $\ds f(x) =\frac18x^2-\ln x$ from $x=1$ to $x=2$.}
 \begin{align*}
 L		&=  \int_1^2 \sqrt{1+ \left(\frac x4-\frac1x\right)^2}\ dx \\
 		&= 	\int_1^2 \sqrt{1 + \frac{x^2}{16} -\frac12 + \frac1{x^2} } \ dx \\
+		&=	\int_1^2 \sqrt{\frac{x^2}{16} +\frac12 + \frac1{x^2} } \ dx \\
+		&=	\int_1^2	\sqrt{ \left(\frac x4 + \frac1x\right)^2}\ dx 
 \end{align*}
 \begin{align*}
 \phantom{L}
-		&=	\int_1^2 \sqrt{\frac{x^2}{16} +\frac12 + \frac1{x^2} } \ dx \\
-		&=	\int_1^2	\sqrt{ \left(\frac x4 + \frac1x\right)^2}\ dx \\
-		&= \int_1^2 \left(\frac x4 + \frac1x\right) \ dx \\
+				&= \int_1^2 \left(\frac x4 + \frac1x\right) \ dx \\
 		&=  \left(\frac{x^2}8 + \ln x\right)\Bigg|_1^2\\
 		&=	\frac38+\ln 2 \approx 1.07 \ \text{units}.
 \end{align*}
@@ -99,7 +99,7 @@ Find the length of the sine curve from $x=0$ to $x=\pi$.}
 The setup is straightforward: $f(x) = \sin x$ and $\fp(x) = \cos x$. Thus 
 $$L = \int_0^\pi \sqrt{1+\cos^2x}\ dx.$$
 This integral \textit{cannot} be evaluated in terms of elementary functions so we will approximate it with Simpson's Method with $n=4$. 
-\mtable{.4}{A table of values of $y=\sqrt{1+\cos^2x}$ to evaluate a definite integral in Example \ref{ex_arc3}.}{fig:arc3}{%
+\mtable{.5}{A table of values of $y=\sqrt{1+\cos^2x}$ to evaluate a definite integral in Example \ref{ex_arc3}.}{fig:arc3}{%
 $$\begin{array}{cc}
 x & \sqrt{1+\cos^2x} \\ \hline
  0 & \sqrt{2} \rule{0pt}{10pt}\\
@@ -126,12 +126,19 @@ We have already seen how a curve $y=f(x)$ on $[a,b]$ can be revolved around an a
 \begin{tabular}{c}
 \myincludegraphics{figures/figarc4b}\\
 (a)\\
-\myincludegraphics{figures/figarc4}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=121.00092658103458,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.2899017035961151 0.17925968766212463 0.9401186108589172,
+3Dcoo=72.58285522460938 2.891160011291504 -26.545438766479492,
+3Droo=149.99998703790175,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figarc4}\\
+%\myincludegraphics{figures/figarc4}\\
 (b)
 \end{tabular}
 }
 
-We begin as we have in the previous sections: we partition the interval $[a,b]$ with $n$ subintervals, where the $i\,^{\text{th}}$ subinterval is $[x_i,x_{i+1}]$. On each subinterval, we can approximate the curve $y=f(x)$ with a straight line that connects $f(x_i)$ and $f(x_{i+1})$ as shown in Figure \ref{fig:surface_intro} (a). Revolving this line segment about the $x$-axis creates part of a cone (called the \textit{frustum} of a cone) as shown in Figure \ref{fig:surface_intro} (b). The surface area of a frustum of a cone is $$2\pi\cdot\text{ length }\cdot\text{average of the two radii $R$ and $r$}.$$
+We begin as we have in the previous sections: we partition the interval $[a,b]$ with $n$ subintervals, where the $i\,^{\text{th}}$ subinterval is $[x_i,x_{i+1}]$. On each subinterval, we can approximate the curve $y=f(x)$ with a straight line that connects $f(x_i)$ and $f(x_{i+1})$ as shown in Figure \ref{fig:surface_intro}(a). Revolving this line segment about the $x$-axis creates part of a cone (called a \textit{frustum} of a cone) as shown in Figure \ref{fig:surface_intro}(b). The surface area of a frustum of a cone is $$2\pi\cdot\text{ length }\cdot\text{average of the two radii $R$ and $r$}.$$
 
 The length is given by $L$; we use the material just covered by arc length to state that $$L\approx \sqrt{1+\fp(c_i)}\dx_i$$ for some $c_i$ in the $i\,^\text{th}$ subinterval. The radii are just the function evaluated at the endpoints of the interval. That is, $$R = f(x_{i+1})\quad \text{and}\quad r = f(x_i).$$
 
@@ -158,7 +165,14 @@ which is a Riemann Sum. Taking the limit as the subinterval lengths go to zero g
 
 \example{ex_sa1}{Finding surface area of a solid of revolution}{
 Find the surface area of the solid formed by revolving $y=\sin x$ on $[0,\pi]$ around the $x$-axis, as shown in Figure \ref{fig:sa1}.
-\mfigure{.4}{Revolving $y=\sin x$ on $[0,\pi]$ about the $x$-axis.}{fig:sa1}{figures/figsa1}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=121.00092658103458,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.2899017035961151 0.17925968766212463 0.9401186108589172,
+3Dcoo=72.58285522460938 2.891160011291504 -26.545438766479492,
+3Droo=149.99998703790175,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.4}{Revolving $y=\sin x$ on $[0,\pi]$ about the $x$-axis.}{fig:sa1}{figures/figsa1}
+%\mfigure{.4}{Revolving $y=\sin x$ on $[0,\pi]$ about the $x$-axis.}{fig:sa1}{figures/figsa1}
 }
 {The setup is relatively straightforward. Using Key Idea \ref{idea:surface_area}, we have the surface area $SA$ is:
 \begin{align*}
@@ -180,10 +194,24 @@ Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,
 		\end{enumerate}
 \mtable{.55}{The solids used in Example \ref{ex_sa2}.}{fig:sa2}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figsa2a}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=138.26595091591264,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.16831636428833008 0.19470007717609406 0.966313362121582,
+3Dcoo=81.32470703125 3.403531074523926 -28.20997428894043,
+3Droo=149.9999886313645,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figsa2a}\\
+%\myincludegraphics{figures/figsa2a}\\
 (a)\\[15pt]
 \\
-\myincludegraphics{figures/figsa2b}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=138.26595091591264,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.16831637918949127 0.19470007717609406 0.966313362121582,
+3Dcoo=0.013853734359145164 79.42704010009766 -29.364774703979492,
+3Droo=149.99998895240248,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figsa2b}\\
+%\myincludegraphics{figures/figsa2b}\\
 (b)
 \end{tabular}
 }
@@ -216,11 +244,18 @@ Find the surface area of the solid formed by revolving the curve $y=x^2$ on $[0,
 }\\
 %\clearpage
 
-This last example is a famous mathematical ``paradox.''\\
+Our final example is a famous mathematical ``paradox.''\\
 \clearpage
 
 \example{ex_gabriel}{The surface area and volume of Gabriel's Horn}{Consider the solid formed by revolving $y=1/x$ about the $x$-axis on $[1,\infty)$. Find the volume and surface area of this solid. (This shape, as graphed in Figure \ref{fig:gabriel}, is known as ``Gabriel's Horn'' since it looks like a very long horn that only a supernatural person, such as an angel, could play.)\index{Gabriel's Horn}
-\mfigure{.75}{A graph of Gabriel's Horn.}{fig:gabriel}{figures/figgabriel}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=107.09033109095482,
+3Dortho=0.0048407199792563915,
+3Dc2c=0.4647676646709442 0.1565970778465271 0.8714748024940491,
+3Dcoo=72.58285522460938 2.8911631107330322 -26.545440673828125,
+3Droo=149.99999776925813,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.75}{A graph of Gabriel's Horn.}{fig:gabriel}{figures/figgabriel}
+%\mfigure{.75}{A graph of Gabriel's Horn.}{fig:gabriel}{figures/figgabriel}
 }
 {To compute the volume it is natural to use the Disk Method. We have:
 \begin{align*}
@@ -230,7 +265,7 @@ V &= \pi\int_1^\infty \frac{1}{x^2}\ dx \\
 	&= \lim_{b\to\infty} \pi\left(1-\frac1b\right) \\
 	&= \pi \ \text{units}^3.
 \end{align*}
-Gabriel's Horn has a finite volume of $\pi$ cubic units. Since we have already seen that objects with infinite length can have a finite area, this is not too difficult to accept.
+Gabriel's Horn has a finite volume of $\pi$ cubic units. Since we have already seen that regions with infinite length can have a finite area, this is not too difficult to accept.
 
 We now consider its surface area. The integral is straightforward to setup:
 \begin{align*}
@@ -241,8 +276,11 @@ SA &= 2\pi\int_1^\infty \frac{1}{x}\sqrt{1+1/x^4}\ dx.
 By Key Idea \ref{idea:impint1}, the improper integral on the left diverges. Since the integral on the right is larger, we conclude it also diverges, meaning Gabriel's Horn has infinite surface area.
 
 Hence the ``paradox'': we can fill Gabriel's Horn with a finite amount of paint, but since it has infinite surface area, we can never paint it.
+\enlargethispage{3\baselineskip}
 
 Somehow this paradox is striking when we think about it in terms of volume and area. However, we have seen a similar paradox before, as referenced above. We know that the area under the curve $y=1/x^2$ on $[1,\infty)$ is finite, yet the shape has an infinite perimeter. Strange things can occur when we deal with the infinite.
 }\\
+
+A standard equation from physics is ``Work = force $\times$ distance'', when the force applied is constant. In the next section we learn how to compute work when the force applied is variable.
 
 \printexercises{exercises/07_04_exercises}

@@ -1,0 +1,1 @@
+\begingroup \toks 0={macro:->[scale=1,>=stealth] \par \draw [<->,] (-2.1,0) -- (2.1,0); \draw [<->,] (0,-2.1) -- (0,2.1); \par \par \par \draw [thick,{\colorone }] (-2,.6) -- (2,.6); \par \draw (-.2,.3) node {\scriptsize $a\left \{\rule [-.23cm]{0pt}{.23cm}\right .$}; \par \par \par }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

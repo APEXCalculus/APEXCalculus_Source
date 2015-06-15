@@ -6,7 +6,7 @@ Version=4
 MainFile=CalculusIII.tex
 UseBibTeX=0
 UseMakeIndex=0
-ActiveProfile=XeLaTeX ⇨ PDF Index
+ActiveProfile=XeLaTeX ⇨ PDF
 ProjectLanguage=
 ProjectDialect=
 

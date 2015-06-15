@@ -28,7 +28,7 @@ $$\sum_{n=1}^\infty (-1)^{n}a_n \qquad \text{and}\qquad \sum_{n=1}^\infty (-1)^{
 }
 
 The basic idea behind Theorem \ref{thm:alt_series_test} is illustrated in Figure \ref{fig:alt_series_converge}. A positive, decreasing sequence $\{a_n\}$ is shown along with the partial sums
-$$S_n = \sum_{i=1}^n(-1)^{i+1}a_i =a_1-a_2+a_3-a_4+\cdots+(-1)^na_n.$$ 
+$$S_n = \sum_{i=1}^n(-1)^{i+1}a_i =a_1-a_2+a_3-a_4+\cdots+(-1)^{n+1}a_n.$$ 
 Because $\{a_n\}$ is decreasing, the amount by which $S_n$ bounces up/down decreases. Moreover, the odd terms of $S_n$ form a decreasing, bounded sequence, while the even terms of $S_n$ form an increasing, bounded sequence. Since bounded, monotonic sequences converge (see Theorem \ref{thm:monotonic_converge}) and the terms of $\{a_n\}$ approach 0, one can show the odd and even terms of $S_n$ converge to the same common limit $L$, the sum of the series.\\
 \mfigure{.7}{Illustrating convergence with the Alternating Series Test.}{fig:alt_series_converge}{figures/figalt_series_converge}
 
@@ -44,9 +44,9 @@ Determine if the Alternating Series Test applies to each of the following series
 	
 	\item		The underlying sequence is $\{a_n\} = \{\ln n/n\}$. This is positive and approaches 0 as $n\to\infty$ (use L'H\^opital's Rule). However, the sequence is not decreasing for all $n$. It is straightforward to compute $a_1=0$, $a_2\approx0.347$, $a_3\approx 0.366$, and $a_4\approx 0.347$: the sequence is increasing for at least the first 3 terms. 
 	
-	We do not immediately conclude that we cannot apply the Alternating Series Test. Rather, consider the long--term behavior of $\{a_n\}$. Treating $a_n=a(n)$ as a continuous function of $n$ defined on $(1,\infty)$, we can take its derivative:
-	$$a'(n) = \frac{1-\ln n}{n^2}.$$
-	The derivative is negative for all $n\geq 3$ (actually, for all $n>e$), meaning $a(n)=a_n$ is decreasing on $(3,\infty)$. We can apply the Alternating Series Test to the series when we start with $n=3$ and conclude that $\ds \sum_{n=3}^\infty(-1)^n\frac{\ln n}{n}$ converges; adding the terms with $n=1$ and $n=2$ do not change the convergence (i.e., we apply Theorem \ref{thm:series_behavior}).
+	We do not immediately conclude that we cannot apply the Alternating Series Test. Rather, consider the long--term behavior of $\{a_n\}$. Treating $a_n=a(n)$ as a continuous function of $n$ defined on $[1,\infty)$, we can take its derivative:
+	$$a\primeskip'(n) = \frac{1-\ln n}{n^2}.$$
+	The derivative is negative for all $n\geq 3$ (actually, for all $n>e$), meaning $a(n)=a_n$ is decreasing on $[3,\infty)$. We can apply the Alternating Series Test to the series when we start with $n=3$ and conclude that $\ds \sum_{n=3}^\infty(-1)^n\frac{\ln n}{n}$ converges; adding the terms with $n=1$ and $n=2$ do not change the convergence (i.e., we apply Theorem \ref{thm:series_behavior}).
 	
 	The important lesson here is that as before, if a series fails to meet the criteria of the Alternating Series Test on only a finite number of terms, we can still apply the test.
 	
@@ -72,38 +72,64 @@ While there are many factors involved when studying rates of convergence, the al
 	\item	$L$ is between $S_n$ and $S_{n+1}$.
 \end{enumerate}
 }
-Part 1 of Theorem \ref{thm:alt_series_approx} states that the $n^\text{th}$ partial sum of a convergent alternating series will be within $a_{n+1}$ of its total sum. Consider the alternating series we looked at before the statement of the theorem, $\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}$. Since $a_{14} = 1/14^2 \approx 0.0051$, we know that $S_{13}$ is within $0.0051$ of the total sum. That is, we know $S_{13}$ is accurate to at least 1 place after the decimal. (The ``5'' in the third place after the decimal could cause a carry meaning $S_{13}$ isn't accurate to two places after the decimal; in this particular case, that doesn't happen.) 
 
-Moreover, Part 2 of the theorem states that since $S_{13} \approx 0.8252$ and $S_{14}\approx 0.8201$, we know the sum $L$ lies between $0.8201$ and $0.8252$, assuring us that $S_{13}$ is indeed accurate to two decimal places.
+Part 1 of Theorem \ref{thm:alt_series_approx} states that the $n^\text{th}$ partial sum of a convergent alternating series will be within $a_{n+1}$ of its total sum. Consider the alternating series we looked at before the statement of the theorem, $\ds \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}$. Since $a_{14} = 1/14^2 \approx 0.0051$, we know that $S_{13}$ is within $0.0051$ of the total sum. %That is, we know $S_{13}$ is accurate to at least 1 place after the decimal. (The ``5'' in the third place after the decimal could cause a carry meaning $S_{13}$ isn't accurate to two places after the decimal; in this particular case, that doesn't happen.) 
+
+Moreover, Part 2 of the theorem states that since $S_{13} \approx 0.8252$ and $S_{14}\approx 0.8201$, we know the sum $L$ lies between $0.8201$ and $0.8252$. One use of this is the knowledge that $S_{14}$ is accurate to two places after the decimal.
 
 Some alternating series converge slowly. In Example \ref{ex_alt1} we determined the series $\ds\sum_{n=1}^\infty (-1)^{n+1}\frac{\ln n}{n}$ converged. With $n=1001$, we find $\ln n/n \approx 0.0069$, meaning that $S_{1000} \approx 0.1633$ is accurate to one, maybe two, places after the decimal. Since $S_{1001} \approx 0.1564$, we know the sum $L$ is $0.1564\leq L\leq0.1633$.\\
 
 \example{ex_alt_series_approx}{Approximating the sum of convergent alternating series}{
-Approximate the sum of the following series, accurate to two places after the decimal.\\
+Approximate the sum of the following series, accurate to within $0.001$.\\
 
 \noindent$\ds 1.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{1}{n^3}\qquad 2.\ \sum_{n=1}^\infty (-1)^{n+1}\frac{\ln n}{n}$.
 }
 {\begin{enumerate}
-	\item To be ensure accuracy to two places after the decimal, we need $a_n<0.0001$:
+	\item  Using Theorem \ref{thm:alt_series_approx}, we want to find $n$ where $1/n^3 < 0.001$:
 	\begin{align*}
-	\frac1{n^3} &< 0.0001\\
-	n^3&> 10,000\\
-	n&> \sqrt[3]{10000} \approx 21.5.
+	\frac1{n^3} &\leq 0.001=\frac{1}{1000} \\
+	n^3 &\geq 1000\\
+	n &\geq \sqrt[3]{1000}\\
+	n &\geq 10.
 	\end{align*}
-	With $n=22$, we are assured accuracy to two places after the decimal. With $S_{21} \approx 0.9015$, we are confident that the sum $L$ of the series is about $0.90$. 
+	Let $L$ be the sum of this series. By Part 1 of the theorem, $|S_9-L|<a_{10} = 1/1000$. We can compute $S_9=0.902116$, which our theorem states is within $0.001$ of the total sum. 
 	
-	We can arrive at this approximation another way. Part 2 of Theorem \ref{thm:alt_series_approx} states that the sum $L$ lies between successive partial sums. It is straightforward to compute $S_6 \approx 0.899782$, $S_7 \approx 0.9027$ and $S_8\approx 0.9007$. We know the sum must lie between these last two partial sums; since they agree to two places after the decimal, we know $L\approx 0.90$. 
+	We can use Part 2 of the theorem to obtain an even more accurate result. As we know the $10^\text{th}$ term of the series is $-1/1000$, we can easily compute $S_{10} = 0.901116$. Part 2 of the theorem states that $L$ is between $S_9$ and $S_{10}$, so $0.901116 <L<0.902116$.
+	%To  ensure accuracy to two places after the decimal, we need $a_n<0.0001$:
+	%
+	%\begin{align*}
+	%\frac1{n^3} &< 0.0001\\
+	%n^3&> 10,000\\
+	%n&> \sqrt[3]{10000} \approx 21.5.
+	%\end{align*}
+	%With $n=22$, we are assured accuracy to two places after the decimal. With $S_{21} \approx 0.9015$, we are confident that the sum $L$ of the series is about $0.90$. 
+	%
+	%We can arrive at this approximation another way. 
+	%Part 2 of Theorem \ref{thm:alt_series_approx} states that the sum $L$ lies between successive partial sums. It is straightforward to compute $S_6 \approx 0.899782$, $S_7 \approx 0.9027$ and $S_8\approx 0.9007$. We know the sum must lie between these last two partial sums; since they agree to two places after the decimal, we know $L\approx 0.90$. 
 	
-	\item		We again solve for $n$ such that $a_n < 0.0001$; that is, we want $n$ such that $\ln (n)/n <0.0001$. This cannot be solved algebraically, so we approximate the solution using Newton's Method.
+	\item		We want to find $n$ where $\ln (n)/n < 0.001$. We start by solving $\ln (n)/n = 0.001$ for $n$. This cannot be solved algebraically, so we will use Newton's Method to approximate a solution. 
 	
-	Let $f(x) = \ln(x)/x -0.0001$. We want to find where $f(x) =0$. Assuming that $x$ must be large, we let $x_1=1000$. Recall that $x_{n+1} = x_n-f(x_n)/\fp(x_n)$; we compute $\fp(x) = \big(1-\ln(x)\big)/x^2$. Thus:
+	Let $f(x) = \ln(x)/x-0.001$; we want to know where $f(x) = 0$. We make a guess that $x$ must be ``large,'' so our initial guess will be $x_1=1000$. Recall how Newton's Method works: given an approximate solution $x_n$, our next approximation $x_{n+1}$ is given by
+	$$x_{n+1} = x_n - \frac{f(x_n)}{\fp(x_n)}.$$
+	We find $\fp(x) = \big(1-\ln(x)\big)/x^2$. This gives
 	\begin{align*}
-	x_2 &= 1000-\frac{\ln (1000)/1000-0.0001}{\big(1-\ln(1000)\big)/1000^2}\\
-			&= 2152.34.
+	x_2 &= 1000 - \frac{\ln(1000)/1000-0.001}{\big(1-\ln(1000)\big)/1000^2} \\
+			&= 2000.
 	\end{align*}
-	Using a computer, we find that after 12 iterations we find $x\approx 116,671$. With $S_{116,671} \approx 0.1598$ and $S_{116,672}\approx 0.1599$, we know that the sum $L$ is between these two values. Simply stating that $L\approx 0.15$ is misleading, as $L$ is very, very close to $0.16$.
+	Using a computer, we find that Newton's Method seems to converge to a solution $x=9118.01$ after 8 iterations. Taking the next integer higher, we have $n=9119$, where $\ln(9119)/9119 =0.000999903<0.001$.
+	
+	Again using a computer, we find $S_{9118} = -0.160369$. Part 1 of the theorem states that this is within $0.001$ of the actual sum $L$. Already knowing the 9,119$^\text{th}$ term, we can compute $S_{9119} = -0.159369$, meaning $-0.159369 < L < -0.160369$. 
+	%We again solve for $n$ such that $a_n < 0.0001$; that is, we want $n$ such that $\ln (n)/n <0.0001$. This cannot be solved algebraically, so we approximate the solution using Newton's Method.
+	
+	%Let $f(x) = \ln(x)/x -0.0001$. We want to find where $f(x) =0$. Assuming that $x$ must be large, we let $x_1=1000$. Recall that $x_{n+1} = x_n-f(x_n)/\fp(x_n)$; we compute $\fp(x) = \big(1-\ln(x)\big)/x^2$. Thus:
+	%\begin{align*}
+	%x_2 &= 1000-\frac{\ln (1000)/1000-0.0001}{\big(1-\ln(1000)\big)/1000^2}\\
+			%&= 2152.34.
+	%\end{align*}
+	%Using a computer, we find that after 12 iterations we find $x\approx 116,671$. With $S_{116,671} \approx 0.1598$ and $S_{116,672}\approx 0.1599$, we know that the sum $L$ is between these two values. Simply stating that $L\approx 0.15$ is misleading, as $L$ is very, very close to $0.16$.
 \end{enumerate}
-\vskip-1.5\baselineskip
+Notice how the first series converged quite quickly, where we needed only 10 terms to reach the desired accuracy, whereas the second series took over 9,000 terms.
+%\vskip-1.5\baselineskip
 }\\
 
 One of the famous results of mathematics is that the Harmonic Series, $\ds \sum_{n=1}^\infty \frac1n$ diverges, yet the Alternating Harmonic Series, $\ds \sum_{n=1}^\infty (-1)^{n+1}\frac1n$, converges. The notion that alternating the signs of the terms in a series can make a series converge leads us to the following definitions.\index{Alternating Harmonic Series}
@@ -117,12 +143,12 @@ One of the famous results of mathematics is that the Harmonic Series, $\ds \sum_
 \end{enumerate}
 }
 
-\mnote{.85}{\sword{Note:} In Definition \ref{def:abs_converge}, $\ds \sum_{n=1}^\infty a_n$ is not necessarily an alternating series; it just may have some negative terms.}
+\mnote{.8}{\sword{Note:} In Definition \ref{def:abs_converge}, $\ds \sum_{n=1}^\infty a_n$ is not necessarily an alternating series; it just may have some negative terms.}
 
 Thus we say the Alternating Harmonic Series converges conditionally. \\
 
 \example{ex_alt_series2}{Determining absolute and conditional convergence.}{
-Determine if the following series converges absolutely, conditionally, or diverges.\\
+Determine if the following series converge absolutely, conditionally, or diverge.\\
 
 \noindent$\ds 1.\ \sum_{n=1}^\infty (-1)^n\frac{n+3}{n^2+2n+5}\qquad 2.\ \sum_{n=1}^\infty (-1)^n\frac{n^2+2n+5}{2^n}\qquad 3.\ \sum_{n=3}^\infty (-1)^n\frac{3n-3}{5n-10}$
 }
@@ -144,7 +170,7 @@ Determine if the following series converges absolutely, conditionally, or diverg
 \vskip-1.5\baselineskip
 }\\
 
-Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first is that absolute convergence is  ``stronger'' than regular convergence. That is, just because $\ds \sum_{n=1}^\infty a_n$ converges, we cannot conclude that $\ds \sum_{n=1}^\infty |a_n|$ will converge, but knowing a series converges absolutely tells us that $\ds \sum_{n=1}^\infty a_n$ will converge. 
+Knowing that a series converges absolutely allows us to make two important statements, given in the following theorem. The first is that absolute convergence is  ``stronger'' than regular convergence. That is, just because {\small$\ds \sum_{n=1}^\infty a_n$} converges, we cannot conclude that {\small$\ds \sum_{n=1}^\infty |a_n|$} will converge, but knowing a series converges absolutely tells us that {\small$\ds \sum_{n=1}^\infty a_n$} will converge. 
 
 One reason this is important is that our convergence tests all require that the underlying sequence of terms be positive. By taking the absolute value of the terms of a series where not all terms are positive, we are often able to apply an appropriate test and determine absolute convergence. This, in turn, determines that the series we are given also converges.
 

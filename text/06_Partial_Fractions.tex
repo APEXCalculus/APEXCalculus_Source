@@ -35,19 +35,19 @@ We start with a rational function $f(x)=\frac{p(x)}{q(x)}$, where $p$ and $q$ do
 The following examples will demonstrate how to put this Key Idea into practice. Example \ref{ex_pf1} stresses the decomposition aspect of the Key Idea.\\
 
 \example{ex_pf1}{Decomposing into partial fractions}{
-Decompose $\ds f(x)=\frac{1}{(x+5)(x-2)^3(x^2+2x+1)(x^2+x+7)^2}$ without solving for the resulting coefficients.}
-{The denominator is already factored; we need to decompose $f(x)$ properly. Since $(x+5)$ is a linear term that divides the denominator, there will be a $$\frac{A}{x+5}$$ term in the decomposition.
+Decompose $\ds f(x)=\frac{1}{(x+5)(x-2)^3(x^2+x+2)(x^2+x+7)^2}$ without solving for the resulting coefficients.}
+{The denominator is already factored, as both $x^2+x+2$ and $x^2+x+7$ cannot be factored further. We need to decompose $f(x)$ properly. Since $(x+5)$ is a linear term that divides the denominator, there will be a $$\frac{A}{x+5}$$ term in the decomposition.
 
 As $(x-2)^3$ divides the denominator, we will have the following terms in the decomposition:
 $$\frac{B}{x-2},\quad \frac{C}{(x-2)^2}\quad \text{and}\quad \frac{D}{(x-2)^3}.$$
 
-The $x^2+2x+1$ term in the denominator results in a $\ds\frac{Ex+F}{x^2+2x+1}$ term.
+The $x^2+x+2$ term in the denominator results in a $\ds\frac{Ex+F}{x^2+x+2}$ term.
 
 Finally, the $(x^2+x+7)^2$ term results in the terms $$\frac{Gx+H}{x^2+x+7}\quad \text{and}\quad \frac{Ix+J}{(x^2+x+7)^2}.$$
 All together, we have 
 \begin{align*}
-\frac{1}{(x+5)(x-2)^3(x^2+2x+1)(x^2+x+7)^2} &= \frac{A}{x+5} + \frac{B}{x-2}+ \frac{C}{(x-2)^2}+\frac{D}{(x-2)^3}+ \\
-		& \frac{Ex+F}{x^2+2x+1}+\frac{Gx+H}{x^2+x+7}+\frac{Ix+J}{(x^2+x+7)^2}
+\frac{1}{(x+5)(x-2)^3(x^2+x+2)(x^2+x+7)^2} &= \frac{A}{x+5} + \frac{B}{x-2}+ \frac{C}{(x-2)^2}+\frac{D}{(x-2)^3}+ \\
+		& \frac{Ex+F}{x^2+x+2}+\frac{Gx+H}{x^2+x+7}+\frac{Ix+J}{(x^2+x+7)^2}
 \end{align*}
 Solving for the coefficients $A$, $B \ldots J$ would be a bit tedious but not ``hard.''
 }\\
@@ -58,7 +58,7 @@ Perform the partial fraction decomposition of $\ds \frac{1}{x^2-1}$.}
 $$\frac{1}{x^2-1} = \frac{A}{x-1} + \frac{B}{x+1}.$$
 To solve for $A$ and $B$, first multiply through by $x^2-1 = (x-1)(x+1)$:
 \begin{align*}
-1 &= \frac{A(x-1)(x+1)}{x-1}+\frac{B(x-1)(x+)}{x+1} \\
+1 &= \frac{A(x-1)(x+1)}{x-1}+\frac{B(x-1)(x+1)}{x+1} \\
 	&= A(x+1) + B(x-1)\\
 	&= Ax+A + Bx-B \\
 	\intertext{Now collect like terms.}
@@ -92,7 +92,7 @@ To solve for $A$, $B$ and $C$, we multiply both sides by $(x-1)(x+2)^2$ and coll
 
 Likewise, the equality holds when $x=-2$; this leads to the equation $1=-3C$. Thus $C = -1/3$.
 
-We can find the value of $B$ by expanding the terms as shown in the example.}
+Knowing $A$ and $C$, we can find the value of $B$ by choosing yet another value of $x$, such as $x=0$, and solving for $B$.}
 We have $$0x^2+0x+ 1 = (A+B)x^2 + (4A+B+C)x + (4A-2B-C)$$
 leading to the equations 
 $$A+B = 0, \quad 4A+B+C = 0 \quad \text{and} \quad 4A-2B-C = 1.$$
@@ -101,7 +101,7 @@ $$A = 1/9,\quad B = -1/9 \quad \text{and} \quad C = -1/3.$$
 Thus 
 $$\int\frac{1}{(x-1)(x+2)^2}\ dx = \int \frac{1/9}{x-1}\ dx + \int \frac{-1/9}{x+2}\ dx + \int \frac{-1/3}{(x+2)^2}\ dx.$$
 
-Each can be integrated with a simple substitution with $u=x-1$ or $x=x+2$ (or by directly applying Key Idea \ref{idea:linearsub} as the denominators are linear functions). The end result is
+Each can be integrated with a simple substitution with $u=x-1$ or $u=x+2$ (or by directly applying Key Idea \ref{idea:linearsub} as the denominators are linear functions). The end result is
 $$\int\frac{1}{(x-1)(x+2)^2}\ dx = \frac19\ln|x-1| -\frac19\ln|x+2| +\frac1{3(x+2)}+C.$$
 \vskip-\baselineskip}\\
 
@@ -170,6 +170,10 @@ Let's start at the beginning and put all of the steps together.
 \end{align*}\normalsize
 As with many other problems in calculus, it is important to remember that one is not expected to ``see'' the final answer immediately after seeing the problem. Rather, given the initial problem, we break it down into smaller problems that are easier to solve. The final answer is a combination of the answers of the smaller problems.
 }\\
+
+Partial Fraction Decomposition is an important tool when dealing with rational functions. Note that at its heart, it is a technique of algebra, not calculus, as we are rewriting a fraction in a new form. Regardless, it is very useful in the realm of calculus as it lets us evaluate a certain set of ``complicated'' integrals.
+
+The next section introduces new functions, called the Hyperbolic Functions. They will allow us to make substitutions similar to those found when studying Trigonometric Substitution, allowing us to approach even more integration problems. 
 
 
 \printexercises{exercises/06_04_exercises}

@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+			view={10}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick=\empty,
+%			ztick=\empty,% 
+			extra x ticks={3.14},
+			extra x tick labels={$\pi$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-1,ymax=1,%
+			xmin=-.1,xmax=3.5,
+			zmin=-1.1,zmax=1.2%
+]
+
+%
+
+%\addplot3[domain=0:3.14,y domain=150:330,surf,colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!60,samples=16,samples y=18,very thin,z buffer=sort] ({x},{sin(deg(x))*sin(y)},{sin(deg(x))*cos(y)});
+
+\addplot3[domain=0:3.14,y domain=-30:150,surf,colormap={mp2}{\colormapplaneone},opacity=.8,faceted color=black!60,samples=16,samples y=18,very thin,z buffer=sort] ({x},{sin(deg(x))*sin(y)},{sin(deg(x))*cos(y)});
+
+\addplot3[domain=0:3.14,,samples y=0,{\colorone},thick] ({x},{0},{(sin(deg(x)))});
+
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-10pt,-6pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-17pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

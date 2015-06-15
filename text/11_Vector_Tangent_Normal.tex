@@ -21,7 +21,14 @@ Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$. Find $\vec T(t)$ and compute $\vec T(0
 We can now easily compute $\vec T(0)$ and $\vec T(1)$:
 $$\vec T(0) = \la 0,\frac35,\frac45\ra\,;\quad \vec T(1) = \la -\frac35\sin 1,\frac35\cos 1,\frac45\ra \approx \la -0.505,0.324,0.8\ra.$$
 These are plotted in Figure \ref{fig:tannorm1} with their initial points at $\vec r(0)$ and $\vec r(1)$, respectively. (They look rather ``short'' since they are only length 1.)
-\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.35}{Plotting unit tangent vectors in Example \ref{ex_tannorm1}.}{fig:tannorm1}{figures/figtannorm1}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.4623610114058449,
+3Dortho=0.004905222449451685,
+3Dc2c=0.6268976330757141 0.5422312617301941 0.5594503283500671,
+3Dcoo=-3.587019205093384 4.6990532875061035 15.216367721557617,
+3Droo=150.00000240039893,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim=5mm 5mm 5mm 5mm,clip}{.35}{Plotting unit tangent vectors in Example \ref{ex_tannorm1}.}{fig:tannorm1}{figures/figtannorm1}
+%\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.35}{Plotting unit tangent vectors in Example \ref{ex_tannorm1}.}{fig:tannorm1}{figures/figtannorm1}
 
 The unit tangent vector $\vec T(t)$ always has a magnitude of 1, though it is sometimes easy to doubt that is true. We can help solidify this thought in our minds by computing $\norm{\vec T(1)}$:
 $$\norm{\vec T(1)} \approx \sqrt{(-0.505)^2+0.324^2+0.8^2} = 1.000001.$$
@@ -43,7 +50,7 @@ When $t=0$, we have $\vec T(0) = \la -1/\sqrt{2},1/\sqrt{2}\ra$; when $t=1$, we 
 Just as knowing the direction tangent to a path is important, knowing a direction orthogonal to a path is important. When dealing with real-valued functions, we defined the normal line at a point to the be the line through the point that was perpendicular to the tangent line at that point. We can do a similar thing with vector--valued functions. Given \vrt\ in $\mathbb{R}^2$, we have 2 directions perpendicular to the tangent vector, as shown in Figure \ref{fig:tannorm_intro1}. It is good to wonder ``Is one of these two directions preferable over the other?''
 \mfigure{.45}{Given a direction in the plane, there are always two directions orthogonal to it.}{fig:tannorm_intro1}{figures/figtannorm_intro1}
 
-Given \vrt\ in $\mathbb{R}^3$, however, there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder ``Is one of these infinite choices preferable over the others? Is one of these the `right' choice?''
+Given \vrt\ in $\mathbb{R}^3$,  there are infinite vectors orthogonal to the tangent vector at a given point. Again, we might wonder ``Is one of these infinite choices preferable over the others? Is one of these the `right' choice?''
 
 The answer in both $\mathbb{R}^2$ and $\mathbb{R}^3$ is ``Yes, there is one vector that is not only preferable, it is the `right' one to choose.'' Recall Theorem \ref{thm:vects_of_constant_length}, which states that if \vrt\ has constant length, then \vrt\ is orthogonal to $\vrp(t)$ for all $t$. We know $\vec T(t)$, the unit tangent vector, has constant length. Therefore $\vec T(t)$ is orthogonal to $\vec T\,'(t)$.\index{vector--valued function!of constant length}
 
@@ -62,7 +69,14 @@ Let $\vrt = \la 3\cos t, 3\sin t, 4t\ra$ as in Example \ref{ex_tannorm1}. Sketch
 $$\vec T\,'(t) = \la -\frac35\cos t,-\frac35\sin t,0\ra\quad \text{and} \quad \norm{\vec T\,'(t)} = \frac35.$$
 Thus $$\vec N(t) = \frac{\vec T\,'(t)}{3/5} = \la -\cos t,-\sin t,0\ra.$$
 We compute $\vec T(\pi/2) = \la -3/5,0,4/5\ra$ and $\vec N(\pi/2) = \la 0,-1,0\ra$. These are sketched in Figure \ref{fig:tannorm3}.
-\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.6}{Plotting unit tangent and normal vectors in Example \ref{fig:tannorm3}.}{fig:tannorm3}{figures/figtannorm3}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.9552187107340909,
+3Dortho=0.005093402229249477,
+3Dc2c=0.5105816125869751 0.5339998006820679 0.6739070415496826,
+3Dcoo=4.143548488616943 1.2702205181121826 14.294137954711914,
+3Droo=150.0000014005964,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim=5mm 5mm 5mm 5mm,clip}{.6}{Plotting unit tangent and normal vectors in Example \ref{fig:tannorm3}.}{fig:tannorm3}{figures/figtannorm3}
+%\mfigure[scale=1.5,trim=5mm 5mm 5mm 5mm,clip]{.6}{Plotting unit tangent and normal vectors in Example \ref{fig:tannorm3}.}{fig:tannorm3}{figures/figtannorm3}
 }\\
 
 The previous example was once again ``too nice.'' In general, the expression for $\vec T(t)$ contains fractions of square--roots, hence the expression of $\vec T\,'(t)$ is very messy. We demonstrate this in the next example.\\
@@ -103,8 +117,8 @@ Consider again Figure \ref{fig:tannorm4}, where we have plotted some unit tangen
 
 
 \theorem{thm:concave}{Unit Normal Vectors in $\mathbb{R}^2$}
-{Let $\vec r(t)$ be a vector--valued function in $\mathbb{R}^2$ where $\vec T\,'(t)$ is smooth on an open interval $I$. Let $\vec T(t) = \la t_1,t_2\ra$. Then $\vec N(t)$ is either
-$$\vec N(t) = \la -t_2,t_1\ra \quad \text{or}\quad \vec N(t) = \la t_2,-t_1\ra,$$ whichever is the vector that points to the concave side of the graph of $\vec r$.
+{Let $\vec r(t)$ be a vector--valued function in $\mathbb{R}^2$ where $\vec T\,'(t)$ is smooth on an open interval $I$. Let $t_0$ be in $I$ and $\vec T(t_0) = \la t_1,t_2\ra$ Then $\vec N(t_0)$ is either
+$$\vec N(t_0) = \la -t_2,t_1\ra \quad \text{or}\quad \vec N(t_0) = \la t_2,-t_1\ra,$$ whichever is the vector that points to the concave side of the graph of $\vec r$.
 \index{unit tangent vector!in $\mathbb{R}^2$}\index{unit normal vector!in $\mathbb{R}^2$}
 }
 
@@ -169,7 +183,7 @@ Contrast this with $t=0$, where $a_\text{T} = 0$ and $a_\text{N} = 4/\sqrt{2}\ap
 }\\
 
 \example{ex_tannorm7}{Analyzing projectile motion}{
-A ball is thrown from a height of 240ft with an initial velocity of 64ft/s with an angle of elevation of $30^\circ$. Find the position function \vrt\ for the ball and analyze $a_\text{T}$ and $a_\text{N}$.\index{projectile motion}
+A ball is thrown from a height of 240ft with an initial speed of 64ft/s and an angle of elevation of $30^\circ$. Find the position function \vrt\ of the ball and analyze $a_\text{T}$ and $a_\text{N}$.\index{projectile motion}
 }
 {Using Key Idea \ref{idea:projectile} of Section \ref{sec:vvf_motion} we form the position function of the ball:
 $$\vrt = \la \big(64\cos 30^\circ\big)t, -16t^2+\big(64\sin 30^\circ\big)t+240\ra,$$
@@ -201,7 +215,7 @@ $t$ & $a_\text{T}$ & $a_\text{N}$ \\ \hline
 Our understanding of the unit tangent and normal vectors is aiding our understanding of motion. The work in Example \ref{ex_tannorm7} gave quantitative analysis of what we intuitively knew.
 
 The next section provides two more important steps towards this analysis. %One problem we currently have is that while we can accurately describe a path for a particle, we are not particularly good at regulating the speed at which the particle travels. For instance, consider the parabolic path of Example \ref{ex_tannorm2}. Our particle slows as it nears the vertex, but clearly it ``doesn't have to.'' What vector--valued function has the same path, but where the particle speeds up near the vertex? 
-We currently describe position only in terms of time. In everyday life, though, we often describe position in terms of distance (``The gas station is about 2 miles ahead, on the left.''). The \emph{arc length parameter} allows us to reference a particle's position in terms of distance traveled. 
+We currently describe position only in terms of time. In everyday life, though, we often describe position in terms of distance (``The gas station is about 2 miles ahead, on the left.''). The \emph{arc length parameter} allows us to reference position in terms of distance traveled. 
 
 We also intuitively know that some paths are straighter than others -- and some are curvier than others, but we lack a measurement of ``curviness.'' The arc length parameter provides a way for us to compute \emph{curvature}, a quantitative measurement of how curvy a curve is.
 

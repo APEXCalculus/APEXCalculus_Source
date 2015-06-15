@@ -7,9 +7,23 @@ The natural extension of the concept of ``arc length over an interval'' to surfa
 Consider the surface $z=f(x,y)$ over a region $R$ in the $x$-$y$ plane, shown in Figure \ref{fig:sa_intro}(a). Because of the domed shape of the surface, the surface area will be greater than that of the area of the region $R$. We can find this area using the same basic technique we have used over and over: we'll make an approximation, then using limits, we'll refine the approximation to the exact value.
 \mtable{.6}{Developing a method of computing surface area.}{fig:sa_intro}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figsurfacearea_intro1}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.0050254100933671,
+3Dc2c=0.6999192237854004 0.5575119853019714 0.4464230239391327,
+3Dcoo=3.110447883605957 -24.540298461914062 45.66078186035156,
+3Droo=150.00000665572844,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figsurfacearea_intro1}\\
+%\myincludegraphics{figures/figsurfacearea_intro1}\\
 (a)\\[20pt]
-\myincludegraphics{figures/figsurfacearea_intro2}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.0002488888270874334,
+3Dortho=0.0050254100933671,
+3Dc2c=0.6999192237854004 0.5575119853019714 0.4464230239391327,
+3Dcoo=-17.112655639648438 3.076296806335449 42.87860870361328,
+3Droo=200.00000665572844,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figsurfacearea_intro2}\\
+%\myincludegraphics{figures/figsurfacearea_intro2}\\
 (b)
 \end{tabular}
 }
@@ -43,7 +57,7 @@ S &= \iint_R \ dS\\
 \end{align*}
 }
 
-\mnote{.78}{\textbf{Note:} as done before, we think of ``$\iint_R\ dS$'' as meaning ``sum up lots of little surface areas.''\\
+\mnote{.78}{\textbf{Note:} as done before, we think of ``$\iint_R\ dS$'' as meaning ``sum up lots of little surface areas over $R$.''\\
 
 The concept of surface area is \textit{defined} here, for while we already have a notion of the area of a region in the \textit{plane}, we did not yet have a solid grasp of what  ``the area of a surface in \textit{space}'' means.}
 
@@ -52,7 +66,15 @@ We test this definition by using it to compute surface areas of known surfaces. 
 
 \example{ex_surfacearea1}{Finding the surface area of a plane over a triangle}{
 Let $f(x,y) = 4-x-2y$, and let $R$ be the region in the plane bounded by $x=0$, $y=0$ and $y=2-x/2$, as shown in Figure \ref{fig:surfacearea1}. Find the surface area of $f$ over $R$.
-\mfigure{.45}{Finding the area of a triangle in space in Example \ref{ex_surfacearea1}.}{fig:surfacearea1}{figures/figsurfacearea1}}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.7960798144340515 0.2916567623615265 0.5302765369415283,
+3Dcoo=-3.864800214767456 31.242511749267578 -13.438399314880371,
+3Droo=149.9999964329389,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.45}{Finding the area of a triangle in space in Example \ref{ex_surfacearea1}.}{fig:surfacearea1}{figures/figsurfacearea1}%
+}
+%\mfigure{.45}{Finding the area of a triangle in space in Example \ref{ex_surfacearea1}.}{fig:surfacearea1}{figures/figsurfacearea1}}
 {We follow Definition \ref{def:surfacearea}. We start by noting that $f_x(x,y) = -1$ and $f_y(x,y) = -2$. To define $R$, we use bounds $0\leq y\leq 2-x/2$ and $0\leq x\leq 4$. Therefore
 \begin{align*}
 S &= \iint_R\ dS \\
@@ -83,13 +105,13 @@ The region $R$ that we are integrating over is the circle, centered at the origi
 S &= 2\int_0^{2\pi}\int_0^a \sqrt{1+\frac{r^2\cos^2\theta+r^2\sin^2\theta}{a^2-r^2\cos^2\theta-r^2\sin^2\theta}}\ r\ dr\ d\theta \notag\\
 &=2\int_0^{2\pi}\int_0^ar\sqrt{1+\frac{r^2}{a^2-r^2}}\ dr\ d\theta\notag\\
 &=2\int_0^{2\pi}\int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\ dr\ d\theta.\label{eq:exsurfacearea2}
-\intertext{Apply substitution $u=a^2-r^2$and integrate the inner integral, giving}
+\intertext{Apply substitution $u=a^2-r^2$ and integrate the inner integral, giving}
 &= 2\int_0^{2\pi} a^2\ d\theta\notag\\
 &= 4\pi a^2\notag.
 \end{align}
 Our work confirms our previous formula.
 }\\
-\mnote{.4}{\textbf{Note:} The inner integral in Equation \eqref{eq:exsurfacearea2} is an improper integral, as the integrand of $\ds \int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\ dr\ d\theta$ is not defined at $r=a$. To properly evaluate this integral, one must use the techniques of Section \ref{sec:improper_integration}.\\
+\mnote{.4}{\textbf{Note:} The inner integral in Equation \eqref{eq:exsurfacearea2} is an improper integral, as the integrand of $\ds \int_0^ar\sqrt{\frac{a^2}{a^2-r^2}}\ dr$ is not defined at $r=a$. To properly evaluate this integral, one must use the techniques of Section \ref{sec:improper_integration}.\\
 
 The reason this need arises is that the function $f(x,y) = \sqrt{a^2-x^2-y^2}$ fails the requirements of Definition \ref{def:surfacearea}, as $f_x$ and $f_y$ are not continuous on the boundary of the circle $x^2+y^2=a^2$.\\
 
@@ -98,7 +120,14 @@ The computation of the surface area is still valid. The definition makes stronge
 
 \example{ex_surfacearea3}{Finding the surface area of a cone}{
 The general formula for a right cone with height $h$ and base radius $a$ is $$\ds f(x,y) = h-\frac{h}a\sqrt{x^2+y^2},$$ shown in Figure \ref{fig:surfacearea3}. Find the surface area of this cone.
-\mfigure[scale=1.5,trim=5mm 5mm 5mm 0mm, clip]{.8}{Finding the surface area of a cone in Example \ref{ex_surfacearea3}.}{fig:surfacearea3}{figures/figsurfacearea3}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.5819994807243347 0.633007287979126 0.5104687213897705,
+3Dcoo=-19.82758331298828 -17.547298431396484 45.13401794433594,
+3Droo=149.99999339949443,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim=5mm 5mm 5mm 0mm, clip}{.78}{Finding the surface area of a cone in Example \ref{ex_surfacearea3}.}{fig:surfacearea3}{figures/figsurfacearea3}
+%\mfigure[scale=1.5,trim=5mm 5mm 5mm 0mm, clip]{.8}{Finding the surface area of a cone in Example \ref{ex_surfacearea3}.}{fig:surfacearea3}{figures/figsurfacearea3}
 }
 {We begin by computing partial derivatives. 
 $$f_x(x,y) = -\frac{xh}{a\sqrt{x^2+y^2}}\quad \text{and}\quad -\frac{yh}{a\sqrt{x^2+y^2}}.$$
@@ -121,7 +150,14 @@ This matches the formula found in the back of this text.
 
 \example{ex_surfacearea4}{Finding surface area over a region}{
 Find the area of the surface $f(x,y) = x^2-3y+3$ over the region $R$ bounded by $-x\leq y\leq x$, $0\leq x\leq 4$, as pictured in Figure \ref{fig:surfacearea4}.
-\mfigure[scale=1.2,trim=1mm 0mm 1mm 0mm, clip]{.3}{Graphing the surface in Example \ref{ex_surfacearea4}.}{fig:surfacearea4}{figures/figsurfacearea4}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.43148449063301086 0.6710871458053589 0.6028791069984436,
+3Dcoo=31.701290130615234 -40.52073669433594 19.84035873413086,
+3Droo=150.00000342734387,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.2,trim=1mm 0mm 1mm 0mm, clip}{.3}{Graphing the surface in Example \ref{ex_surfacearea4}.}{fig:surfacearea4}{figures/figsurfacearea4}
+%\mfigure[scale=1.2,trim=1mm 0mm 1mm 0mm, clip]{.3}{Graphing the surface in Example \ref{ex_surfacearea4}.}{fig:surfacearea4}{figures/figsurfacearea4}
 }
 {It is straightforward to compute $f_x(x,y) = 2x$ and $f_y(x,y) = -3$. Thus the surface area is described by the double integral
 $$\iint_R \sqrt{1+(2x)^2+(-3)^2}\ dA = \iint_R \sqrt{10+4x^2}\ dA.$$
@@ -139,6 +175,8 @@ Integrating with order $dx\ dy$ requires us to evaluate $\int \sqrt{10+4x^2}\ dx
 So while the region $R$ over which we integrate has an area of 16u$^2$, the surface has a much greater area as its $z$-values change dramatically over $R$.
 }\\
 
-In practice, technology helps greatly in the evaluation of such integrals. High powered computer algebra systems can compute integrals that are difficult, or at least time consuming, by hand, and can at the least produce very accurate approximations with numerical methods. In general, just knowing \textit{how} to set up the proper integrals brings one very close to being able to compute the needed value. Most of the work is actually done in just describing the region $R$ in terms of polar or rectangular coordinates. Once this is done, technology can usually provide a good answer.
+In practice, technology helps greatly in the evaluation of such integrals. High powered computer algebra systems can compute integrals that are difficult, or at least time consuming, by hand, and can at the least produce very accurate approximations with numerical methods. In general, just knowing \textit{how} to set up the proper integrals brings one very close to being able to compute the needed value. Most of the work is actually done in just describing the region $R$ in terms of polar or rectangular coordinates. Once this is done, technology can usually provide a good answer.\\
+
+We have learned how to integrate integrals; that is, we have learned to evaluate double integrals. In the next section, we learn how to integrate double integrals -- that is, we learn to evaluate \emph{triple integrals}, along with learning some uses for this operation.
 
 \printexercises{exercises/13_05_exercises}

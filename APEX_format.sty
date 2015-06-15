@@ -16,7 +16,7 @@
 \RequirePackage{tikz}
 \usetikzlibrary{calc}
 \RequirePackage{makeidx}
-\RequirePackage{media9}
+\RequirePackage[noplaybutton]{media9}
 
 \RequirePackage{changepage}
 \RequirePackage{ulem}
@@ -47,8 +47,8 @@
 %%%%
 \newboolean{in_threeD}
 \setboolean{in_threeD}{true}
-\newcommand{\usethreeDgrahiphics}{\setboolean{in_threeD}{true}}
-\newcommand{\usetwoDgrahiphics}{\setboolean{in_threeD}{false}}
+\newcommand{\usethreeDgraphics}{\setboolean{in_threeD}{true}}
+\newcommand{\usetwoDgraphics}{\setboolean{in_threeD}{false}}
 
 %%%%
 %% Commands to determine whether we print in color or 
@@ -96,12 +96,12 @@
 
 \newcommand{\myincludegraphicsthreenostar}[3]{{%
 				\ifthenelse{\boolean{in_threeD}}{% in 3D
-				\includemedia[#1]{\includegraphics{#3_3D}}{#3_3D.prc}}% now not in 3D
+				\includemedia[#1]{\includegraphics{#3_3D\colornamesuffix}}{#3_3D.prc}}% now not in 3D
 				{\myincludegraphics[#2]{#3}}}}
 
 \newcommand{\myincludegraphicsthreestarred}[3]{{%
 				\ifthenelse{\boolean{in_threeD}}{% in 3D
-				\includemedia[#1]{\includegraphics{#3}}{#3_3D.prc}}% now not in 3D
+				\includemedia[#1]{\includegraphics{#3\colornamesuffix}}{#3_3D.prc}}% now not in 3D
 				{\myincludegraphics[#2]{#3}}}}
 
 
@@ -534,16 +534,16 @@
 
 \def\exinput #1 {\ifthenelse{\boolean{printquestions}}{% 
 												\openin\exread=#1 
-												\read\exread to \tempp
+												\read\exread to \tempp%
 %												\begin{adjustwidth*}{}{-100pt}% 
-												\begin{enumerate}[leftmargin=*,topsep=10pt] 
-													\addtocounter{enumi}{\theexercisecounter}
-													\item 
-													\ifthenelse{\boolean{showexercisenames}}
-													{\tiny {\hskip -60pt}% This line too
+												\begin{enumerate}[leftmargin=*,topsep=10pt]% 
+													\addtocounter{enumi}{\theexercisecounter}%
+													\item% 
+													\ifthenelse{\boolean{showexercisenames}}%
+													{\tiny{\hskip -60pt}% This line too
 												  \makebox[60pt][l]{\printexercisename #1 }%  
 												  \small%
-												  }{}
+												  }{}%
 													\tempp 
 													\addtocounter{exercisecounter}{1}
 												\end{enumerate}
@@ -562,7 +562,7 @@
 													\addtocounter{enumi}{-1}
 													\item 
 													\ifthenelse{\boolean{showexercisenames}}
-													{\tiny {\hskip -60pt}% This line too
+													{\tiny{\hskip -60pt}% This line too
 												  \makebox[60pt][l]{\printexercisename #1 }%
 												  \small%
 												  }{}
@@ -578,9 +578,9 @@
 												\read\exread to \tempp %reads in the answer
 												\begin{enumerate}[leftmargin=*] 
 													\addtocounter{enumi}{\theexercisecounter}
-													\item 
+													\item% 
 													\ifthenelse{\boolean{showexercisenames}}
-													{\tiny {\hskip -60pt}% This line too
+													{\tiny{\hskip -60pt}% This line too
 												  \makebox[60pt][l]{\printexercisename #1 }%
 												  \small%
 												  }{}
@@ -611,7 +611,7 @@
 											\setcounter{enumi}{\theexercisecounter} %
 											\addtocounter{enumi}{1}%
 											\ifthenelse{\boolean{showexercisenames}}%
-													{\tiny {\hskip -60pt}% This line too
+													{\tiny{\hskip -60pt}% This line too
 												  \makebox[60pt][l]{\printexercisename #1 }%
 												  \small%
 												  }{}% end show exercise names
@@ -732,4 +732,4 @@
 % to set up the proper formatting of that file.
 %
 \write\answrite{\noexpand\small\noexpand\raggedright\noexpand\begin{multicols}{2}}
-
+\write\answrite{\noexpand\thispagestyle{empty}}

@@ -65,21 +65,28 @@ $$\int\sin^5x\cos^9x\ dx = \int\sin^5x\big(1-4\sin^2x+6\sin^4x-4\sin^6x+\sin^8x\
 Now substitute and integrate, using $u = \sin x $ and $du = \cos x\ dx$.
 
 \small\noindent
+%\begin{gather}
+%\int\sin^5x\big(1-4\sin^2x+6\sin^4x-4\sin^6x+\sin^8x\big)\cos x\ dx =\notag\\
+%\int u^5(1-4u^2+6u^4-4u^6+u^8)\ du = \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\ du  \notag
+%\end{gather}
 $\ds \int\sin^5x\big(1-4\sin^2x+6\sin^4x-4\sin^6x+\sin^8x\big)\cos x\ dx =$% \\
+\vskip-.8\baselineskip
 \begin{align*} 
  \int u^5(1-4u^2+6u^4-4u^6+u^8)\ du &= \int\big(u^5-4u^7+6u^9-4u^{11}+u^{13}\big)\ du \\
 				&= \frac16u^6-\frac12u^8+\frac35u^{10}-\frac13u^{12}+\frac{1}{14}u^{14}+C\\
-				&= \frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x+C
+				&= \frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x+\ldots\\
+				&\phantom{=}-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x+C.
 \end{align*}
 \normalsize
 \vskip-1\baselineskip
 }\\
 
-\noindent\textbf{Technology Note:} The work we are doing here can be a bit tedious, but the skills it develops (problem solving, algebraic manipulation, etc.) are important. Nowadays problems of this sort are often solved using a computer algebra system. The powerful program \textit{Mathematica}\textsuperscript{\textregistered} integrates $\int \sin^5x\cos^9x\ dx$ as \small$$f(x)=-\frac{45 \cos (2 x)}{16384}-\frac{5 \cos (4 x)}{8192}+\frac{19 \cos (6
+\noindent\textbf{Technology Note:} The work we are doing here can be a bit tedious, but the skills developed (problem solving, algebraic manipulation, etc.) are important. Nowadays problems of this sort are often solved using a computer algebra system. The powerful program \textit{Mathematica}\textsuperscript{\textregistered} integrates $\int \sin^5x\cos^9x\ dx$ as \small$$f(x)=-\frac{45 \cos (2 x)}{16384}-\frac{5 \cos (4 x)}{8192}+\frac{19 \cos (6
    x)}{49152}+\frac{\cos (8 x)}{4096}-\frac{\cos (10 x)}{81920}-\frac{\cos (12
    x)}{24576}-\frac{\cos (14 x)}{114688},$$\normalsize
 which clearly has a different form than our answer in Example \ref{ex_trigint2}, which is
-$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal. We leave it to the reader to recognize why both answers are correct.\\
+$$g(x)=\frac16\sin^6 x-\frac12\sin^8 x+\frac35\sin^{10} x-\frac13\sin^{12} x+\frac{1}{14}\sin^{14} x.$$ Figure \ref{fig:trigint2} shows a graph of $f$ and $g$; they are clearly not equal, but they differ \emph{only by a constant}. That is $g(x) = f(x) + C$ for some constant $C$. So we have two different antiderivatives of the same function, meaning both answers are correct. \\%We leave it to the reader to recognize why both answers are correct.\\
+\enlargethispage{\baselineskip}
 
 \mfigure{.65}{A plot of $f(x)$ and $g(x)$ from Example \ref{ex_trigint2} and the Technology Note.}{fig:trigint2}{figures/figtrigint2}
 
@@ -250,16 +257,20 @@ Evaluate $\ds\int\tan^6x\ dx$.}
 \int \tan^6x\ dx &= \int \tan^4x\tan^2x\ dx \\
 			&= \int\tan^4x\big(\sec^2x-1\big)\ dx\\
 			&= \int\tan^4x\sec^2x\ dx - \int\tan^4x\ dx \\
-\intertext{Integrate the first integral with substitution, $u=\tan x$; integrate the second by employing rule \#4 again.}\\
+\intertext{Integrate the first integral with substitution, $u=\tan x$; integrate the second by employing rule \#4 again.}
 			&=	\frac15\tan^5x-\int\tan^2x\tan^2x\ dx\\
 			&=	\frac15\tan^5x-\int\tan^2x\big(\sec^2x-1\big)\ dx \\
 			&= \frac15\tan^5x -\int\tan^2x\sec^2x\ dx + \int\tan^2x\ dx\\
-\intertext{Again, use substitution for the first integral and rule \#4 for the second.}\\
+\intertext{Again, use substitution for the first integral and rule \#4 for the second.}
 			&= \frac15\tan^5x-\frac13\tan^3x+\int\big(\sec^2x-1\big)\ dx \\
-			&=	 \frac15\tan^5x-\frac13\tan^3x+\tan x - x+C
+			&=	 \frac15\tan^5x-\frac13\tan^3x+\tan x - x+C.
 \end{align*}
 \vskip-\baselineskip
 }
+
+These latter examples were admittedly long, with repeated applications of the same rule. Try to not be overwhelmed by the length of the problem, but rather admire how robust this solution method is. A trigonometric function of a high power can be systematically reduced to trigonometric functions of lower powers until all antiderivatives can be computed. 
+
+The next section introduces an integration technique known as Trigonometric Substitution, a clever combination of Substitution and the Pythagorean Theorem.
 
 \printexercises{exercises/06_03_exercises}
 

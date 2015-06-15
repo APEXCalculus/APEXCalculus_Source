@@ -1,7 +1,7 @@
 \section{Lines}\label{sec:lines}
 
 \index{lines}
-To find the equation of a line in the $x-y$ plane, we need two pieces of information: a point and the slope. The slope conveys \textit{direction} information. As vertical lines have an undefined slope, the following statement is more accurate:
+To find the equation of a line in the $x$-$y$ plane, we need two pieces of information: a point and the slope. The slope conveys \textit{direction} information. As vertical lines have an undefined slope, the following statement is more accurate:
 
 \begin{quotation}
 \noindent To define a line, one needs a point on the line and the direction of the line.
@@ -12,7 +12,14 @@ This holds true for lines in space.\\
 Let $P$ be a point in space, let $\vec p$ be the vector with initial point at the origin and terminal point at $P$ (i.e., $\vec p$ ``points'' to $P$), and let $\vec d$ be a vector. Consider the points on the line through $P$ in the direction of $\vec d$. 
 
 Clearly one point on the line is $P$; we can say that the \emph{vector} $\vec p$ lies at this point on the line. To find another point on the line, we can start at $\vec p$ and move in a  direction parallel to $\vec d$. For instance, starting at $\vec p$ and traveling one length of $\vec d$ places one at another point on the line. Consider Figure \ref{fig:lines_intro} where certain points along the line are indicated. 
-\mfigure[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{.7}{Defining a line in space.}{fig:lines_intro}{figures/figlines_intro}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.84 .46 .26,
+3Dcoo=0 70 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{.7}{Defining a line in space.}{fig:lines_intro}{figures/figlines_intro}
+%\mfigure[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{.7}{Defining a line in space.}{fig:lines_intro}{figures/figlines_intro}
 
 The figure illustrates how every point on the line can be obtained by starting with $\vec p$ and moving a certain distance in the direction of $\vec d$. That is, we can define the line as a function of $t$:
 \begin{equation}\vec\ell(t) = \vec p + t\ \vec d.\label{eq:lines1}\end{equation}
@@ -71,7 +78,7 @@ There are other ways to represent a line. Let $\vec p = \la x_0,y_0,z_0\ra$ and 
 \begin{align*}
 \vec\ell(t) &= \vec p + t\vec d \\
 						&= \la x_0,y_0,z_0\ra + t\la a,b,c\ra \\
-						&= \la x_0 + at, y_0+bt, z_0+ct\ra
+						&= \la x_0 + at, y_0+bt, z_0+ct\ra.
 \end{align*}
 
 The last line states the the $x$ values of the line are given by $x=x_0+at$, the $y$ values are given by $y = y_0+bt$, and the $z$ values are given by $z = z_0 + ct$. These three equations, taken together, are the \textbf{parametric equations of the line} through $\vec p$ in the direction of $\vec d$.
@@ -105,11 +112,18 @@ Give all three equations, as given in Definition \ref{def:lines}, of the line th
 \begin{itemize}
 	\item the vector equation of the line is $\vec\ell(t) = \la 2,3,1\ra + t\la -1,1,2\ra$;
 	\item	the parametric equations of the line are
-	$$x = 2-t,\quad y = 3+t\quad z = 1+2t; \text{ and}$$
+	$$x = 2-t,\quad y = 3+t,\quad z = 1+2t; \text{ and}$$
 	\item	the symmetric equations of the line are
 	$$\frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}.$$
 \end{itemize}
-\mfigure[scale=1.25,trim=2mm 2mm 2mm 2mm,clip=true]{.5}{Graphing a line in Example \ref{ex_lines1}.}{fig:lines1}{figures/figlines1}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.78 .53 .32,
+3Dcoo=0 70 50,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=2mm 2mm 2mm 2mm,clip=true}{.5}{Graphing a line in Example \ref{ex_lines1}.}{fig:lines1}{figures/figlines1}
+%\mfigure[scale=1.25,trim=2mm 2mm 2mm 2mm,clip=true]{.5}{Graphing a line in Example \ref{ex_lines1}.}{fig:lines1}{figures/figlines1}
 
 The first two equations of the line are useful when a $t$ value is given: one can immediately find the corresponding point on the line. These forms are good when calculating with a computer; most software programs easily handle equations in these formats. (For instance, to make Figure \ref{fig:lines1}, a certain graphics program was given the input \texttt{(2-x,3+x,1+2*x)}. This particular program requires the variable always be ``$x$'' instead of ``$t$'').
 
@@ -124,7 +138,14 @@ Find the parametric equations of the line through the points $P=(2,-1,2)$ and $Q
 
 The parametric equations of the line $\ell$ through $P$ in the direction of $\vv{PQ}$ are:
 $$\ell: \quad x= 2-t\quad y=-1+4t \quad z=2-3t.$$
-\mfigure[scale=1.25]{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.4 .87 .32,
+3Dcoo=58 8.7 4.6,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
+%\mfigure[scale=1.25]{.6}{A graph of the line in Example \ref{ex_lines6}.}{fig:lines6}{figures/figlines6}
 
 A graph of the points and line are given in Figure \ref{fig:lines6}. Note how in the given parametrization of the line, $t=0$ corresponds to the point $P$, and $t=1$ corresponds to the point $Q$. This relates to the understanding of the vector equation of a line described in Figure \ref{fig:lines_eq}. The parametric equations ``start'' at the point $P$, and $t$ determines how far in the direction of $\vv{PQ}$ to travel. When $t=0$, we travel 0 lengths of $\vv{PQ}$; when $t=1$, we travel one length of $\vv{PQ}$, resulting in the point $Q$.
 }\\
@@ -150,7 +171,14 @@ Consider lines $\ell_1$ and $\ell_2$, given in parametric equation form:
 $$\ell_1: \begin{array}{ccc} x&=&1+3t \\ y&=&2-t\\z&=&t\end{array}\qquad\qquad \ell_2:\begin{array}{ccc} x&=&-2+4s\\y&=&3+s\\z&=&5+2s.\end{array}$$
 Determine whether $\ell_1$ and $\ell_2$ are the same line, intersect, are parallel, or skew.}
 {We start by looking at the directions of each line. Line $\ell_1$ has the direction given by $\vec d_1=\la 3,-1,1\ra$ and line $\ell_2$ has the direction given by $\vec d_2 = \la 4,1,2\ra$. It should be clear that $\vec d_1$ and $\vec d_2$ are not parallel, hence $\ell_1$ and $\ell_2$ are not the same line, nor are they parallel. Figure \ref{fig:lines2} verifies this fact (where the points and directions indicated by the equations of each line are identified).
-\mfigure[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{.6}{Sketching the lines from Example \ref{ex_lines2}.}{fig:lines2}{figures/figlines2}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.42 .80 .43,
+3Dcoo=0 30 50,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{.6}{Sketching the lines from Example \ref{ex_lines2}.}{fig:lines2}{figures/figlines2}
+%\mfigure[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{.6}{Sketching the lines from Example \ref{ex_lines2}.}{fig:lines2}{figures/figlines2}
 
 We next check to see if they intersect (if they do not, they are skew lines). To find if they intersect, we look for $t$ and $s$ values such that the respective $x$, $y$ and $z$ values are the same. That is, we want $s$ and $t$ such that:
 $$\begin{array}{ccc}
@@ -188,7 +216,14 @@ Are they the same line? The parametric equations for a line describe one point t
 \small
 $$\frac{(-0.7)-2.8}{-2.9} \stackrel{?}{=} \frac{(4.2)-10.15}{-4.93} \stackrel{?}{=} \frac{(2.3)-(-5.05)}{6.09} \quad \Rightarrow \quad 1.2069=1.2069=1.2069.$$
 \normalsize
-\mfigure[scale=1.25,trim=2mm 0mm 0mm 0mm,clip=true]{.35}{Graphing the lines in Example \ref{ex_lines3}.}{fig:lines3}{figures/figlines3}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.56 .8 .22,
+3Dcoo=0 0 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=2mm 0mm 0mm 0mm,clip=true}{.35}{Graphing the lines in Example \ref{ex_lines3}.}{fig:lines3}{figures/figlines3}
+%\mfigure[scale=1.25,trim=2mm 0mm 0mm 0mm,clip=true]{.35}{Graphing the lines in Example \ref{ex_lines3}.}{fig:lines3}{figures/figlines3}
 The point $P_1$ lies on both lines, so we conclude they are the same line, just parametrized differently. Figure \ref{fig:lines3} graphs this line along with the points and vectors described by the parametric equations. Note how $\vec d_1$ and $\vec d_2$ are parallel, though point in opposite directions (as indicated by their unit vectors above). 
 }\\
 
@@ -204,10 +239,17 @@ h = \frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}.
 \label{eq:lines2}
 \end{equation}
 
-\mfigure{.45}{Establishing the distance between lines.}{fig:lines_dist2}{figures/figlines_dist2}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=6.34,
+3Dortho=0.0076,
+3Dc2c=.009 -.76 .65,
+3Dcoo=2.92 11.35 23.78,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.45}{Establishing the distance between lines.}{fig:lines_dist2}{figures/figlines_dist2}
+%\mfigure{.45}{Establishing the distance between lines.}{fig:lines_dist2}{figures/figlines_dist2}
 It is also useful to determine the distance between lines, which we define as the length of the shortest line segment that connects the two lines (an argument from geometry shows that this line segments is perpendicular to both lines). Let lines $\vec\ell_1(t) = \vec p_1 + t\vec d_1$ and $\vec\ell_2(t) = \vec p_2 + t\vec d_2$ be given, as shown in Figure \ref{fig:lines_dist2}. To find the direction orthogonal to both $\vec d_1$ and $\vec d_2$, we take the cross product: $\vec c = \vec d_1\times \vec d_2$. The magnitude of the orthogonal projection of $\vv{P_1P_2}$ onto $\vec c$ is the distance $h$ we seek:
 \begin{align*}
-h&=		\norm{\text{proj}\,_{\vec c}\,\vv{P_1P_2}}\\
+h&=		\snorm{\text{proj}\,_{\vec c}\,\vv{P_1P_2}}\\
 	&= \snorm{\frac{\vv{P_1P_2}\cdot\vec c}{\dotp cc}\vec c}\\
 	&=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c^2}\vnorm c\\
 	&=\frac{|\vv{P_1P_2}\cdot \vec c|}{\vnorm c}.
@@ -233,7 +275,7 @@ Find the distance from the point $Q=(1,1,3)$ to the line $\vec\ell(t) = \la 1,-1
 \begin{align*}
 h &= \frac{\norm{\vv{PQ}\times \vec d}}{\vnorm{d}}\\
 	&= \frac{\norm{\la -4,4,-4\ra}}{\sqrt{14}}\\
-	&\frac{4\sqrt{3}}{\sqrt{14}} \approx 1.852.
+	&=\frac{4\sqrt{3}}{\sqrt{14}} \approx 1.852.
 \end{align*}
 The point $Q$ is approximately $1.852$ units from the line $\vec\ell(t)$.
 }\\
@@ -253,6 +295,8 @@ The lines are approximately 5.334 units apart.
 }\\
 
 One of the key points to understand from this section is this: to describe a line, we need a point and a direction. Whenever a problem is posed concerning a line, one  needs to take whatever information is offered and glean point and direction information. Many questions can be asked (and \emph{are} asked in the Exercise section) whose answer immediately follows from this understanding. 
+
+Lines are one of two fundamental objects of study in space. The other fundamental object is the \emph{plane}, which we study in detail in the next section. Many complex three dimensional objects are studied by approximating their surfaces with lines and planes.
 
 \printexercises{exercises/10_05_exercises}
 

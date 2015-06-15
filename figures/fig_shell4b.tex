@@ -1,0 +1,80 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+%			view={125}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick=\empty,
+			ztick={1},% 
+			extra x ticks={3.14},
+			extra x tick labels={$\pi$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-3,ymax=3,%
+			xmin=-3.5,xmax=3.5,
+			zmin=-.2,zmax=1.2%
+]
+
+%\addplot3[domain=1.57:3.14,y domain=150:325,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}] ({x*cos(y)},{x*sin(y)},{sin(deg(x))});
+%
+%\addplot3[domain=0:1.57,y domain=0:360,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}] ({x*cos(y)},{x*sin(y)},{sin(deg(x))});
+%
+%\addplot3[domain=1.57:3.14,y domain=-35:150,samples y=36,surf,shader=flat,colormap={mp2}{\colormapone}] ({x*cos(y)},{x*sin(y)},{sin(deg(x))});
+
+\addplot3[domain=0:.84,y domain=160:340,surf,colormap={mp2}{\colormaptwo},opacity=.8,faceted color=black!60,very thin,z buffer=sort,samples=6,samples y=16] ({cos(y)},{sin(y)},{x});
+
+\addplot3[domain=0:.84,y domain=-20:160,surf,colormap={mp2}{\colormaptwo},opacity=.8,faceted color=black!60,very thin,z buffer=sort,samples=6,samples y=15] ({cos(y)},{sin(y)},{x});
+
+\addplot3[domain=0:360,samples y=0,black,thick,smooth,] ({sin(x)},{cos(x)},{.84});
+
+\addplot3[domain=160:340,dashed,samples y=0,black,thick,smooth,] ({cos(x)},{sin(x)},{0});
+
+\addplot3[domain=-20:160,samples y=0,black,thick,smooth,] ({cos(x)},{sin(x)},{0});
+
+\addplot3[domain=0:3.1415,samples y=0,black,thick,smooth,{\colorone}] ({x},{0},{sin(deg(x))});
+
+
+%
+%\draw [dashed] (axis cs:1,.64,-.766) -- (axis cs:0,.64,-.766)
+%%								(axis cs:1,-.5,.87) -- (axis cs:0,-.5,.87);
+				
+%\draw [dashed,thick,smooth] (axis cs:0,0,0)--(axis cs:0.1571,0,0.1564)--(axis
+%cs:0.3142,0,0.309)--(axis cs:0.4712,0,0.454)--(axis
+%cs:0.6283,0,0.5878)--(axis cs:0.7854,0,0.7071)--(axis
+%cs:0.9425,0,0.809)--(axis cs:1.1,0,0.891)--(axis
+%cs:1.257,0,0.9511)--(axis cs:1.414,0,0.9877)--(axis
+%cs:1.571,0,1.);
+%
+%\draw [thick,smooth] (axis cs:1.571,0,1.)--(axis cs:1.728,0,0.9877)--(axis
+%cs:1.885,0,0.9511)--(axis cs:2.042,0,0.891)--(axis
+%cs:2.199,0,0.809)--(axis cs:2.356,0,0.7071)--(axis
+%cs:2.513,0,0.5878)--(axis cs:2.67,0,0.454)--(axis
+%cs:2.827,0,0.309)--(axis cs:2.985,0,0.1564)--(axis cs:3.142,0,0);
+%%
+%\draw [smooth] (axis cs:2.573,-1.802,0)--(axis cs:2.952,-1.074,0)--(axis
+%cs:3.13,-0.2738,0)--(axis cs:3.094,0.5455,0)--(axis
+%cs:2.847,1.328,0)--(axis cs:2.407,2.019,0)--(axis
+%cs:1.802,2.573,0)--(axis cs:1.074,2.952,0)--(axis
+%cs:0.2738,3.13,0)--(axis cs:-0.5455,3.094,0)--(axis
+%cs:-1.328,2.847,0)--(axis cs:-2.019,2.407,0)--(axis
+%cs:-2.573,1.802,0)--(axis cs:-2.952,1.074,0)--(axis
+%cs:-3.13,0.2738,0);
+
+%\draw [smooth,dashed] (axis cs:-3.142,0,0)--(axis cs:-3.035,-0.8131,0)--(axis cs:-2.721,-1.571,0)--(axis cs:-2.221,-2.221,0)--(axis cs:-1.571,-2.721,0)--(axis cs:-0.8131,-3.035,0)--(axis cs:0,-3.142,0)--(axis cs:0.8131,-3.035,0)--(axis cs:1.571,-2.721,0)--(axis cs:2.221,-2.221,0);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-20pt,-16pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-15pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

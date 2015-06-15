@@ -4,7 +4,7 @@ The previous chapter introduced the most fundamental of calculus topics: the lim
 
 A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Student of physics may recall that the height (in feet) of the riders, $t$ seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by $f(t) = -16t^2+150$. 
 
-Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at $t=2.5\sqrt{1.5} \approx 3.06$ seconds. Suppose the designers of the ride decide to begin slow the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?\\
+Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at $t=2.5\sqrt{1.5} \approx 3.06$ seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?\\
 
 We have been given a \textit{position} function, but what we want to compute is a velocity at a specific point in time, i.e., we want an \textit{instantaneous velocity}. We do not currently know how to calculate this.
 
@@ -55,9 +55,9 @@ As $h\to 0$, these secant lines approach the \textit{tangent line}, a line that 
 			\ifthenelse{\boolean{longpage}}{\hskip -30pt}{}%
 			\begin{minipage}{\textwidth}\centering
 			\begin{tabular}{cc}
-			(a) \myincludegraphics{figures/figderivfalling} & (b) \myincludegraphics{figures/figderivfalling2}\\ %
+			\myincludegraphics{figures/figderivfalling} & \myincludegraphics{figures/figderivfalling2}\\ (a) & (b) \\%
 			\rule{0pt}{10pt} & \\
-			(c)\myincludegraphics{figures/figderivfalling3} & (d) \myincludegraphics{figures/figderivfalling4}
+			\myincludegraphics{figures/figderivfalling3} &\myincludegraphics{figures/figderivfalling4}\\ (c) & (d)\\
 			\end{tabular}
 			\captionsetup{type=figure}%
 			\caption{Parts (a), (b) and (c) show the secant line to $f(x)$ with $h=1$, zoomed in different amounts. Part (d) shows the tangent line to $f$ at $x=2$.}\label{fig:derivfalling}
@@ -132,14 +132,14 @@ $$n(x) =\frac{-1}{\fp(c)}(x-c)+f(c),$$ where $\fp(c)\neq 0$. When $\fp(c)=0$, th
 Let $f(x) = 3x^2+5x-7$, as in Example \ref{ex_derv_point1}. Find the equations of the normal lines to the graph of $f$ at $x=1$ and $x=3$.
 }
 {In Example \ref{ex_derv_point1}, we found that $\fp(1)=11$. Hence at $x=1$, the normal line will have slope $-1/11$. An equation for the normal line is $$n(x) = \frac{-1}{11}(x-1)+1.$$
-The normal line is plotted with $y=f(x)$ in Figure \ref{fig:normal1}. Note how the line looks perpendicular to $f$. (A key word here is ``looks.'' Mathematically, we say that the normal line \emph{is} perpendicular to $f$ at $x=1$ as the slope of the normal line is the opposite--reciprocal of the slope of the tangent line. However, normal lines may not always \emph{look} perpendicular. The aspect ratio of the graph plays a big role in this.)
+The normal line is plotted with $y=f(x)$ in Figure \ref{fig:normal1}. Note how the line looks perpendicular to $f$. (A key word here is ``looks.'' Mathematically, we say that the normal line \emph{is} perpendicular to $f$ at $x=1$ as the slope of the normal line is the opposite--reciprocal of the slope of the tangent line. However, normal lines may not always \emph{look} perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)
 \mfigure{.8}{A graph of $f(x)=3x^2+5x-7$, along with its normal line at $x=1$.}{fig:normal1}{figures/fignormal1}
 
 We also found that $\fp(3) = 23$, so the normal line to the graph of $f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is $$n(x) = \frac{-1}{23}(x-3)+35.$$ 
 \vskip-\baselineskip
 }\\
 
-Linear functions are easy to work with; many functions that arise in the course of solving real problems are not easy to work with. A common practice in mathematical problem solving is to approximate difficult functions with not--so--difficult functions. Lines are a common choice. It turns out that at any given point on a differentiable function $f$, the best linear approximation to $f$ is its tangent line. That is one reason we'll spend considerable time finding tangent lines to functions.
+Linear functions are easy to work with; many functions that arise in the course of solving real problems are not easy to work with. A common practice in mathematical problem solving is to approximate difficult functions with not--so--difficult functions. Lines are a common choice. It turns out that at any given point on the graph of a differentiable function $f$, the best linear approximation to $f$ is its tangent line. That is one reason we'll spend considerable time finding tangent lines to functions.
 
 One type of function that does not benefit from a tangent--line approximation is a line; it is rather simple to recognize that the tangent line to a line is the line itself. We look at this in the following example.\\
 
@@ -205,7 +205,7 @@ The output is the ``derivative function,'' $\fp(x)$. The $\fp(x)$ function will 
 
 \sword{Notation:} 
 
-Let $y = f(x)$. The following notation all represents the derivative:
+Let $y = f(x)$. The following notations all represent the derivative:
 $$\fp(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y). $$}
 \setlength{\specialboxlength}{\textwidth-2\specialboxinnerseplength}
 
@@ -242,7 +242,7 @@ Let $\ds f(x) = \frac{1}{x+1}$. Find $\fp(x)$.}
 						&= \frac{-1}{(x+1)^2}
 	\end{align*}
 	
-So $\ds\fp(x) = \frac{-1}{(x+1)^2}$. To practice our notation, we could also state $$\ds \frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.$$
+So $\ds\fp(x) = \frac{-1}{(x+1)^2}$. To practice using our notation, we could also state $$\ds \frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.$$
 \vskip-\baselineskip
 }\\
 
@@ -357,7 +357,7 @@ Being more rigorous, we can again evaluate the difference quotient limit at $x=\
 %		 \lim_{h\to0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} &=\lim_{h\to0^+}0\\
 %		 0 &=0\\
 %\end{align*}
-\mfigure{.5}{A graph of $\fp(x)$ in Example \ref{ex_diff_piecewise}.}{fig:piecewisecosx1}{figures/figpiecewisecosx1}
+\mfigure{.55}{A graph of $\fp(x)$ in Example \ref{ex_diff_piecewise}.}{fig:piecewisecosx1}{figures/figpiecewisecosx1}
 Since both the left and right hand limits are 0 at $x=\pi/2$, the limit exists and $\fp(\pi/2)$ exists (and is 0). Therefore we can fully write $\fp$ as $$\fp(x) = \left\{\begin{array}{cc} \cos x & x\leq\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$ See Figure \ref{fig:piecewisecosx1} for a graph of this function.
 }\\
 

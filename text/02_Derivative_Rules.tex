@@ -2,7 +2,7 @@
 
 The derivative is a powerful tool but is admittedly awkward given its reliance on limits. Fortunately, one thing mathematicians are good at is \textit{abstraction.} For instance, instead of continually finding derivatives at a point, we abstracted and found the derivative function. 
 
-Let's practice abstraction on linear functions, $y=mx+b$. What is $y'$? Without limits, recognize that linear function are characterized by being functions with a constant rate of change (the slope). The derivative, $y'$, gives the instantaneous rate of change; with a linear function, this is constant, $m$. Thus $y'=m$. 
+Let's practice abstraction on linear functions, $y=mx+b$. What is $y\primeskip'$? Without limits, recognize that linear function are characterized by being functions with a constant rate of change (the slope). The derivative, $y\primeskip'$, gives the instantaneous rate of change; with a linear function, this is constant, $m$. Thus $y\primeskip'=m$. 
 
 Let's abstract once more. Let's find the derivative of the general quadratic function, $f(x) = ax^2+bx+c$. Using the definition of the derivative, we have:
 		\begin{align*}
@@ -12,7 +12,7 @@ Let's abstract once more. Let's find the derivative of the general quadratic fun
 						&= 2ax+b.
 		\end{align*}
 		
-So if $y = 6x^2+11x-13$, we can immediately compute $y' = 12x+11$. \\
+So if $y = 6x^2+11x-13$, we can immediately compute $y\primeskip' = 12x+11$. \\
 
 In this section (and in some sections to follow) we will learn some of what mathematicians have already discovered about the derivatives of certain functions and how derivatives interact with arithmetic operations. We start with a theorem.
 
@@ -87,10 +87,10 @@ Theorem \ref{thm:deriv_common} gives useful information, but we will need much m
 \theorem{thm:deriv_prop}{Properties of the Derivative}
 {Let $f$ and $g$ be differentiable on an open interval $I$ and let $c$ be a real number. Then:
 	\begin{enumerate}
-	%\item		\parbox{75pt}{\textbf{Sum/Difference Rule:}}\parbox[t]{176pt}{$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g'(x)$}
+	%\item		\parbox{75pt}{\textbf{Sum/Difference Rule:}}\parbox[t]{176pt}{$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g\primeskip'(x)$}
 	\item	\sword{Sum/Difference Rule:}
 	
-	$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g'(x)$
+	$\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)$ $= \rule{0pt}{15pt}\fp(x)\pm g\primeskip'(x)$
 	\index{derivative!Sum/Difference Rule}\index{Sum/Difference Rule!of derivatives}
 	\item		\sword{Constant Multiple Rule:}
 	
@@ -135,11 +135,11 @@ The derivative of a function $f$ is itself a function, therefore we can take its
 {Let $y=f(x)$ be a differentiable function on $I$. \index{derivative!higher order}\index{derivative!notation}
 		\begin{enumerate}
 		\item		The \textit{second derivative} of $f$ is: 
-						$$ \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d^2y}{dx^2}=y''.$$
+						$$ \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d\primeskip^2y}{dx^2}=y\primeskip''.$$
 				\item		The \textit{third derivative} of $f$ is: 
-						$$ \fp''(x) = \frac{d}{dx}\Big(\fp'(x)\Big) = \frac{d}{dx}\left(\frac{d^2y}{dx^2}\right) = \frac{d^3y}{dx^3}=y'''.$$
+						$$ \fp''(x) = \frac{d}{dx}\Big(\fp'(x)\Big) = \frac{d}{dx}\left(\frac{d\primeskip^2y}{dx^2}\right) = \frac{d\primeskip^3y}{dx^3}=y\primeskip'''.$$
 				\item		The \textit{n$^{\text{th}}$ derivative} of $f$ is:
-						$$ f\,^{(n)}(x) = \frac{d}{dx}\left(f\,^{(n-1)}(x)\right) = \frac{d}{dx}\left(\frac{d\,^{n-1}y}{dx^{n-1}}\right) = \frac{d\,^ny}{dx^n}=y^{(n)}.$$
+						$$ f\,^{(n)}(x) = \frac{d}{dx}\left(f\,^{(n-1)}(x)\right) = \frac{d}{dx}\left(\frac{d\primeskip^{n-1}y}{dx^{n-1}}\right) = \frac{d\primeskip^ny}{dx^n}=y^{(n)}.$$
 		\end{enumerate}
 }
 \normalsize

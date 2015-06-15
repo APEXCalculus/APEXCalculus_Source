@@ -60,15 +60,20 @@
 %%%%\clearpage{\pagestyle{empty}\cleardoublepage}
 %%%%\phantomsection
 %%%%
-\phantomsection
-\addcontentsline{toc}{chapter}{Preface}
-\input{text/preface}
-\clearpage{\pagestyle{empty}\cleardoublepage}
 
 
 \addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 \clearpage{\pagestyle{empty}\cleardoublepage}
+
+\phantomsection
+\prefacegeometry
+\addcontentsline{toc}{chapter}{Preface}
+\input{text/preface}
+\restoregeometry
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
 %%%%
 \mainmatter
 

@@ -8,7 +8,7 @@ The Fundamental Theorem of Calculus gives a concrete technique for finding the e
 %Section \ref{sec:antider} introduced antiderivatives and the indefinite integral; given a function, its indefinite integral is a set of \textit{functions}. In Section \ref{sec:def_int}, we learned about definite integrals: given a function and two bounds, the definite integral computes the ``area under the curve,'' i.e., a \textit{number}. The Fundamental Theorem of Calculus states that these two concepts are related: we use antiderivatives to evaluate definite integrals. Definite integrals have immense importance in mathematics, science and engineering. We will explore some of these applications in Chapter \ref{SEVEN}. 
 %
 %This method of evaluating definite integrals has one significant shortcoming: not all functions have an antiderivative expressible in terms of elementary functions.  (Elementary functions are combinations of polynomials, $n^{\text{th}}$ root, rational, exponential, logarithmic and trigonometric functions.). To be clear, we are not claiming that the antiderivatives are just \textit{hard} to find; rather, we are saying that we \textit{cannot} write them out using functions that we normally use. 
-An \sword{elementary function}\index{elementary function} is any function that is a combination of polynomials, $n^{\text{th}}$ roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions that we cannot compute an antiderivative of. For example, the following functions do not have antiderivatives that we can express with elementary functions:
+An \sword{elementary function}\index{elementary function} is any function that is a combination of polynomials, $n^{\text{th}}$ roots, rational, exponential, logarithmic and trigonometric functions. We can compute the derivative of any elementary function, but there are many elementary functions of which we cannot compute an antiderivative. For example, the following functions do not have antiderivatives that we can express with elementary functions:
 
 $$
 e^{-x^2}, \quad \sin(x^3)\quad \text{and} \quad \frac{\sin x}{x}.
@@ -19,7 +19,7 @@ The simplest way to refer to the antiderivatives of $e^{-x^2}$ is to simply writ
 %How, then, can we solve problems involving definite integrals of such functions? We \textit{approximate.} 
 This section outlines three common methods of approximating the value of definite integrals. We describe each as a systematic method of approximating area under a curve. By approximating this area accurately, we find an accurate approximation of the corresponding definite integral.
 
-We will apply the methods we learn in this Section to the following definite integrals:
+We will apply the methods we learn in this section to the following definite integrals:
 
 $$
 \int_0^1 e^{-x^2} \ dx, \quad \int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin(x^3) \ dx, \quad \text{and} \quad \int_{0.5}^{4\pi} \frac{\sin(x)}{x} \ dx,
@@ -162,7 +162,8 @@ Revisit Example \ref{ex_num2}
 and approximate $\ds\int_{-\frac{\pi}{4}}^{\frac{\pi}{2}} \sin (x^3)\ dx$ using the Trapezoidal Rule and 10 equally spaced subintervals.}
 {We refer back to Figure \ref{fig:num2a} for the table of values of $\sin(x^3)$. Recall that $\dx = 3\pi/40 \approx 0.236$. Thus we have:\small
 \begin{align*}
-\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx &\approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+0.971+0.69\Big)+(-0.67)\Big]\\
+\int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx &\approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+%0.971+
+0.69\Big)+(-0.67)\Big]\\
 			&= 0.4275.
 \end{align*}
 \normalsize
@@ -298,13 +299,14 @@ Since the exact answer cannot be found, approximation still has its place. How a
 
 ``Trial and error'' provides one way. %(No, this does not refer to seeing whether or not the bridge collapses.) 
 Using technology, make an approximation with, say, 10, 100, and 200 subintervals. This likely will not take much time at all, and a trend should emerge. If a trend does not emerge, try using yet more subintervals. Keep in mind that trial and error is never foolproof; you might stumble upon a problem in which a trend will not emerge.
+\enlargethispage{3\baselineskip}
 
 A second method is to use Error Analysis. While the details are beyond the scope of this text, there are some formulas that give \textit{bounds} for how good your approximation will be. For instance, the formula might state that the approximation is within 0.1 of the correct answer. If the approximation is 1.58, then one knows that the correct answer is between 1.48 and 1.68. By using lots of subintervals, one can get an approximation as accurate as one likes. Theorem \ref{thm:numerical_error} states what these bounds are.
 
-\setboxwidth{50pt}%
-\ifthenelse{\isodd{\thepage}}{}{\hskip -65pt}%
-\noindent\begin{minipage}{\specialboxlength}
-\theorem{thm:numerical_error}{Error Bounds in the Trapezoidal Rule and Simpson's Rule}%
+%\setboxwidth{50pt}%
+%\ifthenelse{\isodd{\thepage}}{}{\hskip -65pt}%
+%\noindent\begin{minipage}{\specialboxlength}
+\theorem{thm:numerical_error}{Error Bounds in the Trapezoidal and Simpson's Rules}%
 {\begin{enumerate}\index{integration!numerical!Trapezoidal Rule}\index{integration!numerical!Simpson's Rule}
 \index{Trapezoidal Rule!error bounds}\index{Simpson's Rule!error bounds}
 \index{numerical integration!Trapezoidal Rule!error bounds}\index{numerical integration!Simpson's Rule!error bounds}
@@ -319,8 +321,8 @@ If $f$ has a continuous 4$^\text{th}$ derivative on $[a,b]$ and $M$ is any upper
 $$E_S \leq \frac{(b-a)^5}{180n^4}M.$$
 \end{enumerate}
 }
-\end{minipage}
-\restoreboxwidth
+%\end{minipage}
+%\restoreboxwidth
 
 There are some key things to note about this theorem.
 \begin{enumerate}
@@ -337,7 +339,7 @@ Find the error bounds when approximating $\ds \int_0^1 e^{-x^2}\ dx$ using the T
 
 \noindent \textbf{Trapezoidal Rule with $n=5$:}
 
-\mfigure{.7}{Graphing $\fpp(x)$ in Example \ref{ex_num7} to help establish error bounds.}{fig:num7a}{figures/fignum7a}
+\mfigure{.5}{Graphing $\fpp(x)$ in Example \ref{ex_num7} to help establish error bounds.}{fig:num7a}{figures/fignum7a}
 
 We start by computing the $2^\text{nd}$ derivative of $f(x) = e^{-x^2}$: $$\fpp(x) = e^{-x^2}(4x^2-2).$$ Figure \ref{fig:num7a} shows a graph of $\fpp(x)$ on $[0,1]$. It is clear that the largest value of $\fpp$, in absolute value, is 2. Thus we let $M=2$ and apply the error formula from Theorem \ref{thm:numerical_error}.
 
@@ -348,11 +350,12 @@ $$0.7445-0.0067 = .7378 \leq \int_0^1e^{-x^2}\ dx \leq 0.7512 = 0.7445 + 0.0067.
 
 \noindent\textbf{Simpson's Rule with $n=4$:}
 
-\mfigure{.4}{Graphing $f\,^{(4)}(x)$ in Example \ref{ex_num7} to help establish error bounds.}{fig:num7b}{figures/fignum7b}
 
 We start by computing the $4^\text{th}$ derivative of $f(x) = e^{-x^2}$: $$f\,^{(4)}(x) = e^{-x^2}(16x^4-48x^2+12).$$ Figure \ref{fig:num7b} shows a graph of $f\,^{(4)}(x)$ on $[0,1]$. It is clear that the largest value of $f\,^{(4)}$, in absolute value, is 12. Thus we let $M=12$ and apply the error formula from Theorem \ref{thm:numerical_error}.
 
 $$E_s = \frac{(1-0)^5}{180\cdot 4^4}\cdot 12 = 0.00026.$$
+
+\mfigure{.8}{Graphing $f\,^{(4)}(x)$ in Example \ref{ex_num7} to help establish error bounds.}{fig:num7b}{figures/fignum7b}
 
 \enlargethispage{2\baselineskip}
 
@@ -368,7 +371,7 @@ One of the authors drove his daughter home from school while she recorded their 
 
 The most difficult aspect of this problem is converting the given data into the form we need it to be in. The speed is measured in miles per hour, whereas the time is measured in 30 second increments. 
 
-\mtable{.45}{Speed data collected at 30 second intervals for Example \ref{ex_num8}.}{fig:num8}{%
+\mtable{.4}{Speed data collected at 30 second intervals for Example \ref{ex_num8}.}{fig:num8}{%
 \begin{tabular}{cc}
 Time & \parbox{30pt}{\centering Speed \\ (mph)}\rule[-9pt]{0pt}{5pt} \\ \hline
 0 & 0 \\
@@ -398,4 +401,9 @@ Thus the distance traveled is approximately:
 We approximate the author drove 6.2 miles. (Because we are sure the reader wants to know, the author's odometer recorded the distance as about 6.05 miles.)
 }\\
 
+We started this chapter learning about antiderivatives and indefinite integrals. We then seemed to change focus by looking at areas between the graph of a function and the $x$-axis. We defined these areas as the definite integral of the function, using a notation very similar to the notation of the indefinite integral. The Fundamental Theorem of Calculus tied these two seemingly separate concepts together: we can find areas under a curve, i.e., we can evaluate a definite integral, using antiderivatives. 
+
+We ended the chapter by noting that antiderivatives are sometimes more than difficult to find: they are impossible. Therefore we developed numerical techniques that gave us good approximations of definite integrals.
+
+We used the definite integral to compute areas, and also to compute displacements and distances traveled. There is far more we can do than that. In Chapter \ref{chapter:app_of_int} we'll see more applications of the definite integral. Before that, in Chapter \ref{chapter:anti_tech} we'll learn advanced techniques of integration, analogous to learning rules like the Product, Quotient and Chain Rules of differentiation. 
 \printexercises{exercises/05_05_exercises}

@@ -4,7 +4,7 @@ We continue with the pattern we have established in this text: after defining a 
 
 We begin with a series of definitions. We are used to ``open intervals'' such as $(1,3)$, which represents the set of all $x$ such that $1<x<3$,  and ``closed intervals'' such as $[1,3]$, which represents the set of all $x$ such that $1\leq x\leq 3$. We need analogous definitions for open and closed sets in the $x$-$y$ plane.
 
-\definition{def:open}{Open Disk, Boundary and Interior Points, Open and Closed Sets, Bounded Sets}
+\definition{def:open}{\parbox[t]{225pt}{Open Disk, Boundary and Interior Points, Open and Closed Sets, Bounded Sets}}
 {An \textbf{open disk} $B$ in $\mathbb{R}^2$ centered at $(x_0,y_0)$ with radius $r$ is the set of all points $(x,y)$ such that $\ds\sqrt{(x-x_0)^2+(y-y_0)^2} < r$. \\
 
 Let $S$ be a set of points in $\mathbb{R}^2$. A point $P$ in $\mathbb{R}^2$ is a \textbf{boundary point} of $S$  if all open disks centered at $P$ contain both points in $S$ and points not in $S$.\\
@@ -15,7 +15,7 @@ A set $S$ is \textbf{open} if every point in $S$ is an interior point.\\
 
 A set $S$ is \textbf{closed} if it contains all of its boundary points.\\
 
-A set $S$ is \textbf{bounded} if there is an $M>0$ such that the open disk, centered at the origin, with radius $M$ contains $S$. A set that is not bounded is \textbf{unbounded}.
+A set $S$ is \textbf{bounded} if there is an $M>0$ such that the open disk, centered at the origin with radius $M$, contains $S$. A set that is not bounded is \textbf{unbounded}.
 \index{open}\index{closed}\index{open disk}\index{closed disk}\index{boundary point}\index{interior point}\index{bounded set}\index{unbounded set}
 }
 
@@ -31,7 +31,7 @@ Figure \ref{fig:multilimit_intro} shows several sets in the $x$-$y$ plane. In ea
 \end{tabular}
 }
 
-The set depicted in Figure \ref{fig:multilimit_intro}(a) is a closed set as it contains all of its boundary points. The set in (b) is open, for all of its points are interior points (or, equivalently, it does not contain any of its boundary points). The set in (c) is neither open nor closed as it contains just some of its boundary points.\\
+The set depicted in Figure \ref{fig:multilimit_intro}(a) is a closed set as it contains all of its boundary points. The set in (b) is open, for all of its points are interior points (or, equivalently, it does not contain any of its boundary points). The set in (c) is neither open nor closed as it contains  some of its boundary points.\\
 \clearpage
 
 \example{ex_multilimit1}{Determining open/closed, bounded/unbounded}{
@@ -43,7 +43,7 @@ Determine if the domain of the function $f(x,y)=\sqrt{1-\frac{x^2}9-\frac{y^2}4}
 Determine if the domain of $f(x,y) = \frac1{x-y}$ is open, closed, or neither.}
 {As we cannot divide by 0, we find the domain to be $D = \{(x,y)\ |\ x-y\neq 0\}$. In other words, the domain is the set of all points $(x,y)$ \emph{not} on the line $y=x$. 
 
-\mfigure{.75}{Sketching the domain of the function in Example \ref{ex_multilimit2}.}{fig:multilimit2}{figures/figmultilimit2}
+\mfigure{.68}{Sketching the domain of the function in Example \ref{ex_multilimit2}.}{fig:multilimit2}{figures/figmultilimit2}
 The domain is sketched in Figure \ref{fig:multilimit2}. Note how we can draw an open disk around any point in the domain that lies entirely inside the domain, and also note how the only boundary points of the domain are the points on the line $y=x$. We conclude the domain is an open set. The set is unbounded.
 }\\
 
@@ -57,8 +57,10 @@ Recall a pseudo--definition of the limit of a function of one variable: ``$\ds \
 means ``if the point $(x,y)$ is really close to the point $(x_0,y_0)$, then $f(x,y)$ is really close to $L$.'' The formal definition is given below.
 
 \definition{def:multilimit}{Limit of a Function of Two Variables}
-{Let $f(x,y)$ be a function of two variables and let $(x_0,y_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y)$ as $(x,y)$ approaches $(x_0,y_0)$ is $L$, denoted $$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L,$$
-if, for every $\epsilon>0$ there is a $\delta>0$ such that if $(x,y)$ is in the open disk centered at $(x_0,y_0)$ with radius $\delta$, then $|f(x,y) - L|<\epsilon.$
+{Let $S$ be an open set containing $(x_0,y_0)$, and let $f$ be a function of two variables defined on $S$, except possibly at $(x_0,y_0)$. 
+%Let $f(x,y)$ be a function of two variables and let $(x_0,y_0)$ be a point in the domain of $f$. 
+The \textbf{limit} of $f(x,y)$ as $(x,y)$ approaches $(x_0,y_0)$ is $L$, denoted $$\ds \lim_{(x,y)\to (x_0,y_0)} f(x,y) = L,$$
+means that given any $\epsilon>0$, there exists $\delta>0$ such that for all  $(x,y)\neq (x_0,y_0)$, if $(x,y)$ is in the open disk centered at $(x_0,y_0)$ with radius $\delta$, then $|f(x,y) - L|<\epsilon.$
 \index{limit!of multivariable function}\index{multivariable function!limit}
 }
 
@@ -67,7 +69,14 @@ The concept behind Definition \ref{def:multilimit} is sketched in Figure \ref{fi
 
 Computing limits using this definition is rather cumbersome. The following theorem allows us to evaluate limits much more easily.
 
-\mfigure[scale=1.25]{.77}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.12234160136132792,
+3Dortho=0.004824123345315456,
+3Dc2c=0.9118747115135193 -0.1974218785762787 0.35987377166748047,
+3Dcoo=21.82058334350586 66.31769561767578 47.81545639038086,
+3Droo=149.99999973566392,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.77}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
+%\mfigure[scale=1.25]{.77}{\textbf{Illustrating the definition of a limit.} The open disk in the $x$-$y$ plane has radius $\delta$. Let $(x,y)$ be any point in this disk; $f(x,y)$ is within $\epsilon$ of $L$.}{fig:multilimitdef}{figures/figmultilimit_def}
 
 
 \setboxwidth{0pt}
@@ -152,7 +161,7 @@ Our theorems tell us that we can evaluate most limits quite simply, without worr
 	&= \text{``2/0''} \Rightarrow \text{the limit does not exist.}
 	\end{align*}
 	\normalsize
-Step back and consider what we have just discovered. Along any line $y=mx$ in the domain of the $f(x,y)$, the limit is 0. However, along the path $y=-\sin x$, which lies in the domain of the $f(x,y)$ for all $x\neq 0$, the limit does not exist. Since the limit is not the same along every path to $(0,0)$, we say $\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}$ does not exist.
+Step back and consider what we have just discovered. Along any line $y=mx$ in the domain of the $f(x,y)$, the limit is 0. However, along the path $y=-\sin x$, which lies in the domain of  $f(x,y)$ for all $x\neq 0$, the limit does not exist. Since the limit is not the same along every path to $(0,0)$, we say $\ds \lim_{(x,y)\to (0,0)}\frac{\sin(xy)}{x+y}$ does not exist.
 \end{enumerate}
 \vskip -1.5\baselineskip
 }\\
@@ -166,7 +175,7 @@ To prove the limit is 0, we apply Definition \ref{def:multilimit}. Let $\epsilon
 
 Set $\delta < \sqrt{\epsilon/5}$. Note that $\ds \left|\frac{5y^2}{x^2+y^2}\right| <5$ for all $(x,y)\neq (0,0)$, and that if $\sqrt{x^2+y^2} <\delta$, then $x^2<\delta^2$.
 
-Let $\sqrt{(x-0)^2+(y-0)^2}<\delta$. Consider $|f(x,y)-0|$:
+Let $\sqrt{(x-0)^2+(y-0)^2} = \sqrt{x^2+y^2}<\delta$. Consider $|f(x,y)-0|$:
 \begin{align*}
 |f(x,y)-0| &= \left|\frac{5x^2y^2}{x^2+y^2}-0\right| \\
 				&= \left|x^2\cdot\frac{5y^2}{x^2+y^2}\right|\\
@@ -179,7 +188,7 @@ Thus if $\sqrt{(x-0)^2+(y-0)^2}<\delta$ then $|f(x,y)-0|<\epsilon$, which is wha
 
 \noindent\textbf{\large Continuity}\\
 
-Definition \ref{def:continuous} defines what it means for a function of one variable to be continuous. In brief, it meant that the graph of the function did not have breaks, holes, jumps, etc. We define continuity for functions of two variables in a similar way.
+Definition \ref{def:continuous} defines what it means for a function of one variable to be continuous. In brief, it meant that the graph of the function did not have breaks, holes, jumps, etc. We define continuity for functions of two variables in a similar way as we did for functions of one variable.
 
 \definition{def:multi_continuous}{Continuous}
 {Let a function $f(x,y)$ be defined on an open disk $B$ containing the point $(x_0,y_0)$. 
@@ -217,8 +226,14 @@ Finally, Theorem \ref{thm:multi_limit_algebra} of this section states that we ca
 We have found that $\ds \lim_{(x,y)\to (0,0)} \frac{\cos y\sin x}{x} = f(0,0)$, so $f$ is continuous at $(0,0)$.
 
 A similar analysis shows that $f$ is continuous at all points in $\mathbb{R}^2$. As long as $x\neq0$, we can evaluate the limit directly; when $x=0$, a similar analysis shows that the limit is $\cos y$. Thus we can say that $f$ is continuous everywhere. A graph of $f$ is given in Figure \ref{fig:multicont1}. Notice how it has no breaks, jumps, etc.
-\mfigure[scale=1.25]{.8}{A graph of $f(x,y)$ in Example \ref{ex_multicont1}.}{fig:multicont1}
-{figures/figmulticont1}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=1.3976649182325884,
+3Dortho=0.005226649809628725,
+3Dc2c=0.6559564471244812 0.554935097694397 0.5116328597068787,
+3Dcoo=-1.2457355260849 0.0923926830291748 4.189182281494141,
+3Droo=129.99999868169073,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25}{.8}{A graph of $f(x,y)$ in Example \ref{ex_multicont1}.}{fig:multicont1}{figures/figmulticont1}
+%\mfigure[scale=1.25]{.8}{A graph of $f(x,y)$ in Example \ref{ex_multicont1}.}{fig:multicont1}{figures/figmulticont1}
 }\\
 
 The following theorem is very similar to Theorem \ref{thm:continuity_algebra}, giving us ways to combine continuous functions to create other continuous functions.
@@ -230,9 +245,9 @@ The following theorem is very similar to Theorem \ref{thm:continuity_algebra}, g
 		\item		\parbox{80pt}{Sums/Differences:}	$f\pm g$
 		\item		\parbox{80pt}{Constant Multiples:}	$c\cdot f$
 		\item		\parbox{80pt}{Products:}	$f\cdot g$
-		\item		\parbox{80pt}{Quotients:}	$f/g$ \qquad {\small (as longs as $g\neq 0$ on $I$)}
+		\item		\parbox{80pt}{Quotients:}	$f/g$ \qquad {\small (as longs as $g\neq 0$ on $B$)}
 		\item		\parbox{80pt}{Powers:}	$f\,^n$
-		\item		\parbox{80pt}{Roots:}	$\sqrt[n]{f}$ \qquad \parbox[t]{150pt}{\small (if $n$ is even then $f\geq 0$ on $I$; if $n$ is odd, then true for all values of $f$ on $I$.)}
+		\item		\parbox{80pt}{Roots:}	$\sqrt[n]{f}$ \qquad \parbox[t]{150pt}{\small (if $n$ is even then $f\geq 0$ on $B$; if $n$ is odd, then true for all values of $f$ on $B$.)}
 		\item		\parbox{80pt}{Compositions:}\parbox[t]{185pt}{Adjust the definitions of $f$ and $g$ to: Let $f$ be continuous on $B$, where the range of $f$ on $B$ is $J$, and let $g$ be a single variable function that is continuous on $J$. Then $g\circ f$, i.e., $g(f(x,y))$, is continuous on $B$.}
 		\end{enumerate}
 }
@@ -255,9 +270,9 @@ The definitions and theorems given in this section can be extended in a natural 
 \index{multivariable function!limit}\index{limit!of multivariable function}\index{multivariable function!continuity}\index{open ball}
 \\
 
-\item Let $f(x,y,z)$ be a function of three variables and let $(x_0,y_0,z_0)$ be a point in the domain of $f$. The \textbf{limit} of $f(x,y,z)$ as $(x,y,z)$ approaches $(x_0,y_0,z_0)$ is $L$, denoted 
+\item Let $D$ be an open set in $\mathbb{R}^3$ containing $(x_0,y_0,z_0)$, and let $f(x,y,z)$ be a function of three variables defined on $D$, except possibly at  $(x_0,y_0,z_0)$. The \textbf{limit} of $f(x,y,z)$ as $(x,y,z)$ approaches $(x_0,y_0,z_0)$ is $L$, denoted 
 $$\lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = L,$$
-if, for every $\epsilon >0$ there is a $\delta >0$ such that if $(x,y,z)$ is in the open ball centered at $(x_0,y_0,z_0)$ with radius $\delta$, then $|f(x,y,z) - L|< \epsilon$.\\
+means that given any $\epsilon >0$, there is a $\delta >0$ such that for all  $(x,y,z)\neq(x_0,y_0,z_0)$, if $(x,y,z)$ is in the open ball centered at $(x_0,y_0,z_0)$ with radius $\delta$, then $|f(x,y,z) - L|< \epsilon$.\\
 
 \item Let $f(x,y,z)$ be defined on an open ball $B$ containing $(x_0,y_0,z_0)$. $f$ is \textbf{continuous} at $(x_0,y_0,z_0)$ if $\ds \lim_{(x,y,z)\to (x_0,y_0,z_0)} f(x,y,z) = f(x_0,y_0,z_0)$.
 \end{enumerate}
@@ -266,5 +281,6 @@ if, for every $\epsilon >0$ there is a $\delta >0$ such that if $(x,y,z)$ is in 
 
 These definitions can also be extended naturally to apply to functions of four or more variables. Theorem \ref{thm:multi_continuous_prop} also applies to function of three or more variables, allowing us to say that the function $$\ds f(x,y,z) = \frac{e^{x^2+y}\sqrt{y^2+z^2+3}}{\sin (xyz)+5}$$ is continuous everywhere.
 
+When considering single variable functions, we studied limits, then continuity, then the derivative. In our current study of multivariable functions, we have studied limits and continuity. In the next section we study derivation, which takes on a slight twist as we are in a multivarible context.
 
 \printexercises{exercises/12_02_exercises}

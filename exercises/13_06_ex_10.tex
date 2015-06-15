@@ -3,15 +3,22 @@
 
 Do not evaluate any triple integral.
 
-\myincludegraphics[scale=1.25,trim=0mm 0mm 0mm 0mm,clip]{figures/fig13_06_ex_10}
-%\ifthenelse{\boolean{printquestions}}{\columnbreak}{}
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004025847185403109,
+3Dc2c=0.8124339580535889 0.30516722798347473 0.4968138635158539,
+3Dcoo=-14.771090507507324 42.51134490966797 24.72347640991211,
+3Droo=150.00000218030218,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 0mm 0mm 0mm,clip}{figures/fig13_06_ex_10}
+%\myincludegraphics[scale=1.25,trim=0mm 0mm 0mm 0mm,clip]{figures/fig13_06_ex_10}
+\ifthenelse{\boolean{printquestions}}{\columnbreak}{}
 }
 {$dz\ dy\ dx$: $\ds\int_0^3\int_{3x}^{9}\int_{0}^{\sqrt{y^2-9x^2}}\ dz\ dy\ dx$\\
-	$dz\ dx\ dy$: $\ds\int_{0}^9\int_0^{y/3}\int_{0}^{\sqrt{y^2-9x^2}}\ dz\ dy\ dx$\\
+	$dz\ dx\ dy$: $\ds\int_{0}^9\int_0^{y/3}\int_{0}^{\sqrt{y^2-9x^2}}\ dz\ dx\ dy$\\
 	$dy\ dz\ dx$: $\ds\int_0^3\int_0^{\sqrt{81-9x^2}}\int_{\sqrt{z^2+9x^2}}^{9}\ dy\ dz\ dx$\\
 	$dy\ dx\ dz$: $\ds\int_0^9\int_0^{\sqrt{9-z^2/9}}\int_{\sqrt{z^2+9x^2}}^{9}\ dy\ dx\ dz$\\
 	$dx\ dz\ dy$: $\ds\int_{0}^9\int_{0}^{y}\int_0^{\frac13\sqrt{y^2-z^2}}\ dx\ dz\ dy$\\
 	$dx\ dy\ dz$: $\ds\int_0^9\int_{z}^{9}\int_0^{\frac13\sqrt{y^2-z^2}}\ dx\ dy\ dz$
 	
-	N/A
+
 }

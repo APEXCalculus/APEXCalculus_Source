@@ -1,7 +1,7 @@
 %%%%
-% CreateSpace ISBN assigned June 20, 2013
-% ISBN-13: 978-1490492506 
-% ISBN-10: 149049250X
+% CreateSpace ISBN assigned June 4, 2015
+% ISBN-13: 978-1514226063 
+% ISBN-10: 1514226065
 %%%%
 \RequirePackage{ifthen}
 \newboolean{longpage}
@@ -29,7 +29,6 @@
 \usepackage{refcount}
 \usepackage{pdfpages}
 
-%\printexercisenames
 
 \ifthenelse{\boolean{xetex}}%
 	{\sffamily
@@ -63,6 +62,8 @@
 
 \printincolor
 %\printinblackandwhite
+
+%\printexercisenames
 %\printallanswers
 
 \input{text/front_matter_and_coverII}
@@ -130,7 +131,7 @@
 \addtocounter{keyideacounter}{-1}
 \setcounterref{examplecounter}{lastexamplecount1}
 \addtocounter{examplecounter}{-1}
-\setcounter{page}{184}
+\setcounter{page}{189}
 \thispagestyle{empty}
 
 \chapter{Integration}\label{chapter:integration}
@@ -145,8 +146,8 @@
 \input{text/05_FTC}
 \input{text/05_Numerical_Integration}
 
-%
-%%%\addtocounter{chapter}{5}
+
+%%\addtocounter{chapter}{5}
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Techniques of Antidifferentiation}\label{chapter:anti_tech}
@@ -161,7 +162,7 @@
 \input{text/06_LHopitals_Rule}
 \input{text/06_Improper_Integration}
 
-%%%\addtocounter{chapter}{6}
+%%\addtocounter{chapter}{6}
 
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Applications of Integration}\label{chapter:app_of_int}
@@ -174,7 +175,7 @@
 \input{text/07_Work}
 \input{text/07_Fluid_Force}
 
-%%%\addtocounter{chapter}{7}
+%%\addtocounter{chapter}{7}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Sequences and Series}\label{chapter:sequences_series}
 \thispagestyle{empty}
@@ -292,15 +293,18 @@
 %%%\printindex
 %%
 %
+
+
 \qendheader
 \eendgeometry
 
 \phantomsection
 \cleardoublepage
 \addcontentsline{toc}{chapter}{\indexname}
-\printindex
+%\printindex
+\includepdf[pages={863-868}]{Calculus.pdf}
 
-\cleardoublepage
+%\cleardoublepage
 \input{text/Inside_Cover_Of_The_Text_Material_Complete}
 
 

@@ -50,13 +50,15 @@ Replacing $f(c+\dx)$ with its tangent line approximation, we have
 								&=\fp(c)\dx		\label{eq:differential}
 \end{align}
 
-This final equation is important; we'll come back to it in a moment.
+This final equation is important; we'll come back to it in Key Idea \ref{idea:differential}.
 
 We introduce two new variables, $dx$ and $dy$ in the context of a formal definition. %We defined $dx = \dx$; that is, it is a small change in $x$. We define
 
 \definition{def:differential}{Differentials of $x$ and $y$.}
 {Let $y=f(x)$ be differentiable. The \textbf{differential of $x$}, denoted $dx$, is any nonzero real number (usually taken to be a small number).\index{differential}\index{derivative!differential} The \textbf{differential of $y$}, denoted $dy$, is $$dy = \fp(x)dx.$$
 }
+
+We can solve for $\fp(x)$ in the above equation: $\fp(x) = dy/dx$. This states that the derivative of $f$ with respect to $x$ is the differential of $y$ divided by the differential of $x$; this is \textbf{not} the alternate notation for the derivative, $\frac{dy}{dx}$. This latter notation was chosen because of the fraction--like qualities of the derivative, but again, it is one symbol and not a fraction.
 
 It is helpful to organize our new concepts and notations in one place.
 
@@ -95,7 +97,7 @@ Imagine water flowing down a winding channel. It is easy to measure the speed an
 
 We use differentials once more to approximate the value of a function. Even though calculators are very accessible, it is neat to see how these techniques can sometimes be used to easily compute something that looks rather hard.\\
 
-\enlargethispage{\baselineskip}
+%\enlargethispage{\baselineskip}
 
 \example{ex_diffal2}{Using differentials to approximate a function value}{
 Approximate $\sqrt{4.5}$.}
@@ -122,7 +124,7 @@ In each of the following, find the differential $dy$.
 
 \item		$y = e^x(x^2+2)$:\quad Let $f(x) = e^x(x^2+2)$. We need $\fp(x)$, requiring the Product Rule. 
 
-We have $\fp(x) = e^x(x^2+2) + 2xe^x$, so $$dy = (e^x(x^2+2) + 2xe^x)dx.$$
+We have $\fp(x) = e^x(x^2+2) + 2xe^x$, so $$dy = \big(e^x(x^2+2) + 2xe^x\big)dx.$$
 
 \item		$y = \sqrt{x^2+3x-1}$:\quad	Let $f(x) = \sqrt{x^2+3x-1}$; we need $\fp(x)$, requiring the Chain Rule.
 
@@ -131,7 +133,7 @@ $$ dy = \frac{(2x+3)dx}{2\sqrt{x^2+3x-1}}.$$
 \end{enumerate}
 \vskip-\baselineskip
 }\\
-\clearpage
+%\clearpage
 
 Finding the differential $dy$ of $y=f(x)$ is really no harder than finding the derivative of $f$; we just \textit{multiply} $\fp(x)$ by $dx$. It is important to remember that we are not simply adding the symbol ``$dx$'' at the end.\\
 
@@ -141,7 +143,7 @@ How close are $f(x)$ and $f(x+\dx)$? This is a difference in ``y'' values; $$f(x
 
 \example{ex_diffal4}{Using differentials to approximate propagated error}{
 A steel ball bearing is to be manufactured with a diameter of 2cm. The manufacturing process has a tolerance of $\pm 0.1$mm in the diameter. Given that the density of steel is about 7.85g/cm$^3$, estimate the propagated error in the mass of the ball bearing.}
-{The mass of a ball bearing is found using the equation mass = volume $\times$ density. In this situation the mass function is a product of the radius of the ball bearing, hence it is $m = 7.85\frac43\pi r^3$. The differential of the mass is $$dm = 31.4\pi r^2 dr.$$ The radius is to be 1cm; the manufacturing tolerance in the radius is $\pm 0.05$mm, or $\pm 0.005$cm. The propagated error is approximately:
+{The mass of a ball bearing is found using the equation ``mass = volume $\times$ density.'' In this situation the mass function is a product of the radius of the ball bearing, hence it is $m = 7.85\frac43\pi r^3$. The differential of the mass is $$dm = 31.4\pi r^2 dr.$$ The radius is to be 1cm; the manufacturing tolerance in the radius is $\pm 0.05$mm, or $\pm 0.005$cm. The propagated error is approximately:
 \begin{align*}
 \Delta m & \approx dm \\
 				&= 31.4\pi (1)^2 (\pm 0.005) \\
@@ -168,7 +170,7 @@ We first learned of the derivative in the context of instantaneous rates of chan
 \item	Differentials (useful for various approximations and for something called integration).
 \end{itemize}
 
-In the next chapters, we will consider the ``reverse'' problem to computing the derivative: given a function $f$, can we find a function whose derivative is $f$? Be able to do so opens up an incredible world of mathematics and applications.
+In the next chapters, we will consider the ``reverse'' problem to computing the derivative: given a function $f$, can we find a function whose derivative is $f$\hskip.75pt? Be able to do so opens up an incredible world of mathematics and applications.
 
 %\refstepcounter{definitioncounter}
 %\label{lastdefcount1}

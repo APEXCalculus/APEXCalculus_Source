@@ -23,26 +23,27 @@ In this section we consider integrals where one or both of the above conditions 
 \clearpage
 
 \noindent\textbf{\large Improper Integrals with Infinite Bounds}
-\vskip\baselineskip
-\setboxwidth{80pt}
-\noindent
-\hskip-80pt
-\begin{minipage}{\specialboxlength}
-\definition{def:imp_int1}{Improper Integrals with Infinite Bounds; Coverge, Diverge}
+%\vskip.5\baselineskip
+
+%\setboxwidth{40pt}
+%\noindent
+%\hskip-40pt
+%\begin{minipage}{\specialboxlength}
+\definition{def:imp_int1}{\parbox[t]{210pt}{Improper Integrals with Infinite Bounds; Converge, Diverge}}
 {\begin{enumerate}
 \item		Let $f$ be a continuous function on $[a,\infty)$. Define \index{integration!improper}\index{improper integration}\index{convergence!of improper int.}\index{divergence!of improper int.}
-$$\int_a^\infty f(x)\ dx \quad \text{to be}\quad \lim_{b\to\infty}\int_a^b f(x)\ dx.$$
+$$\small\int_a^\infty f(x)\ dx \quad \text{to be}\quad \lim_{b\to\infty}\int_a^b f(x)\ dx.$$
 
 \item		Let $f$ be a continuous function on $(-\infty,b]$. Define
-$$\int_{-\infty}^b f(x)\ dx \quad \text{to be}\quad \lim_{a\to-\infty}\int_a^b f(x)\ dx.$$
+$$\small\int_{-\infty}^b f(x)\ dx \quad \text{to be}\quad \lim_{a\to-\infty}\int_a^b f(x)\ dx.$$
 
 \item		Let $f$ be a continuous function on $(-\infty,\infty)$. Let $c$ be any real number; define
-$$\int_{-\infty}^\infty f(x)\ dx \quad \text{to be}\quad \lim_{a\to-\infty}\int_a^c f(x)\ dx\ +\ \lim_{b\to\infty}\int_c^b f(x)\ dx.$$
+$$\small\int_{-\infty}^\infty f(x)\ dx \quad \text{to be}\quad \lim_{a\to-\infty}\int_a^c f(x)\ dx\ +\ \lim_{b\to\infty}\int_c^b f(x)\ dx.$$
 \end{enumerate}
 An improper integral is said to \textbf{converge} if its corresponding limit exists; otherwise, it \textbf{diverges}. The improper integral in part 3 converges if and only if both of its limits exist.
 }
-\end{minipage}
-\restoreboxwidth
+%\end{minipage}
+%\restoreboxwidth
 \enlargethispage{2\baselineskip}
 
 \example{ex_impint1}{Evaluating improper integrals}{
@@ -61,10 +62,11 @@ Evaluate the following improper integrals.
 \item		$\ds\int_{-\infty}^\infty \frac1{1+x^2}\ dx$
 \end{enumerate}
 \end{minipage}
+
 }
 {\begin{enumerate}
-\item		\hfill$\begin{aligned}[t] \int_1^\infty \frac{1}{x^2}\ dx &= \lim_{b\to\infty} \int_1^b\frac1{x^2}\ dx \\ 
- &= \lim_{b\to\infty} \frac{-1}{x}\Big|_1^b \\
+\item		\hfill$\begin{aligned}[t] \int_1^\infty \frac{1}{x^2}\ dx\  =\ \lim_{b\to\infty} \int_1^b\frac1{x^2}\ dx\  &=\ \lim_{b\to\infty} \frac{-1}{x}\Big|_1^b \\ 
+ %&= \lim_{b\to\infty} \frac{-1}{x}\Big|_1^b \\
  &= \lim_{b\to\infty} \frac{-1}{b} + 1\\
  &= 1.\end{aligned}$\hfill\null
 
@@ -158,7 +160,7 @@ $\ds 1.\ \int_0^1\frac1{\sqrt{x}}\ dx \hskip 50pt 2. \ \int_{-1}^1\frac{1}{x^2}\
 \end{align*}
 It turns out that the region does have a finite area even though it has no upper bound (strange things can occur in mathematics when considering the infinite).
 
-\mnote{.85}{\textbf{Note:} In Definition \ref{def:imp_int2}, $c$ can be one of the endpoints ($a$ or $b$). In that case, there is only one limit to consider as part of the definition as the other is 0.}
+\mnote{.85}{\textbf{Note:} In Definition \ref{def:imp_int2}, $c$ can be one of the endpoints ($a$ or $b$). In that case, there is only one limit to consider as part of the definition.}
 \mfigure{.65}{A graph of $f(x)=\frac{1}{\sqrt{x}}$ in Example \ref{ex_impint3}.}{fig:impint3}{figures/figimpint3}
 
 \item		The function $f(x) = 1/x^2$ has a vertical asymptote at $x=0$, as shown in Figure \ref{fig:impint3b}, so this integral is an improper integral. Let's eschew using limits for a moment and proceed without recognizing the improper nature of the integral. This leads to:
@@ -287,7 +289,7 @@ Being able to compare ``unknown'' integrals to ``known'' integrals is very usefu
 
 In cases like this (and many more) it is useful to employ the following theorem.
 
-\setboxwidth{20pt}
+%\setboxwidth{20pt}
 %\hskip-35pt
 %\begin{minipage}{\specialboxlength}
 \theorem{thm:impint_limit}{Limit Comparison Test for Improper Integrals}
@@ -307,7 +309,7 @@ In cases like this (and many more) it is useful to employ the following theorem.
 \example{ex_impint6}{Determining convergence of improper integrals}{
 Determine the convergence of $\ds \int_3^{\infty} \frac{1}{\sqrt{x^2+2x+5}}\ dx$.
 }
-{As $x$ gets large, the quadratic inside the square root function will begin to behave much like $y=x$. So we compare $\ds\frac{1}{\sqrt{x^2+2x+5}}$ to $\ds\frac1x$ with the Limit Comparison Test:
+{As $x$ gets large, the quadratic inside the square root function will begin to behave much like $y=x$. So we compare \small$\ds\frac{1}{\sqrt{x^2+2x+5}}$\normalsize\ to \small$\ds\frac1x$\normalsize\ with the Limit Comparison Test:
 
 $$
 \lim_{x\to\infty} \frac{1/\sqrt{x^2+2x+5}}{1/x} = \lim_{x\to\infty}\frac{x}{\sqrt{x^2+2x+5}}.$$
@@ -315,11 +317,21 @@ $$
 The immediate evaluation of this limit returns $\infty/\infty$, an indeterminate form. Using l'H\^opital's Rule seems appropriate, but in this situation, it does not lead to useful results. (We encourage the reader to employ l'H\^opital's Rule at least once to verify this.)
 
 The trouble is the square root function. To get rid of it, we employ the following fact: If $\ds \lim_{x\to c} f(x) = L$, then $\ds\lim_{x\to c} f(x)^2 = L^2.$ (This is true when either $c$ or $L$ is $\infty$.) So we consider now the limit
-$$\lim_{x\to\infty} \frac{x^2}{x^2+2x+5}.$$ This converges to 1, meaning the original limit also converged to 1. As $x$ gets very large, the function $\ds\frac{1}{\sqrt{x^2+2x+5}}$ looks very much like $\ds\frac1x.$ Since we know that $\ds\int_3^{\infty} \frac1x\ dx$ diverges, by the Limit Comparison Test we know that $\ds\int_3^\infty\frac{1}{\sqrt{x^2+2x+5}}\ dx$ also diverges. Figure \ref{fig:impint6} graphs $f(x)=1/\sqrt{x^2+2x+5}$ and $f(x)=1/x$, illustrating that as $x$ gets large, the functions become indistinguishable.
+$$\lim_{x\to\infty} \frac{x^2}{x^2+2x+5}.$$ This converges to 1, meaning the original limit also converged to 1. As $x$ gets very large, the function 
+\small$\ds\frac{1}{\sqrt{x^2+2x+5}}$\normalsize\ looks very much like \small$\ds\frac1x.$\normalsize\ 
+Since we know that \small$\ds\int_3^{\infty} \frac1x\ dx$\normalsize\ diverges, by the Limit Comparison Test we know that \small$\ds\int_3^\infty\frac{1}{\sqrt{x^2+2x+5}}\ dx$\normalsize\ also diverges. Figure \ref{fig:impint6} graphs $f(x)=1/\sqrt{x^2+2x+5}$ and $f(x)=1/x$, illustrating that as $x$ gets large, the functions become indistinguishable.
 \mfigure{.4}{Graphing $f(x)=\frac{1}{\sqrt{x^2+2x+5}}$ and $f(x)=\frac1x$ in Example \ref{ex_impint6}.}{fig:impint6}{figures/figimpint6}
 }\\
 
-\enlargethispage{3\baselineskip}
-Both the Direct and Limit Comparison Tests were given in terms of integrals over an infinite interval. There are versions that apply to improper integrals with an infinite range, but as they are a bit wordy and a little more difficult to employ, they are omitted from this text.
+%\enlargethispage{3\baselineskip}
+Both the Direct and Limit Comparison Tests were given in terms of integrals over an infinite interval. There are versions that apply to improper integrals with an infinite range, but as they are a bit wordy and a little more difficult to employ, they are omitted from this text.\\
+
+This chapter has explored many integration techniques. We learned Substitution, which ``undoes'' the Chain Rule of differentiation, as well as Integration by Parts, which ``undoes'' the Product Rule. We learned specialized techniques for handling trigonometric functions and introduced the hyperbolic functions, which are closely related to the trigonometric functions. All techniques effectively have this goal in common: rewrite the integrand in a new way so that the integration step is easier to see and implement. 
+
+As stated before, integration is, in general, hard. It is easy to write a function whose antiderivative is impossible to write in terms of elementary functions, and even when a function does have an antiderivative expressible by elementary functions, it may be really hard to discover what it is. The powerful computer algebra system \textit{Mathematica}\textsuperscript{\textregistered} has approximately 1,000 pages of code dedicated to integration. 
+
+Do not let this difficulty discourage you. There is great value in learning integration techniques, as they allow one to manipulate an integral in ways that can illuminate a concept for greater understanding. There is also great value in understanding the need for good numerical techniques: the Trapezoidal and Simpson's Rules are just the beginning of powerful techniques for approximating the value of integration.\\
+
+The next chapter stresses the uses of integration. We generally do not find antiderivatives for antiderivative's sake, but rather because they provide the solution to some type of problem. The following chapter introduces us to a number of different problems whose solution is provided by integration.
 
 \printexercises{exercises/06_07_exercises}

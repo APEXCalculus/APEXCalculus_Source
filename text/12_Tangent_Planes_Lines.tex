@@ -4,11 +4,19 @@ Derivatives and tangent lines go hand--in--hand. Given $y=f(x)$, the line tangen
 
 When dealing with functions of two variables, the graph is no longer a curve but a surface. At a given point on the surface, it seems there are many lines that fit our intuition of being ``tangent'' to the surface. 
 
-\mfigure[trim=1mm 5mm 1mm 0mm,clip,scale=1.25]{.8}{Showing various lines tangent to a surface.}{fig:space_tangent_intro}{figures/figspace_tangent_intro}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=-2.257428960551401,
+3Dortho=0.004649740643799305,
+3Dc2c=0.6559564471244812 0.554935097694397 0.5116328597068787,
+3Dcoo=-23.771865844726562 -11.790743827819824 45.958377838134766,
+3Droo=200.99999868169073,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{trim=1mm 5mm 1mm 0mm,clip,scale=1.25}{.8}{Showing various lines tangent to a surface.}{fig:space_tangent_intro}{figures/figspace_tangent_intro}
+%\mfigure[trim=1mm 5mm 1mm 0mm,clip,scale=1.25]{.8}{Showing various lines tangent to a surface.}{fig:space_tangent_intro}{figures/figspace_tangent_intro}
 
 In Figures \ref{fig:space_tangent_intro} we see lines that are tangent to curves in space. Since each curve lies on a  surface, it makes sense to say that the lines are also tangent to the surface. The next definition formally defines what it means to be ``tangent to a surface.'' %Recall that to write the equation of a line we need a point and a direction. 
 
 \setboxwidth{10pt}
+\noindent\hskip-10pt\begin{minipage}{\specialboxlength}
 \definition{def:directional_tangent_line}{Directional Tangent Line}
 {Let $z=f(x,y)$ be differentiable on an open set $S$ containing $(x_0,y_0)$ and let $\vec u = \la u_1, u_2\ra$ be a unit vector.
 \index{tangent line!directional}
@@ -20,6 +28,7 @@ In Figures \ref{fig:space_tangent_intro} we see lines that are tangent to curves
 	\item	 The line $\ell_{\vec u}$ through $\big(x_0,y_0,f(x_0,y_0)\big)$ parallel to $\la u_1,u_2,D_{\vec u\,}f(x_0,y_0)\ra$	is the \textbf{tangent line to $f$ in the direction of $\vec u$ at $(x_0,y_0)$}.
 	\end{enumerate}
 }
+\end{minipage}
 \restoreboxwidth
 
 It is instructive to consider each of three directions given in the definition in terms of ``slope.'' The direction of $\ell_x$ is $\la 1,0,f_x(x_0,y_0)\ra$; that is, the ``run'' is one unit in the $x$-direction and the ``rise'' is $f_x(x_0,y_0)$ units in the $z$-direction. Note how the slope is just the partial derivative with respect to $x$. A similar statement can be made for $\ell_y$. The direction of $\ell_{\vec u}$ is $\la u_1,u_2,D_{\vec u\,}f(x_0,y_0)\ra$; the ``run'' is one unit in the $\vec u$ direction (where $\vec u$ is a unit vector) and the ``rise'' is the directional derivative of $z$ in that direction.
@@ -32,7 +41,7 @@ It is instructive to consider each of three directions given in the definition i
 %Note how the tangent line in the direction of $x$ has a constant $y$-value and only the $x$- and $z$-values change. 
 Definition \ref{def:directional_tangent_line} leads to the following parametric equations of directional tangent lines:
 
-\noindent%\hskip -100pt 
+\noindent\hskip -120pt 
 \begin{minipage}{1.2\linewidth}
 $$\ell_x(t) = \left\{\begin{array}{l} x=x_0+t \\ y=y_0\\z=z_0+f_x(x_0,y_0)t \end{array}\right. \ \text{,}\quad \ell_y(t)=\left\{\begin{array}{l} x=x_0 \\ y=y_0+t\\z=z_0+f_y(x_0,y_0)t \end{array}\right.\  \text{and}\quad \ell_{\vec u}(t)=\left\{\begin{array}{l} x=x_0+u_1t \\ y=y_0+u_2t\\z=z_0+D_{\vec u\,}f(x_0,y_0)t \end{array}\right..$$
 \end{minipage}\\
@@ -54,9 +63,23 @@ $$\ell_x(t) = \left\{\begin{array}{l} x=\pi/2 + t\\ y=\pi/2 \\z=0 \end{array}\ri
 The two lines are shown with the surface in Figure \ref{fig:partial4}(a).
 \mtable{.7}{A surface and directional tangent lines in Example \ref{ex_tpl1}.}{fig:partial4}{%
 \begin{tabular}{c}
-\myincludegraphics[scale=1.25,trim=0mm 5mm 0mm 0mm,clip]{figures/figpartial4a}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005110511556267738,
+3Dc2c=0.5852379202842712 0.4928830564022064 0.6438655853271484,
+3Dcoo=1.7508834600448608 15.36020565032959 -12.730416297912598,
+3Droo=201.00000286631447,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 5mm 0mm 0mm,clip}{figures/figpartial4a}\\
+%\myincludegraphics[scale=1.25,trim=0mm 5mm 0mm 0mm,clip]{figures/figpartial4a}\\
 (a)\\[10pt]
-\myincludegraphics[scale=1.25,trim=0mm 5mm 0mm 0mm,clip]{figures/figpartial4b}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005110511556267738,
+3Dc2c=0.5852379202842712 0.4928830564022064 0.6438655853271484,
+3Dcoo=1.7508834600448608 15.36020565032959 -12.730416297912598,
+3Droo=201.00000286631447,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 5mm 0mm 0mm,clip}{figures/figpartial4b}\\
+%\myincludegraphics[scale=1.25,trim=0mm 5mm 0mm 0mm,clip]{figures/figpartial4b}\\
 (b)
 \end{tabular}
 }
@@ -75,7 +98,14 @@ Thus $\nabla f(1,1) = \la 0,0\ra$. Let $\vec u = \la u_1,u_2\ra$ be any unit vec
 $$\ell_{\vec u}(t) = \left\{\begin{array}{l} x= 1 +u_1t\\ y = 1+ u_2 t\\ z= 2\end{array}\right..$$
 Figure \ref{fig:tpl2} shows a graph of $f$ and the point $(1,1,2)$. Note that this point comes at the top of a ``hill,'' and therefore every tangent line through this point will have a ``slope'' of 0. 
 
-\mfigure[scale=1.1]{.75}{Graphing $f$ in Example \ref{ex_tpl2}.}{fig:tpl2}{figures/figtpl2}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004649740178138018,
+3Dc2c=0.9278050065040588 0.2142607718706131 0.30540165305137634,
+3Dcoo=-8.829919815063477 56.8592643737793 -4.442079067230225,
+3Droo=201.0000074006932,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.1}{.75}{Graphing $f$ in Example \ref{ex_tpl2}.}{fig:tpl2}{figures/figtpl2}
+%\mfigure[scale=1.1]{.75}{Graphing $f$ in Example \ref{ex_tpl2}.}{fig:tpl2}{figures/figtpl2}
 
 That is, consider any curve on the surface that goes through this point. Each curve will have a relative maximum at this point, hence its tangent line will have a slope of 0. The following section investigates the points on surfaces where all tangent lines have a slope of 0.
 }\\
@@ -114,7 +144,14 @@ Find the equation of the normal line to $z=-x^2-y^2+2$ at $(0,1)$.
 {We find $z_x(x,y) = -2x$ and $z_y(x,y) = -2y$; at $(0,1)$, we have $z_x = 0$ and $z_y = -2$. We take the direction of the normal line, following Definition \ref{def:normal_line_space}, to be $\vec n=\la 0,-2,-1\ra$. The line with this direction going through the point $(0,1,1)$ is 
 $$\ell_n(t) = \left\{\begin{array}{l} x=0\\y=-2t+1\\z=-t+1\end{array}\right.\quad \text{or}\quad \ell_n(t)=\la 0,-2,-1\ra t+\la 0,1,1\ra.$$
 
-\mfigure[scale=1.5,trim=6mm 0mm 5mm 0mm,clip]{.5}{Graphing a surface with a normal line  from Example \ref{ex_tpl3}.}{fig:tpl3}{figures/figtpl3}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004649740178138018,
+3Dc2c=0.8504996299743652 0.4327772855758667 0.2989218533039093,
+3Dcoo=2.022836208343506 -0.9065411686897278 3.1147446632385254,
+3Droo=200.99998967155275,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim=6mm 0mm 5mm 0mm,clip}{.5}{Graphing a surface with a normal line  from Example \ref{ex_tpl3}.}{fig:tpl3}{figures/figtpl3}
+%\mfigure[scale=1.5,trim=6mm 0mm 5mm 0mm,clip]{.5}{Graphing a surface with a normal line  from Example \ref{ex_tpl3}.}{fig:tpl3}{figures/figtpl3}
 
 The surface $z=-x^2+y^2$, along with the found normal line, is graphed in Figure \ref{fig:tpl3}. 
 }\\
@@ -123,7 +160,7 @@ The direction of the normal line has many uses, one of which is the definition o
 
 \example{ex_tpl4}{Finding the distance from a point to a surface}{
 Let $f(x,y) = 2-x^2-y^2$ and let $Q = (2,2,2)$. Find the distance from $Q$ to the surface defined by $f$.}
-{This surface used in Example \ref{ex_tpl2}, so we know that at $(x,y)$, the direction of the normal line will be $\vec d_n = \la -2x,-2y,-1\ra$. A point $P$ on the surface will have coordinates $(x,y,2-x^2-y^2)$, so $\vv{PQ} = \la 2-x,2-y,x^2+y^2\ra$. To find where $\vv{PQ}$ is parallel to $\vec d_n$, we need to find $x$, $y$ and $c$ such that $c\vv{PQ} = \vec d_n$.
+{This surface is used in Example \ref{ex_tpl2}, so we know that at $(x,y)$, the direction of the normal line will be $\vec d_n = \la -2x,-2y,-1\ra$. A point $P$ on the surface will have coordinates $(x,y,2-x^2-y^2)$, so $\vv{PQ} = \la 2-x,2-y,x^2+y^2\ra$. To find where $\vv{PQ}$ is parallel to $\vec d_n$, we need to find $x$, $y$ and $c$ such that $c\vv{PQ} = \vec d_n$.
 \begin{align*}
 c\vv{PQ} &= \vec d_n \\
 c\la 2-x,2-y,x^2+y^2\ra &= \la -2x,-2y,-1\ra.
@@ -149,7 +186,7 @@ $$\norm{\vv{PQ}} = \sqrt{(2-0.689)^2 +(2-0.689)^2+(2-1.051)^2} = 2.083.$$
 We can take the concept of measuring the distance from a point to a surface to find a point $Q$ a particular distance from a surface at a given point $P$ on the surface.\\
 
 \example{ex_tpl5}{Finding a point a set distance from a surface}{
-Let $f(x,y) = x-y^2+3$. Let $P = \big(2,1,f(2,1)\big) = (2,1,4)$. Find points $Q$ in space that is 4 units from the surface of $f$ at $P$. That is, find $Q$ such that $\norm{\vv{PQ}}=4$ and $\vv{PQ}$ is orthogonal to $f$ at $P$.}
+Let $f(x,y) = x-y^2+3$. Let $P = \big(2,1,f(2,1)\big) = (2,1,4)$. Find points $Q$ in space that are 4 units from the surface of $f$ at $P$. That is, find $Q$ such that $\norm{\vv{PQ}}=4$ and $\vv{PQ}$ is orthogonal to $f$ at $P$.}
 {We begin by finding partial derivatives:
 \begin{align*}
 f_x(x,y)  =1  \qquad &\Rightarrow \qquad f_x(2,1) = 1\\
@@ -164,13 +201,20 @@ An advantage of this parametrization of the line is that letting $t=t_0$ gives a
 Q_1 &= \ell_n(4) & Q_2 &= \ell_n(-4) \\
   &\approx \la 3.63, -2.27, 2.37\ra & & \approx\la 0.37, 4.27, 5.63\ra
 	\end{align*}
-\mfigure[scale=1.25,trim=5mm 0mm 0mm 0mm,clip]{.6}{Graphing the surface in Example \ref{ex_tpl5} along with points 4 units from the surface.}{fig:tpl5}{figures/figtpl5}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005098657216876745,
+3Dc2c=0.8504995703697205 0.4327772855758667 0.2989218533039093,
+3Dcoo=-13.70578670501709 -0.4136597216129303 47.15321731567383,
+3Droo=200.99997225183392,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 10mm 0mm 0mm,clip}{.6}{Graphing the surface in Example \ref{ex_tpl5} along with points 4 units from the surface.}{fig:tpl5}{figures/figtpl5}
+%\mfigure[scale=1.25,trim=5mm 0mm 0mm 0mm,clip]{.6}{Graphing the surface in Example \ref{ex_tpl5} along with points 4 units from the surface.}{fig:tpl5}{figures/figtpl5}
 The surface is graphed along with points $P$, $Q_1$, $Q_2$ and a portion of the normal line to $f$ at $P$.
 }\\
 
 \noindent\textbf{\large Tangent Planes}\\
 
-We can the direction of the normal line to define a plane. With $a=f_x(x_0,y_0)$, $b=f_y(x_0,y_0)$ and $P = \big(x_0,y_0,f(x_0,y_0)\big)$, the vector $\vec n=\la a,b,-1\ra$ is orthogonal to $f$ at $P$. The plane through $P$ with normal vector $\vec n$ is therefore \textbf{tangent} to $f$ at $P$.
+We can use the direction of the normal line to define a plane. With $a=f_x(x_0,y_0)$, $b=f_y(x_0,y_0)$ and $P = \big(x_0,y_0,f(x_0,y_0)\big)$, the vector $\vec n=\la a,b,-1\ra$ is orthogonal to $f$ at $P$. The plane through $P$ with normal vector $\vec n$ is therefore \textbf{tangent} to $f$ at $P$.
 
 \definition{def:tangent_plane}{Tangent Plane}
 {Let $z=f(x,y)$ be differentiable on an open set $S$ containing $(x_0,y_0)$, where
@@ -187,7 +231,14 @@ Find the equation tangent plane to $z=-x^2-y^2+2$ at $(0,1)$.
 }
 {Note that this is the same surface and point used in Example \ref{ex_tpl3}. There we found $\vec n = \la 0,-2,-1\ra$ and $P = (0,1,1)$. Therefore the equation of the tangent plane is 
 $$-2(y-1)-(z-1)=0.$$
-\mfigure[scale=1.5,trim=6mm 0mm 5mm 0mm,clip]{.8}{Graphing a surface with  tangent plane from Example \ref{ex_tpl6}.}{fig:tpl6}{figures/figtpl6}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005098660010844469,
+3Dc2c=0.6500301957130432 0.6791614890098572 0.3408818244934082,
+3Dcoo=-2.8726136684417725 0.033301327377557755 9.961321830749512,
+3Droo=200.99997428361934,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim=6mm 0mm 5mm 0mm,clip}{.8}{Graphing a surface with  tangent plane from Example \ref{ex_tpl6}.}{fig:tpl6}{figures/figtpl6}
+%\mfigure[scale=1.5,trim=6mm 0mm 5mm 0mm,clip]{.8}{Graphing a surface with  tangent plane from Example \ref{ex_tpl6}.}{fig:tpl6}{figures/figtpl6}
 
 The surface $z=-x^2+y^2$ and tangent plane are graphed in Figure \ref{fig:tpl6}. 
 }\\
@@ -238,7 +289,14 @@ Find the equation of the plane tangent to the ellipsoid $\ds \frac{x^2}{12} +\fr
 \end{align*}
 At  $P$, the gradient is $\nabla F(1,2,1) = \la 1/6, 2/3, 1/2\ra$. Thus the equation of the plane tangent to the ellipsoid at $P$ is
 $$\frac 16(x-1) + \frac23(y-2) + \frac 12(z-1) = 0.$$
-\mfigure[scale=1.5,trim= 6mm 5mm 2mm 0mm,clip]{.8}{An ellipsoid and its tangent plane at a point.}{fig:tpl8}{figures/figtpl8}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005098660010844469,
+3Dc2c=0.721064031124115 0.6547372937202454 0.22668422758579254,
+3Dcoo=-2.872609853744507 0.03330020606517792 9.961324691772461,
+3Droo=200.99997078585088,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.5,trim= 6mm 5mm 2mm 0mm,clip}{.8}{An ellipsoid and its tangent plane at a point.}{fig:tpl8}{figures/figtpl8}
+%\mfigure[scale=1.5,trim= 6mm 5mm 2mm 0mm,clip]{.8}{An ellipsoid and its tangent plane at a point.}{fig:tpl8}{figures/figtpl8}
 The ellipsoid and tangent plane are graphed in Figure \ref{fig:tpl8}.
 }\\
 

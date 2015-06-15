@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+%			xtick=\empty,% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-2.1,ymax=.7,%
+			xmin=-.1,xmax=1.1%
+]
+
+\addplot [{\colorone},smooth,thick] coordinates {(0,-2.) (0.1,-1.9405) (0.2,-1.7679) (0.3,-1.4988) (0.4,-1.1589)(0.5,-0.7788) (0.6,-0.3907) (0.7,-0.024505) (0.8,0.29528) (0.9,0.55162) (1.,0.73576)};
+
+
+\draw (axis cs:.8,-1.5) node {\scriptsize $y=e^{-x^2}(4x^2-2)$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+
+

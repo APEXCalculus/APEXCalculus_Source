@@ -4,10 +4,10 @@ The previous section introduced vectors and described how to add them together a
 
 \definition{def:dot_product}{Dot Product}
 {\begin{enumerate}
-	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$ in $\mathbb{R}^2$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
+	\item Let $\vec u = \la u_1,u_2\ra$ and $\vec v = \la v_1,v_2\ra$  in $\mathbb{R}^2$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
 	\index{dot product!definition}\index{vectors!dot product}
 	$$\dotp uv = u_1v_1+u_2v_2.$$
-	\item Let $\vec u = \la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$ in $\mathbb{R}^3$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
+	\item Let $\vec u = \la u_1,u_2,u_3\ra$ and $\vec v = \la v_1,v_2,v_3\ra$  in $\mathbb{R}^3$. The \textbf{dot product} of $\vec u$ and $\vec v$, denoted \dotp uv, is 
 	$$\dotp uv = u_1v_1+u_2v_2+u_3v_3.$$
 \end{enumerate}
 }
@@ -44,17 +44,24 @@ The dot product, as shown by the preceding example, is very simple to evaluate. 
 The last statement of the theorem makes a handy connection between the magnitude of a vector and the dot product with itself. 
 Our definition and theorem give properties of the dot product, but we are still likely wondering ``What does the dot product \emph{mean}?'' It is helpful to understand that the dot product of a vector with itself is connected to its magnitude.
 
-The next theorem extends this understanding by connecting the dot product to magnitudes and angles. Given vectors $\vec u$ and $\vec v$ in the plane, an angle $\theta$ is clearly formed when $\vec u$ and $\vec v$ are drawn with the same initial point as illustrated in Figure \ref{fig:dotpangle} (a). (We always take $\theta$ to be the angle in $[0,\pi]$ as two angles are actually created.) 
+The next theorem extends this understanding by connecting the dot product to magnitudes and angles. Given vectors $\vec u$ and $\vec v$ in the plane, an angle $\theta$ is clearly formed when $\vec u$ and $\vec v$ are drawn with the same initial point as illustrated in Figure \ref{fig:dotpangle}(a). (We always take $\theta$ to be the angle in $[0,\pi]$ as two angles are actually created.) 
 \mtable{.5}{Illustrating the angle formed by two vectors with the same initial point.}{fig:dotpangle}{%
 \begin{tabular}{c}
 \includegraphics{figures/figdotpangle}\\
 (a)\\[15pt]
-\includegraphics{figures/figdotpangle3D}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.54 .61 .58,
+3Dcoo=0 0 40,
+3Droo=170,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdotpangle3D}\\
+%\includegraphics{figures/figdotpangle3D}\\
 (b)
 \end{tabular}
 }
 
-The same is also true of 2 vectors in space: given $\vec u$ and $\vec v$ in $\mathbb{R}^3$ with the same initial point, there is a plane that contains both $\vec u$ and $\vec v$. (When $\vec u$ and $\vec v$ are co-linear, there are infinite planes that contain both vectors.) In that plane, we can again find an angle $\theta$ between them (and again, $0\leq \theta\leq \pi$). This is illustrated in Figure \ref{fig:dotpangle} (b).
+The same is also true of 2 vectors in space: given $\vec u$ and $\vec v$ in $\mathbb{R}^3$ with the same initial point, there is a plane that contains both $\vec u$ and $\vec v$. (When $\vec u$ and $\vec v$ are co-linear, there are infinite planes that contain both vectors.) In that plane, we can again find an angle $\theta$ between them (and again, $0\leq \theta\leq \pi$). This is illustrated in Figure \ref{fig:dotpangle}(b).
 
 The following theorem connects this angle $\theta$ to the dot product of $\vec u$ and $\vec v$.
 
@@ -106,7 +113,14 @@ We see from our computation that $\alpha + \beta = \theta$, as indicated by Figu
 
 We do a similar example next in the context of vectors in space.\\
 
-\mfigure{.4}{Vectors used in Example \ref{ex_dotp3}.}{fig:dotp3}{figures/figdotp3}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0045,
+3Dc2c=.89 .4 .23,
+3Dcoo=10 50 46,
+3Droo=200,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.4}{Vectors used in Example \ref{ex_dotp3}.}{fig:dotp3}{figures/figdotp3}%
+%\mfigure{.4}{Vectors used in Example \ref{ex_dotp3}.}{fig:dotp3}{figures/figdotp3}
 \example{ex_dotp3}{Using the dot product to find angles}{
 Let $\vec u = \la 1,1,1\ra$, $\vec v = \la -1,3,-2\ra$ and $\vec w = \la -5,1,4\ra$, as illustrated in Figure \ref{fig:dotp3}. Find the angle between each pair of vectors.}
 {\begin{enumerate}
@@ -150,7 +164,7 @@ Let $\vec u = \la 3,5\ra$ and $\vec v = \la 1,2,3\ra$.
 \end{enumerate}
 }
 {\begin{enumerate}
-	\item Recall that a line perpendicular to a line with slope $m$ have slope $-1/m$, the ``opposite reciprocal slope.'' We can think of the slope of $\vec u$ as $5/3$, its ``rise over run.'' A vector orthogonal to $\vec u$ will have slope $-3/5$. There are many such choices, though all parallel:
+	\item Recall that a line perpendicular to a line with slope $m$ has slope $-1/m$, the ``opposite reciprocal slope.'' We can think of the slope of $\vec u$ as $5/3$, its ``rise over run.'' A vector orthogonal to $\vec u$ will have slope $-3/5$. There are many such choices, though all parallel:
 	$$\la -5,3\ra \quad \text{or} \quad\la 5,-3\ra \quad \text{or} \quad \la -10,6\ra\quad \text{or} \quad \la 15,-9\ra,\text{etc.}$$
 	\item		There are infinite directions in space orthogonal to any given direction, so there are an infinite number of non--parallel vectors orthogonal to $\vec v$. Since there are so many, we have great leeway in finding some.
 	
@@ -173,7 +187,7 @@ Using trigonometry, we can state that
 \begin{equation}
 \norm{\vec w} = \norm{\vec u}\cos \theta. \label{eq:proj1}
 \end{equation}
-\mtable{.50}{Developing the construction of the \emph{orthogonal projection}.}{fig:dotpproj}{%
+\mtable{.450}{Developing the construction of the \emph{orthogonal projection}.}{fig:dotpproj}{%
 \begin{tabular}{c}
 \includegraphics{figures/figdotpproja}\\
 (a)\\[15pt]
@@ -213,14 +227,28 @@ $$\proj uv = \frac{\dotp uv}{\dotp vv}\vec v.$$
 					&= \frac{-5}{10}\la 3,1\ra\\
 					&= \la -\frac32,-\frac12\ra.
 	\end{align*}
-	Vectors $\vec u$, $\vec v$ and $\proj uv$ are sketched in Figure \ref{fig:dotp4} (a). Note how the projection is parallel to $\vec v$; that is, it lies on the same line through the origin as $\vec v$, although it points in the opposite direction. That is because the angle between $\vec u$ and $\vec v$ is obtuse (i.e., greater than $90^\circ$).
-\mtable{.6}{Graphing the vectors used in Example \ref{ex_dotp4}.}{fig:dotp4}{%
+	Vectors $\vec u$, $\vec v$ and $\proj uv$ are sketched in Figure \ref{fig:dotp4}(a). Note how the projection is parallel to $\vec v$; that is, it lies on the same line through the origin as $\vec v$, although it points in the opposite direction. That is because the angle between $\vec u$ and $\vec v$ is obtuse (i.e., greater than $90^\circ$).
+\mtable{.63}{Graphing the vectors used in Example \ref{ex_dotp4}.}{fig:dotp4}{%
 \begin{tabular}{c}
 \includegraphics{figures/figdotp4a}\\
 (a)\\[15pt]
-\includegraphics{figures/figdotp4b}\\
+\myincludegraphicsthree{width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046,
+3Dc2c=.9 .12 .42,
+3Dcoo=0 50 30,
+3Droo=250,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdotp4b}\\
+%\includegraphics{figures/figdotp4b}\\
 (b)\\[15pt]
-\includegraphics{figures/figdotp4c}\\
+\myincludegraphicsthree{width=100pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046,
+3Dc2c=.29 .77 .56,
+3Dcoo=50 0 40,
+3Droo=250,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdotp4c}\\
+%\includegraphics{figures/figdotp4c}\\
 (c)\\[15pt]
 \end{tabular}
 }	
@@ -231,12 +259,12 @@ $$\proj uv = \frac{\dotp uv}{\dotp vv}\vec v.$$
 					&= \frac{6}{3}\la 1,1,1\ra\\
 					&= \la 2,2,2\ra.
 	\end{align*}
-	These vectors are sketched in Figure \ref{fig:dotp4} (b), and again in part (c) from a different perspective. Because of the nature of graphing these vectors, the sketch in part (b) makes it difficult  to recognize that the drawn projection has the geometric properties it should. The graph shown in part (c) illustrates these properties better.
+	These vectors are sketched in Figure \ref{fig:dotp4}(b), and again in part (c) from a different perspective. Because of the nature of graphing these vectors, the sketch in part (b) makes it difficult  to recognize that the drawn projection has the geometric properties it should. The graph shown in part (c) illustrates these properties better.
 \end{enumerate}
 \vskip-\baselineskip
 }\\
 
-\mfigure{.2}{Illustrating the orthogonal projection.}{fig:dotpprojc}{figures/figdotpprojc}
+\mfigure{.23}{Illustrating the orthogonal projection.}{fig:dotpprojc}{figures/figdotpprojc}
 Consider Figure \ref{fig:dotpprojc} where the concept of the orthogonal projection is again illustrated. It is clear that 
 \begin{equation}
 \vec u = \proj uv + \vec z.
@@ -262,7 +290,7 @@ We illustrate the use of this equality in the following example.\\
 }
 {\begin{enumerate}
 	\item In Example \ref{ex_dotp4}, we found that $\proj uv = \la -1.5,-0.5\ra$. Let $$\vec z = \vec u - \proj uv = \la -2,1\ra - \la -1.5,-0.5\ra = \la-0.5, 1.5\ra.$$
-	Is $\vec z$ orthogonal to $\vec v$? (I.e, is $\vec z \perp\vec v$\ ?) We check for orthogonality with the dot product:
+	Is $\vec z$ orthogonal to $\vec v$\,? (I.e, is $\vec z \perp\vec v$\ ?) We check for orthogonality with the dot product:
 	$$\dotp zv = \la -0.5,1.5\ra \cdot \la 3,1\ra =0.$$
 	Since the dot product is 0, we know $\vec z \perp \vec v$. Thus:
 	\begin{align*}
@@ -286,7 +314,7 @@ We illustrate the use of this equality in the following example.\\
 We give an example of where this decomposition is useful.\\
 
 \example{ex_dotp6}{Orthogonally decomposing a force vector}{
-Consider Figure \ref{fig:dotp6} (a), showing a box weighing 50lb on a ramp that rises 5ft over a span of 20ft. Find the components of force, and their magnitudes, acting on the box (as sketched in part (b) of the figure):
+Consider Figure \ref{fig:dotp6}(a), showing a box weighing 50lb on a ramp that rises 5ft over a span of 20ft. Find the components of force, and their magnitudes, acting on the box (as sketched in part (b) of the figure):
 \mtable{.4}{Sketching the ramp and box in Example \ref{ex_dotp6}. Note: \textit{The vectors are not drawn to scale.}}{fig:dotp6}{%
 \begin{tabular}{c}
 \includegraphics{figures/figdotp6}\\

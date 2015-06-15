@@ -1,0 +1,59 @@
+\begin{tikzpicture}
+\begin{axis}%
+[
+width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis on top,
+			axis y line=none,
+%			axis x line=none,
+%%			axis z line=none,%
+			axis lines=center,
+			y dir=reverse,
+%			view={125}{30},
+			name=myplot,
+%			%x=.37\marginparwidth,
+%			%y=.37\marginparwidth,
+			xtick={1,2,3,4,5,6},
+			ztick={1,2,3},% 
+%			extra x ticks={1,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick={.1,1},
+%			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-3,ymax=3,%
+			xmin=-.2,xmax=6.2,
+			zmin=-.1,zmax=3.2%
+]
+
+%\addplot3[domain=1:3,y domain=150:325,samples y=36,surf,shader=flat,colormap={mp2}{\colormaptwo}] ({2*cos(y)+3},{2*sin(y)},{x});
+
+
+%\addplot3[domain=0:1,y domain=-35:150,surf,colormap={mp2}{\colormapplaneone},opacity=.8,faceted color=black!40,samples=8,samples y=36,very thin,z buffer=sort] ({(3-x)*cos(y)+3},{(3-x)*sin(y)},{2*x+1});
+
+
+\addplot3[domain=1:1.8,y domain=160:340,surf,colormap={mp2}{\colormaptwo},opacity=.6,faceted color=black!60,very thin,z buffer=sort,samples=6,samples y=16] ({2.6*cos(y)+3},{2.6*sin(y)},{x});
+
+\draw (axis cs:0,0,1) -- (axis cs:1,0,3) -- (axis cs:1,0,1) [thick,{\colorone}]--(axis cs:0,0,1);
+
+
+\addplot3[domain=1:1.8,y domain=-20:160,surf,colormap={mp2}{\colormaptwo},opacity=.6,faceted color=black!60,very thin,z buffer=sort,samples=6,samples y=16] ({2.6*cos(y)+3},{2.6*sin(y)},{x});
+
+%\addplot3[domain=0:1,y domain=-35:150,surf,colormap={mp2}{\colormapplaneone},opacity=.6,faceted color=black!40,samples=6,samples y=36,very thin,z buffer=sort] ({(3-x)*cos(y)+3},{(3-x)*sin(y)},{2*x+1});
+
+\draw [dashed] (axis cs:3,0,0) -- (axis cs:3,0,3.75);
+
+\addplot3[domain=0:360,samples y=0,black,thick,smooth,] ({2.6*cos(x)+3},{2.6*sin(x)},{1.8});
+
+\addplot3[domain=160:340,samples y=0,black,thick,dashed,smooth,] ({2.6*cos(x)+3},{2.6*sin(x)},{1});
+
+\addplot3[domain=-20:160,samples y=0,black,thick,smooth,] ({2.6*cos(x)+3},{2.6*sin(x)},{1});
+
+
+\draw [thick,{\colortwo}] (axis cs: .4,0,1) -- (axis cs:.4,0,1.8);
+
+\end{axis}
+
+\node [right] at (myplot.right of origin)[shift={(-20pt,-16pt)}] {\scriptsize $x$};
+\node [above] at (myplot.above origin) [shift={(0,-15pt)}] {\scriptsize $y$};
+\end{tikzpicture}
+
+
+

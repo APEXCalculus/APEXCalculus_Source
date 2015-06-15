@@ -28,7 +28,7 @@ We begin with their definition.
 
 These hyperbolic functions are graphed in Figure \ref{fig:hyperbolic}. In the graphs of $\cosh x$ and $\sinh x$, graphs of $e^x/2$ and $e^{-x}/2$ are included with dashed lines. As $x$ gets ``large,'' $\cosh x$ and $\sinh x$ each act like $e^x/2$; when $x$ is a large negative number, $\cosh x$ acts like $e^{-x}/2$ whereas $\sinh x$ acts like $-e^{-x}/2$.
 
-Notice the domains of $\tanh x$ and $\sech x$ are $(-\infty,\infty)$, whereas both $\coth x$ and $\csch x$ have vertical asymptotes at $x=0$. Also note the ranges of these function, especially $\tanh x$: as $x\to\infty$, both $\sinh x$ and $\cosh x$ approach $e^{-x}/2$, hence $\tanh x$ approaches $1$.
+Notice the domains of $\tanh x$ and $\sech x$ are $(-\infty,\infty)$, whereas both $\coth x$ and $\csch x$ have vertical asymptotes at $x=0$. Also note the ranges of these functions, especially $\tanh x$: as $x\to\infty$, both $\sinh x$ and $\cosh x$ approach $e^{-x}/2$, hence $\tanh x$ approaches $1$.
 
 %It is no coincidence that these functions share a name similar to the trigonometric functions. 
 The following example explores some of the properties of these functions that bear remarkable resemblance to the properties of their trigonometric counterparts.\\
@@ -79,7 +79,7 @@ So $\cosh^2 x-\sinh^2x=1$.
 \item		\hfill$\begin{aligned}[t]
 \tanh^2 x+\sech^2 x &=\frac{\sinh^2x}{\cosh^2 x} + \frac{1}{\cosh^2 x} \\
 					&= \frac{\sinh^2x+1}{\cosh^2 x}\qquad \text{\small Now use identity from \#1.}\\
-					&= \frac{\cosh^2 x}{\cosh^2 x} = 1
+					&= \frac{\cosh^2 x}{\cosh^2 x} = 1.
 \end{aligned}$\hfill
 
 %%% Figure of the hyperbolic functions
@@ -102,7 +102,7 @@ Thus $2\cosh x\sinh x = \sinh (2x)$.
 \item  \hfill$\begin{aligned}[t]
 	\frac{d}{dx}\big(\cosh x\big) &= \frac{d}{dx}\left(\frac{e^x+e^{-x}}2\right) \\
 					&= \frac{e^x-e^{-x}}2\\
-					&= \sinh x
+					&= \sinh x.
 	\end{aligned}\hfill$
 
 So $\frac{d}{dx}\big(\cosh x\big) = \sinh x.$
@@ -110,7 +110,7 @@ So $\frac{d}{dx}\big(\cosh x\big) = \sinh x.$
 \item  \hfill$\begin{aligned}[t]
 	\frac{d}{dx}\big(\sinh x\big) &= \frac{d}{dx}\left(\frac{e^x-e^{-x}}2\right) \\
 					&= \frac{e^x+e^{-x}}2\\
-					&= \cosh x
+					&= \cosh x.
 	\end{aligned}\hfill$
 
 So $\frac{d}{dx}\big(\sinh x\big) = \cosh x.$
@@ -119,7 +119,7 @@ So $\frac{d}{dx}\big(\sinh x\big) = \cosh x.$
 	\frac{d}{dx}\big(\tanh x\big) &= \frac{d}{dx}\left(\frac{\sinh x}{\cosh x}\right) \\
 					&= \frac{\cosh x \cosh x - \sinh x \sinh x}{\cosh^2 x}\\
 					&= \frac{1}{\cosh^2 x}\\
-					&= \sech^2 x
+					&= \sech^2 x.
 	\end{aligned}\hfill$
 
 So $\frac{d}{dx}\big(\tanh x\big) = \sech^2 x.$	
@@ -211,7 +211,7 @@ $$\sinh(\ln 2) = \frac{e^{\ln 2}-e^{-\ln 2}}2 = \frac{2-1/2}{2} = \frac34.$$
 
 Just as the inverse trigonometric functions are useful in certain integrations, the inverse hyperbolic functions are useful with others. Figure \ref{fig:hfinverse2} shows the restrictions on the domains to make each function one-to-one and the resulting domains and ranges of their inverse functions. Their graphs are shown in Figure \ref{fig:hfinverse1}.\index{hyperbolic function!inverse}
 
-Because the hyperbolic functions are defined in terms of exponential functions, their inverses can be expressed in terms of logarithms as shown in Key Idea \ref{idea:hyperbolic_log}. It is often more convenient to refer to $\sinh^{-1}x$ than to $\ln\big(x+\sqrt{x^2+1}\big)$, especially when one is working on theory and does not need to compute actual values. On the other hand, when computations are needed, technology is often helpful but many hand-held calculators lack a \textit{convenient} $\sinh^{-1}x$ button. (Often it can be accessed under a menu system, but not conveniently.) In such a situation, the logarithmic representation is useful.
+Because the hyperbolic functions are defined in terms of exponential functions, their inverses can be expressed in terms of logarithms as shown in Key Idea \ref{idea:hyperbolic_log}. It is often more convenient to refer to $\sinh^{-1}x$ than to $\ln\big(x+\sqrt{x^2+1}\big)$, especially when one is working on theory and does not need to compute actual values. On the other hand, when computations are needed, technology is often helpful but many hand-held calculators lack a \textit{convenient} $\sinh^{-1}x$ button. (Often it can be accessed under a menu system, but not conveniently.) In such a situation, the logarithmic representation is useful. The reader is not encouraged to memorize these, but rather know they exist and know how to use them when needed.
 \clearpage
 
 
@@ -241,7 +241,7 @@ $\coth x$ & $(-\infty,0) \cup (0,\infty)$ & $(-\infty,-1) \cup (1,\infty)$
 \begin{tabular}{ccc}
 Function & Domain & Range\\ \hline
 \rule{0pt}{10pt}$\cosh^{-1} x$ & $[1,\infty)$ & $[0,\infty)$ \\
-$\sinh^{-1} x$ & $[-\infty,\infty)$ & $[-\infty,\infty)$\\
+$\sinh^{-1} x$ & $(-\infty,\infty)$ & $(-\infty,\infty)$\\
 $\tanh^{-1} x$ & $(-1,1)$ & $(-\infty,\infty)$\\
 $\sech^{-1} x$ & $(0,1]$ & $[0,\infty)$ \\
 $\csch^{-1} x$ & $(-\infty,0) \cup (0,\infty)$ & $(-\infty,0) \cup (0,\infty)$\\
@@ -371,7 +371,7 @@ We practice using the derivative and integral formulas in the following example.
 }
 {\begin{enumerate}
 \item		Applying Key Idea \ref{idea:hyperbolic_inverse_derivatives} with the Chain Rule gives:
-		$$\frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)-1}}\cdot\frac35.$$
+		$$\frac{d}{dx}\left[\cosh^{-1}\left(\frac{3x-2}5\right)\right] = \frac{1}{\sqrt{\left(\frac{3x-2}5\right)^2-1}}\cdot\frac35.$$
 
 \item		Multiplying the numerator and denominator by $(-1)$ gives: $\ds \int \frac{1}{x^2-1}\ dx = \int \frac{-1}{1-x^2}\ dx$. The second integral can be solved with a direct application of item \#3 from Key Idea \ref{idea:hyperbolic_inverse_integrals}, with $a=1$. Thus
 \begin{align}
@@ -410,5 +410,12 @@ Let $u = 3x$, hence $du = 3dx$. We have
 \end{enumerate}
 \vskip-\baselineskip
 }\\
+
+This section covers a lot of ground. New functions were introduced, along with some of their fundamental identities, their derivatives and antiderivatives, their inverses, and the derivatives and antiderivatives of these inverses. Four Key Ideas were presented, each including quite a bit of information.
+
+Do not view this section as containing a source of information to be memorized, but rather as a reference for future problem solving. Key Idea \ref{idea:hyperbolic_inverse_integrals} contains perhaps the most useful information. Know the integration forms it helps evaluate and understand how to use the inverse hyperbolic answer and the logarithmic answer.
+
+The next section takes a brief break from demonstrating new integration techniques. It instead demonstrates a technique of evaluating limits that return indeterminate forms. This technique will be useful in Section \ref{sec:improper_integration}, where limits will arise in the evaluation of certain definite integrals.
+
 
 \printexercises{exercises/06_05_exercises}

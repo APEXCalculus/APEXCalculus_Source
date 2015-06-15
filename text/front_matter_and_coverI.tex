@@ -62,15 +62,19 @@
 % The following is the correct TOC; the 
 %
 %%%%
-\phantomsection
-\addcontentsline{toc}{chapter}{Preface}
-\input{text/prefaceI}
-\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 \clearpage{\pagestyle{empty}\cleardoublepage}
+
+\phantomsection
+\prefacegeometry
+\addcontentsline{toc}{chapter}{Preface}
+\input{text/prefaceI}
+\restoregeometry
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 %%%%%
 %\includepdf[pages={1,2}]{CalculusTOC.pdf}
 

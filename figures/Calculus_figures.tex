@@ -1,0 +1,6482 @@
+\documentclass[10pt]{article}
+
+
+%%
+% slight detour to create the proper text/paper size.
+% Depends on the ifthen package, needed before loading
+% the geometry package
+%%
+
+\usepackage{ifthen}
+\newboolean{tabletsize}
+\setboolean{tabletsize}{false}
+
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{colormap={coloronemap}{rgb=(.4,.4,1); rgb=(.8,.8,1)}}
+\pgfplotsset{colormap={colortwomap}{rgb=(1,.4,.4); rgb=(1,.8,.8)}}
+%\pgfplotsset{compat=1.3}
+\usepackage{eso-pic,calc}
+\usepackage[font=small]{caption}
+\usepgfplotslibrary{external}
+\usetikzlibrary{calc}
+\usetikzlibrary{shadings}
+
+\usepackage[h]{esvect}
+
+	%\newcounter{chapter}
+	%\newcommand{\chapter}{\refstepcounter{chapter}\Huge Chapter \thechapter \vskip 2\baselineskip\normalsize}
+%%%%%%\tikzexternalize[prefix=figures/]
+
+
+%
+
+
+%\pgfplotsset{width=\marginparwidth+1pt,compat=1.3}
+%\pgfplotsset{compat=1.8}
+
+%
+%	Note how the tablet version differs from the booksize only in 
+% the size of the margins.
+%
+% Changing the following isn't hard but should be done with 
+% practice and care, making sure to get the margins right for a 
+% particular page size and printing format
+%
+%% Layout for printed book through Amazon CreateSpace, perfect bound,
+%% 8.5 x 11 paper size, 1in inner margin, 1/2in (roughly) outer margin
+%\newboolean{longpage}
+%\setboolean{longpage}{false}
+
+%\ifthenelse{\boolean{tabletsize}}{\usepackage[paperheight=11in,paperwidth=8.5in, inner=1in,includeheadfoot,textheight=9in,textwidth=345pt,marginparwidth=150pt]{geometry}
+%}{\usepackage[paperheight=11in,paperwidth=8.5in, inner=1in,includeheadfoot,textheight=9in,textwidth=345pt,marginparwidth=150pt]{geometry}
+%}
+
+\usepackage[paperheight=11in,paperwidth=3in,%inner=1in,includeheadfoot,
+textheight=10in,%textwidth=345pt,
+marginparwidth=150pt]{geometry}
+%% end detour
+%%
+\usepackage{amsmath}
+%\usepackage{APEX_format}
+%\input{../headers/Header_Calculus}
+
+
+
+%\pgfrealjobname{Calculus}
+
+\ifthenelse{\boolean{xetex}}%
+	{\sffamily
+	%%\usepackage{fontspec}
+	\usepackage{mathspec}
+	\setallmainfonts[Mapping=tex-text]{Calibri}
+	\setmainfont[Mapping=tex-text]{Calibri}
+	\setsansfont[Mapping=tex-text]{Calibri}
+	\setmathsfont(Greek){[cmmi10]}}
+	{}
+
+\newboolean{colorprint}
+\setboolean{colorprint}{true}
+%\setboolean{colorprint}{false}
+
+\ifthenelse{\boolean{colorprint}}{%
+\newcommand{\colorone}{blue}
+\newcommand{\colortwo}{red}
+\newcommand{\coloronefill}{blue!15!white}
+\newcommand{\colortwofill}{red!15!white}
+\newcommand{\colornamesuffix}{}
+\newcommand{\mysettikzname}[1]{\tikzsetnextfilename{#1}}
+\newcommand{\myincludegraphics}[2][]{\includegraphics[#1]{#2}}
+\newcommand{\colormapone}{rgb=(.4,.4,1); rgb=(.8,.8,1)}
+\newcommand{\colormaptwo}{rgb=(1,.4,.4); rgb=(1,.8,.8)}
+\newcommand{\colormapplaneone}{rgb=(.7,.7,1); rgb=(.9,.9,1)}
+\definecolor{colormaponebottom}{rgb}{.4,.4,1}
+\definecolor{colormaponetop}{rgb}{.8,.8,1}
+\definecolor{colormaptwobottom}{rgb}{1,.4,.4}
+\definecolor{colormaptwotop}{rgb}{1,.8,.8}
+}% ends color
+{% not color
+\newcommand{\colorone}{black}
+\newcommand{\colortwo}{black!50!white}
+\newcommand{\coloronefill}{black!15!white}
+\newcommand{\colortwofill}{black!05!white}
+\newcommand{\colornamesuffix}{BW}
+\newcommand{\mysettikzname}[1]{\tikzsetnextfilename{#1\colornamesuffix}}
+\newcommand{\myincludegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+\newcommand{\colormapone}{rgb=(.4,.4,.4); rgb=(.7,.7,.7)}
+\newcommand{\colormaptwo}{rgb=(.6,.6,.6); rgb=(.9,.9,.9)}
+\newcommand{\colormapplaneone}{rgb=(.8,.8,.8); rgb=(.95,.95,.95)}
+\definecolor{colormaponebottom}{rgb}{.4,.4,.4}
+\definecolor{colormaponetop}{rgb}{.7,.7,.7}
+\definecolor{colormaptwobottom}{rgb}{.6,.6,.6}
+\definecolor{colormaptwotop}{rgb}{.9,.9,.9}
+}%
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\ensuremath{\vec #1 \cdot \vec #2}}
+\newcommand{\proj}[2]{\ensuremath{\text{proj}_{\,\vec #2}{\,\vec #1}}}
+
+\newcommand{\fp}{\ensuremath{f\,'}}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\newcommand{\threedlines}[4][]{\draw [dashed,#1] (axis cs: #2,#3,#4) -- (axis cs: #2,#3,0) -- (axis cs: #2,0,0)  (axis cs: #2,#3,0)--(axis cs:0,#3,0);}
+
+\newcommand{\mydraw}{\draw (axis cs:0,0,0) -- (axis cs:1,1,0);}
+\newcommand{\ds}{\displaystyle}
+
+
+\newboolean{editmode}
+\setboolean{editmode}{true}
+%\setboolean{editmode}{false}
+
+\ifthenelse{\boolean{editmode}}% edit mode: don't do anything here
+{} %nothing
+{% else, only print existing pdf's
+\tikzexternalize
+\tikzset{external/system call={%
+  xelatex \tikzexternalcheckshellescape
+  -halt-on-error -interaction=batchmode 
+  -jobname "\image" "\texsource"}}
+}% ends editmode check 
+
+\begin{document}
+
+\mysettikzname{fig07_01_ex_21}
+\input{fig_07_01_ex_21}
+
+Image File Name: \texttt{\detokenize{figfwithderiv}}\par
+TeX File Name: \texttt{\detokenize{figfwithderiv}}\par
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%
+%%\myincludegraphics[scale=2]{figa_color_test}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{editmode}}% if in edit mode, do not print the following
+{} %i.e., do nothing
+{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\mysettikzname{fig13_02_ex_18}
+%\input{fig_13_02_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_18}}\par
+
+%\mysettikzname{fig13_02_ex_17}
+%\input{fig_13_02_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_17}}\par
+
+%\mysettikzname{fig13_02_ex_16}
+%\input{fig_13_02_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_16}}\par
+
+
+%\mysettikzname{fig13_02_ex_15}
+%\input{fig_13_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_15}}\par
+
+%\mysettikzname{fig13_02_ex_14}
+%\input{fig_13_02_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_14}}\par
+
+
+%\mysettikzname{fig13_02_ex_13}
+%\input{fig_13_02_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_13}}\par
+
+
+%\mysettikzname{fig13_02_ex_12}
+%\input{fig_13_02_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_12}}\par
+
+
+%\mysettikzname{fig13_02_ex_11}
+%\input{fig_13_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig13_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_02_ex_11}}\par
+
+
+%\mysettikzname{figshell4c}
+%\input{fig_shell4c}
+%
+%Image File Name: \texttt{\detokenize{figshell4c}}\par
+%TeX File Name: \texttt{\detokenize{figshell4c}}\par
+
+
+%\mysettikzname{figshell3c}
+%\input{fig_shell3c}
+%
+%Image File Name: \texttt{\detokenize{figshell3c}}\par
+%TeX File Name: \texttt{\detokenize{figshell3c}}\par
+
+%\mysettikzname{figshell2c}
+%\input{fig_shell2c}
+%
+%Image File Name: \texttt{\detokenize{figshell2c}}\par
+%TeX File Name: \texttt{\detokenize{figshell2c}}\par
+%
+
+%\mysettikzname{fig01_06_ex_40}
+%\input{fig_01_06_ex_40}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_40}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_40}}\par
+%
+%\mysettikzname{figalt_series_converge}
+%\input{fig_alt_series_converge}
+%
+%Image File Name: \texttt{\detokenize{figalt_series_converge}}\par
+%TeX File Name: \texttt{\detokenize{fig_alt_series_converge}}\par
+%
+%\mysettikzname{figitest1}
+%\input{fig_itest1}
+%
+%Image File Name: \texttt{\detokenize{figitest1}}\par
+%TeX File Name: \texttt{\detokenize{fig_itest1}}\par
+%
+%\mysettikzname{figintegral_test_a}
+%\input{fig_integral_test_a}
+%
+%Image File Name: \texttt{\detokenize{figintegral_test_a}}\par
+%TeX File Name: \texttt{\detokenize{fig_integral_test_a}}\par
+%
+%\mysettikzname{figintegral_test_b}
+%\input{fig_integral_test_b}
+%
+%Image File Name: \texttt{\detokenize{figintegral_test_b}}\par
+%TeX File Name: \texttt{\detokenize{fig_integral_test_b}}\par
+%
+%\mysettikzname{figtrigsub_intro3}
+%\input{fig_trigsub_intro3}
+%
+%Image File Name: \texttt{\detokenize{figtrigsub_intro3}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigsub_intro3}}\par
+%
+%\mysettikzname{figtrigsub_intro2}
+%\input{fig_trigsub_intro2}
+%
+%Image File Name: \texttt{\detokenize{figtrigsub_intro2}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigsub_intro2}}\par
+%
+%\mysettikzname{figtrigsub_intro1}
+%\input{fig_trigsub_intro1}
+%
+%Image File Name: \texttt{\detokenize{figtrigsub_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigsub_intro1}}\par
+%
+%\mysettikzname{fig3d_projb}
+%\input{fig_3d_projb}
+%
+%Image File Name: \texttt{\detokenize{fig3d_projb}}\par
+%TeX File Name: \texttt{\detokenize{fig_3d_projb}}\par
+%
+%\mysettikzname{fig3d_proj}
+%\input{fig_3d_proj}
+%
+%Image File Name: \texttt{\detokenize{fig3d_proj}}\par
+%TeX File Name: \texttt{\detokenize{fig_3d_proj}}\par
+%
+%\mysettikzname{figmchain_intro}
+%\input{fig_mchain_intro}
+%
+%Image File Name: \texttt{\detokenize{figmchain_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_mchain_intro}}\par
+%
+%\mysettikzname{figmchain2}
+%\input{fig_mchain2}
+%
+%Image File Name: \texttt{\detokenize{figmchain2}}\par
+%TeX File Name: \texttt{\detokenize{fig_mchain2}}\par
+%
+%\mysettikzname{fig13_06_ex_14}
+%\input{fig_13_06_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_14}}\par
+%
+%\mysettikzname{fig13_06_ex_13}
+%\input{fig_13_06_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_13}}\par
+%
+%\mysettikzname{fig13_06_ex_12}
+%\input{fig_13_06_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_12}}\par
+%
+%\mysettikzname{fig13_06_ex_11}
+%\input{fig_13_06_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_11}}\par
+%
+%\mysettikzname{fig13_06_ex_10}
+%\input{fig_13_06_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_10}}\par
+%
+%\mysettikzname{fig13_06_ex_09}
+%\input{fig_13_06_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_09}}\par
+%
+%\mysettikzname{fig13_06_ex_08}
+%\input{fig_13_06_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_08}}\par
+%
+%\mysettikzname{fig13_06_ex_07}
+%\input{fig_13_06_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig13_06_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_06_ex_07}}\par
+%
+%\mysettikzname{figtrip5e}
+%\input{fig_trip5e}
+%
+%Image File Name: \texttt{\detokenize{figtrip5e}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip5e}}\par
+%
+%\mysettikzname{figtrip5d}
+%\input{fig_trip5d}
+%
+%Image File Name: \texttt{\detokenize{figtrip5d}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip5d}}\par
+%
+%\mysettikzname{figtrip5c}
+%\input{fig_trip5c}
+%
+%Image File Name: \texttt{\detokenize{figtrip5c}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip5c}}\par
+%
+%\mysettikzname{figtrip5b}
+%\input{fig_trip5b}
+%
+%Image File Name: \texttt{\detokenize{figtrip5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip5b}}\par
+%
+%\mysettikzname{figtrip5}
+%\input{fig_trip5}
+%
+%Image File Name: \texttt{\detokenize{figtrip5}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip5}}\par
+%
+%\mysettikzname{figtrip4d}
+%\input{fig_trip4d}
+%
+%Image File Name: \texttt{\detokenize{figtrip4d}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip4d}}\par
+%
+%\mysettikzname{figtrip4c}
+%\input{fig_trip4c}
+%
+%Image File Name: \texttt{\detokenize{figtrip4c}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip4c}}\par
+%
+%\mysettikzname{figtrip4b}
+%\input{fig_trip4b}
+%
+%Image File Name: \texttt{\detokenize{figtrip4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip4b}}\par
+%
+%\mysettikzname{figtrip4}
+%\input{fig_trip4}
+%
+%Image File Name: \texttt{\detokenize{figtrip4}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip4}}\par
+%
+%\mysettikzname{figtrip3d}
+%\input{fig_trip3d}
+%
+%Image File Name: \texttt{\detokenize{figtrip3d}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip3d}}\par
+%
+%\mysettikzname{figtrip3c}
+%\input{fig_trip3c}
+%
+%Image File Name: \texttt{\detokenize{figtrip3c}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip3c}}\par
+%
+%\mysettikzname{figtrip3b}
+%\input{fig_trip3b}
+%
+%Image File Name: \texttt{\detokenize{figtrip3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip3b}}\par
+%
+%\mysettikzname{figtrip3}
+%\input{fig_trip3}
+%
+%Image File Name: \texttt{\detokenize{figtrip3}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip3}}\par
+%
+%\mysettikzname{figtrip2d}
+%\input{fig_trip2d}
+%
+%Image File Name: \texttt{\detokenize{figtrip2d}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip2d}}\par
+%
+%\mysettikzname{figtrip2c}
+%\input{fig_trip2c}
+%
+%Image File Name: \texttt{\detokenize{figtrip2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip2c}}\par
+%
+%\mysettikzname{figtrip2b}
+%\input{fig_trip2b}
+%
+%Image File Name: \texttt{\detokenize{figtrip2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip2b}}\par
+%
+%\mysettikzname{figtrip2}
+%\input{fig_trip2}
+%
+%Image File Name: \texttt{\detokenize{figtrip2}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip2}}\par
+%
+%\mysettikzname{figtrip1b}
+%\input{fig_trip1b}
+%
+%Image File Name: \texttt{\detokenize{figtrip1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip1b}}\par
+%
+%\mysettikzname{figtripintro}
+%\input{fig_tripintro}
+%
+%Image File Name: \texttt{\detokenize{figtripintro}}\par
+%TeX File Name: \texttt{\detokenize{fig_tripintro}}\par
+%
+%\mysettikzname{figtripintroa}
+%\input{fig_tripintroa}
+%
+%Image File Name: \texttt{\detokenize{figtripintroa}}\par
+%TeX File Name: \texttt{\detokenize{fig_tripintroa}}\par
+%
+%\mysettikzname{figtrip1}
+%\input{fig_trip1}
+%
+%Image File Name: \texttt{\detokenize{figtrip1}}\par
+%TeX File Name: \texttt{\detokenize{fig_trip1}}\par
+%
+%\mysettikzname{fig13_05_ex_08}
+%\input{fig_13_05_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig13_05_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_05_ex_08}}\par
+%
+%\mysettikzname{fig13_05_ex_07}
+%\input{fig_13_05_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig13_05_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_05_ex_07}}\par
+%
+%\mysettikzname{fig13_05_ex_06}
+%\input{fig_13_05_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig13_05_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_05_ex_06}}\par
+%
+%\mysettikzname{fig13_05_ex_05}
+%\input{fig_13_05_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig13_05_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_05_ex_05}}\par
+%
+%\mysettikzname{figsurfacearea4}
+%\input{fig_surfacearea4}
+%
+%Image File Name: \texttt{\detokenize{figsurfacearea4}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfacearea4}}\par
+%
+%\mysettikzname{figsurfacearea3}
+%\input{fig_surfacearea3}
+%
+%Image File Name: \texttt{\detokenize{figsurfacearea3}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfacearea3}}\par
+%
+%\mysettikzname{figsurfacearea1}
+%\input{fig_surfacearea1}
+%
+%Image File Name: \texttt{\detokenize{figsurfacearea1}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfacearea1}}\par
+%
+%\mysettikzname{figsurfacearea_intro1}
+%\input{fig_surfacearea_intro1}
+%
+%Image File Name: \texttt{\detokenize{figsurfacearea_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfacearea_intro1}}\par
+%
+%\mysettikzname{figsurfacearea_intro2}
+%\input{fig_surfacearea_intro2}
+%
+%Image File Name: \texttt{\detokenize{figsurfacearea_intro2}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfacearea_intro2}}\par
+%
+%\mysettikzname{fig13_01_ex_22}
+%\input{fig_13_01_ex_22}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_22}}\par
+%
+%\mysettikzname{fig13_01_ex_21}
+%\input{fig_13_01_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_21}}\par
+%
+%\mysettikzname{fig13_01_ex_20}
+%\input{fig_13_01_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_20}}\par
+%
+%\mysettikzname{fig13_01_ex_19}
+%\input{fig_13_01_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_19}}\par
+%
+%\mysettikzname{fig13_01_ex_18}
+%\input{fig_13_01_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_18}}\par
+%
+%\mysettikzname{fig13_01_ex_17}
+%\input{fig_13_01_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_17}}\par
+%
+%\mysettikzname{fig13_01_ex_16}
+%\input{fig_13_01_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_16}}\par
+%
+%\mysettikzname{fig13_01_ex_15}
+%\input{fig_13_01_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_15}}\par
+%
+%\mysettikzname{fig13_01_ex_14}
+%\input{fig_13_01_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_14}}\par
+%
+%\mysettikzname{fig13_01_ex_13}
+%\input{fig_13_01_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_13}}\par
+%
+%\mysettikzname{fig13_01_ex_12}
+%\input{fig_13_01_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_12}}\par
+%
+%\mysettikzname{fig13_01_ex_11}
+%\input{fig_13_01_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig13_01_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_13_01_ex_11}}\par
+%
+%\mysettikzname{figmass9}
+%\input{fig_mass9}
+%
+%Image File Name: \texttt{\detokenize{figmass9}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass9}}\par
+%
+%\mysettikzname{figmass5}
+%\input{fig_mass5}
+%
+%Image File Name: \texttt{\detokenize{figmass5}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass5}}\par
+%
+%\mysettikzname{figmass4a}
+%\input{fig_mass4a}
+%
+%Image File Name: \texttt{\detokenize{figmass4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass4a}}\par
+%%
+%\mysettikzname{figmass4b}
+%\input{fig_mass4b}
+%
+%Image File Name: \texttt{\detokenize{figmass4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass4b}}\par
+%
+%\mysettikzname{figmass3a}
+%\input{fig_mass3a}
+%
+%Image File Name: \texttt{\detokenize{figmass3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass3a}}\par
+%%
+%\mysettikzname{figmass3b}
+%\input{fig_mass3b}
+%
+%Image File Name: \texttt{\detokenize{figmass3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass3b}}\par
+%
+%\mysettikzname{figmass2}
+%\input{fig_mass2}
+%
+%Image File Name: \texttt{\detokenize{figmass2}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass2}}\par
+%
+%\mysettikzname{figmass1}
+%\input{fig_mass1}
+%
+%Image File Name: \texttt{\detokenize{figmass1}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass1}}\par
+%
+%\mysettikzname{figmass_intro1}
+%\input{fig_mass_intro1}
+%
+%Image File Name: \texttt{\detokenize{figmass_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass_intro1}}\par
+%
+%\mysettikzname{figmass_intro1b}
+%\input{fig_mass_intro1b}
+%
+%Image File Name: \texttt{\detokenize{figmass_intro1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_mass_intro1b}}\par
+%
+%\mysettikzname{figdoublepol5}
+%\input{fig_doublepol5}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol5}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol5}}\par
+%
+%\mysettikzname{figdoublepol4}
+%\input{fig_doublepol4}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol4}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol4}}\par
+%
+%\mysettikzname{figdoublepol4b}
+%\input{fig_doublepol4b}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol4b}}\par
+%
+%\mysettikzname{figdoublepol2b}
+%\input{fig_doublepol2b}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol2b}}\par
+%
+%\mysettikzname{figdoublepol2a}
+%\input{fig_doublepol2a}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol2a}}\par
+%
+%\mysettikzname{figdoublepol1}
+%\input{fig_doublepol1}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol1}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol1}}\par
+%
+%\mysettikzname{figdoublepol_intro}
+%\input{fig_doublepol_intro}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol_intro}}\par
+%
+%\mysettikzname{figdoublepol_intro_b}
+%\input{fig_doublepol_intro_b}
+%
+%Image File Name: \texttt{\detokenize{figdoublepol_intro_b}}\par
+%TeX File Name: \texttt{\detokenize{fig_doublepol_intro_b}}\par
+%
+%\mysettikzname{figdouble_summary}
+%\input{fig_double_summary}
+%
+%Image File Name: \texttt{\detokenize{figdouble_summary}}\par
+%TeX File Name: \texttt{\detokenize{fig_double_summary}}\par
+%
+%\mysettikzname{figdouble6b}
+%\input{fig_double6b}
+%
+%Image File Name: \texttt{\detokenize{figdouble6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_double6b}}\par
+%
+%\mysettikzname{figdouble7}
+%\input{fig_double7}
+%
+%Image File Name: \texttt{\detokenize{figdouble7}}\par
+%TeX File Name: \texttt{\detokenize{fig_double7}}\par
+%
+%\mysettikzname{figdouble6}
+%\input{fig_double6}
+%
+%Image File Name: \texttt{\detokenize{figdouble6}}\par
+%TeX File Name: \texttt{\detokenize{fig_double6}}\par
+%
+%\mysettikzname{figdouble5}
+%\input{fig_double5}
+%
+%Image File Name: \texttt{\detokenize{figdouble5}}\par
+%TeX File Name: \texttt{\detokenize{fig_double5}}\par
+%
+%\mysettikzname{figdouble4}
+%\input{fig_double4}
+%
+%Image File Name: \texttt{\detokenize{figdouble4}}\par
+%TeX File Name: \texttt{\detokenize{fig_double4}}\par
+%
+%\mysettikzname{figdouble3}
+%\input{fig_double3}
+%
+%Image File Name: \texttt{\detokenize{figdouble3}}\par
+%TeX File Name: \texttt{\detokenize{fig_double3}}\par
+%
+%\mysettikzname{figdouble_region}
+%\input{fig_double_region}
+%
+%Image File Name: \texttt{\detokenize{figdouble_region}}\par
+%TeX File Name: \texttt{\detokenize{fig_double_region}}\par
+%
+%\mysettikzname{figdouble2}
+%\input{fig_double2}
+%
+%Image File Name: \texttt{\detokenize{figdouble2}}\par
+%TeX File Name: \texttt{\detokenize{fig_double2}}\par
+%
+%\mysettikzname{figdouble1}
+%\input{fig_double1}
+%
+%Image File Name: \texttt{\detokenize{figdouble1}}\par
+%TeX File Name: \texttt{\detokenize{fig_double1}}\par
+%
+%\mysettikzname{figdouble_intro3}
+%\input{fig_double_intro3}
+%
+%Image File Name: \texttt{\detokenize{figdouble_intro3}}\par
+%TeX File Name: \texttt{\detokenize{fig_double_intro3}}\par
+%
+%\mysettikzname{figdouble_intro1}
+%\input{fig_double_intro1}
+%
+%Image File Name: \texttt{\detokenize{figdouble_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_double_intro1}}\par
+%
+%\mysettikzname{figdouble_intro2}
+%\input{fig_double_intro2}
+%
+%Image File Name: \texttt{\detokenize{figdouble_intro2}}\par
+%TeX File Name: \texttt{\detokenize{fig_double_intro2}}\par
+%
+%\mysettikzname{figiterated6}
+%\input{fig_iterated6}
+%
+%Image File Name: \texttt{\detokenize{figiterated6}}\par
+%TeX File Name: \texttt{\detokenize{fig_iterated6}}\par
+%
+%\mysettikzname{figiterated5}
+%\input{fig_iterated5}
+%
+%Image File Name: \texttt{\detokenize{figiterated5}}\par
+%TeX File Name: \texttt{\detokenize{fig_iterated5}}\par
+%
+%\mysettikzname{figiterated4}
+%\input{fig_iterated4}
+%
+%Image File Name: \texttt{\detokenize{figiterated4}}\par
+%TeX File Name: \texttt{\detokenize{fig_iterated4}}\par
+%
+%\mysettikzname{figiterated_intro2}
+%\input{fig_iterated_intro2}
+%
+%Image File Name: \texttt{\detokenize{figiterated_intro2}}\par
+%TeX File Name: \texttt{\detokenize{fig_iterated_intro2}}\par
+%
+%\mysettikzname{figiterated_intro}
+%\input{fig_iterated_intro}
+%
+%Image File Name: \texttt{\detokenize{figiterated_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_iterated_intro}}\par
+%
+%\mysettikzname{figdirect9}
+%\input{fig_direct9}
+%
+%Image File Name: \texttt{\detokenize{figdirect9}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct9}}\par
+%
+%\mysettikzname{fig12_01_ex_22}
+%\input{fig_12_01_ex_22}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_22}}\par
+%
+%\mysettikzname{fig12_01_ex_21}
+%\input{fig_12_01_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_21}}\par
+%
+%\mysettikzname{fig12_01_ex_20}
+%\input{fig_12_01_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_20}}\par
+%
+%\mysettikzname{fig12_01_ex_19}
+%\input{fig_12_01_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_19}}\par
+%
+%\mysettikzname{fig12_01_ex_18}
+%\input{fig_12_01_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_18}}\par
+%
+%\mysettikzname{fig12_01_ex_17}
+%\input{fig_12_01_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_17}}\par
+%
+%\mysettikzname{fig12_01_ex_16}
+%\input{fig_12_01_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_16}}\par
+%
+%\mysettikzname{fig12_01_ex_15}
+%\input{fig_12_01_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig12_01_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_12_01_ex_15}}\par
+%
+%\mysettikzname{figconopt2}
+%\input{fig_conopt2}
+%
+%Image File Name: \texttt{\detokenize{figconopt2}}\par
+%TeX File Name: \texttt{\detokenize{fig_conopt2}}\par
+%
+%\mysettikzname{figconopt1c}
+%\input{fig_conopt1c}
+%
+%Image File Name: \texttt{\detokenize{figconopt1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_conopt1c}}\par
+%
+%\mysettikzname{figconopt1b}
+%\input{fig_conopt1b}
+%
+%Image File Name: \texttt{\detokenize{figconopt1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_conopt1b}}\par
+%
+%\mysettikzname{figconopt1}
+%\input{fig_conopt1}
+%
+%Image File Name: \texttt{\detokenize{figconopt1}}\par
+%TeX File Name: \texttt{\detokenize{fig_conopt1}}\par
+%
+%\mysettikzname{figmulti_extreme5}
+%\input{fig_multi_extreme5}
+%
+%Image File Name: \texttt{\detokenize{figmulti_extreme5}}\par
+%TeX File Name: \texttt{\detokenize{fig_multi_extreme5}}\par
+%
+%\mysettikzname{figmulti_extreme3}
+%\input{fig_multi_extreme3}
+%
+%Image File Name: \texttt{\detokenize{figmulti_extreme3}}\par
+%TeX File Name: \texttt{\detokenize{fig_multi_extreme3}}\par
+%
+%\mysettikzname{figmulti_extreme2}
+%\input{fig_multi_extreme2}
+%
+%Image File Name: \texttt{\detokenize{figmulti_extreme2}}\par
+%TeX File Name: \texttt{\detokenize{fig_multi_extreme2}}\par
+%
+%\mysettikzname{figmulti_extreme1}
+%\input{fig_multi_extreme1}
+%
+%Image File Name: \texttt{\detokenize{figmulti_extreme1}}\par
+%TeX File Name: \texttt{\detokenize{fig_multi_extreme1}}\par
+%
+%\mysettikzname{figtpl8}
+%\input{fig_tpl8}
+%
+%Image File Name: \texttt{\detokenize{figtpl8}}\par
+%TeX File Name: \texttt{\detokenize{fig_tpl8}}\par
+%
+%\mysettikzname{figtpl6}
+%\input{fig_tpl6}
+%
+%Image File Name: \texttt{\detokenize{figtpl6}}\par
+%TeX File Name: \texttt{\detokenize{fig_tpl6}}\par
+%
+%\mysettikzname{figtpl5}
+%\input{fig_tpl5}
+%
+%Image File Name: \texttt{\detokenize{figtpl5}}\par
+%TeX File Name: \texttt{\detokenize{fig_tpl5}}\par
+%
+%\mysettikzname{figtpl3}
+%\input{fig_tpl3}
+%
+%Image File Name: \texttt{\detokenize{figtpl3}}\par
+%TeX File Name: \texttt{\detokenize{fig_tpl3}}\par
+%
+%\mysettikzname{figtpl2}
+%\input{fig_tpl2}
+%
+%Image File Name: \texttt{\detokenize{figtpl2}}\par
+%TeX File Name: \texttt{\detokenize{fig_tpl2}}\par
+%
+%\mysettikzname{figpartial4b}
+%\input{fig_partial4b}
+%
+%Image File Name: \texttt{\detokenize{figpartial4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial4b}}\par
+%
+%\mysettikzname{figspace_tangent_intro}
+%\input{fig_space_tangent_intro}
+%
+%Image File Name: \texttt{\detokenize{figspace_tangent_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_space_tangent_intro}}\par
+%
+%\mysettikzname{figtotaldiff5}
+%\input{fig_totaldiff5}
+%
+%Image File Name: \texttt{\detokenize{figtotaldiff5}}\par
+%TeX File Name: \texttt{\detokenize{fig_totaldiff5}}\par
+%
+%\mysettikzname{figdirect3b}
+%\input{fig_direct3b}
+%
+%Image File Name: \texttt{\detokenize{figdirect3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct3b}}\par
+%
+%\mysettikzname{figdirect3}
+%\input{fig_direct3}
+%
+%Image File Name: \texttt{\detokenize{figdirect3}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct3}}\par
+%
+%\mysettikzname{figdirect2}
+%\input{fig_direct2}
+%
+%Image File Name: \texttt{\detokenize{figdirect2}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct2}}\par
+%
+%\mysettikzname{figdirect2b}
+%\input{fig_direct2b}
+%
+%Image File Name: \texttt{\detokenize{figdirect2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct2b}}\par
+%
+%\mysettikzname{figdirect1}
+%\input{fig_direct1}
+%
+%Image File Name: \texttt{\detokenize{figdirect1}}\par
+%TeX File Name: \texttt{\detokenize{fig_direct1}}\par
+%
+%\mysettikzname{figpartial6}
+%\input{fig_partial6}
+%
+%Image File Name: \texttt{\detokenize{figpartial6}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial6}}\par
+%
+%\mysettikzname{figpartial6b}
+%\input{fig_partial6b}
+%
+%Image File Name: \texttt{\detokenize{figpartial6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial6b}}\par
+%
+%\mysettikzname{figpartial5}
+%\input{fig_partial5}
+%
+%Image File Name: \texttt{\detokenize{figpartial5}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial5}}\par
+%
+%\mysettikzname{figpartial4a}
+%\input{fig_partial4a}
+%
+%Image File Name: \texttt{\detokenize{figpartial4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial4a}}\par
+%
+%\mysettikzname{figpartial3a}
+%\input{fig_partial3a}
+%
+%Image File Name: \texttt{\detokenize{figpartial3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial3a}}\par
+%
+%\mysettikzname{figpartial3b}
+%\input{fig_partial3b}
+%
+%Image File Name: \texttt{\detokenize{figpartial3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_partial3b}}\par
+%
+%\mysettikzname{figpartialintro}
+%\input{fig_partialintro}
+%
+%Image File Name: \texttt{\detokenize{figpartialintro}}\par
+%TeX File Name: \texttt{\detokenize{fig_partialintro}}\par
+%
+%\mysettikzname{figpartialintrob}
+%\input{fig_partialintrob}
+%
+%Image File Name: \texttt{\detokenize{figpartialintrob}}\par
+%TeX File Name: \texttt{\detokenize{fig_partialintrob}}\par
+%
+%\mysettikzname{figmulticont1}
+%\input{fig_multicont1}
+%
+%Image File Name: \texttt{\detokenize{figmulticont1}}\par
+%TeX File Name: \texttt{\detokenize{fig_multicont1}}\par
+%
+%\mysettikzname{fig11_03_ex_13}
+%\input{fig_11_03_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig11_03_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_03_ex_13}}\par
+%
+%\mysettikzname{fig11_03_ex_12}
+%\input{fig_11_03_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig11_03_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_03_ex_12}}\par
+%
+%\mysettikzname{fig11_03_ex_11}
+%\input{fig_11_03_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig11_03_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_03_ex_11}}\par
+%
+%\mysettikzname{fig11_03_ex_10}
+%\input{fig_11_03_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig11_03_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_03_ex_10}}\par
+%
+%\mysettikzname{fig11_02_ex_18}
+%\input{fig_11_02_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig11_02_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_02_ex_18}}\par
+%
+%\mysettikzname{fig11_02_ex_17}
+%\input{fig_11_02_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig11_02_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_02_ex_17}}\par
+%
+%\mysettikzname{fig11_02_ex_16}
+%\input{fig_11_02_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig11_02_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_02_ex_16}}\par
+%
+%\mysettikzname{fig11_02_ex_15}
+%\input{fig_11_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig11_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_02_ex_15}}\par
+%
+%\mysettikzname{fig11_01_ex_14}
+%\input{fig_11_01_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_14}}\par
+%
+%\mysettikzname{fig11_01_ex_13}
+%\input{fig_11_01_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_13}}
+%
+%\mysettikzname{fig11_01_ex_12}
+%\input{fig_11_01_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_12}}\par
+%
+%\mysettikzname{fig11_01_ex_11}
+%\input{fig_11_01_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_11}}\par
+%
+%\mysettikzname{fig11_01_ex_10}
+%\input{fig_11_01_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_10}}\par
+%
+%\mysettikzname{fig11_01_ex_09}
+%\input{fig_11_01_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_09}}\par
+%
+%\mysettikzname{fig11_01_ex_08}
+%\input{fig_11_01_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_08}}\par
+%
+%\mysettikzname{fig11_01_ex_07}
+%\input{fig_11_01_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_07}}\par
+%
+%\mysettikzname{fig11_01_ex_06}
+%\input{fig_11_01_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_06}}\par
+%
+%\mysettikzname{fig11_01_ex_05}
+%\input{fig_11_01_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_05}}\par
+%
+%\mysettikzname{fig11_01_ex_04}
+%\input{fig_11_01_ex_04}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_04}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_04}}\par
+%
+%\mysettikzname{fig11_01_ex_03}
+%\input{fig_11_01_ex_03}
+%
+%Image File Name: \texttt{\detokenize{fig11_01_ex_03}}\par
+%TeX File Name: \texttt{\detokenize{fig_11_01_ex_03}}\par
+%
+%\mysettikzname{figplanes5}
+%\input{fig_planes5}
+%
+%Image File Name: \texttt{\detokenize{figplanes5}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes5}}\par
+%
+%\mysettikzname{figmultilimit_def}
+%\input{fig_multilimit_def}
+%
+%Image File Name: \texttt{\detokenize{figmultilimit_def}}\par
+%TeX File Name: \texttt{\detokenize{fig_multilimit_def}}\par
+%
+%\mysettikzname{figmultilimit2}
+%\input{fig_multilimit2}
+%
+%Image File Name: \texttt{\detokenize{figmultilimit2}}\par
+%TeX File Name: \texttt{\detokenize{fig_multilimit2}}\par
+%
+%\mysettikzname{figmultilimit_introa}
+%\input{fig_multilimit_introa}
+%
+%Image File Name: \texttt{\detokenize{figmultilimit_introa}}\par
+%TeX File Name: \texttt{\detokenize{fig_multilimit_introa}}\par
+%
+%\mysettikzname{figmultilimit_introb}
+%\input{fig_multilimit_introb}
+%
+%Image File Name: \texttt{\detokenize{figmultilimit_introb}}\par
+%TeX File Name: \texttt{\detokenize{fig_multilimit_introb}}\par
+%
+%\mysettikzname{figmultilimit_introc}
+%\input{fig_multilimit_introc}
+%
+%Image File Name: \texttt{\detokenize{figmultilimit_introc}}\par
+%TeX File Name: \texttt{\detokenize{fig_multilimit_introc}}\par
+%
+%\mysettikzname{figmulti2}
+%\input{fig_multi2}
+%
+%Image File Name: \texttt{\detokenize{figmulti2}}\par
+%TeX File Name: \texttt{\detokenize{fig_multi2}}\par
+%
+%\mysettikzname{figlevelsurface1}
+%\input{fig_levelsurface1}
+%
+%Image File Name: \texttt{\detokenize{figlevelsurface1}}\par
+%TeX File Name: \texttt{\detokenize{fig_levelsurface1}}\par
+%
+%\mysettikzname{figlevelcurve2}
+%\input{fig_levelcurve2}
+%
+%Image File Name: \texttt{\detokenize{figlevelcurve2}}\par
+%TeX File Name: \texttt{\detokenize{fig_levelcurve2}}\par
+%
+%\mysettikzname{figlevelcurve2b}
+%\input{fig_levelcurve2b}
+%
+%Image File Name: \texttt{\detokenize{figlevelcurve2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_levelcurve2b}}\par
+%
+%\mysettikzname{figlevelcurve1}
+%\input{fig_levelcurve1}
+%
+%Image File Name: \texttt{\detokenize{figlevelcurve1}}\par
+%TeX File Name: \texttt{\detokenize{fig_levelcurve1}}\par
+%
+%\mysettikzname{figlevelcurve1b}
+%\input{fig_levelcurve1b}
+%
+%Image File Name: \texttt{\detokenize{figlevelcurve1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_levelcurve1b}}\par
+%
+%
+%\mysettikzname{figmultigraph_intro}
+%\input{fig_multigraph_intro}
+%
+%Image File Name: \texttt{\detokenize{figmultigraph_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_multigraph_intro}}\par
+%
+%\mysettikzname{figmultigraph_introb}
+%\input{fig_multigraph_introb}
+%
+%Image File Name: \texttt{\detokenize{figmultigraph_introb}}\par
+%TeX File Name: \texttt{\detokenize{fig_multigraph_introb}}\par
+%
+%\mysettikzname{figsurfrev2a}
+%\input{fig_surfrev2a}
+%
+%Image File Name: \texttt{\detokenize{figsurfrev2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfrev2a}}\par
+%
+%\mysettikzname{figsurfrev2b}
+%\input{fig_surfrev2b}
+%
+%Image File Name: \texttt{\detokenize{figsurfrev2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfrev2b}}\par
+%
+%
+%
+%\mysettikzname{figsurfrev1a}
+%\input{fig_surfrev1a}
+%
+%Image File Name: \texttt{\detokenize{figsurfrev1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfrev1a}}\par
+%
+%\mysettikzname{figsurfrev1b}
+%\input{fig_surfrev1b}
+%
+%Image File Name: \texttt{\detokenize{figsurfrev1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_surfrev1b}}\par
+%
+%\mysettikzname{figsurf_rev_intro}
+%\input{fig_surf_rev_intro}
+%
+%Image File Name: \texttt{\detokenize{figsurf_rev_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_surf_rev_intro}}\par
+%
+%\mysettikzname{figsurf_rev_introb}
+%\input{fig_surf_rev_introb}
+%
+%Image File Name: \texttt{\detokenize{figsurf_rev_introb}}\par
+%TeX File Name: \texttt{\detokenize{fig_surf_rev_introb}}\par
+%
+%\mysettikzname{fig10_02_exset_06}
+%\input{fig_10_02_exset_06}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_exset_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_exset_06}}\par
+%
+%\mysettikzname{fig10_02_exset_05}
+%\input{fig_10_02_exset_05}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_exset_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_exset_05}}\par
+%
+%\mysettikzname{fig10_02_ex_15}
+%\input{fig_10_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_15}}\par
+%
+%\mysettikzname{fig10_02_ex_15ans}
+%\input{fig_10_02_ex_15ans}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_15ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_15ans}}\par
+%
+%\mysettikzname{fig10_02_ex_14}
+%\input{fig_10_02_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_14}}\par
+%
+%\mysettikzname{fig10_02_ex_14ans}
+%\input{fig_10_02_ex_14ans}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_14ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_14ans}}\par
+%
+%\mysettikzname{fig10_02_ex_13}
+%\input{fig_10_02_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_13}}\par
+%
+%\mysettikzname{fig10_02_ex_13ans}
+%\input{fig_10_02_ex_13ans}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_13ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_13ans}}\par
+%
+%\mysettikzname{fig10_02_ex_11}
+%\input{fig_10_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_11}}\par
+%
+%\mysettikzname{fig10_02_ex_11ans}
+%\input{fig_10_02_ex_11ans}
+%
+%Image File Name: \texttt{\detokenize{fig10_02_ex_11ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_02_ex_11ans}}\par
+%
+%\mysettikzname{fig10_01_ex_28}
+%\input{fig_10_01_ex_28}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_28}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_28}}\par
+%
+%\mysettikzname{fig10_01_ex_27}
+%\input{fig_10_01_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_27}}\par
+%
+%\mysettikzname{fig10_01_ex_26}
+%\input{fig_10_01_ex_26}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_26}}\par
+%
+%\mysettikzname{fig10_01_ex_25}
+%\input{fig_10_01_ex_25}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_25}}\par
+%
+%\mysettikzname{fig10_01_ex_24}
+%\input{fig_10_01_ex_24}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_24}}\par
+%
+%\mysettikzname{fig10_01_ex_23}
+%\input{fig_10_01_ex_23}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_23}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_23}}\par
+%
+%\mysettikzname{fig10_01_ex_22}
+%\input{fig_10_01_ex_22}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_22}}\par
+%
+%\mysettikzname{fig10_01_ex_21}
+%\input{fig_10_01_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_21}}\par
+%
+%\mysettikzname{fig10_01_ex_20}
+%\input{fig_10_01_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_20}}\par
+%
+%\mysettikzname{fig10_01_ex_19}
+%\input{fig_10_01_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_19}}\par
+%
+%\mysettikzname{fig10_01_ex_18}
+%\input{fig_10_01_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_18}}\par
+%
+%\mysettikzname{fig10_01_ex_17}
+%\input{fig_10_01_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_17}}\par
+%
+%\mysettikzname{fig10_01_ex_16}
+%\input{fig_10_01_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_16}}\par
+%
+%\mysettikzname{fig10_01_ex_15}
+%\input{fig_10_01_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig10_01_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_10_01_ex_15}}\par
+%
+%\mysettikzname{fig09_05_ex_27}
+%\input{fig_09_05_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig09_05_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_05_ex_27}}\par
+%
+%\mysettikzname{fig09_05_ex_26}
+%\input{fig_09_05_ex_26}
+%
+%Image File Name: \texttt{\detokenize{fig09_05_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_05_ex_26}}\par
+%
+%\mysettikzname{fig09_05_ex_25}
+%\input{fig_09_05_ex_25}
+%
+%Image File Name: \texttt{\detokenize{fig09_05_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_05_ex_25}}\par
+%
+%\mysettikzname{fig09_05_ex_24}
+%\input{fig_09_05_ex_24}
+%
+%Image File Name: \texttt{\detokenize{fig09_05_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_05_ex_24}}\par
+%
+%\mysettikzname{fig09_04_ex_29}
+%\input{fig_09_04_ex_29}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_29}}\par
+%
+%\mysettikzname{fig09_04_ex_28}
+%\input{fig_09_04_ex_28}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_28}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_28}}\par
+%
+%\mysettikzname{fig09_04_ex_27}
+%\input{fig_09_04_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_27}}\par
+%
+%\mysettikzname{fig09_04_ex_26}
+%\input{fig_09_04_ex_26}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_26}}\par
+%
+%\mysettikzname{fig09_04_ex_25}
+%\input{fig_09_04_ex_25}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_25}}\par
+%
+%\mysettikzname{fig09_04_ex_24}
+%\input{fig_09_04_ex_24}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_24}}\par
+%
+%\mysettikzname{fig09_04_ex_23}
+%\input{fig_09_04_ex_23}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_23}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_23}}\par
+%
+%\mysettikzname{fig09_04_ex_22}
+%\input{fig_09_04_ex_22}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_22}}\par
+%
+%\mysettikzname{fig09_04_ex_21}
+%\input{fig_09_04_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_21}}\par
+%
+%\mysettikzname{fig09_04_ex_20}
+%\input{fig_09_04_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_20}}\par
+%
+%\mysettikzname{fig09_04_ex_19}
+%\input{fig_09_04_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_19}}\par
+%
+%\mysettikzname{fig09_04_ex_18}
+%\input{fig_09_04_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_18}}\par
+%
+%\mysettikzname{fig09_04_ex_17}
+%\input{fig_09_04_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_17}}\par
+%
+%
+%\mysettikzname{fig09_04_ex_16}
+%\input{fig_09_04_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_16}}\par
+%
+%\mysettikzname{fig09_04_ex_15}
+%\input{fig_09_04_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_15}}\par
+%
+%\mysettikzname{fig09_04_ex_14}
+%\input{fig_09_04_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_14}}\par
+%
+%\mysettikzname{fig09_04_ex_13}
+%\input{fig_09_04_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_13}}\par
+%
+%
+%\mysettikzname{fig09_04_ex_12}
+%\input{fig_09_04_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_12}}\par
+%
+%\mysettikzname{fig09_04_ex_11}
+%\input{fig_09_04_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig09_04_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_04_ex_11}}\par
+%
+%
+%\mysettikzname{figparcalc8}
+%\input{fig_parcalc8}
+%
+%Image File Name: \texttt{\detokenize{figparcalc8}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc8}}\par
+%
+%
+%
+%\mysettikzname{figcurvature3}
+%\input{fig_curvature3}
+%
+%Image File Name: \texttt{\detokenize{figcurvature3}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature3}}\par
+%
+%\mysettikzname{figcurvature4a}
+%\input{fig_curvature4a}
+%
+%Image File Name: \texttt{\detokenize{figcurvature4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature4a}}\par
+%
+%\mysettikzname{figcurvature4}
+%\input{fig_curvature4}
+%
+%Image File Name: \texttt{\detokenize{figcurvature4}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature4}}\par
+%
+%\mysettikzname{figcurvature_introc}
+%\input{fig_curvature_introc}
+%
+%Image File Name: \texttt{\detokenize{figcurvature_introc}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature_introc}}\par
+%
+%\mysettikzname{figcurvature_intro}
+%\input{fig_curvature_intro}
+%
+%Image File Name: \texttt{\detokenize{figcurvature_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature_intro}}\par
+%
+%\mysettikzname{figcurvature_introb}
+%\input{fig_curvature_introb}
+%
+%Image File Name: \texttt{\detokenize{figcurvature_introb}}\par
+%TeX File Name: \texttt{\detokenize{fig_curvature_introb}}\par
+%
+%\mysettikzname{figvvfarc1}
+%\input{fig_vvfarc1}
+%
+%Image File Name: \texttt{\detokenize{figvvfarc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfarc1}}\par
+%
+%\mysettikzname{figvvfarc_intro1b}
+%\input{fig_vvfarc_intro1b}
+%
+%Image File Name: \texttt{\detokenize{figvvfarc_intro1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfarc_intro1b}}\par
+%
+%\mysettikzname{figvvfarc_intro1}
+%\input{fig_vvfarc_intro1}
+%
+%Image File Name: \texttt{\detokenize{figvvfarc_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfarc_intro1}}\par
+%
+%
+%\mysettikzname{figtannorm_intro1}
+%\input{fig_tannorm_intro1}
+%
+%Image File Name: \texttt{\detokenize{figtannorm_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm_intro1}}\par
+%
+%\mysettikzname{figtannorm7b}
+%\input{fig_tannorm7b}
+%
+%Image File Name: \texttt{\detokenize{figtannorm7b}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm7b}}\par
+%
+%\mysettikzname{figtannorm6}
+%\input{fig_tannorm6}
+%
+%Image File Name: \texttt{\detokenize{figtannorm6}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm6}}\par
+%
+%\mysettikzname{figtannorm4}
+%\input{fig_tannorm4}
+%
+%Image File Name: \texttt{\detokenize{figtannorm4}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm4}}\par
+%
+%
+%\mysettikzname{figtannorm3}
+%\input{fig_tannorm3}
+%
+%Image File Name: \texttt{\detokenize{figtannorm3}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm3}}\par
+%
+%\mysettikzname{figtannorm2}
+%\input{fig_tannorm2}
+%
+%Image File Name: \texttt{\detokenize{figtannorm2}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm2}}\par
+%
+%\mysettikzname{figtannorm1}
+%\input{fig_tannorm1}
+%
+%Image File Name: \texttt{\detokenize{figtannorm1}}\par
+%TeX File Name: \texttt{\detokenize{fig_tannorm1}}\par
+%
+%\mysettikzname{figmotion6}
+%\input{fig_motion6}
+%
+%Image File Name: \texttt{\detokenize{figmotion6}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion6}}\par
+%
+%\mysettikzname{figmotion6b}
+%\input{fig_motion6b}
+%
+%Image File Name: \texttt{\detokenize{figmotion6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion6b}}\par
+%
+%\mysettikzname{figmotion3}
+%\input{fig_motion3}
+%
+%Image File Name: \texttt{\detokenize{figmotion3}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion3}}\par
+%
+%\mysettikzname{figmotion2a}
+%\input{fig_motion2a}
+%
+%Image File Name: \texttt{\detokenize{figmotion2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion2a}}\par
+%
+%\mysettikzname{figmotion2b}
+%\input{fig_motion2b}
+%
+%Image File Name: \texttt{\detokenize{figmotion2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion2b}}\par
+%
+%\mysettikzname{figmotion2c}
+%\input{fig_motion2c}
+%
+%Image File Name: \texttt{\detokenize{figmotion2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion2c}}\par
+%
+%\mysettikzname{figmotion1a}
+%\input{fig_motion1a}
+%
+%Image File Name: \texttt{\detokenize{figmotion1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion1a}}\par
+%
+%\mysettikzname{figmotion1b}
+%\input{fig_motion1b}
+%
+%Image File Name: \texttt{\detokenize{figmotion1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_motion1b}}\par
+%
+%\mysettikzname{figvvfderiv3}
+%\input{fig_vvfderiv3}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv3}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv3}}\par
+%
+%\mysettikzname{figvvfderiv2a}
+%\input{fig_vvfderiv2a}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv2a}}\par
+%
+%\mysettikzname{figvvfderiv2b}
+%\input{fig_vvfderiv2b}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv2b}}\par
+%
+%\mysettikzname{figvvfderiv1}
+%\input{fig_vvfderiv1}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv1}}\par
+%
+%\mysettikzname{figvvfderiv1b}
+%\input{fig_vvfderiv1b}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv1b}}\par
+%
+%\mysettikzname{figvvfderiv_intro}
+%\input{fig_vvfderiv_intro}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv_intro}}\par
+%
+%\mysettikzname{figvvfderiv_introb}
+%\input{fig_vvfderiv_introb}
+%
+%Image File Name: \texttt{\detokenize{figvvfderiv_introb}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfderiv_introb}}\par
+%
+%\mysettikzname{figvvflimit4}
+%\input{fig_vvflimit4}
+%
+%Image File Name: \texttt{\detokenize{figvvflimit4}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvflimit4}}\par
+%
+%\mysettikzname{figvvflimit4a}
+%\input{fig_vvflimit4a}
+%
+%Image File Name: \texttt{\detokenize{figvvflimit4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvflimit4a}}\par
+%
+%\mysettikzname{figvvflimit3a}
+%\input{fig_vvflimit3a}
+%
+%Image File Name: \texttt{\detokenize{figvvflimit3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvflimit3a}}\par
+%
+%\mysettikzname{figvvflimit3}
+%\input{fig_vvflimit3}
+%
+%Image File Name: \texttt{\detokenize{figvvflimit3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvflimit3a}}\par
+%
+%\mysettikzname{figvvf5}
+%\input{fig_vvf5}
+%
+%Image File Name: \texttt{\detokenize{figvvf5}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf5}}\par
+%
+%\mysettikzname{figvvf4a}
+%\input{fig_vvf4a}
+%
+%Image File Name: \texttt{\detokenize{figvvf4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf4a}}\par
+%
+%\mysettikzname{figvvf4}
+%\input{fig_vvf4}
+%
+%Image File Name: \texttt{\detokenize{figvvf4}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf4}}\par
+%
+%\mysettikzname{figvvf3}
+%\input{fig_vvf3}
+%
+%Image File Name: \texttt{\detokenize{figvvf3}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf3}}\par
+%
+%
+%\mysettikzname{figvvf3b}
+%\input{fig_vvf3b}
+%
+%Image File Name: \texttt{\detokenize{figvvf3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf3b}}\par
+%
+%\mysettikzname{figvvf3a}
+%\input{fig_vvf3a}
+%
+%Image File Name: \texttt{\detokenize{figvvf3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf3a}}\par
+%
+%\mysettikzname{figvvf2}
+%\input{fig_vvf2}
+%
+%Image File Name: \texttt{\detokenize{figvvf2}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf2}}\par
+%
+%\mysettikzname{figvvf1}
+%\input{fig_vvf1}
+%
+%Image File Name: \texttt{\detokenize{figvvf1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvf1}}\par
+%
+%\mysettikzname{figvvfintro1}
+%\input{fig_vvfintro1}
+%
+%Image File Name: \texttt{\detokenize{figvvfintro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfintro1}}\par
+%
+%\mysettikzname{figvvfintro1a}
+%\input{fig_vvfintro1a}
+%
+%Image File Name: \texttt{\detokenize{figvvfintro1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_vvfintro1a}}\par
+%
+%\mysettikzname{figspace6}
+%\input{fig_space6}
+%
+%Image File Name: \texttt{\detokenize{figspace6}}\par
+%TeX File Name: \texttt{\detokenize{fig_space6}}\par
+%
+%\mysettikzname{figspace5c}
+%\input{fig_space5c}
+%
+%Image File Name: \texttt{\detokenize{figspace5c}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5c}}\par
+%
+%\mysettikzname{figspace5cb}
+%\input{fig_space5cb}
+%
+%Image File Name: \texttt{\detokenize{figspace5cb}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5cb}}\par
+%
+%\mysettikzname{figspace5a}
+%\input{fig_space5a}
+%
+%Image File Name: \texttt{\detokenize{figspace5a}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5a}}\par
+%
+%\mysettikzname{figspace5ab}
+%\input{fig_space5ab}
+%
+%Image File Name: \texttt{\detokenize{figspace5ab}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5ab}}\par
+%
+%\mysettikzname{figspace5b}
+%\input{fig_space5b}
+%
+%Image File Name: \texttt{\detokenize{figspace5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5b}}\par
+%
+%\mysettikzname{figspace5bb}
+%\input{fig_space5bb}
+%
+%Image File Name: \texttt{\detokenize{figspace5bb}}\par
+%TeX File Name: \texttt{\detokenize{fig_space5bb}}\par
+%
+%\mysettikzname{figquadric_hyp_parb}
+%\input{fig_quadric_hyp_parb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_parb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_parb}}\par
+%
+%\mysettikzname{figquadric_hyp_parc}
+%\input{fig_quadric_hyp_parc}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_parc}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_parc}}\par
+%
+%\mysettikzname{figquadric_hyp_par}
+%\input{fig_quadric_hyp_par}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_par}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_par}}\par
+%
+%\mysettikzname{figquadric_hyp_two_sheetb}
+%\input{fig_quadric_hyp_two_sheetb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_two_sheetb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_two_sheetb}}\par
+%
+%\mysettikzname{figquadric_hyp_two_sheet}
+%\input{fig_quadric_hyp_two_sheet}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_two_sheet}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_two_sheet}}\par
+%
+%\mysettikzname{figquadric_hyp_one_sheetb}
+%\input{fig_quadric_hyp_one_sheetb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_one_sheetb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_one_sheetb}}\par
+%
+%\mysettikzname{figquadric_hyp_one_sheet}
+%\input{fig_quadric_hyp_one_sheet}
+%
+%Image File Name: \texttt{\detokenize{figquadric_hyp_one_sheet}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_hyp_one_sheet}}\par
+%
+%\mysettikzname{figquadric_ellipsoidb}
+%\input{fig_quadric_ellipsoidb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_ellipsoidb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_ellipsoidb}}\par
+%
+%\mysettikzname{figquadric_ellipsoid}
+%\input{fig_quadric_ellipsoid}
+%
+%Image File Name: \texttt{\detokenize{figquadric_ellipsoid}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_ellipsoid}}\par
+%
+%\mysettikzname{figquadric_cone}
+%\input{fig_quadric_cone}
+%
+%Image File Name: \texttt{\detokenize{figquadric_cone}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_cone}}\par
+%
+%\mysettikzname{figquadric_coneb}
+%\input{fig_quadric_coneb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_coneb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_coneb}}\par
+%
+%\mysettikzname{figquadric_conec}
+%\input{fig_quadric_conec}
+%
+%Image File Name: \texttt{\detokenize{figquadric_conec}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_conec}}\par
+%
+%\mysettikzname{figquadric_par}
+%\input{fig_quadric_par}
+%
+%Image File Name: \texttt{\detokenize{figquadric_par}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_par}}\par
+%
+%\mysettikzname{figquadric_parb}
+%\input{fig_quadric_parb}
+%
+%Image File Name: \texttt{\detokenize{figquadric_parb}}\par
+%TeX File Name: \texttt{\detokenize{fig_quadric_parb}}\par
+%
+%\mysettikzname{figspace4d}
+%\input{fig_space4d}
+%
+%Image File Name: \texttt{\detokenize{figspace4d}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4d}}\par
+%
+%\mysettikzname{figspace4e}
+%\input{fig_space4e}
+%
+%Image File Name: \texttt{\detokenize{figspace4e}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4e}}\par
+%
+%\mysettikzname{figspace4f}
+%\input{fig_space4f}
+%
+%Image File Name: \texttt{\detokenize{figspace4f}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4f}}\par
+%
+%\mysettikzname{figspace4a}
+%\input{fig_space4a}
+%
+%Image File Name: \texttt{\detokenize{figspace4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4a}}\par
+%
+%\mysettikzname{figspace4b}
+%\input{fig_space4b}
+%
+%Image File Name: \texttt{\detokenize{figspace4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4b}}\par
+%
+%\mysettikzname{figspace4c}
+%\input{fig_space4c}
+%
+%Image File Name: \texttt{\detokenize{figspace4c}}\par
+%TeX File Name: \texttt{\detokenize{fig_space4c}}\par
+%
+%\mysettikzname{figspacecylinder1b}
+%\input{fig_spacecylinder1b}
+%
+%Image File Name: \texttt{\detokenize{figspacecylinder1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_spacecylinder1b}}\par
+%
+%\mysettikzname{figspacecylinder1}
+%\input{fig_spacecylinder1}
+%
+%Image File Name: \texttt{\detokenize{figspacecylinder1}}\par
+%TeX File Name: \texttt{\detokenize{fig_spacecylinder1}}\par
+%
+%\mysettikzname{figspaceyz}
+%\input{fig_spaceyz}
+%
+%Image File Name: \texttt{\detokenize{figspaceyz}}\par
+%TeX File Name: \texttt{\detokenize{fig_spaceyz}}\par
+%
+%\mysettikzname{figspacexz}
+%\input{fig_spacexz}
+%
+%Image File Name: \texttt{\detokenize{figspacexz}}\par
+%TeX File Name: \texttt{\detokenize{fig_spacexz}}\par
+%
+%
+%\mysettikzname{figspacexy}
+%\input{fig_spacexy}
+%
+%Image File Name: \texttt{\detokenize{figspacexy}}\par
+%TeX File Name: \texttt{\detokenize{fig_spacexy}}\par
+%
+%\mysettikzname{figspace2}
+%\input{fig_space2}
+%
+%Image File Name: \texttt{\detokenize{figspace2}}\par
+%TeX File Name: \texttt{\detokenize{fig_space2}}\par
+%
+%\mysettikzname{figspace3}
+%\input{fig_space3}
+%
+%Image File Name: \texttt{\detokenize{figspace3}}\par
+%TeX File Name: \texttt{\detokenize{fig_space3}}\par
+%
+%\mysettikzname{figsurface1}
+%\input{fig_surface1}
+%
+%Image File Name: \texttt{\detokenize{figsurface1}}\par
+%TeX File Name: \texttt{\detokenize{fig_surface1}}\par
+%
+%
+%\mysettikzname{figplanes_dist}
+%\input{fig_planes_dist}
+%
+%Image File Name: \texttt{\detokenize{figplanes_dist}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes_dist}}\par
+%
+%\mysettikzname{figplanes4}
+%\input{fig_planes4}
+%
+%Image File Name: \texttt{\detokenize{figplanes4}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes4}}\par
+%
+%\mysettikzname{figplanes3}
+%\input{fig_planes3}
+%
+%Image File Name: \texttt{\detokenize{figplanes3}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes3}}\par
+%
+%\mysettikzname{figplanes1}
+%\input{fig_planes1}
+%
+%Image File Name: \texttt{\detokenize{figplanes1}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes1}}\par
+%
+%\mysettikzname{figplanes2}
+%\input{fig_planes2}
+%
+%Image File Name: \texttt{\detokenize{figplanes2}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes2}}\par
+%
+%\mysettikzname{figplanes_intro}
+%\input{fig_planes_intro}
+%
+%Image File Name: \texttt{\detokenize{figplanes_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_planes_intro}}\par
+%
+%\mysettikzname{figlines6}
+%\input{fig_lines6}
+%
+%Image File Name: \texttt{\detokenize{figlines6}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines6}}\par
+%
+%\mysettikzname{figlines_dist2}
+%\input{fig_lines_dist2}
+%
+%Image File Name: \texttt{\detokenize{figlines_dist2}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines_dist2}}\par
+%
+%\mysettikzname{figlines_dist1}
+%\input{fig_lines_dist1}
+%
+%Image File Name: \texttt{\detokenize{figlines_dist1}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines_dist1}}\par
+%
+%\mysettikzname{figlines1}
+%\input{fig_lines1}
+%
+%Image File Name: \texttt{\detokenize{figlines1}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines1}}\par
+%
+%\mysettikzname{figlines2}
+%\input{fig_lines2}
+%
+%Image File Name: \texttt{\detokenize{figlines2}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines2}}\par
+%
+%\mysettikzname{figlines3}
+%\input{fig_lines3}
+%
+%Image File Name: \texttt{\detokenize{figlines3}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines3}}\par
+%
+%\mysettikzname{figlines4}
+%\input{fig_lines4}
+%
+%Image File Name: \texttt{\detokenize{figlines4}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines4}}\par
+%
+%\mysettikzname{figlines_intro}
+%\input{fig_lines_intro}
+%
+%Image File Name: \texttt{\detokenize{figlines_intro}}\par
+%TeX File Name: \texttt{\detokenize{fig_lines_intro}}\par
+%
+%\mysettikzname{figcrossp7}
+%\input{fig_crossp7}
+%
+%Image File Name: \texttt{\detokenize{figcrossp7}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp7}}\par
+%
+%\mysettikzname{figcrossp6}
+%\input{fig_crossp6}
+%
+%Image File Name: \texttt{\detokenize{figcrossp6}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp6}}\par
+%
+%\mysettikzname{figcrosspparallelpiped}
+%\input{fig_crossp_parallelpiped}
+%
+%Image File Name: \texttt{\detokenize{figcrosspparallelpiped}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp_parallelpiped}}\par
+%
+%\mysettikzname{figcrossp5}
+%\input{fig_crossp5}
+%
+%Image File Name: \texttt{\detokenize{figcrossp5}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp5}}\par
+%
+%\mysettikzname{figcrossp4b}
+%\input{fig_crossp4b}
+%
+%Image File Name: \texttt{\detokenize{figcrossp4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp4b}}\par
+%
+%\mysettikzname{figcrossp4a}
+%\input{fig_crossp4a}
+%
+%Image File Name: \texttt{\detokenize{figcrossp4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp4a}}\par
+%
+%\mysettikzname{figcrossp_parallelogram1}
+%\input{fig_crossp_parallelogram1}
+%
+%Image File Name: \texttt{\detokenize{figcrossp_parallelogram1}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp_parallelogram1}}\par
+%
+%\mysettikzname{figcrossp_parallelogram2}
+%\input{fig_crossp_parallelogram2}
+%
+%Image File Name: \texttt{\detokenize{figcrossp_parallelogram2}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp_parallelogram2}}\par
+%
+%\mysettikzname{figcrossp_rhr}
+%\input{fig_crossp_rhr}
+%
+%Image File Name: \texttt{\detokenize{figcrossp_rhr}}\par
+%TeX File Name: \texttt{\detokenize{fig_crossp_rhr}}\par
+%
+%\mysettikzname{figdotpwork}
+%\input{fig_dotpwork}
+%
+%Image File Name: \texttt{\detokenize{figdotpwork}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpwork}}\par
+%
+%\mysettikzname{figdotp7}
+%\input{fig_dotp7}
+%
+%Image File Name: \texttt{\detokenize{figdotp7}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp7}}\par
+%
+%\mysettikzname{figdotp6}
+%\input{fig_dotp6}
+%
+%Image File Name: \texttt{\detokenize{figdotp6}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp6}}\par
+%
+%\mysettikzname{figdotp6b}
+%\input{fig_dotp6b}
+%
+%Image File Name: \texttt{\detokenize{figdotp6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp6b}}\par
+%
+%\mysettikzname{figdotpprojc}
+%\input{fig_dotpprojc}
+%
+%Image File Name: \texttt{\detokenize{figdotpprojc}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpprojc}}\par
+%
+%\mysettikzname{figdotp4a}
+%\input{fig_dotp4a}
+%
+%Image File Name: \texttt{\detokenize{figdotp4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp4a}}\par
+%
+%\mysettikzname{figdotp4b}
+%\input{fig_dotp4b}
+%
+%Image File Name: \texttt{\detokenize{figdotp4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp4b}}\par
+%
+%\mysettikzname{figdotp4c}
+%\input{fig_dotp4c}
+%
+%Image File Name: \texttt{\detokenize{figdotp4c}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp4c}}\par
+%
+%\mysettikzname{figdotpproja}
+%\input{fig_dotpproja}
+%
+%Image File Name: \texttt{\detokenize{figdotpproja}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpproja}}\par
+%
+%\mysettikzname{figdotpprojb}
+%\input{fig_dotpprojb}
+%
+%Image File Name: \texttt{\detokenize{figdotpprojb}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpprojb}}\par
+%
+%\mysettikzname{figdotp3}
+%\input{fig_dotp3}
+%
+%Image File Name: \texttt{\detokenize{figdotp3}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp3}}\par
+%
+%\mysettikzname{figdotp2}
+%\input{fig_dotp2}
+%
+%Image File Name: \texttt{\detokenize{figdotp2}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotp2}}\par
+%
+%\mysettikzname{figdotpanglesign}
+%\input{fig_dotpanglesign}
+%
+%Image File Name: \texttt{\detokenize{figdotpanglesign}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpanglesign}}\par
+%
+%\mysettikzname{figdotpangle}
+%\input{fig_dotpangle}
+%
+%Image File Name: \texttt{\detokenize{figdotpangle}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpangle}}\par
+%
+%\mysettikzname{figdotpangle3D}
+%\input{fig_dotpangle3D}
+%
+%Image File Name: \texttt{\detokenize{figdotpangle3D}}\par
+%TeX File Name: \texttt{\detokenize{fig_dotpangle3D}}\par
+%
+%\mysettikzname{figspace1}
+%\input{fig_space1}
+%
+%Image File Name: \texttt{\detokenize{figspace1}}\par
+%TeX File Name: \texttt{\detokenize{fig_space1}}\par
+%
+%\mysettikzname{figcartcoord2}
+%\input{fig_cartcoord2}
+%
+%Image File Name: \texttt{\detokenize{figcartcoord2}}\par
+%TeX File Name: \texttt{\detokenize{fig_cartcoord2}}\par
+%
+%\mysettikzname{figcartcoord1}
+%\input{fig_cartcoord1}
+%
+%Image File Name: \texttt{\detokenize{figcartcoord1}}\par
+%TeX File Name: \texttt{\detokenize{fig_cartcoord1}}\par
+%
+%\mysettikzname{figvect8}
+%\input{fig_vect8}
+%
+%Image File Name: \texttt{\detokenize{figvect8}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect8}}\par
+%
+%\mysettikzname{figvect6b}
+%\input{fig_vect6b}
+%
+%Image File Name: \texttt{\detokenize{figvect6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect6b}}\par
+%
+%
+%\mysettikzname{figvect6}
+%\input{fig_vect6}
+%
+%Image File Name: \texttt{\detokenize{figvect6}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect6}}\par
+%
+%
+%\mysettikzname{figvect5}
+%\input{fig_vect5}
+%
+%Image File Name: \texttt{\detokenize{figvect5}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect5}}\par
+%
+%\mysettikzname{figvect4}
+%\input{fig_vect4}
+%
+%Image File Name: \texttt{\detokenize{figvect4}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect4}}\par
+%
+%
+%\mysettikzname{figvect3}
+%\input{fig_vect3}
+%
+%Image File Name: \texttt{\detokenize{figvect3}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect3}}\par
+%
+%\mysettikzname{figvect2b}
+%\input{fig_vect2b}
+%
+%Image File Name: \texttt{\detokenize{figvect2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect2b}}\par
+%
+%
+%\mysettikzname{figvect2}
+%\input{fig_vect2}
+%
+%Image File Name: \texttt{\detokenize{figvect2}}\par
+%TeX File Name: \texttt{\detokenize{fig_vect2}}\par
+%
+%\mysettikzname{figvectintro3b}
+%\input{fig_vectintro3b}
+%
+%Image File Name: \texttt{\detokenize{figvectintro3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_vectintro3b}}\par
+%
+%\mysettikzname{figvectintro3}
+%\input{fig_vectintro3}
+%
+%Image File Name: \texttt{\detokenize{figvectintro3}}\par
+%TeX File Name: \texttt{\detokenize{fig_vectintro3}}\par
+%
+%\mysettikzname{figvectintro2}
+%\input{fig_vectintro2}
+%
+%Image File Name: \texttt{\detokenize{figvectintro2}}\par
+%TeX File Name: \texttt{\detokenize{fig_vectintro2}}\par
+%
+%
+%\mysettikzname{figvectintro1}
+%\input{fig_vectintro1}
+%
+%Image File Name: \texttt{\detokenize{figvectintro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_vectintro1}}\par
+%
+%\mysettikzname{figpolcalc7}
+%\input{fig_polcalc7}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc7}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc7}}\par
+%
+%\mysettikzname{figpolcalc8}
+%\input{fig_polcalc8}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc8}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc8}}\par
+%
+%\mysettikzname{figpolcalc8a}
+%\input{fig_polcalc8a}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc8a}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc8a}}\par
+%
+%\mysettikzname{figpolcalc6}
+%\input{fig_polcalc6}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc6}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc6}}\par
+%
+%\mysettikzname{figpolcalc6a}
+%\input{fig_polcalc6a}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc6a}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc6a}}\par
+%
+%\mysettikzname{figpolcalc5}
+%\input{fig_polcalc5}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc5}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc5}}\par
+%
+%\mysettikzname{figpolarea3}
+%\input{fig_polarea3}
+%
+%Image File Name: \texttt{\detokenize{figpolarea3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarea3}}\par
+%
+%\mysettikzname{figpolcalc4}
+%\input{fig_polcalc4}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc4}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc4}}\par
+%
+%\mysettikzname{figpolarea1}
+%\input{fig_polarea1}
+%
+%Image File Name: \texttt{\detokenize{figpolarea1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarea1}}\par
+%
+%\mysettikzname{figpolarea2}
+%\input{fig_polarea2}
+%
+%Image File Name: \texttt{\detokenize{figpolarea2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarea2}}\par
+%
+%\mysettikzname{figpolcalc2}
+%\input{fig_polcalc2}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc2}}\par
+%
+%\mysettikzname{figpolcalc1}
+%\input{fig_polcalc1}
+%
+%Image File Name: \texttt{\detokenize{figpolcalc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polcalc1}}\par
+%
+%\mysettikzname{figpolar7}
+%\input{fig_polar7}
+%
+%Image File Name: \texttt{\detokenize{figpolar7}}\par
+%TeX File Name: \texttt{\detokenize{fig_polar7}}\par
+%
+%\mysettikzname{figpolar7b}
+%\input{fig_polar7b}
+%
+%Image File Name: \texttt{\detokenize{figpolar7b}}\par
+%TeX File Name: \texttt{\detokenize{fig_polar7b}}\par
+%
+%\mysettikzname{figpolarspiral}
+%\input{fig_polarspiral}
+%
+%Image File Name: \texttt{\detokenize{figpolarspiral}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarspiral}}\par
+%
+%\mysettikzname{figpolar6}
+%\input{fig_polar6}
+%
+%Image File Name: \texttt{\detokenize{figpolar6}}\par
+%TeX File Name: \texttt{\detokenize{fig_polar6}}\par
+%
+%\mysettikzname{figpolarrose1}
+%\input{fig_polarrose1}
+%
+%Image File Name: \texttt{\detokenize{figpolarrose1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarrose1}}\par
+%
+%\mysettikzname{figpolarrose2}
+%\input{fig_polarrose2}
+%
+%Image File Name: \texttt{\detokenize{figpolarrose2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarrose2}}\par
+%
+%\mysettikzname{figpolarrose3}
+%\input{fig_polarrose3}
+%
+%Image File Name: \texttt{\detokenize{figpolarrose3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarrose3}}\par
+%
+%\mysettikzname{figpolarrose4}
+%\input{fig_polarrose4}
+%
+%Image File Name: \texttt{\detokenize{figpolarrose4}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarrose4}}\par
+%
+%\mysettikzname{figpolarspecial1}
+%\input{fig_polarspecial1}
+%
+%Image File Name: \texttt{\detokenize{figpolarspecial1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarspecial1}}\par
+%
+%\mysettikzname{figpolarspecial2}
+%\input{fig_polarspecial2}
+%
+%Image File Name: \texttt{\detokenize{figpolarspecial2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarspecial2}}\par
+%
+%\mysettikzname{figpolarspecial3}
+%\input{fig_polarspecial3}
+%
+%Image File Name: \texttt{\detokenize{figpolarspecial3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarspecial3}}\par
+%
+%\mysettikzname{figpolarspecial4}
+%\input{fig_polarspecial4}
+%
+%Image File Name: \texttt{\detokenize{figpolarspecial4}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarspecial4}}\par
+%
+%\mysettikzname{figpolarlimacon1}
+%\input{fig_polarlimacon1}
+%
+%Image File Name: \texttt{\detokenize{figpolarlimacon1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarlimacon1}}\par
+%
+%\mysettikzname{figpolarlimacon2}
+%\input{fig_polarlimacon2}
+%
+%Image File Name: \texttt{\detokenize{figpolarlimacon2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarlimacon2}}\par
+%
+%\mysettikzname{figpolarlimacon3}
+%\input{fig_polarlimacon3}
+%
+%Image File Name: \texttt{\detokenize{figpolarlimacon3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarlimacon3}}\par
+%
+%\mysettikzname{figpolarlimacon4}
+%\input{fig_polarlimacon4}
+%
+%Image File Name: \texttt{\detokenize{figpolarlimacon4}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarlimacon4}}\par
+%
+%\mysettikzname{figpolarcircle1}
+%\input{fig_polarcircle1}
+%
+%Image File Name: \texttt{\detokenize{figpolarcircle1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarcircle1}}\par
+%
+%\mysettikzname{figpolarcircle2}
+%\input{fig_polarcircle2}
+%
+%Image File Name: \texttt{\detokenize{figpolarcircle2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarcircle2}}\par
+%
+%\mysettikzname{figpolarcircle3}
+%\input{fig_polarcircle3}
+%
+%Image File Name: \texttt{\detokenize{figpolarcircle3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarcircle3}}\par
+%
+%
+%\mysettikzname{figpolarline1}
+%\input{fig_polarline1}
+%
+%Image File Name: \texttt{\detokenize{figpolarline1}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarline1}}\par
+%
+%\mysettikzname{figpolarline2}
+%\input{fig_polarline2}
+%
+%Image File Name: \texttt{\detokenize{figpolarline2}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarline2}}\par
+%
+%\mysettikzname{figpolarline3}
+%\input{fig_polarline3}
+%
+%Image File Name: \texttt{\detokenize{figpolarline3}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarline3}}\par
+%
+%\mysettikzname{figpolarline4}
+%\input{fig_polarline4}
+%
+%Image File Name: \texttt{\detokenize{figpolarline4}}\par
+%TeX File Name: \texttt{\detokenize{fig_polarline4}}\par
+%
+%\mysettikzname{figpolar5b}
+%\input{fig_polar5b}
+%
+%Image File Name: \texttt{\detokenize{figpolar5b}}\par
+%TeX File Name: \texttt{\detokenize{figpolar5b}}\par
+%
+%\mysettikzname{figpolar5}
+%\input{fig_polar5}
+%
+%Image File Name: \texttt{\detokenize{figpolar5}}\par
+%TeX File Name: \texttt{\detokenize{figpolar5}}\par
+%
+%\mysettikzname{figpolar4b}
+%\input{fig_polar4b}
+%
+%Image File Name: \texttt{\detokenize{figpolar4b}}\par
+%TeX File Name: \texttt{\detokenize{figpolar4b}}\par
+%
+%
+%\mysettikzname{figpolar4}
+%\input{fig_polar4}
+%
+%Image File Name: \texttt{\detokenize{figpolar4}}\par
+%TeX File Name: \texttt{\detokenize{figpolar4}}\par
+%
+%\mysettikzname{figpolar3}
+%\input{fig_polar3}
+%
+%Image File Name: \texttt{\detokenize{figpolar3}}\par
+%TeX File Name: \texttt{\detokenize{figpolar3}}\par
+%%
+%\mysettikzname{figpolar2}
+%\input{fig_polar2}
+%
+%Image File Name: \texttt{\detokenize{figpolar2}}\par
+%TeX File Name: \texttt{\detokenize{figpolar2}}\par
+%
+%\mysettikzname{figpolar2b}
+%\input{fig_polar2b}
+%
+%Image File Name: \texttt{\detokenize{figpolar2b}}\par
+%TeX File Name: \texttt{\detokenize{figpolar2b}}\par
+%
+%\mysettikzname{figpolarintro2}
+%\input{fig_polarintro2}
+%
+%Image File Name: \texttt{\detokenize{figpolar2}}\par
+%TeX File Name: \texttt{\detokenize{figpolar2}}\par
+%
+%\mysettikzname{figpolar1}
+%\input{fig_polar1}
+%
+%Image File Name: \texttt{\detokenize{figpolar1}}\par
+%TeX File Name: \texttt{\detokenize{figpolar1}}\par
+%
+%\mysettikzname{figparcalc8}
+%\input{fig_parcalc8}
+%
+%Image File Name: \texttt{\detokenize{figparcalc8}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc8}}\par
+%
+%
+%\mysettikzname{figparcalc7}
+%\input{fig_parcalc7}
+%
+%Image File Name: \texttt{\detokenize{figparcalc7}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc7}}\par
+%
+%\mysettikzname{figparcalc5}
+%\input{fig_parcalc5}
+%
+%Image File Name: \texttt{\detokenize{figparcalc5}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc5}}\par
+%
+%\mysettikzname{figparcalc5b}
+%\input{fig_parcalc5b}
+%
+%Image File Name: \texttt{\detokenize{figparcalc5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc5b}}\par
+%
+%\mysettikzname{figparcalc4}
+%\input{fig_parcalc4}
+%
+%Image File Name: \texttt{\detokenize{figparcalc4}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc4}}\par
+%
+%\mysettikzname{figparcalc2}
+%\input{fig_parcalc2}
+%
+%Image File Name: \texttt{\detokenize{figparcalc2}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc2}}\par
+%
+%\mysettikzname{figparcalc1}
+%\input{fig_parcalc1}
+%
+%Image File Name: \texttt{\detokenize{figparcalc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_parcalc1}}\par
+%
+%\mysettikzname{fig09_02_ex_17}
+%\input{fig_09_02_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_17}}\par
+%
+%\mysettikzname{fig09_02_ex_16}
+%\input{fig_09_02_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_16}}\par
+%
+%\mysettikzname{fig09_02_ex_15}
+%\input{fig_09_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_15}}\par
+%
+%\mysettikzname{fig09_02_ex_14}
+%\input{fig_09_02_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_14}}\par
+%
+%\mysettikzname{fig09_02_ex_13}
+%\input{fig_09_02_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_13}}\par
+%
+%\mysettikzname{fig09_02_ex_12}
+%\input{fig_09_02_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_12}}\par
+%
+%\mysettikzname{fig09_02_ex_11}
+%\input{fig_09_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_11}}\par
+%
+%\mysettikzname{fig09_02_ex_10}
+%\input{fig_09_02_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_09}}\par
+%
+%\mysettikzname{fig09_02_ex_09}
+%\input{fig_09_02_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_09}}\par
+%
+%\mysettikzname{fig09_02_ex_08}
+%\input{fig_09_02_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_08}}\par
+%
+%\mysettikzname{fig09_02_ex_05}
+%\input{fig_09_02_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_05}}\par
+%
+%\mysettikzname{fig09_02_ex_06}
+%\input{fig_09_02_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_06}}\par
+%
+%\mysettikzname{fig09_02_ex_07}
+%\input{fig_09_02_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_07}}\par
+%
+%\mysettikzname{fig09_01_ex_31}
+%\input{fig_09_01_ex_31}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_31}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_31}}\par
+%
+%\mysettikzname{fig09_01_ex_32}
+%\input{fig_09_01_ex_32}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_32}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_32}}\par
+%
+%\mysettikzname{fig09_01_ex_27}
+%\input{fig_09_01_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_27}}\par
+%
+%\mysettikzname{fig09_02_ex_11}
+%\input{fig_09_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig09_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_02_ex_11}}\par
+%
+%\mysettikzname{fig09_01_ex_29}
+%\input{fig_09_01_ex_29}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_29}}\par
+%
+%\mysettikzname{fig09_01_ex_30}
+%\input{fig_09_01_ex_30}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_30}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_30}}\par
+%
+%\mysettikzname{fig09_01_ex_20}
+%\input{fig_09_01_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_20}}\par
+%
+%\mysettikzname{fig09_01_ex_21}
+%\input{fig_09_01_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_21}}\par
+%
+%\mysettikzname{fig09_01_ex_18}
+%\input{fig_09_01_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_18}}\par
+%
+%\mysettikzname{fig09_01_ex_19}
+%\input{fig_09_01_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig09_01_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_09_01_ex_19}}\par
+%
+%\mysettikzname{figpareq9}
+%\input{fig_pareq9}
+%
+%Image File Name: \texttt{\detokenize{figpareq9}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq9}}\par
+%
+%\mysettikzname{figplanecurve1}
+%\input{fig_planecurve1}
+%
+%Image File Name: \texttt{\detokenize{figplanecurve1}}\par
+%TeX File Name: \texttt{\detokenize{fig_planecurve1}}\par
+%
+%\mysettikzname{figplanecurve2}
+%\input{fig_planecurve2}
+%
+%Image File Name: \texttt{\detokenize{figplanecurve2}}\par
+%TeX File Name: \texttt{\detokenize{fig_planecurve2}}\par
+%
+%\mysettikzname{figplanecurve3}
+%\input{fig_planecurve3}
+%
+%Image File Name: \texttt{\detokenize{figplanecurve3}}\par
+%TeX File Name: \texttt{\detokenize{fig_planecurve3}}\par
+%
+%\mysettikzname{figplanecurve4}
+%\input{fig_planecurve4}
+%
+%Image File Name: \texttt{\detokenize{figplanecurve4}}\par
+%TeX File Name: \texttt{\detokenize{fig_planecurve4}}\par
+%
+%\mysettikzname{figpareq8}
+%\input{fig_pareq8}
+%
+%Image File Name: \texttt{\detokenize{figpareq8}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq8}}\par
+%
+%\mysettikzname{figpareq7}
+%\input{fig_pareq7}
+%
+%Image File Name: \texttt{\detokenize{figpareq7}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq7}}\par
+%
+%\mysettikzname{figpareq6}
+%\input{fig_pareq6}
+%
+%Image File Name: \texttt{\detokenize{figpareq6}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq6}}\par
+%
+%\mysettikzname{figpareq4}
+%\input{fig_pareq4}
+%
+%Image File Name: \texttt{\detokenize{figpareq4}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq4}}\par
+%
+%\mysettikzname{figpareq3a}
+%\input{fig_pareq3a}
+%
+%Image File Name: \texttt{\detokenize{figpareq3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq3a}}\par
+%
+%\mysettikzname{figpareq3b}
+%\input{fig_pareq3b}
+%
+%Image File Name: \texttt{\detokenize{figpareq3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq3b}}\par
+%
+%\mysettikzname{figpareq1}
+%\input{fig_pareq1}
+%
+%Image File Name: \texttt{\detokenize{figpareq1}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq1}}\par
+%
+%\mysettikzname{figpareq2}
+%\input{fig_pareq2}
+%
+%Image File Name: \texttt{\detokenize{figpareq2}}\par
+%TeX File Name: \texttt{\detokenize{fig_pareq2}}\par
+%
+%\mysettikzname{fighyperbola_locate1}
+%\input{fig_hyperbola_locate1}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_locate1}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_locate1}}\par
+%
+%\mysettikzname{fighyperbola_locate2}
+%\input{fig_hyperbola_locate2}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_locate2}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_locate2}}\par
+%
+%\mysettikzname{fighyperbola_locate3}
+%\input{fig_hyperbola_locate3}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_locate3}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_locate3}}\par
+%
+%\mysettikzname{fighyperbola_reflect}
+%\input{fig_hyperbola_reflect}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_reflect}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_reflect}}\par
+%
+%\mysettikzname{fighyperbola_ecca}
+%\input{fig_hyperbola_ecca}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_ecca}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_ecca}}\par
+%
+%\mysettikzname{fighyperbola_eccb}
+%\input{fig_hyperbola_eccb}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_eccb}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_eccb}}\par
+%
+%\mysettikzname{fighyperbola_eccc}
+%\input{fig_hyperbola_eccc}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_eccc}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_eccc}}\par
+%
+%\mysettikzname{fighyperbola_eccd}
+%\input{fig_hyperbola_eccd}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_eccd}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_eccd}}\par
+%
+%\mysettikzname{figconic6}
+%\input{fig_conic6}
+%
+%Image File Name: \texttt{\detokenize{figconic6}}\par
+%TeX File Name: \texttt{\detokenize{figconic6}}\par
+%
+%\mysettikzname{figconic5}
+%\input{fig_conic5}
+%
+%Image File Name: \texttt{\detokenize{figconic5}}\par
+%TeX File Name: \texttt{\detokenize{figconic5}}\par
+%
+%\mysettikzname{fighyperbola_asy2}
+%\input{fig_hyperbola_asy2}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_asy2}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_asy2}}\par
+%
+%\mysettikzname{fighyperbola_asy1}
+%\input{fig_hyperbola_asy1}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_asy1}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_asy1}}\par
+%
+%\mysettikzname{figellipse_reflect}
+%\input{fig_ellipse_reflect}
+%
+%Image File Name: \texttt{\detokenize{figellipse_reflect}}\par
+%TeX File Name: \texttt{\detokenize{figellipse_reflect}}\par
+%
+%\mysettikzname{fighyperbola_def}
+%\input{fig_hyperbola_def}
+%
+%Image File Name: \texttt{\detokenize{fighyperbola_def}}\par
+%TeX File Name: \texttt{\detokenize{fig_hyperbola_def}}\par
+%
+%\mysettikzname{figellipse_reflect}
+%\input{fig_ellipse_reflect}
+%
+%Image File Name: \texttt{\detokenize{figellipse_reflect}}\par
+%TeX File Name: \texttt{\detokenize{figellipse_reflect}}\par
+%
+%\mysettikzname{figellipse_ecca}
+%\input{fig_ellipse_ecca}
+%
+%Image File Name: \texttt{\detokenize{figellipse_ecca}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_ecca}}\par
+%
+%\mysettikzname{figellipse_eccb}
+%\input{fig_ellipse_eccb}
+%
+%Image File Name: \texttt{\detokenize{figellipse_eccb}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_eccb}}\par
+%
+%\mysettikzname{figellipse_eccc}
+%\input{fig_ellipse_eccc}
+%
+%Image File Name: \texttt{\detokenize{figellipse_eccc}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_eccc}}\par
+%
+%\mysettikzname{figellipse_eccd}
+%\input{fig_ellipse_eccd}
+%
+%Image File Name: \texttt{\detokenize{figellipse_eccd}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_eccd}}\par
+%
+%\mysettikzname{figellipse_label}
+%\input{fig_ellipse_label}
+%
+%Image File Name: \texttt{\detokenize{figellipse_label}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_label}}\par
+%
+%\mysettikzname{figconic4}
+%\input{fig_conic4}
+%
+%Image File Name: \texttt{\detokenize{figconic4}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic4}}\par
+%
+%\mysettikzname{figconic3}
+%\input{fig_conic3}
+%
+%Image File Name: \texttt{\detokenize{figconic3}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic3}}\par
+%
+%\mysettikzname{figellipse_def}
+%\input{fig_ellipse_def}
+%
+%Image File Name: \texttt{\detokenize{figellipse_def}}\par
+%TeX File Name: \texttt{\detokenize{fig_ellipse_def}}\par
+%
+%\mysettikzname{figconic_reflect}
+%\input{fig_conic_reflect}
+%
+%Image File Name: \texttt{\detokenize{figconic_reflect}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic_reflect}}\par
+%
+%\mysettikzname{figconic_reflect}
+%\input{fig_conic_reflect}
+%
+%Image File Name: \texttt{\detokenize{figconic_reflect}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic_reflect}}\par
+%
+%\mysettikzname{figconic2}
+%\input{fig_conic2}
+%
+%Image File Name: \texttt{\detokenize{figconic2}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic2}}\par
+%
+%\mysettikzname{figconic1}
+%\input{fig_conic1}
+%
+%Image File Name: \texttt{\detokenize{figconic1}}\par
+%TeX File Name: \texttt{\detokenize{fig_conic1}}\par
+%
+%\mysettikzname{figparabola_def}
+%\input{fig_parabola_def}
+%
+%Image File Name: \texttt{\detokenize{figparabola_def}}\par
+%TeX File Name: \texttt{\detokenize{fig_parabola_def}}\par
+%
+%\mysettikzname{figunitcircle}
+%\input{fig_unitcircle}
+%
+%Image File Name: \texttt{\detokenize{figunitcircle}}\par
+%TeX File Name: \texttt{\detokenize{fig_unitcircle}}\par
+%
+%\mysettikzname{figtrigdefunitcircle}
+%\input{fig_trigdefunitcircle}
+%
+%Image File Name: \texttt{\detokenize{figtrigdefunitcircle}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigdefunitcircle}}\par
+%
+%\mysettikzname{figtrigdefrighttriangle}
+%\input{fig_trigdefrighttriangle}
+%
+%Image File Name: \texttt{\detokenize{figtrigdefrighttriangle}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigdefrighttriangle}}\par
+%
+%%
+%
+%\mysettikzname{figimplicit10}
+%\input{fig_implicit10}
+%
+%Image File Name: \texttt{\detokenize{figimplicit10}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit10}}\par
+%
+%
+%\mysettikzname{fignormal1}
+%\input{fig_normal1}
+%
+%Image File Name: \texttt{\detokenize{fignormal1}}\par
+%TeX File Name: \texttt{\detokenize{fig_normal1}}\par
+%
+%
+%\mysettikzname{fig05_05_ex_02}
+%\input{fig_05_05_ex_02}
+%
+%Image File Name: \texttt{\detokenize{fig05_05_ex_02}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_05_ex_02}}\par
+%
+%\mysettikzname{fig05_05_ex_01}
+%\input{fig_05_05_ex_01}
+%
+%Image File Name: \texttt{\detokenize{fig05_05_ex_01}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_05_ex_01}}\par
+%
+%\mysettikzname{figtaypoly6}
+%\input{fig_taypoly6}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly6}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly6}}\par
+%
+%\mysettikzname{figtaypoly5}
+%\input{fig_taypoly5}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly5}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly5}}\par
+%
+%\mysettikzname{figtaypoly4}
+%\input{fig_taypoly4}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly4}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly4}}\par
+%
+%\mysettikzname{figtaypoly2c}
+%\input{fig_taypoly2c}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly2c}}\par
+%
+%\mysettikzname{figtaypoly2b}
+%\input{fig_taypoly2b}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly2b}}\par
+%
+%
+%\mysettikzname{figtaypoly1b}
+%\input{fig_taypoly1b}
+%
+%Image File Name: \texttt{\detokenize{figtaypoly1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypoly1b}}\par
+%
+%
+%\mysettikzname{figtaypolyintroc}
+%\input{fig_taypolyintroc}
+%
+%Image File Name: \texttt{\detokenize{figtaypolyintroc}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypolyintroc}}\par
+%
+%\mysettikzname{figtaypolyintrob}
+%\input{fig_taypolyintrob}
+%
+%Image File Name: \texttt{\detokenize{figtaypolyintrob}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypolyintrob}}\par
+%
+%
+%\mysettikzname{figtaypolyintroa}
+%\input{fig_taypolyintroa}
+%
+%Image File Name: \texttt{\detokenize{figtaypolyintroa}}\par
+%TeX File Name: \texttt{\detokenize{fig_taypolyintroa}}\par
+%
+%
+%\mysettikzname{figseries5b}
+%\input{fig_series5b}
+%
+%Image File Name: \texttt{\detokenize{figseries5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_series5b}}\par
+%
+%\mysettikzname{figseries5a}
+%\input{fig_series5a}
+%
+%Image File Name: \texttt{\detokenize{figseries5a}}\par
+%TeX File Name: \texttt{\detokenize{fig_series5a}}\par
+%
+%\mysettikzname{figseries4b}
+%\input{fig_series4b}
+%
+%Image File Name: \texttt{\detokenize{figseries4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_series4b}}\par
+%
+%\mysettikzname{figseries4a}
+%\input{fig_series4a}
+%
+%Image File Name: \texttt{\detokenize{figseries4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_series4a}}\par
+%
+%\mysettikzname{figseries2c}
+%\input{fig_series2c}
+%
+%Image File Name: \texttt{\detokenize{figseries2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_series2c}}\par
+%
+%\mysettikzname{figseries2b}
+%\input{fig_series2b}
+%
+%Image File Name: \texttt{\detokenize{figseries2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_series2b}}\par
+%
+%\mysettikzname{figseries2a}
+%\input{fig_series2a}
+%
+%Image File Name: \texttt{\detokenize{figseries2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_series2a}}\par
+%
+%\mysettikzname{figseries1a}
+%\input{fig_series1a}
+%
+%Image File Name: \texttt{\detokenize{figseries1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_series1a}}\par
+%
+%\mysettikzname{figseries1b}
+%\input{fig_series1b}
+%
+%Image File Name: \texttt{\detokenize{figseries1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_series1b}}\par
+%
+%\mysettikzname{figseries3}
+%\input{fig_series3}
+%
+%Image File Name: \texttt{\detokenize{figseries3}}\par
+%TeX File Name: \texttt{\detokenize{fig_series3}}\par
+%
+%\mysettikzname{figseq7d}
+%\input{fig_seq7d}
+%
+%Image File Name: \texttt{\detokenize{figseq7d}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq7d}}\par
+%
+%\mysettikzname{figseq7c}
+%\input{fig_seq7c}
+%
+%Image File Name: \texttt{\detokenize{figseq7c}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq7c}}\par
+%
+%\mysettikzname{figseq7b}
+%\input{fig_seq7b}
+%
+%Image File Name: \texttt{\detokenize{figseq7b}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq7b}}\par
+%
+%
+%\mysettikzname{figseq7a}
+%\input{fig_seq7a}
+%
+%Image File Name: \texttt{\detokenize{figseq7a}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq7a}}\par
+%
+%\mysettikzname{figseq5}
+%\input{fig_seq5}
+%
+%Image File Name: \texttt{\detokenize{figseq5}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq5}}\par
+%
+%\mysettikzname{figseq4c}
+%\input{fig_seq4c}
+%
+%Image File Name: \texttt{\detokenize{figseq4c}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq4c}}\par
+%
+%\mysettikzname{figseq4b}
+%\input{fig_seq4b}
+%
+%Image File Name: \texttt{\detokenize{figseq4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq4b}}\par
+%
+%\mysettikzname{figseq4a}
+%\input{fig_seq4a}
+%
+%Image File Name: \texttt{\detokenize{figseq4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq4a}}\par
+%
+%\mysettikzname{figseq3b}
+%\input{fig_seq3b}
+%
+%Image File Name: \texttt{\detokenize{figseq3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq3b}}\par
+%
+%\mysettikzname{figseq3a}
+%\input{fig_seq3a}
+%
+%Image File Name: \texttt{\detokenize{figseq3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq3a}}\par
+%
+%\mysettikzname{figseq1c}
+%\input{fig_seq1c}
+%
+%Image File Name: \texttt{\detokenize{figseq1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq1c}}\par
+%
+%\mysettikzname{figseq1b}
+%\input{fig_seq1b}
+%
+%Image File Name: \texttt{\detokenize{figseq1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq1b}}\par
+%
+%\mysettikzname{figseq1a}
+%\input{fig_seq1a}
+%
+%Image File Name: \texttt{\detokenize{figseq1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_seq1a}}\par
+%
+%\mysettikzname{fig07_02_ex_11}
+%\input{fig_07_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_11}}\par
+%
+%\mysettikzname{fig07_02_ex_10}
+%\input{fig_07_02_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_10}}\par
+%
+%\mysettikzname{fig07_02_ex_09}
+%\input{fig_07_02_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_09}}\par
+%
+%\mysettikzname{fig07_02_ex_08}
+%\input{fig_07_02_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_08}}\par
+%
+%\mysettikzname{fig07_02_ex_07}
+%\input{fig_07_02_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_07}}\par
+%
+%\mysettikzname{fig07_02_ex_06}
+%\input{fig_07_02_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_06}}\par
+%
+%\mysettikzname{fig07_02_ex_05}
+%\input{fig_07_02_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_05}}\par
+%
+%\mysettikzname{fig07_02_ex_04}
+%\input{fig_07_02_ex_04}
+%
+%Image File Name: \texttt{\detokenize{fig07_02_ex_04}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_02_ex_04}}\par
+%
+%
+%\mysettikzname{fig07_01_ex_22}
+%\input{fig_07_01_ex_22}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_22}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_22}}\par
+%
+%\mysettikzname{fig07_01_ex_21}
+%\input{fig_07_01_ex_21}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_21}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_21}}\par
+%
+%\mysettikzname{fig07_01_ex_20}
+%\input{fig_07_01_ex_20}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_20}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_20}}\par
+%%
+%\mysettikzname{fig07_01_ex_19}
+%\input{fig_07_01_ex_19}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_19}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_19}}\par
+%
+%\mysettikzname{fig07_01_ex_18}
+%\input{fig_07_01_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_18}}\par
+%
+%
+%
+%\mysettikzname{fig07_01_ex_10}
+%\input{fig_07_01_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_10}}\par
+%
+%\mysettikzname{fig07_01_ex_09}
+%\input{fig_07_01_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_09}}\par
+%
+%\mysettikzname{fig07_01_ex_08}
+%\input{fig_07_01_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_08}}\par
+%
+%\mysettikzname{fig07_01_ex_07}
+%\input{fig_07_01_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_07}}\par
+%
+%\mysettikzname{fig07_01_ex_06}
+%\input{fig_07_01_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_06}}\par
+%
+%\mysettikzname{fig07_01_ex_05}
+%\input{fig_07_01_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_05}}\par
+%
+%\mysettikzname{fig07_01_ex_04}
+%\input{fig_07_01_ex_04}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_04}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_04}}\par
+%
+%\mysettikzname{fig07_01_ex_30}
+%\input{fig_07_01_ex_30}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_30}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_30}}\par
+%
+%
+%\mysettikzname{fig07_01_ex_29}
+%\input{fig_07_01_ex_29}
+%
+%Image File Name: \texttt{\detokenize{fig07_01_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_07_01_ex_29}}\par
+%
+%\mysettikzname{figLHR4}
+%\input{fig_LHR4}
+%
+%Image File Name: \texttt{\detokenize{figLHR4}}\par
+%TeX File Name: \texttt{\detokenize{fig_LHR4}}\par
+%
+%\mysettikzname{figfluid4}
+%\input{fig_fluid4}
+%
+%Image File Name: \texttt{\detokenize{figfluid4}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid4}}\par
+%
+%\mysettikzname{figfluid3}
+%\input{fig_fluid3}
+%
+%Image File Name: \texttt{\detokenize{figfluid3}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid3}}\par
+%
+%
+%\mysettikzname{figfluid2c}
+%\input{fig_fluid2c}
+%
+%Image File Name: \texttt{\detokenize{figfluid2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid2c}}\par
+%
+%\mysettikzname{figfluid2b}
+%\input{fig_fluid2b}
+%
+%Image File Name: \texttt{\detokenize{figfluid2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid2b}}\par
+%
+%\mysettikzname{figfluid2a}
+%\input{fig_fluid2a}
+%
+%Image File Name: \texttt{\detokenize{figfluid2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid2a}}\par
+%
+%\mysettikzname{figfluid_intro1}
+%\input{fig_fluid_intro1}
+%
+%Image File Name: \texttt{\detokenize{figfluid_intro1}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid_intro1}}\par
+%
+%\mysettikzname{figfluid1a}
+%\input{fig_fluid1a}
+%
+%Image File Name: \texttt{\detokenize{figfluid1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid1a}}\par
+%
+%\mysettikzname{figfluid1b}
+%\input{fig_fluid1b}
+%
+%Image File Name: \texttt{\detokenize{figfluid1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_fluid1b}}\par
+%
+%\mysettikzname{figpump4}
+%\input{fig_pump4}
+%
+%Image File Name: \texttt{\detokenize{figpump4}}\par
+%TeX File Name: \texttt{\detokenize{fig_pump4}}\par
+%
+%\mysettikzname{figpump4b}
+%\input{fig_pump4b}
+%
+%Image File Name: \texttt{\detokenize{figpump4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_pump4b}}\par
+%
+%\mysettikzname{figwork_pump3}
+%\input{fig_work_pump3}
+%
+%Image File Name: \texttt{\detokenize{figwork_pump3}}\par
+%TeX File Name: \texttt{\detokenize{fig_work_pump3}}\par
+%
+%\mysettikzname{figwork_spring1}
+%\input{fig_work_spring1}
+%
+%Image File Name: \texttt{\detokenize{figwork_spring1}}\par
+%TeX File Name: \texttt{\detokenize{fig_work_spring1}}\par
+%\mysettikzname{figwork_pump1}
+%\input{fig_work_pump1}
+%
+%Image File Name: \texttt{\detokenize{figwork_pump1}}\par
+%TeX File Name: \texttt{\detokenize{fig_work_pump1}}\par
+%
+%\mysettikzname{figwork_pump2}
+%\input{fig_work_pump2}
+%
+%Image File Name: \texttt{\detokenize{figwork_pump2}}\par
+%TeX File Name: \texttt{\detokenize{fig_work_pump2}}\par
+%
+%\mysettikzname{figgabriel}
+%\input{fig_gabriel}
+%
+%Image File Name: \texttt{\detokenize{figgabriel}}\par
+%TeX File Name: \texttt{\detokenize{fig_gabriel}}\par
+%
+%\mysettikzname{figsa1}
+%\input{fig_sa1}
+%
+%Image File Name: \texttt{\detokenize{figsa1}}\par
+%TeX File Name: \texttt{\detokenize{fig_sa1}}\par
+%
+%\mysettikzname{figsa2a}
+%\input{fig_sa2a}
+%
+%Image File Name: \texttt{\detokenize{figsa2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_sa2a}}\par
+%
+%\mysettikzname{figsa2b}
+%\input{fig_sa2b}
+%
+%Image File Name: \texttt{\detokenize{figsa2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_sa2b}}\par
+%
+%\mysettikzname{figarc4}
+%\input{fig_arc4}
+%
+%Image File Name: \texttt{\detokenize{figarc4}}\par
+%TeX File Name: \texttt{\detokenize{fig_arc4}}\par
+%
+%\mysettikzname{figarc4b}
+%\input{fig_arc4b}
+%
+%Image File Name: \texttt{\detokenize{figarc4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_arc4b}}\par
+%
+%\mysettikzname{figarc2}
+%\input{fig_arc2}
+%
+%Image File Name: \texttt{\detokenize{figarc2}}\par
+%TeX File Name: \texttt{\detokenize{fig_arc2}}\par
+%
+%\mysettikzname{figarc1}
+%\input{fig_arc1}
+%
+%Image File Name: \texttt{\detokenize{figarc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_arc1}}\par
+%
+%
+%
+%\mysettikzname{figarcintrod}
+%\input{fig_arcintrod}
+%
+%Image File Name: \texttt{\detokenize{figarcintrod}}\par
+%TeX File Name: \texttt{\detokenize{fig_arcintrod}}\par
+%
+%\mysettikzname{figarcintroa}
+%\input{fig_arcintroa}
+%
+%Image File Name: \texttt{\detokenize{figarcintroa}}\par
+%TeX File Name: \texttt{\detokenize{fig_arcintroa}}\par
+%
+%\mysettikzname{figarcintrob}
+%\input{fig_arcintrob}
+%
+%Image File Name: \texttt{\detokenize{figarcintrob}}\par
+%TeX File Name: \texttt{\detokenize{fig_arcintrob}}\par
+%
+%\mysettikzname{figarcintroc}
+%\input{fig_arcintroc}
+%
+%Image File Name: \texttt{\detokenize{figarcintroc}}\par
+%TeX File Name: \texttt{\detokenize{fig_arcintroc}}\par
+%
+%\mysettikzname{figshell4a}
+%\input{fig_shell4a}
+%
+%Image File Name: \texttt{\detokenize{figshell4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell4a}}\par
+%
+%\mysettikzname{figshell4b}
+%\input{fig_shell4b}
+%
+%Image File Name: \texttt{\detokenize{figshell4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell4b}}\par
+%
+%\mysettikzname{figshell2a}
+%\input{fig_shell2a}
+%
+%Image File Name: \texttt{\detokenize{figshell2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell2a}}\par
+%
+%\mysettikzname{figshell2b}
+%\input{fig_shell2b}
+%
+%Image File Name: \texttt{\detokenize{figshell2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell2b}}\par
+%
+%\mysettikzname{figshell1}
+%\input{fig_shell1}
+%
+%Image File Name: \texttt{\detokenize{figshell1}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell1}}\par
+%
+%\mysettikzname{figshell3a}
+%\input{fig_shell3a}
+%
+%Image File Name: \texttt{\detokenize{figshell3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell3a}}\par
+%
+%\mysettikzname{figshell3b}
+%\input{fig_shell3b}
+%
+%Image File Name: \texttt{\detokenize{figshell3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell3b}}\par
+%
+%\mysettikzname{figshell_soupcan}
+%\input{fig_shell_soupcan}
+%
+%Image File Name: \texttt{\detokenize{figshell_soupcan}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_soupcan}}\par
+%
+%\mysettikzname{figshell_unwrapshell}
+%\input{fig_shell_unwrapshell}
+%
+%Image File Name: \texttt{\detokenize{figshell_unwrapshell}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_unwrapshell}}\par
+%
+%
+%\mysettikzname{figshell_intro_d}
+%\input{fig_shell_intro_d}
+%
+%Image File Name: \texttt{\detokenize{figshell_intro_d}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_intro_d}}\par
+%
+%\mysettikzname{figshell_intro_c}
+%\input{fig_shell_intro_c}
+%
+%Image File Name: \texttt{\detokenize{figshell_intro_c}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_intro_c}}\par
+%
+%\mysettikzname{figshell_intro_b}
+%\input{fig_shell_intro_b}
+%
+%Image File Name: \texttt{\detokenize{figshell_intro_b}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_intro_b}}\par
+%%
+%\mysettikzname{figshell_intro_a}
+%\input{fig_shell_intro_a}
+%
+%Image File Name: \texttt{\detokenize{figshell_intro_a}}\par
+%TeX File Name: \texttt{\detokenize{fig_shell_intro_a}}\par
+%
+%
+%\mysettikzname{figwash2a}
+%\input{fig_wash2a}
+%
+%Image File Name: \texttt{\detokenize{figwash2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash2a}}\par
+%
+%\mysettikzname{figwash2b}
+%\input{fig_wash2b}
+%
+%Image File Name: \texttt{\detokenize{figwash2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash2b}}\par
+%
+%\mysettikzname{figwash2c}
+%\input{fig_wash2c}
+%
+%Image File Name: \texttt{\detokenize{figwash2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash2c}}\par
+%
+%\mysettikzname{figwash1}
+%\input{fig_wash1}
+%
+%Image File Name: \texttt{\detokenize{figwash1}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash1}}\par
+%
+%\mysettikzname{figwash1c}
+%\input{fig_wash1c}
+%
+%Image File Name: \texttt{\detokenize{figwash1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash1c}}\par
+%
+%\mysettikzname{figwash1b}
+%\input{fig_wash1b}
+%
+%Image File Name: \texttt{\detokenize{figwash1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_wash1b}}\par
+%
+%\mysettikzname{figwasher_idea_c}
+%\input{fig_washer_idea_c}
+%
+%Image File Name: \texttt{\detokenize{figwasher_idea_c}}\par
+%TeX File Name: \texttt{\detokenize{fig_washer_idea_c}}\par
+%
+%
+%\mysettikzname{figwasher_idea_b}
+%\input{fig_washer_idea_b}
+%
+%Image File Name: \texttt{\detokenize{figwasher_idea_b}}\par
+%TeX File Name: \texttt{\detokenize{fig_washer_idea_b}}\par
+%
+%\mysettikzname{figwasher_idea_a}
+%\input{fig_washer_idea_a}
+%
+%Image File Name: \texttt{\detokenize{figwasher_idea_a}}\par
+%TeX File Name: \texttt{\detokenize{fig_washer_idea_a}}\par
+%
+%\mysettikzname{figdisk3}
+%\input{fig_disk3}
+%
+%Image File Name: \texttt{\detokenize{figdisk3}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk3}}\par
+%
+%
+%\mysettikzname{figdisk1c}
+%\input{fig_disk1c}
+%
+%Image File Name: \texttt{\detokenize{figdisk1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk1c}}\par
+%
+%
+%\mysettikzname{figdisk1a}
+%\input{fig_disk1a}
+%
+%Image File Name: \texttt{\detokenize{figdisk1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk1a}}\par
+%
+%
+%
+%\mysettikzname{figdisk2a}
+%\input{fig_disk2a}
+%
+%Image File Name: \texttt{\detokenize{figdisk2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk2a}}\par
+%
+%
+%\mysettikzname{figdisk2}
+%\input{fig_disk2}
+%
+%Image File Name: \texttt{\detokenize{figdisk2}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk2}}\par
+%
+%
+%\mysettikzname{figdisk1}
+%\input{fig_disk1}
+%
+%Image File Name: \texttt{\detokenize{figdisk1}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk1}}\par
+%
+%\mysettikzname{figdisk1b}
+%\input{fig_disk1b}
+%
+%Image File Name: \texttt{\detokenize{figdisk1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_disk1b}}\par
+%
+%\mysettikzname{figcross_area1}
+%\input{fig_cross_area1}
+%
+%Image File Name: \texttt{\detokenize{figcross_area1}}\par
+%TeX File Name: \texttt{\detokenize{fig_cross_area1}}\par
+%
+%
+%\mysettikzname{figabc5b}
+%\input{fig_abc5b}
+%
+%Image File Name: \texttt{\detokenize{figabc5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc5b}}\par
+%
+%\mysettikzname{figabc5}
+%\input{fig_abc5}
+%
+%Image File Name: \texttt{\detokenize{figabc5}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc5}}\par
+%
+%\mysettikzname{figabc4}
+%\input{fig_abc4}
+%
+%Image File Name: \texttt{\detokenize{figabc4}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc4}}\par
+%
+%\mysettikzname{figabc3b}
+%\input{fig_abc3b}
+%
+%Image File Name: \texttt{\detokenize{figabc3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc3b}}\par
+%
+%\mysettikzname{figabc3}
+%\input{fig_abc3}
+%
+%Image File Name: \texttt{\detokenize{figabc3}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc3}}\par
+%
+%\mysettikzname{figabc2}
+%\input{fig_abc2}
+%
+%Image File Name: \texttt{\detokenize{figabc2}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc2}}\par
+%
+%\mysettikzname{figabc1}
+%\input{fig_abc1}
+%
+%Image File Name: \texttt{\detokenize{figabc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_abc1}}\par
+%
+%
+%
+%\mysettikzname{figabcintroc}
+%\input{fig_abcintroc}
+%
+%Image File Name: \texttt{\detokenize{figabcintroc}}\par
+%TeX File Name: \texttt{\detokenize{fig_abcintroc}}\par
+%
+%\mysettikzname{figabcintrob}
+%\input{fig_abcintrob}
+%
+%Image File Name: \texttt{\detokenize{figabcintrob}}\par
+%TeX File Name: \texttt{\detokenize{fig_abcintrob}}\par
+%
+%\mysettikzname{figabcintroa}
+%\input{fig_abcintroa}
+%
+%Image File Name: \texttt{\detokenize{figabcintroa}}\par
+%TeX File Name: \texttt{\detokenize{fig_abcintroa}}\par
+%
+%\mysettikzname{figimpint6}
+%\input{fig_impint6}
+%
+%Image File Name: \texttt{\detokenize{figimpint6}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint6}}\par
+%
+%\mysettikzname{figimpint5b}
+%\input{fig_impint5b}
+%
+%Image File Name: \texttt{\detokenize{figimpint5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint5b}}\par
+%
+%\mysettikzname{figimpint5}
+%\input{fig_impint5}
+%
+%Image File Name: \texttt{\detokenize{figimpint5}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint5}}\par
+%
+%\mysettikzname{figimpint4}
+%\input{fig_impint4}
+%
+%Image File Name: \texttt{\detokenize{figimpint4}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint4}}\par
+%
+%\mysettikzname{figimpint3b}
+%\input{fig_impint3b}
+%
+%Image File Name: \texttt{\detokenize{figimpint3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint3b}}\par
+%
+%\mysettikzname{figimpint3}
+%\input{fig_impint3}
+%
+%Image File Name: \texttt{\detokenize{figimpint3}}\par
+%TeX File Name: \texttt{\detokenize{fig_impint3}}\par
+%
+%\mysettikzname{figeximpint2}
+%\input{fig_eximpint2}
+%
+%Image File Name: \texttt{\detokenize{figeximpint2}}\par
+%TeX File Name: \texttt{\detokenize{fig_eximpint2}}\par
+%
+%\mysettikzname{figeximpint1d}
+%\input{fig_eximpint1d}
+%
+%Image File Name: \texttt{\detokenize{figeximpint1d}}\par
+%TeX File Name: \texttt{\detokenize{fig_eximpint1d}}\par
+%
+%\mysettikzname{figeximpint1c}
+%\input{fig_eximpint1c}
+%
+%Image File Name: \texttt{\detokenize{figeximpint1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_eximpint1c}}\par
+%
+%\mysettikzname{figeximpint1b}
+%\input{fig_eximpint1b}
+%
+%Image File Name: \texttt{\detokenize{figeximpint1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_eximpint1b}}\par
+%
+%
+%\mysettikzname{figeximpint1a}
+%\input{fig_eximpint1a}
+%
+%Image File Name: \texttt{\detokenize{figeximpint1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_eximpint1a}}\par
+%
+%
+%\mysettikzname{figimproper1}
+%\input{fig_improper1}
+%
+%Image File Name: \texttt{\detokenize{figimproper1}}\par
+%TeX File Name: \texttt{\detokenize{fig_improper1}}\par
+%
+%\mysettikzname{fighf_hyperbolaarea}
+%\input{fig_hf_hyperbolaarea}
+%
+%Image File Name: \texttt{\detokenize{fighf_hyperbolaarea}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_hyperbolaarea}}\par
+%
+%
+%\mysettikzname{fighf_circlearea}
+%\input{fig_hf_circlearea}
+%
+%Image File Name: \texttt{\detokenize{fighf_circlearea}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_circlearea}}\par
+%
+%%
+%\mysettikzname{fighfarcsecharccsch}
+%\input{fig_hfarcsecharccsch}
+%
+%Image File Name: \texttt{\detokenize{fighfarcsecharccsch}}\par
+%TeX File Name: \texttt{\detokenize{fig_hfarcsecharccsch}}\par
+%
+%
+%\mysettikzname{fighfarctanharccoth}
+%\input{fig_hfarctanharccoth}
+%
+%Image File Name: \texttt{\detokenize{fighfarctanharccoth}}\par
+%TeX File Name: \texttt{\detokenize{fig_hfarctanharccoth}}\par
+%
+%
+%\mysettikzname{fighfarcsinh}
+%\input{fig_hfarcsinh}
+%
+%Image File Name: \texttt{\detokenize{fighfarcsinh}}\par
+%TeX File Name: \texttt{\detokenize{fig_hfarcsinh}}\par
+%
+%
+%\mysettikzname{fighfarccosh}
+%\input{fig_hfarccosh}
+%
+%Image File Name: \texttt{\detokenize{fighfarccosh}}\par
+%TeX File Name: \texttt{\detokenize{fig_hfarccosh}}\par
+%
+%
+%\mysettikzname{fighf_sech_csch}
+%\input{fig_hf_sech_csch}
+%
+%Image File Name: \texttt{\detokenize{fighf_sech_csch}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_sech_csch}}\par
+%
+%
+%\mysettikzname{fighf_tanh_coth}
+%\input{fig_hf_tanh_coth}
+%
+%Image File Name: \texttt{\detokenize{fighf_tanh_coth}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_tanh_coth}}\par
+%
+%
+%
+%\mysettikzname{fighf_sinh}
+%\input{fig_hf_sinh}
+%
+%Image File Name: \texttt{\detokenize{fighf_sinh}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_sinh}}\par
+%
+%
+%\mysettikzname{fighf_cosh}
+%\input{fig_hf_cosh}
+%
+%Image File Name: \texttt{\detokenize{fighf_cosh}}\par
+%TeX File Name: \texttt{\detokenize{fig_hf_cosh}}\par
+%
+%\mysettikzname{figtrigint2}
+%\input{fig_trigint2}
+%
+%Image File Name: \texttt{\detokenize{figtrigint2}}\par
+%TeX File Name: \texttt{\detokenize{fig_trigint2}}\par
+%
+%\mysettikzname{figa_color_test}
+%\input{a_color_test}
+%
+%Image File Name: \texttt{\detokenize{figa_color_test}}\par
+%TeX File Name: \texttt{\detokenize{a_color_test}}\par
+%
+%
+%\mysettikzname{fignum7b}
+%\input{fig_num7b}
+%
+%Image File Name: \texttt{\detokenize{fignum7b}}\par
+%TeX File Name: \texttt{\detokenize{fig_num7b}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignum7a}
+%\input{fig_num7a}
+%
+%Image File Name: \texttt{\detokenize{fignum7a}}\par
+%TeX File Name: \texttt{\detokenize{fig_num7a}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignum6b}
+%\input{fig_num6b}
+%
+%Image File Name: \texttt{\detokenize{fignum6b}}\par
+%TeX File Name: \texttt{\detokenize{fig_num6b}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignum5b}
+%\input{fig_num5b}
+%
+%Image File Name: \texttt{\detokenize{fignum5b}}\par
+%TeX File Name: \texttt{\detokenize{fig_num5b}}\par
+%
+%%%%%%%%%%%%%%%%%
+%\mysettikzname{fignumsimpsons}
+%\input{fig_numsimpsons}
+%
+%Image File Name: \texttt{\detokenize{fignumsimpsons}}\par
+%TeX File Name: \texttt{\detokenize{fig_numsimpsons}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figtrapezoid}
+%\input{fig_trapezoid}
+%
+%Image File Name: \texttt{\detokenize{figtrapezoid}}\par
+%TeX File Name: \texttt{\detokenize{fig_trapezoid}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignum3a}
+%\input{fig_num3a}
+%
+%Image File Name: \texttt{\detokenize{fignum3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_num3a}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignum2b}
+%\input{fig_num2b}
+%
+%Image File Name: \texttt{\detokenize{fignum2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_num2b}}\par
+%
+%\mysettikzname{fignum2a}
+%\input{fig_num2a}
+%
+%Image File Name: \texttt{\detokenize{fignum2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_num2a}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignum1a}
+%\input{fig_num1a}
+%
+%Image File Name: \texttt{\detokenize{fignum1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_num1a}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignum1b}
+%\input{fig_num1b}
+%
+%Image File Name: \texttt{\detokenize{fignum1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_num1b}}\par
+%
+%
+%%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignumerical1c}
+%\input{fig_numerical1c}
+%
+%Image File Name: \texttt{\detokenize{fignumerical1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_numerical1c}}\par
+%
+%
+%%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignumerical1b}
+%\input{fig_numerical1b}
+%
+%Image File Name: \texttt{\detokenize{fignumerical1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_numerical1b}}\par
+%
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignumerical1a}
+%\input{fig_numerical1a}
+%
+%Image File Name: \texttt{\detokenize{fignumerical1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_numerical1a}}\par
+%
+%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figrie_notation}
+%\input{fig_rie_notation}
+%
+%Image File Name: \texttt{\detokenize{figrie_notation}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie_notation}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_14}
+%\input{fig_05_02_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_14}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_15}
+%\input{fig_05_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_15}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_13}
+%\input{fig_05_02_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_13}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_12}
+%\input{fig_05_02_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_12}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig05_02_ex_11}
+%\input{fig_05_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_11}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_10}
+%\input{fig_05_02_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_10}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_09}
+%\input{fig_05_02_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_09}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig05_02_ex_08}
+%\input{fig_05_02_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_08}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_07}
+%\input{fig_05_02_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_07}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig05_02_ex_06}
+%\input{fig_05_02_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_06}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig05_02_ex_05}
+%\input{fig_05_02_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig05_02_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_05_02_ex_05}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig04_02_ex_12}
+%\input{fig_04_02_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig04_02_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_04_02_ex_12}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig04_02_ex_10}
+%\input{fig_04_02_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig04_02_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_04_02_ex_10}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig04_02_ex_09}
+%\input{fig_04_02_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig04_02_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_04_02_ex_09}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig04_02_ex_07}
+%\input{fig_04_02_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig04_02_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_04_02_ex_07}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig03_01_ex_14}
+%\input{fig_03_01_ex_14}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_14}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_14}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig03_01_ex_13}
+%\input{fig_03_01_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_13}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig03_01_ex_12}
+%\input{fig_03_01_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_12}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig03_01_ex_11}
+%\input{fig_03_01_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_11}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig03_01_ex_10}
+%\input{fig_03_01_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_10}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig03_01_ex_09}
+%\input{fig_03_01_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_09}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig03_01_ex_08}
+%\input{fig_03_01_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_08}}\par
+%
+%%%%%%%%%%%%%%%
+%\mysettikzname{fig03_01_ex_07}
+%\input{fig_03_01_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_07}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig03_01_ex_06}
+%\input{fig_03_01_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig03_01_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_03_01_ex_06}}\par
+%
+%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_04_ex_45a}
+%\input{fig_02_04_ex_45a}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_45a}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_45a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_04_ex_45}
+%\input{fig_02_04_ex_45}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_45}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_45}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_04_ex_44a}
+%\input{fig_02_04_ex_44a}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_44a}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_44a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_04_ex_44}
+%\input{fig_02_04_ex_44}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_44}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_44}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_04_ex_43a}
+%\input{fig_02_04_ex_43a}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_43a}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_43a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_04_ex_42a}
+%\input{fig_02_04_ex_42a}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_42a}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_42a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_04_ex_43}
+%\input{fig_02_04_ex_43}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_43}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_43}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_04_ex_42}
+%\input{fig_02_04_ex_42}
+%
+%Image File Name: \texttt{\detokenize{fig02_04_ex_42}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_04_ex_42}}\par
+%
+%%%%%%%%%%%%%%%
+%\mysettikzname{fig02_06_ex_27}
+%\input{fig_02_06_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig02_06_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_06_ex_27}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_06_ex_26}
+%\input{fig_02_06_ex_26}
+%
+%Image File Name: \texttt{\detokenize{fig02_06_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_06_ex_26}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_06_ex_25}
+%\input{fig_02_06_ex_25}
+%
+%Image File Name: \texttt{\detokenize{fig02_06_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_06_ex_25}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_06_ex_24}
+%\input{fig_02_06_ex_24}
+%
+%Image File Name: \texttt{\detokenize{fig02_06_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_06_ex_24}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig02_06_ex_23}
+%\input{fig_02_06_ex_23}
+%
+%Image File Name: \texttt{\detokenize{fig02_06_ex_23}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_06_ex_23}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig02_02_ex_18}
+%\input{fig_02_02_ex_18}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_18}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_18}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_02_ex_17}
+%\input{fig_02_02_ex_17}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_17}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_17}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_02_ex_16}
+%\input{fig_02_02_ex_16}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_16}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_16}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_02_ex_15}
+%\input{fig_02_02_ex_15}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_15}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_15}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_34}
+%\input{fig_02_01_ex_34}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_34}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_34}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig02_01_ex_30}
+%\input{fig_02_01_ex_30}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_30}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_30}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig02_01_ex_29ans}
+%\input{fig_02_01_ex_29ans}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_29ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_29ans}}\par
+%
+%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_29}
+%\input{fig_02_01_ex_29}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_29}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_29}}\par
+%
+%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_02_ex_11ans}
+%\input{fig_02_02_ex_11ans}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_11ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_11ans}}\par
+%
+%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_02_ex_11}
+%\input{fig_02_02_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig02_02_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_02_ex_11}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_27ans}
+%\input{fig_02_01_ex_27ans}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_27ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_27ans}}\par
+%
+%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_27}
+%\input{fig_02_01_ex_27}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_27}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_27}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_26ans}
+%\input{fig_02_01_ex_26ans}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_26ans}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_26ans}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_26}
+%\input{fig_02_01_ex_26}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_26}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_26}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig02_01_ex_25}
+%\input{fig_02_01_ex_25}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_25}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_25}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig02_01_ex_24}
+%\input{fig_02_01_ex_24}
+%
+%Image File Name: \texttt{\detokenize{fig02_01_ex_24}}\par
+%TeX File Name: \texttt{\detokenize{fig_02_01_ex_24}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_06_ex_13}
+%\input{fig_01_06_ex_13}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_13}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_13}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig01_06_ex_12}
+%\input{fig_01_06_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_12}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_06_ex_11}
+%\input{fig_01_06_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_11}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig01_06_ex_10}
+%\input{fig_01_06_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_10}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_06_ex_09}
+%\input{fig_01_06_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig01_06_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_06_ex_09}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_04_ex_12}
+%\input{fig_01_04_ex_12}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_12}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_12}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_04_ex_11}
+%\input{fig_01_04_ex_11}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_11}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_11}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_04_ex_10}
+%\input{fig_01_04_ex_10}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_10}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_10}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig01_04_ex_09}
+%\input{fig_01_04_ex_09}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_09}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_09}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fig01_04_ex_08}
+%\input{fig_01_04_ex_08}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_08}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_08}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_04_ex_07}
+%\input{fig_01_04_ex_07}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_07}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_07}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig01_04_ex_06}
+%\input{fig_01_04_ex_06}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_06}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_06}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fig01_04_ex_05}
+%\input{fig_01_04_ex_05}
+%
+%Image File Name: \texttt{\detokenize{fig01_04_ex_05}}\par
+%TeX File Name: \texttt{\detokenize{fig_01_04_ex_05}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figrr4}
+%\input{fig_rr4}
+%
+%Image File Name: \texttt{\detokenize{figrr4}}\par
+%TeX File Name: \texttt{\detokenize{fig_rr4}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figrr3}
+%\input{fig_rr3}
+%
+%Image File Name: \texttt{\detokenize{figrr3}}\par
+%TeX File Name: \texttt{\detokenize{fig_rr3}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figsubst13b}
+%\input{fig_subst13b}
+%
+%Image File Name: \texttt{\detokenize{figsubst13b}}\par
+%TeX File Name: \texttt{\detokenize{fig_subst13b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsubst13b}
+%\input{fig_subst13b}
+%
+%Image File Name: \texttt{\detokenize{figsubst13b}}\par
+%TeX File Name: \texttt{\detokenize{fig_subst13b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsubst13a}
+%\input{fig_subst13a}
+%
+%Image File Name: \texttt{\detokenize{figsubst13a}}\par
+%TeX File Name: \texttt{\detokenize{fig_subst13a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figsubst12b}
+%\input{fig_subst12b}
+%
+%Image File Name: \texttt{\detokenize{figsubst12b}}\par
+%TeX File Name: \texttt{\detokenize{fig_subst12b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsubst12a}
+%\input{fig_subst12a}
+%
+%Image File Name: \texttt{\detokenize{figsubst12a}}\par
+%TeX File Name: \texttt{\detokenize{fig_subst12a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figftc9b}
+%\input{fig_ftc9b}
+%
+%Image File Name: \texttt{\detokenize{figftc9b}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc9b}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figftc9a}
+%\input{fig_ftc9a}
+%
+%Image File Name: \texttt{\detokenize{figftc9a}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc9a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figftc8}
+%\input{fig_ftc8}
+%
+%Image File Name: \texttt{\detokenize{figftc8}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc8}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figftc7b3}
+%\input{fig_ftc7b3}
+%
+%Image File Name: \texttt{\detokenize{figftc7b3}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc7b3}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figftc7b2}
+%\input{fig_ftc7b2}
+%
+%Image File Name: \texttt{\detokenize{figftc7b2}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc7b2}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figftc7b1}
+%\input{fig_ftc7b1}
+%
+%Image File Name: \texttt{\detokenize{figftc7b1}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc7b1}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figftc7a}
+%\input{fig_ftc7a}
+%
+%Image File Name: \texttt{\detokenize{figftc7a}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc7a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figftc6}
+%\input{fig_ftc6}
+%
+%Image File Name: \texttt{\detokenize{figftc6}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc6}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figftc5a}
+%\input{fig_ftc5a}
+%
+%Image File Name: \texttt{\detokenize{figftc5a}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc5a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figftc5}
+%\input{fig_ftc5}
+%
+%Image File Name: \texttt{\detokenize{figftc5}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc5}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figftc1}
+%\input{fig_ftc1}
+%
+%Image File Name: \texttt{\detokenize{figftc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_ftc1}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figrie9}
+%\input{fig_rie9}
+%
+%Image File Name: \texttt{\detokenize{figrie9}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie9}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figrie8}
+%\input{fig_rie8}
+%
+%Image File Name: \texttt{\detokenize{figrie8}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie8}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figriedef}
+%\input{fig_riedef}
+%
+%Image File Name: \texttt{\detokenize{figriedef}}\par
+%TeX File Name: \texttt{\detokenize{fig_riedef}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figrie7}
+%\input{fig_rie7}
+%
+%Image File Name: \texttt{\detokenize{figrie7}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie7}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figrie5a}
+%\input{fig_rie5a}
+%
+%Image File Name: \texttt{\detokenize{figrie5a}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie5a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figrie5}
+%\input{fig_rie5}
+%
+%Image File Name: \texttt{\detokenize{figrie5}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie5}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figrie2c}
+%\input{fig_rie2c}
+%
+%Image File Name: \texttt{\detokenize{figrie2c}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie2c}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figrie2b}
+%\input{fig_rie2b}
+%
+%Image File Name: \texttt{\detokenize{figrie2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie2b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figrie2a}
+%\input{fig_rie2a}
+%
+%Image File Name: \texttt{\detokenize{figrie2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie2a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figrie1b}
+%\input{fig_rie1b}
+%
+%Image File Name: \texttt{\detokenize{figrie1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie1b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figrie1a}
+%\input{fig_rie1a}
+%
+%Image File Name: \texttt{\detokenize{figrie1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_rie1a}}\par
+%
+%%%%%%%%%%%%%%%%
+%\mysettikzname{figdefint6}
+%\input{fig_defint6}
+%
+%Image File Name: \texttt{\detokenize{figdefint6}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint6}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figdefint8b}
+%\input{fig_defint8b}
+%
+%Image File Name: \texttt{\detokenize{figdefint8b}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint8b}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figdefint8a}
+%\input{fig_defint8a}
+%
+%Image File Name: \texttt{\detokenize{figdefint8a}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint8a}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figdefint7}
+%\input{fig_defint7}
+%
+%Image File Name: \texttt{\detokenize{figdefint7}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint7}}\par
+%
+%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figdefint5}
+%\input{fig_defint5}
+%
+%Image File Name: \texttt{\detokenize{figdefint5}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint5}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figdefint4a}
+%\input{fig_defint4a}
+%
+%Image File Name: \texttt{\detokenize{figdefint4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint4a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{figdefint4}
+%\input{fig_defint4}
+%
+%Image File Name: \texttt{\detokenize{figdefint4}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint4}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figdefint3}
+%\input{fig_defint3}
+%
+%Image File Name: \texttt{\detokenize{figdefint3}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint3}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figdefint2}
+%\input{fig_defint2}
+%
+%Image File Name: \texttt{\detokenize{figdefint2}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint2}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figdefint1}
+%\input{fig_defint1}
+%
+%Image File Name: \texttt{\detokenize{figdefint1}}\par
+%TeX File Name: \texttt{\detokenize{fig_defint1}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figanti1}
+%\input{fig_anti1}
+%
+%Image File Name: \texttt{\detokenize{figanti1}}\par
+%TeX File Name: \texttt{\detokenize{fig_anti1}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%%
+%\mysettikzname{figdiffal1}
+%\input{fig_diffal1}
+%
+%Image File Name: \texttt{\detokenize{figdiffal1}}\par
+%TeX File Name: \texttt{\detokenize{fig_diffal1}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figdiffal1a}
+%\input{fig_diffal1a}
+%
+%Image File Name: \texttt{\detokenize{figdiffal1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_diffal1a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt2a}
+%\input{fig_opt2a}
+%
+%Image File Name: \texttt{\detokenize{figopt2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt2a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figopt3a}
+%\input{fig_opt3a}
+%
+%Image File Name: \texttt{\detokenize{figopt3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt3a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt3b}
+%\input{fig_opt3b}
+%
+%Image File Name: \texttt{\detokenize{figopt3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt3b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt3c}
+%\input{fig_opt3c}
+%
+%Image File Name: \texttt{\detokenize{figopt3c}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt3c}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{figopt3d}
+%\input{fig_opt3d}
+%
+%Image File Name: \texttt{\detokenize{figopt3d}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt3d}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figopt2b}
+%\input{fig_opt2b}
+%
+%Image File Name: \texttt{\detokenize{figopt2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt2b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt1}
+%\input{fig_opt1}
+%
+%Image File Name: \texttt{\detokenize{figopt1}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt1}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt1a}
+%\input{fig_opt1a}
+%
+%Image File Name: \texttt{\detokenize{figopt1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt1a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figopt1b}
+%\input{fig_opt1b}
+%
+%Image File Name: \texttt{\detokenize{figopt1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_opt1b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{fignewt4a}
+%\input{fig_newt4a}
+%
+%Image File Name: \texttt{\detokenize{fignewt4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt4a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fignewt4b}
+%\input{fig_newt4b}
+%
+%Image File Name: \texttt{\detokenize{fignewt4b}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt4b}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignewt4c}
+%\input{fig_newt4c}
+%
+%Image File Name: \texttt{\detokenize{fignewt4c}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt4c}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignewt2a}
+%\input{fig_newt2a}
+%
+%Image File Name: \texttt{\detokenize{fignewt2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt2a}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fignewt2}
+%\input{fig_newt2}
+%
+%Image File Name: \texttt{\detokenize{fignewt2}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt2}}\par
+%
+%%%%%%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fignewt3}
+%\input{fig_newt3}
+%
+%Image File Name: \texttt{\detokenize{fignewt3}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt3}}\par
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\mysettikzname{fignewt1c}
+%\input{fig_newt1c}
+%
+%Image File Name: \texttt{\detokenize{fignewt1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt1c}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignewt1b}
+%\input{fig_newt1b}
+%
+%Image File Name: \texttt{\detokenize{fignewt1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt1b}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{fignewt1a}
+%\input{fig_newt1a}
+%
+%Image File Name: \texttt{\detokenize{fignewt1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_newt1a}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconcavity6}
+%\input{fig_concavity6}
+%
+%Image File Name: \texttt{\detokenize{figconcavity6}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity6}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconcavity5}
+%\input{fig_concavity5}
+%
+%Image File Name: \texttt{\detokenize{figconcavity5}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity5}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconc4}
+%\input{fig_conc4}
+%
+%Image File Name: \texttt{\detokenize{figconc4}}\par
+%TeX File Name: \texttt{\detokenize{fig_conc4}}\par
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figconc3b}
+%\input{fig_conc3b}
+%
+%Image File Name: \texttt{\detokenize{figconc3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_conc3b}}\par
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconc3}
+%\input{fig_conc3}
+%
+%Image File Name: \texttt{\detokenize{figconc3}}\par
+%TeX File Name: \texttt{\detokenize{fig_conc3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figconc2}
+%\input{fig_conc2}
+%
+%Image File Name: \texttt{\detokenize{figconc2}}\par
+%TeX File Name: \texttt{\detokenize{fig_conc2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconcline2}
+%\input{fig_concline2}
+%
+%Image File Name: \texttt{\detokenize{figconcline2}}\par
+%TeX File Name: \texttt{\detokenize{fig_concline2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconc1}
+%\input{fig_conc1}
+%
+%Image File Name: \texttt{\detokenize{figconc1}}\par
+%TeX File Name: \texttt{\detokenize{fig_conc1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconcline1}
+%\input{fig_concline1}
+%
+%Image File Name: \texttt{\detokenize{figconcline1}}\par
+%TeX File Name: \texttt{\detokenize{fig_concline1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figconcavity4}
+%\input{fig_concavity4}
+%
+%Image File Name: \texttt{\detokenize{figconcavity4}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figconcavity3}
+%\input{fig_concavity3}
+%
+%Image File Name: \texttt{\detokenize{figconcavity3}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figconcavity2}
+%\input{fig_concavity2}
+%
+%Image File Name: \texttt{\detokenize{figconcavity2}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity2}}\par
+%
+%
+%\mysettikzname{figconcavity2}
+%\input{fig_concavity2}
+%
+%Image File Name: \texttt{\detokenize{figconcavity2}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figconcavity1}
+%\input{fig_concavity1}
+%
+%Image File Name: \texttt{\detokenize{figconcavity1}}\par
+%TeX File Name: \texttt{\detokenize{fig_concavity1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figincr3}
+%\input{fig_incr3}
+%
+%Image File Name: \texttt{\detokenize{figincr3}}\par
+%TeX File Name: \texttt{\detokenize{fig_incr3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figincrline3}
+%\input{fig_incrline3}
+%
+%Image File Name: \texttt{\detokenize{figincrline3}}\par
+%TeX File Name: \texttt{\detokenize{fig_incrline3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figincr2}
+%\input{fig_incr2}
+%
+%Image File Name: \texttt{\detokenize{figincr2}}\par
+%TeX File Name: \texttt{\detokenize{fig_incr2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figincrline2}
+%\input{fig_incrline2}
+%
+%Image File Name: \texttt{\detokenize{figincrline2}}\par
+%TeX File Name: \texttt{\detokenize{fig_incrline2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figincr1}
+%\input{fig_incr1}
+%
+%Image File Name: \texttt{\detokenize{figincr1}}\par
+%TeX File Name: \texttt{\detokenize{fig_incr1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figincrline1}
+%\input{fig_incrline1}
+%
+%Image File Name: \texttt{\detokenize{figincrline1}}\par
+%TeX File Name: \texttt{\detokenize{fig_incrline1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figincr00}
+%\input{fig_incr00}
+%
+%Image File Name: \texttt{\detokenize{figincr00}}\par
+%TeX File Name: \texttt{\detokenize{fig_incr00}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figincr0}
+%\input{fig_incr0}
+%
+%Image File Name: \texttt{\detokenize{figincr0}}\par
+%TeX File Name: \texttt{\detokenize{fig_incr0}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figmvt4}
+%\input{fig_mvt4}
+%
+%Image File Name: \texttt{\detokenize{figmvt4}}\par
+%TeX File Name: \texttt{\detokenize{fig_mvt4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figmvt3}
+%\input{fig_mvt3}
+%
+%Image File Name: \texttt{\detokenize{figmvt3}}\par
+%TeX File Name: \texttt{\detokenize{fig_mvt3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figextval7}
+%\input{fig_extval7}
+%
+%Image File Name: \texttt{\detokenize{figextval7}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval7}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figextval6}
+%\input{fig_extval6}
+%
+%Image File Name: \texttt{\detokenize{figextval6}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval6}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figextval5}
+%\input{fig_extval5}
+%
+%Image File Name: \texttt{\detokenize{figextval5}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval5}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figextval4}
+%\input{fig_extval4}
+%
+%Image File Name: \texttt{\detokenize{figextval4}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figextval3}
+%\input{fig_extval3}
+%
+%Image File Name: \texttt{\detokenize{figextval3}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figextval2}
+%\input{fig_extval2}
+%
+%Image File Name: \texttt{\detokenize{figextval2}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figextval1}
+%\input{fig_extval1}
+%
+%Image File Name: \texttt{\detokenize{figextval1}}\par
+%TeX File Name: \texttt{\detokenize{fig_extval1}}\par
+%
+%
+%%%%%%%%%%
+%
+%
+%\mysettikzname{figextreme4}
+%\input{fig_extreme4}
+%
+%Image File Name: \texttt{\detokenize{figextreme4}}\par
+%TeX File Name: \texttt{\detokenize{fig_extreme4}}\par
+%
+%
+%%%%%%%%%%
+%
+%
+%\mysettikzname{figextreme3}
+%\input{fig_extreme3}
+%
+%Image File Name: \texttt{\detokenize{figextreme3}}\par
+%TeX File Name: \texttt{\detokenize{fig_extreme3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figextreme2}
+%\input{fig_extreme2}
+%
+%Image File Name: \texttt{\detokenize{figextreme2}}\par
+%TeX File Name: \texttt{\detokenize{fig_extreme2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figextreme1}
+%\input{fig_extreme1}
+%
+%Image File Name: \texttt{\detokenize{figextreme1}}\par
+%TeX File Name: \texttt{\detokenize{fig_extreme1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figsketch3b}
+%\input{fig_sketch3b}
+%
+%Image File Name: \texttt{\detokenize{figsketch3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch3b}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figsketch3a}
+%\input{fig_sketch3a}
+%
+%Image File Name: \texttt{\detokenize{figsketch3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch3a}}\par
+%
+%
+%%%%%%%%%%%%
+%
+%\mysettikzname{figsketch3}
+%\input{fig_sketch3}
+%
+%Image File Name: \texttt{\detokenize{figsketch3}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsketchline3}
+%\input{fig_sketchline3}
+%
+%Image File Name: \texttt{\detokenize{figsketchline3}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketchline3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figsketch1b}
+%\input{fig_sketch1b}
+%
+%Image File Name: \texttt{\detokenize{figsketch1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch1b}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figsketch2b}
+%\input{fig_sketch2b}
+%
+%Image File Name: \texttt{\detokenize{figsketch2b}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch2b}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figsketch2a}
+%\input{fig_sketch2a}
+%
+%Image File Name: \texttt{\detokenize{figsketch2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch2a}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figsketch2}
+%\input{fig_sketch2}
+%
+%Image File Name: \texttt{\detokenize{figsketch2}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsketchline2}
+%\input{fig_sketchline2}
+%
+%Image File Name: \texttt{\detokenize{figsketchline2}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketchline2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figsketch1a}
+%\input{fig_sketch1a}
+%
+%Image File Name: \texttt{\detokenize{figsketch1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch1a}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figsketch1}
+%\input{fig_sketch1}
+%
+%Image File Name: \texttt{\detokenize{figsketch1}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketch1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figsketchline1}
+%\input{fig_sketchline1}
+%
+%Image File Name: \texttt{\detokenize{figsketchline1}}\par
+%TeX File Name: \texttt{\detokenize{fig_sketchline1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%
+%\mysettikzname{figmvt2}
+%\input{fig_mvt2}
+%
+%Image File Name: \texttt{\detokenize{figmvt2}}\par
+%TeX File Name: \texttt{\detokenize{fig_mvt2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figmvt1}
+%\input{fig_mvt1}
+%
+%Image File Name: \texttt{\detokenize{figmvt1}}\par
+%TeX File Name: \texttt{\detokenize{fig_mvt1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figchainrulegears}
+%\input{fig_chainrule_gears}
+%
+%Image File Name: \texttt{\detokenize{figchainrulegears}}\par
+%TeX File Name: \texttt{\detokenize{fig_chainrule_gears}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figchain7}
+%\input{fig_chain7}
+%
+%Image File Name: \texttt{\detokenize{fig_chain7}}\par
+%TeX File Name: \texttt{\detokenize{figchain7}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figinverse4a}
+%\input{fig_inverse4a}
+%
+%Image File Name: \texttt{\detokenize{figinverse4a}}\par
+%TeX File Name: \texttt{\detokenize{fig_inverse4a}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figinverse4}
+%\input{fig_inverse4}
+%
+%Image File Name: \texttt{\detokenize{figinverse4}}\par
+%TeX File Name: \texttt{\detokenize{fig_inverse4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figinverse3}
+%\input{fig_inverse3}
+%
+%Image File Name: \texttt{\detokenize{figinverse3}}\par
+%TeX File Name: \texttt{\detokenize{fig_inverse3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figinverse2}
+%\input{fig_inverse2}
+%
+%Image File Name: \texttt{\detokenize{figinverse2}}\par
+%TeX File Name: \texttt{\detokenize{fig_inverse2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figinverse1}
+%\input{fig_inverse1}
+%
+%Image File Name: \texttt{\detokenize{figinverse1}}\par
+%TeX File Name: \texttt{\detokenize{fig_inverse1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figimplicit9}
+%\input{fig_implicit9}
+%
+%Image File Name: \texttt{\detokenize{figimplicit9}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit9}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figimplicit8}
+%\input{fig_implicit8}
+%
+%Image File Name: \texttt{\detokenize{figimplicit8}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit8}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit7}
+%\input{fig_implicit7}
+%
+%Image File Name: \texttt{\detokenize{figimplicit7}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit7}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit6}
+%\input{fig_implicit6}
+%
+%Image File Name: \texttt{\detokenize{figimplicit6}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit6}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit5}
+%\input{fig_implicit5}
+%
+%Image File Name: \texttt{\detokenize{figimplicit5}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit5}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit4}
+%\input{fig_implicit4}
+%
+%Image File Name: \texttt{\detokenize{figimplicit4}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit3}
+%\input{fig_implicit3}
+%
+%Image File Name: \texttt{\detokenize{figimplicit3}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figimplicit2}
+%\input{fig_implicit2}
+%
+%Image File Name: \texttt{\detokenize{figimplicit2}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figimplicit1}
+%\input{fig_implicit1}
+%
+%Image File Name: \texttt{\detokenize{figimplicit1}}\par
+%TeX File Name: \texttt{\detokenize{fig_implicit1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figtanx}
+%\input{fig_tanx}
+%
+%Image File Name: \texttt{\detokenize{figtanx}}\par
+%TeX File Name: \texttt{\detokenize{fig_tanx}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{fig5xsquaredsinx}
+%\input{fig_5xsquaredsinx}
+%
+%Image File Name: \texttt{\detokenize{fig5xsquaredsinx}}\par
+%TeX File Name: \texttt{\detokenize{fig_5xsquaredsinx}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figxcubedwithderiv}
+%\input{fig_xcubedwithderiv}
+%
+%Image File Name: \texttt{\detokenize{figxcubedwithderiv}}\par
+%TeX File Name: \texttt{\detokenize{fig_xcubedwithderiv}}\par
+%
+%
+%%%%%%%%%%%
+%\mysettikzname{figfwithderivzoom3}
+%\input{fig_fwithderivzoom3}
+%
+%Image File Name: \texttt{\detokenize{figfwithderivzoom3}}\par
+%TeX File Name: \texttt{\detokenize{fig_fwithderivzoom3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figfwithderivdots}
+%\input{fig_fwithderivdots}
+%
+%Image File Name: \texttt{\detokenize{figfwithderivdots}}\par
+%TeX File Name: \texttt{\detokenize{fig_fwithderivdots}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figfwithderiv}
+%\input{fig_fwithderiv}
+%
+%Image File Name: \texttt{\detokenize{figfwithderiv}}\par
+%TeX File Name: \texttt{\detokenize{fig_fwithderiv}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figxsquared}
+%\input{fig_xsquared}
+%
+%Image File Name: \texttt{\detokenize{figxsquared}}\par
+%TeX File Name: \texttt{\detokenize{fig_xsquared}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figxsquaredwithgrid}
+%\input{fig_xsquaredwithgrid}
+%
+%Image File Name: \texttt{\detokenize{figxsquaredwithgrid}}\par
+%TeX File Name: \texttt{\detokenize{fig_xsquaredwithgrid}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figpiecewisecosx1}
+%\input{fig_piecewisecosx1}
+%
+%Image File Name: \texttt{\detokenize{figpiecewisecosx1}}\par
+%TeX File Name: \texttt{\detokenize{fig_piecewisecosx1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figpiecewisesinx1}
+%\input{fig_piecewisesinx1}
+%
+%Image File Name: \texttt{\detokenize{figpiecewisesinx1}}\par
+%TeX File Name: \texttt{\detokenize{fig_piecewisesinx1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figabsolutevalueprime}
+%\input{fig_absolutevalueprime}
+%
+%Image File Name: \texttt{\detokenize{figabsolutevalueprime}}\par
+%TeX File Name: \texttt{\detokenize{fig_absolutevalueprime}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figabsolutevalue}
+%\input{fig_absolutevalue}
+%
+%Image File Name: \texttt{\detokenize{figabsolutevalue}}\par
+%TeX File Name: \texttt{\detokenize{fig_absolutevalue}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figtangentsinx}
+%\input{fig_tangentsinx}
+%
+%Image File Name: \texttt{\detokenize{figtangentsinx}}\par
+%TeX File Name: \texttt{\detokenize{fig_tangentsinx}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figtangent1}
+%\input{fig_tangent1}
+%
+%Image File Name: \texttt{\detokenize{figtangent1}}\par
+%TeX File Name: \texttt{\detokenize{fig_tangent1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figderivfalling4}
+%\input{fig_derivfalling4}
+%
+%Image File Name: \texttt{\detokenize{figderivfalling4}}\par
+%TeX File Name: \texttt{\detokenize{fig_derivfalling4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figderivfalling}
+%\input{fig_derivfalling}
+%
+%Image File Name: \texttt{\detokenize{figderivfalling}}\par
+%TeX File Name: \texttt{\detokenize{fig_derivfalling}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figderivfalling3}
+%\input{fig_derivfalling3}
+%
+%Image File Name: \texttt{\detokenize{figderivfalling3}}\par
+%TeX File Name: \texttt{\detokenize{fig_derivfalling3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figderivfalling2}
+%\input{fig_derivfalling2}
+%
+%Image File Name: \texttt{\detokenize{figderivfalling2}}\par
+%TeX File Name: \texttt{\detokenize{fig_derivfalling2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fighzasy7}
+%\input{fig_hzasy7}
+%
+%Image File Name: \texttt{\detokenize{fighzasy7}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy7}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{fighzasy6}
+%\input{fig_hzasy6}
+%
+%Image File Name: \texttt{\detokenize{fighzasy6}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy6}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{fighzasy5}
+%\input{fig_hzasy5}
+%
+%Image File Name: \texttt{\detokenize{fighzasy5}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy5}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fighzasy4}
+%\input{fig_hzasy4}
+%
+%Image File Name: \texttt{\detokenize{fighzasy4}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy4}}\par
+%
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{fighzasy3}
+%\input{fig_hzasy3}
+%
+%Image File Name: \texttt{\detokenize{fighzasy3}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy3}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{fighzasy2}
+%\input{fig_hzasy2}
+%
+%Image File Name: \texttt{\detokenize{fighzasy2}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy2}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{fighzasy1}
+%\input{fig_hzasy1}
+%
+%Image File Name: \texttt{\detokenize{fighzasy1}}\par
+%TeX File Name: \texttt{\detokenize{fig_hzasy1}}\par
+%
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fignoasy}
+%\input{fig_noasy}
+%
+%Image File Name: \texttt{\detokenize{fignoasy}}\par
+%TeX File Name: \texttt{\detokenize{fig_noasy}}\par
+%
+%%%%%%%%%%%%%
+%
+%\mysettikzname{figmultipleasymptotes}
+%\input{fig_multipleasymptotes}
+%
+%Image File Name: \texttt{\detokenize{figmultipleasymptotes}}\par
+%TeX File Name: \texttt{\detokenize{fig_multipleasymptotes}}\par
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figoneoverx}
+%\input{fig_oneoverx}
+%
+%Image File Name: \texttt{\detokenize{figoneoverx}}\par
+%TeX File Name: \texttt{\detokenize{fig_oneoverx}}\par
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figoneoverxsquared}
+%\input{fig_oneoverxsquared}
+%
+%Image File Name: \texttt{\detokenize{figoneoverxsquared}}\par
+%TeX File Name: \texttt{\detokenize{fig_oneoverxsquared}}\par
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figXMinusCosX}
+%\input{fig_xminuscosx}
+%
+%Image File Name: \texttt{\detokenize{figXMinusCosX}}\par
+%TeX File Name: \texttt{\detokenize{fig_xminuscosx}}\par
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figContinuous3}
+%\input{fig_Continuous3}
+%
+%Image File Name: \texttt{\detokenize{figContinuous3}}\par
+%TeX File Name: \texttt{\detokenize{fig_Continuous3}}\par
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figContinuous2}
+%\input{fig_Continuous2}
+%
+%Image File Name: \texttt{\detokenize{figContinuous2}}\par
+%TeX File Name: \texttt{\detokenize{fig_Continuous2}}\par
+%
+%%%%%%%%%%
+%
+%\mysettikzname{figContinuous1}
+%\input{fig_Continuous1}
+%
+%Image File Name: \texttt{\detokenize{figContinuous1}}\par
+%TeX File Name: \texttt{\detokenize{fig_Continuous1}}\par
+%
+%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{figOneSidedLimits4}
+%\input{fig_one_sidedlimit4}
+%
+%Image File Name: \texttt{\detokenize{figOneSidedLimits4}}\par
+%TeX File Name: \texttt{\detokenize{fig_one_sidedlimit4}}\par
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figOneSidedLimits3}
+%\input{fig_one_sidedlimit3}
+%
+%Image File Name: \texttt{\detokenize{figOneSidedLimits3}}\par
+%TeX File Name: \texttt{\detokenize{fig_one_sidedlimit3}}\par
+%
+%%%%%%%%%%%
+%
+%
+%\mysettikzname{figOneSidedLimits2}
+%\input{fig_one_sidedlimit2}
+%
+%Image File Name: \texttt{\detokenize{figOneSidedLimits2}}\par
+%TeX File Name: \texttt{\detokenize{fig_one_sidedlimit2}}\par
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figOneSidedLimits1}
+%\input{fig_one_sidedlimit1}
+%
+%Image File Name: \texttt{\detokenize{figOneSidedLimits1}}\par
+%TeX File Name: \texttt{\detokenize{fig_one_sidedlimit1}}\par
+%
+%%%%%%%%%%%
+%
+%
+%
+%\mysettikzname{fig_LimitXplus1}
+%\input{figLimitXplus1}
+%
+%Image File Name: \texttt{\detokenize{fig_LimitXplus1}}\par
+%TeX File Name: \texttt{\detokenize{figLimitXplus1}}\par
+%
+%%%%%%%%%%%
+%
+%\mysettikzname{figSqueeze1c}
+%\input{fig_squeeze1c}
+%
+%Image File Name: \texttt{\detokenize{figSqueeze1c}}\par
+%TeX File Name: \texttt{\detokenize{fig_squeeze1c}}\par
+%
+%%%%%
+%
+%\mysettikzname{figSqueeze1b}
+%\input{fig_squeeze1b}
+%
+%Image File Name: \texttt{\detokenize{figSqueeze1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_squeeze1b}}\par
+%
+%%%%%
+%
+%\mysettikzname{figSqueeze1a}
+%\input{fig_squeeze1a}
+%
+%Image File Name: \texttt{\detokenize{figSqueeze1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_squeeze1a}}\par
+%
+%%%%%
+%
+%\mysettikzname{figSqueeze1}
+%\input{fig_squeeze1}
+%
+%Image File Name: \texttt{\detokenize{figSqueeze1}}\par
+%TeX File Name: \texttt{\detokenize{fig_squeeze1}}\par
+%
+%%%%%
+%
+%
+%\mysettikzname{figLimitProof2a}
+%\input{fig_limit_proof2a}
+%
+%Image File Name: \texttt{\detokenize{figLimitProof2a}}\par
+%TeX File Name: \texttt{\detokenize{fig_limit_proof2a}}\par
+%
+%%%%%
+%
+%\mysettikzname{figLimitProof1a}
+%\input{fig_limit_proof1a}
+%
+%Image File Name: \texttt{\detokenize{figLimitProof1a}}\par
+%TeX File Name: \texttt{\detokenize{fig_limit_proof1a}}\par
+%
+%%%%%
+%
+%\mysettikzname{figLimitProof1b}
+%\input{fig_limit_proof1b}
+%
+%Image File Name: \texttt{\detokenize{figLimitProof1b}}\par
+%TeX File Name: \texttt{\detokenize{fig_limit_proof1b}}\par
+%
+%%%%%
+%
+%
+%\mysettikzname{figDiffQuotSmallhc}
+%\input{fig_diff_quot_smallhc}
+%
+%Image File Name: \texttt{\detokenize{figDiffQuotSmallhc}}\par
+%TeX File Name: \texttt{\detokenize{fig_diff_quot_smallhc}}\par
+%
+%%%%%%
+%
+%\mysettikzname{figDiffQuotSmallha}
+%\input{fig_diff_quot_smallha}
+%
+%Image File Name: \texttt{\detokenize{figDiffQuotSmallha}}\par
+%TeX File Name: \texttt{\detokenize{fig_diff_quot_smallha}}\par
+%
+%%%%%%
+%
+%\mysettikzname{figDiffQuotSmallhb}
+%\input{fig_diff_quot_smallhb}
+%
+%Image File Name: \texttt{\detokenize{figDiffQuotSmallhb}}\par
+%TeX File Name: \texttt{\detokenize{fig_diff_quot_smallhb}}\par
+%
+%%%%%%
+%
+%\mysettikzname{figDiffQuot1}
+%\input{fig_diff_quot1}
+%
+%Image File Name: \texttt{\detokenize{figDiffQuot1}}\par
+%TeX File Name: \texttt{\detokenize{fig_diff_quot1}}\par
+%
+%%%%%
+%
+%
+%\mysettikzname{figNoLimit3a}
+%\input{fig_nolimit3a}
+%
+%Image File Name: \texttt{\detokenize{figNoLimit3a}}\par
+%TeX File Name: \texttt{\detokenize{fig_nolimit3a}}\par
+%%%%%
+%
+%\mysettikzname{figNoLimit3b}
+%\input{fig_nolimit3b}
+%
+%Image File Name: \texttt{\detokenize{figNoLimit3b}}\par
+%TeX File Name: \texttt{\detokenize{fig_nolimit3b}}\par
+%%%%%
+%
+%\mysettikzname{fignolimit2}
+%\input{fig_nolimit2}
+%
+%Image File Name: \texttt{\detokenize{fignolimit2}}\par
+%TeX File Name: \texttt{\detokenize{fig_nolimit2}}\par
+%%%%%
+%
+%
+%
+%\mysettikzname{fignolimit1}
+%\input{fig_nolimit1}
+%
+%Image File Name: \texttt{\detokenize{fignolimit1}}\par
+%TeX File Name: \texttt{\detokenize{fig_nolimit1}}\par
+%%%%%
+%
+%\mysettikzname{figlimit1}
+%\input{fig_limit1}
+%
+%Image File Name: \texttt{\detokenize{figlimit1}}\par
+%TeX File Name: \texttt{\detokenize{fig_limit1}}\par
+%%%%%
+%
+%\mysettikzname{figlimit2}
+%\input{fig_limit2}
+%
+%Image File Name: \texttt{\detokenize{figlimit2}}\par
+%TeX File Name: \texttt{\detokenize{fig_limit2}}\par
+%%%%%
+%
+%\mysettikzname{figSinXOverX}
+%\input{sinx_over_x_2}
+%
+%Image File Name: \texttt{\detokenize{figSinXOverX}}\par
+%TeX File Name: \texttt{\detokenize{sinx_over_x_2}}\par
+%%%%%
+%
+%\mysettikzname{figZoomSinXOverX}
+%\input{sinx_over_x_1}
+%
+%Image File Name: \texttt{\detokenize{figZoomSinXOverX}}\par
+%TeX File Name: \texttt{\detokenize{sinx_over_x_1}}\par
+%
+%\mysettikzname{figsurface_test}
+%\input{fig_surface_test}
+%
+%Image File Name: \texttt{\detokenize{figsurface_test}}\par
+%TeX File Name: \texttt{\detokenize{fig_surface_test}}\par
+%%%%%
+
+}% ends editmode check
+
+\end{document}

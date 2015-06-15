@@ -34,13 +34,13 @@ The velocity of an object moving straight up/down under the acceleration of grav
 }
 {It is straightforward to find the initial velocity; at time $t=0$, $v(0) =-32\cdot 0+48 = 48 $ ft/s.
 
-To answer questions about the height of the object, we need to find the object's position function $s(t)$. This is an initial value problem, which we studied in the previous section. We are told the initial height is 0, i.e., $s(0) = 0$. We know $s'(t) = v(t) = -32t+48$. To find $s$, we find the indefinite integral of $v(t)$:
+To answer questions about the height of the object, we need to find the object's position function $s(t)$. This is an initial value problem, which we studied in the previous section. We are told the initial height is 0, i.e., $s(0) = 0$. We know $s\primeskip'(t) = v(t) = -32t+48$. To find $s$, we find the indefinite integral of $v(t)$:
 		$$\int v(t)\ dt = \int (-32t+48)\ dt = -16t^2+48t+C = s(t).$$
 Since $s(0) = 0$, we conclude that $C=0$ and $s(t) = -16t^2+48t$.
 
 To find the maximum height of the object, we need to find the maximum of $s$. Recalling our work finding extreme values, we find the critical points of $s$ by setting its derivative equal to 0 and solving for $t$:
-		$$s'(t) = -32t+48 = 0 \quad \Rightarrow \quad t=48/32 = 1.5\text{s}.$$
-(Notice how we ended just finding when the velocity was 0ft/s!) The first derivative test shows this is a maximum, so the maximum height of the object is found at $$s(1.5) = -16(1.5)^2+48(1.5)=36\text{ft}.$$
+		$$s\primeskip'(t) = -32t+48 = 0 \quad \Rightarrow \quad t=48/32 = 1.5\text{s}.$$
+(Notice how we ended up just finding when the velocity was 0ft/s!) The first derivative test shows this is a maximum, so the maximum height of the object is found at $$s(1.5) = -16(1.5)^2+48(1.5)=36\text{ft}.$$
 The height at time $t=2$ is now straightforward to compute: it is $s(2) = 32$ft.\\
 
 While we have answered all three questions, let's look at them again graphically, using the concepts of area that we explored earlier.
@@ -50,29 +50,38 @@ Figure \ref{fig:defint3} shows a graph of $v(t)$ on axes from $t=0$ to $t=3$. It
 
 \mfigure{.5}{A graph of $v(t)=-32t+48$; the shaded areas help determine displacement.}{fig:defint3}{figures/figdefint3}
 
-Recall how in our previous work that the displacement of the object (in this case, its height) was found as the area under the velocity curve, as shaded in the figure. Moreover, the area between the curve and the $t$--axis that is below the $t$--axis counted as ``negative'' area. That is, it represents the object coming back toward its starting position. So to find the maximum distance from the starting point -- the maximum height -- we find the area under the velocity line that is above the $t$--axis. This region is a triangle; its area is 
-$$\text{Area } = \frac12\text{Base} \times \text{Height} =\frac12\times 1.5\text{s}\times 48\text{ft/s} = 36\text{ft}.$$
+Recall how in our previous work that the displacement of the object (in this case, its height) was found as the area under the velocity curve, as shaded in the figure. Moreover, the area between the curve and the $t$--axis that is below the $t$--axis counted as ``negative'' area. That is, it represents the object coming back toward its starting position. So to find the maximum distance from the starting point -- the maximum height -- we find the area under the velocity line that is above the $t$--axis, i.e., from $t=0$ to $t=1.5$. This region is a triangle; its area is 
+$$\text{Area } = \frac12\text{Base} \times \text{Height} =\frac12\times 1.5\text{s}\times 48\text{ft/s} = 36\text{ft},$$
+which matches our previous calculation of the maximum height.
 
-\enlargethispage{3\baselineskip}
-Finally, find the total \textit{signed} area under the velocity function from $t=0$ to $t=2$ to find the total displacement of the object. That is,
+%\enlargethispage{3\baselineskip}
+\drawexampleline
+Finally, we find the total \textit{signed} area under the velocity function from $t=0$ to $t=2$ to find the $s(2)$, the height at $t=2$, which is a displacement, the distance from the current position to the starting position. That is,
 	\begin{center}
 	Displacement = Area above the $t$--axis $-$ Area below $t$--axis.
 	\end{center}
 	The regions are triangles, and we find 
-	$$\text{Displacement} = \frac12(1.5\text{s})(48\text{ft/s}) - \frac12(.5\text{s})(16\text{ft/s}) = 32\text{ft}.$$ 
-\vskip-\baselineskip
+	$$\text{Displacement} = \frac12(1.5\text{s})(48\text{ft/s}) - \frac12(.5\text{s})(16\text{ft/s}) = 32\text{ft}.$$
+This also matches our previous calculation of the height at $t=2$.
+
+Notice how we answered each question in this example in two ways. Our first method was to manipulate equations using our understanding of antiderivatives and derivatives. Our second method was geometric: we answered questions looking at a graph and finding the areas of certain regions of this graph.
+%\vskip-\baselineskip
 }\\
 
 The above example does not \textit{prove} a relationship between area under a velocity function and displacement, but it does imply a relationship exists. Section \ref{sec:FTC} will fully establish fact that the area under a velocity function is displacement.
 
+Given a graph of a function $y=f(x)$, we will find that there is great use in computing the area between the curve $y=f(x)$ and the $x$-axis. Because of this, we need to define some terms.
+
 \definition{def:def_int}{The Definite Integral, Total Signed Area}
 {Let $y=f(x)$ be defined on a closed interval $[a,b]$. The \textbf{total signed area from $x=a$ to $x=b$ under $f$} is:\index{integration!definite}\index{definite integral}\index{signed area}\index{total signed area}\index{integration!notation}\index{integration!area}
 
-\noindent\parbox{\specialboxlength}{\centering (area  under $f$ and above $x$--axis on $[a,b]$) -- (area above $f$ and under $x$--axis on $[a,b]$).}\\
+\noindent\parbox{\specialboxlength}{\centering (area  under $f$ and above the $x$--axis on $[a,b]$) $-$ (area above $f$ and under the $x$--axis on $[a,b]$).}\\
 
 The \textbf{definite integral of $f$ on $[a,b]$} is the total signed area of $f$ on $[a,b]$, denoted $$\int_a^b f(x)\ dx,$$
 where $a$ and $b$ are the \textbf{bounds of integration.}
 }
+
+By our definition, the definite integral gives the ``signed area under $f$.'' We usually drop the word ``signed'' when talking about the definite integral, and simply say the definite integral gives ``the area under $f$\,'' or, more commonly, ``the area under the curve.''
 
 The previous section introduced the indefinite integral, which related to antiderivatives. We have now defined the definite integral, which relates to areas under a function. The two are very much related, as we'll see when we learn the Fundamental Theorem of Calculus in Section \ref{sec:FTC}. Recall that earlier we said that the ``$\int$'' symbol was an ``elongated S'' that represented finding a ``sum.'' In the context of the definite integral, this notation makes a bit more sense, as we are adding up areas under the function $f$.
 
@@ -81,7 +90,7 @@ We practice using this notation.\\
 \example{ex_defint4}{Evaluating definite integrals}{
 Consider the function $f$ given in Figure \ref{fig:defint4}.
 
-\mfigure{.4}{A graph of $f(x)$ in Example \ref{ex_defint4}.}{fig:defint4}{figures/figdefint4}
+\mfigure{.8}{A graph of $f(x)$ in Example \ref{ex_defint4}.}{fig:defint4}{figures/figdefint4}
  Find:
 
 \noindent\begin{minipage}[t]{.45\textwidth}
@@ -100,12 +109,12 @@ Consider the function $f$ given in Figure \ref{fig:defint4}.
 
 }
 {\begin{enumerate}
-		\item		$ \int_0^3 f(x)\ dx$ is the area under $f$ on the interval $[0,3]$. This region is a triangle, so the area is $\frac12(3)(1) = 1.5$. 
+		\item		$ \int_0^3 f(x)\ dx$ is the area under $f$ on the interval $[0,3]$. This region is a triangle, so the area is $\int_0^3 f(x)\ dx=\frac12(3)(1) = 1.5$. 
 		\item		$\int_3^5 f(x)\ dx$ represents the area of the triangle found under the $x$--axis on $[3,5]$. The area is $\frac12(2)(1) = 1$; since it is found \textit{under} the $x$--axis, this is ``negative area.'' Therefore $ \int_3^5 f(x)\ dx = -1$.
 		\item		$ \int_0^5f(x)\ dx$ is the total signed area under $f$ on $[0,5]$. This is $1.5 + (-1) = 0.5$.
 		\item		$ \int_0^35f(x)\ dx$ is the area under $5f$ on $[0,3]$. This is sketched in Figure \ref{fig:defint4a}. Again, the region is a triangle, with height 5 times that of the height of the original triangle. Thus the area is $ \int_0^35f(x)\ dx = 15/2 = 7.5.$
 		
-\mfigure{.8}{A graph of $5f$ in Example \ref{ex_defint4}. (Yes, it looks just like the graph of $f$ in Figure \ref{fig:defint4}, just with a different $y$-scale.)}{fig:defint4a}{figures/figdefint4a}		
+\mfigure{.5}{A graph of $5f$ in Example \ref{ex_defint4}. (Yes, it looks just like the graph of $f$ in Figure \ref{fig:defint4}, just with a different $y$-scale.)}{fig:defint4a}{figures/figdefint4a}		
 		
 		\item		$\int_1^1f(x)\ dx$ is the area under $f$ on the ``interval'' $[1,1]$. This describes a line segment, not a region; it has no width. Therefore the area is 0.
 \end{enumerate}
@@ -142,16 +151,14 @@ We give a brief justification of Theorem \ref{thm:defintprop} here.
 		\end{align*}
 Property $(3)$ justifies changing the sign and switching the bounds of integration on the $\ds -\int_b^a f(x)\ dx$ term; when this is done, Equations (\ref{eq:defint1}) and (\ref{eq:defint2}) are equivalent.
 
-The conclusion is this: by adopting the convention of Property (3), Property (2) holds no matter the order of $a$, $b$ and $c$.
+The conclusion is this: by adopting the convention of Property (3), Property (2) holds no matter the order of $a$, $b$ and $c$. Again, in the next section we will see another justification for this property.
 	\item[4,5.]	Each of these may be non--intuitive. Property (5) states that when one scales a function by, for instance, 7, the area of the enclosed region also is scaled by a factor of 7. Both Properties (4) and (5)  can be proved using geometry. The details are not complicated but are not discussed here.
 \end{enumerate}
 
-\clearpage
+%\enlargethispage{2\baselineskip}%\clearpage
 \example{ex_defint5}{Evaluating definite integrals using Theorem \ref{thm:defintprop}.}
 {Consider the graph of a function $f(x)$ shown in Figure \ref{fig:defint5}. 
-
-\mfigure{.8}{A graph of a function in Example \ref{ex_defint5}.}{fig:defint5}{figures/figdefint5}
-
+\mfigure{.5}{A graph of a function in Example \ref{ex_defint5}.}{fig:defint5}{figures/figdefint5}
 Answer the following:
 		\begin{enumerate}
 		\item		Which value is greater: $\ds \int_a^b f(x)\ dx$ or $\ds \int_b^c f(x)\ dx$?
@@ -165,34 +172,42 @@ Answer the following:
 		\item		$\int_a^c f(x)\ dx$ is the total signed area under $f$ between $x=a$ and $x=c$. Since the region below the $x$--axis looks to be larger than the region above, we conclude that the definite integral has a value less than 0.
 		\item		Note how the second integral has the bounds ``reversed.'' Therefore $\int_c^b f(x)\ dx$ represents a positive number, greater than the area described by the first definite integral. Hence $\int_c^b f(x)\ dx$ is greater.
 		\end{enumerate}
-\vskip-\baselineskip
-}\\
+\vskip-1.5\baselineskip
+}\clearpage
 
-The area definition of the definite integral allows us to compute the definite integral of some simple functions.\\
+The area definition of the definite integral allows us to use geometry compute the definite integral of some simple functions.\\
 
 \example{ex_defint8}{Evaluating definite integrals using geometry}{
 Evaluate the following definite integrals:
 		$$1. \ \int_{-2}^5 (2x-4)\ dx \qquad 2.\ \int_{-3}^3 \sqrt{9-x^2}\ dx.$$
 
 }
-{\mfigure{.35}{A graph of $f(x) = 2x-4$ in Example \ref{ex_defint8}.}{fig:defint8a}{figures/figdefint8a}
+{%\mfigure{.8}{A graph of $f(x) = 2x-4$ in Example \ref{ex_defint8}.}{fig:defint8a}{figures/figdefint8a}
 
 \begin{enumerate}
-		\item		It is useful to sketch the function in the integrand, as shown in Figure \ref{fig:defint8a}. We see we need to compute the areas of two regions, which we have labeled $R_1$ and $R_2$. Both are triangles, so the area computation is straightforward:
+		\item		It is useful to sketch the function in the integrand, as shown in Figure \ref{fig:defint8}(a). We see we need to compute the areas of two regions, which we have labeled $R_1$ and $R_2$. Both are triangles, so the area computation is straightforward:
 			$$R_1: \frac12(4)(8) = 16 \qquad R_2: \frac12(3)6 = 9.$$ 
-Region $R_1$ lies under the $x$--axis, hence it is counted as negative area (we can think of the height as being ``$-8$''), so $$\int_{-2}^5(2x-4)\ dx = 9-16 = -7.$$
-		\item		Recognize that the integrand of this definite integral is a half circle, as sketched in Figure \ref{fig:defint8b}, with radius 3. Thus the area is:
+Region $R_1$ lies under the $x$--axis, hence it is counted as negative area (we can think of the triangle's height as being ``$-8$''), so $$\int_{-2}^5(2x-4)\ dx = -16+9 = -7.$$
+		\item		Recognize that the integrand of this definite integral describes a half circle, as sketched in Figure \ref{fig:defint8}(b), with radius 3. Thus the area is:
 		$$\int_{-3}^3 \sqrt{9-x^2}\ dx = \frac12\pi r^2 = \frac 92\pi.$$
 \vskip-\baselineskip
 }\\
 
-\mfigure{.8}{A graph of $f(x) = \sqrt{9-x^2}$ in Example \ref{ex_defint8}.}{fig:defint8b}{figures/figdefint8b}
+%\mfigure{.6}{A graph of $f(x) = \sqrt{9-x^2}$ in Example \ref{ex_defint8}.}{fig:defint8b}{figures/figdefint8b}
+\mtable{.7}{A graph of $f(x) = 2x-4$ in (a) and $f(x) = \sqrt{9-x^2}$ in (b), from Example \ref{ex_defint8}.}{fig:defint8}{%
+\begin{tabular}{c}
+\myincludegraphics{figures/figdefint8a}\\
+(a)\\[10pt]
+\myincludegraphics{figures/figdefint8b}\\
+(b)
+\end{tabular}
+}
 \end{enumerate}
 
 \example{ex_defint6}{Understanding motion given velocity}{
 Consider the graph of a velocity function of an object moving in a straight line, given in Figure \ref{fig:defint6}, where the numbers in the given regions gives the area of that region. Assume that the definite integral of a velocity function gives displacement. Find the maximum speed of the object and its maximum displacement from its starting position.
 
-\mfigure{.55}{A graph of a velocity in Example \ref{ex_defint6}.}{fig:defint6}{figures/figdefint6}
+\mfigure{.35}{A graph of a velocity in Example \ref{ex_defint6}.}{fig:defint6}{figures/figdefint6}
 }
 {Since the graph gives velocity, finding the maximum speed is simple: it looks to be 15ft/s.
 
@@ -202,7 +217,7 @@ At time $t=0$, the displacement is 0; the object is at its starting position. At
 
 In our examples, we have either found the areas of regions that have nice geometric shapes (such as rectangles, triangles and circles) or the areas were given to us. Consider Figure \ref{fig:defint7}, where a region below $y=x^2$ is shaded. What is its area? The function $y=x^2$ is relatively simple, yet the shape it defines has an area that is not simple to find geometrically.\\
 
-\mfigure{.3}{What is the area below $y=x^2$ on $[0,3]$? The region is not a usual geometric shape.}{fig:defint7}{figures/figdefint7}
+\mfigure{.8}{What is the area below $y=x^2$ on $[0,3]$? The region is not a usual geometric shape.}{fig:defint7}{figures/figdefint7}
 
 \noindent In the next section we will explore how to find the areas of such regions.
 

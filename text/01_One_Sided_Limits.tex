@@ -7,7 +7,7 @@
 %
 %\vskip \baselineskip
 
-We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for computing them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''\\
+We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave ``nicely.'' In this section we rigorously define what we mean by ``nicely.''
 
 In Section \ref{sec:limit_intro} we explored the three ways in which limits of functions failed to exist: 
 	\begin{enumerate}
@@ -16,30 +16,41 @@ In Section \ref{sec:limit_intro} we explored the three ways in which limits of f
 	\item	The function oscillates.
 	\end{enumerate}
 	
-In this section we explore in depth the concepts behind \#1 by introducing the \textit{one-sided limit}. We begin with formal definitions that are very similar to the definition of the limit given in Section \ref{sec:limit_def}, but the notation is slightly different and a short phrase has been added to the end.
+In this section we explore in depth the concepts behind \#1 by introducing the \textit{one-sided limit}. We begin with formal definitions that are very similar to the definition of the limit given in Section \ref{sec:limit_def}, but the notation is slightly different and ``$x\neq c$'' is replaced with either ``$x<c$'' or ``$x>c$.''
 %\small
 
 %
 %\ifthenelse{\boolean{longpage}}{}
 %{\setlength{\specialboxlength}{\textwidth+4\specialboxinnerseplength}}
-\enlargethispage{3\baselineskip}
-\setboxwidth{115pt}%
-\noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -115pt}%
-\noindent\begin{minipage}{\specialboxlength}
+\enlargethispage{1\baselineskip}
+%\setboxwidth{115pt}%
+%\noindent\ifthenelse{\isodd{\thepage}}{}{\hskip -115pt}%
+%\noindent\begin{minipage}{\specialboxlength}
 \definition{def:onesidedlimit}{One Sided Limits}
-{\textbf{Left-Hand Limit} \index{limit!one sided}\index{limit!right handed}\index{limit!left handed}\\
+{\textbf{Left-Hand Limit} \index{limit!one sided}\index{limit!right handed}\index{limit!left handed}
 
-Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^-} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the left is $L$,'' or ``the \textit{left-hand limit of $f$ at $c$ is L}'' 
-means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
-$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x<c$.\\
+\indent Let $I$ be an open interval containing $c$, and let $f$ be a function defined on $I$, except possibly at $c$. 
+The \sword{limit of $f(x)$, as $x$ approaches $c$ from the left, is $L$}, or, \sword{the left--hand limit of $f$ at $c$ is $L$}, denoted by  
+$$\displaystyle \lim_{x\rightarrow c^-} f(x) = L,$$
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $x< c$,  
+if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.\\
+%Let $f$ be a function defined on an open interval containing $c$. 
+%The notation $$ \lim_{x\rightarrow c^-} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the left is $L$,'' or ``the \textit{left-hand limit of $f$ at $c$ is L}'' 
+%means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
+%$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x<c$.\\
 
-\textbf{Right-Hand Limit}\\
+\textbf{Right-Hand Limit}
 
-Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^+} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the right is $L$,'' or ``the \textit{right-hand limit of $f$ at $c$ is L}'' 
-means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
-$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x>c$.
+Let $I$ be an open interval containing $c$, and let $f$ be a function defined on $I$, except possibly at $c$. 
+The \sword{limit of $f(x)$, as $x$ approaches $c$ from the right, is $L$}, or, \sword{the right--hand limit of $f$ at $c$ is $L$}, denoted by  
+$$\displaystyle \lim_{x\rightarrow c^+} f(x) = L,$$
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $x> c$,  
+if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
+%Let $f$ be a function defined on an open interval containing $c$. The notation $$ \lim_{x\rightarrow c^+} f(x) = L, $$ read as ``the limit of $f(x)$ as $x$ approaches $c$ from the right is $L$,'' or ``the \textit{right-hand limit of $f$ at $c$ is L}'' 
+%means that given any $\epsilon > 0$, there exists $\delta > 0$ such that 
+%$|x - c| < \delta$ implies $|f(x) - L| < \epsilon$, for all $x>c$.
 }
-\end{minipage}
+%\end{minipage}
 \restoreboxwidth
 \normalsize
 
@@ -67,7 +78,7 @@ Let $\ds f(x) = \left\{\begin{array}{cc} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{ar
 \end{enumerate}
 \end{minipage}
 
-\mfigure{.7}{A graph of $f$ in Example \ref{ex_onesidea}.}{fig:onesided1}{figures/figOneSidedLimits1}
+\mfigure{.65}{A graph of $f$ in Example \ref{ex_onesidea}.}{fig:onesided1}{figures/figOneSidedLimits1}
 }
 {For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
 			\begin{enumerate}
@@ -83,7 +94,7 @@ Let $\ds f(x) = \left\{\begin{array}{cc} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{ar
 \vskip -\baselineskip
 }\\
 
-Note how the left and right-hand limits were different; this, of course, causes \textit{the} limit to not exist. The following theorem states what is fairly intuitive: \textit{the} limit exists precisely when the left and right-hand limits are equal.
+Note how the left and right-hand limits were different at $x=1$. This, of course, causes \textit{the} limit to not exist. The following theorem states what is fairly intuitive: \textit{the} limit exists precisely when the left and right-hand limits are equal.
 
 \theorem{thm:leftrightlimits}{Limits and One Sided Limits}
 {Let $f$ be a function defined on an open interval $I$ containing $c$. \index{limit!does not exist} Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{and} \quad \lim_{x\to c^+}f(x) = L.$$}
@@ -112,7 +123,7 @@ Let $f(x) = \left\{\begin{array}{cc} 2-x & 0<x<1 \\ (x-2)^2 & 1<x<2 \end{array},
 		\end{enumerate}	
 		\end{minipage}
 		
-\mfigure{.40}{A graph of $f$ from Example \ref{ex_onesideb}}{fig:onesidedb}{figures/figOneSidedLimits2}		
+\mfigure{.35}{A graph of $f$ from Example \ref{ex_onesideb}}{fig:onesidedb}{figures/figOneSidedLimits2}		
 }
 {Again we will evaluate each using both the definition of $f$ and its graph.
 		\begin{enumerate}
@@ -144,7 +155,7 @@ Let $f(x) = \left\{\begin{array}{cc} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\
 		\end{enumerate}
 		\end{minipage}
 		
-\mfigure{.55}{Graphing $f$ in Example \ref{ex_onesidec}}{fig:onesidedc}{figures/figOneSidedLimits3}		
+\mfigure{.45}{Graphing $f$ in Example \ref{ex_onesidec}}{fig:onesidedc}{figures/figOneSidedLimits3}		
 }
 {		It is clear by looking at the graph that both the left and right-hand limits of $f$, as $x$ approaches 1, is 0. Thus it is also clear that \textit{the} limit is 0; i.e., $\ds \lim_{x\to 1} f(x) = 0$. It is also clearly stated that $f(1) = 1$. \vskip .4\baselineskip
 }\\
@@ -167,9 +178,9 @@ Let $f(x) = \left\{\begin{array}{cc} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{
 		\end{enumerate}
 		\end{minipage}
 		
-\mfigure{.3}{Graphing $f$ in Example \ref{ex_onesided}}{fig:onesidedd}{figures/figOneSidedLimits4}
 }
-{		It is clear from the definition of the function and its graph that all of the following are equal: 
+{		It is clear from the definition of the function and its graph that all of the following are equal:
+\mfigure{.8}{Graphing $f$ in Example \ref{ex_onesided}}{fig:onesidedd}{figures/figOneSidedLimits4}
 $$ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.$$
 }\\
 

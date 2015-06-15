@@ -1,0 +1,46 @@
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=-1.123268578351379,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.3357679545879364 0.7699711322784424 0.5425903797149658,
+3Dcoo=-0.8311622142791748 6.697126388549805 -4.196705341339111,
+3Droo=149.99999623071383,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{
+
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004,
+3Dc2c=4 4 2,
+3Dcoo=0 0 0,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{
+
+
+linetype(new real[] {4,4})
+
+
+usplinetype=new splinetype[] {notaknot,notaknot,monotonic}
+
+other colors:
+
+pen q=rgb(.9,0,0)+.4mm;
+//  draw(ss,rgb(1,.6,.6)+opacity(.8),meshpen=q,nolight,render(merge=true));
+
+usepackage("mathspec");
+texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+texpreamble("\setmathsfont(Greek){[cmmi10]}");
+
+%%% Proper ellipsoid bounds:
+(-pi,-pi/2),(pi,pi/2)
+
+triple cam=(4,4,2);
+real xlabelscale=.75;
+real ylabelscale=1.1;
+triple location=(2,0,-1)-.05*cam;
+
+path3 mysquare=(.5,.5,0)--(-.5,.5,0)--(-.5,-.5,0)--(.5,-.5,0)--(.5,.5,0);
+real rot1=aCos(cam.z/sqrt(cam.x^2+cam.y^2+cam.z^2));
+real rot2=aCos(cam.x/sqrt(cam.x^2+cam.y^2));
+draw(surface(shift(location)*rotate(rot2,(0,0,1))*rotate(rot1,(0,1,0))*scale(xlabelscale,ylabelscale,1)*mysquare--cycle),emissive(white));
+//shift((2,0,-1))*rotate(rot2,(0,0,1))*

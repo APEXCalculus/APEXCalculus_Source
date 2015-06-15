@@ -1,3 +1,9 @@
+%%%%
+% June 5, 2015, CreateSpace ISBN created
+% ISBN-13: 978-1514240908 
+% 
+% ISBN-10: 1514240904 
+%%%%
 \RequirePackage{ifthen}
 \newboolean{longpage}
 \setboolean{longpage}{false}
@@ -8,7 +14,7 @@
 \newboolean{printlabelname}
 \setboolean{printlabelname}{false}
 \ifthenelse{\boolean{printlabelname}}{\usepackage[notref,notcite]{showkeys}}{}
-
+\usepackage{pdfpages}
 
 
 %% end detour
@@ -16,7 +22,8 @@
 
 \usepackage{xr}
 \externaldocument{CalculusII}
-%\externaldocument{CalculusI}
+\externaldocument{CalculusI}
+
 
 \input{headers/Page_Size_Calculus}
 \usepackage{APEX_format}
@@ -25,8 +32,6 @@
 \pgfplotsset{compat=1.8}
 \usepackage{refcount}
 
-
-%\printexercisenames
 
 \ifthenelse{\boolean{xetex}}%
 	{\sffamily
@@ -63,10 +68,14 @@
 
 
 %
-%
+%\printexercisenames
+
+
 \printincolor
 %\printinblackandwhite
 %\printallanswers
+\usethreeDgraphics
+%\usetwoDgraphics
 
 \input{text/front_matter_and_coverIII}
 %
@@ -150,12 +159,12 @@
 %\input{text/06_LHopitals_Rule}
 %\input{text/06_Improper_Integration}
 %%
-%%%%%\addtocounter{chapter}{6}
-%%
+%\addtocounter{chapter}{6}
+%
 %\clearpage{\pagestyle{empty}\cleardoublepage}
 %\chapter{Applications of Integration}\label{chapter:app_of_int}
 %\thispagestyle{empty}
-%
+%%
 %\input{text/07_Area_Between_Curves}
 %\input{text/07_Disk_Washer_Method}
 %\input{text/07_Shell_Method}
@@ -170,11 +179,16 @@
 %
 %\input{text/08_Sequences}
 %\input{text/08_Series}
+%\input{text/08_Integral_Comparison_Tests}
+%\input{text/08_Ratio_Root_Tests}
+%\input{text/08_Alternating_Series}
+%\input{text/08_Power_Series}
 %\input{text/08_Taylor_Polynomials}
+%\input{text/08_Taylor_Series}
 %%%
-\addtocounter{chapter}{8}
 \clearpage{\pagestyle{empty}\cleardoublepage}
-\thispagestyle{empty}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\thispagestyle{empty}
 \setcounterref{definitioncounter}{lastdefcount2}
 \addtocounter{definitioncounter}{-1}
 \setcounterref{theoremcounter}{lastthmcount2}
@@ -183,14 +197,28 @@
 \addtocounter{keyideacounter}{-1}
 \setcounterref{examplecounter}{lastexamplecount2}
 \addtocounter{examplecounter}{-1}
-\setcounter{page}{468}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%\setcounterref{definitioncounter}{lastdefcount1}
+%%%\addtocounter{definitioncounter}{-1}
+%%%\setcounterref{theoremcounter}{lastthmcount1}
+%%%\addtocounter{theoremcounter}{-1}
+%%%\setcounterref{keyideacounter}{lastideacount1}
+%%%\addtocounter{keyideacounter}{-1}
+%%%\setcounterref{examplecounter}{lastexamplecount1}
+%%%\addtocounter{examplecounter}{-1}
+%\setcounter{page}{184}
+\thispagestyle{empty}
+\setcounter{page}{489}
+%%\addtocounter{page}{2}
 
+\addtocounter{chapter}{8}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Curves in the Plane}
 \thispagestyle{empty}
 
 %\setcounterpageref{page}{lastdefcount2}
-%\addtocounter{page}{2}
-%def:\ref{lastdefcount2} thm:\ref{lastthmcount2} idea:\pageref{lastideacount2}
+
+%%%%def:\ref{lastdefcount2} thm:\ref{lastthmcount2} idea:\pageref{lastideacount2}
 \input{text/09_Conic_Sections}
 \input{text/09_Parametric_Equations}
 \input{text/09_Parametric_Calculus}
@@ -208,8 +236,8 @@
 \input{text/10_Cross_Product}
 \input{text/10_Lines}
 \input{text/10_Planes}
-%
-%%%\addtocounter{chapter}{10}
+
+%%\addtocounter{chapter}{10}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Vector Valued Functions}\label{chap:vvf}
 \thispagestyle{empty}
@@ -231,9 +259,9 @@
 \input{text/12_Directional_Derivatives}
 \input{text/12_Tangent_Planes_Lines}
 \input{text/12_Extrema}
-%
-%%%\addtocounter{chapter}{12}
 
+%%%\addtocounter{chapter}{12}
+%
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \chapter{Multiple Integration}
 \thispagestyle{empty}
@@ -255,8 +283,8 @@
 
 \pagenumbering{arabic}\renewcommand{\thepage}{A.\arabic{page}}
 \makeexercisesection{Solutions To Selected Problems}
-%
-% Ends the exercise section
+
+%%% Ends the exercise section
 
 
 %
@@ -273,15 +301,18 @@
 %%%\printindex
 %%
 %
+
+
 \qendheader
 \eendgeometry
 
 \phantomsection
 \cleardoublepage
 \addcontentsline{toc}{chapter}{\indexname}
-\printindex
+%\printindex
+\includepdf[pages={863-868}]{Calculus.pdf}
 
-\cleardoublepage
+%\cleardoublepage
 \input{text/Inside_Cover_Of_The_Text_Material_Complete}
 
 

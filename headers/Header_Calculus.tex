@@ -106,48 +106,19 @@ Notes:
 }% ends if/then/else exercise/regular headers
 
 
-
-
-
-
-
-
-
-
+%
+%  Defining what the chapter titles look like
+%
 
 \newdimen\titleheight
 
 \makeatletter
 \def\@makechapterhead#1{%
   {\parindent \z@ \raggedright \reset@font
-%    \large
-    %\resizebox{1.6cm}{2cm}{\thechapter}\ \ %
-%		\input{headers/chapter_graphics}
-    %\reset@font\resizebox{!}{2cm}{\LARGE\scshape\bfseries\strut \textsc #1}
-    %\resizebox{!}{1.2cm}{\Huge \thechapter: \scshape \textsc #1}
     {\Huge \thechapter: \scshape \textsc #1}
-%		\setbox0=\hbox{\resizebox{!}{1.2cm}{\Huge \thechapter:}}
-%		\resizebox{!}{1.2cm}{\Huge \thechapter:}{\parbox{300pt}{\Huge \scshape \textsc #1}}
-%		\setbox0=\hbox{\parbox{\textwidth-50pt}{\Huge \scshape \textsc #1}}
-%		\titleheight=\ht0
-%		\advance\titleheight by \dp0
-%		\setbox1=\hbox{\resizebox{!}{\titleheight}{\Huge \thechapter}}
-%%		\begin{tabular}{ll}
-%%		\box1&\raise\dp0\box0
-%%		\end{tabular}
-%		\begin{minipage}{15pt}%
-%		\box1%
-%		\end{minipage}%
-%		\begin{minipage}{\textwidth}
-%		\box0%
-%		\end{minipage}
-%\box1%\box0
-%		{\Huge \thechapter:}\raisebox{\ht0}{\box0}
-%		
-		%{\Huge \thechapter \ \scshape  \textsc #1}
     \par\vskip 10\p@
     \hrule height 1pt
-    \vskip 50\p@
+    \vskip 10\p@
   }}
 %%  
 %%%\makeatletter
@@ -261,6 +232,52 @@ Notes:
 					\end{minipage}}}}
 		}}
 
+%\ifthenelse{\boolean{longpage}}%
+		%{}
+		%{\newcommand{\mfigurethree}[5][]{%
+		%\ifthenelse{\isodd{\thepage}}%
+			%{\AddToShipoutPicture*{\put(427,\LenToUnit{#2\paperheight}){%
+			%\begin{minipage}{\marginparwidth}%
+				%\centering%
+	  		%\includemedia[#1]{\includegraphics{#5}}{#5.prc}%
+  			%\captionsetup{type=figure}%
+  			%%#1%
+	  		%\caption{#3}\label{#4}%
+  		%\end{minipage}}}}%
+			%{\AddToShipoutPicture*{\put(36,\LenToUnit{#2\paperheight}){%
+			%\begin{minipage}{\marginparwidth}%
+			  %\centering%
+  			%\includemedia[#1]{\includegraphics{#5}}{#5.prc}%
+  			%\captionsetup{type=figure}%
+  			%%#1%
+	  		%\caption{#3}\label{#4}%
+  		%\end{minipage}}}}%
+		%}}%
+		
+		\newcommand{\mfigurethree}[6]{%
+		\ifthenelse{\isodd{\thepage}}%
+			{\AddToShipoutPicture*{\put(427,\LenToUnit{#3\paperheight}){%
+			\begin{minipage}{\marginparwidth}%
+				\centering%
+				\ifthenelse{\boolean{in_threeD}}{% in 3D
+	  		\includemedia[#1]{\includegraphics{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
+				{\myincludegraphics[#2]{#6}}%
+  			\captionsetup{type=figure}%
+  			%#1%
+	  		\caption{#4}\label{#5}%
+  		\end{minipage}}}}%
+			{\AddToShipoutPicture*{\put(36,\LenToUnit{#3\paperheight}){%
+			\begin{minipage}{\marginparwidth}%
+			  \centering%
+  			\ifthenelse{\boolean{in_threeD}}{% in 3D
+	  		\includemedia[#1]{\includegraphics{#6_3D\colornamesuffix}}{#6_3D.prc}}%now not in 3D
+				{\myincludegraphics[#2]{#6}}%
+  			\captionsetup{type=figure}%
+  			%#1%
+	  		\caption{#4}\label{#5}%
+  		\end{minipage}}}}%
+		}
+
 %\AddToShipoutPicture{\ifthenelse{\ifodd{\thepage}}%
 %{\put(10,10){\begin{tikzpicture}\draw (0,0) circle (5pt);\end{tikzpicture}}}%
 %{\put(100,100){\begin{tikzpicture}\draw (0,0) circle (5pt);\end{tikzpicture}}}}%
@@ -311,8 +328,11 @@ Notes:
 \newcommand{\fp}{\ensuremath{f\,'}}
 \newcommand{\fpp}{\ensuremath{f\,''}}
 
-\newcommand{\Fp}{\ensuremath{F\,'}}
-\newcommand{\Fpp}{\ensuremath{F\,''}}
+\newcommand{\Fp}{\ensuremath{F\primeskip'}}
+\newcommand{\Fpp}{\ensuremath{F\primeskip''}}
+
+\newcommand{\yp}{\ensuremath{y\primeskip'}}
+\newcommand{\gp}{\ensuremath{g\primeskip'}}
 
 \newcommand{\dx}{\ensuremath{\Delta x}}
 \newcommand{\dy}{\ensuremath{\Delta y}}
@@ -363,6 +383,8 @@ Notes:
 \DeclareMathOperator{\csch}{csch}
 
 \newcommand{\sword}[1]{\textbf{#1}}
+
+\newcommand{\primeskip}{\hskip.75pt}
 
 %%%% Begin Header TikZ
 

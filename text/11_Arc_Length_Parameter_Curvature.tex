@@ -2,8 +2,8 @@
 
 In normal conversation we describe position in terms of both \emph{time} and \emph{distance}. For instance, imagine driving to visit a friend. If she calls and asks where you are, you might answer ``I am 20 minutes from your house,'' or you might say ``I am 10 miles from your house.'' Both answers provide your friend with a general idea of where you are.
 
-Currently, our vector--valued functions have defined points with a parameter $t$, which we often take to represent time. Consider Figure \ref{fig:vvfarc_intro1} (a), where $\vrt = \la t^2-t,t^2+t\ra$ is graphed and the points corresponding to $t=0,\ 1$ and $2$ are shown. Note how the arc length between $t=0$ and $t=1$ is smaller than the arc length between $t=1$ and $t=2$; if the parameter $t$ is time and $\vec r$ is position, we can say that the particle traveled faster on $[1,2]$ than on $[0,1]$. 
-\mtable{.7}{Introducing the arc length parameter.}{fig:vvfarc_intro1}{%
+Currently, our vector--valued functions have defined points with a parameter $t$, which we often take to represent time. Consider Figure \ref{fig:vvfarc_intro1}(a), where $\vrt = \la t^2-t,t^2+t\ra$ is graphed and the points corresponding to $t=0,\ 1$ and $2$ are shown. Note how the arc length between $t=0$ and $t=1$ is smaller than the arc length between $t=1$ and $t=2$; if the parameter $t$ is time and $\vec r$ is position, we can say that the particle traveled faster on $[1,2]$ than on $[0,1]$. 
+\mtable{.67}{Introducing the arc length parameter.}{fig:vvfarc_intro1}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figvvfarc_intro1}\\
 (a)\\[10pt]
@@ -12,7 +12,7 @@ Currently, our vector--valued functions have defined points with a parameter $t$
 \end{tabular}
 }
 
-Now consider Figure \ref{fig:vvfarc_intro1} (b), where the same graph is parametrized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.\index{arc length parameter}\index{arc length}
+Now consider Figure \ref{fig:vvfarc_intro1}(b), where the same graph is parametrized by a different variable $s$.  Points corresponding to $s=0$ through $s=6$ are plotted. The arc length of the graph between each adjacent pair of points is 1. We can view this parameter $s$ as distance; that is, the arc length of the graph from $s=0$ to $s=3$ is 3, the arc length from $s=2$ to $s=6$ is 4, etc. If one wants to find the point 2.5 units from an initial location (i.e., $s=0$), one would compute $\vec r(2.5)$. This parameter $s$ is very useful, and is called the \textbf{arc length parameter}.\index{arc length parameter}\index{arc length}
 
 How do we find the arc length parameter? 
 
@@ -70,7 +70,7 @@ where $\vec T(t)$ is the unit tangent vector. Equation \ref{eq:vvfarc2} is often
 
 \noindent\textbf{\large Curvature}\\
 
-Consider points $A$ and $B$ on the curve graphed in Figure \ref{fig:curvatureintro} (a). One can readily argue that the curve curves more sharply at $A$ than at $B$. It is useful to use a number to describe how sharply the curve bends; that number is the \textbf{curvature} of the curve.
+Consider points $A$ and $B$ on the curve graphed in Figure \ref{fig:curvatureintro}(a). One can readily argue that the curve curves more sharply at $A$ than at $B$. It is useful to use a number to describe how sharply the curve bends; that number is the \textbf{curvature} of the curve.
 \mtable{.5}{Establishing the concept of curvature.}{fig:curvatureintro}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figcurvature_intro}\\
@@ -80,7 +80,7 @@ Consider points $A$ and $B$ on the curve graphed in Figure \ref{fig:curvatureint
 \end{tabular}
 }
 
-We derive this number in the following way. Consider Figure \ref{fig:curvatureintro} (b), where  unit tangent vectors are graphed around points $A$ and $B$. Notice how the direction of the unit tangent vector changes quite a bit near $A$, whereas it does not change as much around $B$. This leads to an important concept: measuring the rate of change of the unit tangent vector with respect to arc length gives us a measurement of curvature.
+We derive this number in the following way. Consider Figure \ref{fig:curvatureintro}(b), where  unit tangent vectors are graphed around points $A$ and $B$. Notice how the direction of the unit tangent vector changes quite a bit near $A$, whereas it does not change as much around $B$. This leads to an important concept: measuring the rate of change of the unit tangent vector with respect to arc length gives us a measurement of curvature.
 
 \definition{def:curvature}{Curvature}
 {Let $\vec r(s)$ be a vector--valued function where $s$ is the arc length parameter. The curvature $\kappa$ of the graph of $\vec r(s)$ is
@@ -108,12 +108,12 @@ We use  Definition \ref{def:curvature}  to find the curvature of the line in Exa
 \intertext{and}
 \kappa&=\snorm{\vec T\,'(s)} = 0.
 \end{align*}
-It probably comes as no surprise that the curvature of a line is 0. (How ``curvy'' is a line? It is not curvy at all.)
+It probably comes as no surprise that the curvature of a line is 0. (How ``curvy\primeskip'' is a line? It is not curvy at all.)
 }\\
 
 
 
-While the definition of curvature is a beautiful mathematical concept, it is nearly impossible to use most of the time; writing $\vec r$ in terms of the arc length parameter is generally very hard. Fortunately, there are other methods of calculating this value that are much easier. There is a tradeoff: the definition is ``easy'' to understand though hard to compute, whereas these other formulas are easy to compute though hard to understand why they work.
+While the definition of curvature is a beautiful mathematical concept, it is nearly impossible to use most of the time; writing $\vec r$ in terms of the arc length parameter is generally very hard. Fortunately, there are other methods of calculating this value that are much easier. There is a tradeoff: the definition is ``easy\primeskip'' to understand though hard to compute, whereas these other formulas are easy to compute though it may be hard to understand why they work.
 \clearpage
 
 \theorem{thm:curvature_formulas}{Formulas for Curvature}
@@ -123,7 +123,7 @@ While the definition of curvature is a beautiful mathematical concept, it is nea
 	\item If $C$ is defined by $y=f(x)$, then 
 	$$\kappa = \frac{|\fp'(x)|}{\Big(1+\big(\fp(x)\big)^2\Big)^{3/2}}.$$
 	\item	If $C$ is defined as a vector--valued function in the plane, $\vec r(t) = \la x(t), y(t)\ra$, then
-	$$\kappa = \frac{|x'y''-x''y'|}{\big((x')^2+(y')^2\big)^{3/2}}.$$
+	$$\kappa = \frac{|x\primeskip'y\primeskip''-x\primeskip''y\primeskip'|}{\big((x\primeskip')^2+(y\primeskip')^2\big)^{3/2}}.$$
 	\item If $C$ is defined in space by a vector--valued function $\vec r(t)$, then
 $$\kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\times\vrp'(t)}}{\norm{\vrp(t)}^3} = \frac{\vec a(t)\cdot \vec N(t)}{\norm{\vec v(t)}^2}.$$
 \end{enumerate}
@@ -132,7 +132,7 @@ $$\kappa = \frac{\norm{\vec T\,'(t)}}{\norm{\vrp(t)}} = \frac{\norm{\vrp(t)\time
 We practice using these formulas.\\
 
 \example{ex_curvature2}{Finding the curvature of a circle}{
-Find the curvature of a circle with radius $r$, defined by $\vec r(t) = \la r\cos t,r\sin t\ra$.
+Find the curvature of a circle with radius $r$, defined by $\vec c(t) = \la r\cos t,r\sin t\ra$.
 \index{curvature!of circle}}
 {Before we start, we should expect the curvature of a circle to be constant, and not dependent on $t$. (Why?)
 
@@ -181,7 +181,14 @@ $$\vrp(t) =\la 1,2t,6t^2\ra,\quad \vrp'(t) = \la 0,2,12t\ra,\quad \text{and}\qua
 \begin{tabular}{c}
 \myincludegraphics{figures/figcurvature4a}\\
 (a)\\[10pt]
-\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip]{figures/figcurvature4}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004910729825496674,
+3Dc2c=0.6666666865348816 0.6666666865348816 0.3333333432674408,
+3Dcoo=-0.0000029802322387695312 -0.0000029802322387695312 -0.0000014901161193847656,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 4mm,clip}{figures/figcurvature4}\\
+%\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 4mm,clip]{figures/figcurvature4}\\
 (b)
 \end{tabular}
 }
@@ -191,7 +198,7 @@ Thus
 				&= \rule{0pt}{20pt}\frac{\norm{\la 12t^2,-12t,2\ra}}{\norm{\la 1,2t,6t^2\ra}^3} \\
 				&= \rule{0pt}{20pt}\frac{\sqrt{\rule{0pt}{8.5pt}144t^4+144t^2+4}}{\left(\sqrt{\rule{0pt}{8.5pt}1+4t^2+36t^4\ }\right)^3}
 \end{align*}
-While this is not a particularly ``nice'' formula, it does explictly tell us what the curvature is at a given $t$ value. To maximize $\kappa(t)$, we should solve $\kappa'(t)=0$ for $t$. This is doable, but \emph{very} time consuming. Instead, consider the graph of $\kappa(t)$ as given in Figure \ref{fig:curvature4} (a). We see that $\kappa$ is maximized at two $t$ values; using a numerical solver, we find these values are $t\approx\pm 0.189$. In part (b) of the figure we graph $\vrt$ and indicate the points where curvature is maximized.
+While this is not a particularly ``nice'' formula, it does explictly tell us what the curvature is at a given $t$ value. To maximize $\kappa(t)$, we should solve $\kappa'(t)=0$ for $t$. This is doable, but \emph{very} time consuming. Instead, consider the graph of $\kappa(t)$ as given in Figure \ref{fig:curvature4}(a). We see that $\kappa$ is maximized at two $t$ values; using a numerical solver, we find these values are $t\approx\pm 0.189$. In part (b) of the figure we graph $\vrt$ and indicate the points where curvature is maximized.
 }\\
 
 \noindent\textbf{\large Curvature and Motion}\\
@@ -218,7 +225,7 @@ a_\text{N} &= \kappa \norm{\vvt}^2 \label{eq:curvature_an}\\
 
 This last equation shows that the component of acceleration that changes the object's direction is dependent on two things: the curvature of the path and the speed of the object.
 
-Imagine driving a car in a clockwise circle. You will naturally feel a force pushing you towards the door (more accurately, the door is pushing you as the car is turning and you want to travel in a straight line). If you keep the radius of the circle constant but speed up, the door pushes harder against you ($a_\text{N}$ has increased). If you keep your speed constant but tighten the turn, once again the door will push harder against you.
+Imagine driving a car in a clockwise circle. You will naturally feel a force pushing you towards the door (more accurately, the door is pushing you as the car is turning and you want to travel in a straight line). If you keep the radius of the circle constant but speed up (i.e., increasing $s\,'(t)$), the door pushes harder against you ($a_\text{N}$ has increased). If you keep your speed constant but tighten the turn (i.e., increase $\kappa$), once again the door will push harder against you.
 
 Putting our new formulas for $a_\text{T}$ and $a_\text{N}$ together, we have 
 $$\vat = s\,''(t)\vec T(t) + \kappa\norm{\vvt}^2\vec N(t).$$

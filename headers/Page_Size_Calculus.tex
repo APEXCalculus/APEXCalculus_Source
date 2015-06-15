@@ -43,10 +43,10 @@
 %%
 \newcommand{\exercisegeometry}{%
 \newgeometry{inner=72pt,%
-						outer=72pt,textheight=9in,%textwidth=320pt,
+						outer=72pt,textheight=9.25in,tmargin=.75in,%textwidth=320pt,
 						marginparwidth=150pt,%
-						marginparsep=32pt,
-						bottom=1in,
+						marginparsep=32pt,footskip=29pt,
+						%bottom=1in,
 						}
 															}
 }% ends if/then/else longpage
@@ -59,6 +59,12 @@
 						%bottom=1in%,footskip=1.5in
 						}%
 													}
+
+\newcommand{\prefacegeometry}{%
+\newgeometry{inner=1in,textheight=9in,textwidth=320pt,marginparwidth=150pt,%
+						marginparsep=32pt,bottom=1in,footskip=1.5in}
+															}
+
 
 \ifthenelse{\boolean{longpage}}{%
 	\usepackage{everyshi}

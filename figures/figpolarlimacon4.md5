@@ -1,0 +1,1 @@
+\begingroup \toks 0={macro:->[scale=1,>=stealth] \par \draw [<->,] (-2.1,0) -- (2.1,0); \draw [<->,] (0,-2.1) -- (0,2.1); \par \par \draw [thick,{\colorone },domain=0:360,samples=60,smooth] plot ({cos(\x )*(1.3+.6*cos(\x ))},{sin(\x )*(1.3+.6*cos(\x ))}); \par \par }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

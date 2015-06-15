@@ -25,7 +25,7 @@ $$\frac{dy}{dx} = \frac{\fp(\theta)\sin\theta+f(\theta)\cos\theta}{\fp(\theta)\c
 {\begin{enumerate}
 	\item We start by computing $\frac{dy}{dx}$. With $\fp(\theta) = 2\cos\theta$, we have
 	\begin{align*}
-	\frac{dy}{dx} &= \frac{2\cos\theta\sin\theta + \cos\theta(1+2\sin\theta)}{2\cos^\theta-\sin\theta(1+2\sin\theta)}\\
+	\frac{dy}{dx} &= \frac{2\cos\theta\sin\theta + \cos\theta(1+2\sin\theta)}{2\cos^2\theta-\sin\theta(1+2\sin\theta)}\\
 	&= \frac{\cos\theta(4\sin\theta+1)}{2(\cos^2\theta-\sin^2\theta)-\sin\theta}.
 	\end{align*}
 	When $\theta=\pi/4$, $\frac{dy}{dx}=-2\sqrt{2}-1$ (this requires a bit of simplification). In rectangular coordinates, the point on the graph at $\theta=\pi/4$ is $(1+\sqrt{2}/2,1+\sqrt{2}/2)$. Thus the rectangular equation of the line tangent to the lima\c con at $\theta=\pi/4$ is 
@@ -121,10 +121,10 @@ $$
 A \ =\  \frac12\int_\alpha^\beta f(\theta)^2 \ d\theta\  =\  \frac12\int_\alpha^\beta r^{\,2} \ d\theta$$
 }
 
-The theorem states that $0\leq \beta-\alpha\leq 2\pi$. This ensures that region does not overlap itself, giving a result that does not correspond directly to the area.\\
+The theorem states that $0\leq \beta-\alpha\leq 2\pi$. This ensures that region does not overlap itself, which would give a result that does not correspond directly to the area.\\
 
 \example{ex_polcalc3}{Area of a polar region}{
-Find the area of the circle defined by $r=\cos \theta$.}
+Find the area of the circle defined by $r=\cos \theta$. (Recall this circle has radius $1/2$.)}
 {This is a direct application of Theorem \ref{thm:polar_area}. The circle is traced out on $[0,\pi]$, leading to the integral
 \begin{align*}
 \text{Area} &= \frac12\int_0^\pi \cos^2\theta\ d  \theta \\
@@ -144,7 +144,7 @@ $$\int\sin^2\theta\ d\theta = \frac12\theta-\frac14\sin(2\theta)+C$$
 Find the area of the cardiod $r=1+\cos\theta$ bound between $\theta=\pi/6$ and $\theta=\pi/3$, as shown in Figure \ref{fig:polcalc4}.
 \mfigure{.3}{Finding the area of the shaded region of a cardiod in Example \ref{ex_polcalc4}.}{fig:polcalc4}{figures/figpolcalc4}
 }
-{This is again a direct appliation of Theorem \ref{thm:polar_area}. 
+{This is again a direct application of Theorem \ref{thm:polar_area}. 
 \begin{align*}
 \text{Area} &= \frac12\int_{\pi/6}^{\pi/3} (1+\cos\theta)^2\ d\theta\\
 				&= \frac12\int_{\pi/6}^{\pi/3} (1+2\cos\theta+\cos^2\theta)\ d\theta\\
@@ -213,11 +213,11 @@ We omit the integration details and let the reader verify that $A_1 = \pi/12$ an
 
 As we have already considered the arc length of curves defined by rectangular and parametric equations, we now consider it in the context of polar equations. Recall that the arc length $L$ of the graph defined by the parametric equations $x=f(t)$, $y=g(t)$ on $[a,b]$ is
 \index{arc length}\index{polar!function!arc length}
-\begin{equation}L = \int_a^b \sqrt{\fp(t)^2 + g'(t)^2}\ dt = \int_a^b \sqrt{x'(t)^2+y'(t)^2}\ dt.\label{eq:polar_arclength}\end{equation}
+\begin{equation}L = \int_a^b \sqrt{\fp(t)^2 + g\primeskip'(t)^2}\ dt = \int_a^b \sqrt{x\primeskip'(t)^2+y\primeskip'(t)^2}\ dt.\label{eq:polar_arclength}\end{equation}
 
-Now consider the polar function $r=f(\theta)$. We again use the identities $x=f(\theta)\cos\theta$ and $y=f(\theta)\sin\theta$ to create parametric equations based on the polar function. We compute $x'(\theta)$ and $y'(\theta)$ as done before when computing $\frac{dy}{dx}$, then apply Equation \eqref{eq:polar_arclength}.
+Now consider the polar function $r=f(\theta)$. We again use the identities $x=f(\theta)\cos\theta$ and $y=f(\theta)\sin\theta$ to create parametric equations based on the polar function. We compute $x\primeskip'(\theta)$ and $y\primeskip'(\theta)$ as done before when computing $\frac{dy}{dx}$, then apply Equation \eqref{eq:polar_arclength}.
 
-The expression $x'(\theta)^2+y'(\theta)^2$ can be simplified a great deal; we leave this as an exercise and state that $$x'(\theta)^2+y'(\theta)^2 = \fp(\theta)^2+f(\theta)^2.$$ This leads us to the  arc length formula.
+The expression $x\primeskip'(\theta)^2+y\primeskip'(\theta)^2$ can be simplified a great deal; we leave this as an exercise and state that $$x\primeskip'(\theta)^2+y\primeskip'(\theta)^2 = \fp(\theta)^2+f(\theta)^2.$$ This leads us to the  arc length formula.
 
 \keyidea{idea:polar_arclength}{Arc Length of Polar Curves}
 {Let  $r=f(\theta)$ be a polar function with $\fp$ continuous on an open interval $I$ containing $[\alpha,\beta]$, on which the graph traces itself only once. The arc length $L$ of the graph on $[\alpha,\beta]$ is
@@ -259,10 +259,32 @@ Find the surface area formed by revolving one petal of the rose curve $r=\cos(2\
 \begin{tabular}{c}
 \myincludegraphics{figures/figpolcalc8}\\
 (a)\\[10pt]
-\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{figures/figpolcalc8a}\\
+%%\ifthenelse{\boolean{in_threeD}}{{%
+%%\myincludegraphicsthree[width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
+%%3Droll=0,
+%%3Dortho=0.009,
+%%3Dc2c=0.41893383860588074 -0.887881875038147 0.1901581883430481,
+%%3Dcoo=65.85308837890625 6.341495513916016 17.98039436340332,
+%%3Droo=85,
+%%3Dlights=Headlamp,add3Djscript=asylabels.js]{figures/figpolcalc8a_3D}}}%
+%%{\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{figures/figpolcalc8a}}\\
+%%%\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
+%%%3Droll=0,
+%%%3Dortho=0.009,
+%%%3Dc2c=0.41893383860588074 -0.887881875038147 0.1901581883430481,
+%%%3Dcoo=65.85308837890625 6.341495513916016 17.98039436340332,
+%%%3Droo=85,
+%%%3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figpolcalc8a}\\
+%%\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{figures/figpolcalc8a}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=pageinvisible,
+3Droll=0,
+3Dortho=0.009,
+3Dc2c=0.41893383860588074 -0.887881875038147 0.1901581883430481,
+3Dcoo=65.85308837890625 6.341495513916016 17.98039436340332,
+3Droo=85,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figpolcalc8a}\\
 (b)\\
-\end
-{tabular}
+\end{tabular}
 }
 We choose, as implied by the figure, to revolve the portion of the curve that lies on $[0,\pi/4]$ about the initial ray. Using Key Idea \ref{idea:surface_area_polar} and the fact that $\fp(\theta) = -2\sin(2\theta)$, we have
 \begin{align*}
@@ -272,4 +294,6 @@ We choose, as implied by the figure, to revolve the portion of the curve that li
 The integral is another that cannot be evaluated in terms of elementary functions. Simpson's Rule, with $n=4$, approximates the value at $1.36751$.%; with $n=10$, the value is accurate to 4 decimal places.
 }\\
 
+
+This chapter has been about curves in the plane. While there is great mathematics to be discovered in the two dimensions of a plane, we live in a three dimensional world and hence we should also look to do mathematics in 3D -- that is, in \emph{space}. The next chapter begins our exploration into space by introducing the topic of \emph{vectors}, which are incredibly useful and powerful mathematical objects.
 \printexercises{exercises/09_05_exercises}

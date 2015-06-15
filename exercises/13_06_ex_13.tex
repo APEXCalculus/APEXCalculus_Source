@@ -3,11 +3,18 @@ $y=1-x^2$ and $y=1-z^2$.
 
 Do not evaluate  any triple integral. Which order is easier to evaluate: $dz\ dy\ dx$ or $dy\ dz\ dx$? Explain why.
 
-\myincludegraphics[scale=1.25,trim=0mm 0mm 0mm 0mm,clip]{figures/fig13_06_ex_13}
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004999519791454077,
+3Dc2c=0.6666666865348816 0.6666666865348816 0.3333333134651184,
+3Dcoo=-11.596293449401855 -12.679614067077637 48.551517486572266,
+3Droo=149.9999987284343,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 0mm 0mm 0mm,clip}{figures/fig13_06_ex_13}
+%\myincludegraphics[scale=1.25,trim=0mm 0mm 0mm 0mm,clip]{figures/fig13_06_ex_13}
 \ifthenelse{\boolean{printquestions}}{\columnbreak}{}
 }
 {$dz\ dy\ dx$: $\ds\int_{0}^1\int_{0}^{1-x^2}\int_{0}^{\sqrt{1-y}}\ dz\ dy\ dx$\\
-	$dz\ dx\ dy$: $\ds\int_{0}^1\int_{0}^{\sqrt{1-y}}\int_{0}^{\sqrt{1-y}}\ dz\ dy\ dx$\\
+	$dz\ dx\ dy$: $\ds\int_{0}^1\int_{0}^{\sqrt{1-y}}\int_{0}^{\sqrt{1-y}}\ dz\ dx\ dy$\\
 	$dy\ dz\ dx$: $\ds\int_{0}^1\int_0^{x}\int_{0}^{1-x^2}\ dy\ dz\ dx + \int_{0}^1\int_x^{1}\int_{0}^{1-z^2}\ dy\ dz\ dx$\\
 	$dy\ dx\ dz$: $\ds\int_0^1\int_{0}^{z}\int_{0}^{1-z^2}\ dy\ dx\ dz+\int_0^1\int_{z}^{1}\int_{0}^{1-x^2}\ dy\ dx\ dz$\\
 	$dx\ dz\ dy$: $\ds\int_{0}^1\int_{0}^{\sqrt{1-y}}\int_{0}^{\sqrt{1-y}}\ dx\ dz\ dy$\\

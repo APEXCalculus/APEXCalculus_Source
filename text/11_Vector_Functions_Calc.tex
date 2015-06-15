@@ -7,8 +7,9 @@ The previous section introduced us to a new mathematical object, the vector--val
 The initial definition of the limit of a vector--valued function is a bit intimidating, as was the definition of the limit in Definition \ref{def:limit}. The theorem following the definition shows that in practice, taking limits of vector--valued functions is no more difficult than taking limits of real--valued functions.
 
 \definition{def:vvf_limit}{Limits of Vector--Valued Functions}
-{Let a vector--valued function $\vec r(t)$ be given, defined on an open interval $I$ containing $c$. The \textbf{limit of $\vec r(t)$, as $t$ approaches $c$ is $\vec L$}, expressed as 
-$$\lim_{t\to c} \vec r(t) = \vec L,$$ means that given any $\epsilon>0$, there exists a $\delta>0$ such that whenever $|t-c| <\delta$, we have $\norm{\vec r(t) - \vec L} < \epsilon.$
+{Let $I$ be an open interval containing $c$, and let $\vec r(t)$ be a vector--valued function defined on $I$, except possibly at $c$. %Let a vector--valued function $\vec r(t)$ be given, defined on an open interval $I$ containing $c$. 
+The \textbf{limit of $\vec r(t)$, as $t$ approaches $c$, is $\vec L$}, expressed as 
+$$\lim_{t\to c} \vec r(t) = \vec L,$$ means that given any $\epsilon>0$, there exists a $\delta>0$ such that for all $t\neq c$, if $|t-c| <\delta$, we have $\norm{\vec r(t) - \vec L} < \epsilon.$
 \index{vector--valued function!limits}\index{limit!of vector--valued functions}
 }\\
 
@@ -24,7 +25,6 @@ Note how the measurement of distance between real numbers is the absolute value 
 	$$\lim_{t\to c} \vec r(t) = \la \lim_{t\to c}f(t)\, , \,\lim_{t\to c} g(t)\,, \,\lim_{t\to c} h(t)\ra$$
 \end{enumerate}
 }
-
 Theorem \ref{thm:vvf_limit} states that we compute limits component--wise.\\
 
 \example{ex_vvflimit1}{Finding limits of vector--valued functions}{
@@ -38,7 +38,7 @@ Let $\ds\vec r(t) = \la \frac{\sin t}{t},\, t^2-3t+3,\,\cos t\ra.$ Find $\ds \li
 \vskip-1.5\baselineskip
 }\\
 
-\noindent\textbf{Continuity}\\
+\noindent\textbf{\large Continuity}\\
 
 \definition{def:vvf_continuity}{Continuity of Vector--Valued Functions}
 {Let $\vec r(t)$ be a vector--valued function defined on an open interval $I$ containing $c$.
@@ -50,7 +50,7 @@ Let $\ds\vec r(t) = \la \frac{\sin t}{t},\, t^2-3t+3,\,\cos t\ra.$ Find $\ds \li
 }
 
 We again have a theorem that lets us evaluate continuity component--wise.
-%\enlargethispage{3\baselineskip}
+\enlargethispage{2\baselineskip}
 
 \theorem{thm:vvf_continuity}{Continuity of Vector--Valued Functions}
 {Let $\vec r(t)$ be a vector--valued function defined on an open interval $I$ containing $c$. $\vec r(t)$ is continuous at $c$ if, and only if, each of its component functions is continuous at $c$.
@@ -66,7 +66,7 @@ At $t=1$ each of the component functions is continuous. Therefore $\vec r(t)$ is
 
 \noindent\textbf{\large Derivatives}\\
 
-Consider a vector--valued function $\vec r$ defined on an open interval $I$ containing $t_0$ and $t_1$. We can compute the displacement of $\vec r$ on $[t_0,t_1]$, as shown in Figure \ref{fig:vvfderiv_intro} (a). Recall that dividing the displacement vector by $t_1-t_0$ gives the average rate of change on $[t_0,t_1]$, as shown in (b). \\
+Consider a vector--valued function $\vec r$ defined on an open interval $I$ containing $t_0$ and $t_1$. We can compute the displacement of $\vec r$ on $[t_0,t_1]$, as shown in Figure \ref{fig:vvfderiv_intro}(a). Recall that dividing the displacement vector by $t_1-t_0$ gives the average rate of change on $[t_0,t_1]$, as shown in (b). \\
 
 \noindent%\hskip-150pt%
 \begin{minipage}{\linewidth+150pt}
@@ -109,10 +109,10 @@ Once again we might view this definition as intimidating, but recall that we can
 \theorem{thm:vvf_deriv}{Derivatives of Vector--Valued Functions}
 {\begin{enumerate}
 	\item Let $\vec r(t) = \la \, f(t), g(t)\,\ra$. Then 
-	$$\vrp(t) = \la\, \fp(t), g'(t)\, \ra.$$
+	$$\vrp(t) = \la\, \fp(t), g\primeskip'(t)\, \ra.$$
 	\item Let $\vec r(t) = \la \, f(t), g(t), h(t)\,\ra$. Then
 	\index{vector--valued function!derivatives}\index{derivative!vector--valued functions}
-	$$\vrp(t) = \la\, \fp(t), g'(t), h'(t)\, \ra.$$
+	$$\vrp(t) = \la\, \fp(t), g\primeskip'(t), h\primeskip'(t)\, \ra.$$
 \end{enumerate}
 }\\
 
@@ -125,9 +125,9 @@ Let $\vec r(t) = \la t^2,t\ra$.
 }
 {\begin{enumerate}
 \item	Theorem \ref{thm:vvf_deriv} allows us to compute derivatives component--wise, so
-$$\vrp(t) = \la 2t, 1\ra.$$ $\vec r(t)$ and $\vrp(t)$ are graphed together in Figure \ref{fig:vvflimit3} (a). Note how plotting the two of these together, in this way, is not very illuminating. When dealing with real--valued functions, plotting $f(x)$ with $\fp(x)$ gave us useful information as we were able to compare $f$ and $\fp$ at the same $x$-values. When dealing with vector--valued functions, it is hard to tell which points on the graph of $\vrp$ correspond to which points on the graph of $\vec r$.
+$$\vrp(t) = \la 2t, 1\ra.$$ $\vec r(t)$ and $\vrp(t)$ are graphed together in Figure \ref{fig:vvflimit3}(a). Note how plotting the two of these together, in this way, is not very illuminating. When dealing with real--valued functions, plotting $f(x)$ with $\fp(x)$ gave us useful information as we were able to compare $f$ and $\fp$ at the same $x$-values. When dealing with vector--valued functions, it is hard to tell which points on the graph of $\vrp$ correspond to which points on the graph of $\vec r$.
 
-\item	We easily compute $\vrp(1) = \la 2,1\ra$, which is drawn in Figure \ref{fig:vvflimit3} with its initial point at the origin, as well as at $\vec r(1) = \la 1,1\ra.$ These are sketched in Figure \ref{fig:vvflimit3} (b).
+\item	We easily compute $\vrp(1) = \la 2,1\ra$, which is drawn in Figure \ref{fig:vvflimit3} with its initial point at the origin, as well as at $\vec r(1) = \la 1,1\ra.$ These are sketched in Figure \ref{fig:vvflimit3}(b).
 \mtable{.4}{Graphing the derivative of a vector--valued function in Example \ref{ex_vvflimit3}.}{fig:vvflimit3}{%
 \begin{tabular}{c}
 \myincludegraphics{figures/figvvflimit3a}\\[5pt]
@@ -145,22 +145,34 @@ $$\vrp(t) = \la 2t, 1\ra.$$ $\vec r(t)$ and $\vrp(t)$ are graphed together in Fi
 \example{ex_vvflimit4}{Derivatives of vector--valued functions}{
 Let $\vec r(t) = \la \cos t, \sin t, t\ra$. Compute $\vrp(t)$ and $\vrp(\pi/2)$. Sketch $\vrp(\pi/2)$ with its initial point at the origin and at $\vec r(\pi/2)$.
 }
-{We compute $\vrp$ as $\vrp(t) = \la -\sin t, \cos t, 1\ra$. At $t= \pi/2$, we have $\vrp(\pi/2) = \la -1,0,1\ra$. Figure \ref{fig:vvflimit4} shows two graphs of $\vec r(t)$, from different perspectives, with $\vrp(\pi/2)$ plotted with its initial point at the origin and at $\vec r(\pi/2)$.
-%\begin{center}
-	%\myincludegraphics[scale=1.25]{figures/figvvflimit4}\myincludegraphics[scale=1.25]{figures/figvvflimit4a} 
-	%\captionsetup{type=figure}\caption{Viewing a vector--valued function, and its derivative at one point, from two different perspectives.} \label{fig:vvflimit4}
-%\end{center}
+{We compute $\vrp$ as $\vrp(t) = \la -\sin t, \cos t, 1\ra$. At $t= \pi/2$, we have $\vrp(\pi/2) = \la -1,0,1\ra$. Figure \ref{fig:vvflimit4} \ifthenelse{\boolean{in_threeD}}{shows a graph of $\vec r(t)$,}{shows two graphs of $\vec r(t)$, from different perspectives,} with $\vrp(\pi/2)$ plotted with its initial point at the origin and at $\vec r(\pi/2)$.
+%%%
+%%%
+% This could be a mess, but necessary?
+% The 2D version has two pictures, the 3D has only one. Changing the text to reflect this.
+%%%
+%%%
+\ifthenelse{\boolean{in_threeD}}{%
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=-0.5856992334166129,
+3Dortho=0.004399999976158142,
+3Dc2c=0.6354137063026428 0.6317671537399292 0.4439816176891327,
+3Dcoo=-18.837804794311523 -8.740551948547363 60.22870635986328,
+3Droo=150.0000027221829,3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.8}{Viewing a vector--valued function and its derivative at one point.}{fig:vvflimit4}{figures/figvvflimit4}
+}%% ends "if in threeD"
+{ % begins "else, not in threeD
 \mtable{.72}{Viewing a vector--valued function, and its derivative at one point, from two different perspectives.}{fig:vvflimit4}{
 \begin{tabular}{c}
 \myincludegraphics[scale=1.25]{figures/figvvflimit4} \\
 (a)\\
 \myincludegraphics[scale=1.25]{figures/figvvflimit4a} \\
 (b)
-\end{tabular}
-}
+\end{tabular}}
+}% ends whole if-then-else
 %\vskip-1.5\baselineskip
-}\\
+}\\  %ends example
 
+\ifthenelse{\boolean{in_threeD}}{\vskip\baselineskip}{}
 In Examples \ref{ex_vvflimit3} and \ref{ex_vvflimit4}, sketching a particular derivative with its initial point at the origin did not seem to reveal anything significant. However, when we sketched the vector with its initial point on the corresponding point on the graph, we did see something significant: the vector appeared to be \textit{tangent} to the graph. We have not yet defined what ``tangent'' means in terms of curves in space; in fact, we use the derivative to define this term.
 
 \definition{def:vector_tangent}{Tangent Vector, Tangent Line}
@@ -180,6 +192,18 @@ Let $\vec r(t) = \la t,t^2,t^3\ra$ on $[-1.5,1.5]$. Find the vector equation of 
 The direction comes from $\vrp(-1)$. We compute, component--wise, $\vrp(t) = \la 1,2t, 3t^2\ra$. Thus $\vrp(-1) = \la 1,-2,3\ra$. 
 \enlargethispage{2\baselineskip}
 
+%%%
+%%%   Long figure statements follow for if in/not in 3D
+\ifthenelse{\boolean{in_threeD}}{% in threeD
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.5961816528018784,
+3Dortho=0.00514203542843461,
+3Dc2c=0.8352102637290955 0.5152699947357178 0.19214747846126556,
+3Dcoo=-5.658682346343994 19.23411750793457 0.2712952494621277,
+3Droo=149.99999927774635,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.35}{Graphing a curve in space with its tangent line.}{fig:vvfderiv1}{figures/figvvfderiv1}
+}%end in threeD
+{% begin else, not in three D
 \mtable{.3}{Graphing a curve in space with its tangent line.}{fig:vvfderiv1}{%
 \begin{tabular}{c}
 \myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip]{figures/figvvfderiv1}\\
@@ -187,14 +211,15 @@ The direction comes from $\vrp(-1)$. We compute, component--wise, $\vrp(t) = \la
 \myincludegraphics{figures/figvvfderiv1b}\\
 (b)
 \end{tabular}
-}
-The vector equation of the line is $\ell(t) = \la -1,1,-1\ra + t\la 1,-2,3\ra$. This line and $\vec r(t)$ are sketched, from two perspectives, in Figure \ref{fig:vvfderiv1} (a) and (b).
+}% end mtable
+}% ends all of the if-then-else statements
+The vector equation of the line is $\ell(t) = \la -1,1,-1\ra + t\la 1,-2,3\ra$. \ifthenelse{\boolean{in_threeD}}{This line and $\vec r(t)$ are sketched in Figure \ref{fig:vvfderiv1}.}{This line and $\vec r(t)$ are sketched, from two perspectives, in Figure \ref{fig:vvfderiv1} (a) and (b).}
 }\\
 
 \example{ex_vvfderiv3}{Finding tangent lines to curves}{
 Find the equations of the lines tangent to $\vec r(t) = \la t^3,t^2\ra$ at $t=-1$ and $t=0$.}
-{We find that $\vrp(t) = \la 3t^2,2t\ra$. At $t=1$, we have
-$$\vec r(-1) = \la -1,1\ra\quad \text{and}\quad \vrp(1) = \la 3,-2\ra,$$
+{We find that $\vrp(t) = \la 3t^2,2t\ra$. At $t=-1$, we have
+$$\vec r(-1) = \la -1,1\ra\quad \text{and}\quad \vrp(-1) = \la 3,-2\ra,$$
 so the equation of the line tangent to the graph of $\vec r(t)$ at $t=-1$ is
 $$\ell(t) = \la -1,1\ra + t\la 3,-2\ra.$$ This line is graphed with $\vec r(t)$ in Figure \ref{fig:vvfderiv3}.
 
@@ -323,16 +348,19 @@ Note how each indefinite integral creates its own constant which we collect as o
 \begin{align*}
 \vrp(t) & = \la 2t,\sin t,6t^2 \ra + \vec C\\
 \vrp(0) &=   \la 0,0,0 \ra + \vec C\\
-\la 5,3,0\ra &= \vec C
+\la 5,3,0\ra &= \vec C.
 \end{align*}
+\enlargethispage{2\baselineskip}
 
 So $\vrp(t) = \la 2t,\sin t,6t^2\ra + \la 5,3,0\ra = \la 2t+5, \sin t + 3, 6t^2\ra$. To find $\vec r(t)$, we integrate once more.
 
 \begin{align*}
 \int \vrp(t)\ dt &= \la \int 2t+5\ dt, \int \sin t + 3\ dt, \int 6t^2\ dt \ra\\
-							&= \la t^2+5t, -\cos t + 3t, 2t^3\ra + \vec C
+							&= \la t^2+5t, -\cos t + 3t, 2t^3\ra + \vec C.
 \end{align*}
 With $\vec r(0) = \la -7,-1,2\ra$, we solve for $\vec C$:
+\clearpage
+\rule{0pt}{1pt}\vskip-3\baselineskip
 \begin{align*}
 \vec r(t) &= \la t^2+5t, -\cos t + 3t, 2t^3\ra + \vec C\\
 \vec r(0) &= \la 0,-1,0\ra + \vec C\\
@@ -340,6 +368,7 @@ With $\vec r(0) = \la -7,-1,2\ra$, we solve for $\vec C$:
 \la -7,0,2\ra &= \vec C.
 \end{align*}
 So $\vec r(t) = \la t^2+5t, -\cos t + 3t, 2t^3\ra + \la -7,0,2\ra = \la t^2+5t-7,-\cos t+3t,2t^3+2\ra.$
+\vskip-\baselineskip
 }\\
 
 What does the integration of a vector--valued function \emph{mean}? There are many applications, but none as direct as ``the area under the curve'' that we used in understanding the integral of a real--valued function.
@@ -347,8 +376,8 @@ What does the integration of a vector--valued function \emph{mean}? There are ma
 A key understanding for us comes from considering the integral of a derivative: $$\int_a^b \vrp(t)\ dt = \vec r(t)\Big|_a^b = \vec r(b)-\vec r(a).$$ Integrating a \emph{rate of change} function gives \emph{displacement}.\index{displacement}
 
 Noting that vector--valued functions are closely related to parametric equations, we can describe the arc length of the graph of a vector--valued function as an integral. Given parametric equations $x=f(t)$, $y=g(t)$, the arc length on $[a,b]$ of the graph is
-$$\text{Arc Length} = \int_a^b\sqrt{\fp(t)^2+g'(t)^2}\ dt,$$
-as stated in Theorem \ref{thm:arc_length_parametric} in Section \ref{sec:par_calc}. If $\vrt = \la f(t), g(t)\ra$, note that $\sqrt{\fp(t)^2+g'(t)^2} = \norm{\vrp(t)}$. Therefore we can express the arc length of the graph of a vector--valued function as an integral of the magnitude of its derivative.
+$$\text{Arc Length} = \int_a^b\sqrt{\fp(t)^2+g\primeskip'(t)^2}\ dt,$$
+as stated in Theorem \ref{thm:arc_length_parametric} in Section \ref{sec:par_calc}. If $\vrt = \la f(t), g(t)\ra$, note that $\sqrt{\fp(t)^2+g\primeskip'(t)^2} = \norm{\vrp(t)}$. Therefore we can express the arc length of the graph of a vector--valued function as an integral of the magnitude of its derivative.
 
 \theorem{thm:vvf_arc_length}{Arc Length of a Vector--Valued Function}
 {Let \vrt\ be a vector--valued function where $\vrp(t)$ is continuous on $[a,b]$. The arc length $L$ of the graph of \vrt\ is 
@@ -358,6 +387,6 @@ $$L = \int_a^b \norm{\vrp(t)}\ dt.$$
 
 Note that we are actually integrating a scalar--function here, not a vector--valued function.
 
-The next section takes what we have established thus far and applies it to objects in motion. We will let \vrt\ describe the path of a motion in the plane or in space and will discover the information provided by $\vrp(t)$ and $\vrp'(t)$.
+The next section takes what we have established thus far and applies it to objects in motion. We will let \vrt\ describe the path of an object in the plane or in space and will discover the information provided by $\vrp(t)$ and $\vrp'(t)$.
 
 \printexercises{exercises/11_02_exercises}

@@ -9,7 +9,7 @@ One ``bare--bones'' definition of a vector is based on what we wrote above: ``a 
 
 Given points $P$ and $Q$ (either in the plane or in space), we denote with $\vv{PQ}$ the vector \textit{from $P$ to $Q$}. The point $P$ is said to be the \textbf{initial point} of the vector, and the point $Q$ is the \textbf{terminal point}. \\
 
-The \textbf{magnitude}, or \textbf{norm} of $\vv{PQ}$ is the length of the line segment $\overline{PQ}$: $\norm{\vv{PQ}} = \norm{\overline{PQ}}$.\\
+The \textbf{magnitude}, \textbf{length} or \textbf{norm} of $\vv{PQ}$ is the length of the line segment $\overline{PQ}$: $\norm{\vv{PQ}} = \norm{\overline{PQ}}$.\\
 
 Two vectors are \textbf{equal} if they have the same magnitude and direction.
 \index{vectors}\index{vectors!definition}\index{vectors!norm}\index{vectors!magnitude}\index{norm}\index{magnitude of vector}\index{terminal point}\index{initial point}
@@ -25,7 +25,7 @@ We use $\mathbb{R}^2$ (pronounced ``r two'') to represent all the vectors in the
 \mfigure{.35}{Illustrating how equal vectors have the same displacement.}{fig:vectintro2}{figures/figvectintro2}
 Consider the vectors $\vv{PQ}$ and $\vv{RS}$ as shown in Figure \ref{fig:vectintro2}. The vectors look to be equal; that is, they seem to have the same length and direction. Indeed, they are. Both vectors move 2 units to the right and 1 unit up from the initial point to reach the terminal point. One can analyze this movement to measure the magnitude of the vector, and the movement itself gives direction information (one could also measure the slope of the line passing through $P$ and $Q$ or $R$ and $S$). Since they have the same length and direction, these two vectors are equal.
 
-This demonstrates that inherently all we care about is \textit{displacement}; that is, how far in the $x$, $y$ and possibly $z$ directions the terminal point is from the initial point. Both the vectos $\vv{PQ}$ and $\vv{RS}$ in Figure \ref{fig:vectintro2} have an $x$-displacement of 2 and a $y$-displacement of 1. This suggests a standard way of describing vectors in the plane. A vector whose $x$-displacement is $a$ and whose $y$-displacement is $b$ will have terminal point $(a,b)$ when the initial point is the origin, $(0,0)$. This leads us to a definition of a standard and concise way of referring to vectors.
+This demonstrates that inherently all we care about is \textit{displacement}; that is, how far in the $x$, $y$ and possibly $z$ directions the terminal point is from the initial point. Both the vectors $\vv{PQ}$ and $\vv{RS}$ in Figure \ref{fig:vectintro2} have an $x$-displacement of 2 and a $y$-displacement of 1. This suggests a standard way of describing vectors in the plane. A vector whose $x$-displacement is $a$ and whose $y$-displacement is $b$ will have terminal point $(a,b)$ when the initial point is the origin, $(0,0)$. This leads us to a definition of a standard and concise way of referring to vectors.
 
 \definition{def:vector_component}{Component Form of a Vector}
 {\begin{enumerate}
@@ -52,7 +52,7 @@ magnitude.
 \end{enumerate}
 }
 {\begin{enumerate}
-	\item Using $P$ as the initial point, we move 2 units in the positive $x$-direction and $-1$ units in the positive $y$-direction to arrive at the terminal point $P\,'=(5,1)$, as drawn in Figure \ref{fig:vect1} (a).
+	\item Using $P$ as the initial point, we move 2 units in the positive $x$-direction and $-1$ units in the positive $y$-direction to arrive at the terminal point $P\,'=(5,1)$, as drawn in Figure \ref{fig:vect1}(a).
 	
 	The magnitude of $\vec v$ is determined directly from the component form:
 	$$\norm{\vec v} =\sqrt{2^2+(-1)^2} = \sqrt{5}. $$
@@ -60,18 +60,25 @@ magnitude.
 	\begin{tabular}{c}
 	\myincludegraphics{figures/figvectintro3}\\
 	(a)\\[20pt]
-	\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{figures/figvectintro3b}\\
+	\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004,
+3Dc2c=.3 .9 .3,
+3Dcoo=49 42 58,
+3Droo=150,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true}{figures/figvectintro3b}\\
+%\myincludegraphics[scale=1.25,trim=5mm 5mm 5mm 5mm,clip=true]{figures/figvectintro3b}\\
 	(b)
 	\end{tabular}
 	}
 	
 	\item		Using the note following Definition \ref{def:vector_component}, we have
-	$$\vv{RS} = \la -1-(-3), 2-(-2)\ra = \la 2,4\ra.$$ One can readily see from Figure \ref{fig:vect1} (a) that the $x$- and $y$-displacement of $\vv{RS}$ is 2 and 4, respectively, as the component form suggests.
+	$$\vv{RS} = \la -1-(-3), 2-(-2)\ra = \la 2,4\ra.$$ One can readily see from Figure \ref{fig:vect1}(a) that the $x$- and $y$-displacement of $\vv{RS}$ is 2 and 4, respectively, as the component form suggests.
 	
-	\item		Using $Q$ as the initial point, we move 2 units in the positive $x$-direction, $-1$ unit in the positive $y$-direction, and 3 units in the positive $z$-direction to arrive at the terminal point $Q' = (3,0,4)$, illustrated in Figure \ref{fig:vect1} (b).
+	\item		Using $Q$ as the initial point, we move 2 units in the positive $x$-direction, $-1$ unit in the positive $y$-direction, and 3 units in the positive $z$-direction to arrive at the terminal point $Q' = (3,0,4)$, illustrated in Figure \ref{fig:vect1}(b).
 	
 	The magnitude of $\vec u$ is:
-	$$\norm{\vec u} = \sqrt{2^2+0^2+3^2} = \sqrt{13}.$$
+	$$\norm{\vec u} = \sqrt{2^2+(-1)^2+3^2} = \sqrt{14}.$$
 \end{enumerate}
 \vskip-\baselineskip
 }\\
@@ -93,7 +100,7 @@ Now that we have defined vectors, and have created a nice notation by which to d
 					\item The addition, or sum, of the vectors $\vec u$ and $\vec v$ is the vector
 					$$\vec u+\vec v = \la u_1+v_1, u_2+v_2, u_3+v_3\ra.$$
 					\item	The scalar product of $c$ and $\vec v$ is the vector 
-					$$c\vec v = c\la v_1,v_2\ra = \la cv_1,cv_2,cv_3\ra.$$
+					$$c\vec v = c\la v_1,v_2,v_3\ra = \la cv_1,cv_2,cv_3\ra.$$
 				\end{enumerate}
 \end{enumerate}
 }
@@ -151,7 +158,7 @@ Figure \ref{fig:vect4} illustrates, using the Head to Tail Rule, how the subtrac
 					&= \la 4,2\ra.
 	\end{align*}
 	\mfigure{.8}{Graphing vectors $\vec v$ and $2\vec v$ in Example \ref{ex_vect3}.}{fig:vect3}{figures/figvect3}
-	These are sketched in Figure \ref{fig:vect3}. Make note that $2\vec v$ does not start at the terminal point of $\vec v$; rather, its initial point is also the origin. 
+	Both $\vec v$ and $2\vec v$ are sketched in Figure \ref{fig:vect3}. Make note that $2\vec v$ does not start at the terminal point of $\vec v$; rather, its initial point is also the origin. 
 	
 \item		The figure suggests that $2\vec v$ is twice as long as $\vec v$. We compute their magnitudes to confirm this.
 \begin{align*}
@@ -180,7 +187,7 @@ Our examples have illustrated key principles in vector algebra: how to add and s
 	\item \parbox{150pt}{$(cd)\vec v= c(d\vec v)$}
 	\item \parbox{150pt}{$c(\vec u+\vec v) = c\vec u+c\vec v$}Distributive Property
 	\item \parbox{150pt}{$(c+d)\vec v = c\vec v+d\vec v$}Distributive Property
-	\item \parbox{150pt}{$0\cdot\vec v = \vec 0$}
+	\item \parbox{150pt}{$0\vec v = \vec 0$}
 	\item	\parbox{150pt}{$\norm{c\vec v} = |c|\cdot\norm{\vec v}$}\label{thm:norm_prop}
 	\item	$\vnorm u = 0$ if, and only if, $\vecu = \vec 0$.  \label{thm:zero_norm}
 \end{enumerate}
@@ -208,7 +215,7 @@ Property \ref{thm:norm_prop} of Theorem \ref{thm:vector_properties} holds the ke
 \snorm{\frac{1}{\norm{\vec v}}\vec v} &= \frac{1}{\norm{\vec v}}\norm{\vec v} & \text{\small (we can pull out $\ds \frac{1}{\norm{\vec v}}$ as it is a scalar)}\\
 								&= 1.
 \end{align*}			
-So the vector of length 10 in the direction of $\vec v$ is $\ds 10\cdot\frac{1}{\norm{\vec v}}\cdot\vec v.$ An example will make this more clear.\\
+So the vector of length 10 in the direction of $\vec v$ is $\ds 10\frac{1}{\norm{\vec v}}\vec v.$ An example will make this more clear.\\
 
 \example{ex_vect5}{Using Unit Vectors}{
 Let $\vec v= \la 3,1\ra$ and let $\vec w = \la 1,2,2\ra$. 
@@ -326,7 +333,7 @@ Unit vectors were very important in the previous calculation; they allowed us to
 							&= \la 4,-5,2\ra
 							\end{aligned}$\hfill\null
 \end{enumerate}
-These two examples demonstrate that converting from component form to/from using the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering text use that notation.
+These two examples demonstrate that converting between component form and the standard unit vectors is rather straightforward. Many mathematicians prefer component form, and it is the preferred notation in this text. Many engineers prefer using the standard unit vectors, and many engineering text use that notation.
 }\\
 
 \example{ex_vect8}{Finding Component Force}{
@@ -350,7 +357,7 @@ m\cos\varphi\, \vec i + m\sin\varphi\,\vec j + 5\vec i - 25\vec j &=\vec 0
 \end{equation}
 
 This is enough to determine $\vec F_c$ already, as we know $m\cos \varphi = -5$ and $m\sin\varphi =25$. Thus $F_c = \la -5,25\ra.$ We can use this to find the magnitude $m$:
-$$m = \sqrt{(-5)^2+25^2} = 5\sqrt{26}.$$
+$$m = \sqrt{(-5)^2+25^2} = 5\sqrt{26}\approx 25.5\text{lb}.$$
 We can then use either equality from Equation \eqref{eq:vect8} to solve for $\varphi$. We choose the first equality as using arccosine will return an angle in the $2^\text{nd}$ quadrant:
 $$5 + 5\sqrt{26}\cos \varphi = 0 \quad \Rightarrow \quad \varphi = \cos^{-1}\left(\frac{-5}{5\sqrt{26}}\right) \approx 1.7682\approx 101.31^\circ.$$
 

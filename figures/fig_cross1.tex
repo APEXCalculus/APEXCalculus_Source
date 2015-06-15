@@ -1,0 +1,16 @@
+\begin{tikzpicture}[x=13pt,y=10pt,thick]
+			\begin{scope}
+			\clip (0,0) rectangle (4,-2.5);
+			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\begin{scope}
+			\clip (0,0) rectangle (4,2.5);
+			\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\begin{scope}[shift={(0,4)}]
+			\draw (7,-2) node {$V=A\cdot h$};
+			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			\end{scope}
+			\draw (0,0) -- (0,4) (4,0) -- (4,4) node [pos=.5,right] {$h$};
+			\draw (2,0) node {$A$};
+			\end{tikzpicture}

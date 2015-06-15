@@ -1,3 +1,7 @@
+The previous chapter introduced multivariable functions and we applied concepts of differential calculus to these functions. We learned how we can view a function of two variables as a surface in space, and learned how partial derivatives convey  information about how the surface is changing in any direction.
+
+In this chapter we apply techniques of integral calculus to multivariable functions. In Chapter \ref{chapter:integration} we learned how the definite integral of a single variable function gave us ``area under the curve." In this chapter we will see that integration applied to a multivariable function gives us ``volume under a surface." And just as we learned applications of integration beyond finding areas, we will find applications of integration in this chapter beyond finding volume.
+
 \section{Iterated Integrals and Area}\label{sec:iterated_integrals}
 
 In Chapter \ref{chap:multi} we found that it was useful to differentiate functions of several variables with respect to one variable, while treating all the other variables as constants or coefficients. We can integrate functions of several variables in a similar way. For instance, if we are told that $f_x(x,y) = 2xy$, we can treat $y$ as staying constant and integrate to obtain $f(x,y)$:
@@ -12,13 +16,14 @@ $$f(x,y) = \int f_x(x,y)\ dx  = x^2y+C(y).$$
 
 Using this process we can even evaluate definite integrals.\\
 
+\enlargethispage{9\baselineskip}
 \example{ex_iterated1}{Integrating functions of more than one variable}{
 Evaluate the integral $\ds \int_1^{2y} 2xy\ dx.$}
 {We find the indefinite integral as before, then apply the Fundamental Theorem of Calculus to evaluate the definite integral:
 \begin{align*}
 \int_1^{2y} 2xy\ dx &= x^2y\Big|_1^{2y}\\
-			&= (2y)^2y - 2(1)y \\
-			&= 4y^3-2y.
+			&= (2y)^2y - (1)^2y \\
+			&= 4y^3-y.
 \end{align*}
 \vskip-1.5\baselineskip
 }\\
@@ -80,14 +85,14 @@ Consider the plane region $R$ bounded by $a\leq x\leq b$ and $g_1(x)\leq y\leq g
 $$\int_a^b \big(g_2(x)-g_1(x)\big)\ dx.$$
 \mfigure{.7}{Calculating the area of a plane region $R$ with an iterated integral.}{fig:iterated_intro}{figures/figiterated_intro}
 
-We can also view the expression $\big(g_2(x)-g_1(x)\big)$ as 
+We can  view the expression $\big(g_2(x)-g_1(x)\big)$ as 
 $$\big(g_2(x)-g_1(x)\big) = \int_{g_1(x)}^{g_2(x)} 1\ dy =\int_{g_1(x)}^{g_2(x)} \ dy,$$
 meaning we can express the area of $R$ as an iterated integral:
 $$\text{area of }R = \int_a^b \big(g_2(x)-g_1(x)\big)\ dx = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} \ dy\right) dx =\int_a^b\int_{g_1(x)}^{g_2(x)} \ dy\ dx.$$
 
 In short: a certain iterated integral can be viewed as giving the area of a plane region.
 
-A region $R$ could also be defined by $c\leq y\leq d$ and $h_1(y)\leq x\leq h_2(x)$, as shown in Figure \ref{fig:iterated_intro2}. Using a process similar to that above, we have 
+A region $R$ could also be defined by $c\leq y\leq d$ and $h_1(y)\leq x\leq h_2(y)$, as shown in Figure \ref{fig:iterated_intro2}. Using a process similar to that above, we have 
 $$\text{the area of }R = \int_c^d\int_{h_1(y)}^{h_2(y)} \ dx\ dy.$$
 \mfigure{.4}{Calculating the area of a plane region $R$ with an iterated integral.}{fig:iterated_intro2}{figures/figiterated_intro2}
 
@@ -159,7 +164,7 @@ $$\int_0^4\int_{y/2}^{\sqrt{y}} 1\ dx\ dy = \int_0^4 (\sqrt{y}-y/2)\ dy = \left(
 
 \noindent \textbf{\large Changing Order of Integration}\\
 
-In each of the previous examples, we have been given a region $R$ and found the bounds needed to find the area of $R$ using both orders of integration. We integrated using both orders of operation to demonstrate their equality.
+In each of the previous examples, we have been given a region $R$ and found the bounds needed to find the area of $R$ using both orders of integration. We integrated using both orders of integration to demonstrate their equality.
 \index{iterated integration!changing order}
 
 We now approach the skill of describing a region using both orders of integration from a different perspective. Instead of starting with a region and creating iterated integrals, we will start with an iterated integral and rewrite it in the other integration order. To do so, we'll need to understand the region over which we are integrating.
@@ -197,6 +202,6 @@ $$\int_0^4\int_{y^2/4}^{(y+4)/2}1\ dx\ dy = \int_0^2\int_0^{2\sqrt{x}} 1\ dy\ dx
 
 This section has introduced a new concept, the iterated integral. We developed one application for iterated integration: area between curves. However, this is not new, for we already know how to find areas bounded by curves.
 
-In the next section we apply iterated integration to solve problems we currently do not know how to handle.
+In the next section we apply iterated integration to solve problems we currently do not know how to handle. The ``real" goal of this section was not to learn a new way of computing area. Rather, our goal was to learn how to define a region in the plane using the bounds of an iterated integral. That skill is very important in the following sections.
 
 \printexercises{exercises/13_01_exercises}

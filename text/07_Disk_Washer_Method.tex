@@ -4,22 +4,31 @@ The volume of a general right cylinder, as shown in Figure \ref{fig:cross1}, is
 
 \hfill Area of the base $\times$ height. \hfill\null
 
-\mtable{.8}{The volume of a general right cylinder}{fig:cross1}{\begin{tikzpicture}[x=13pt,y=10pt,thick]
-			\begin{scope}
-			\clip (0,0) rectangle (4,-2.5);
-			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
-			\end{scope}
-			\begin{scope}
-			\clip (0,0) rectangle (4,2.5);
-			\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
-			\end{scope}
-			\begin{scope}[shift={(0,4)}]
-			\draw (7,-2) node {$V=A\cdot h$};
-			\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
-			\end{scope}
-			\draw (0,0) -- (0,4) (4,0) -- (4,4) node [pos=.5,right] {$h$};
-			\draw (2,0) node {$A$};
-			\end{tikzpicture}}
+%\mtable{.8}{The volume of a general right cylinder}{fig:cross1}{%
+%\begin{tikzpicture}[x=13pt,y=10pt,thick]
+			%\begin{scope}
+			%\clip (0,0) rectangle (4,-2.5);
+			%\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			%\end{scope}
+			%\begin{scope}
+			%\clip (0,0) rectangle (4,2.5);
+			%\draw [smooth,dashed] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			%\end{scope}
+			%\begin{scope}[shift={(0,4)}]
+			%\draw (7,-2) node {$V=A\cdot h$};
+			%\draw [smooth] plot coordinates {(0,0) (1,1.5) (2,1.5) (4,0) (3,-1) (2,-1.5) (1,-2) (0,0)};
+			%\end{scope}
+			%\draw (0,0) -- (0,4) (4,0) -- (4,4) node [pos=.5,right] {$h$};
+			%\draw (2,0) node {$A$};
+			%\end{tikzpicture}}
+\mfigurethree{width=75pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005786627996712923,
+3Dc2c=0.4350872337818146 0.822970449924469 0.3652651607990265,
+3Dcoo=-7.312352180480957 -16.589130401611328 29.674652099609375,
+3Droo=149.99999509331877,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.75}{The volume of a general right cylinder}{fig:cross1}{figures/figcross1}
+
 
 \noindent We can use this fact as the building block in finding volumes of a variety of shapes.
 
@@ -41,12 +50,35 @@ $$V = \int_a^b A(x)\ dx.$$
 \example{ex_disk0}{Finding the volume of a solid}{
 Find the volume of a pyramid with a square base of side length 10 in and a height of 5 in.}
 {There are many ways to ``orient'' the pyramid along the $x$-axis; Figure \ref{fig:disk0} gives one such way, with the pointed top of the pyramid at the origin and the $x$-axis going through the center of the base.
-\mfigure{.35}{Orienting a pyramid along the $x$-axis in Example \ref{ex_disk0}.}{fig:disk0}{figures/figcross_area1}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=130.3044775136707,
+3Dortho=0.004594136495143175,
+3Dc2c=0.4693154990673065 0.5382519960403442 0.7000198364257812,
+3Dcoo=60.78499984741211 0.48087620735168457 -14.641631126403809,
+3Droo=150.00000157638937,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.35}{Orienting a pyramid along the $x$-axis in Example \ref{ex_disk0}.}{fig:disk0}{figures/figcross_area1}
+%\mfigure{.35}{Orienting a pyramid along the $x$-axis in Example \ref{ex_disk0}.}{fig:disk0}{figures/figcross_area1}
 
 Each cross section of the pyramid is a square; this is a sample differential element. To determine its area $A(x)$, we need to determine the side lengths of the square.
 
-When $x=5$, the square has side length 10; when $x=0$, the square has side length 0. Since the edges of the pyramid are lines, it is easy to figure that each cross-sectional square has side length $2x$, giving $A(x) = (2x)^2=4x^2$. Following Theorem \ref{thm:volume_by_cross_section}, we have 
-\begin{align*} V &= \int_0^5 4x^2\ dx\\
+When $x=5$, the square has side length 10; when $x=0$, the square has side length 0. Since the edges of the pyramid are lines, it is easy to figure that each cross-sectional square has side length $2x$, giving $A(x) = (2x)^2=4x^2$. % 
+
+If one were to cut a slice out of the pyramid at $x=3$, as shown in Figure \ref{fig:disk0a}, one would have a shape with square bottom and top with sloped sides. If the slice were thin, both the bottom and top squares would have sides lengths of about 6, and thus the cross--sectional area of the bottom and top would be about 36in$^2$. Letting $\Delta x_i$ represent the thickness of the slice, the volume of this slice would then be about $36\Delta x_i$in$^3$. 
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=130.3044775136707,
+3Dortho=0.004594136495143175,
+3Dc2c=0.4693154990673065 0.5382519960403442 0.7000198364257812,
+3Dcoo=60.78499984741211 0.48087620735168457 -14.641631126403809,
+3Droo=150.00000157638937,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.75}{Cutting a slice in they pyramid in Example \ref{ex_disk0} at $x=3$.}{fig:disk0a}{figures/figcross_area1a}
+
+Cutting the pyramid into $n$ slices divides the total volume into $n$ equally--spaced smaller pieces, each with volume $(2x_i)^2\Delta x$, where $x_i$ is the approximate location of the slice along the $x$-axis and $\Delta x$ represents the thickness of each slice. One can approximate total volume of the pyramid by summing up the volumes of these slices:
+$$\text{Approximate volume } = \sum_{i=1}^n (2x_i)^2\Delta x.$$
+Taking the limit as $n\to\infty$ gives the actual volume of the pyramid; recoginizing this sum as a Riemann Sum allows us to find the exact answer using a definite integral, matching the definite integral given by Theorem \ref{thm:volume_by_cross_section}.
+
+We have 
+\begin{align*} V &= \lim_{n\to\infty} \sum_{i=1}^n (2x_i)^2\Delta x\\
+							&= \int_0^5 4x^2\ dx\\
 				&= \frac43x^3\Big|_0^5 \\
 				&=\frac{500}{3}\ \text{in}^3 \approx 166.67\ \text{in}^3.
 \end{align*}
@@ -54,7 +86,7 @@ We can check our work by consulting the general equation for the volume of a pyr
 
 \hfill $\frac13\times \text{area of base}\times \text{height}$.\hfill \null
 
-\noindent Certainly, using this formula from geometry is faster than our new method, but the calculus-based method can be applied to much more than just cones.
+\noindent Certainly, using this formula from geometry is faster than our new method, but the calculus--based method can be applied to much more than just cones.
 }\\
 
 An important special case of Theorem \ref{thm:volume_by_cross_section} is when the solid is a \textbf{solid of revolution}, that is, when the solid is formed by rotating a shape around an axis.
@@ -69,24 +101,49 @@ $$V = \pi \int_a^b R(x)^2\ dx.$$
 
 \example{ex_disk1}{Finding volume using the Disk Method}{
 Find the volume of the solid formed by revolving the curve $y=1/x$, from $x=1$ to $x=2$, around the $x$-axis.}
-{A sketch can help us understand this problem. In Figure \ref{fig:disk1} (a) the curve $y=1/x$ is sketched along with the differential element -- a disk -- at $x$ with radius $R(x)=1/x$. In Figure \ref{fig:disk1} (b) the whole solid is pictured, along with the differential element. 
+{A sketch can help us understand this problem. In Figure \ref{fig:disk1}(a) the curve $y=1/x$ is sketched along with the differential element -- a disk -- at $x$ with radius $R(x)=1/x$. In Figure \ref{fig:disk1} (b) the whole solid is pictured, along with the differential element. 
 
-Using Key Idea \ref{idea:disk_method}, we have 
+The volume of the differential element shown in part (a) of the figure is approximately $\pi R(x_i)^2\Delta x$, where $R(x_i)$ is the radius of the disk shown and $\Delta x$ is the thickness of that slice. The radius $R(x_i)$ is the distance from the $x$-axis to the curve, hence $R(x_i) = 1/x_i$.
+
+\mtable{.5}{Sketching a solid in Example \ref{ex_disk1}.}{fig:disk1}{%
+		\begin{tabular}{c} %
+		\myincludegraphicsthree{width=110pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=126.0060482236849,
+3Dortho=0.004875946324318647,
+3Dc2c=0.44462037086486816 0.39410829544067383 0.8043577671051025,
+3Dcoo=67.21983337402344 3.5258262157440186 -29.566415786743164,
+3Droo=150.00000160608386,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdisk1}\\
+%\myincludegraphics{figures/figdisk1} \\
+		(a) \\
+		\myincludegraphicsthree{width=110pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=126.0060482236849,
+3Dortho=0.004875946324318647,
+3Dc2c=0.44462037086486816 0.39410829544067383 0.8043577671051025,
+3Dcoo=67.21983337402344 3.5258262157440186 -29.566415786743164,
+3Droo=150.00000160608386,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdisk1b}\\
+%\myincludegraphics{figures/figdisk1b} \\
+		(b) 
+		\end{tabular}
+}
+Slicing the solid into $n$ equally--spaced slices, we can approximate the total volume by adding up the approximate volume of each slice:
+$$\text{Approximate volume } = \sum_{i=1}^n \pi \left(\frac1{x_i}\right)^2\Delta x.$$
+
+Taking the limit of the above sum as $n\to\infty$ gives the actual volume; recognizing this sum as a Riemann sum allows us to evaluate the limit with a definite integral, which matches the formula given in Key Idea \ref{idea:disk_method}:
+
+%Using Key Idea \ref{idea:disk_method}, we have 
 \begin{align*}
-	V &= \pi\int_1^2 \left(\frac1x\right)^2\ dx \\
-		&= \pi\int_1^2 \frac1{x^2}\ dx \\
+	V &= \lim_{n\to\infty}\sum_{i=1}^n \pi \left(\frac1{x_i}\right)^2\Delta x\\
+		&= \pi\int_1^2 \left(\frac1x\right)^2\ dx \\
+		&= \pi\int_1^2 \frac1{x^2}\ dx
+		\end{align*}
+\begin{align*}
 		&= \pi\left[-\frac1x\right]\Big|_1^2 \\
 		&= \pi \left[-\frac12 - \left(-1\right)\right] \\
 		&= \frac{\pi}{2}\ \text{units}^3.
 \end{align*}
-\mtable{.75}{Sketching a solid in Example \ref{ex_disk1}.}{fig:disk1}{%
-		\begin{tabular}{c} %
-		\myincludegraphics{figures/figdisk1} \\
-		(a) \\
-		\myincludegraphics{figures/figdisk1b} \\
-		(b) 
-		\end{tabular}
-}
+
 \vskip-\baselineskip
 }\\
 
@@ -97,11 +154,25 @@ Find the volume of the solid formed by revolving the curve $y=1/x$, from $x=1$ t
 {Since the axis of rotation is vertical, we need to convert the function into a function of $y$ and convert the $x$-bounds to $y$-bounds. Since $y=1/x$ defines the curve, we rewrite it as $x=1/y$. The bound $x=1$ corresponds to the $y$-bound $y=1$, and the bound $x=2$ corresponds to the $y$-bound $y=1/2$. 
 
 Thus we are rotating the curve $x=1/y$, from $y=1/2$ to $y=1$ about the $y$-axis to form a solid. The curve and sample differential element are sketched in Figure \ref{fig:disk2} (a), with a full sketch of the solid in Figure \ref{fig:disk2} (b).
-\mtable{.4}{Sketching the solid in Example \ref{ex_disk2}.}{fig:disk2}{%
+\mtable{.7}{Sketching a solid in Example \ref{ex_disk2}.}{fig:disk2}{%
 		\begin{tabular}{c}
-		\myincludegraphics{figures/figdisk1a} \\
+		\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=112.9954735907269,
+3Dortho=0.003950905054807663,
+3Dc2c=0.5512889623641968 0.2862306833267212 0.7836788296699524,
+3Dcoo=-9.51923942565918 49.542564392089844 -9.694497108459473,
+3Droo=150.00000339216956,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdisk1a}\\
+%\myincludegraphics{figures/figdisk1a} \\
 		(a)\\
-		\myincludegraphics{figures/figdisk2a} \\
+		\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=112.9954735907269,
+3Dortho=0.003950905054807663,
+3Dc2c=0.5512889623641968 0.2862306833267212 0.7836788296699524,
+3Dcoo=-9.51923942565918 49.542564392089844 -9.694497108459473,
+3Droo=150.00000339216956,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figdisk2a}\\
+%\myincludegraphics{figures/figdisk2a} \\
 		(b)
 		\end{tabular}
 		}
@@ -110,23 +181,85 @@ We integrate to find the volume:
 V &= \pi\int_{1/2}^1 \frac{1}{y^2}\ dy \\
 	&= -\frac{\pi}y\Big|_{1/2}^1 \\
 	&= \pi\ \text{units}^3.
-\end{align*}		
+\end{align*}
+\vskip-1.5\baselineskip		
 }\\
 
 We can also compute the volume of solids of revolution that have a hole in the center. The general principle is simple: compute the volume of the solid irrespective of the hole, then subtract the volume of the hole. If the outside radius of the solid is $R(x)$ and the inside radius (defining the hole) is $r(x)$, then the volume is 
 $$V = \pi\int_a^b R(x)^2 \ dx - \pi\int_a^b r(x)^2\ dx = \pi\int_a^b \left(R(x)^2-r(x)^2\right)\ dx.$$
-
-One can generate a solid of revolution with a hole in the middle by revolving a region about an axis. Consider Figure \ref{fig:washeridea} (a), where a region is sketched along with a dashed, horizontal axis of rotation. By rotating the region about the axis, a solid is formed as sketched in Figure \ref{fig:washeridea} (b). The outside of the solid has radius $R(x)$, whereas the inside has radius $r(x)$. Each cross section of this solid will be a washer (a disk with a hole in the center) as sketched in Figure \ref{fig:washeridea} (c).	This leads us to the Washer Method.
-\mtable{.67}{Establishing the Washer Method.}{fig:washeridea}{%
+\mtable{.3}{Establishing the Washer Method; see also Figure \ref{fig:washeridea_b}.}{fig:washeridea}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figwasher_idea_a}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=96.94265756936434,
+3Dortho=0.005309578496962786,
+3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+3Droo=149.99999789136484,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_a}\\
+%\myincludegraphics{figures/figwasher_idea_a}\\
 (a) \\
-\myincludegraphics{figures/figwasher_idea_b}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=96.94265756936434,
+3Dortho=0.005309578496962786,
+3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+3Droo=149.99999789136484,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_b}\\
+%\myincludegraphics{figures/figwasher_idea_b}\\
 (b) \\
-\myincludegraphics{figures/figwasher_idea_c}\\
-(c)
+%\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=96.94265756936434,
+%3Dortho=0.005309578496962786,
+%3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+%3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+%3Droo=149.99999789136484,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_c}\\
+%%\myincludegraphics{figures/figwasher_idea_c}\\
+%(c)
 \end{tabular}
 }
+
+One can generate a solid of revolution with a hole in the middle by revolving a region about an axis. Consider Figure \ref{fig:washeridea}(a), where a region is sketched along with a dashed, horizontal axis of rotation. By rotating the region about the axis, a solid is formed as sketched in Figure \ref{fig:washeridea}(b). The outside of the solid has radius $R(x)$, whereas the inside has radius $r(x)$. Each cross section of this solid will be a washer (a disk with a hole in the center) as sketched in Figure \ref{fig:washeridea_b}(c).	This leads us to the Washer Method.
+
+%\mtable{.8}{Establishing the Washer Method.}{fig:washeridea_b}{%
+%\begin{tabular}{c}
+%\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=96.94265756936434,
+%3Dortho=0.005309578496962786,
+%3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+%3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+%3Droo=149.99999789136484,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_a}\\
+%%\myincludegraphics{figures/figwasher_idea_a}\\
+%(a) \\
+%\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=96.94265756936434,
+%3Dortho=0.005309578496962786,
+%3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+%3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+%3Droo=149.99999789136484,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_b}\\
+%%\myincludegraphics{figures/figwasher_idea_b}\\
+%(b) \\
+%\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=96.94265756936434,
+%3Dortho=0.005309578496962786,
+%3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+%3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+%3Droo=149.99999789136484,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwasher_idea_c}\\
+%\myincludegraphics{figures/figwasher_idea_c}\\
+%(c)
+%\end{tabular}
+%}
+\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=96.94265756936434,
+3Dortho=0.005309578496962786,
+3Dc2c=0.547386884689331 0.07732175290584564 0.833299994468689,
+3Dcoo=64.78053283691406 10.129053115844727 -47.566162109375,
+3Droo=149.99999789136484,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.8}{Establishing the Washer Method; see also Figure \ref{fig:washeridea}.}{fig:washeridea_b}{figures/figwasher_idea_c}
+
 
 \keyidea{idea:washermethod}{The Washer Method}
 {Let a region bounded by $y=f(x)$, $y=g(x)$, $x=a$ and $x=b$ be rotated about a horizontal axis that does not intersect the region, forming a solid. Each cross section at $x$ will be a washer with outside radius $R(x)$ and inside radius $r(x)$. The volume of the solid is
@@ -138,40 +271,91 @@ Even though we introduced it first, the Disk Method is just a special case of th
 
 \example{ex_wash1}{Finding volume with the Washer Method}{
 Find the volume of the solid formed by rotating the region bounded by $y=x^2-2x+2$ and $y=2x-1$ about the $x$-axis.}
-{A sketch of the region will help, as given in Figure \ref{fig:wash1a}.
-\mfigure{.29}{A sketch of the region used in Example \ref{ex_wash1}.}{fig:wash1a}{figures/figwash1} Rotating about the $x$-axis will produce cross sections in the shape of washers, as shown in Figure \ref{fig:wash1} (a); the complete solid is shown in part (b). The outside radius of this washer is $R(x) = 2x+1$; the inside radius is $r(x) = x^2-2x+4$. As the region is bounded from $x=1$ to $x=3$, we integrate as follows to compute the volume.
+{A sketch of the region will help, as given in Figure \ref{fig:wash1}(a).
+%\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=97.32968340849395,
+%3Dortho=0.004881054162979126,
+%3Dc2c=0.43117064237594604 0.05905330181121826 0.9003357887268066,
+%3Dcoo=64.78053283691406 10.12905216217041 -47.566158294677734,
+%3Droo=149.99999769784193,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.22}{A sketch of the region used in Example \ref{ex_wash1}.}{fig:wash1a}{figures/figwash1}
+%\mfigure{.22}{A sketch of the region used in Example \ref{ex_wash1}.}{fig:wash1a}{figures/figwash1} 
+Rotating about the $x$-axis will produce cross sections in the shape of washers, as shown in Figure \ref{fig:wash1}(b); the complete solid is shown in part (c). The outside radius of this washer is $R(x) = 2x+1$; the inside radius is $r(x) = x^2-2x+2$. As the region is bounded from $x=1$ to $x=3$, we integrate as follows to compute the volume.
 \begin{align*}
 V &= \pi\int_1^3 \Big((2x-1)^2-(x^2-2x+2)^2\Big)\ dx \\
 		&= \pi\int_1^3 \big(-x^4+4x^3-4x^2+4x-3\big)\ dx \\
 		&= \pi\Big[-\frac{1}{5}x^5+x^4-\frac43x^3+2x^2-3x\Big]\Big|_1^3 \\
 		&=\frac{104}{15}\pi \approx 21.78\ \text{units}^3.
 \end{align*}	
-\vskip-\baselineskip	
-\mtable{.76}{Sketching the differential element and solid in Example \ref{ex_wash1}.}{fig:wash1}{%
+\vskip-1.5\baselineskip	
+\mtable{.37}{Sketching the differential element and solid in Example \ref{ex_wash1}.}{fig:wash1}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figwash1c}\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.32968340849395,
+3Dortho=0.004881054162979126,
+3Dc2c=0.43117064237594604 0.05905330181121826 0.9003357887268066,
+3Dcoo=64.78053283691406 10.12905216217041 -47.566158294677734,
+3Droo=149.99999769784193,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash1}\\
+%\myincludegraphics{figures/figwash1c}\\
 (a)\\
-\myincludegraphics{figures/figwash1b}\\
-(b)
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.32968340849395,
+3Dortho=0.004881054162979126,
+3Dc2c=0.43117064237594604 0.05905330181121826 0.9003357887268066,
+3Dcoo=64.78053283691406 10.12905216217041 -47.566158294677734,
+3Droo=149.99999769784193,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash1c}\\
+%\myincludegraphics{figures/figwash1c}\\
+(b)\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=97.32968340849395,
+3Dortho=0.004881054162979126,
+3Dc2c=0.43117064237594604 0.05905330181121826 0.9003357887268066,
+3Dcoo=64.78053283691406 10.12905216217041 -47.566158294677734,
+3Droo=149.99999769784193,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash1b}\\
+%\myincludegraphics{figures/figwash1b}\\
+(c)
 \end{tabular}
 }
-
 }\\	
 
 When rotating about a vertical axis, the outside and inside radius functions must be functions of $y$.\\
 
 \example{ex_wash2}{Finding volume with the Washer Method}{
 Find the volume of the solid formed by rotating the triangular region with vertices at $(1,1)$, $(2,1)$ and $(2,3)$ about the $y$-axis.}
-{The triangular region is sketched in Figure \ref{fig:wash2} (a); the differential element is sketched in (b) and the full solid is drawn in (c). They help us establish the outside and inside radii. Since the axis of rotation is vertical, each radius is a function of $y$. 
+{The triangular region is sketched in Figure \ref{fig:wash2}(a); the differential element is sketched in (b) and the full solid is drawn in (c). They help us establish the outside and inside radii. Since the axis of rotation is vertical, each radius is a function of $y$. 
 
 The outside radius $R(y)$ is formed by the line connecting $(2,1)$ and $(2,3)$; it is a constant function, as regardless of the $y$-value the distance from the line to the axis of rotation is 2. Thus $R(y)=2$. 
-\mtable{.32}{Sketching the solid in Example \ref{ex_wash2}.}{fig:wash2}{%
+\mtable{.63}{Sketching the solid in Example \ref{ex_wash2}.}{fig:wash2}{%
 \begin{tabular}{c}
-\myincludegraphics{figures/figwash2a} \\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=123.42078064170005,
+3Dortho=0.00488104997202754,
+3Dc2c=0.41855040192604065 0.31316813826560974 0.8524911999702454,
+3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
+3Droo=149.99999819286032,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash2a}\\
+%\myincludegraphics{figures/figwash2a} \\
 (a) \\
-\myincludegraphics{figures/figwash2b} \\
-(b) \\
-\myincludegraphics{figures/figwash2c} \\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=123.42078064170005,
+3Dortho=0.00488104997202754,
+3Dc2c=0.41855040192604065 0.31316813826560974 0.8524911999702454,
+3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
+3Droo=149.99999819286032,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash2b}\\
+%\myincludegraphics{figures/figwash2b} \\
+(b) %\\
+\myincludegraphicsthree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=123.42078064170005,
+3Dortho=0.00488104997202754,
+3Dc2c=0.41855040192604065 0.31316813826560974 0.8524911999702454,
+3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
+3Droo=149.99999819286032,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{}{figures/figwash2c}\\
+%\myincludegraphics{figures/figwash2c} \\
 (c)
 \end{tabular}
 }
@@ -185,7 +369,26 @@ V 	&=	\pi\int_1^3\Big(2^2 - \big(\frac12(y+1)\big)^2\Big)\ dy \\
 		&= 	\pi\Big[-\frac1{12}y^3-\frac14y^2+\frac{15}4y\Big]\Big|_1^3\\
 		&= \frac{10}3\pi \approx 10.47\ \text{units}^3.
 \end{align*}
-\vskip-\baselineskip
-}
+%\mfigurethree{width=125pt,3Dmenu,activate=onclick,deactivate=onclick,
+%3Droll=123.42078064170005,
+%3Dortho=0.00488104997202754,
+%3Dc2c=0.41855040192604065 0.31316813826560974 0.8524911999702454,
+%3Dcoo=-7.115118026733398 66.85215759277344 -16.372848510742188,
+%3Droo=149.99999819286032,
+%3Dlights=Headlamp,add3Djscript=asylabels.js}{}{.8}{Sketching the solid in Example \ref{ex_wash2}.}{fig:wash2b}{figures/figwash2c}\\
+%%\myincludegraphics{figures/figwash2c}
+\vskip-1.5\baselineskip
+}\\
+
+This section introduced a new application of the definite integral. Our default view of the definite integral is that it gives ``the area under the curve.'' However, we can establish definite integrals that represent other quantities; in this section, we computed volume.
+
+The ultimate goal of this section is not to compute volumes of solids. That can be useful, but what is more useful is the understanding of this basic principle of integral calculus, outlined in Key Idea \ref{idea:app_of_defint}: to find the exact value of some quantity, 
+\begin{itemize}
+	\item we start with an approximation (in this section, slice the solid and approximate the volume of each slice), 
+	\item then make the approximation better by refining our original approximation (i.e., use more slices), 
+	\item	then use limits to establish a definite integral which gives the exact value.
+\end{itemize}
+
+We practice this principle in the next section where we find volumes by slicing solids in a different way.
 
 \printexercises{exercises/07_02_exercises}

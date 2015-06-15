@@ -1,3 +1,0 @@
-Errata:
-
-pg. 256, antiderivative of $\cos(2x)$ should be ``$+$''$\frac{\sin(2x)}{2}$, not ``$-$''.

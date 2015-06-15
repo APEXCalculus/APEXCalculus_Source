@@ -1,8 +1,8 @@
 \section{Double Integration and Volume}\label{sec:double_int_volume}
 
-The definite integral of $f$ over $[a,b]$, $\int_a^b f(x)\ dx$, was introduced as ``the signed area under the curve.'' We approximated the value of this area by first subdividing $[a,b]$ into $n$ subintervals, where the $i^\text{ th}$ subinterval has length $\dx_i$, and letting $c_i$ be any value in the $i^\text{ th}$ subinterval. We formed rectangles that approximated part of the area under the curve with width $\dx_i$, height $f(c_i)$, and hence with area $f(c_i)\dx_i$. Summing up all rectangles gave an approximation of the definite integral, and Theorem \ref{thm:riemann_sum} stated that
+The definite integral of $f$ over $[a,b]$, $\int_a^b f(x)\ dx$, was introduced as ``the signed area under the curve.'' We approximated the value of this area by first subdividing $[a,b]$ into $n$ subintervals, where the $i^\text{ th}$ subinterval has length $\dx_i$, and letting $c_i$ be any value in the $i^\text{ th}$ subinterval. We formed rectangles that approximated part of the region under the curve with width $\dx_i$, height $f(c_i)$, and hence with area $f(c_i)\dx_i$. Summing all the rectangle's areas gave an approximation of the definite integral, and Theorem \ref{thm:riemann_sum} stated that
 $$\int_a^bf(x)\ dx = \lim_{\|\Delta x\|\to 0}\sum f(c_i)\dx_i,$$
-connecting sums of rectangles to area under the curve.\\
+connecting the area under the curve with sums of the areas of rectangles.\\
 
 We use a similar approach in this section to find volume under a surface.\\
 
@@ -13,7 +13,14 @@ We start by partitioning $R$ into $n$ rectangular subregions as shown in Figure 
 \begin{tabular}{c}
 \myincludegraphics{figures/figdouble_intro1}\\[5pt]
 (a)\\[15pt]
-\myincludegraphics[scale=1.25,trim = 1mm 0mm 1mm 0mm,clip]{figures/figdouble_intro2}\\
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005025407765060663,
+3Dc2c=0.6666666865348816 0.6666666865348816 0.3333333730697632,
+3Dcoo=5.279583930969238 -29.517940521240234 48.47616195678711,
+3Droo=150.0000012715658,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim = 1mm 0mm 1mm 0mm,clip}{figures/figdouble_intro2}\\
+%\myincludegraphics[scale=1.25,trim = 1mm 0mm 1mm 0mm,clip]{figures/figdouble_intro2}\\
 (b)
 \end{tabular}
 }
@@ -23,7 +30,14 @@ The volume of the rectangular solid whose base is the $i^\text{ th}$ subregion a
 For each subregion $R_i$ used to approximate $R$, create the rectangular solid with base area $\dx\dy$ and height $f(x_i,y_i)$. 
 The sum of all rectangular solids is $$\ds \sum_{i=1}^n f(x_i,y_i)\dx\dy.$$ This approximates the signed volume under $f$ over $R$. As we have done before, to get a better approximation we can use more rectangles to approximate the region $R$.
 
-In general, each rectangle could have a different width $\dx_j$ and height $\dy_k$, giving the $i^\text{ th}$ rectangle an area $\Delta A_i = \dx_j\dy_k$ and the $i^\text{ th}$ rectangular solid a volume of $f(x_i,y_i)\Delta A_i$. Let $|\Delta A|$ denote the length of the longest diagonal of all rectangles in the subdivision of $R$; $|\Delta A|\to 0$ means each rectangle's width and height are both approaching 0. If $f$ is a continuous function, as $\Delta A$ shrinks (and hence $n\to\infty$) the summation $\ds \sum_{i=1}^n f(x_i,y_i)\Delta A_i$ approximates the signed volume better and better. This leads to a definition.
+In general, each rectangle could have a different width $\dx_j$ and height $\dy_k$, giving the $i^\text{ th}$ rectangle an area $\Delta A_i = \dx_j\dy_k$ and the $i^\text{ th}$ rectangular solid a volume of $f(x_i,y_i)\Delta A_i$. Let $||\Delta A||$ denote the length of the longest diagonal of all rectangles in the subdivision of $R$; $||\Delta A||\to 0$ means each rectangle's width and height are both approaching 0. If $f$ is a continuous function, as $||\Delta A||$ shrinks (and hence $n\to\infty$) the summation $\ds \sum_{i=1}^n f(x_i,y_i)\Delta A_i$ approximates the signed volume better and better. This leads to a definition.
+
+\mnote{.6}{\textbf{Note:} Recall that the integration symbol ``$\int$'' is an ``elongated S,'' representing the word ``sum.'' We interpreted $\int_a^bf(x)\ dx$ as ``take the \textit{sum} of the areas of rectangles over the interval $[a,b]$.'' The double integral uses two integration symbols to represent a ``double sum.'' When adding up the volumes of rectangular solids over a partition of a region $R$, as done in Figure \ref{fig:double_intro}, one could first add up the volumes across each row (one type of sum), then add these totals together (another sum), as in
+$$\sum_{j=1}^n\sum_{i=1}^mf(x_i,y_j)\Delta x_i\Delta y_j.$$
+One can rewrite this  as
+$$\sum_{j=1}^n\left(\sum_{i=1}^mf(x_i,y_j)\Delta x_i\right)\Delta y_j.$$
+The summation inside the parenthesis indicates the sum of  heights $\times$ widths, which gives an area; multiplying these areas by the thickness $\Delta y_j$ gives a volume. The illustration in Figure \ref{fig:double_intro3} relates to this understanding.\label{note:doubleint}
+}
 
 \definition{def:double_int}{Double Integral, Signed Volume}
 {Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. The \textbf{signed volume} $V$ under $f$ over $R$ is denoted by the \textbf{double integral}
@@ -37,7 +51,7 @@ The definition above does not state how to find the signed volume, though the no
 
 \theorem{thm:double_int}{Double Integrals and Signed Volume}
 {Let $z=f(x,y)$ be a continuous function defined over a closed region $R$ in the $x$-$y$ plane. Then the signed volume $V$ under $f$ over $R$ is
-$$V = \iint_R f(x,y)\ dA = \lim_{|\Delta A|\to 0}\sum_{i=1}^n f(x_i,y_i)\Delta A_i.$$
+$$V = \iint_R f(x,y)\ dA = \lim_{||\Delta A||\to 0}\sum_{i=1}^n f(x_i,y_i)\Delta A_i.$$
 }
 
 This theorem states that we can find the exact signed volume using a limit of sums. The partition of the region $R$ is not specified, so any partitioning where the diagonal of each rectangle shrinks to 0 results in the same answer. 
@@ -50,7 +64,14 @@ Consider Figure \ref{fig:double_intro3}, where a surface $z=f(x,y)$ is drawn ove
 
 Remember that though the integrand contains $x$, we are viewing $x$ as fixed. Also note that the bounds of integration are functions of $x$: the bounds depend on the value of $x$. 
 
-\mfigure[scale=1.25,trim=2mm 0mm 0mm 2mm,clip]{.75}{Finding volume under a surface by sweeping out a cross--sectional area.}{fig:double_intro3}{figures/figdouble_intro3}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005067072808742523,
+3Dc2c=0.5451613068580627 0.7846456170082092 0.29517868161201477,
+3Dcoo=9.929030418395996 -41.68748092651367 56.98992919921875,
+3Droo=200.99999858350685,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=2mm 0mm 0mm 2mm,clip}{.75}{Finding volume under a surface by sweeping out a cross--sectional area.}{fig:double_intro3}{figures/figdouble_intro3}
+%\mfigure[scale=1.25,trim=2mm 0mm 0mm 2mm,clip]{.75}{Finding volume under a surface by sweeping out a cross--sectional area.}{fig:double_intro3}{figures/figdouble_intro3}
 
 As $A(x)$ is a cross-sectional area function, we can find the signed volume $V$ under $f$ by integrating it:
 $$V = \int_a^b A(x)\ dx = \int_a^b\left(\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\right)dx = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)\ dy\ dx.$$
@@ -80,12 +101,19 @@ Using the order $dy\ dx$:
 \iint_R\big(xy+e^y\big) \ dA &= \int_3^4\int_1^2\big(xy+e^y\big)\ dy \ dx \\
 			&= \int_3^4 \left(\left.\left[\frac12xy^2+e^y\right]\right|_1^2\ \right) dx \\
 			&= \int_3^4\left(\frac 32x + e^2-e\right)dx \\
-			&= \left.\left(\frac 34x^2 + \big(e^2-e\big)x\right)\right|_1^2 \\
+			&= \left.\left(\frac 34x^2 + \big(e^2-e\big)x\right)\right|_3^4 \\
 			&= \frac {21}4+ e^2-e\approx 9.92.
 \end{align*}
 
 \enlargethispage{2\baselineskip}
-\mfigure[scale=1.25,trim= 1mm 0mm 2mm 0mm,clip]{.7}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.5071550607681274 -0.7884454131126404 0.3480626046657562,
+3Dcoo=34.443328857421875 108.33967590332031 55.163639068603516,
+3Droo=149.99999646067835,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim= 1mm 0mm 2mm 0mm,clip}{.7}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
+%\mfigure[scale=1.25,trim= 1mm 0mm 2mm 0mm,clip]{.7}{Finding the signed volume under a surface in Example \ref{ex_double1}.}{fig:double1}{figures/figdouble1}
 
 Now we check the validity of Fubini's Theorem by using the order $dx\ dy$:
 \begin{align*}
@@ -130,7 +158,14 @@ Evaluate $\iint_R \big(3xy-x^2-y^2+6\big)\ dA$, where $R$ is the triangle bounde
 }
 {While it is not specified which order we are to use, we will evaluate the double integral using both orders to help drive home the point that it does not matter which order we use.\\
 
-\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.3019719421863556 -0.9206370115280151 0.24746793508529663,
+3Dcoo=45.67414093017578 112.43929290771484 56.7108039855957,
+3Droo=200.99999432688844,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=1mm 0mm 2mm 0mm,clip}{.75}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
+%\mfigure[scale=1.25,trim=1mm 0mm 2mm 0mm,clip]{.8}{Finding the signed volume under the surface in Example \ref{ex_double2}.}{fig:double2}{figures/figdouble2}
 Using the order $dy\ dx$:
 The bounds on $y$ go from ``curve to curve,'' i.e., $0\leq y\leq 1-x/2$, and the bounds on $x$ go from ``point to point,'' i.e., $0\leq x\leq 2$.
 \begin{align*}
@@ -164,7 +199,7 @@ Before doing another example, we give some properties of double integrals. Each 
 {Let $f$ and $g$ be continuous functions over a closed, bounded plane region $R$, and let $c$ be a constant.
 \index{double integral!properties}\index{iterated integration!properties}
 \begin{enumerate}
-	\item $\ds \iint_Rcf(x,y)\ dA = c\iint_Rf(x,y)\ dA.$
+	\item $\ds \iint_Rc\,f(x,y)\ dA = c\iint_Rf(x,y)\ dA.$
 	\item	$\ds \iint_R \big(f(x,y)\pm g(x,y)\big)\ dA = \iint_R f(x,y)\ dA \pm \iint_R g(x,y)\ dA $
 	\item	If $f(x,y)\geq 0$ on $R$, then $\ds \iint_R f(x,y)\ dA\geq 0$.
 	\item	If $f(x,y)\geq g(x,y)$ on $R$, then $\ds \iint_R f(x,y)\ dA\geq \iint_R g(x,y)\ dA$.
@@ -176,9 +211,16 @@ Before doing another example, we give some properties of double integrals. Each 
 
 \example{ex_double3}{Evaluating a double integral}{
 Let $f(x,y) = \sin x\cos y$ and $R$ be the triangle with vertices $(-1,0)$, $(1,0)$ and $(0,1)$ (see Figure \ref{fig:double3}). Evaluate the double integral $\iint_Rf(x,y)\ dA$.
-\mfigure[trim=0mm 15mm 0mm 0mm,clip]{.3}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.0046491301618516445,
+3Dc2c=0.08563969284296036 0.8920179605484009 0.44381290674209595,
+3Dcoo=-0.3899505138397217 30.125946044921875 17.537517547607422,
+3Droo=200.9999927619444,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{trim=0mm 15mm 0mm 0mm,clip}{.3}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
+%\mfigure[trim=0mm 15mm 0mm 0mm,clip]{.3}{Finding the signed volume under a surface in Example \ref{ex_double3}.}{fig:double3}{figures/figdouble3}
 }
-{If we attempt to integrate using an iterated integral with the order $dy\ dx$, note how there are two upper bounds on $R$ meaning we'll need to use two iterated integrals. We can split the triangle into to regions along the $y$-axis, then use Theorem \ref{thm:double_prop}, part \ref{thm:double_prop_regions}.
+{If we attempt to integrate using an iterated integral with the order $dy\ dx$, note how there are two upper bounds on $R$ meaning we'll need to use two iterated integrals. We would need to split the triangle into two regions along the $y$-axis, then use Theorem \ref{thm:double_prop}, part \ref{thm:double_prop_regions}.
 
 Instead, let's use the order $dx\ dy$. The curves bounding $x$ are $y-1\leq x\leq 1-y$; the bounds on $y$ are $0\leq y\leq 1$. This gives us:
 \begin{align*}
@@ -196,9 +238,16 @@ It turns out that over $R$, there is just as much volume above the $x$-$y$ plane
 
 \example{ex_double4}{Evaluating a double integral}{
 Evaluate $\iint_R (4-y)\ dA$, where $R$ is the region bounded by the parabolas $y^2=4x$ and $x^2=4y$, graphed in Figure \ref{fig:double4}.
-\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.4}{Finding the volume under the surface in Example \ref{ex_double4}.}{fig:double4}{figures/figdouble4}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004656145814806223,
+3Dc2c=0.9017289280891418 0.24087461829185486 0.35897672176361084,
+3Dcoo=-13.985211372375488 45.56017303466797 41.332950592041016,
+3Droo=201.0000081559461,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 0mm 1mm 0mm,clip}{.4}{Finding the volume under the surface in Example \ref{ex_double4}.}{fig:double4}{figures/figdouble4}
+%\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.4}{Finding the volume under the surface in Example \ref{ex_double4}.}{fig:double4}{figures/figdouble4}
 }
-{Graphing each curve can help us find their points of intersection; analytically, the second equation tells us that $y=x^2/4$. Substituting this value in for $y$ in the first equation gives us $x^4/16 = 4x$. Solving for $x$:
+{Graphing each curve can help us find their points of intersection. Solving analytically, the second equation tells us that $y=x^2/4$. Substituting this value in for $y$ in the first equation gives us $x^4/16 = 4x$. Solving for $x$:
 \begin{align*}
 \frac{x^4}{16} &= 4x\\
 x^4-64x &=0\\
@@ -273,7 +322,14 @@ $$\int_0^x e^{-x^2}\ dy = xe^{-x^2}.$$
 Thus 
 $$\int_0^3\int_0^x e^{-x^2}\ dy\ dx = \int_0^3\Big(xe^{-x^2}\Big)dx.$$
 This last integral is easy to evaluate with substitution, giving a final answer of $\frac12(1-e^{-9})\approx 0.5$. Figure \ref{fig:double6b} shows the surface over $R$.
-\mfigure[scale=1.25,trim = 1mm 10mm 1mm 0mm, clip]{.8}{Showing the surface $f$ defined in Example \ref{ex_double6} over its region $R$.}{fig:double6b}{figures/figdouble6b}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0.,
+3Dortho=0.005074724089354277,
+3Dc2c=0.3949831426143646 0.8441238403320312 0.3625510632991791,
+3Dcoo=41.500732421875 17.729557037353516 46.038082122802734,
+3Droo=201.00002888349545,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim = 1mm 10mm 1mm 0mm, clip}{.78}{Showing the surface $f$ defined in Example \ref{ex_double6} over its region $R$.}{fig:double6b}{figures/figdouble6b}
+%\mfigure[scale=1.25,trim = 1mm 10mm 1mm 0mm, clip]{.8}{Showing the surface $f$ defined in Example \ref{ex_double6} over its region $R$.}{fig:double6b}{figures/figdouble6b}
  
 
 In short, evaluating one iterated integral is impossible; the other iterated integral is relatively simple.
@@ -298,13 +354,27 @@ $$\iint_R \ dA = \int_0^4\int_{y^2/4}^{2\sqrt{y}} \ dx\ dy = \frac{16}{3}.$$
 Dividing the volume under the surface by the area gives the average value:
 $$\text{average value of $f$ on $R$} = \frac{176/15}{16/3} = \frac{11}5 = 2.2.$$
 While the surface, as shown in Figure \ref{fig:double8}, covers $z$-values from $z=0$ to $z=4$, the ``average'' $z$-value on $R$ is 2.2.
-\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.75}{Finding the average value of $f$ in Example \ref{ex_double8}.}{fig:double8}{figures/figdouble4}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004656145814806223,
+3Dc2c=0.9017289280891418 0.24087461829185486 0.35897672176361084,
+3Dcoo=-13.985211372375488 45.56017303466797 41.332950592041016,
+3Droo=201.0000081559461,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=0mm 0mm 1mm 0mm,clip}{.75}{Finding the average value of $f$ in Example \ref{ex_double8}.}{fig:double8}{figures/figdouble4}
+%\mfigure[scale=1.25,trim=0mm 0mm 1mm 0mm,clip]{.75}{Finding the average value of $f$ in Example \ref{ex_double8}.}{fig:double8}{figures/figdouble4}
 }\\
 
 The previous section introduced the iterated integral in the context of finding the area of plane regions. This section has extended our understanding of iterated integrals; now we see they can be used to find the signed volume under a surface. 
 
 This new understanding allows us to revisit what we did in the previous section. Given a region $R$ in the plane, we computed $\iint_R 1\ dA$; again, our understanding at the time was that we were finding the area of $R$. However, we can now view the function $z=1$ as a surface, a flat surface with constant $z$-value of 1. The double integral $\iint_R 1\ dA$ finds the volume, under $z=1$, over $R$, as shown in Figure \ref{fig:double_summary}. Basic geometry tells us that if the base of a general right cylinder has area $A$, its volume is $A\cdot h$, where $h$ is the height. In our case, the height is 1. We were ``actually'' computing the volume of a solid, though we interpreted the number as an area.
-\mfigure[scale=1.25,trim=1mm 0mm 1mm 0mm,clip]{.4}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
+\mfigurethree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004656150005757809,
+3Dc2c=0.6877317428588867 0.6239246726036072 0.3711375296115875,
+3Dcoo=7.870043754577637 -27.81243896484375 55.69517135620117,
+3Droo=201.00001586839815,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.25,trim=1mm 0mm 1mm 0mm,clip}{.4}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
+%\mfigure[scale=1.25,trim=1mm 0mm 1mm 0mm,clip]{.4}{Showing how an iterated integral used to find area also finds a certain volume.}{fig:double_summary}{figures/figdouble_summary}
 
 The next section extends our abilities to find ``volumes under surfaces.'' Currently, some integrals are hard to compute because either the region $R$ we are integrating over is hard to define with rectangular curves, or the integrand itself is hard to deal with. Some of these problems can be solved by converting everything into polar coordinates.
 

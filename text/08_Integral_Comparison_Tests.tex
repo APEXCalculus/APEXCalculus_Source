@@ -1,6 +1,6 @@
 \section{Integral and Comparison Tests}\label{sec:int_comp_tests}
 
-Knowing whether or not a series converges is very important, especially when we discuss Power Series in Section \ref{sec:power_series}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$- series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
+Knowing whether or not a series converges is very important, especially when we discuss Power Series in Section \ref{sec:power_series}. Theorems \ref{thm:geom_series} and \ref{thm:pseries} give criteria for when Geometric and $p$-series converge, and Theorem \ref{thm:series_nth_term} gives a quick test to determine if a series diverges. There are many important series whose convergence cannot be determined by these theorems, though, so we introduce a set of tests that allow us to handle a broad range of series. We start with the Integral Test.\\
 
 %\mnote{.85}{\textbf{Note:} Recall we often use $\sum a_n$ to write $\ds \sum_{n=1}^\infty a_n$.}
 
@@ -39,23 +39,29 @@ From Equation \eqref{eq:integral_testc} we can make the following two statements
 	\item If $\ds \sum_{n=1}^\infty a_n$ diverges, so does $\ds\int_1^\infty a(x)\ dx$ \quad (because $\ds \sum_{n=1}^\infty a_n < a_1 +\int_1^\infty a(x)\ dx$)
 	\item	If $\ds \sum_{n=1}^\infty a_n$ converges, so does $\ds\int_1^\infty a(x)\ dx$ \quad (because $\ds \ds \int_1^\infty a(x)\ dx < \sum_{n=1}^\infty a_n$.)
 \end{enumerate}
-Therefore the series and integral either both converge or both diverge. Theorem \ref{thm:series_behavior} allows us to extend this theorem to series where $a_n$ is positive and decreasing on $[b,\infty)$ for some $b>1$.\\
+Therefore the series and integral either both converge or both diverge. Theorem \ref{thm:series_behavior} allows us to extend this theorem to series where $a(n)$ is positive and decreasing on $[b,\infty)$ for some $b>1$.\\
 
 \example{ex_itest1}{Using the Integral Test}{
 Determine the convergence of $\ds\sum_{n=1}^\infty \frac{\ln n}{n^2}$.  (The terms of the sequence $\{a_n\} = \{\ln n/n^2\}$ and the n$^{\text{th}}$ partial sums are given in Figure \ref{fig:itest1}.)
 }
-{Applying the Integral Test, we test the convergence of $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$. Integrating this improper integral requires the use of Integration by Parts, with $u = \ln x$ and $dv = 1/x^2\ dx$. 
+{Figure \ref{fig:itest1} implies that $a(n) = (\ln n)/n^2$ is positive and decreasing on $[2,\infty)$. We can determine this analytically, too. We know $a(n)$ is positive as both $\ln n$ and $n^2$ are positive on $[2,\infty)$. To determine that $a(n)$ is decreasing, consider $a\primeskip'(n) = (1-2\ln n)/n^3$, which is negative for $n\geq 2$. Since $a\primeskip'(n)$ is negative, $a(n)$ is decreasing.
+\mfigure{.5}{Plotting the sequence and series in Example \ref{ex_itest1}.}{fig:itest1}{figures/figitest1} 
+
+Applying the Integral Test, we test the convergence of $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$. Integrating this improper integral requires the use of Integration by Parts, with $u = \ln x$ and $dv = 1/x^2\ dx$. 
 \begin{align*}
 \int_1^\infty \frac{\ln x}{x^2}\ dx &= \lim_{b\to\infty} \int_1^b \frac{\ln x}{x^2}\ dx\\
-				&= \lim_{b\to\infty} -\frac1x\ln x\Big|_1^b + \int_1^b\frac1{x^2}\ dx \\
+				&= \lim_{b\to\infty} -\frac1x\ln x\Big|_1^b + \int_1^b\frac1{x^2}\ dx %\\
+\end{align*}
+\begin{align*}
 				&= \lim_{b\to\infty} -\frac1x\ln x -\frac 1x\Big|_1^b\\
 				&= \lim_{b\to\infty}1-\frac1b-\frac{\ln b}{b}.\quad \text{Apply L'H\^opital's Rule:}\\
 				&= 1.
 \end{align*}
 Since $\ds \int_1^\infty \frac{\ln x}{x^2}\ dx$ converges, so does $\ds \sum_{n=1}^\infty \frac{\ln n}{n^2}$.
-\mfigure{.5}{Plotting the sequence and series in Example \ref{ex_itest1}.}{fig:itest1}{figures/figitest1}
-
-Note how the sequence $\{a_n\}$ is not strictly decreasing; it increases from $n=1$ to $n=2$. However, this does not keep us from applying the Integral Test as the sequence in positive and decreasing on $[2,\infty)$.
+\vskip.5\baselineskip
+%
+%
+%Note how the sequence $\{a_n\}$ is not strictly decreasing; it increases from $n=1$ to $n=2$. However, this does not keep us from applying the Integral Test as the sequence in positive and decreasing on $[2,\infty)$.
 }\\
 
 Theorem \ref{thm:pseries} was given without justification, stating that the general $p$-series $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$. In the following example, we prove this to be true by applying the Integral Test.\\
@@ -73,6 +79,7 @@ Use the Integral Test to prove that $\ds \sum_{n=1}^\infty \frac1{(an+b)^p}$ con
 This limit converges if, and only if, $p>1$. It is easy to show that the integral also diverges in the case of $p=1$. (This result is similar to the work preceding Key Idea \ref{idea:impint1}.)
 
 Therefore $\ds \sum_{n=1}^\infty \frac 1{(an+b)^p}$ converges if, and only if, $p>1$.
+\vskip.25\baselineskip
 }\\
 
 We consider two more convergence tests in this section, both \textit{comparison} tests. That is, we determine the convergence of one series by  comparing it to another series with known convergence. 
@@ -130,7 +137,9 @@ Fortunately, we can apply another test to the given series to determine its conv
 	\end{enumerate}
 }\\
 
-It is helpful to remember that when using Theorem \ref{thm:series_limit_compare}, the terms of the series with known convergence go in the denominator of the fraction.
+%It is helpful to remember that when using Theorem \ref{thm:series_limit_compare}, the terms of the series with known convergence go in the denominator of the fraction.
+
+Theorem \ref{thm:series_limit_compare} is most useful when the convergence of the series from $\{b_n\}$ is known and we are trying to determine the convergence of the series from $\{a_n\}$. 
 
 We use the Limit Comparison Test in the next example to examine the series $\ds\sum_{n=1}^\infty \frac1{n+\ln n}$ which motivated this new test.\\
 
@@ -173,11 +182,12 @@ The problem is that we chose a poor series with which to compare. Since the nume
 The dominant term of the numerator is $x^{1/2}$ and the dominant term of the denominator is $x^2$. Thus we should compare the terms of the given series to $x^{1/2}/x^2 = 1/x^{3/2}$:
 \begin{align*}
 \lim_{n\to\infty}\frac{(\sqrt{x}+3)/(x^2-x+1)}{1/x^{3/2}} &= \lim_{n\to \infty} \frac{x^{3/2}(\sqrt x+3)}{x^2-x+1} \\
-		&= 1\quad \text{(Applying L'H\^opital's Rule)}.
+		&= 1\quad \text{(Apply L'H\^opital's Rule)}.
 \end{align*}
 Since the  $p$-series $\ds\sum_{n=1}^\infty \frac1{x^{3/2}}$ converges, we conclude that $\ds\sum_{n=1}^\infty \frac{\sqrt{x}+3}{x^2-x+1}$ converges as well.
 }\\
 
-
+\enlargethispage{\baselineskip}
+We mentioned earlier that the Integral Test did not work well with series containing factorial terms. The next section introduces the Ratio Test, which does handle such series well. We also introduce the Root Test, which is good for series where each term is raised to a power.
 
 \printexercises{exercises/08_03_exercises}

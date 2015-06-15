@@ -69,9 +69,9 @@ If $R_n(x)$ goes to 0 for each $x$ in an interval $I$ as $n$ approaches infinity
 
 \theorem{thm:function_series_equality}{Function and Taylor Series Equality}
 {Let $f(x)$ have derivatives of all orders at $x=c$, let $R_n(x)$ be as stated in Theorem \ref{thm:taylorthm}, and let $I$ be an interval on which the Taylor series of $f(x)$ converges. 
-If $\ds\lim_{n\to\infty} R_n(x) = 0$ for all $x$ in $I$ containing $c$, then 
+If $\ds\lim_{n\to\infty} R_n(x) = 0$ for all $x$ in $I$, then 
 \index{Taylor Series!equality with generating function}
-$$f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\quad \text{on $I$.}$$
+$$f(x) = \sum_{n=0}^\infty \frac{f\,^{(n)}(c)}{n!}(x-c)^n\ \text{ on $I$.}$$
 }
 
 We demonstrate the use of this theorem in an example.\\
@@ -80,10 +80,14 @@ We demonstrate the use of this theorem in an example.\\
 {Show that $f(x) = \cos x$ is equal to its Maclaurin series, as found in Example \ref{ex_ts1}, for all $x$. 
 }
 {Given a value $x$, the magnitude of the error term $R_n(x)$ is bounded by
-$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{(n+1)}\big|.$$
+$$ \big|R_n(x)\big| \leq \frac{\max\left|\,f\,^{(n+1)}(z)\right|}{(n+1)!}\big|x^{n+1}\big|.$$
 Since all derivatives of $\cos x$ are $\pm \sin x$ or $\pm\cos x$, whose magnitudes are bounded by $1$, we can state
-$$ \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{(n+1)}\big|.$$
-For any $x$, $\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0$. Thus by the Squeeze Theorem, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
+$$ \big|R_n(x)\big| \leq \frac{1}{(n+1)!}\big|x^{n+1}\big|$$
+which implies
+\begin{equation}
+ -\frac{|x^{n+1}|}{(n+1)!} \leq R_n(x) \leq\frac{|x^{n+1}|}{(n+1)!}.\label{eq:coseqtaylor}
+\end{equation}
+For any $x$, $\ds\lim_{n\to\infty} \frac{x^{n+1}}{(n+1)!} = 0$. Applying the Squeeze Theorem to Equation \eqref{eq:coseqtaylor}, we conclude that $\ds \lim_{n\to\infty} R_n(x) = 0$ for all $x$, and hence
 $$\cos x = \sum_{n=0}^\infty (-1)^{n}\frac{x^{2n}}{(2n)!}\quad \text{for all $x$}.$$
 \vskip-1.5\baselineskip
 }\\
@@ -199,7 +203,7 @@ Applying Theorem \ref{thm:series_alg}, we find that
 e^x\cos x &= \left(1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\right)\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right).
 \intertext{Distribute the right hand expression across the left:}
 	&= 1\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+x\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+\frac{x^2}{2!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)\\
-	&+\frac{x^3}{3!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right) + \frac{x^4}{4!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+\cdots
+	&\phantom{=}+\frac{x^3}{3!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right) + \frac{x^4}{4!}\left(1-\frac{x^2}{2!}+\frac{x^4}{4!}+\cdots\right)+\cdots
 	\intertext{Distribute again and collect like terms.}
 	&= 1 + x -\frac{x^3}{3}-\frac{x^4}{6} - \frac{x^5}{30}+\frac{x^7}{630}+\cdots
 	\end{align*}
@@ -223,6 +227,7 @@ $$\ln x = \sum_{n=1}^\infty(-1)^{n+1}\frac{(x-1)^n}{n} = (x-1)- \frac{(x-1)^2}{2
 we substitute $\sqrt{x}$ for $x$ to obtain
 $$\ln (\sqrt{x}) = \sum_{n=1}^\infty(-1)^{n+1}\frac{(\sqrt{x}-1)^n}{n} = (\sqrt{x}-1)- \frac{(\sqrt{x}-1)^2}{2} +\frac{(\sqrt{x}-1)^3}{3}-\cdots.$$
 While this is not strictly a power series, it is a series that allows us to study the function $\ln(\sqrt{x})$. Since the interval of convergence of $\ln x$ is $(0,2]$, and the range of $\sqrt{x}$ on $(0,4]$ is $(0,2]$, the interval of convergence of this series expansion of $\ln(\sqrt{x})$ is $(0,4]$.
+\mnote{.75}{\textbf{Note:} In Example \ref{ex_ts6}, one could create a series for $\ln(\sqrt{x})$ by simply recognizing that $\ln(\sqrt{x}) = \ln (x^{1/2}) = 1/2\ln x$, and hence multiplying the Taylor series for $\ln x$ by $1/2$. This example was chosen to demonstrate other aspects of series, such as the fact that the interval of convergence changes.}
 }\\
 
 \example{ex_ts7}{Using Taylor series to evaluate definite integrals}
@@ -236,7 +241,7 @@ e^x &= \sum_{n=0}^\infty \frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdo
 \intertext{and so}
 e^{-x^2} &= \sum_{n=0}^\infty \frac{(-x^2)^n}{n!} \\
 				&= \sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{n!}\\
-				&= 1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots
+				&= 1-x^2+\frac{x^4}{2!}-\frac{x^6}{3!}+\cdots.
 \end{align*}
 We use Theorem \ref{thm:calc_power_series} to integrate:
 $$\int e^{-x^2}\ dx = C + x - \frac{x^3}{3}+\frac{x^5}{5\cdot2!}-\frac{x^7}{7\cdot3!}+\cdots +(-1)^n\frac{x^{2n+1}}{(2n+1)n!}+\cdots$$
@@ -246,7 +251,7 @@ Summing the 5 terms shown above give the approximation of $0.74749.$ Since this 
 }\\
 
 \example{ex_ts8}{Using Taylor series to solve differential equations}
-{Solve the differential equation $y'=2y$ in terms of a power series, and use the theory of Taylor series to recognize the solution in terms of an elementary function.
+{Solve the differential equation $y\primeskip'=2y$ in terms of a power series, and use the theory of Taylor series to recognize the solution in terms of an elementary function.
 }
 {We found the first 5 terms of the power series solution to this differential equation in Example \ref{ex_ps5} in Section \ref{sec:power_series}. These are:
 $$a_0=1,\quad a_1 = 2,\quad a_2 = \frac42=2,\quad a_3=\frac{8}{2\cdot3}=\frac43,\quad a_4=\frac{16}{2\cdot3\cdot4} = \frac23.$$
@@ -271,7 +276,11 @@ f(x) = \sum_{n=0}^\infty a_nx^n &= \sum_{n=0}^\infty \frac{b_n}{n!}x^n \\
 \end{align*}
 From here it is easier to recognize that the series is describing an exponential function.
 
-There are simpler, more direct ways of solving the differential equation $y' = 2y$. We applied power series techniques to this equation to demonstrate its utility, and went on to show how \emph{sometimes} we are able to recover the solution in terms of elementary functions using the theory of Taylor series. Most differential equations faced in real scientific and engineering situations are much more complicated than this one, but power series can offer a valuable tool in finding, or at least approximating, the solution.
+There are simpler, more direct ways of solving the differential equation $y\primeskip' = 2y$. We applied power series techniques to this equation to demonstrate its utility, and went on to show how \emph{sometimes} we are able to recover the solution in terms of elementary functions using the theory of Taylor series. Most differential equations faced in real scientific and engineering situations are much more complicated than this one, but power series can offer a valuable tool in finding, or at least approximating, the solution.\\
+
+This chapter introduced sequences, which are ordered lists of numbers, followed by series, wherein we add up the terms of a sequence. We quickly saw that such sums do not always add up to ``infinity,'' but rather converge. We studied tests for convergence, then ended the chapter with a formal way of defining functions based on series. Such ``series--defined functions'' are a valuable tool in solving a number of different problems throughout science and engineering. 
+
+Coming in the next chapters are new ways of defining curves in the plane apart from using functions of the form $y=f(x)$. Curves created by these new methods can be beautiful, useful, and important. 
 
 \printexercises{exercises/08_08_exercises}
 

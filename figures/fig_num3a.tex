@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={.2,.4,.6,.8,1},% 
+%			extra x ticks={.5,3},
+%			extra x tick labels={$a$,$b$},
+%			ytick=\empty,
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+%			minor x tick num=4,
+			ymin=-.2,ymax=1.2,%
+			xmin=-.2,xmax=1.1%
+]
+
+\addplot [{\coloronefill},fill={\coloronefill},thick] coordinates {(0.0000,1.0000)  (0.0526,0.9972) (0.1053,0.9890)
+(0.1579,0.9754)  (0.2105,0.9566) (0.2632,0.9331)
+(0.3158,0.9051)  (0.3684,0.8731) (0.4211,0.8375)
+(0.4737,0.7990)  (0.5263,0.7580) (0.5789,0.7152)
+(0.6316,0.6711)  (0.6842,0.6262) (0.7368,0.5810)
+(0.7895,0.5362)  (0.8421,0.4921) (0.8947,0.4491)
+(0.9474,0.4076)  (1.0000,0.3679) }
+|-(axis cs:0,0)--cycle;
+
+\addplot [{\colorone},thick] coordinates {(0.0000,1.0000)  (0.0526,0.9972) (0.1053,0.9890)
+(0.1579,0.9754)  (0.2105,0.9566) (0.2632,0.9331)
+(0.3158,0.9051)  (0.3684,0.8731) (0.4211,0.8375)
+(0.4737,0.7990)  (0.5263,0.7580) (0.5789,0.7152)
+(0.6316,0.6711)  (0.6842,0.6262) (0.7368,0.5810)
+(0.7895,0.5362)  (0.8421,0.4921) (0.8947,0.4491)
+(0.9474,0.4076)  (1.0000,0.3679) };
+
+\foreach \x / \y / \z in {0/1 /0.96 , 0.2/0.96 / .85, 0.4 /.85 / .7, .6 / .7/ .53, .8 / .53 / .37}
+  	{\addplot [thick,draw={\colortwo}] coordinates {(\x,0) (\x,\y) (\x+.2,\z) (\x+.2,0) (\x,0)};
+  	}
+
+\draw (axis cs:.75,1) node {\scriptsize $y=e^{-x^2}$};
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+
+

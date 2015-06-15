@@ -6,7 +6,7 @@ The SI unit of force is the Newton, (kg$\cdot$m/s$^2$), and the SI unit of dista
 
 \mnote{.7}{\textbf{Note:} \textit{Mass} and \textit{weight} are closely related, yet different, concepts. The mass $m$ of an object is a quantitative measure of that object's resistance to acceleration. The weight $w$  of an object is a measurement of the force applied to the object by the acceleration of gravity $g$.
 
-\hskip 5pt Since the two measurements are proportional, $w=m\cdot g$, they are often used interchangeably in everyday conversation. When computing Work, one must be careful to note which is being referred to. When mass is given, it must be multiplied by the acceleration of gravity to reference the related force.}
+\hskip 5pt Since the two measurements are proportional, $w=m\cdot g$, they are often used interchangeably in everyday conversation. When computing work, one must be careful to note which is being referred to. When mass is given, it must be multiplied by the acceleration of gravity to reference the related force.}
 
 When force is constant, the measurement of work is straightforward. For instance, lifting a 200 lb object 5 ft performs $200\cdot 5 = 1000$ ft--lb of work. 
 
@@ -23,7 +23,9 @@ $$W = \int_a^b F(x)\ dx.$$
 }
 \clearpage
 \example{ex_work1}{Computing work performed: applying variable force}{
-How much work is performed pulling a 60 m climbing rope up a cliff face, where the rope has a mass of 66 g/m?}
+A 60m climbing rope is hanging over the side of a tall cliff. How much work is performed in pulling the rope up to the top, where the rope has a mass of 66g/m? 
+%How much work is performed pulling a 60 m climbing rope up a cliff face, where the rope has a mass of 66 g/m?
+}
 {We need to create a force function $F(x)$ on the interval $[0,60]$. To do so, we must first decide what $x$ is measuring: it is the length of the rope still hanging or is it the amount of rope pulled in? As long as we are consistent, either approach is fine. We adopt for this example the convention that $x$ is the amount of rope pulled in. This seems to match intuition better; pulling up the first 10 meters of rope involves $x=0$ to $x=10$ instead of $x=60$ to $x=50$. 
 
 As $x$ is the amount of rope pulled in, the amount of rope still hanging is $60-x$. This length of rope has a mass of 66 g/m, or $0.066$ kg/m. The the mass of the rope still hanging is $0.066(60-x)$ kg; multiplying this mass by the acceleration of gravity, 9.8 m/s$^2$, gives our variable force function $$F(x) = (9.8)(0.066)(60-x) = 0.6468(60-x).$$
@@ -36,17 +38,20 @@ By comparison, consider the work done in lifting the entire rope 60 meters. The 
 
 \example{ex_work1_5}{Computing work performed: applying variable force}{
 Consider again pulling a 60 m rope up a cliff face, where the rope has a mass of 66 g/m. At what point is exactly half the work performed?}
-{From Example \ref{ex_work1} we know the total work performed is $11,642.4$ J. We want to find a height $h$ such that the work in pulling the rope from a height of $x=0$ to a height of $x=h$ is 5821.2, half the total work. Thus we want to solve the equation
-$$\int_0^h 6.468(60-x)\ dx = 5821.2$$ for $h$. 
+{From Example \ref{ex_work1} we know the total work performed is $1,164.24$ J. We want to find a height $h$ such that the work in pulling the rope from a height of $x=0$ to a height of $x=h$ is 582.12, half the total work. Thus we want to solve the equation
+%\enlargethispage{\baselineskip}
+$$\int_0^h 0.6468(60-x)\ dx = 582.12$$ 
+for $h$. 
+
 \begin{align*}
-\int_0^h 6.468(60-x)\ dx &= 5821.2 \\
-\left(388.08x-3.234x^2\right)\Big|_0^h &=5821.2 \\
-388.08h-3.234h^2 &=5821.2 \\
--3.234h^2+388.08h-5821.2 &=0 .
+\int_0^h 0.6468(60-x)\ dx &= 582.12 \\
+\left(38.808x-0.3234x^2\right)\Big|_0^h &=582.12 \\
+38.808h-0.3234h^2 &=582.12 \\
+-0.3234h^2+38.808h-582.12 &=0 .
 \intertext{Apply the Quadratic Formula.}
 h&=17.57 \ \text{and}\ 102.43
 \end{align*}
-As the rope is only 60 m long, the only sensible answer is $h=17.57$. Thus about half the work is done pulling up the first 17.5 m; the other half of the work is done pulling up the remaining 42.43 m. 
+As the rope is only 60m long, the only sensible answer is $h=17.57$. Thus about half the work is done pulling up the first 17.5m the other half of the work is done pulling up the remaining 42.43m. 
 \mnote{.85}{\textbf{Note:} In Example \ref{ex_work1_5}, we find that half of the work performed in pulling up a 60 m rope is done in the last 42.43 m. Why is it not coincidental that $60/\sqrt{2}=42.43$?}
 }\\
 
@@ -78,11 +83,11 @@ A box of 100 lb of sand is being pulled up at a uniform rate a distance of 50 ft
 \noindent \textbf{\large Hooke's Law and Springs}
 \vskip\baselineskip
 
-Hooke's Law states that the force required to compress or stretch a spring $x$ units from its natural length is proportional to $x$; that is, this force is $F(x) = kx$ for some constant $k$. For example, if a force of 1 N stretches a given spring 2 cm, then a force of 5 N will stretch the spring 10 cm. Converting the distances to meters, we have that stretching a this spring 0.02 m requires a force of $F(0.02) = k(0.02) = 1$ N, hence $k = 1/0.02 = 50$ N/m. 
+Hooke's Law states that the force required to compress or stretch a spring $x$ units from its natural length is proportional to $x$; that is, this force is $F(x) = kx$ for some constant $k$. For example, if a force of 1 N stretches a given spring 2 cm, then a force of 5 N will stretch the spring 10 cm. Converting the distances to meters, we have that stretching this spring 0.02 m requires a force of $F(0.02) = k(0.02) = 1$ N, hence $k = 1/0.02 = 50$ N/m. 
 \index{Hooke's Law}\\
 
 \example{ex_spring1}{Computing work performed: stretching a spring}{
-A force of 20 lb stretches a spring from a length of 7 inches to a length of 12 inches. How much work was performed in stretching the spring to this length?}
+A force of 20 lb stretches a spring from a natural length of 7 inches to a length of 12 inches. How much work was performed in stretching the spring to this length?}
 {In many ways, we are not at all concerned with the actual length of the spring, only with the amount of its change. Hence, we do not care that 20 lb of force stretches the spring to a length of 12 inches, but rather that a force of 20 lb stretches the spring by 5 in. This is illustrated in Figure \ref{fig:spring1}; we only measure the change in the spring's length, not the overall length of the spring.
 
 \begin{center}
@@ -107,7 +112,7 @@ We compute the total work performed by integrating $F(x)$ from $x=0$ to $x=5/12$
 
 Another useful example of the application of integration to compute work comes in the pumping of fluids, often illustrated in the context of emptying a storage tank by pumping the fluid out the top. This situation is different than our previous examples for the forces involved are constant. After all, the force required to move one cubic foot of water (about 62.4 lb) is the same regardless of its location in the tank. What is variable is the distance that cubic foot of water has to travel; water closer to the top travels less distance than water at the bottom, producing less work.
 
-\mtable{.8}{Weight and Mass densities}{fig:weight_density}{%
+\mtable{.35}{Weight and Mass densities}{fig:weight_density}{%
 \begin{tabular}{ccc}
 Fluid & lb/ft$^3$ & kg/m$^3$ \\ \hline
 Concrete & 150 & 2400 \\
@@ -136,8 +141,8 @@ $V_i = 10^2\pi \Delta y_i$; its density is $62.4$ lb/ft$^3$. Thus the required f
 We approximate the distance the force is applied by using any $y$-value contained in the $i\,^\text{th}$ subinterval; for simplicity, we arbitrarily use $y_i$ for now (it will not matter later on). The water will be pumped to a point 5 feet above the top of the tank, that is, to the height of $y=35$ ft. Thus the distance the water at height $y_i$ travels is $35-y_i$ ft. 
 
 In all, the approximate work $W_i$ peformed in moving the water in the $i\,^\text{th}$ subinterval to a point 5 feet above the tank is 
-$$W_i \approx 6240\pi\Delta y_i(35-y_i),$$
-and the total work performed is
+$$W_i \approx 6240\pi\Delta y_i(35-y_i).$$
+To approximate the total work performed in pumping out all the water from the tank, we sum all the work $W_i$ performed in pumping the water from each of the $n$ subintervals of $[0,30]$:
 $$W \approx \sum_{i=1}^n W_i = \sum_{i=1}^n 6240\pi\Delta y_i(35-y_i).$$
 This is a Riemann sum. Taking the limit as the subinterval length goes to 0 gives 
 \begin{align*}
@@ -196,5 +201,6 @@ $$W = W_b+W_t = 327,600+299,520 = 627,120\ \text{ft--lb}.$$
 Notice how the emptying of the bottom of the pool performs almost as much work as emptying the top. The top portion travels a shorter distance but has more water. In the end, this extra water produces more work.
 }\\
 
+The next section introduces one final application of the definite integral, the calculation of fluid force on a plate.
 \printexercises{exercises/07_05_exercises}
 

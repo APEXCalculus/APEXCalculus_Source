@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,%
+tick label style={font=\scriptsize},axis y line=middle,axis x line=middle,name=myplot,axis on top,%
+			%x=.37\marginparwidth,
+			%y=.37\marginparwidth,
+			xtick={1},
+			%minor x tick num=1,% 
+%			extra x ticks={.33},
+%			extra x tick labels={$1/3$},
+			ytick={1},
+			%minor y tick num=1,%extra y ticks={-5,-3,...,7},%
+			ymin=-.5,ymax=1.2,%
+			xmin=-.5,xmax=1.2%
+]
+
+\addplot [very thick,{\colorone},smooth,domain=-.25:1.1,samples=20] ({x},{1});
+\addplot [very thick,{\colorone},smooth,domain=-.25:1.1,samples=20] ({x^2},{x});
+\addplot [very thick,{\colorone},smooth,domain=-.25:1.1,samples=20] ({0},{x});
+
+%\draw [very thick,{\colorone}] (axis cs:-1,-1) -- (axis cs:1,-1) --(axis cs:1,1) --(axis cs:-1,1) --cycle;
+
+\draw (axis cs: .25,.75) node {$R$}
+			(axis cs: .5,.5) node {\scriptsize $x=y^2$};
+
+%\addplot [{\colorone},thick,fill=white,area style, smooth,domain=0:360,samples=30] ({1+cos(x)},{sin(x)});
+%
+%\addplot [{\colorone},thick,,area style, smooth,domain=0:360,samples=30] ({2+2*cos(x)},{2*sin(x)});
+
+\end{axis}
+
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+
+
+
+

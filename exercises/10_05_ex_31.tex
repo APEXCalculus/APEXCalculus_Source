@@ -1,7 +1,16 @@
-{Let lines $\ell_1(t)$ and $\ell_2(t)$ be parallel. Show why the distance formula cannot be used as stated to find the distance between the lines, then show why letting $c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2$ allows one to the use the given formula.
+{Let lines $\ell_1(t)$ and $\ell_2(t)$ be parallel. 
+\begin{enumerate}
+	\item Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.
+	\item	Show why letting $c=(\vv{P_1P_2}\times\vec d_2)\times\vec d_2$ allows one to the use the formula.
+	\item	Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.	
+\end{enumerate}
 }
-{The distance formula cannot be used because since $\vec d_1$ and $\vec d_2$ are parallel, $\vec c$ is $\vec 0$ and we cannot divide by $\vnorm{0}$.
+{\begin{enumerate}
+	\item The distance formula cannot be used because since $\vec d_1$ and $\vec d_2$ are parallel, $\vec c$ is $\vec 0$ and we cannot divide by $\vnorm{0}$.
+	\item	Since $\vec d_1$ and $\vec d_2$ are parallel, $\vv{P_1P_2}$ lies in the plane formed by the two lines. Thus $\vv{P_1P_2}\times\vec d_2$ is orthogonal to this plane, and $\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2$ is parallel to the plane, but still orthogonal to both $\vec d_1$ and $\vec d_2$. We desire the length of the projection of $\vv{P_1P_2}$ onto $\vec c$, which is what the formula provides.
+	\item		Since the lines are parallel, one can measure the distance between the lines at any location on either line (just as to find the distance between straight railroad tracks, one can use a measuring tape anywhere along the track, not just at one specific place.) Let $P=P_1$ and $Q=P_2$ as given by the equations of the lines, and apply the formula for distance between a point and a line.
+\end{enumerate}
 
-Since $\vec d_1$ and $\vec d_2$ are parallel, $\vv{P_1P_2}$ lies in the plane formed by the two lines. Thus $\vv{P_1P_2}\times\vec d_2$ is orthogonal to this plane, and $\vec c=(\vv{P_1P_2}\times\vec d_2)\times \vec d_2$ is parallel to the plane, but still orthogonal to both $\vec d_1$ and $\vec d_2$. We desire the length of the projection of $\vv{P_1P_2}$ onto $\vec c$, which is what the formula provides.
+
 }
 

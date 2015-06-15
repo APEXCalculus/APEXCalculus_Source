@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[width=\marginparwidth+25pt,tick label style={font=\scriptsize},minor x tick num=1,axis y line=middle,axis x line=middle,ymin=-.1,ymax=1.1,xmin=-1.1,xmax=1.1,name=myplot]
+%%\addplot [{\colorone},thick,smooth] coordinates {(-1.,0.) (-0.89,0.11) (-0.78,0.22) (-0.67,0.33) (-0.56,0.44) (-0.45,0.55) (-0.34,0.66) (-0.23,0.77) (-0.12,0.88) (-0.01,0.99) (0,1) (0.1,0.99) (0.21,0.9559) (0.32,0.8976) (0.43,0.8151) (0.54,0.7084) (0.65,0.5775) (0.76,0.4224) (0.87,0.2431) (1,0) 
+%};
+\addplot [{\colorone},thick, smooth,domain=-1:0,samples=2] ({x},{x+1});
+\addplot [{\colorone},thick, smooth,domain=0:1,samples=15] ({x},{1-x^2});
+
+\filldraw [thick,fill=white] (axis cs:0,1) circle (1.5pt);
+
+\end{axis}
+\node [right] at (myplot.right of origin) {\scriptsize $x$};
+\node [above] at (myplot.above origin) {\scriptsize $y$};
+\end{tikzpicture}
+%\caption{Graphically approximating $\lim_{x\to 0}f(x)$ in Example \ref{ex_limit2}.}\label{fig:limit2}

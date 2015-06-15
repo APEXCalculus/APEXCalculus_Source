@@ -22,7 +22,7 @@ This example illustrates some interesting concepts that we explore in this secti
 {Let $\{a_n\}$ be a sequence.
 \begin{enumerate}
 \item		The sum $\ds \sum_{n=1}^\infty a_n$ is an \textbf{infinite series} (or, simply \textbf{series}).
-\item		Let $\ds S_n = \sum_{i=1}^n a_i$; the sequence $\{S_n\}$ is the sequence of \textbf{$n^\text{th}$ partial sums} of $\{a_n\}$.
+\item		Let $\ds S_n = \sum_{i=1}^n a_i$\,; the sequence $\{S_n\}$ is the sequence of \textbf{$n^\text{th}$ partial sums} of $\{a_n\}$.
 \item		If the sequence $\{S_n\}$ converges to $L$, we say the series $\ds \sum_{n=1}^\infty a_n$ \textbf{converges} to $L$, and we write $\ds \sum_{n=1}^\infty a_n = L$.
 \item		If the sequence $\{S_n\}$ diverges, the series $\ds \sum_{n=1}^\infty a_n$ \textbf{diverges}.
 \index{series!definition}\index{series!partial sums}\index{series!convergent}\index{series!divergent}\index{convergence!of series}\index{divergence!of series}
@@ -53,7 +53,7 @@ A scatter plot of the sequences $\{a_n\}$ and $\{S_n\}$ is given in Figure \ref{
 
 %\mfigure{.5}{Scatter plots relating to the series of Example \ref{ex_series1} part 1.}{fig:series1a}{figures/figseries1a}
 
-\item		Consider some of the partial sums $S_n$ of $\{b_n\}$:
+\item		The sequence $\{b_n\}$ starts with 1, $-1$, 1, $-1$, $\ldots$. Consider some of the partial sums $S_n$ of $\{b_n\}$:
 \begin{align*}
 S_1 &= 1\\
 S_2 &= 0\\
@@ -105,9 +105,11 @@ $$\sum_{n=0}^\infty r^n = \frac{1}{1-r}.$$
 \end{enumerate}
 }
 
-According to Theorem \ref{thm:geom_series}, the series $\ds\sum_{n=0}^\infty \frac{1}{2^n} = 1+\frac12+\frac14+\cdots$ converges, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
+According to Theorem \ref{thm:geom_series}, the series 
+$$\ds\sum_{n=0}^\infty \frac{1}{2^n} =\sum_{n=0}^\infty \left(\frac 12\right)^2= 1+\frac12+\frac14+\cdots$$ converges as $r=1/2$, and $\ds \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2.$ This concurs with our introductory example; while there we got a sum of 1, we skipped the first term of 1.\\
 %\clearpage
 
+\enlargethispage{2\baselineskip}
 \example{ex_series2}{Exploring geometric series}{
 Check the convergence of the following series. If the series converges, find its sum.\\
 
@@ -118,6 +120,7 @@ Check the convergence of the following series. If the series converges, find its
 $$\sum_{n=0}^\infty \left(\frac34\right)^n = \frac{1}{1-3/4} = 4.$$ However, note the subscript of the summation in the given series: we are to start with $n=2$. Therefore we subtract off the first two terms, giving:
 $$\sum_{n=2}^\infty \left(\frac34\right)^n = 4 - 1 - \frac34 = \frac94.$$
 This is illustrated in Figure \ref{fig:series2a}.
+
 \mfigure{.35}{Scatter plots relating to the series in Example \ref{ex_series2}.}{fig:series2a}{figures/figseries2a}
 
 %\mfigure{.8}{Scatter plots relating to the series of Example \ref{ex_series2} part 1.}{fig:series2a}{figures/figseries2a}
@@ -193,7 +196,7 @@ Determine the convergence of the following series.\\
 
 This series is a famous series, called the \emph{Harmonic Series}, so named because of its relationship to \emph{harmonics} in the study of music and sound. 
 
-\item		This is a $p$--series with $p=2$. By Theorem \ref{thm:pseries}, it converges. Note that the theorem does not give a formula by which we can determine \emph{what} the series converges to; we just know it converges. A famous, unexpected result is that this series converges to $\ds\frac{\pi^2}{6}$.
+\item		This is a $p$--series with $p=2$. By Theorem \ref{thm:pseries}, it converges. Note that the theorem does not give a formula by which we can determine \emph{what} the series converges to; we just know it converges. A famous, unexpected result is that this series converges to $\ds{\pi^2}/{6}$.
 
 \item		This is a $p$--series with $p=1/2$; the theorem states that it diverges.
 
@@ -201,7 +204,7 @@ This series is a famous series, called the \emph{Harmonic Series}, so named beca
 
 \item		This is a general $p$--series with $p=3$, therefore it converges.
 
-\item		This is not a $p$--series, but a geometric series with $r=2$. It converges.
+\item		This is not a $p$--series, but a geometric series with $r=1/2$. It converges.
 \end{enumerate}
 \vskip-1.5\baselineskip
 }\\
@@ -250,6 +253,7 @@ S_5 &= \left(1-\frac13\right) + \left(\frac12-\frac14\right)+\left(\frac13-\frac
 \end{align*}
 \normalsize
 
+\drawexampleline
 We again have a telescoping series. In each partial sum, most of the terms cancel and we obtain the formula $\ds S_n = 1+\frac12-\frac1{n+1}-\frac1{n+2}.$ Taking limits allows us to determine the convergence of the series:
 $$\lim_{n\to\infty}S_n = \lim_{n\to\infty} \left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right) = \frac32,\quad \text{so } \sum_{n=1}^\infty \frac1{n^2+2n} = \frac32.$$
 This is illustrated in Figure \ref{fig:series4}(a).
@@ -401,7 +405,10 @@ The equations below illustrate this. The first line shows the infinite sum of th
 \begin{align*}
  \parbox{50pt}{\centering$\ds\sum_{n=1}^\infty \frac1n$} &= \parbox{50pt}{\centering$\ds\sum_{n=1}^{10,000,000}\frac1n$}\quad + \parbox{50pt}{\centering$\ds\sum_{n=10,000,001}^\infty \frac1n$} \rule[-20pt]{0pt}{1pt} \\
  \parbox{50pt}{\centering$\ds\sum_{n=1}^\infty \frac1n$} - \parbox{50pt}{\centering$\ds\sum_{n=1}^{10,000,000}\frac1n$}&= \parbox{50pt}{\centering$\ds\sum_{n=10,000,001}^\infty \frac1n$} \rule[-20pt]{0pt}{1pt}\\
-\parbox{50pt}{\centering	$\infty$} - \parbox{50pt}{\centering $16.7$} &=  \parbox{50pt}{\centering$\infty$}
+\parbox{50pt}{\centering	$\infty$} - \parbox{50pt}{\centering $16.7$} &=  \parbox{50pt}{\centering$\infty.$}
 \end{align*}													
+
+This section introduced us to series and defined a few special types of series whose convergence properties are well known: we know when a $p$-series or a geometric series converges or diverges. Most series that we encounter are not one of these types, but we are still interested in knowing whether or not they converge. The next three sections introduce tests that help us determine whether or not a given series converges. 
+
 
 \printexercises{exercises/08_02_exercises}
