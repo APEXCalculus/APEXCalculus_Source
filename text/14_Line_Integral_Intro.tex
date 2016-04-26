@@ -1,0 +1,195 @@
+In previous chapters we have explored a relationship between vectors and integration. Our most tangible result: if $\vec v(t)$ is a vector--valued velocity function of a moving object, then integrating $\vec v(t)$ from $t=a$ to $t=b$ gives the displacement of that object over that time interval.
+
+This chapter explores completely different relationships between vectors and integration. These relationships will enable us to compute the work done by a magnetic field in moving an object along a path and how much air moves through an oddly--shaped screen in space, among other things. 
+
+Our upcoming work in integration will benefit from a review. We are not concerned here with techniques of integration, but rather what an integral ``does'' and how that relates to the notation we use to describe it.\\
+
+\noindent\textbf{\large Integration Review}
+\vskip \baselineskip
+
+Recall from Section \ref{sec:iterated_integrals} that when $R$ is a region in the $x$-$y$ plane, $ \iint_R dA$ gives the area of the region $R$. The integral symbols are ``elongated esses'' meaning ``sum'' and $dA$ represents ``a small amount of area.'' Taken together, $\iint_R dA$ means ``sum up, over $R$, small amounts of area.'' This sum then gives the total area of $R$. We use two integral symbols since $R$ is a two--dimensional region.
+
+Now let $z=f(x,y)$ represent a surface. The double integral $\iint_R f(x,y)\ dA$ means ``sum up, over $R$, function values (heights) given by $f$ times small amounts of area.'' Since ``height $\times$ area = volume,'' we are summing small amounts of volume over $R$, giving the total signed volume under the surface $z=f(x,y)$ and above the $x$-$y$ plane.
+
+This notation does not directly inform us \textit{how} to evaluate the double integrals to find an area or a volume. With additional work, we recognize that a small amount of area $dA$ can be measured as the area of a small rectangle, with one side length a small change in $x$ and the other side length a small change in $y$. That is, $dA = dx\,dy$ or $dA = dy\,dx$. We could also compute a small amount of area by thinking in terms of polar coordinates, where $dA = r\,dr\,d\theta$. These understandings lead us to the iterated integrals we used in Chapter \ref{chapter:mult_int}.
+
+Let us back our review up farther. Note that $\int_1^3\ dx = x\big|_1^3 = 3-1 = 2$. We have simply measured the length of the interval $[1,3]$. We could rewrite the above integral using syntax similar to the double integral syntax above:
+$$\int_1^3\ dx = \int_Idx,\quad \text{ where $I$ = $[1,3]$}.$$
+
+We interpret ``$\int_I dx$'' as meaning ``sum up, over the interval $I$, small changes in $x$.'' A change in $x$ is a length along the $x$-axis, so we are adding up along $I$ small lengths, giving the total length of $I$. 
+
+We could also write $\int_1^3f(x)\ dx$ as $\int_I f(x)\ dx$, interpreted as ``sum up, over $I$, heights given by $y = f(x)$ times small changes in $x$.'' Since ``height$\times$length = area,'' we are summing up areas and finding the total signed area between $y = f(x)$ and the $x$-axis. 
+
+This method of referring to the process of integration can be very powerful. It is the core of our notion of the Riemann Sum. When faced with a quantity to compute, if one can think of a way to approximate its value through a sum, the one is well on their way to constructing an integral (or, double or triple integral) that computes the desired quantity. We will demonstrate this process throughout this chapter, starting with the next section.
+
+\section{Introduction to Line Integrals}\label{sec:line_int_intro}
+We first used integration to find ``area under a curve.'' In this section, we learn to do this (again), but in a different context.
+
+Consider the surface and curve shown in Figure \ref{fig:lineint0}(a). The surface is given by $f(x,y)=1-\cos(x)\sin(y)$. The dashed curve lies in the $x$-$y$ plane and is the familiar $y=x^2$ parabola from $-1\leq x\leq1$; we'll call this curve $C$. The curve drawn with a solid line in the graph is the curve in space that lies on our surface with $x$ and $y$ values that lie on $C$. 
+
+The question we want to answer is this: what is the area that lies below curve drawn with the solid line? In other words, what is the area above $C$ and under the the surface $f$? This area is shown in Figure \ref{fig:lineint0}(b).
+
+We suspect the answer can be found using an integral, but before trying to figure out what that integral is, let us first try to approximate its value. 
+
+\mtable{.45}{Finding area under a curve in space.}{fig:lineint0}{%
+\begin{tabular}{c}
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005003686994314194,
+3Dc2c=0.29708048701286316 0.8962657451629639 0.329318642616272,
+3Dcoo=28.221464157104492 62.0896110534668 72.89360809326172,
+3Droo=149.99999640034895,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=1mm 5mm 5mm 0mm,clip}{figures/figline_integral_intro1}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 0mm,clip]{figures/figtrip1}\\
+(a)\\[10pt]
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005003686994314194,
+3Dc2c=0.29708048701286316 0.8962657451629639 0.329318642616272,
+3Dcoo=28.221464157104492 62.0896110534668 72.89360809326172,
+3Droo=149.99999640034895,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=1mm 5mm 5mm 0mm,clip}{figures/figline_integral_intro1b}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 10mm,clip]{figures/figtrip1b}\\
+(b)\\[10pt]
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.005003686994314194,
+3Dc2c=0.29708048701286316 0.8962657451629639 0.329318642616272,
+3Dcoo=28.221464157104492 62.0896110534668 72.89360809326172,
+3Droo=149.99999640034895,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=1mm 5mm 5mm 0mm,clip}{figures/figline_integral_intro1c}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 10mm,clip]{figures/figtrip1b}\\
+(c)
+\end{tabular}
+}
+
+In Figure \ref{fig:lineint0}(c), 4 rectangles have been drawn over the curve $C$. The bottom corners of each rectangle lies on $C$, and each rectangle has a height given by the function $f(x,y)$ for some $(x,y)$ pair along $C$ between the rectangle's bottom corners. 
+
+As we know how to find the area of each rectangle, we are able to approximate the area above $C$ and under $f$. Clearly, our approximation will be \textit{an approximation}. The heights of the rectangles do not match exactly with the surface $f$, nor does the base of each rectangle follow perfectly the path of $C$.
+
+In typical calculus fashion, our approximation can be improved by using more rectangles. The sum of the areas of these rectangles gives an approximate value of the true area above $C$ and under $f$. As the area of each rectangle is ``height$\times$width'', we assert that the
+$$\text{area above $C$}\approx \sum (\text{heights}\times\text{widths}).$$
+
+When first learning of the integral, and approximating areas with ``heights$\times$ widths'', the width was a small change in $x$: $dx$. That will not suffice in this context. Rather, each width of a rectangle is actually approximating the arc length of a small portion of $C$. In Section \ref{sec:curvature}, we used $s$ to represent the arc--length parameter of a curve. A small amount of arc length will thus be represented by $ds$. 
+
+The height of each rectangle will be determined in some way by the surface $f$. If we parametrize $C$ by $s$, an $s$-value corresponds to an $(x,y)$ pair that lies on the parabola $C$. Since $f$ is a function of $x$ and $y$, and $x$ and $y$ are functions of $s$, we can say that $f$ is a function of $s$. Given a value $s$, we can compute $f(s)$ and find a height. Thus
+\begin{align}
+\text{area under $f$ and above $C$}&\approx \sum (\text{heights}\times\text{widths});\notag\\
+		\text{area under $f$ and above $C$}							&=\lim_{||\Delta s||\to0}\sum f(c_i)\Delta s_i\notag\\
+									&=\int_Cf(s)\ ds.\label{eq:line0}
+\end{align}
+
+Here we have introduce a new notation, the integral symbol with a subscript of $C$. It is reminiscent of our usage of $\iint_R$. Using the train of thought found in the Integration Review preceding this section, we interpret ``$\int_C f(s)\ ds$'' as meaning ``sum up, along a curve $C$, function values $f(s)\times$small arc lengths.'' It is understood here that $s$ represents the arc--length parameter.
+
+All this leads us to a definition. The integral found in Equation \ref{eq:line0} is called a \sword{line integral}. We formally define it below, but note that the definition is very abstract. On one hand, one is apt to say ``the defintion makes sense,'' while on the other, one is equally apt to say ``but I don't know what I'm supposed to do with this definition.'' We'll address that after the definition, and actually find an answer to the area problem we posed at the beginning of this section.
+
+\definition{def:line_integral1}{Line Integral}
+{Let $C$ be a curve continuously parametrized by $s$, the arc--length parameter, and let $f$ be a continuous function of $s$. A \sword{line integral} is an integral of the form
+$$\int_C f(s)\ ds = \lim_{||\Delta s||\to 0}\sum_{i=1}^n f(c_i)\Delta s_i,$$
+where $s_1<s_2<\ldots<s_n$ is any partition of the $s$-interval over which $C$ is defined, $c_i$ is any value in the $i\,^\text{th}$ subinterval,  $\Delta_i$ is the width of the $i\,^\text{th}$ subinterval, and $||\Delta s||$ is the length of the longest subinterval in the partition.
+}
+
+The definition of the line integral does not specify whether $C$ is a curve in the plane or space (or hyperspace), as the definition holds regardless. For now, we'll assume $C$ lies in the $x$-$y$ plane.
+
+This definition of the line integral  doesn't really say anything new. If $C$ is a curve and $s$ is the arc--length parameter of $C$ on $a\leq s\leq b$, then 
+$$\int_Cf(s)\ ds = \int_a^bf(s)\ ds.$$
+The real difference with this integral from the standard ``$\int_a^bf(x)\ dx$'' we used in the past is that of context. Our previous integrals naturally summed up values over an interval on the $x$-axis, whereas now we are summing up values over a curve. If we can parametrize the curve with the arc--length parameter, we can evaluate the line integral just as before.
+
+The trouble here is that we have generally avoided direct use of the arc--length parameter $s$ in the past as it is usually difficult to use. We continue that methodology here. 
+
+Given a curve $C$, find a parametrization of $C$: $x = g(t)$ and $y=h(t)$, for continuous functions $g$ and $h$, where $a\leq t\leq b$. We can represent this parametrization with a vector--valued function, $\vrt = \langle g(t),h(t)\rangle$.
+
+In Section \ref{sec:curvature}, we defined the arc--length parameter in Equation \ref{eq:vvfarc} as 
+$$
+s(t) = \int_0^t \norm{\vec r\,'(u)}\ du. 
+$$
+By the Fundamental Theorem of Calculus, $ds = \norm{\vec r\,'(t)}\ dt$. We can substitute the right hand side of this equation for $ds$ in the line integral definition.
+
+We can view $f$ as being a function of $x$ and $y$ since it is a function of $s$. Thus $f(s) =f(x,y) =f\big(g(t),h(t)\big)$. This gives us a concrete way to evaluate a line integral:
+$$\int_C f(s)\ ds = \int_a^bf\big(g(t),h(t)\big)\norm{\vec r\,'(t)}\ dt.$$
+
+We write this as a Key Idea, along with its three--dimensional analogue, followed by an example where we finally evaluate an integral and find an area.
+
+\keyidea{idea:line1}{Evaluating a Line Integral, Part I}
+{\begin{itemize}
+	\item Let $C$ be a curve parametrized by $\vrt =\langle g(t), h(t)\rangle$, $a\leq t\leq b$, where $g$ and $h$ are continuously differentiable, and let $z=f(x,y)$. Then
+	$$\int_Cf(s)\ ds = \int_a^bf\big(g(t),h(t)\big)\norm{\vec r\,'(t)}\ dt.$$
+	\item Let $C$ be a curve parametrized by $\vrt =\langle g(t), h(t),k(t)\rangle$, $a\leq t\leq b$, where $g$, $h$ and $k$ are continuously differentiable, and let $w=f(x,y,z)$. Then
+	$$\int_Cf(s)\ ds = \int_a^bf\big(g(t),h(t),k(t)\big)\norm{\vec r\,'(t)}\ dt.$$
+\end{itemize}
+}
+
+To be clear, the first point of Key Idea \ref{idea:line1} can be used to find the area under a surface $z=f(x,y)$ and above a curve $C$.
+
+Let's finally do an example where we actually compute an area.\\
+
+\example{ex_linescalarfield2}{Evaluating a line integral.}
+{Find the area under the surface $f(x,y) =\cos(x)+\sin(y)+2$ over the curve $C$, which is the segment of the line $y=2x+1$ on $-1\leq x\leq 1$, as shown in Figure \ref{fig:linescalarfield2}.
+}
+{Our first step is to represent $C$ with a vector--valued function. Since $C$ is a simple line, and we have a explicit relationship between $y$ and $x$ (namely, that $y$ is $2x+1$), we can let $x = t$, $y = 2t+1$, and write $\vrt = \langle t, 2t+1\rangle$ for $-1\leq t\leq 1$. 
+
+We find the values of $f$ over $C$ as $f(x,y) = f(t,2t+1) = \cos(t)+\sin(2t+1) + 2$. We also need $\norm{\vec r\,'(t)}$; with $\vrp(t) = \langle 1,2\rangle$, we have $\norm{\vrp(t)} = \sqrt{5}$. Thus $ds = \sqrt{5}\ dt$. 
+
+\mtable{.45}{Finding area under a curve in Example \ref{ex_linescalarfield2}.}{fig:linescalarfield2}{%
+\begin{tabular}{c}
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004519370850175619,
+3Dc2c=0.7659074664115906 0.5764991044998169 0.28466543555259705,
+3Dcoo=36.11199951171875 39.69871139526367 85.62228393554688,
+3Droo=149.9999948024772,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=1mm 5mm 5mm 0mm,clip}{figures/figlinescalarfield2}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 0mm,clip]{figures/figtrip1}\\
+(a)\\[10pt]
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004519370850175619,
+3Dc2c=0.7659074664115906 0.5764991044998169 0.28466543555259705,
+3Dcoo=36.11199951171875 39.69871139526367 85.62228393554688,
+3Droo=149.9999948024772,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=1mm 5mm 5mm 0mm,clip}{figures/figlinescalarfield2b}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 10mm,clip]{figures/figtrip1b}\\
+(b)
+\end{tabular}
+}
+
+The area we seek is 
+\begin{align*}
+\int_Cf(s)\ ds &= \int_{-1}^1 \big(\cos(t)+\sin(2t+1) + 2\big)\sqrt{5}\ dt \\
+					&= \left.\sqrt{5}\big(\sin(t) - \frac12\cos(2t+1)+2t\big)\right|_{-1}^1\\
+					&\approx 14.418\ \text{units}^2.
+\end{align*}
+\vskip-1.5\baselineskip
+}\\
+
+
+ filler text\\
+
+filler\\
+
+filler\\
+
+\mtable{.45}{Finding area under a curve in Example \ref{ex_linescalarfield3}.}{fig:linescalarfield3}{%
+\begin{tabular}{c}
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004519370850175619,
+3Dc2c=0.7659074664115906 0.5764991044998169 0.28466543555259705,
+3Dcoo=36.11199951171875 39.69871139526367 85.62228393554688,
+3Droo=149.9999948024772,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=0mm 0mm 0mm 0mm,clip}{figures/figlinescalarfield3}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 0mm,clip]{figures/figtrip1}\\
+(a)\\[10pt]
+\myincludegraphicsthree{width=150pt,3Dmenu,activate=onclick,deactivate=onclick,
+3Droll=0,
+3Dortho=0.004519370850175619,
+3Dc2c=0.7659074664115906 0.5764991044998169 0.28466543555259705,
+3Dcoo=36.11199951171875 39.69871139526367 85.62228393554688,
+3Droo=149.9999948024772,
+3Dlights=Headlamp,add3Djscript=asylabels.js}{scale=1.3,trim=0mm 0mm 0mm 0mm,clip}{figures/figlinescalarfield3b}\\
+%\myincludegraphics[scale=1.3,trim=1mm 5mm 5mm 10mm,clip]{figures/figtrip1b}\\
+(b)
+\end{tabular}
+}
+
+%%\printexercises{exercises/13_06_exercises}

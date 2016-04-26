@@ -90,8 +90,8 @@ Find $f_x(x,y)$ and $f_y(x,y)$ in each of the following.
 	\item		We have $f(x,y) = e^{x^2y^3}\sqrt{x^2+1}$.\\
 	Beginning with $f_x(x,y)$, note how we need to apply the Product Rule. 
 	\begin{align*}
-	f_x(x,y) &= e^{x^2y^3}(2xy^3)\sqrt{x^2+1} + e^{x^2y^3}\frac12\big(x^2+1\big)^{-1/2} \\
-					&= 2xy^3e^{x^2y^3}+\frac{e^{x^2y^3}}{2\sqrt{x^2+1}}.
+	f_x(x,y) &= e^{x^2y^3}(2xy^3)\sqrt{x^2+1} + e^{x^2y^3}\frac12\big(x^2+1\big)^{-1/2}(2x) \\
+					&= 2xy^3e^{x^2y^3}\sqrt{x^2+1}+\frac{xe^{x^2y^3}}{\sqrt{x^2+1}}.
 	\end{align*}
 	Note that when finding $f_y(x,y)$ we do not have to apply the Product Rule; since $\sqrt{x^2+1}$ does not contain $y$, we treat it as fixed and hence becomes a coefficient of the $e^{x^2y^3}$ term.
 	$$f_y(x,y) = e^{x^2y^3}(3x^2y^2)\sqrt{x^2+1} = 3x^2y^2e^{x^2y^3}\sqrt{x^2+1}.$$

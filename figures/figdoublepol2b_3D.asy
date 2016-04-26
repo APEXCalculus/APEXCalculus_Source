@@ -8,11 +8,11 @@ size(200,200,IgnoreAspect);
 currentprojection=orthographic(-2.7,-11,16);
 defaultrender.merge=true;
 
-usepackage("mathspec");
-texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
-texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
-texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
-texpreamble("\setmathsfont(Greek){[cmmi10]}");
+// usepackage("mathspec");
+// texpreamble("\setallmainfonts[Mapping=tex-text]{Calibri}");
+// texpreamble("\setmainfont[Mapping=tex-text]{Calibri}");
+// texpreamble("\setsansfont[Mapping=tex-text]{Calibri}");
+// texpreamble("\setmathsfont(Greek){[cmmi10]}");
 
 // setup and draw the axes
 real[] myxchoice={2,4};

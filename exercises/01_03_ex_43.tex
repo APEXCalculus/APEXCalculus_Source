@@ -1,0 +1,15 @@
+{Let $f(x) = 0$ and $\ds g(x) = \frac xx$. 
+\begin{enumerate}
+	\item Show why $\ds \lim_{x\to2} f(x)=0$.
+	\item	Show why $\ds \lim_{x\to0} g(x) = 1$.
+	\item	Show why $\ds \lim_{x\to2} g\big(f(x)\big)$ does not exist.
+	\item	Show why the answer to part (c) does not violate the Composition Rule of Theorem \ref{thm:limit_algebra}.
+\end{enumerate}}
+{\begin{enumerate}
+	\item Apply Part 1 of Theorem \ref{thm:limit_algebra}.
+	\item	Apply Theorem \ref{thm:limit_allbut1}; $g(x) = \frac xx$ is the same as $g(x) = 1$ everywhere except at $x=0$. Thus $\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.$
+	\item	The function $f(x)$ is always 0, so $g\big(f(x)\big)$ is never defined as $g(x)$ is not defined at $x=0$. Therefore the limit does not exist.
+	\item	The Composition Rule requires that $\ds\lim_{x\to0} g(x)$ be equal to $g(0)$. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.
+\end{enumerate}}
+
+

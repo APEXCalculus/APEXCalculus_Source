@@ -2,7 +2,7 @@ The previous chapter introduced the most fundamental of calculus topics: the lim
 
 \section{Instantaneous Rates of Change: The Derivative}\label{sec:derivative}
 
-A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Student of physics may recall that the height (in feet) of the riders, $t$ seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by $f(t) = -16t^2+150$. 
+A common amusement park ride lifts riders to a height then allows them to freefall a certain distance before safely stopping them. Suppose such a ride drops riders from a height of 150 feet. Students of physics may recall that the height (in feet) of the riders, $t$ seconds after freefall (and ignoring air resistance, etc.) can be accurately modeled by $f(t) = -16t^2+150$. 
 
 Using this formula, it is easy to verify that, without intervention, the riders will hit the ground at $t=2.5\sqrt{1.5} \approx 3.06$ seconds. Suppose the designers of the ride decide to begin slowing the riders' fall after 2 seconds (corresponding to a height of 86 ft.). How fast will the riders be traveling at that time?\\
 
@@ -218,9 +218,9 @@ Let $f(x) = 3x^2+5x-7$ as in Example \ref{ex_derv_point1}. Find $\fp(x)$.}
 {We apply Definition \ref{def:the_derivative}.
 	\begin{align*}
 	\fp(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
-					&=	\lim_{x\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
-					&=	\lim_{x\to 0} \frac{3h^2 +6xh+5h}{h}\\
-					&= \lim_{x\to 0} 3h+6x+5\\
+					&=	\lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
+					&=	\lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}\\
+					&= \lim_{h\to 0} 3h+6x+5\\
 					&= 6x+5
 	\end{align*}
 	So $\fp(x) = 6x+5$. Recall earlier we found that $\fp(1) = 11$ and $\fp(3) = 23$. Note our new computation of $\fp(x)$ affirm these facts.
@@ -317,7 +317,7 @@ The point of non-differentiability came where the piecewise defined function swi
 Find the derivative of $f(x)$, where $\ds f(x) = \left\{\begin{array}{cc} \sin x & x\leq \pi/2 \\ 1 & x>\pi/2 \end{array}.\right.$ See Figure \ref{fig:piecewisesinx1}.
 }
 {Using Example \ref{ex_deriv_sinx}, we know that when $x<\pi/2$, $\fp(x) = \cos x$. It is easy to verify that when $x>\pi/2$, $\fp(x) = 0$; consider:
-			$$\lim_{x\to0}\frac{f(x+h) - f(x)}{h} = \lim_{x\to0}\frac{1-1}{h} = \lim_{h\to0}0 =0.$$
+			$$\lim_{h\to0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to0}\frac{1-1}{h} = \lim_{h\to0}0 =0.$$
 \mfigure{.8}{A graph of $f(x)$ as defined in Example \ref{ex_diff_piecewise}.}{fig:piecewisesinx1}{figures/figpiecewisesinx1}
 			
 So far we have $$\fp(x) = \left\{\begin{array}{cc} \cos x & x<\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$ We still need to find $\fp(\pi/2)$. Notice at $x=\pi/2$ that both pieces of $\fp$ are 0, meaning we can state that $\fp(\pi/2)=0$. 
