@@ -3,27 +3,27 @@
 <title>Limits</title><introduction>
 <p>
 
-<em>Calculus</em> means <q>a method of calculation or reasoning.</q> When one computes the sales tax on a purchase, one employs a simple calculus. When one finds the area of a polygonal shape by breaking it up into a set of triangles, one is using another calculus. Proving a theorem in geometry employs yet another calculus.
+<i>Calculus</i> means "a method of calculation or reasoning." When one computes the sales tax on a purchase, one employs a simple calculus. When one finds the area of a polygonal shape by breaking it up into a set of triangles, one is using another calculus. Proving a theorem in geometry employs yet another calculus.
 </p>
   
 <p>
-Despite the wonderful advances in mathematics that had taken place into the first half of the <m>17^\text{th} </m> century, mathematicians and scientists were keenly aware of what they <em>could not do.</em> (This is true even today.) In particular, two important concepts eluded mastery by the great thinkers of that time: area and rates of change.
+Despite the wonderful advances in mathematics that had taken place into the first half of the <m>17^\text{th} </m> century, mathematicians and scientists were keenly aware of what they <i>could not do.</i> (This is true even today.) In particular, two important concepts eluded mastery by the great thinkers of that time: area and rates of change.
 </p>
   
 <p>
-Area seems innocuous enough; areas of circles, rectangles, parallelograms, etc., are standard topics of study for students today just as they were then. However, the areas of <em>arbitrary</em> shapes could not be computed, even if the boundary of the shape could be described exactly.
+Area seems innocuous enough; areas of circles, rectangles, parallelograms, etc., are standard topics of study for students today just as they were then. However, the areas of <i>arbitrary</i> shapes could not be computed, even if the boundary of the shape could be described exactly.
 </p>
   
 <p>
-Rates of change were also important. When an object moves at a constant rate of change, then <q>distance = rate <m>\times </m> time.</q> But what if the rate is not constant &#x2013; can distance still be computed? Or, if distance is known, can we discover the rate of change?
+Rates of change were also important. When an object moves at a constant rate of change, then "distance = rate <m>\times </m> time." But what if the rate is not constant &#x2013; can distance still be computed? Or, if distance is known, can we discover the rate of change?
 </p>
   
 <p>
-It turns out that these two concepts were related. Two mathematicians, Sir Isaac Newton and Gottfried Leibniz, are credited with independently formulating a system of computing that solved the above problems and showed how they were connected. Their system of reasoning was <q>a</q> calculus. However, as the power and importance of their discovery took hold, it became known to many as <q>the</q> calculus. Today, we generally shorten this to discuss <q>calculus.</q>
+It turns out that these two concepts were related. Two mathematicians, Sir Isaac Newton and Gottfried Leibniz, are credited with independently formulating a system of computing that solved the above problems and showed how they were connected. Their system of reasoning was "a" calculus. However, as the power and importance of their discovery took hold, it became known to many as "the" calculus. Today, we generally shorten this to discuss "calculus."
 </p>
   
 <p>
-The foundation of <q>the calculus</q> is the <em>limit.</em> It is a tool to describe a particular behavior of a function. This chapter begins our study of the limit by approximating its value graphically and numerically. After a formal definition of the limit, properties are established that make <q>finding limits</q> tractable. Once the limit is understood, then the problems of area and rates of change can be approached.
+The foundation of "the calculus" is the <i>limit.</i> It is a tool to describe a particular behavior of a function. This chapter begins our study of the limit by approximating its value graphically and numerically. After a formal definition of the limit, properties are established that make "finding limits" tractable. Once the limit is understood, then the problems of area and rates of change can be approached.
 </p>
  </introduction> <xi:include  href="section1-1.mbx" />
  <xi:include  href="section1-2.mbx" />

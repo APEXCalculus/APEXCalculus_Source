@@ -2,7 +2,7 @@
 <section xml:id="sec_limit_continuity">
 <title>One Sided Limits</title><introduction>
 <p>
-We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave <q>nicely.</q> In this section we rigorously define what we mean by <q>nicely.</q>
+We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave "nicely." In this section we rigorously define what we mean by "nicely."
 </p>
   
 <p>
@@ -13,11 +13,11 @@ In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in whic
 <li>The function oscillates.</li>
  </ol>  
 <p>
-In this section we explore in depth the concepts behind <hash />1 by introducing the <em>one-sided limit</em>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and <q><m>x\neq c</m></q> is replaced with either <q><m>x\lt c</m></q> or <q><m>x>c</m>.</q>
+In this section we explore in depth the concepts behind \#1 by introducing the <i>one-sided limit</i>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and "<m>x\neq c</m>" is replaced with either "<m>x\lt c</m>" or "<m>x>c</m>."
 </p>
   
 <p>
-<b>Left-Hand Limit</b> \knownindex{\lt main>limit\lt /main>\lt sub>one sided\lt /sub>}\knownindex{\lt main>limit\lt /main>\lt sub>right handed\lt /sub>}\knownindex{\lt main>limit\lt /main>\lt sub>left handed\lt /sub>}
+<b>Left-Hand Limit</b> <index><main>limit</main><sub>one sided</sub></index><index><main>limit</main><sub>right handed</sub></index><index><main>limit</main><sub>left handed</sub></index>
 </p>
   
 <p>
@@ -62,7 +62,7 @@ if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.
 </p>
   
 <p>
-Practically speaking, when evaluating a left-hand limit, we consider only values of <m>x</m> <q>to the left of <m>c</m>,</q> i.e., where <m>x\lt c</m>. The admittedly imperfect notation <m>x\to c^-</m> is used to imply that we look at values of <m>x</m> to the left of <m>c</m>. The notation has nothing to do with positive or negative values of either <m>x</m> or <m>c</m>. A similar statement holds for evaluating right-hand limits; there we consider only values of <m>x</m> to the right of <m>c</m>, i.e., <m>x>c</m>. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of <m>c</m>.
+Practically speaking, when evaluating a left-hand limit, we consider only values of <m>x</m> "to the left of <m>c</m>," i.e., where <m>x\lt c</m>. The admittedly imperfect notation <m>x\to c^-</m> is used to imply that we look at values of <m>x</m> to the left of <m>c</m>. The notation has nothing to do with positive or negative values of either <m>x</m> or <m>c</m>. A similar statement holds for evaluating right-hand limits; there we consider only values of <m>x</m> to the right of <m>c</m>, i.e., <m>x>c</m>. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of <m>c</m>.
 </p>
   
 <p>
@@ -93,9 +93,9 @@ Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\
 <p>
 For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using <m>f</m> itself. Therefore we will refer often to the graph.
 </p>
-  <ol><li>As <m>x</m> goes to 1 <em>from the left</em>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></li>
-<li>As <m>x</m> goes to 1 <em>from the right</em>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an <q>open circle</q> there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</li>
-<li><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</li>
+  <ol><li>As <m>x</m> goes to 1 <i>from the left</i>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></li>
+<li>As <m>x</m> goes to 1 <i>from the right</i>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an "open circle" there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</li>
+<li><i>The</i> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</li>
 <li>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</li>
 <li>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</li>
 <li>Using the definition and the graph, <m>f(0) = 0</m>.</li>
@@ -107,13 +107,13 @@ For these problems, the visual aid of the graph is likely more effective in eval
 </example>
    
 <p>
-Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <em>the</em> limit to not exist. The following theorem states what is fairly intuitive: <em>the</em> limit exists precisely when the left and right-hand limits are equal.
+Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <i>the</i> limit to not exist. The following theorem states what is fairly intuitive: <i>the</i> limit exists precisely when the left and right-hand limits are equal.
 </p>
   
 <theorem xml:id="thm_leftrightlimits"><title>Limits and One Sided Limits</title>
 <statement>
 <p>
-Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. \knownindex{\lt main>limit\lt /main>\lt sub>does not exist\lt /sub>} Then
+Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. <index><main>limit</main><sub>does not exist</sub></index> Then
 </p>
   
 <me>
@@ -131,7 +131,7 @@ if, and only if,
 </theorem>
   
 <p>
-The phrase <q>if, and only if</q> means the two statements are <em>equivalent</em>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
+The phrase "if, and only if" means the two statements are <i>equivalent</i>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
 			
 One thing to consider in <xref ref="ex_onesidea">Examples</xref> &#x2013; <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree. <br />
 </p>
@@ -162,7 +162,7 @@ Again we will evaluate each using both the definition of <m>f</m> and its graph.
 </p>
   <ol><li>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></li>
 <li>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</li>
-<li><em>The</em> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</li>
+<li><i>The</i> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</li>
 <li><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</li>
 <li>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</li>
 <li><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</li>
@@ -191,7 +191,7 @@ Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 
   
 <solution><statement>
 <p>
-It is clear by looking at the graph that both the left and right-hand limits of <m>f</m>, as <m>x</m> approaches 1, is 0. Thus it is also clear that <em>the</em> limit is 0; i.e., <m>\ds \lim_{x\to 1} f(x) = 0</m>. It is also clearly stated that <m>f(1) = 1</m>.
+It is clear by looking at the graph that both the left and right-hand limits of <m>f</m>, as <m>x</m> approaches 1, is 0. Thus it is also clear that <i>the</i> limit is 0; i.e., <m>\ds \lim_{x\to 1} f(x) = 0</m>. It is also clearly stated that <m>f(1) = 1</m>.
 </p>
  </statement>
 </solution>
@@ -230,20 +230,20 @@ It is clear from the definition of the function and its graph that all of the fo
 <p>
 In <xref ref="ex_onesidea">Examples</xref> &#x2013; <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:
 </p>
-  <table id="4f7cf5521599123d7e5277b695cd1853e03578dc" ><tr><td class='c'> \amp  <m>\ds \lim_{x\to 1}f(x)</m> \amp  <m>f(1)</m> \vspace{2pt}</td></tr>
+  <table id="4f7cf5521599123d7e5277b695cd1853e03578dc" ><tr><td class='c'> </td><td class='c'> <m>\ds \lim_{x\to 1}f(x)</m> </td><td class='c'> <m>f(1)</m> \vspace{2pt}</td></tr>
 <tr><td class='hline' colspan='3'><hr /></td></tr>
 <tr><td class='c'>
-<xref ref="ex_onesidea">Example</xref> \amp  does not exist \amp  1 </td></tr>
+<xref ref="ex_onesidea">Example</xref> </td><td class='c'> does not exist </td><td class='c'> 1 </td></tr>
 <tr><td class='c'>
-<xref ref="ex_onesideb">Example</xref> \amp  1 \amp  not defined </td></tr>
+<xref ref="ex_onesideb">Example</xref> </td><td class='c'> 1 </td><td class='c'> not defined </td></tr>
 <tr><td class='c'>
-<xref ref="ex_onesidec">Example</xref> \amp  0 \amp  1 </td></tr>
+<xref ref="ex_onesidec">Example</xref> </td><td class='c'> 0 </td><td class='c'> 1 </td></tr>
 <tr><td class='c'>
-<xref ref="ex_onesided">Example</xref> \amp  1 \amp  1 </td></tr>
+<xref ref="ex_onesided">Example</xref> </td><td class='c'> 1 </td><td class='c'> 1 </td></tr>
 <tr><td class='c'></td></tr>
 </table>  
 <p>
-Only in <xref ref="ex_onesided">Example</xref> do both the function and the limit exist and agree. This seems <q>nice;</q> in fact, it seems <q>normal.</q> This is in fact an important situation which we explore in the next section, entitled <q>Continuity.</q> In short, a <em>continuous function</em> is one in which when a function approaches a value as <m>x\rightarrow c</m> (i.e., when <m>\ds \lim_{x\to c} f(x) = L</m>), it actually <em>attains</em> that value at <m>c</m>. Such functions behave nicely as they are very predictable.
+Only in <xref ref="ex_onesided">Example</xref> do both the function and the limit exist and agree. This seems "nice;" in fact, it seems "normal." This is in fact an important situation which we explore in the next section, entitled "Continuity." In short, a <i>continuous function</i> is one in which when a function approaches a value as <m>x\rightarrow c</m> (i.e., when <m>\ds \lim_{x\to c} f(x) = L</m>), it actually <i>attains</i> that value at <m>c</m>. Such functions behave nicely as they are very predictable.
 </p>
  </introduction> 
 <subsection>

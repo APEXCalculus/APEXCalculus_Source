@@ -2,7 +2,7 @@
 <section xml:id="sec_prod_quot_rules">
 <title>The Product and Quotient Rules</title><introduction>
 <p>
-The previous section showed that, in some ways, derivatives behave nicely. The Constant Multiple and Sum/Difference Rules established that the derivative of <m>f(x) = 5x^2+\sin x </m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin x</m> and <m>h(x) = \frac{5x^2}{\sin x}</m> on purpose; their derivatives are <em>not</em> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section.
+The previous section showed that, in some ways, derivatives behave nicely. The Constant Multiple and Sum/Difference Rules established that the derivative of <m>f(x) = 5x^2+\sin x </m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin x</m> and <m>h(x) = \frac{5x^2}{\sin x}</m> on purpose; their derivatives are <i>not</i> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section.
 </p>
   
 <p>
@@ -12,7 +12,7 @@ We begin with the Product Rule.
 <theorem xml:id="thm_ProductRule"><title>Product Rule</title>
 <statement>
 <p>
-Let <m>f</m> and <m>g</m> be differentiable functions on an open interval <m>I</m>.\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Product Rule\lt /sub>} Then <m>fg</m> is a differentiable function on <m>I</m>, and
+Let <m>f</m> and <m>g</m> be differentiable functions on an open interval <m>I</m>.<index><main>Power Rule</main><sub>differentiation</sub></index><index><main>derivative</main><sub>Product Rule</sub></index> Then <m>fg</m> is a differentiable function on <m>I</m>, and
 </p>
   
 <me>
@@ -53,7 +53,7 @@ y\primeskip'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right)
 </me>
  
 <p>
-We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <m>5\pi</m>, in <xref ref="fig_5xsquaredsinx">Figure</xref>. While this does not <em>prove</em> that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.
+We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <m>5\pi</m>, in <xref ref="fig_5xsquaredsinx">Figure</xref>. While this does not <i>prove</i> that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.
 </p>
   <figure xml:id="fig_5xsquaredsinx" >
 <caption>A graph of <m>y = 5x^2\sin x</m> and its tangent line at <m>x=\pi/2</m>.</caption>
@@ -101,7 +101,7 @@ We now do something a bit unexpected; add 0 to the numerator (so that nothing is
 </example>
    
 <p>
-It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed <q>right.</q><br />
+It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed "right."<br />
 </p>
   
 <example xml:id="ex_prod2"><title>Exploring alternate derivative methods</title>
@@ -130,7 +130,7 @@ Now apply the Product Rule.
 </md>
   
 <p>
-The uninformed usually assume that <q>the derivative of the product is the product of the derivatives.</q> Thus we are tempted to say that <m>y\primeskip' = (2x+3)(4x-3) = 8x^2+6x-9</m>. Obviously this is not correct.
+The uninformed usually assume that "the derivative of the product is the product of the derivatives." Thus we are tempted to say that <m>y\primeskip' = (2x+3)(4x-3) = 8x^2+6x-9</m>. Obviously this is not correct.
 </p>
  </statement>
 </solution>
@@ -189,7 +189,7 @@ Recalling that the derivative of <m>\ln x</m> is <m>1/x</m>, we use the Product 
 </li>
  </ol>  
 <p>
-This seems significant; if the natural log function <m>\ln x</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln x</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <em>very</em> similar to this one.)
+This seems significant; if the natural log function <m>\ln x</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln x</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <i>very</i> similar to this one.)
 </p>
  </statement>
 </solution>
@@ -203,7 +203,7 @@ We have learned how to compute the derivatives of sums, differences, and product
 <theorem xml:id="thm_QuotientRule"><title>Quotient Rule</title>
 <statement>
 <p>
-Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Quotient Rule\lt /sub>}\knownindex{\lt main>Quotient Rule\lt /main>} Then <m>f/g</m> is differentiable on <m>I</m>, and
+Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.<index><main>derivative</main><sub>Quotient Rule</sub></index><index><main>Quotient Rule</main></index> Then <m>f/g</m> is differentiable on <m>I</m>, and
 </p>
   
 <me>
@@ -213,7 +213,7 @@ Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, whe
 </theorem>
   
 <p>
-The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
+The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as "HI" and "LO", respectively. Then
 </p>
   
 <me>
@@ -221,7 +221,7 @@ The Quotient Rule is not hard to use, although it might be a bit tricky to remem
 </me>
  
 <p>
-read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.<br />
+read "low dee high minus high dee low, over low low." Said fast, that phrase can roll off the tongue, making it easy to memorize. The "dee high" and "dee low" parts refer to the derivatives of the numerator and denominator, respectively.<br />
 </p>
   
 <p>
@@ -288,7 +288,7 @@ We include this result in the following theorem about the derivatives of the tri
   
 <theorem xml:id="thm_deriv_trig"><title>Derivatives of Trigonometric Functions</title>
 <statement><div class="minipage">{.5\specialboxlength}
-		<ol><li><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m>\knownindex{\lt main>derivative\lt /main>\lt sub>trigonometric functions\lt /sub>}</li>
+		<ol><li><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m><index><main>derivative</main><sub>trigonometric functions</sub></index></li>
 <li><m>\ds \frac{d}{dx}\big(\tan x\big) = \sec^2 x</m></li>
 <li><m>\ds \frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></li>
  </ol> </div>  <div class="minipage">{.5\specialboxlength}
@@ -299,7 +299,7 @@ We include this result in the following theorem about the derivatives of the tri
 </theorem>
   
 <p>
-To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with <q>c</q> have a minus sign in them.<br />
+To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with "c" have a minus sign in them.<br />
 </p>
   
 <example xml:id="ex_prod_quot"><title>Exploring alternate derivative methods</title>
@@ -322,7 +322,7 @@ We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{1
 </md>
  
 <p>
-Finding <m>\fp</m> using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to <q>simplify\primeskip</q> your results into a form that is most readable and useful to you.
+Finding <m>\fp</m> using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to "simplify\primeskip" your results into a form that is most readable and useful to you.
 </p>
  </statement>
 </solution>
@@ -370,7 +370,7 @@ This is reminiscent of the Power Rule: multiply by the power, then subtract 1 fr
 <theorem xml:id="thm_PowerRule"><title>Power Rule with Integer Exponents</title>
 <statement>
 <p>
-Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is an integer.\knownindex{\lt main>derivative\lt /main>\lt sub>Power Rule\lt /sub>}\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>} Then
+Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is an integer.<index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index> Then
 </p>
   
 <me>
@@ -380,7 +380,7 @@ Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is an integer.\knownindex{\lt main>d
 </theorem>
   
 <p>
-Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not <q>the</q> right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.<br />
+Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not "the" right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.<br />
 </p>
   
 <example xml:id="ex_multiple_deriv"><title>Exploring alternate derivative methods</title>
@@ -390,7 +390,7 @@ Let <m>\ds f(x) = \frac{x^2-3x+1}{x}</m>. Find <m>\fp(x)</m> in each of the foll
 </p>
   <ol><li>By applying the Quotient Rule,</li>
 <li>by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and</li>
-<li>by <q>simplifying\primeskip</q> first through division.</li>
+<li>by "simplifying\primeskip" first through division.</li>
  </ol>  
 <p>
 Verify that all three methods give the same result.
@@ -422,7 +422,7 @@ Verify that all three methods give the same result.
 </example>
    
 <p>
-<xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding \fp. One is hard pressed to argue for a <q>best method</q> as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems <q>simple</q> and easy to interpret. In that example, we saw different expressions for \fp, including: {
+<xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding \fp. One is hard pressed to argue for a "best method" as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems "simple" and easy to interpret. In that example, we saw different expressions for \fp, including: {
 </p>
   
 <me>
@@ -430,9 +430,9 @@ Verify that all three methods give the same result.
 </me>
  
 <p>
-} They are equal; they are all correct; only the first is <q>clear.</q> Work to make answers clear.
+} They are equal; they are all correct; only the first is "clear." Work to make answers clear.
 		
-In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin x</m> is <m>\cos x</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.
+In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as "the derivative of <m>\sin x</m> is <m>\cos x</m>." The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.
 </p>
  </introduction> 
 <subsection>
@@ -453,7 +453,7 @@ T/F: The Quotient Rule states that <m>\ds \frac{d}{dx}\left(\frac{x^2}{\sin x}\r
   
 <exercise><statement>
 <p>
-T/F: The derivatives of the trigonometric functions that start with <q>c</q> have minus signs in them.
+T/F: The derivatives of the trigonometric functions that start with "c" have minus signs in them.
 </p>
   <hint>T</hint> </statement>
 </exercise>
@@ -474,7 +474,7 @@ T/F: Regardless of the function, there is always exactly one right way of comput
   
 <exercise><statement>
 <p>
-In your own words, explain what it means to make your answers <q>clear.</q>
+In your own words, explain what it means to make your answers "clear."
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>

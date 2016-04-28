@@ -2,15 +2,15 @@
 <section xml:id="sec_imp_deriv">
 <title>Implicit Differentiation</title><introduction>
 <p>
-In the previous sections we learned to find the derivative, <m> \frac{dy}{dx}</m>, or <m>y\primeskip'</m>, when <m>y</m> is given <em>explicitly</em> as a function of <m>x</m>. That is, if we know <m>y=f(x)</m> for some function <m>f</m>, we can find <m>y\primeskip'</m>. For example, given <m>y=3x^2-7</m>, we can easily find <m>y\primeskip'=6x</m>. (Here we explicitly state how <m>x</m> and <m>y</m> are related. Knowing <m>x</m>, we can directly find <m>y</m>.)
+In the previous sections we learned to find the derivative, <m> \frac{dy}{dx}</m>, or <m>y\primeskip'</m>, when <m>y</m> is given <i>explicitly</i> as a function of <m>x</m>. That is, if we know <m>y=f(x)</m> for some function <m>f</m>, we can find <m>y\primeskip'</m>. For example, given <m>y=3x^2-7</m>, we can easily find <m>y\primeskip'=6x</m>. (Here we explicitly state how <m>x</m> and <m>y</m> are related. Knowing <m>x</m>, we can directly find <m>y</m>.)
 </p>
   
 <p>
-Sometimes the relationship between <m>y</m> and <m>x</m> is not explicit; rather, it is <em>implicit</em>. For instance, we might know that <m>x^2-y=4</m>. This equality defines a relationship between <m>x</m> and <m>y</m>; if we know <m>x</m>, we could figure out <m>y</m>. Can we still find <m>y\primeskip'</m>? In this case, sure; we solve for <m>y</m> to get <m>y=x^2-4</m> (hence we now know <m>y</m> explicitly) and then differentiate to get <m>y\primeskip'=2x</m>.
+Sometimes the relationship between <m>y</m> and <m>x</m> is not explicit; rather, it is <i>implicit</i>. For instance, we might know that <m>x^2-y=4</m>. This equality defines a relationship between <m>x</m> and <m>y</m>; if we know <m>x</m>, we could figure out <m>y</m>. Can we still find <m>y\primeskip'</m>? In this case, sure; we solve for <m>y</m> to get <m>y=x^2-4</m> (hence we now know <m>y</m> explicitly) and then differentiate to get <m>y\primeskip'=2x</m>.
 </p>
   
 <p>
-Sometimes the <em>implicit</em> relationship between <m>x</m> and <m>y</m> is complicated. Suppose we are given <m>\sin(y)+y^3=6-x^3</m>. A graph of this implicit function is given in <xref ref="fig_implicit1">Figure</xref>. In this case there is absolutely no way to solve for <m>y</m> in terms of elementary functions. The surprising thing is, however, that we can still find <m>y\primeskip'</m> via a process known as \sword{implicit differentiation}.\knownindex{\lt main>implicit differentiation\lt /main>}\knownindex{\lt main>derivative\lt /main>\lt sub>implicit\lt /sub>}
+Sometimes the <i>implicit</i> relationship between <m>x</m> and <m>y</m> is complicated. Suppose we are given <m>\sin(y)+y^3=6-x^3</m>. A graph of this implicit function is given in <xref ref="fig_implicit1">Figure</xref>. In this case there is absolutely no way to solve for <m>y</m> in terms of elementary functions. The surprising thing is, however, that we can still find <m>y\primeskip'</m> via a process known as \sword{implicit differentiation}.<index><main>implicit differentiation</main></index><index><main>derivative</main><sub>implicit</sub></index>
 </p>
   <figure xml:id="fig_implicit1" >
 <caption>A graph of the implicit function <m>\sin (y)+y^3=6-x^3</m>.</caption>
@@ -106,7 +106,7 @@ This equation for <m>y\primeskip'</m> probably seems unusual for it contains bot
 </example>
    
 <p>
-Implicit functions are generally harder to deal with than explicit functions. With an explicit function, given an <m>x</m> value, we have an explicit formula for computing the corresponding <m>y</m> value. With an implicit function, one often has to find <m>x</m> and <m>y</m> values <em>at the same time</em> that satisfy the equation. It is much easier to demonstrate that a given point satisfies the equation than to actually find such a point.
+Implicit functions are generally harder to deal with than explicit functions. With an explicit function, given an <m>x</m> value, we have an explicit formula for computing the corresponding <m>y</m> value. With an implicit function, one often has to find <m>x</m> and <m>y</m> values <i>at the same time</i> that satisfy the equation. It is much easier to demonstrate that a given point satisfies the equation than to actually find such a point.
 </p>
   
 <p>
@@ -300,7 +300,7 @@ The tangent lines have been added to the graph of the function in <xref ref="fig
 </example>
    
 <p>
-Quite a few <q>famous</q> curves have equations that are given implicitly. We can use implicit differentiation to find the slope at various points on those curves. We investigate two such curves in the next examples.<br />
+Quite a few "famous" curves have equations that are given implicitly. We can use implicit differentiation to find the slope at various points on those curves. We investigate two such curves in the next examples.<br />
 </p>
   
 <example xml:id="ex_implicit7"><title>Finding slopes of tangent lines to a circle</title>
@@ -342,7 +342,7 @@ A graph of the circle and its tangent line at <m>(1/2,\sqrt{3}/2)</m> is given i
 </example>
    
 <p>
-This section has shown how to find the derivatives of implicitly defined functions, whose graphs include a wide variety of interesting and unusual shapes. Implicit differentiation can also be used to further our understanding of <q>regular</q> differentiation.
+This section has shown how to find the derivatives of implicitly defined functions, whose graphs include a wide variety of interesting and unusual shapes. Implicit differentiation can also be used to further our understanding of "regular" differentiation.
 </p>
   
 <p>
@@ -381,13 +381,13 @@ Let <m>y = x^{m/n}</m>, where <m>m</m> and <m>n</m> are integers with no common 
 </md>
   
 <p>
-The above derivation is the key to the proof extending the Power Rule to rational powers. Using limits, we can extend this once more to include <em>all</em> powers, including irrational (even transcendental!) powers, giving the following theorem.
+The above derivation is the key to the proof extending the Power Rule to rational powers. Using limits, we can extend this once more to include <i>all</i> powers, including irrational (even transcendental!) powers, giving the following theorem.
 </p>
   
 <theorem xml:id="thm_finalpower"><title>Power Rule for Differentiation</title>
 <statement>
 <p>
-Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is a real number. Then <m>f</m> is a differentiable function, and <m>\fp(x) = n\cdot x^{n-1}</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Power Rule\lt /sub>}\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>}
+Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is a real number. Then <m>f</m> is a differentiable function, and <m>\fp(x) = n\cdot x^{n-1}</m>.<index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index>
 </p>
  </statement>
 </theorem>
@@ -397,7 +397,7 @@ This theorem allows us to say the derivative of <m>x^\pi</m> is <m>\pi x^{\pi -1
 </p>
   
 <p>
-We now apply this final version of the Power Rule in the next example, the second investigation of a <q>famous</q> curve.<br />
+We now apply this final version of the Power Rule in the next example, the second investigation of a "famous" curve.<br />
 </p>
   
 <example xml:id="ex_implicit8"><title>Using the Power Rule</title>
@@ -473,14 +473,14 @@ While this is not a particularly simple expression, it is usable. We can see tha
    
 <p>
 <b> Logarithmic Differentiation</b>
-the function <m>y=x^x</m>; it is graphed in <xref ref="fig_logdiffa">Figure</xref>. It is well&#x2013;defined for <m>x>0</m> and we might be interested in finding equations of lines tangent and normal to its graph. How do we take its derivative?\knownindex{\lt main>logarithmic differentiation\lt /main>}
+the function <m>y=x^x</m>; it is graphed in <xref ref="fig_logdiffa">Figure</xref>. It is well&#x2013;defined for <m>x>0</m> and we might be interested in finding equations of lines tangent and normal to its graph. How do we take its derivative?<index><main>logarithmic differentiation</main></index>
 </p>
   <figure xml:id="fig_logdiffa" >
 <caption>A plot of <m>y=x^x</m>.</caption>
 <image source="images/figlogdiffa.png" /> </figure>
   
 <p>
-The function is not a power function: it has a <q>power</q> of <m>x</m>, not a constant. It is not an exponential function: it has a <q>base</q> of <m>x</m>, not a constant.
+The function is not a power function: it has a "power" of <m>x</m>, not a constant. It is not an exponential function: it has a "base" of <m>x</m>, not a constant.
 </p>
   
 <p>
@@ -510,7 +510,7 @@ As suggested above, we start by taking the natural log of both sides then applyi
 </md>
   
 <p>
-To <q>test</q> our answer, let's use it to find the equation of the tangent line at <m>x=1.5</m>. The point on the graph our tangent line must pass through is <m>(1.5, 1.5^{1.5}) \approx (1.5, 1.837)</m>. Using the equation for <m>y\primeskip'</m>, we find the slope as
+To "test" our answer, let's use it to find the equation of the tangent line at <m>x=1.5</m>. The point on the graph our tangent line must pass through is <m>(1.5, 1.5^{1.5}) \approx (1.5, 1.837)</m>. Using the equation for <m>y\primeskip'</m>, we find the slope as
 </p>
   
 <me>
@@ -529,7 +529,7 @@ Thus the equation of the tangent line is <m>y = 1.6833(x-1.5)+1.837</m>. <xref r
 </example>
    
 <p>
-Implicit differentiation proves to be useful as it allows us to find the instantaneous rates of change of a variety of functions. In particular, it extended the Power Rule to rational exponents, which we then extended to all real numbers. In the next section, implicit differentiation will be used to find the derivatives of <em>inverse</em> functions, such as <m>y=\sin^{-1} x</m>.
+Implicit differentiation proves to be useful as it allows us to find the instantaneous rates of change of a variety of functions. In particular, it extended the Power Rule to rational exponents, which we then extended to all real numbers. In the next section, implicit differentiation will be used to find the derivatives of <i>inverse</i> functions, such as <m>y=\sin^{-1} x</m>.
 </p>
  </introduction> 
 <subsection>
@@ -745,7 +745,7 @@ Show that <m>\ds \frac{dy}{dx}</m> is the same for each of the following implici
 <m>x^{2/5}+y^{2/5} = 1</m>
 </p>
   <ol><li>At <m>(1,0)</m>.</li>
-<li>At <m>(0.1,0.281)</m> (which does not <em>exactly</em> lie on the curve, but is very close).</li>
+<li>At <m>(0.1,0.281)</m> (which does not <i>exactly</i> lie on the curve, but is very close).</li>
  </ol>  
 <p>
 <image source="images/fig02_06_ex_23.png" />
@@ -859,7 +859,7 @@ Show that <m>\ds \frac{dy}{dx}</m> is the same for each of the following implici
   
 <exercise><statement>
 <p>
-<m>\ds y=(1+x)^{1/x}</m>,<nbsp /><nbsp /> <m>x=1</m>
+<m>\ds y=(1+x)^{1/x}</m>,  <m>x=1</m>
 </p>
   <hint><m>y'= (1+x)^{1/x}\big(\frac{1}{x(x+1)}-\frac{\ln(1+x)}{x^2}\big)</m>
 
@@ -868,7 +868,7 @@ Tangent line: <m>y = (1-2\ln 2)(x-1)+ 2</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds y=(2x)^{x^2}</m>,<nbsp /><nbsp /> <m>x=1</m>
+<m>\ds y=(2x)^{x^2}</m>,  <m>x=1</m>
 </p>
   <hint><m>y'= (2x)^{x^2}\big(2x\ln (2x)+x\big)</m>
 
@@ -877,7 +877,7 @@ Tangent line: <m>y = (2+4\ln 2)(x-1)+ 2</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds y=\frac{x^{x}}{x+1}</m>,<nbsp /><nbsp /> <m>x=1</m>
+<m>\ds y=\frac{x^{x}}{x+1}</m>,  <m>x=1</m>
 </p>
   <hint><m>y'= \frac{x^x}{x+1}\big(\ln x+1-\frac1{x+1}\big)</m>
 
@@ -886,7 +886,7 @@ Tangent line: <m>y = (1/4)(x-1)+ 1/2</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds y=x^{\sin (x)+2}</m>,<nbsp /><nbsp /> <m>x=\pi/2</m>
+<m>\ds y=x^{\sin (x)+2}</m>,  <m>x=\pi/2</m>
 </p>
   <hint><m>y'= x^{\sin (x)+2}\big(\cos x\ln x+\frac{\sin x+2}{x}\big)</m>
 
@@ -895,7 +895,7 @@ Tangent line: <m>y = (3\pi^2/4)(x-\pi/2)+(\pi/2)^3</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds y=\frac{x+1}{x+2}</m>,<nbsp /><nbsp /> <m>x=1</m>
+<m>\ds y=\frac{x+1}{x+2}</m>,  <m>x=1</m>
 </p>
   <hint><m>y'= \frac{x+1}{x+2}\big(\frac1{x+1}-\frac1{x+2}\big)</m>
 
@@ -904,7 +904,7 @@ Tangent line: <m>y = 1/9(x-1)+2/3</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds y=\frac{(x+1)(x+2)}{(x+3)(x+4)}</m>,<nbsp /><nbsp /> <m>x=0</m>
+<m>\ds y=\frac{(x+1)(x+2)}{(x+3)(x+4)}</m>,  <m>x=0</m>
 </p>
   <hint><m>y'= \frac{(x+1)(x+2)}{(x+3)(x+4)}\big(\frac1{x+1}+\frac1{x+2}-\frac1{x+3}-\frac1{x+4}\big)</m>
 

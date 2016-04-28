@@ -10,11 +10,11 @@ Using this formula, it is easy to verify that, without intervention, the riders 
 </p>
   
 <p>
-We have been given a <em>position</em> function, but what we want to compute is a velocity at a specific point in time, i.e., we want an <em>instantaneous velocity</em>. We do not currently know how to calculate this.
+We have been given a <i>position</i> function, but what we want to compute is a velocity at a specific point in time, i.e., we want an <i>instantaneous velocity</i>. We do not currently know how to calculate this.
 </p>
   
 <p>
-However, we do know from common experience how to calculate an <em>average velocity</em>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
+However, we do know from common experience how to calculate an <i>average velocity</i>. (If we travel 60 miles in 2 hours, we know we had an average velocity of 30 mph.) We looked at this concept in <xref ref="sec_limit_intro">Section</xref> when we introduced the difference quotient. We have
 </p>
   
 <me>
@@ -34,7 +34,7 @@ Consider the interval from <m>t=2</m> to <m>t=3</m> (just before the riders hit 
 </me>
  
 <p>
-where the minus sign indicates that the riders are moving <em>down</em>. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On <m>[2,2.5]</m> we have
+where the minus sign indicates that the riders are moving <i>down</i>. By narrowing the interval we consider, we will likely get a better approximation of the instantaneous velocity. On <m>[2,2.5]</m> we have
 </p>
   
 <me>
@@ -70,7 +70,7 @@ where <m>h</m> is small.
 </p>
   
 <p>
-What we really want is for <m>h=0</m>, but this, of course, returns the familiar <q><m>0/0</m></q>
+What we really want is for <m>h=0</m>, but this, of course, returns the familiar "<m>0/0</m>"
 indeterminate form. So we employ a limit, as we did in <xref ref="sec_limit_intro">Section</xref>.
 </p>
   
@@ -87,40 +87,40 @@ We can approximate the value of this limit numerically with small values of <m>h
   <figure xml:id="table_falling" >
 <caption>Approximating the instantaneous velocity with average velocities over a small time period <m>h</m>.</caption>
 <table id="7a4d8bd7585b8183c6dc1abc0c101aed25636d7e" ><tr><td class='c'>		
-							<m>h</m> \amp  \parbox[b]{75pt}{ Average Velocity
+							<m>h</m> </td><td class='c'> \parbox[b]{75pt}{ Average Velocity
 
 ft/s}</td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-							<m>1</m> \amp  <m>-80</m> </td></tr>
+							<m>1</m> </td><td class='c'> <m>-80</m> </td></tr>
 <tr><td class='c'>
-							<m>0.5</m> \amp  <m>-72</m></td></tr>
+							<m>0.5</m> </td><td class='c'> <m>-72</m></td></tr>
 <tr><td class='c'>
-							<m>0.1</m> \amp  <m>-65.6</m> </td></tr>
+							<m>0.1</m> </td><td class='c'> <m>-65.6</m> </td></tr>
 <tr><td class='c'>
-							<m>0.01</m>\amp  <m>-64.16</m> </td></tr>
+							<m>0.01</m></td><td class='c'> <m>-64.16</m> </td></tr>
 <tr><td class='c'>
-							<m>0.001</m> \amp  <m>-64.016</m></td></tr>
+							<m>0.001</m> </td><td class='c'> <m>-64.016</m></td></tr>
 </table> 
 		
 </figure>
   
 <p>
-Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref>(a) shows a <q>zoomed out</q> version of <m>f</m> with its secant line. In (b), we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points &#x2013; it is a common practice to approximate functions with straight lines.
+Graphically, we can view the average velocities we computed numerically as the slopes of secant lines on the graph of <m>f</m> going through the points <m>(2,f(2))</m> and <m>(2+h,f(2+h))</m>. In <xref ref="fig_derivfalling">Figure</xref>, the secant line corresponding to <m>h=1</m> is shown in three contexts. <xref ref="fig_derivfalling">Figure</xref>(a) shows a "zoomed out" version of <m>f</m> with its secant line. In (b), we zoom in around the points of intersection between <m>f</m> and the secant line. Notice how well this secant line approximates <m>f</m> between those two points &#x2013; it is a common practice to approximate functions with straight lines.
 </p>
   
 <p>
-As <m>h\to 0</m>, these secant lines approach the <em>tangent line</em>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In parts (c) and (d) of <xref ref="fig_derivfalling">Figure</xref>, we zoom in around the point <m>(2,86)</m>. In (c) we see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in (d).<br />
+As <m>h\to 0</m>, these secant lines approach the <i>tangent line</i>, a line that goes through the point <m>(2,f(2))</m> with the special slope of <m>-64</m>. In parts (c) and (d) of <xref ref="fig_derivfalling">Figure</xref>, we zoom in around the point <m>(2,86)</m>. In (c) we see the secant line, which approximates <m>f</m> well, but not as well the tangent line shown in (d).<br />
 </p>
   <div class="minipage">{\textwidth}
 			<table id="a993b3610f278f87e354f2b4b3385b6e508d996e" ><tr><td class='c'>
-			<image source="images/figderivfalling.png" />  \amp  <image source="images/figderivfalling2.png" /> </td></tr>
-<tr><td class='c'> (a) \amp  (b) </td></tr>
+			<image source="images/figderivfalling.png" />  </td><td class='c'> <image source="images/figderivfalling2.png" /> </td></tr>
+<tr><td class='c'> (a) </td><td class='c'> (b) </td></tr>
 <tr><td class='c'> 
-			 \amp  </td></tr>
+			 </td><td class='c'> </td></tr>
 <tr><td class='c'>
-			<image source="images/figderivfalling3.png" />  \amp <image source="images/figderivfalling4.png" /> </td></tr>
-<tr><td class='c'> (c) \amp  (d)</td></tr>
+			<image source="images/figderivfalling3.png" />  </td><td class='c'><image source="images/figderivfalling4.png" /> </td></tr>
+<tr><td class='c'> (c) </td><td class='c'> (d)</td></tr>
 <tr><td class='c'></td></tr>
 </table> 
 			<div class="caption"><span class="heading">Figure</span><span class="codenumber">2.1.2</span>Parts (a), (b) and (c) show the secant line to <m>f(x)</m> with <m>h=1</m>, zoomed in different amounts. Part (d) shows the tangent line to <m>f</m> at <m>x=2</m>.</div></div> 
@@ -131,7 +131,7 @@ We have just introduced a number of important concepts that we will flesh out mo
 <definition xml:id="def_derivative_at_a_point"><title>Derivative at a Point</title>
 <statement>
 <p>
-Let <m>f</m> be a continuous function on an open interval <m>I</m> and let <m>c</m> be in <m>I</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>at a point\lt /sub>} The \sword{derivative of <m>f</m> at <m>c</m>}, denoted <m>\fp(c)</m>, is
+Let <m>f</m> be a continuous function on an open interval <m>I</m> and let <m>c</m> be in <m>I</m>.<index><main>derivative</main><sub>at a point</sub></index> The \sword{derivative of <m>f</m> at <m>c</m>}, denoted <m>\fp(c)</m>, is
 </p>
   
 <me>
@@ -139,7 +139,7 @@ Let <m>f</m> be a continuous function on an open interval <m>I</m> and let <m>c<
 </me>
  
 <p>
-provided the limit exists. If the limit exists, we say that \sword{<m>f</m> is differentiable at <m>c</m>}; if the limit does not exist, then \sword{<m>f</m> is not differentiable at <m>c</m>}. If <m>f</m> is differentiable at every point in <m>I</m>, then \sword{<m>f</m> is differentiable on <m>I</m>}.\knownindex{\lt main>differentiable\lt /main>}
+provided the limit exists. If the limit exists, we say that \sword{<m>f</m> is differentiable at <m>c</m>}; if the limit does not exist, then \sword{<m>f</m> is not differentiable at <m>c</m>}. If <m>f</m> is differentiable at every point in <m>I</m>, then \sword{<m>f</m> is differentiable on <m>I</m>}.<index><main>differentiable</main></index>
 </p>
  </statement>
 </definition>
@@ -147,7 +147,7 @@ provided the limit exists. If the limit exists, we say that \sword{<m>f</m> is d
 <definition xml:id="def_tangent_line"><title>Tangent Line</title>
 <statement>
 <p>
-Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The line with equation <m>\ell(x) = \fp(c)(x-c)+f(c)</m> is the tangent line to the graph of <m>f</m> at <m>c</m>; that is, it is the line through <m>(c,f(c))</m> whose slope is the derivative of <m>f</m> at <m>c</m>.\knownindex{\lt main>tangent line\lt /main>}\knownindex{\lt main>derivative\lt /main>\lt sub>tangent line\lt /sub>}
+Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The line with equation <m>\ell(x) = \fp(c)(x-c)+f(c)</m> is the <term>tangent line</term> to the graph of <m>f</m> at <m>c</m>; that is, it is the line through <m>(c,f(c))</m> whose slope is the derivative of <m>f</m> at <m>c</m>.<index><main>tangent line</main></index><index><main>derivative</main><sub>tangent line</sub></index>
 </p>
  </statement>
 </definition>
@@ -204,7 +204,7 @@ Another important line that can be created using information from the derivative
 <definition xml:id="def_normal_line"><title>Normal Line</title>
 <statement>
 <p>
-Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The normal line to the graph of <m>f</m> at <m>c</m> is the line with equation
+Let <m>f</m> be continuous on an open interval <m>I</m> and differentiable at <m>c</m>, for some <m>c</m> in <m>I</m>. The <term>normal line</term> to the graph of <m>f</m> at <m>c</m> is the line with equation
 </p>
   
 <me>
@@ -212,7 +212,7 @@ n(x) =\frac{-1}{\fp(c)}(x-c)+f(c),
 </me>
  
 <p>
-where <m>\fp(c)\neq 0</m>. When <m>\fp(c)=0</m>, the normal line is the vertical line through <m>\big(c,f(c)\big)</m>; that is, <m>x=c</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>normal line\lt /sub>}\knownindex{\lt main>normal line\lt /main>}
+where <m>\fp(c)\neq 0</m>. When <m>\fp(c)=0</m>, the normal line is the vertical line through <m>\big(c,f(c)\big)</m>; that is, <m>x=c</m>.<index><main>derivative</main><sub>normal line</sub></index><index><main>normal line</main></index>
 </p>
  </statement>
 </definition>
@@ -233,7 +233,7 @@ n(x) = \frac{-1}{11}(x-1)+1.
 </me>
  
 <p>
-The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is <q>looks.</q> Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite&#x2013;reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)
+The normal line is plotted with <m>y=f(x)</m> in <xref ref="fig_normal1">Figure</xref>. Note how the line looks perpendicular to <m>f</m>. (A key word here is "looks." Mathematically, we say that the normal line <em>is</em> perpendicular to <m>f</m> at <m>x=1</m> as the slope of the normal line is the opposite&#x2013;reciprocal of the slope of the tangent line. However, normal lines may not always <em>look</em> perpendicular. The aspect ratio of the picture of the graph plays a big role in this.)
 </p>
   <figure xml:id="fig_normal1" >
 <caption>A graph of <m>f(x)=3x^2+5x-7</m>, along with its normal line at <m>x=1</m>.</caption>
@@ -279,7 +279,7 @@ We find the slope of the tangent line by using <xref ref="def_derivative_at_a_po
 </md>
  
 <p>
-We just found that <m>\fp(1) = 3</m>. That is, we found the <em>instantaneous rate of change</em> of <m>f(x) = 3x+5</m> is <m>3</m>. This is not surprising; lines are characterized by being the <em>only</em> functions with a <em>constant rate of change.</em> That rate of change is called the <em>slope</em> of the line. Since their rates of change are constant, their <em>instantaneous</em> rates of change are always the same; they are all the slope.
+We just found that <m>\fp(1) = 3</m>. That is, we found the <i>instantaneous rate of change</i> of <m>f(x) = 3x+5</m> is <m>3</m>. This is not surprising; lines are characterized by being the <i>only</i> functions with a <i>constant rate of change.</i> That rate of change is called the <i>slope</i> of the line. Since their rates of change are constant, their <i>instantaneous</i> rates of change are always the same; they are all the slope.
 </p>
   
 <p>
@@ -329,7 +329,7 @@ Thus our approximation of the equation of the tangent line is <m>y = 0.9983(x-0)
 </example>
    
 <p>
-Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\ds \lim_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that <q>the slope of <m>f(x)=\sin x</m></q> is near 1 at <m>x=0</m>. In fact, since we <em>approximated</em> the value of the slope to be <m>0.9983</m>, we might guess the <em>actual value</em> is 1. We'll come back to this later.<br />
+Recall from <xref ref="sec_limit_analytically">Section</xref> that <m>\ds \lim_{x\to 0}\frac{\sin x}x =1</m>, meaning for values of <m>x</m> near 0, <m>\sin x \approx x</m>. Since the slope of the line <m>y=x</m> is 1 at <m>x=0</m>, it should seem reasonable that "the slope of <m>f(x)=\sin x</m>" is near 1 at <m>x=0</m>. In fact, since we <i>approximated</i> the value of the slope to be <m>0.9983</m>, we might guess the <i>actual value</i> is 1. We'll come back to this later.<br />
 </p>
   
 <p>
@@ -337,7 +337,7 @@ Consider again <xref ref="ex_derv_point1">Example</xref>. To find the derivative
 </p>
   <image source="images/99095b9c7b0eafcc46734b09cab9142c92b56ec9.png" />  
 <p>
-This process describes a <em>function</em>; given one input (the value of <m>c</m>), we return exactly one output (the value of <m>\fp(c)</m>). The <q>do something</q> box is where the tedious work (taking limits) of this function occurs.
+This process describes a <i>function</i>; given one input (the value of <m>c</m>), we return exactly one output (the value of <m>\fp(c)</m>). The "do something" box is where the tedious work (taking limits) of this function occurs.
 </p>
   
 <p>
@@ -345,7 +345,7 @@ Instead of applying this function repeatedly for different values of <m>c</m>, l
 </p>
   <image source="images/29bc784b9e9e58f5accab3a56d4c2ba62fbc741c.png" />  
 <p>
-The output is the <q>derivative function,</q> <m>\fp(x)</m>. The <m>\fp(x)</m> function will take a number <m>c</m> as input and return the derivative of <m>f</m> at <m>c</m>. This calls for a definition.
+The output is the "derivative function," <m>\fp(x)</m>. The <m>\fp(x)</m> function will take a number <m>c</m> as input and return the derivative of <m>f</m> at <m>c</m>. This calls for a definition.
 </p>
   
 <definition xml:id="def_the_derivative"><title>Derivative Function</title>
@@ -359,7 +359,7 @@ Let <m>f</m> be a differentiable function on an open interval <m>I</m>. The func
 </me>
  
 <p>
-is \sword{the derivative of <m>f</m>}.\knownindex{\lt main>derivative\lt /main>\lt sub>as a function\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>notation\lt /sub>}<br />
+is \sword{the derivative of <m>f</m>}.<index><main>derivative</main><sub>as a function</sub></index><index><main>derivative</main><sub>notation</sub></index><br />
 </p>
   
 <p>
@@ -377,7 +377,7 @@ Let <m>y = f(x)</m>. The following notations all represent the derivative:
 </definition>
     
 <p>
-<b>Important:</b> The notation <m>\ds \frac{dy}{dx}</m> is one symbol; it is <b>not</b> the fraction <q><m>dy/dx</m></q>. The notation, while somewhat confusing at first, was chosen with care. A fraction&#x2013;looking symbol was chosen because the derivative has many fraction&#x2013;like properties. Among other places, we see these properties at work when we talk about the units of the derivative, when we discuss the Chain Rule, and when we learn about integration (topics that appear in later sections and chapters).<br />
+<b>Important:</b> The notation <m>\ds \frac{dy}{dx}</m> is one symbol; it is <b>not</b> the fraction "<m>dy/dx</m>". The notation, while somewhat confusing at first, was chosen with care. A fraction&#x2013;looking symbol was chosen because the derivative has many fraction&#x2013;like properties. Among other places, we see these properties at work when we talk about the units of the derivative, when we discuss the Chain Rule, and when we learn about integration (topics that appear in later sections and chapters).<br />
 </p>
   
 <p>
@@ -474,7 +474,7 @@ We have found that when <m>f(x) = \sin x</m>, <m>\fp(x) = \cos x</m>. This shoul
 </p>
   
 <p>
-Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin x</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <em>exactly</em> <m>\cos 0 =1</m>.
+Thinking back to <xref ref="ex_der_num_approx">Example</xref>, we can find the slope of the tangent line to <m>f(x)=\sin x</m> at <m>x=0</m> using our derivative. We approximated the slope as <m>0.9983</m>; we now know the slope is <i>exactly</i> <m>\cos 0 =1</m>.
 </p>
  </statement>
 </solution>
@@ -650,11 +650,11 @@ See <xref ref="fig_piecewisecosx1">Figure</xref> for a graph of this function.
 </example>
    
 <p>
-Recall we pseudo&#x2013;defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo&#x2013;definition for differentiability as well: it is a continuous function that does not have any <q>sharp corners.</q> One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise&#x2013;defined, the transition is <q>smooth</q> hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no <q>corner.</q>
+Recall we pseudo&#x2013;defined a continuous function as one in which we could sketch its graph without lifting our pencil. We can give a pseudo&#x2013;definition for differentiability as well: it is a continuous function that does not have any "sharp corners." One such sharp corner is shown in <xref ref="fig_absolutevalue">Figure</xref>. Even though the function <m>f</m> in <xref ref="ex_diff_piecewise">Example</xref> is piecewise&#x2013;defined, the transition is "smooth" hence it is differentiable. Note how in the graph of <m>f</m> in <xref ref="fig_piecewisesinx1">Figure</xref> it is difficult to tell when <m>f</m> switches from one piece to the other; there is no "corner."
 </p>
   
 <p>
-This section defined the derivative; in some sense, it answers the question of <q>What <em>is</em> the derivative?</q> The next section addresses the question <q>What does the derivative <em>mean</em>?</q>
+This section defined the derivative; in some sense, it answers the question of "What <i>is</i> the derivative?" The next section addresses the question "What does the derivative <i>mean</i>?"
 </p>
  </introduction> 
 <subsection>
@@ -689,7 +689,7 @@ In your own words, explain the difference between <xref ref="def_derivative_at_a
   
 <exercise><statement>
 <p>
-Let <m>y=f(x)</m>. Give three different notations equivalent to <q><m>\fp(x)</m>.</q>
+Let <m>y=f(x)</m>. Give three different notations equivalent to "<m>\fp(x)</m>."
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>

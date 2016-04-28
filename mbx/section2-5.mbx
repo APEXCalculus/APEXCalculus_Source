@@ -3,7 +3,7 @@
 <title>The Chain Rule</title><introduction>
 <p>
 We have covered almost all of the derivative rules that deal with combinations of two (or more) functions. The operations of addition, subtraction, multiplication (including by a constant) and division led to the Sum and Difference rules, the Constant Multiple Rule, the Power Rule, the Product Rule and the Quotient Rule.
-To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function <q>inside</q> another).
+To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function "inside" another).
 </p>
   
 <p>
@@ -11,8 +11,8 @@ One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We current
 </p>
   
 <p>
-Before we define this new rule, recall the notation for composition of functions. We write <m>(f \circ g)(x)</m> or <m>f(g(x))</m>, read as <q><m>f</m> of <m>g</m> of <m>x</m>,</q> to denote composing <m>f</m> with <m>g</m>. In shorthand, we simply write
-<m>f \circ g</m> or <m>f(g)</m> and read it as <q><m>f</m> of <m>g</m>.</q> Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <m>f(g(h(x)))</m> or <m>f(g(h(j(x))))</m>, etc.
+Before we define this new rule, recall the notation for composition of functions. We write <m>(f \circ g)(x)</m> or <m>f(g(x))</m>, read as "<m>f</m> of <m>g</m> of <m>x</m>," to denote composing <m>f</m> with <m>g</m>. In shorthand, we simply write
+<m>f \circ g</m> or <m>f(g)</m> and read it as "<m>f</m> of <m>g</m>." Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <m>f(g(h(x)))</m> or <m>f(g(h(j(x))))</m>, etc.
 </p>
   
 <p>
@@ -79,7 +79,7 @@ We'll come back to this example after giving the formal statements of the Chain 
 <theorem xml:id="thm_chain_rule"><title>The Chain Rule</title>
 <statement>
 <p>
-Let <m>y = f(u)</m> be a differentiable function of <m>u</m> and let <m>u = g(x)</m> be a differentiable function of <m>x</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Chain Rule\lt /sub>}\knownindex{\lt main>Chain Rule\lt /main>} Then <m>y=f(g(x))</m> is a differentiable function of <m>x</m>, and
+Let <m>y = f(u)</m> be a differentiable function of <m>u</m> and let <m>u = g(x)</m> be a differentiable function of <m>x</m>.<index><main>derivative</main><sub>Chain Rule</sub></index><index><main>Chain Rule</main></index> Then <m>y=f(g(x))</m> is a differentiable function of <m>x</m>, and
 </p>
   
 <me>
@@ -158,7 +158,7 @@ y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = 4(1-x)^3\cdot (-1) = -4(1-x)^3.
 <theorem xml:id="thm_gen_power_rule"><title>Generalized Power Rule</title>
 <statement>
 <p>
-Let <m>g(x)</m> be a differentiable function and let <m>n\neq 0</m> be an integer.\knownindex{\lt main>derivative\lt /main>\lt sub>Generalized Power Rule\lt /sub>}\knownindex{\lt main>Generalized Power Rule\lt /main>} Then
+Let <m>g(x)</m> be a differentiable function and let <m>n\neq 0</m> be an integer.<index><main>derivative</main><sub>Generalized Power Rule</sub></index><index><main>Generalized Power Rule</main></index> Then
 </p>
   
 <me>
@@ -271,7 +271,7 @@ While the derivative may look intimidating at first, look for the pattern. The d
 </p>
   
 <p>
-This pattern recognition process can be applied to lots of functions. In general, instead of writing <q>anything</q>, we use <m>u</m> as a generic function of <m>x</m>. We then say
+This pattern recognition process can be applied to lots of functions. In general, instead of writing "anything", we use <m>u</m> as a generic function of <m>x</m>. We then say
 </p>
   
 <me>
@@ -301,10 +301,10 @@ Find the derivatives of the following functions. <br />
 </p>
   
 <p>
-1. <m>f(x) = x^5 \sin{2x^3}</m> <nbsp /><nbsp /> 2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}.</m>
+1. <m>f(x) = x^5 \sin{2x^3}</m>   2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}.</m>
 </p>
   
-<solution><statement><ol><li>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step&#x2013;by&#x2013;step.
+<solution><statement><ol><li>We must use the Product and Chain Rules. Do not think that you must be able to "see" the whole answer immediately; rather, just proceed step&#x2013;by&#x2013;step.
 		
 <me>
 \fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.
@@ -342,7 +342,7 @@ Find the derivative of <m>y = \tan^5(6x^3-7x)</m>.
   
 <solution><statement>
 <p>
-Recognize that we have the <m>g(x)=\tan(6x^3-7x)</m> function <q>inside</q> the <m>f(x)=x^5</m> function; that is, we have <m>y = \big(\tan(6x^3-7x)\big)^5</m>. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step&#x2013;by&#x2013;step.
+Recognize that we have the <m>g(x)=\tan(6x^3-7x)</m> function "inside" the <m>f(x)=x^5</m> function; that is, we have <m>y = \big(\tan(6x^3-7x)\big)^5</m>. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step&#x2013;by&#x2013;step.
 </p>
   
 <me>
@@ -367,7 +367,7 @@ Combine this with what we found above to give
 </md>
   
 <p>
-This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <m>6x^3-7x</m> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not <q>hard;</q> one must take several simple steps and be careful to keep track of how to apply each of these steps.
+This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <m>6x^3-7x</m> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not "hard;" one must take several simple steps and be careful to keep track of how to apply each of these steps.
 </p>
  </statement>
 </solution>
@@ -375,7 +375,7 @@ This function is frankly a ridiculous function, possessing no real practical val
 </example>
    
 <p>
-It is a traditional mathematical exercise to find the derivatives of arbitrarily complicated functions just to demonstrate that it <em>can be done</em>. Just break everything down into smaller pieces. <br />
+It is a traditional mathematical exercise to find the derivatives of arbitrarily complicated functions just to demonstrate that it <i>can be done</i>. Just break everything down into smaller pieces. <br />
 </p>
   
 <example xml:id="ex_chain5"><title>Using the Product, Quotient and Chain Rules</title>
@@ -390,7 +390,7 @@ This function likely has no practical use outside of demonstrating derivative sk
 </p>
   
 <p>
-\scriptsize
+
 <m>\fp(x) = </m>
 </p>
   
@@ -401,7 +401,7 @@ This function likely has no practical use outside of demonstrating derivative sk
 </me>
    
 <p>
-The reader is highly encouraged to look at each term and recognize why it is there. (I.e., the Quotient Rule is used; in the numerator, identify the <q>LOdHI</q> term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.
+The reader is highly encouraged to look at each term and recognize why it is there. (I.e., the Quotient Rule is used; in the numerator, identify the "LOdHI" term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.
 </p>
  </statement>
 </solution>
@@ -434,7 +434,7 @@ a = e^{\ln a} \quad \text{and so }  \quad y = a^x = e^{\ln (a^x)}.
 </me>
   
 <p>
-By the exponent property of logarithms, we can <q>bring down</q> the power to get
+By the exponent property of logarithms, we can "bring down" the power to get
 </p>
   
 <me>
@@ -472,13 +472,13 @@ The Chain Rule, coupled with the derivative rule of <m>e^x</m>, allows us to fin
 </example>
    
 <p>
-The previous example produced a result worthy of its own <q>box.</q>
+The previous example produced a result worthy of its own "box."
 </p>
   
 <theorem xml:id="thm_exponentials"><title>Derivatives of Exponential Functions</title>
 <statement>
 <p>
-Let <m>f(x)=a^x</m>, for <m>a>0, a\neq 1</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>exponential functions\lt /sub>} Then <m>f</m> is differentiable for all real numbers and
+Let <m>f(x)=a^x</m>, for <m>a>0, a\neq 1</m>.<index><main>derivative</main><sub>exponential functions</sub></index> Then <m>f</m> is differentiable for all real numbers and
 </p>
   
 <me>
@@ -492,7 +492,7 @@ Alternate Chain Rule Notation}<br />
 </p>
   
 <p>
-It is instructive to understand what the Chain Rule <q>looks like</q> using <q><m>\frac{dy}{dx}</m></q> notation instead of <m>y\primeskip'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}.</m> This leads to an interesting progression of notation:\knownindex{\lt main>Chain Rule\lt /main>\lt sub>notation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Chain Rule\lt /sub>}
+It is instructive to understand what the Chain Rule "looks like" using "<m>\frac{dy}{dx}</m>" notation instead of <m>y\primeskip'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}.</m> This leads to an interesting progression of notation:<index><main>Chain Rule</main><sub>notation</sub></index><index><main>derivative</main><sub>Chain Rule</sub></index>
 </p>
   
 <md><mrow>y\primeskip' \amp = \fp(g(x))\cdot g\primeskip'(x)</mrow>
@@ -502,7 +502,7 @@ It is instructive to understand what the Chain Rule <q>looks like</q> using <q><
 </md>
   
 <p>
-Here the <q>fractional</q> aspect of the derivative notation stands out. On the right hand side, it seems as though the <q><m>du</m></q> terms cancel out, leaving
+Here the "fractional" aspect of the derivative notation stands out. On the right hand side, it seems as though the "<m>du</m>" terms cancel out, leaving
 </p>
   
 <me>
@@ -510,7 +510,7 @@ Here the <q>fractional</q> aspect of the derivative notation stands out. On the 
 </me>
  
 <p>
-It is important to realize that we <em>are not</em> canceling these terms; the derivative notation of <m>\frac{dy}{dx}</m> is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the Chain Rule easy with multiple variables. For instance,
+It is important to realize that we <i>are not</i> canceling these terms; the derivative notation of <m>\frac{dy}{dx}</m> is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the Chain Rule easy with multiple variables. For instance,
 </p>
   
 <me>
@@ -525,7 +525,7 @@ where <m>\bigcirc</m> and <m>\triangle</m> are any variables you\primeskip'd lik
   
 <p>
 One of the most common ways of
-<q>visualizing\primeskip</q> the Chain Rule is to consider a set of gears, as shown in <xref ref="fig_chainrulegears">Figure</xref>. The gears have 36, 18, and 6 teeth, respectively. That means for every revolution of the <m>x</m> gear, the <m>u</m> gear revolves twice. That is, the rate at which the <m>u</m> gear makes a revolution is twice as fast as the rate at which the <m>x</m> gear makes a revolution. Using the terminology of calculus, the rate of <m>u</m>-change, with respect to <m>x</m>, is <m>\frac{du}{dx} = 2</m>.
+"visualizing\primeskip" the Chain Rule is to consider a set of gears, as shown in <xref ref="fig_chainrulegears">Figure</xref>. The gears have 36, 18, and 6 teeth, respectively. That means for every revolution of the <m>x</m> gear, the <m>u</m> gear revolves twice. That is, the rate at which the <m>u</m> gear makes a revolution is twice as fast as the rate at which the <m>x</m> gear makes a revolution. Using the terminology of calculus, the rate of <m>u</m>-change, with respect to <m>x</m>, is <m>\frac{du}{dx} = 2</m>.
 </p>
   <figure xml:id="fig_chainrulegears" >
 <caption>A series of gears to demonstrate the Chain Rule. Note how <m>\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}</m></caption>
@@ -548,7 +548,7 @@ It is difficult to overstate the importance of the Chain Rule. So often the func
 </p>
   
 <p>
-In the next section, we use the Chain Rule to justify another differentiation technique. There are many curves that we can draw in the plane that fail the <q>vertical line test.</q> For instance, consider <m>x^2+y^2=1</m>, which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. The next section shows how we can find <m>\frac{dy}{dx}</m> without first <q>solving for <m>y</m>.</q> While we can in this instance, in many other instances solving for <m>y</m> is impossible. In these situations, <em>implicit differentiation</em> is indispensable.
+In the next section, we use the Chain Rule to justify another differentiation technique. There are many curves that we can draw in the plane that fail the "vertical line test." For instance, consider <m>x^2+y^2=1</m>, which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. The next section shows how we can find <m>\frac{dy}{dx}</m> without first "solving for <m>y</m>." While we can in this instance, in many other instances solving for <m>y</m> is impossible. In these situations, <em>implicit differentiation</em> is indispensable.
 </p>
  </introduction> 
 <subsection>
@@ -821,7 +821,7 @@ Compute <m>\ds \frac{d}{dx}\big(\ln (x^k)\big) </m> two ways:
 <title>Review</title>
 <exercise><statement>
 <p>
-The <q>wind chill factor</q> is a measurement of how cold it <q>feels</q> during cold, windy weather. Let <m>W(w)</m> be the wind chill factor, in degrees Fahrenheit, when it is <m>25^\circ</m>F outside with a wind of <m>w</m> mph.
+The "wind chill factor" is a measurement of how cold it "feels" during cold, windy weather. Let <m>W(w)</m> be the wind chill factor, in degrees Fahrenheit, when it is <m>25^\circ</m>F outside with a wind of <m>w</m> mph.
 </p>
   <ol><li>What are the units of <m>W'(w)</m>?</li>
 <li>What would you expect the sign of <m>W'(10)</m> to be?</li>

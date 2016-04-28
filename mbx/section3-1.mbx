@@ -4,27 +4,27 @@
 <definition xml:id="def_extreme_values"><title>Extreme Values</title>
 <statement>
 <p>
-Let <m>f</m> be defined on an interval <m>I</m> containing <m>c</m>.\knownindex{\lt main>extreme values\lt /main>}\knownindex{\lt main>absolute minimum\lt /main>}\knownindex{\lt main>minimum\lt /main>\lt sub>absolute\lt /sub>}\knownindex{\lt main>absolute maximum\lt /main>}\knownindex{\lt main>maximum\lt /main>\lt sub>absolute\lt /sub>}
+Let <m>f</m> be defined on an interval <m>I</m> containing <m>c</m>.<index><main>extreme values</main></index><index><main>absolute minimum</main></index><index><main>minimum</main><sub>absolute</sub></index><index><main>absolute maximum</main></index><index><main>maximum</main><sub>absolute</sub></index>
 </p>
   <ol><li><m>f(c)</m> is the <b>minimum</b> (also, <b>absolute minimum</b>) of <m>f</m> on <m>I</m> if <m>f(c) \leq f(x)</m> for all <m>x</m> in <m>I</m>.</li>
 <li><m>f(c)</m> is the <b>maximum</b> (also, <b>absolute maximum</b>) of <m>f</m> on <m>I</m> if <m>f(c) \geq f(x)</m> for all <m>x</m> in <m>I</m>.</li>
  </ol>  
 <p>
-The maximum and minimum values are the extreme values, or extrema, of <m>f</m> on <m>I</m>.\knownindex{\lt main>extrema\lt /main>\lt sub>absolute\lt /sub>}
+The maximum and minimum values are the <term>extreme values</term>, or <term>extrema</term>, of <m>f</m> on <m>I</m>.<index><main>extrema</main><sub>absolute</sub></index>
 </p>
  </statement>
 </definition>
   
 <article class="aside-like" id="marginalnote3-1-2"><h5 class="heading"><span class="type"></span><span class="codenumber">3.1.2</span></h5>
 <p>
-<b>Note:</b> The extreme values of a function are <q><m>y</m></q> values, values the function attains, not the input values.
+<b>Note:</b> The extreme values of a function are "<m>y</m>" values, values the function attains, not the input values.
 </p>
  
 </article>
   
 <p>
 Consider <xref ref="fig_extreme">Figure</xref>.
-The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the <q>natural</q> place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed.
+The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the "natural" place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed.
 </p>
   <figure xml:id="fig_extreme" >
 <caption>Graphs of functions with and without extreme values.</caption>
@@ -40,14 +40,14 @@ The function displayed in (a) has a maximum, but no minimum, as the interval ove
 </figure>
   
 <p>
-It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval <em>always</em> have a maximum and minimum value.
+It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval <i>always</i> have a maximum and minimum value.
 </p>
   
 <theorem xml:id="thm_extreme_val"><title>The Extreme Value Theorem</title>
 <statement>
 <p>
 Let <m>f</m> be a continuous function defined on a closed interval <m>I</m>. Then <m>f</m> has both a maximum and minimum value on <m>I</m>.
-\knownindex{\lt main>Extreme Value Theorem\lt /main>}
+<index><main>Extreme Value Theorem</main></index>
 </p>
  </statement>
 </theorem>
@@ -67,7 +67,7 @@ Consider <m>f(x) = 2x^3-9x^2</m> on <m>I=[-1,5]</m>, as graphed in <xref ref="fi
   
 <solution><statement>
 <p>
-The graph is drawn in such a way to draw attention to certain points. It certainly seems that the smallest <m>y</m> value is <m>-27</m>, found when <m>x=3</m>. It also seems that the largest <m>y</m> value is 25, found at the endpoint of <m>I</m>, <m>x=5</m>. We use the word <em>seems</em>, for by the graph alone we cannot be sure the smallest value is not less than <m>-27</m>. Since the problem asks for an approximation, we approximate the extreme values to be <m>25</m> and <m>-27</m>.
+The graph is drawn in such a way to draw attention to certain points. It certainly seems that the smallest <m>y</m> value is <m>-27</m>, found when <m>x=3</m>. It also seems that the largest <m>y</m> value is 25, found at the endpoint of <m>I</m>, <m>x=5</m>. We use the word <i>seems</i>, for by the graph alone we cannot be sure the smallest value is not less than <m>-27</m>. Since the problem asks for an approximation, we approximate the extreme values to be <m>25</m> and <m>-27</m>.
 </p>
  </statement>
 </solution>
@@ -75,12 +75,12 @@ The graph is drawn in such a way to draw attention to certain points. It certain
 </example>
    
 <p>
-Notice how the minimum value came at <q>the bottom of a hill,</q> and the maximum value came at an endpoint. Also note that while <m>0</m> is not an extreme value, it would be if we narrowed our interval to <m>[-1,4]</m>. The idea that the point <m>(0,0)</m> is the location of an extreme value for some interval is important, leading us to a definition.
+Notice how the minimum value came at "the bottom of a hill," and the maximum value came at an endpoint. Also note that while <m>0</m> is not an extreme value, it would be if we narrowed our interval to <m>[-1,4]</m>. The idea that the point <m>(0,0)</m> is the location of an extreme value for some interval is important, leading us to a definition.
 </p>
   
 <article class="aside-like" id="marginalnote3-1-4"><h5 class="heading"><span class="type"></span><span class="codenumber">3.1.4</span></h5>
 <p>
-<b>Note:</b> The terms <em>local minimum</em> and <em>local maximum</em> are often used as synonyms for <em>relative minimum</em> and <em>relative maximum</em>.
+<b>Note:</b> The terms <i>local minimum</i> and <i>local maximum</i> are often used as synonyms for <i>relative minimum</i> and <i>relative maximum</i>.
 </p>
  
 </article>
@@ -90,11 +90,11 @@ Notice how the minimum value came at <q>the bottom of a hill,</q> and the maximu
 <p>
 Let <m>f</m> be defined on an interval <m>I</m> containing <m>c</m>.
 </p>
-  <ol><li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the minimum value, then <m>f(c)</m> is a <b>relative minimum</b> of <m>f</m>. We also say that <m>f</m> has a relative minimum at <m>(c,f(c))</m>. \knownindex{\lt main>minimum\lt /main>\lt sub>relative/local\lt /sub>}</li>
-<li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the maximum value, then <m>f(c)</m> is a <b>relative maximum</b> of <m>f</m>. We also say that <m>f</m> has a relative maximum at <m>(c,f(c))</m>. \knownindex{\lt main>maximum\lt /main>\lt sub>relative/local\lt /sub>}\knownindex{\lt main>extrema\lt /main>\lt sub>relative\lt /sub>}</li>
+  <ol><li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the minimum value, then <m>f(c)</m> is a <b>relative minimum</b> of <m>f</m>. We also say that <m>f</m> has a relative minimum at <m>(c,f(c))</m>. <index><main>minimum</main><sub>relative/local</sub></index></li>
+<li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the maximum value, then <m>f(c)</m> is a <b>relative maximum</b> of <m>f</m>. We also say that <m>f</m> has a relative maximum at <m>(c,f(c))</m>. <index><main>maximum</main><sub>relative/local</sub></index><index><main>extrema</main><sub>relative</sub></index></li>
  </ol>  
 <p>
-The relative maximum and minimum values comprise the relative extrema of <m>f</m>.
+The relative maximum and minimum values comprise the <term>relative extrema</term> of <m>f</m>.
 </p>
  </statement>
 </definition>
@@ -144,7 +144,7 @@ Approximate the relative extrema of <m>f(x) = (x-1)^{2/3}+2</m>, shown in <xref 
   
 <solution><statement>
 <p>
-The figure implies that <m>f</m> does not have any relative maxima, but has a relative minimum at <m>(1,2)</m>. In fact, the graph suggests that not only is this point a relative minimum, <m>y=f(1)=2</m> <em>the</em> minimum value of the function.
+The figure implies that <m>f</m> does not have any relative maxima, but has a relative minimum at <m>(1,2)</m>. In fact, the graph suggests that not only is this point a relative minimum, <m>y=f(1)=2</m> <i>the</i> minimum value of the function.
 </p>
   
 <p>
@@ -162,11 +162,11 @@ What can we learn from the previous two examples? We were able to visually appro
 <definition xml:id="def_criticalnum"><title>Critical Numbers and Critical Points</title>
 <statement>
 <p>
-Let <m>f</m> be defined at <m>c</m>. The value <m>c</m> is a critical number (or critical value) of <m>f</m> if <m>\fp(c)=0</m> or <m>\fp(c)</m> is not defined.\knownindex{\lt main>critical number\lt /main>}\knownindex{\lt main>critical point\lt /main>} <br />
+Let <m>f</m> be defined at <m>c</m>. The value <m>c</m> is a <term>critical number</term> (or <term>critical value</term>) of <m>f</m> if <m>\fp(c)=0</m> or <m>\fp(c)</m> is not defined.<index><main>critical number</main></index><index><main>critical point</main></index> <br />
 </p>
   
 <p>
-If <m>c</m> is a critical number of <m>f</m>, then the point <m>(c,f(c))</m> is a critical point of <m>f</m>.
+If <m>c</m> is a critical number of <m>f</m>, then the point <m>(c,f(c))</m> is a <term>critical point</term> of <m>f</m>.
 </p>
  </statement>
 </definition>
@@ -180,7 +180,7 @@ Let a function <m>f</m> have a relative extrema at the point <m>(c,f(c))</m>. Th
 </theorem>
   
 <p>
-Be careful to understand that this theorem states <q>All relative extrema occur at critical points.</q> It does not say <q>All critical numbers produce relative extrema.</q> For instance, consider <m>f(x) = x^3</m>. Since <m>\fp(x) = 3x^2</m>, it is straightforward to determine that <m>x=0</m> is a critical number of <m>f</m>. However, <m>f</m> has no relative extrema, as illustrated in <xref ref="fig_extreme4">Figure</xref>. <br />
+Be careful to understand that this theorem states "All relative extrema occur at critical points." It does not say "All critical numbers produce relative extrema." For instance, consider <m>f(x) = x^3</m>. Since <m>\fp(x) = 3x^2</m>, it is straightforward to determine that <m>x=0</m> is a critical number of <m>f</m>. However, <m>f</m> has no relative extrema, as illustrated in <xref ref="fig_extreme4">Figure</xref>. <br />
 </p>
   <figure xml:id="fig_extreme4" >
 <caption>A graph of <m>f(x)=x^3</m> which has a critical value of <m>x=0</m>, but no relative extrema.</caption>
@@ -193,7 +193,7 @@ Be careful to understand that this theorem states <q>All relative extrema occur 
 <key idea xml:id="idea_extrema"><title>Finding Extrema on a Closed Interval</title>
 <statement>
 <p>
-Let <m>f</m> be a continuous function defined on a closed interval <m>[a,b]</m>. To find the maximum and minimum values of <m>f</m> on <m>[a,b]</m>:\knownindex{\lt main>extrema\lt /main>\lt sub>finding\lt /sub>}
+Let <m>f</m> be a continuous function defined on a closed interval <m>[a,b]</m>. To find the maximum and minimum values of <m>f</m> on <m>[a,b]</m>:<index><main>extrema</main><sub>finding</sub></index>
 </p>
   <ol><li>Evaluate <m>f</m> at the endpoints <m>a</m> and <m>b</m> of the interval.</li>
 <li>Find the critical numbers of <m>f</m> in <m>[a,b]</m>.</li>
@@ -229,15 +229,15 @@ Next, we find the critical values of <m>f</m> on <m>[0,3]</m>. <m>\fp(x) = 6x^2+
 </p>
   
 <p>
-The table in <xref ref="table_ext4">Figure</xref> gives <m>f</m> evaluated at the <q>important</q> <m>x</m> values in <m>[0,3]</m>. We can easily see the maximum and minimum values of <m>f</m>: the maximum value is <m>45</m> and the minimum value is <m>-7</m>.
+The table in <xref ref="table_ext4">Figure</xref> gives <m>f</m> evaluated at the "important" <m>x</m> values in <m>[0,3]</m>. We can easily see the maximum and minimum values of <m>f</m>: the maximum value is <m>45</m> and the minimum value is <m>-7</m>.
 </p>
   <figure xml:id="table_ext4" >
 <caption>Finding the extreme values of <m>f</m> in <xref ref="ex_extval4">Example</xref>.</caption>
-<table id="f522ebd31b5cfbb5f65fcb17afcc792ac70daf24" ><tr><td class='c'> <m>x</m> \amp  <m>f(x)</m> </td></tr>
+<table id="f522ebd31b5cfbb5f65fcb17afcc792ac70daf24" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'>  0 \amp  0 </td></tr>
-<tr><td class='c'> 1 \amp  <m>-7</m></td></tr>
-<tr><td class='c'>3 \amp  45</td></tr>
+<tr><td class='c'>  0 </td><td class='c'> 0 </td></tr>
+<tr><td class='c'> 1 </td><td class='c'> <m>-7</m></td></tr>
+<tr><td class='c'>3 </td><td class='c'> 45</td></tr>
 </table> 
 </figure>
  </statement>
@@ -295,11 +295,11 @@ So we have three important <m>x</m> values to consider: <m>x= -4, 2</m> and <m>0
 </p>
   <figure xml:id="table_ext5" >
 <caption>Finding the extreme values of <m>f</m> in <xref ref="ex_extval5">Example</xref>.</caption>
-<table id="ccf40c8648ae1878531ff38cb876a9cd91c9c09c" ><tr><td class='c'> <m>x</m> \amp  <m>f(x)</m> </td></tr>
+<table id="ccf40c8648ae1878531ff38cb876a9cd91c9c09c" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'>  <m>-4</m> \amp  25 </td></tr>
-<tr><td class='c'> 0 \amp  1 </td></tr>
-<tr><td class='c'> 2 \amp  3</td></tr>
+<tr><td class='c'>  <m>-4</m> </td><td class='c'> 25 </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'> 2 </td><td class='c'> 3</td></tr>
 </table> 
 </figure>
   <figure xml:id="fig_extval5" >
@@ -309,12 +309,7 @@ So we have three important <m>x</m> values to consider: <m>x= -4, 2</m> and <m>0
 </solution>
  </statement>
 </example>
- 
-<p>
-
-\clearpage
-</p>
-  
+   
 <example xml:id="ex_extval6"><title>Finding extreme values</title>
 <statement>
 <p>
@@ -339,13 +334,13 @@ We again construct a table of important values in <xref ref="table_ext6">Figure<
 </p>
   <figure xml:id="table_ext6" >
 <caption>Finding the extrema of <m>f(x)= \cos (x^2)</m> in <xref ref="ex_extval6">Example</xref>.</caption>
-<table id="8ce8d8b060a61d5543e7f609badb06972bdb0429" ><tr><td class='c'> <m>x</m> \amp  <m>f(x)</m> </td></tr>
+<table id="8ce8d8b060a61d5543e7f609badb06972bdb0429" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'>  <m>-2</m> \amp  <m>-0.65</m> </td></tr>
-<tr><td class='c'> <m>-\sqrt{\pi}</m> \amp  <m>-1</m> </td></tr>
-<tr><td class='c'> 0 \amp  1</td></tr>
-<tr><td class='c'> <m>\sqrt{\pi}</m> \amp  <m>-1</m> </td></tr>
-<tr><td class='c'> 2 \amp  <m>-0.65</m></td></tr>
+<tr><td class='c'>  <m>-2</m> </td><td class='c'> <m>-0.65</m> </td></tr>
+<tr><td class='c'> <m>-\sqrt{\pi}</m> </td><td class='c'> <m>-1</m> </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1</td></tr>
+<tr><td class='c'> <m>\sqrt{\pi}</m> </td><td class='c'> <m>-1</m> </td></tr>
+<tr><td class='c'> 2 </td><td class='c'> <m>-0.65</m></td></tr>
 </table> 
 </figure>
   
@@ -379,11 +374,11 @@ A closed interval is not given, so we find the extreme values of <m>f</m> on its
 <image source="images/figextval7.png" /> </figure>
   <figure xml:id="table_ext7" >
 <caption>Finding the extrema of the half&#x2013;circle in <xref ref="ex_extval7">Example</xref>.</caption>
-<table id="70b3a42af670597b3eb02362c21eb9187d148183" ><tr><td class='c'> <m>x</m> \amp  <m>f(x)</m> </td></tr>
+<table id="70b3a42af670597b3eb02362c21eb9187d148183" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'>  <m>-1</m> \amp  0 </td></tr>
-<tr><td class='c'> 0 \amp  1 </td></tr>
-<tr><td class='c'> 1 \amp  0</td></tr>
+<tr><td class='c'>  <m>-1</m> </td><td class='c'> 0 </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'> 1 </td><td class='c'> 0</td></tr>
 </table> 
 </figure>
   
@@ -403,14 +398,14 @@ Using the Chain Rule, we find <m>\ds \fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. The c
 </article>
   
 <p>
-We have seen that continuous functions on closed intervals always have a maximum and minimum value, and we have also developed a technique to find these values. In the next section, we further our study of the information we can glean from <q>nice</q> functions with the Mean Value Theorem. On a closed interval, we can find the <em>average rate of change</em> of a function (as we did at the beginning of Chapter 2). We will see that differentiable functions always have a point at which their <em>instantaneous</em> rate of change is same as the <em>average</em> rate of change. This is surprisingly useful, as we'll see.
+We have seen that continuous functions on closed intervals always have a maximum and minimum value, and we have also developed a technique to find these values. In the next section, we further our study of the information we can glean from "nice" functions with the Mean Value Theorem. On a closed interval, we can find the <i>average rate of change</i> of a function (as we did at the beginning of Chapter 2). We will see that differentiable functions always have a point at which their <i>instantaneous</i> rate of change is same as the <i>average</i> rate of change. This is surprisingly useful, as we'll see.
 </p>
  </introduction> 
 <subsection>
 <title>Terms and Concepts</title>
 <exercise><statement>
 <p>
-Describe what an <q>extreme value</q> of a function is in your own words.
+Describe what an "extreme value" of a function is in your own words.
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>
@@ -452,7 +447,7 @@ T/F: If <m>c</m> is a critical value of a function <m>f</m>, then <m>f</m> has e
   
 <exercise><statement><div class="minipage">{\linewidth}
 <image source="images/fig03_01_ex_06.png" /></div>  <hint><m>A</m>: none
-<m>B</m>: abs. max <br />amp  rel. max
+<m>B</m>: abs. max &amp; rel. max
 <m>C</m>: rel. min
 <m>D</m>: none
 <m>E</m>: none
@@ -564,7 +559,7 @@ T/F: If <m>c</m> is a critical value of a function <m>f</m>, then <m>f</m> has e
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = x^2+x+4</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[-1,2]</m>.
+<m>\ds f(x) = x^2+x+4</m>  on   <m>[-1,2]</m>.
 </p>
   <hint>min: <m>(-0.5,3.75)</m>
 
@@ -573,7 +568,7 @@ max: <m>(2,10)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = x^3-\frac92x^2-30x+3</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[0,6]</m>.
+<m>\ds f(x) = x^3-\frac92x^2-30x+3</m>  on   <m>[0,6]</m>.
 </p>
   <hint>min: <m>(5,-134.5)</m>
 
@@ -582,7 +577,7 @@ max: <m>(0,3)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = 3\sin x</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[\pi/4,2\pi/3]</m>.
+<m>\ds f(x) = 3\sin x</m>  on   <m>[\pi/4,2\pi/3]</m>.
 </p>
   <hint>min: <m>(\pi/4,3\sqrt{2}/2)</m>
 
@@ -591,7 +586,7 @@ max: <m>(\pi/2,3)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = x^2\sqrt{4-x^2}</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[-2,2]</m>.
+<m>\ds f(x) = x^2\sqrt{4-x^2}</m>  on   <m>[-2,2]</m>.
 </p>
   <hint>min: <m>(0,0)</m> and <m>(\pm 2,0)</m>
 
@@ -600,7 +595,7 @@ max: <m>(\pm 2\sqrt{2/3},16\sqrt{3}/9)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = x+\frac3x</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[1,5]</m>.
+<m>\ds f(x) = x+\frac3x</m>  on   <m>[1,5]</m>.
 </p>
   <hint>min: <m>(\sqrt3,2\sqrt3)</m>
 
@@ -609,7 +604,7 @@ max: <m>(5,28/5)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = \frac{x^2}{x^2+5}</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[-3,5]</m>.
+<m>\ds f(x) = \frac{x^2}{x^2+5}</m>  on   <m>[-3,5]</m>.
 </p>
   <hint>min: <m>(0,0)</m>
 
@@ -618,7 +613,7 @@ max: <m>(5,5/6)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = e^x\cos x</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[0,\pi]</m>.
+<m>\ds f(x) = e^x\cos x</m>  on   <m>[0,\pi]</m>.
 </p>
   <hint>min: <m>(\pi,-e^\pi)</m>
 
@@ -627,7 +622,7 @@ max: <m>(\pi/4,\frac{\sqrt{2}e^{\pi/4}}{2})</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = e^x\sin x</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[0,\pi]</m>.
+<m>\ds f(x) = e^x\sin x</m>  on   <m>[0,\pi]</m>.
 </p>
   <hint>min: <m>(0,0)</m> and <m>(\pi,0)</m>
 
@@ -636,7 +631,7 @@ max: <m>(3\pi/4,\frac{\sqrt{2}e^{3\pi/4}}{2})</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = \frac{\ln x}{x}</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[1,4]</m>.
+<m>\ds f(x) = \frac{\ln x}{x}</m>  on   <m>[1,4]</m>.
 </p>
   <hint>min: <m>(1,0)</m>
 
@@ -645,7 +640,7 @@ max: <m>(e,1/e)</m></hint> </statement>
   
 <exercise><statement>
 <p>
-<m>\ds f(x) = x^{2/3}-x</m><nbsp /><nbsp /> on <nbsp /><nbsp /> <m>[0,2]</m>.
+<m>\ds f(x) = x^{2/3}-x</m>  on   <m>[0,2]</m>.
 </p>
   <hint>min: <m>(2,2^{2/3}-2)</m>
 

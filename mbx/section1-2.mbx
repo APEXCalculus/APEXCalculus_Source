@@ -2,24 +2,24 @@
 <section xml:id="sec_limit_def">
 <title>Epsilon-Delta Definition of a Limit</title><introduction>
 <p>
-This section introduces the formal definition of a limit. Many refer to this as <q>the epsilon&#x2013;delta,</q> definition, referring to the letters <m>\epsilon</m> and <m>\delta</m> of the Greek alphabet.<br />
+This section introduces the formal definition of a limit. Many refer to this as "the epsilon&#x2013;delta," definition, referring to the letters <m>\epsilon</m> and <m>\delta</m> of the Greek alphabet.<br />
 </p>
   
 <p>
-Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value<nbsp /><m>L</m></q>:
+Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that "the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value<nbsp /><m>L</m>":
 </p>
-  <ul><li class="custom-list-style-type" label="1." >if <q><m>y</m> tends to <m>L</m></q> as <q><m>x</m> tends to <m>c</m>.</q></li>
-<li class="custom-list-style-type" label="2." >if <q><m>y</m> approaches <m>L</m></q> as <q><m>x</m> approaches <m>c</m>.</q></li>
-<li class="custom-list-style-type" label="3." >if <q><m>y</m> is near <m>L</m></q> whenever <q><m>x</m> is near <m>c</m>.</q></li>
+  <ul><li class="custom-list-style-type" label="1." >if "<m>y</m> tends to <m>L</m>" as "<m>x</m> tends to <m>c</m>."</li>
+<li class="custom-list-style-type" label="2." >if "<m>y</m> approaches <m>L</m>" as "<m>x</m> approaches <m>c</m>."</li>
+<li class="custom-list-style-type" label="3." >if "<m>y</m> is near <m>L</m>" whenever "<m>x</m> is near <m>c</m>."</li>
  </ul>   
 <p>
-The problem with these definitions is that the words <q>tends,</q> <q>approach,</q> and especially <q>near</q> are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively? <br />
+The problem with these definitions is that the words "tends," "approach," and especially "near" are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively? <br />
 </p>
   
 <p>
 The definition we describe in this section comes from formalizing <b>3</b>. A quick restatement gets us closer to what we want:
 </p>
-  <ul><li class="custom-list-style-type" label="<m>\textbf{3}^\prime</m>." >If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</li>
+  <ul><li class="custom-list-style-type" label="<m>\textbf{3}^\prime</m>." >If <m>x</m> is within a certain <i>tolerance level</i> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <i>tolerance level</i> of <m>L</m>.</li>
  </ul>   
 <p>
 The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\epsilon</m>. One more rephrasing of <m>\textbf{3}^\prime</m> nearly gets us to the actual definition:
@@ -27,7 +27,7 @@ The traditional notation for the <m>x</m>-tolerance is the lowercase Greek lette
   <ul><li class="custom-list-style-type" label="<m>\textbf{3}^{\prime \prime}</m>." >If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\epsilon</m> units of <m>L</m>.</li>
  </ul>   
 <p>
-We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as
+We can write "<m>x</m> is within <m>\delta</m> units of <m>c</m>" mathematically as
 </p>
   
 <me>
@@ -35,7 +35,7 @@ We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathemati
 </me>
  
 <p>
-Letting the symbol <q><m>\longrightarrow</m></q> represent the word <q>implies,</q> we can rewrite <m>\textbf{3}''</m> as
+Letting the symbol "<m>\longrightarrow</m>" represent the word "implies," we can rewrite <m>\textbf{3}''</m> as
 </p>
   
 <me>
@@ -61,7 +61,7 @@ Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a func
  
 <p>
 means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\neq c</m>,
-if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.\knownindex{\lt main>limit\lt /main>\lt sub>definition\lt /sub>}
+if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.<index><main>limit</main><sub>definition</sub></index>
 </p>
  </statement>
 </definition>
@@ -77,7 +77,7 @@ if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.\knownindex{
 </p>
   
 <p>
-Note the order in which <m>\epsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\epsilon</m> is given <em>first</em> and then the limit will exist <b>if</b> we can find an <m>x</m>-tolerance <m>\delta</m> that works.
+Note the order in which <m>\epsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\epsilon</m> is given <i>first</i> and then the limit will exist <b>if</b> we can find an <m>x</m>-tolerance <m>\delta</m> that works.
 </p>
   
 <p>
@@ -148,7 +148,7 @@ What we have so far: if <m>\epsilon =0.5</m>, then <m>\delta \leq 1.75</m> and i
 </md>
   
 <p>
-The <q>desired form</q> in the last step is <q><m>4-\textit{something} \lt  x \lt  4 +\textit{something}</m>.</q>
+The "desired form" in the last step is "<m>4-\textit{something} \lt  x \lt  4 +\textit{something}</m>."
 Since we want this last interval to describe an <m>x</m> tolerance around 4, we have that either <m>\delta \leq 4\epsilon - \epsilon^2</m> or <m>\delta \leq 4\epsilon + \epsilon^2</m>, whichever is smaller:
 </p>
   
@@ -174,7 +174,7 @@ So given any <m>\epsilon >0</m>, set <m>\delta \leq 4\epsilon - \epsilon^2</m>. 
 </example>
    
 <p>
-The previous example was a little long in that we sampled a few specific cases of <m>\epsilon</m> before handling the general case. Normally this is not done. The previous example is also a bit unsatisfying in that <m>\sqrt{4}=2</m>; why work so hard to prove something so obvious? Many <m>\epsilon</m>-<m>\delta</m> proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non&#x2013;obvious examples are even harder. In the next section we will learn some theorems that allow us to evaluate limits <em>analytically</em>, that is, without using the <m>\epsilon</m>-<m>\delta</m> definition.<br />
+The previous example was a little long in that we sampled a few specific cases of <m>\epsilon</m> before handling the general case. Normally this is not done. The previous example is also a bit unsatisfying in that <m>\sqrt{4}=2</m>; why work so hard to prove something so obvious? Many <m>\epsilon</m>-<m>\delta</m> proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non&#x2013;obvious examples are even harder. In the next section we will learn some theorems that allow us to evaluate limits <i>analytically</i>, that is, without using the <m>\epsilon</m>-<m>\delta</m> definition.<br />
 </p>
   
 <example xml:id="ex_compute_lim2"><title>Evaluating a limit using the definition</title>
@@ -202,7 +202,7 @@ Could we not set <m>\displaystyle \delta = \frac{\epsilon}{|x+2|}</m>?
 </p>
   
 <p>
-We are close to an answer, but the catch is that <m>\delta</m> must be a <em>constant</em> value (so it can't contain <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\epsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>|x-2| \lt  \delta</m> would imply that <m>|x-2| \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.
+We are close to an answer, but the catch is that <m>\delta</m> must be a <i>constant</i> value (so it can't contain <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\epsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>|x-2| \lt  \delta</m> would imply that <m>|x-2| \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.
 </p>
   
 <p>
@@ -234,7 +234,7 @@ We have arrived at <m>|x^2 - 4|\lt \epsilon</m> as desired. Note again, in order
 </p>
   
 <p>
-We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\epsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \epsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\epsilon</m> of 4.
+We have also picked <m>\delta</m> to be smaller than "necessary." We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\epsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \epsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\epsilon</m> of 4.
 </p>
   <figure xml:id="fig_limit_eover5" >
 <caption>Choosing <m>\delta = \epsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
@@ -250,7 +250,7 @@ In summary, given <m>\epsilon > 0</m>, set <m>\delta=\leq\epsilon/5</m>. Then <m
 </example>
    
 <p>
-Make note of the general pattern exhibited in these last two examples. In some sense, each starts out <q>backwards.</q> That is, while we want to
+Make note of the general pattern exhibited in these last two examples. In some sense, each starts out "backwards." That is, while we want to
 </p>
   <ol><li>start with <m>|x-c|\lt \delta</m> and conclude that</li>
 <li><m>|f(x)-L|\lt \epsilon</m>,</li>
@@ -259,10 +259,10 @@ Make note of the general pattern exhibited in these last two examples. In some s
 we actually start by assuming
 </p>
   <ol><li><m>|f(x)-L|\lt \epsilon</m>, then perform some algebraic manipulations to give an inequality of the form</li>
-<li><m>|x-c|\lt </m> <em>something</em>.</li>
+<li><m>|x-c|\lt </m> <i>something</i>.</li>
  </ol>  
 <p>
-When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch&#x2013;work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our <q>scratch&#x2013;work</q> in reverse order.
+When we have properly done this, the <i>something</i> on the "greater than" side of the inequality becomes our <m>\delta</m>. We can refer to this as the "scratch&#x2013;work" phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our "scratch&#x2013;work" in reverse order.
 </p>
   
 <p>
@@ -288,7 +288,7 @@ We start our scratch&#x2013;work by considering <m>|f(x) - (-1)| \lt  \epsilon</
 </md>
  
 <p>
-We are at the phase of saying that <m>|x-1|\lt </m> <em>something</em>, where <em>something</em><m>=\epsilon/|x^2+x-1|</m>. We want to turn that <em>something</em> into <m>\delta</m>.
+We are at the phase of saying that <m>|x-1|\lt </m> <i>something</i>, where <i>something</i><m>=\epsilon/|x^2+x-1|</m>. We want to turn that <i>something</i> into <m>\delta</m>.
 </p>
   
 <p>
@@ -402,11 +402,11 @@ In summary, given <m>\epsilon > 0</m>, let <m>\delta = \ln(1+\epsilon)</m>. Then
 </example>
    
 <p>
-We note that we could actually show that <m>\lim_{x\rightarrow c} e^x = e^c </m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim_{x\rightarrow c} e^{x-c} = 1 </m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim_{u\rightarrow 0} e^u = 1 </m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.<br />
+We note that we could actually show that <m>\lim_{x\rightarrow c} e^x = e^c </m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim_{x\rightarrow c} e^{x-c} = 1 </m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim_{u\rightarrow 0} e^u = 1 </m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <i>continuous</i> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.<br />
 </p>
   
 <p>
-This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square&#x2013;roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\ds \lim_{x\to 0}(\sin x)/x = 1</m>, as we approximated in the previous section.
+This formal definition of the limit is not an easy concept grasp. Our examples are actually "easy" examples, using "simple" functions like polynomials, square&#x2013;roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\ds \lim_{x\to 0}(\sin x)/x = 1</m>, as we approximated in the previous section.
 </p>
   
 <p>
@@ -417,9 +417,9 @@ There is hope. The next section shows how one can evaluate complicated limits us
 <title>Terms and Concepts</title>
 <exercise><statement>
 <p>
-What is wrong with the following <q>definition</q> of a limit?
+What is wrong with the following "definition" of a limit?
 </p>
-  <div class="quote"><q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\epsilon>0</m> such that whenever <m>|f(x)-K|\lt  \epsilon</m>, we have <m>|x-a|\lt \delta</m>.</div>  <hint><m>\epsilon</m> should be given first, and the restriction 	<m>|x-a|\lt \delta</m> implies <m>|f(x)-K|\lt  \epsilon</m>, not the other way around.</hint> </statement>
+  <div class="quote">"The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m>" means that given any <m>\delta>0</m> there exists <m>\epsilon>0</m> such that whenever <m>|f(x)-K|\lt  \epsilon</m>, we have <m>|x-a|\lt \delta</m>.</div>  <hint><m>\epsilon</m> should be given first, and the restriction 	<m>|x-a|\lt \delta</m> implies <m>|f(x)-K|\lt  \epsilon</m>, not the other way around.</hint> </statement>
 </exercise>
   
 <exercise><statement>

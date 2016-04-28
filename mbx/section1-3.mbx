@@ -17,7 +17,7 @@ Suppose that <m>\lim_{x\to 2} f(x)=2</m> and <m>\lim_{x\to 2} g(x) = 3</m>. What
 <statement>
 <p>
 
-Let <m>b</m>, <m>c</m>, <m>L</m> and <m>K</m> be real numbers, let <m>n</m> be a positive integer, and let <m>f</m> and <m>g</m> be functions with the following limits: \knownindex{\lt main>limit\lt /main>\lt sub>properties\lt /sub>}
+Let <m>b</m>, <m>c</m>, <m>L</m> and <m>K</m> be real numbers, let <m>n</m> be a positive integer, and let <m>f</m> and <m>g</m> be functions with the following limits: <index><main>limit</main><sub>properties</sub></index>
 </p>
   
 <me>
@@ -44,7 +44,7 @@ The following limits hold.
 </theorem>
   
 <p>
-We make a note about Property <hash />8: when <m>n</m> is even, <m>L</m> must be greater than 0. If <m>n</m> is odd, then the statement is true for all <m>L</m>.
+We make a note about Property \#8: when <m>n</m> is even, <m>L</m> must be greater than 0. If <m>n</m> is odd, then the statement is true for all <m>L</m>.
 </p>
   
 <p>
@@ -141,11 +141,11 @@ It was likely frustrating in <xref ref="sec_limit_def">Section</xref> to do a lo
 </me>
  
 <p>
-as it seemed fairly obvious. The previous theorems state that many functions behave in such an <q>obvious</q> fashion, as demonstrated by the rational function in <xref ref="ex_limit_rat">Example</xref>.
+as it seemed fairly obvious. The previous theorems state that many functions behave in such an "obvious" fashion, as demonstrated by the rational function in <xref ref="ex_limit_rat">Example</xref>.
 </p>
   
 <p>
-Polynomial and rational functions are not the only functions to behave in such a predictable way. The following theorem gives a list of functions whose behavior is particularly <q>nice</q> in terms of limits. In the next section, we will give a formal name to these functions that behave <q>nicely.</q>
+Polynomial and rational functions are not the only functions to behave in such a predictable way. The following theorem gives a list of functions whose behavior is particularly "nice" in terms of limits. In the next section, we will give a formal name to these functions that behave "nicely."
 </p>
   <div class="minipage">{\specialboxlength}
 
@@ -227,7 +227,7 @@ We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theo
 </example>
    
 <p>
-The section could have been titled <q>Using Known Limits to Find Unknown Limits.</q> By knowing certain limits of functions, we can find limits involving sums, products, powers, etc., of these functions. We further the development of such comparative tools with the Squeeze Theorem, a clever and intuitive way to find the value of some limits.
+The section could have been titled "Using Known Limits to Find Unknown Limits." By knowing certain limits of functions, we can find limits involving sums, products, powers, etc., of these functions. We further the development of such comparative tools with the Squeeze Theorem, a clever and intuitive way to find the value of some limits.
 </p>
   
 <p>
@@ -239,7 +239,7 @@ f(x) \leq g(x) \leq h(x).
 </me>
  
 <p>
-If <m>f</m> and <m>h</m> have the same limit at <m>c</m>, and <m>g</m> is always <q>squeezed</q> between them, then <m>g</m> must have the same limit as well. That is what the Squeeze Theorem states.
+If <m>f</m> and <m>h</m> have the same limit at <m>c</m>, and <m>g</m> is always "squeezed" between them, then <m>g</m> must have the same limit as well. That is what the Squeeze Theorem states.
 </p>
   
 <theorem xml:id="thm_sqz"><title>Squeeze Theorem</title>
@@ -269,13 +269,13 @@ then
 </me>
  
 <p>
-\knownindex{\lt main>limit\lt /main>\lt sub>Squeeze Theorem\lt /sub>}\knownindex{\lt main>Squeeze Theorem\lt /main>}
+<index><main>limit</main><sub>Squeeze Theorem</sub></index><index><main>Squeeze Theorem</main></index>
 </p>
  </statement>
 </theorem>
   
 <p>
-It can take some work to figure out appropriate functions by which to <q>squeeze</q> the given function of which you are trying to evaluate a limit. However, that is generally the only place work is necessary; the theorem makes the <q>evaluating the limit part</q> very simple.
+It can take some work to figure out appropriate functions by which to "squeeze" the given function of which you are trying to evaluate a limit. However, that is generally the only place work is necessary; the theorem makes the "evaluating the limit part" very simple.
 </p>
   
 <p>
@@ -304,9 +304,9 @@ We begin by considering the unit circle. Each point on the unit circle has coord
 <xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac12\tan\theta</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac12\sin\theta</m>. It is then clear from the diagram that
 </p>
   <table id="b3b5c4e6d6d38dba82c3c84d45a7d7a7c7fe59e1" ><tr><td class='c'>
-<image source="images/figSqueeze1a.png" />  \amp  \amp  <image source="images/figSqueeze1b.png" />  \amp  \amp  <image source="images/figSqueeze1c.png" /> </td></tr>
+<image source="images/figSqueeze1a.png" />  </td><td class='c'> </td><td class='c'> <image source="images/figSqueeze1b.png" />  </td><td class='c'> </td><td class='c'> <image source="images/figSqueeze1c.png" /> </td></tr>
 <tr><td class='c'>
-<m>\ds \frac{\tan \theta}{2}</m> \amp  <m>\geq</m> \amp  <m>\ds \frac{\theta}{2}</m> \amp  <m>\geq</m> \amp  <m>\ds \frac{\sin \theta}{2}</m></td></tr>
+<m>\ds \frac{\tan \theta}{2}</m> </td><td class='c'> <m>\geq</m> </td><td class='c'> <m>\ds \frac{\theta}{2}</m> </td><td class='c'> <m>\geq</m> </td><td class='c'> <m>\ds \frac{\sin \theta}{2}</m></td></tr>
 </table>  
 <p>
 Multiply all terms by <m>\ds\frac{2}{\sin \theta}</m>, giving
@@ -353,11 +353,11 @@ Clearly this means that <m>\ds \lim_{\theta\to 0} \frac{\sin\theta}{\theta}=1</m
 </example>
    
 <p>
-Two notes about the previous example are worth mentioning. First, one might be discouraged by this application, thinking <q>I would <em>never</em> have come up with that on my own. This is too hard!</q> Don't be discouraged; within this text we will guide you in your use of the Squeeze Theorem. As one gains mathematical maturity, clever proofs like this are easier and easier to create.
+Two notes about the previous example are worth mentioning. First, one might be discouraged by this application, thinking "I would <i>never</i> have come up with that on my own. This is too hard!" Don't be discouraged; within this text we will guide you in your use of the Squeeze Theorem. As one gains mathematical maturity, clever proofs like this are easier and easier to create.
 </p>
   
 <p>
-Second, this limit tells us more than just that as <m>x</m> approaches 0, <m>\sin(x)/x</m> approaches 1. Both <m>x</m> and <m>\sin x</m> are approaching 0, but the <em>ratio</em> of <m>x</m> and <m>\sin x</m> approaches 1, meaning that they are approaching 0 in essentially the same way. Another way of viewing this is: for small <m>x</m>, the functions <m>y=x</m> and <m>y=\sin x</m> are essentially indistinguishable.<br />
+Second, this limit tells us more than just that as <m>x</m> approaches 0, <m>\sin(x)/x</m> approaches 1. Both <m>x</m> and <m>\sin x</m> are approaching 0, but the <i>ratio</i> of <m>x</m> and <m>\sin x</m> approaches 1, meaning that they are approaching 0 in essentially the same way. Another way of viewing this is: for small <m>x</m>, the functions <m>y=x</m> and <m>y=\sin x</m> are essentially indistinguishable.<br />
 </p>
   
 <p>
@@ -375,7 +375,7 @@ We include this special limit, along with three others, in the following theorem
 </theorem>
   
 <p>
-A short word on how to interpret the latter three limits. We know that as <m>x</m> goes to 0, <m>\cos x</m> goes to 1. So, in the second limit, both the numerator and denominator are approaching 0. However, since the limit is 0, we can interpret this as saying that <q><m>\cos x</m> is approaching 1 faster than <m>x</m> is approaching 0.</q>
+A short word on how to interpret the latter three limits. We know that as <m>x</m> goes to 0, <m>\cos x</m> goes to 1. So, in the second limit, both the numerator and denominator are approaching 0. However, since the limit is 0, we can interpret this as saying that "<m>\cos x</m> is approaching 1 faster than <m>x</m> is approaching 0."
 </p>
   
 <p>
@@ -383,7 +383,7 @@ In the third limit, inside the parentheses we have an expression that is approac
 </p>
   
 <p>
-In the fourth limit, we see that as <m>x\to 0</m>, <m>e^x</m> approaches 1 <q>just as fast</q> as <m>x\to 0</m>, resulting in a limit of 1.<br />
+In the fourth limit, we see that as <m>x\to 0</m>, <m>e^x</m> approaches 1 "just as fast" as <m>x\to 0</m>, resulting in a limit of 1.<br />
 </p>
   
 <p>
@@ -461,7 +461,7 @@ Let <m>g(x) = f(x)</m> for all <m>x</m> in an open interval, except possibly at 
 </theorem>
   
 <p>
-The Fundamental Theorem of Algebra tells us that when dealing with a rational function of the form <m>g(x)/f(x)</m> and directly evaluating the limit <m>\ds \lim_{x\to c} \frac{g(x)}{f(x)}</m> returns <q>0/0</q>,
+The Fundamental Theorem of Algebra tells us that when dealing with a rational function of the form <m>g(x)/f(x)</m> and directly evaluating the limit <m>\ds \lim_{x\to c} \frac{g(x)}{f(x)}</m> returns "0/0",
 then <m>(x-c)</m> is a factor of both <m>g(x)</m> and <m>f(x)</m>. One can then use algebra to factor this term out, cancel, then apply <xref ref="thm_limit_allbut1">Theorem</xref>. We demonstrate this once more.<br />
 </p>
   
@@ -473,7 +473,7 @@ Evaluate <m>\ds \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}</m>.
   
 <solution><statement>
 <p>
-We begin by applying <xref ref="thm_lim_continuous">Theorem</xref> and substituting 3 for <m>x</m>. This returns the familiar indeterminate form of <q>0/0</q>.
+We begin by applying <xref ref="thm_lim_continuous">Theorem</xref> and substituting 3 for <m>x</m>. This returns the familiar indeterminate form of "0/0".
 Since the numerator and denominator are each polynomials, we know that <m>(x-3)</m> is factor of each. Using whatever method is most comfortable to you, factor out <m>(x-3)</m> from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that
 </p>
   
@@ -507,7 +507,7 @@ Let <m>f(x) = -1.5x^2+11.5x</m>; find <m>\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.
   
 <solution><statement>
 <p>
-Since <m>f</m> is a polynomial, our first attempt should be to employ <xref ref="thm_lim_continuous">Theorem</xref> and substitute 0 for <m>h</m>. However, we see that this gives us <q><m>0/0</m>.</q>
+Since <m>f</m> is a polynomial, our first attempt should be to employ <xref ref="thm_lim_continuous">Theorem</xref> and substitute 0 for <m>h</m>. However, we see that this gives us "<m>0/0</m>."
 Knowing that we have a rational function hints that some algebra will help. Consider the following steps:
 </p>
   
@@ -529,7 +529,7 @@ This matches our previous approximation.
 </example>
    
 <p>
-This section contains several valuable tools for evaluating limits. One of the main results of this section is <xref ref="thm_lim_continuous">Theorem</xref>; it states that many functions that we use regularly behave in a very nice, predictable way. In the next section we give a name to this nice behavior; we label such functions as <em>continuous.</em> Defining that term will require us to look again at what a limit is and what causes limits to not exist.
+This section contains several valuable tools for evaluating limits. One of the main results of this section is <xref ref="thm_lim_continuous">Theorem</xref>; it states that many functions that we use regularly behave in a very nice, predictable way. In the next section we give a name to this nice behavior; we label such functions as <i>continuous.</i> Defining that term will require us to look again at what a limit is and what causes limits to not exist.
 </p>
  </introduction> 
 <subsection>
@@ -550,7 +550,7 @@ Explain in your own words, without using <m>\epsilon</m>-<m>\delta</m> formality
   
 <exercise><statement>
 <p>
-What does the text mean when it says that certain functions' <q>behavior is `nice' in terms of limits</q>? What, in particular, is <q>nice</q>?
+What does the text mean when it says that certain functions' "behavior is `nice' in terms of limits"? What, in particular, is "nice"?
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>
@@ -583,8 +583,8 @@ What can be said about the relative sizes of <m>f(x)</m> and <m>g(x)</m> as <m>x
 }
 {, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.
 </p>
-  <ul><li><m>\ds \lim_{x\to9}f(x) = 6</m>, <nbsp /><nbsp /> <m>\ds \lim_{x\to6} f(x) = 9</m>, <nbsp /><nbsp /> <m>f(9)=6</m></li>
-<li><m>\ds \lim_{x\to9}g(x) = 3</m>,<nbsp /><nbsp /> <m>\ds \lim_{x\to6} g(x) = 3</m>,<nbsp /><nbsp /> <m>g(6)=9</m></li>
+  <ul><li><m>\ds \lim_{x\to9}f(x) = 6</m>,   <m>\ds \lim_{x\to6} f(x) = 9</m>,   <m>f(9)=6</m></li>
+<li><m>\ds \lim_{x\to9}g(x) = 3</m>,  <m>\ds \lim_{x\to6} g(x) = 3</m>,  <m>g(6)=9</m></li>
  </ul>  
 <p>
 }
@@ -650,8 +650,8 @@ What can be said about the relative sizes of <m>f(x)</m> and <m>g(x)</m> as <m>x
 {In Exercises}
 {, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.
 </p>
-  <ul><li><m>\ds \lim_{x\to1}f(x) = 2</m>,<nbsp /><nbsp /> <m>\ds \lim_{x\to10} f(x) = 1</m>, <nbsp /><nbsp /> <m>f(1)=1/5</m></li>
-<li><m>\ds \lim_{x\to1}g(x) = 0</m>,<nbsp /><nbsp /> <m>\ds \lim_{x\to10} g(x) = \pi</m>, <nbsp /><nbsp /> <m>g(10)=\pi</m></li>
+  <ul><li><m>\ds \lim_{x\to1}f(x) = 2</m>,  <m>\ds \lim_{x\to10} f(x) = 1</m>,   <m>f(1)=1/5</m></li>
+<li><m>\ds \lim_{x\to1}g(x) = 0</m>,  <m>\ds \lim_{x\to10} g(x) = \pi</m>,   <m>g(10)=\pi</m></li>
  </ul>  
 <p>
 }

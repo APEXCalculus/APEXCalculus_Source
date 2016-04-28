@@ -2,7 +2,7 @@
 <section xml:id="sec_basic_diff_rules">
 <title>Basic Differentiation Rules</title><introduction>
 <p>
-The derivative is a powerful tool but is admittedly awkward given its reliance on limits. Fortunately, one thing mathematicians are good at is <em>abstraction.</em> For instance, instead of continually finding derivatives at a point, we abstracted and found the derivative function.
+The derivative is a powerful tool but is admittedly awkward given its reliance on limits. Fortunately, one thing mathematicians are good at is <i>abstraction.</i> For instance, instead of continually finding derivatives at a point, we abstracted and found the derivative function.
 </p>
   
 <p>
@@ -31,18 +31,18 @@ In this section (and in some sections to follow) we will learn some of what math
 
 <theorem xml:id="thm_deriv_common"><title>Derivatives of Common Functions</title>
 <statement><div class="minipage">{175pt}
-		<ol><li>\sword{Constant Rule:}\knownindex{\lt main>derivative\lt /main>\lt sub>Constant Rule\lt /sub>} 
+		<ol><li>\sword{Constant Rule:}<index><main>derivative</main><sub>Constant Rule</sub></index> 
 		
 		<m>\ds \frac{d}{dx}\big( c\big) = 0</m>, where <m>c</m> is a constant.</li>
 <li><m>\ds \frac{d}{dx}(\sin x) = \cos x</m></li>
 <li><m>\ds \frac{d}{dx}\left(e^x\right) = e^x</m></li>
  </ol> </div>  <div class="minipage">{210pt}
-		<ol><li>\sword{Power Rule:}\knownindex{\lt main>derivative\lt /main>\lt sub>Power Rule\lt /sub>}\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>}
+		<ol><li>\sword{Power Rule:}<index><main>derivative</main><sub>Power Rule</sub></index><index><main>Power Rule</main><sub>differentiation</sub></index>
 		
 		<m>\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}</m>, where <m>n</m> is an integer, <m>n>0</m>.</li>
 <li><m>\ds \frac{d}{dx}(\cos x) = -\sin x</m></li>
 <li><m>\ds \frac{d}{dx}(\ln x) = \frac{1}{x}</m></li>
- </ol>  \knownindex{\lt main>derivative\lt /main>\lt sub>basic rules\lt /sub>}</div> </statement>
+ </ol>  <index><main>derivative</main><sub>basic rules</sub></index></div> </statement>
 </theorem>
 </div> 
 <p>
@@ -50,7 +50,7 @@ In this section (and in some sections to follow) we will learn some of what math
 </p>
   
 <p>
-This theorem starts by stating an intuitive fact: constant functions have no rate of change as they are <em>constant</em>. Therefore their derivative is 0 (they change at the rate of 0). The theorem then states some fairly amazing things. The Power Rule states that the derivatives of Power Functions (of the form <m>y=x^n</m>) are very straightforward: multiply by the power, then subtract 1 from the power. We see something incredible about the function <m>y=e^x</m>: it is its own derivative. We also see a new connection between the sine and cosine functions.
+This theorem starts by stating an intuitive fact: constant functions have no rate of change as they are <i>constant</i>. Therefore their derivative is 0 (they change at the rate of 0). The theorem then states some fairly amazing things. The Power Rule states that the derivatives of Power Functions (of the form <m>y=x^n</m>) are very straightforward: multiply by the power, then subtract 1 from the power. We see something incredible about the function <m>y=e^x</m>: it is its own derivative. We also see a new connection between the sine and cosine functions.
 </p>
   
 <p>
@@ -62,7 +62,7 @@ One special case of the Power Rule is when <m>n=1</m>, i.e., when <m>f(x) = x</m
 </me>
  
 <p>
-In words, we are asking <q>At what rate does <m>f</m> change with respect to <m>x</m>?</q> Since <m>f</m> <em>is</em> <m>x</m>, we are asking <q>At what rate does <m>x</m> change with respect to <m>x</m>?</q> The answer is: 1. They change at the same rate.<br />
+In words, we are asking "At what rate does <m>f</m> change with respect to <m>x</m>?" Since <m>f</m> <i>is</i> <m>x</m>, we are asking "At what rate does <m>x</m> change with respect to <m>x</m>?" The answer is: 1. They change at the same rate.<br />
 </p>
   
 <example xml:id="ex_deriv_rule1"><title>Using <xref ref="thm_deriv_common">Theorem</xref> to find, and use, derivatives</title>
@@ -91,12 +91,7 @@ Let <m>f(x)=x^3</m>.
 </solution>
  </statement>
 </example>
- 
-<p>
-
-\clearpage
-</p>
-  
+   
 <p>
 <xref ref="thm_deriv_common">Theorem</xref> gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of <m>y=x^3</m>, but it does not tell how to compute the derivative of <m>y=2x^3</m>, <m>y=x^3+\sin x</m> nor <m>y=x^3\sin x</m>. The following theorem helps with the first two of these examples (the third is answered in the next section).
 </p>
@@ -109,10 +104,10 @@ Let <m>f</m> and <m>g</m> be differentiable on an open interval <m>I</m> and let
   <ol><li>\sword{Sum/Difference Rule:}
 	
 	<m>\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)</m> <m>= \fp(x)\pm g\primeskip'(x)</m>
-	\knownindex{\lt main>derivative\lt /main>\lt sub>Sum/Difference Rule\lt /sub>}\knownindex{\lt main>Sum/Difference Rule\lt /main>\lt sub>of derivatives\lt /sub>}</li>
+	<index><main>derivative</main><sub>Sum/Difference Rule</sub></index><index><main>Sum/Difference Rule</main><sub>of derivatives</sub></index></li>
 <li>\sword{Constant Multiple Rule:}
 	
-	<m>\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Constant Multiple Rule\lt /sub>}\knownindex{\lt main>Constant Multiple Rule\lt /main>\lt sub>of derivatives\lt /sub>}</li>
+	<m>\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)</m>.<index><main>derivative</main><sub>Constant Multiple Rule</sub></index><index><main>Constant Multiple Rule</main><sub>of derivatives</sub></index></li>
  </ol>  </statement>
 </theorem>
   
@@ -138,11 +133,11 @@ Let <m>f(x) = \sin x + 2x+1</m>. Approximate <m>f(3)</m> using an appropriate ta
   
 <solution><statement>
 <p>
-This problem is intentionally ambiguous; we are to <em>approximate</em> using an <em>appropriate</em> tangent line. How good of an approximation are we seeking? What does appropriate mean?
+This problem is intentionally ambiguous; we are to <i>approximate</i> using an <i>appropriate</i> tangent line. How good of an approximation are we seeking? What does appropriate mean?
 </p>
   
 <p>
-In the <q>real world,</q> people solving problems deal with these issues all time. One must make a judgment using whatever seems reasonable. In this example, the actual answer is <m>f(3) = \sin 3 + 7</m>, where the real problem spot is <m>\sin 3</m>. What is <m>\sin 3</m>?
+In the "real world," people solving problems deal with these issues all time. One must make a judgment using whatever seems reasonable. In this example, the actual answer is <m>f(3) = \sin 3 + 7</m>, where the real problem spot is <m>\sin 3</m>. What is <m>\sin 3</m>?
 </p>
   
 <p>
@@ -158,7 +153,7 @@ Using a calculator, we get an answer accurate to 4 places after the decimal: <m>
 </p>
   
 <p>
-The point is <em>not</em> <q>Here's a cool way to do some math without a calculator.</q> Sure, that might be handy sometime, but your phone could probably give you the answer. Rather, the point is to say that tangent lines are a good way of approximating, and many scientists, engineers and mathematicians often face problems too hard to solve directly. So they approximate.
+The point is <i>not</i> "Here's a cool way to do some math without a calculator." Sure, that might be handy sometime, but your phone could probably give you the answer. Rather, the point is to say that tangent lines are a good way of approximating, and many scientists, engineers and mathematicians often face problems too hard to solve directly. So they approximate.
 </p>
  </statement>
 </solution>
@@ -171,28 +166,28 @@ The point is <em>not</em> <q>Here's a cool way to do some math without a calcula
   
 <article class="aside-like" id="marginalnote2-3-5"><h5 class="heading"><span class="type"></span><span class="codenumber">2.3.5</span></h5>
 <p>
-<b>Note:</b> <xref ref="def_Higher_Deriv">Definition</xref> comes with the caveat <q>Where the corresponding limits exist.</q> With <m>f</m> differentiable on <m>I</m>, it is possible that <m>\fp</m> is <em>not</em> differentiable on all of <m>I</m>, and so on.
+<b>Note:</b> <xref ref="def_Higher_Deriv">Definition</xref> comes with the caveat "Where the corresponding limits exist." With <m>f</m> differentiable on <m>I</m>, it is possible that <m>\fp</m> is <i>not</i> differentiable on all of <m>I</m>, and so on.
 </p>
  
 </article>
   
 <p>
 The derivative of a function <m>f</m> is itself a function, therefore we can take its derivative. The following definition gives a name to this concept and introduces its notation.
-Let <m>y=f(x)</m> be a differentiable function on <m>I</m>. \knownindex{\lt main>derivative\lt /main>\lt sub>higher order\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>notation\lt /sub>}
+Let <m>y=f(x)</m> be a differentiable function on <m>I</m>. <index><main>derivative</main><sub>higher order</sub></index><index><main>derivative</main><sub>notation</sub></index>
 </p>
-  <ol><li>The <em>second derivative</em> of <m>f</m> is: 
+  <ol><li>The <i>second derivative</i> of <m>f</m> is: 
 						
 <me>
  \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d\primeskip^2y}{dx^2}=y\primeskip''.
 </me>
 </li>
-<li>The <em>third derivative</em> of <m>f</m> is: 
+<li>The <i>third derivative</i> of <m>f</m> is: 
 						
 <me>
  \fp''(x) = \frac{d}{dx}\Big(\fp'(x)\Big) = \frac{d}{dx}\left(\frac{d\primeskip^2y}{dx^2}\right) = \frac{d\primeskip^3y}{dx^3}=y\primeskip'''.
 </me>
 </li>
-<li>The <em>n<m>^{\text{th} }</m> derivative</em> of <m>f</m> is:
+<li>The <i>n<m>^{\text{th} }</m> derivative</i> of <m>f</m> is:
 						
 <me>
  f\,^{(n)}(x) = \frac{d}{dx}\left(f\,^{(n-1)}(x)\right) = \frac{d}{dx}\left(\frac{d\primeskip^{n-1}y}{dx^{n-1}}\right) = \frac{d\primeskip^ny}{dx^n}=y^{(n)}.
@@ -249,7 +244,7 @@ Interpreting Higher Order Derivatives}<br />
 </p>
   
 <p>
-What do higher order derivatives <em>mean</em>? What is the practical interpretation? \knownindex{\lt main>derivative\lt /main>\lt sub>higher order!interpretation\lt /sub>}
+What do higher order derivatives <i>mean</i>? What is the practical interpretation? <index><main>derivative</main><sub>higher order!interpretation</sub></index>
 </p>
   
 <p>
@@ -257,19 +252,19 @@ Our first answer is a bit wordy, but is technically correct and beneficial to un
 </p>
   <div class="quote">The second derivative of a function <m>f</m> is the rate of change of the rate of change of <m>f</m>.</div>  
 <p>
-One way to grasp this concept is to let <m>f</m> describe a position function. Then, as stated in Key <xref ref="idea_motion">Idea</xref>, <m>\fp</m> describes the rate of position change: velocity. We now consider <m>\fp'</m>, which describes the rate of velocity change. Sports car enthusiasts talk of how fast a car can go from 0 to 60 mph; they are bragging about the <em>acceleration</em> of the car.
+One way to grasp this concept is to let <m>f</m> describe a position function. Then, as stated in Key <xref ref="idea_motion">Idea</xref>, <m>\fp</m> describes the rate of position change: velocity. We now consider <m>\fp'</m>, which describes the rate of velocity change. Sports car enthusiasts talk of how fast a car can go from 0 to 60 mph; they are bragging about the <i>acceleration</i> of the car.
 </p>
   
 <p>
-We started this chapter with amusement&#x2013;park riders free&#x2013;falling with position function <m>f(t) = -16t^2+150</m>. It is easy to compute <m>\fp(t)=-32t</m> ft/s and <m>\fp'(t) = -32</m> (ft/s)/s. We may recognize this latter constant; it is the acceleration due to gravity. In keeping with the unit notation introduced in the previous section, we say the units are <q>feet per second per second.</q> This is usually shortened to <q>feet per second squared,</q> written as <q>ft/s<m>^2</m>.</q>
+We started this chapter with amusement&#x2013;park riders free&#x2013;falling with position function <m>f(t) = -16t^2+150</m>. It is easy to compute <m>\fp(t)=-32t</m> ft/s and <m>\fp'(t) = -32</m> (ft/s)/s. We may recognize this latter constant; it is the acceleration due to gravity. In keeping with the unit notation introduced in the previous section, we say the units are "feet per second per second." This is usually shortened to "feet per second squared," written as "ft/s<m>^2</m>."
 </p>
   
 <p>
-It can be difficult to consider the meaning of the third, and higher order, derivatives. The third derivative is <q>the rate of change of the rate of change of the rate of change of <m>f</m>.</q> That is essentially meaningless to the uninitiated. In the context of our position/velocity/acceleration example, the third derivative is the <q>rate of change of acceleration,</q> commonly referred to as <q>jerk.</q>
+It can be difficult to consider the meaning of the third, and higher order, derivatives. The third derivative is "the rate of change of the rate of change of the rate of change of <m>f</m>." That is essentially meaningless to the uninitiated. In the context of our position/velocity/acceleration example, the third derivative is the "rate of change of acceleration," commonly referred to as "jerk."
 </p>
   
 <p>
-Make no mistake: higher order derivatives have great importance even if their practical interpretations are hard (or <q>impossible</q>) to understand. The mathematical topic of <em>series</em> makes extensive use of higher order derivatives.
+Make no mistake: higher order derivatives have great importance even if their practical interpretations are hard (or "impossible") to understand. The mathematical topic of <i>series</i> makes extensive use of higher order derivatives.
 </p>
  </introduction> 
 <subsection>
@@ -333,7 +328,7 @@ Give an example of a function where <m>\fp(x) \neq 0</m> and <m>\fpp(x) = 0</m>.
   
 <exercise><statement>
 <p>
-Explain in your own words what the second derivative <q>means.</q>
+Explain in your own words what the second derivative "means."
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>

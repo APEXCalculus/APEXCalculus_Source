@@ -2,7 +2,7 @@
 <section xml:id="sec_limit_intro">
 <title>An Introduction To Limits</title><introduction>
 <p>
-We begin our study of <em>limits</em> by considering examples that demonstrate key concepts that will be explained as we progress.<br />
+We begin our study of <i>limits</i> by considering examples that demonstrate key concepts that will be explained as we progress.<br />
 </p>
   
 <p>
@@ -10,7 +10,7 @@ Consider the function <m>y = \frac{\sin x}{x}</m>. When <m>x</m> is near the val
 </p>
   
 <p>
-While our question is not precisely formed (what constitutes <q>near the value 1</q>?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is <q>near</q> 1, <m>y</m> will be <q>near</q> <m>0.84</m>.
+While our question is not precisely formed (what constitutes "near the value 1"?), the answer does not seem difficult to find. One might think first to look at a graph of this function to approximate the appropriate <m>y</m> values. Consider <xref ref="fig_zoom_sinx_over_x">Figure</xref>, where <m>y = \frac{\sin x}{x}</m> is graphed. For values of <m>x</m> near 1, it seems that <m>y</m> takes on values near <m>0.85</m>. In fact, when <m>x=1</m>, then <m>y=\frac{\sin 1}{1} \approx 0.84</m>, so it makes sense that when <m>x</m> is "near" 1, <m>y</m> will be "near" <m>0.84</m>.
 </p>
   <figure xml:id="fig_zoom_sinx_over_x" >
 <caption><m>\sin(x)/x</m> near <m>x=1</m>.</caption>
@@ -28,11 +28,11 @@ Consider this again at a different value for <m>x</m>. When <m>x</m> is near 0, 
 </me>
  
 <p>
-The expression <q><m>0/0</m></q> has no value; it is <em>indeterminate.</em> \knownindex{\lt main>limit\lt /main>\lt sub>indeterminate form\lt /sub>}\knownindex{\lt main>indeterminate form\lt /main>} Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.
+The expression "<m>0/0</m>" has no value; it is <em>indeterminate.</em> <index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index> Such an expression gives no information about what is going on with the function nearby. We cannot find out how <m>y</m> behaves near <m>x=0</m> for this function simply by letting <m>x=0</m>.
 </p>
   
 <p>
-<em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression <q>the limit of <m>y</m> as <m>x</m> approaches 1</q> describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears 1. We write all this as
+<em>Finding a limit</em> entails understanding how a function behaves near a particular value of <m>x</m>. Before continuing, it will be useful to establish some notation. Let <m>y=f(x)</m>; that is, let <m>y</m> be a function of <m>x</m> for some function <m>f</m>. The expression "the limit of <m>y</m> as <m>x</m> approaches 1" describes a number, often referred to as <m>L</m>, that <m>y</m> nears as <m>x</m> nears 1. We write all this as
 </p>
   
 <me>
@@ -40,7 +40,7 @@ The expression <q><m>0/0</m></q> has no value; it is <em>indeterminate.</em> \kn
 </me>
  
 <p>
-This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. \knownindex{\lt main>limit\lt /main>\lt sub>pseudo-definition\lt /sub>}
+This is not a complete definition (that will come in the next section); this is a pseudo-definition that will allow us to explore the idea of a limit. <index><main>limit</main><sub>pseudo-definition</sub></index>
 </p>
   
 <p>
@@ -52,64 +52,64 @@ Above, where <m>f(x) = \sin(x)/x</m>, we approximated
 </me>
  
 <p>
-(We <em>approximated</em> these limits, hence used the <q><m>\approx</m></q> symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)
+(We <i>approximated</i> these limits, hence used the "<m>\approx</m>" symbol, since we are working with the pseudo-definition of a limit, not the actual definition.)
 </p>
   
 <p>
-Once we have the true definition of a limit, we will find limits <em>analytically</em>; that is, exactly using a variety of mathematical tools. For now, we will <em>approximate</em> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.
+Once we have the true definition of a limit, we will find limits <i>analytically</i>; that is, exactly using a variety of mathematical tools. For now, we will <i>approximate</i> limits both graphically and numerically. Graphing a function can provide a good approximation, though often not very precise. Numerical methods can provide a more accurate approximation. We have already approximated limits graphically, so we now turn our attention to numerical approximations.
 </p>
   
 <p>
-Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is <q>near</q> 1. This is done in <xref ref="table_sinx_1">Figure</xref>.
+Consider again <m>\lim_{x\to 1}\sin (x)/x</m>. To approximate this limit numerically, we can create a table of <m>x</m> and <m>f(x)</m> values where <m>x</m> is "near" 1. This is done in <xref ref="table_sinx_1">Figure</xref>.
 </p>
   
 <p>
-Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is in bold to highlight the fact that when considering limits, we are <em>not</em> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <em>near</em> 1.
+Notice that for values of <m>x</m> near <m>1</m>, we have <m>\sin (x)/x</m> near <m>0.841</m>. The <m>x=1</m> row is in bold to highlight the fact that when considering limits, we are <i>not</i> concerned with the value of the function at that particular <m>x</m> value; we are only concerned with the values of the function when <m>x</m> is <i>near</i> 1.
 </p>
   <figure xml:id="table_sinx_1" >
 <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 1.</caption>
 <table id="38ec7209d02789105cdd75b33388d57aa72c1068" ><tr><td class='c'>
-<m>x</m> \amp  <m>\sin(x)/x</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>\sin(x)/x</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
-0.9 \amp  0.870363 </td></tr>
+0.9 </td><td class='c'> 0.870363 </td></tr>
 <tr><td class='c'>
- 0.99 \amp  0.844471 </td></tr>
+ 0.99 </td><td class='c'> 0.844471 </td></tr>
 <tr><td class='c'>
- 0.999 \amp  0.841772 </td></tr>
+ 0.999 </td><td class='c'> 0.841772 </td></tr>
 <tr><td class='c'>
- <b>1</b> \amp  <b>0.841471</b> </td></tr>
+ <b>1</b> </td><td class='c'> <b>0.841471</b> </td></tr>
 <tr><td class='c'>
- 1.001 \amp  0.84117 </td></tr>
+ 1.001 </td><td class='c'> 0.84117 </td></tr>
 <tr><td class='c'>
- 1.01 \amp  0.838447 </td></tr>
+ 1.01 </td><td class='c'> 0.838447 </td></tr>
 <tr><td class='c'>
- 1.1 \amp  0.810189</td></tr></table> 
+ 1.1 </td><td class='c'> 0.810189</td></tr></table> 
 
 </figure>
   
 <p>
-Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approximated the value of this limit as 1 graphically in <xref ref="fig_sinx_over_x">Figure</xref>. The table in <xref ref="table_sinx_2">Figure</xref> shows the value of <m>\sin(x)/x</m> for values of <m>x</m> near 0. Ten places after the decimal point are shown to highlight how close to 1 the value of <m>\sin(x)/x</m> gets as <m>x</m> takes on values very near 0. We include the <m>x=0</m> row in bold again to stress that we are not concerned with the value of our function at <m>x=0</m>, only on the behavior of the function <em>near</em> 0.
+Now approximate <m>\lim_{x\to 0} \sin(x)/x</m> numerically. We already approximated the value of this limit as 1 graphically in <xref ref="fig_sinx_over_x">Figure</xref>. The table in <xref ref="table_sinx_2">Figure</xref> shows the value of <m>\sin(x)/x</m> for values of <m>x</m> near 0. Ten places after the decimal point are shown to highlight how close to 1 the value of <m>\sin(x)/x</m> gets as <m>x</m> takes on values very near 0. We include the <m>x=0</m> row in bold again to stress that we are not concerned with the value of our function at <m>x=0</m>, only on the behavior of the function <i>near</i> 0.
 </p>
   <figure xml:id="table_sinx_2" >
 <caption>Values of <m>\sin(x)/x</m> with <m>x</m> near 0.</caption>
 <table id="367eda3a0d822a9a0d468504bf38cc421f0deaa3" ><tr><td class='c'>
-<m>x</m> \amp  <m>\sin(x)/x</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>\sin(x)/x</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
- -0.1 \amp  0.9983341665 </td></tr>
+ -0.1 </td><td class='c'> 0.9983341665 </td></tr>
 <tr><td class='c'>
- -0.01 \amp  0.9999833334 </td></tr>
+ -0.01 </td><td class='c'> 0.9999833334 </td></tr>
 <tr><td class='c'>
- -0.001 \amp  0.9999998333 </td></tr>
+ -0.001 </td><td class='c'> 0.9999998333 </td></tr>
 <tr><td class='c'>
- <b>0</b> \amp  <b>not defined</b> </td></tr>
+ <b>0</b> </td><td class='c'> <b>not defined</b> </td></tr>
 <tr><td class='c'>
- 0.001 \amp  0.9999998333 </td></tr>
+ 0.001 </td><td class='c'> 0.9999998333 </td></tr>
 <tr><td class='c'>
- 0.01 \amp  0.9999833334 </td></tr>
+ 0.01 </td><td class='c'> 0.9999833334 </td></tr>
 <tr><td class='c'>
- 0.1 \amp  0.9983341665</td></tr></table> 
+ 0.1 </td><td class='c'> 0.9983341665</td></tr></table> 
 </figure>
   
 <p>
@@ -121,7 +121,7 @@ This numerical method gives confidence to say that 1 is a good approximation of 
 </me>
  
 <p>
-Later we will be able to prove that the limit is <em>exactly</em> 1.
+Later we will be able to prove that the limit is <i>exactly</i> 1.
 </p>
   
 <p>
@@ -133,22 +133,22 @@ We now consider several examples that allow us explore different aspects of the 
   <figure xml:id="table_limit1" >
 <caption>Numerically approximating a limit in <xref ref="ex_limit1">Example</xref>.</caption>
 <table id="caf32e45996bb1efda8682bff56d9d73e3f8d8d4" ><tr><td class='c'>
-<m>x</m> \amp  <m>\frac{x^2-x-6}{6x^2-19x+3}</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>\frac{x^2-x-6}{6x^2-19x+3}</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-2.9 \amp  0.29878 </td></tr>
+2.9 </td><td class='c'> 0.29878 </td></tr>
 <tr><td class='c'>
- 2.99 \amp  0.294569 </td></tr>
+ 2.99 </td><td class='c'> 0.294569 </td></tr>
 <tr><td class='c'>
- 2.999 \amp  0.294163 </td></tr>
+ 2.999 </td><td class='c'> 0.294163 </td></tr>
 <tr><td class='c'>
- <b>3</b> \amp  <b>not defined</b></td></tr>
+ <b>3</b> </td><td class='c'> <b>not defined</b></td></tr>
 <tr><td class='c'>
- 3.001 \amp  0.294073 </td></tr>
+ 3.001 </td><td class='c'> 0.294073 </td></tr>
 <tr><td class='c'>
- 3.01 \amp  0.293669 </td></tr>
+ 3.01 </td><td class='c'> 0.293669 </td></tr>
 <tr><td class='c'>
- 3.1 \amp  0.289773</td></tr></table> 
+ 3.1 </td><td class='c'> 0.289773</td></tr></table> 
 
 </figure>
   
@@ -191,14 +191,14 @@ The graph shows that when <m>x</m> is near 3, the value of <m>y</m> is very near
 This example may bring up a few questions about approximating limits (and the nature of limits themselves).
 </p>
   <ol><li>If a graph does not produce as good an approximation as a table, why bother with it?</li>
-<li>How many values of <m>x</m> in a table are <q>enough?</q> In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</li>
+<li>How many values of <m>x</m> in a table are "enough?" In the previous example, could we have just used <m>x=3.001</m> and found a fine approximation?</li>
  </ol>   
 <p>
-Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act <q>erratically</q> near certain <m>x</m> values which is hard to discern numerically but very plain graphically. Since graphing utilities are very accessible, it makes sense to make proper use of them.
+Graphs are useful since they give a visual understanding concerning the behavior of a function. Sometimes a function may act "erratically" near certain <m>x</m> values which is hard to discern numerically but very plain graphically. Since graphing utilities are very accessible, it makes sense to make proper use of them.
 </p>
   
 <p>
-Since tables and graphs are used only to <em>approximate</em> the value of a limit, there is not a firm answer to how many data points are <q>enough.</q> Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In <xref ref="ex_limit1">Example</xref>, we used both values less than and greater than 3. Had we used just <m>x=3.001</m>, we might have been tempted to conclude that the limit had a value of <m>0.3</m>. While this is not far off, we could do better. Using values <q>on both sides of 3</q> helps us identify trends.<br />
+Since tables and graphs are used only to <i>approximate</i> the value of a limit, there is not a firm answer to how many data points are "enough." Include enough so that a trend is clear, and use values (when possible) both less than and greater than the value in question. In <xref ref="ex_limit1">Example</xref>, we used both values less than and greater than 3. Had we used just <m>x=3.001</m>, we might have been tempted to conclude that the limit had a value of <m>0.3</m>. While this is not far off, we could do better. Using values "on both sides of 3" helps us identify trends.<br />
 </p>
   
 <example xml:id="ex_limit2"><title>Approximating the value of a limit</title>
@@ -222,30 +222,30 @@ Again we graph <m>f(x)</m> and create a table of its values near <m>x=0</m> to a
   <figure xml:id="table_limit2" >
 <caption>Numerically approximating a limit in <xref ref="ex_limit2">Example</xref>.</caption>
 <table id="85890b8f66220e0322d0351d18662acf3dbb3dcd" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
--0.1 \amp  0.9 </td></tr>
+-0.1 </td><td class='c'> 0.9 </td></tr>
 <tr><td class='c'>
- -0.01 \amp  0.99 </td></tr>
+ -0.01 </td><td class='c'> 0.99 </td></tr>
 <tr><td class='c'>
- -0.001 \amp  0.999 </td></tr>
+ -0.001 </td><td class='c'> 0.999 </td></tr>
 <tr><td class='c'>
- 0.001 \amp  0.999999 </td></tr>
+ 0.001 </td><td class='c'> 0.999999 </td></tr>
 <tr><td class='c'>
- 0.01 \amp  0.9999 </td></tr>
+ 0.01 </td><td class='c'> 0.9999 </td></tr>
 <tr><td class='c'>
- 0.1 \amp  0.99</td></tr>
+ 0.1 </td><td class='c'> 0.99</td></tr>
 </table> 
 
 </figure>
   
 <p>
-The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near 0. It is clear that as <m>x</m> takes on values very near 0, <m>f(x)</m> takes on values very near 1. It turns out that if we let <m>x=0</m> for either <q>piece</q> of <m>f(x)</m>, 1 is returned; this is significant and we'll return to this idea later.
+The table shown in <xref ref="table_limit2">Figure</xref> shows values of <m>f(x)</m> for values of <m>x</m> near 0. It is clear that as <m>x</m> takes on values very near 0, <m>f(x)</m> takes on values very near 1. It turns out that if we let <m>x=0</m> for either "piece" of <m>f(x)</m>, 1 is returned; this is significant and we'll return to this idea later.
 </p>
   
 <p>
-The graph and table allow us to say that <m>\lim_{x\to 0}f(x) \approx 1</m>; in fact, we are probably very sure it <em>equals</em> 1.
+The graph and table allow us to say that <m>\lim_{x\to 0}f(x) \approx 1</m>; in fact, we are probably very sure it <i>equals</i> 1.
 </p>
  </statement>
 </solution>
@@ -257,7 +257,7 @@ Identifying When Limits Do Not Exist}<br />
 </p>
   
 <p>
-A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> for some numbers <m>L</m> for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. \knownindex{\lt main>limit\lt /main>\lt sub>does not exist\lt /sub>}
+A function may not have a limit for all values of <m>x</m>. That is, we cannot say <m>\lim_{x\to c}f(x)=L</m> for some numbers <m>L</m> for all values of <m>c</m>, for there may not be a number that <m>f(x)</m> is approaching. There are three ways in which a limit may fail to exist. <index><main>limit</main><sub>does not exist</sub></index>
 </p>
   <ol><li>The function <m>f(x)</m> may approach different values on either side of <m>c</m>.</li>
 <li>The function may grow without upper or lower bound as <m>x</m> approaches <m>c</m>.</li>
@@ -283,20 +283,20 @@ A graph and table of <m>f(x) = 1/(x-1)^2</m> are given in <xref ref="fig_nolimit
   <figure xml:id="table_nolimit2" >
 <caption>Values of <m>f(x)</m> near <m>x=1</m> in <xref ref="ex_no_limit2">Example</xref>.</caption>
 <table id="91b9f95dfb38df5e00cd93dc76e098d882176eed" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
- 0.9 \amp  100. </td></tr>
+ 0.9 </td><td class='c'> 100. </td></tr>
 <tr><td class='c'>
- 0.99 \amp  10000. </td></tr>
+ 0.99 </td><td class='c'> 10000. </td></tr>
 <tr><td class='c'>
- 0.999 \amp  <m>1.\times 10^6</m> </td></tr>
+ 0.999 </td><td class='c'> <m>1.\times 10^6</m> </td></tr>
 <tr><td class='c'>
- 1.001 \amp  <m>1.\times 10^6</m> </td></tr>
+ 1.001 </td><td class='c'> <m>1.\times 10^6</m> </td></tr>
 <tr><td class='c'>
- 1.01 \amp  10000. </td></tr>
+ 1.01 </td><td class='c'> 10000. </td></tr>
 <tr><td class='c'>
- 1.1 \amp  100.</td></tr>
+ 1.1 </td><td class='c'> 100.</td></tr>
 </table> 
 </figure>
   
@@ -352,29 +352,29 @@ It can be shown that in reality, as <m>x</m> approaches 0, <m>\sin(1/x)</m> take
 </p>
   <div class="minipage">{\textwidth+\marginparwidth+\marginparsep}
 <table id="ebe41d56472d5a155927566a042da94316990dd8" ><tr><td class='c'>
-<image source="images/figNoLimit3a.png" />  \amp   <image source="images/figNoLimit3b.png" />  \amp   <table id="cc5f247ba5eff38795583f589973f48b35e2baae" ><tr><td class='c'>
- <m>x</m> \amp  <m>\sin(1/x)</m> </td></tr>
+<image source="images/figNoLimit3a.png" />  </td><td class='c'>  <image source="images/figNoLimit3b.png" />  </td><td class='c'>  <table id="cc5f247ba5eff38795583f589973f48b35e2baae" ><tr><td class='c'>
+ <m>x</m> </td><td class='c'> <m>\sin(1/x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'> 0.1 \amp  <m>-0.544021</m> </td></tr>
-<tr><td class='c'> 0.01 \amp  <m>-0.506366</m> </td></tr>
-<tr><td class='c'> 0.001 \amp  0.82688 </td></tr>
-<tr><td class='c'> 0.0001 \amp  <m>-0.305614</m> </td></tr>
-<tr><td class='c'> <m>1.\times 10^{-5}</m> \amp  0.0357488 </td></tr>
+<tr><td class='c'> 0.1 </td><td class='c'> <m>-0.544021</m> </td></tr>
+<tr><td class='c'> 0.01 </td><td class='c'> <m>-0.506366</m> </td></tr>
+<tr><td class='c'> 0.001 </td><td class='c'> 0.82688 </td></tr>
+<tr><td class='c'> 0.0001 </td><td class='c'> <m>-0.305614</m> </td></tr>
+<tr><td class='c'> <m>1.\times 10^{-5}</m> </td><td class='c'> 0.0357488 </td></tr>
 <tr><td class='c'>
- <m>1.\times 10^{-6}</m> \amp  <m>-0.349994</m> </td></tr>
-<tr><td class='c'> <m>1.\times 10^{-7}</m> \amp  0.420548 </td></tr>
+ <m>1.\times 10^{-6}</m> </td><td class='c'> <m>-0.349994</m> </td></tr>
+<tr><td class='c'> <m>1.\times 10^{-7}</m> </td><td class='c'> 0.420548 </td></tr>
 <tr><td class='c'> </td></tr>
 <tr><td class='c'></td></tr>
 </table> </td></tr>
 <tr><td class='c'>
-(a) \amp  (b) \amp  (c)</td></tr>
+(a) </td><td class='c'> (b) </td><td class='c'> (c)</td></tr>
 </table> <div class="caption"><span class="heading">Figure</span><span class="codenumber">1.1.13</span>Observing that <m>f(x) = \sin(1/x)</m> has no limit as <m>x\to 0</m> in <xref ref="ex_no_limit3">Example</xref>.</div></div>  
 <p>
 <b> Limits of Difference Quotients</b><br />
 </p>
   
 <p>
-We have approximated limits of functions as <m>x</m> approached a particular number. We will consider another important kind of limit after explaining a few key ideas.\knownindex{\lt main>limit\lt /main>\lt sub>difference quotient\lt /sub>}
+We have approximated limits of functions as <m>x</m> approached a particular number. We will consider another important kind of limit after explaining a few key ideas.<index><main>limit</main><sub>difference quotient</sub></index>
 </p>
   <figure xml:id="fig_diffquot1" >
 <caption>Interpreting a difference quotient as the slope of a secant line.</caption>
@@ -389,7 +389,7 @@ f(1)=10 \quad \text{ and }  \quad f(5) = 20.
 </me>
  
 <p>
-Since the particle traveled 10 feet in 4 seconds, we can say the particle's <em>average velocity</em> was 2.5 ft/s. We write this calculation using a <q>quotient of differences,</q> or, a <em>difference quotient</em>:
+Since the particle traveled 10 feet in 4 seconds, we can say the particle's <i>average velocity</i> was 2.5 ft/s. We write this calculation using a "quotient of differences," or, a <i>difference quotient</i>:
 </p>
   
 <me>
@@ -397,7 +397,7 @@ Since the particle traveled 10 feet in 4 seconds, we can say the particle's <em>
 </me>
   
 <p>
-This difference quotient can be thought of as the familiar <q>rise over run</q> used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <m>f</m>, we are finding the slope of the <em>secant line</em> through those two points. See <xref ref="fig_diffquot1">Figure</xref>.
+This difference quotient can be thought of as the familiar "rise over run" used to compute the slopes of lines. In fact, that is essentially what we are doing: given two points on the graph of <m>f</m>, we are finding the slope of the <i>secant line</i> through those two points. See <xref ref="fig_diffquot1">Figure</xref>.
 </p>
   
 <p>
@@ -409,7 +409,7 @@ Now consider finding the average speed on another time interval. We again start 
 </me>
   
 <p>
-Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, as in our discussion. We can compute this difference quotient for all values of <m>h</m> (even negative values!) except <m>h=0</m>, for then we get <q>0/0,</q> the indeterminate form introduced earlier. For all values <m>h\neq 0</m>, the difference quotient computes the average velocity of the particle over an interval of time of length <m>h</m> starting at <m>x=1</m>.
+Let <m>f(x) = -1.5x^2+11.5x</m>; note that <m>f(1)=10</m> and <m>f(5) = 20</m>, as in our discussion. We can compute this difference quotient for all values of <m>h</m> (even negative values!) except <m>h=0</m>, for then we get "0/0," the indeterminate form introduced earlier. For all values <m>h\neq 0</m>, the difference quotient computes the average velocity of the particle over an interval of time of length <m>h</m> starting at <m>x=1</m>.
 </p>
   
 <p>
@@ -425,18 +425,18 @@ As we do not yet have a true definition of a limit nor an exact method for compu
 </p>
   
 <p>
-Proper understanding of limits is key to understanding calculus. With limits, we can accomplish seemingly impossible mathematical things, like adding up an infinite number of numbers (and not get infinity) and finding the slope of a line between two points, where the <q>two points</q> are actually the same point. These are not just mathematical curiosities; they allow us to link position, velocity and acceleration together, connect cross-sectional areas to volume, find the work done by a variable force, and much more.
+Proper understanding of limits is key to understanding calculus. With limits, we can accomplish seemingly impossible mathematical things, like adding up an infinite number of numbers (and not get infinity) and finding the slope of a line between two points, where the "two points" are actually the same point. These are not just mathematical curiosities; they allow us to link position, velocity and acceleration together, connect cross-sectional areas to volume, find the work done by a variable force, and much more.
 </p>
   <figure xml:id="table_diff_quot_smallh" >
 <caption>The difference quotient evaluated at values of <m>h</m> near 0.</caption>
-<table id="5a49220cb5c080763659928b374283b2ed0cbcc7" ><tr><td class='c'><m>h</m> \amp  <m>\frac{f(1+h)-f(1)}{h}</m>\vspace{1pt} </td></tr>
+<table id="5a49220cb5c080763659928b374283b2ed0cbcc7" ><tr><td class='c'><m>h</m> </td><td class='c'> <m>\frac{f(1+h)-f(1)}{h}</m>\vspace{1pt} </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
-<tr><td class='c'> <m>-0.5</m> \amp  9.25 </td></tr>
-<tr><td class='c'> <m>-0.1</m> \amp  8.65 </td></tr>
-<tr><td class='c'> <m>-0.01</m> \amp  8.515 </td></tr>
-<tr><td class='c'> 0.01 \amp  8.485 </td></tr>
-<tr><td class='c'> 0.1 \amp  8.35 </td></tr>
-<tr><td class='c'> 0.5 \amp  7.75</td></tr>
+<tr><td class='c'> <m>-0.5</m> </td><td class='c'> 9.25 </td></tr>
+<tr><td class='c'> <m>-0.1</m> </td><td class='c'> 8.65 </td></tr>
+<tr><td class='c'> <m>-0.01</m> </td><td class='c'> 8.515 </td></tr>
+<tr><td class='c'> 0.01 </td><td class='c'> 8.485 </td></tr>
+<tr><td class='c'> 0.1 </td><td class='c'> 8.35 </td></tr>
+<tr><td class='c'> 0.5 </td><td class='c'> 7.75</td></tr>
 </table> 
 </figure>
   
@@ -448,7 +448,7 @@ In the next section we give the formal definition of the limit and begin our stu
 <title>Terms and Concepts</title>
 <exercise><statement>
 <p>
-In your own words, what does it mean to <q>find the limit of <m>f(x)</m> as <m>x</m> approaches 3</q>?
+In your own words, what does it mean to "find the limit of <m>f(x)</m> as <m>x</m> approaches 3"?
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>
@@ -585,152 +585,152 @@ In your own words, what is a difference quotient?
   
 <exercise><statement>
 <p>
-<m>f(x) = -7x+2</m>,<nbsp /><nbsp /> <m>a=3</m>
+<m>f(x) = -7x+2</m>,  <m>a=3</m>
 </p>
   <hint><table id="96eb0427bae339a5b243c43a0e5cb509151d17cf" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m>-0.1</m> \amp  <m>-7</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>-7</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>-7</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>-7</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>-7</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>-7</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>-7</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>-7</m></td></tr>
 </table> 
 The limit seems to be exactly 7.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>f(x) = 9x+0.06</m>,<nbsp /><nbsp /> <m>a=-1</m>
+<m>f(x) = 9x+0.06</m>,  <m>a=-1</m>
 </p>
   <hint><table id="e064a63c0eb8902d18ea7ffc8029495b647711e9" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m>-0.1</m> \amp  <m>9</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>9</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>9</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>9</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>9</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>9</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>9</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>9</m></td></tr>
 </table> 
 The limit seems to be exactly 9.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>f(x) = x^2+3x-7</m>,<nbsp /><nbsp /> <m>a=1</m>
+<m>f(x) = x^2+3x-7</m>,  <m>a=1</m>
 </p>
   <hint><table id="95d4d179b15571ca367a672ed1aa8751e6b8eeac" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m>-0.1</m> \amp  <m>4.9</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>4.9</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>4.99</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>4.99</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>5.01</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>5.01</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>5.1</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>5.1</m></td></tr>
 </table> 
 The limit is approx. 5.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>\displaystyle f(x) = \frac{1}{x+1}</m>,<nbsp /><nbsp /> <m>a=2</m>
+<m>\displaystyle f(x) = \frac{1}{x+1}</m>,  <m>a=2</m>
 </p>
   <hint><table id="23288cc1ee4d40d6997c0014d6318918239aa8cd" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
- <m>-0.1</m> \amp  <m>-0.114943</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>-0.114943</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>-0.111483</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>-0.111483</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>-0.110742</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>-0.110742</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>-0.107527</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>-0.107527</m></td></tr>
 </table> 
 The limit is approx. <m>-0.11</m>.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>\displaystyle f(x) = -4x^2+5x-1</m>,<nbsp /><nbsp /> <m>a=-3</m>
+<m>\displaystyle f(x) = -4x^2+5x-1</m>,  <m>a=-3</m>
 </p>
   <hint><table id="198743a9950f50772672b538065c23093661bbff" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m>-0.1</m> \amp  <m>29.4</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>29.4</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>29.04</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>29.04</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>28.96</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>28.96</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>28.6</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>28.6</m></td></tr>
 </table> 
 The limit is approx. <m>29</m>.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>\displaystyle f(x) =\ln x</m>,<nbsp /><nbsp /> <m>a=5</m>
+<m>\displaystyle f(x) =\ln x</m>,  <m>a=5</m>
 </p>
   <hint><table id="cee584078d4a78648d6642bfd81a0168cf04e669" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
- <m> -0.1</m> \amp  <m>0.202027</m> </td></tr>
+ <m> -0.1</m> </td><td class='c'> <m>0.202027</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>0.2002</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>0.2002</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>0.1998</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>0.1998</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>0.198026</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>0.198026</m></td></tr>
 </table> 
 The limit is approx. <m>0.2</m>.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>\displaystyle f(x) =\sin x</m>,<nbsp /><nbsp /> <m>a=\pi</m>
+<m>\displaystyle f(x) =\sin x</m>,  <m>a=\pi</m>
 </p>
   <hint><table id="a7f127afd070c1145f16259d3075c30550c45aa9" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m> </td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m> -0.1</m> \amp  <m>-0.998334</m> </td></tr>
+ <m> -0.1</m> </td><td class='c'> <m>-0.998334</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>-0.999983</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>-0.999983</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>-0.999983</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>-0.999983</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>-0.998334</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>-0.998334</m></td></tr>
 </table> 
 The limit is approx. <m>-1</m>.</hint> </statement>
 </exercise>
   
 <exercise><statement>
 <p>
-<m>\displaystyle f(x) =\cos x</m>,<nbsp /><nbsp /> <m>a=\pi</m>
+<m>\displaystyle f(x) =\cos x</m>,  <m>a=\pi</m>
 </p>
   <hint><table id="19f134ff2ccb28471cf3d754cfad991681783a80" ><tr><td class='c'>
-<m>h</m> \amp  <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
+<m>h</m> </td><td class='c'> <m>\frac{f(a+h)-f(a)}{h}</m></td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'> 
- <m>-0.1</m> \amp  <m>-0.0499583</m> </td></tr>
+ <m>-0.1</m> </td><td class='c'> <m>-0.0499583</m> </td></tr>
 <tr><td class='c'>
- <m>-0.01</m> \amp  <m>-0.00499996</m> </td></tr>
+ <m>-0.01</m> </td><td class='c'> <m>-0.00499996</m> </td></tr>
 <tr><td class='c'>
- <m>0.01</m> \amp  <m>0.00499996</m> </td></tr>
+ <m>0.01</m> </td><td class='c'> <m>0.00499996</m> </td></tr>
 <tr><td class='c'>
- <m>0.1</m> \amp  <m>0.0499583</m></td></tr>
+ <m>0.1</m> </td><td class='c'> <m>0.0499583</m></td></tr>
 </table> 
 The limit is approx. <m>0.005</m>.</hint> </statement>
 </exercise>

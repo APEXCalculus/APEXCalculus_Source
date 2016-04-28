@@ -2,7 +2,7 @@
 <section xml:id="sec_concavity">
 <title>Concavity and the Second Derivative</title><introduction>
 <p>
-Our study of <q>nice</q> functions continues. The previous section showed how the first derivative of a function, \fp, can relay important information about <m>f</m>. We now apply the same technique to \fp<nbsp />itself, and learn what this tells us about <m>f</m>.
+Our study of "nice" functions continues. The previous section showed how the first derivative of a function, \fp, can relay important information about <m>f</m>. We now apply the same technique to \fp<nbsp />itself, and learn what this tells us about <m>f</m>.
 </p>
   
 <p>
@@ -22,27 +22,27 @@ begin with a definition, then explore its meaning.
 <statement>
 <p>
 Let <m>f</m> be differentiable on an interval <m>I</m>.
-The graph of <m>f</m> is concave up on <m>I</m> if <m>\fp</m> is increasing. The graph of <m>f</m> is concave down on <m>I</m> if <m>\fp</m> is decreasing. If <m>\fp</m> is constant then the graph of <m>f</m> is said to have no concavity.\knownindex{\lt main>concavity\lt /main>}\knownindex{\lt main>concave up\lt /main>}\knownindex{\lt main>concave down\lt /main>}
+The graph of <m>f</m> is <term>concave up</term> on <m>I</m> if <m>\fp</m> is increasing. The graph of <m>f</m> is <term>concave down</term> on <m>I</m> if <m>\fp</m> is decreasing. If <m>\fp</m> is constant then the graph of <m>f</m> is said to have <term>no concavity</term>.<index><main>concavity</main></index><index><main>concave up</main></index><index><main>concave down</main></index>
 </p>
  </statement>
 </definition>
   
 <article class="aside-like" id="marginalnote3-4-2"><h5 class="heading"><span class="type"></span><span class="codenumber">3.4.2</span></h5>
 <p>
-<b>Note:</b> We often state that <q><m>f</m> is concave up</q> instead of <q>the graph of <m>f</m> is concave up</q> for simplicity.
+<b>Note:</b> We often state that "<m>f</m> is concave up" instead of "the graph of <m>f</m> is concave up" for simplicity.
 </p>
  
 </article>
   
 <p>
-The graph of a function <m>f</m> is <em>concave up</em> when \fp<nbsp />is <em>increasing.</em> That means as one looks at a concave up graph from left to right, the slopes of the tangent lines will be increasing. Consider <xref ref="fig_concavity1">Figure</xref>, where a concave up graph is shown along with some tangent lines. Notice how the tangent line on the left is steep, downward, corresponding to a small value of \fp. On the right, the tangent line is steep, upward, corresponding to a large value of \fp.
+The graph of a function <m>f</m> is <i>concave up</i> when \fp<nbsp />is <i>increasing.</i> That means as one looks at a concave up graph from left to right, the slopes of the tangent lines will be increasing. Consider <xref ref="fig_concavity1">Figure</xref>, where a concave up graph is shown along with some tangent lines. Notice how the tangent line on the left is steep, downward, corresponding to a small value of \fp. On the right, the tangent line is steep, upward, corresponding to a large value of \fp.
 </p>
   <figure xml:id="fig_concavity1" >
 <caption>A function <m>f</m> with a concave up graph. Notice how the slopes of the tangent lines, when looking from left to right, are increasing.</caption>
 <image source="images/figconcavity1.png" /> </figure>
   
 <p>
-If a function is decreasing and concave up, then its rate of decrease is slowing; it is <q>leveling off.</q> If the function is increasing and concave up, then the <em>rate</em> of increase is increasing. The function is increasing at a faster and faster rate.
+If a function is decreasing and concave up, then its rate of decrease is slowing; it is "leveling off." If the function is increasing and concave up, then the <i>rate</i> of increase is increasing. The function is increasing at a faster and faster rate.
 </p>
   
 <p>
@@ -50,19 +50,19 @@ Now consider a function which is concave down. We essentially repeat the above p
 </p>
   
 <p>
-The graph of a function <m>f</m> is <em>concave down</em> when \fp<nbsp />is <em>decreasing.</em> That means as one looks at a concave down graph from left to right, the slopes of the tangent lines will be decreasing. Consider <xref ref="fig_concavity2">Figure</xref>, where a concave down graph is shown along with some tangent lines. Notice how the tangent line on the left is steep, upward, corresponding to a large value of \fp. On the right, the tangent line is steep, downward, corresponding to a small value of \fp.
+The graph of a function <m>f</m> is <i>concave down</i> when \fp<nbsp />is <i>decreasing.</i> That means as one looks at a concave down graph from left to right, the slopes of the tangent lines will be decreasing. Consider <xref ref="fig_concavity2">Figure</xref>, where a concave down graph is shown along with some tangent lines. Notice how the tangent line on the left is steep, upward, corresponding to a large value of \fp. On the right, the tangent line is steep, downward, corresponding to a small value of \fp.
 </p>
   <figure xml:id="fig_concavity2" >
 <caption>A function <m>f</m> with a concave down graph. Notice how the slopes of the tangent lines, when looking from left to right, are decreasing.</caption>
 <image source="images/figconcavity2.png" /> </figure>
   
 <p>
-If a function is increasing and concave down, then its rate of increase is slowing; it is <q>leveling off.</q> If the function is decreasing and concave down, then the <em>rate</em> of decrease is decreasing. The function is decreasing at a faster and faster rate.
+If a function is increasing and concave down, then its rate of increase is slowing; it is "leveling off." If the function is decreasing and concave down, then the <i>rate</i> of decrease is decreasing. The function is decreasing at a faster and faster rate.
 </p>
   
 <article class="aside-like" id="marginalnote3-4-3"><h5 class="heading"><span class="type"></span><span class="codenumber">3.4.3</span></h5>
 <p>
-<b>Note:</b> A mnemonic for remembering what concave up/down means is: <q>Concave up is like a cup; concave down is like a frown.</q> It is admittedly terrible, but it works.
+<b>Note:</b> A mnemonic for remembering what concave up/down means is: "Concave up is like a cup; concave down is like a frown." It is admittedly terrible, but it works.
 </p>
  
 </article>
@@ -74,7 +74,7 @@ Our definition of concave up and concave down is given in terms of when the firs
 <theorem xml:id="thm_concavity"><title>Test for Concavity</title>
 <statement>
 <p>
-Let <m>f</m> be twice differentiable on an interval <m>I</m>. The graph of <m>f</m> is concave up if <m>\fpp>0</m> on <m>I</m>, and is concave down if <m>\fpp\lt 0</m> on <m>I</m>. \knownindex{\lt main>concavity\lt /main>\lt sub>test for\lt /sub>}\knownindex{\lt main>concavity\lt /main>\lt sub>inflection point\lt /sub>}
+Let <m>f</m> be twice differentiable on an interval <m>I</m>. The graph of <m>f</m> is concave up if <m>\fpp>0</m> on <m>I</m>, and is concave down if <m>\fpp\lt 0</m> on <m>I</m>. <index><main>concavity</main><sub>test for</sub></index><index><main>concavity</main><sub>inflection point</sub></index>
 </p>
  </statement>
 </theorem>
@@ -96,7 +96,7 @@ If knowing where a graph is concave up/down is important, it makes sense that th
 <definition xml:id="def_infl"><title>Point of Inflection</title>
 <statement>
 <p>
-A point of inflection is a point on the graph of <m>f</m> at which the concavity of <m>f</m> changes.\knownindex{\lt main>point of inflection\lt /main>}\knownindex{\lt main>inflection point\lt /main>}
+A <term>point of inflection</term> is a point on the graph of <m>f</m> at which the concavity of <m>f</m> changes.<index><main>point of inflection</main></index><index><main>inflection point</main></index>
 </p>
  </statement>
 </definition>
@@ -173,7 +173,7 @@ To find the possible points of inflection, we seek to find where <m>\fpp(x)=0</m
 </p>
   
 <p>
-The important <m>x</m>-values at which concavity might switch are <m>x=-1</m>, <m>x=0</m> and <m>x=1</m>, which split the number line into four intervals as shown in <xref ref="fig_concline2">Figure</xref>. We determine the concavity on each. Keep in mind that all we are concerned with is the <em>sign</em> of \fpp<nbsp />on the interval.<br />
+The important <m>x</m>-values at which concavity might switch are <m>x=-1</m>, <m>x=0</m> and <m>x=1</m>, which split the number line into four intervals as shown in <xref ref="fig_concline2">Figure</xref>. We determine the concavity on each. Keep in mind that all we are concerned with is the <i>sign</i> of \fpp<nbsp />on the interval.<br />
 </p>
   
 <p>
@@ -185,7 +185,7 @@ The important <m>x</m>-values at which concavity might switch are <m>x=-1</m>, <
 </p>
   
 <p>
-<b>Interval 3,</b> <m>(0,1)</m>: Any number <m>c</m> in this interval will be positive and <q>small.</q> Thus the numerator is positive while the denominator is negative. Thus <m>\fpp(c)\lt 0</m> and <m>f</m> is concave down on this interval.
+<b>Interval 3,</b> <m>(0,1)</m>: Any number <m>c</m> in this interval will be positive and "small." Thus the numerator is positive while the denominator is negative. Thus <m>\fpp(c)\lt 0</m> and <m>f</m> is concave down on this interval.
 </p>
   
 <p>
@@ -210,7 +210,7 @@ Recall that relative maxima and minima of <m>f</m> are found at critical points 
 </p>
   
 <p>
-What does a <q>relative maximum of \fp<nbsp /></q> <em>mean</em>? The derivative measures the rate of change of <m>f</m>; maximizing \fp<nbsp />means finding the where <m>f</m> is increasing the most &#x2013; where <m>f</m> has the steepest tangent line. A similar statement can be made for minimizing \fp; it corresponds to where <m>f</m> has the steepest negatively&#x2013;sloped tangent line.
+What does a "relative maximum of \fp<nbsp />" <i>mean</i>? The derivative measures the rate of change of <m>f</m>; maximizing \fp<nbsp />means finding the where <m>f</m> is increasing the most &#x2013; where <m>f</m> has the steepest tangent line. A similar statement can be made for minimizing \fp; it corresponds to where <m>f</m> has the steepest negatively&#x2013;sloped tangent line.
 </p>
   
 <p>
@@ -236,7 +236,7 @@ This is both the inflection point and the point of maximum decrease. This is the
 </p>
   
 <p>
-A graph of <m>S(t)</m> and <m>S\primeskip'(t)</m> is given in <xref ref="fig_conc3b">Figure</xref>. When <m>S\primeskip'(t)\lt 0</m>, sales are decreasing; note how at <m>t\approx 1.16</m>, <m>S\primeskip'(t)</m> is minimized. That is, sales are decreasing at the fastest rate at <m>t\approx 1.16</m>. On the interval of <m>(1.16,2)</m>, <m>S</m> is decreasing but concave up, so the decline in sales is <q>leveling off.</q>
+A graph of <m>S(t)</m> and <m>S\primeskip'(t)</m> is given in <xref ref="fig_conc3b">Figure</xref>. When <m>S\primeskip'(t)\lt 0</m>, sales are decreasing; note how at <m>t\approx 1.16</m>, <m>S\primeskip'(t)</m> is minimized. That is, sales are decreasing at the fastest rate at <m>t\approx 1.16</m>. On the interval of <m>(1.16,2)</m>, <m>S</m> is decreasing but concave up, so the decline in sales is "leveling off."
 </p>
  </statement>
 </solution>
@@ -244,13 +244,13 @@ A graph of <m>S(t)</m> and <m>S\primeskip'(t)</m> is given in <xref ref="fig_con
 </example>
    
 <p>
-Not every critical point corresponds to a relative extrema; <m>f(x)=x^3</m> has a critical point at <m>(0,0)</m> but no relative maximum or minimum. Likewise, just because <m>\fpp(x)=0</m> we cannot conclude concavity changes at that point. We were careful before to use terminology <q><em>possible</em> point of inflection</q> since we needed to check to see if the concavity changed. The canonical example of <m>\fpp(x)=0</m> <em>without</em> concavity changing is <m>f(x)=x^4</m>. At <m>x=0</m>, <m>\fpp(x)=0</m> but <m>f</m> is always concave up, as shown in <xref ref="fig_concavity5">Figure</xref>.<br />
+Not every critical point corresponds to a relative extrema; <m>f(x)=x^3</m> has a critical point at <m>(0,0)</m> but no relative maximum or minimum. Likewise, just because <m>\fpp(x)=0</m> we cannot conclude concavity changes at that point. We were careful before to use terminology "<i>possible</i> point of inflection" since we needed to check to see if the concavity changed. The canonical example of <m>\fpp(x)=0</m> <i>without</i> concavity changing is <m>f(x)=x^4</m>. At <m>x=0</m>, <m>\fpp(x)=0</m> but <m>f</m> is always concave up, as shown in <xref ref="fig_concavity5">Figure</xref>.<br />
 </p>
   <figure xml:id="fig_conc3b" >
 <caption>A graph of <m>S(t)</m> in <xref ref="ex_conc3">Example</xref> along with <m>S\primeskip'(t)</m>.</caption>
 <image source="images/figconc3b.png" /> </figure>
   <figure xml:id="fig_concavity5" >
-<caption>A graph of <m>f(x) = x^4</m>. Clearly <m>f</m> is always concave up, despite the fact that <m>\fpp(x) = 0</m> when <m>x=0</m>. It this example, the <em>possible</em> point of inflection <m>(0,0)</m> is not a point of inflection.</caption>
+<caption>A graph of <m>f(x) = x^4</m>. Clearly <m>f</m> is always concave up, despite the fact that <m>\fpp(x) = 0</m> when <m>x=0</m>. It this example, the <i>possible</i> point of inflection <m>(0,0)</m> is not a point of inflection.</caption>
 <image source="images/figconcavity5.png" /> </figure>
   
 <p>
@@ -264,7 +264,7 @@ first derivative of a function gave us a test to find if a critical value corres
 <theorem xml:id="thm_second_der"><title>The Second Derivative Test</title>
 <statement>
 <p>
-Let <m>c</m> be a critical value of <m>f</m> where <m>\fpp(c)</m> is defined. \knownindex{\lt main>derivative\lt /main>\lt sub>Second Deriv. Test\lt /sub>}\knownindex{\lt main>Second Derivative Test\lt /main>}\knownindex{\lt main>extrema\lt /main>\lt sub>and Second Deriv. Test\lt /sub>}\knownindex{\lt main>maximum\lt /main>\lt sub>and Second Deriv. Test\lt /sub>}\knownindex{\lt main>minimum\lt /main>\lt sub>and First Deriv. Test\lt /sub>}
+Let <m>c</m> be a critical value of <m>f</m> where <m>\fpp(c)</m> is defined. <index><main>derivative</main><sub>Second Deriv. Test</sub></index><index><main>Second Derivative Test</main></index><index><main>extrema</main><sub>and Second Deriv. Test</sub></index><index><main>maximum</main><sub>and Second Deriv. Test</sub></index><index><main>minimum</main><sub>and First Deriv. Test</sub></index>
 </p>
   <ol><li>If <m>\fpp(c)>0</m>, then <m>f</m> has a local minimum at <m>(c,f(c))</m>.</li>
 <li>If <m>\fpp(c)\lt 0</m>, then <m>f</m> has a local maximum at <m>(c,f(c))</m>.</li>
@@ -273,7 +273,7 @@ Let <m>c</m> be a critical value of <m>f</m> where <m>\fpp(c)</m> is defined. \k
   
 <p>
 The Second Derivative Test relates to the First Derivative Test in the following way. If <m>\fpp(c)>0</m>, then the graph is concave up at a critical point <m>c</m> and <m>\fp</m> itself is growing. Since <m>\fp(c)=0</m> and <m>\fp</m> is growing at <m>c</m>, then it must go from negative to positive at <m>c</m>. This means the function goes from decreasing to increasing, indicating a local minimum at <m>c</m>.<br />
-\clearpage
+
 </p>
   
 <example xml:id="ex_conc4"><title>Using the Second Derivative Test</title>

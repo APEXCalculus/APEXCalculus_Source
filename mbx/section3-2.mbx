@@ -6,7 +6,7 @@ We motivate this section with the following question: Suppose you leave your hou
 </p>
   
 <p>
-In answering this question, it is clear that the <em>average</em> speed for the entire trip is 50 mph (i.e. 100 miles in 2 hours), but the question is whether or not your <em>instantaneous</em> speed is ever exactly 50 mph. More simply, does your speedometer ever read exactly 50 mph?. The answer, under some very reasonable assumptions, is <q>yes.</q>
+In answering this question, it is clear that the <i>average</i> speed for the entire trip is 50 mph (i.e. 100 miles in 2 hours), but the question is whether or not your <i>instantaneous</i> speed is ever exactly 50 mph. More simply, does your speedometer ever read exactly 50 mph?. The answer, under some very reasonable assumptions, is "yes."
 </p>
   
 <p>
@@ -24,7 +24,7 @@ First assume that the function <m>y = f(t)</m> gives the distance (in miles) tra
 </me>
   
 <p>
-The slope at any point on the graph itself is given by the derivative <m>\fp(t)</m>. So, since the answer to the question above is <q>yes,</q> this means that at some time during the trip, the derivative takes on the value of 50 mph. Symbolically,
+The slope at any point on the graph itself is given by the derivative <m>\fp(t)</m>. So, since the answer to the question above is "yes," this means that at some time during the trip, the derivative takes on the value of 50 mph. Symbolically,
 </p>
   
 <me>
@@ -79,13 +79,13 @@ with <m>a=-1</m> and <m>b=1</m> as shown in <xref ref="fig_mvt1">Figure</xref>(a
 </example>
    
 <p>
-So what went <q>wrong\primeskip</q>? It may not be surprising to find that the discontinuity of <m>f_1</m> and the corner of <m>f_2</m> play a role. If our functions had been continuous and differentiable, would we have been able to find that special value <m>c</m>? This is our motivation for the following theorem.
+So what went "wrong\primeskip"? It may not be surprising to find that the discontinuity of <m>f_1</m> and the corner of <m>f_2</m> play a role. If our functions had been continuous and differentiable, would we have been able to find that special value <m>c</m>? This is our motivation for the following theorem.
 </p>
   
 <theorem xml:id="thm_mvt"><title>The Mean Value Theorem of Differentiation</title>
 <statement>
 <p>
-Let <m>y=f(x)</m> be continuous function on the closed interval <m>[a,b]</m> and differentiable on the open interval <m>(a,b)</m>. There exists a value <m>c</m>, <m>a \lt  c \lt  b</m>, such that \knownindex{\lt main>Mean Value Theorem\lt /main>\lt sub>of differentiation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Mean Value Theorem\lt /sub>}
+Let <m>y=f(x)</m> be continuous function on the closed interval <m>[a,b]</m> and differentiable on the open interval <m>(a,b)</m>. There exists a value <m>c</m>, <m>a \lt  c \lt  b</m>, such that <index><main>Mean Value Theorem</main><sub>of differentiation</sub></index><index><main>derivative</main><sub>Mean Value Theorem</sub></index>
 </p>
   
 <me>
@@ -111,7 +111,7 @@ We will give a proof of the Mean Value Theorem below. To do so, we use a fact, c
 <theorem xml:id="thm_rolles"><title>Rolle's Theorem</title>
 <statement>
 <p>
-Let <m>f</m> be continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>, where <m>f(a) = f(b)</m>. There is some <m>c</m> in <m>(a,b)</m> such that <m>\fp(c) = 0.</m>\knownindex{\lt main>Rolle's Theorem\lt /main>}
+Let <m>f</m> be continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>, where <m>f(a) = f(b)</m>. There is some <m>c</m> in <m>(a,b)</m> such that <m>\fp(c) = 0.</m><index><main>Rolle's Theorem</main></index>
 </p>
  </statement>
 </theorem>
@@ -124,7 +124,7 @@ Consider <xref ref="fig_mvt3">Figure</xref> where the graph of a function <m>f</
 <image source="images/figmvt3.png" /> </figure>
   
 <p>
-Rolle's Theorem is really just a special case of the Mean Value Theorem. If <m>f(a) = f(b)</m>, then the <em>average</em> rate of change on <m>(a,b)</m> is <m>0</m>, and the theorem guarantees some <m>c</m> where <m>\fp(c)=0</m>. We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.<br />
+Rolle's Theorem is really just a special case of the Mean Value Theorem. If <m>f(a) = f(b)</m>, then the <i>average</i> rate of change on <m>(a,b)</m> is <m>0</m>, and the theorem guarantees some <m>c</m> where <m>\fp(c)=0</m>. We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.<br />
 </p>
   
 <p>
@@ -140,7 +140,7 @@ Let <m>f</m> be differentiable on <m>(a,b)</m> where <m>f(a)=f(b)</m>. We consid
 </p>
   
 <p>
-<b>Case 2:</b> Now assume that <m>f</m> is not constant on <m>[a,b]</m>. The Extreme Value Theorem guarantees that <m>f</m> has a maximal and minimal value on <m>[a,b]</m>, found either at the endpoints or at a critical value in <m>(a,b)</m>. Since <m>f(a)=f(b)</m> and <m>f</m> is not constant, it is clear that the maximum and minimum cannot <em>both</em> be found at the endpoints. Assume, without loss of generality, that the maximum of <m>f</m> is not found at the endpoints. Therefore there is a <m>c</m> in <m>(a,b)</m> such that <m>f(c)</m> is the maximum value of <m>f</m>. By <xref ref="thm_criticalpts">Theorem</xref>, <m>c</m> must be a critical number of <m>f</m>; since <m>f</m> is differentiable, we have that <m>\fp(c) = 0</m>, completing the proof of the theorem. \hfill <m>\square</m><br />
+<b>Case 2:</b> Now assume that <m>f</m> is not constant on <m>[a,b]</m>. The Extreme Value Theorem guarantees that <m>f</m> has a maximal and minimal value on <m>[a,b]</m>, found either at the endpoints or at a critical value in <m>(a,b)</m>. Since <m>f(a)=f(b)</m> and <m>f</m> is not constant, it is clear that the maximum and minimum cannot <i>both</i> be found at the endpoints. Assume, without loss of generality, that the maximum of <m>f</m> is not found at the endpoints. Therefore there is a <m>c</m> in <m>(a,b)</m> such that <m>f(c)</m> is the maximum value of <m>f</m>. By <xref ref="thm_criticalpts">Theorem</xref>, <m>c</m> must be a critical number of <m>f</m>; since <m>f</m> is differentiable, we have that <m>\fp(c) = 0</m>, completing the proof of the theorem.  <m>\square</m><br />
 </p>
   
 <p>
@@ -176,15 +176,15 @@ hence
 </me>
  
 <p>
-which is what we sought to prove.\hfill <m>\square</m><br />
+which is what we sought to prove. <m>\square</m><br />
 </p>
   
 <p>
-Going back to the very beginning of the section, we see that the only assumption we would need about our distance function <m>f(t)</m> is that it be continuous and differentiable for <m>t</m> from 0 to 2 hours (both reasonable assumptions). By the Mean Value Theorem, we are guaranteed a time during the trip where our instantaneous speed is 50 mph. This fact is used in practice. Some law enforcement agencies monitor traffic speeds while in aircraft. They do not measure speed with radar, but rather by timing individual cars as they pass over lines painted on the highway whose distances apart are known. The officer is able to measure the <em>average</em> speed of a car between the painted lines; if that average speed is greater than the posted speed limit, the officer is assured that the driver exceeded the speed limit at some time.
+Going back to the very beginning of the section, we see that the only assumption we would need about our distance function <m>f(t)</m> is that it be continuous and differentiable for <m>t</m> from 0 to 2 hours (both reasonable assumptions). By the Mean Value Theorem, we are guaranteed a time during the trip where our instantaneous speed is 50 mph. This fact is used in practice. Some law enforcement agencies monitor traffic speeds while in aircraft. They do not measure speed with radar, but rather by timing individual cars as they pass over lines painted on the highway whose distances apart are known. The officer is able to measure the <i>average</i> speed of a car between the painted lines; if that average speed is greater than the posted speed limit, the officer is assured that the driver exceeded the speed limit at some time.
 </p>
   
 <p>
-Note that the Mean Value Theorem is an <em>existence</em> theorem. It states that a special value <m>c</m> <em>exists</em>, but it does not give any indication about how to find it. It turns out that when we need the Mean Value Theorem, existence is all we need.<br />
+Note that the Mean Value Theorem is an <i>existence</i> theorem. It states that a special value <m>c</m> <i>exists</i>, but it does not give any indication about how to find it. It turns out that when we need the Mean Value Theorem, existence is all we need.<br />
 </p>
   
 <example xml:id="ex_mvt2"><title>Using the Mean Value Theorem</title>

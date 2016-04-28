@@ -2,31 +2,31 @@
 <section xml:id="sec_incr_decr">
 <title>Increasing and Decreasing Functions</title><introduction>
 <p>
-Our study of <q>nice</q> functions <m>f</m> in this chapter has so far focused on individual points: points where <m>f</m> is maximal/minimal, points where <m>\fp(x) = 0</m> or <m>\fp</m> does not exist, and points <m>c</m> where <m>\fp(c)</m> is the average rate of change of <m>f</m> on some interval.
+Our study of "nice" functions <m>f</m> in this chapter has so far focused on individual points: points where <m>f</m> is maximal/minimal, points where <m>\fp(x) = 0</m> or <m>\fp</m> does not exist, and points <m>c</m> where <m>\fp(c)</m> is the average rate of change of <m>f</m> on some interval.
 </p>
   
 <p>
-In this section we begin to study how functions behave <em>between</em> special points; we begin studying in more detail the shape of their graphs.
+In this section we begin to study how functions behave <i>between</i> special points; we begin studying in more detail the shape of their graphs.
 </p>
   
 <p>
 We start with an intuitive concept. Given the graph in <xref ref="fig_incr0">Figure</xref>,
-where would you say the function is <em>increasing</em>? <em>Decreasing</em>? Even though we have not defined these terms mathematically, one likely answered that <m>f</m> is increasing when <m>x>1</m> and decreasing when <m>x\lt 1</m>. We formally define these terms here.
+where would you say the function is <i>increasing</i>? <i>Decreasing</i>? Even though we have not defined these terms mathematically, one likely answered that <m>f</m> is increasing when <m>x>1</m> and decreasing when <m>x\lt 1</m>. We formally define these terms here.
 </p>
   <figure xml:id="fig_incr0" >
-<caption>A graph of a function <m>f</m> used to illustrate the concepts of <em>increasing</em> and <em>decreasing</em>.</caption>
+<caption>A graph of a function <m>f</m> used to illustrate the concepts of <i>increasing</i> and <i>decreasing</i>.</caption>
 <image source="images/figincr0.png" /> </figure>
   
 <definition xml:id="def_incr_decr"><title>Increasing and Decreasing Functions</title>
 <statement>
 <p>
-Let <m>f</m> be a function defined on an interval <m>I</m>.\knownindex{\lt main>increasing function\lt /main>}\knownindex{\lt main>decreasing function\lt /main>}\knownindex{\lt main>increasing function\lt /main>\lt sub>strictly\lt /sub>}\knownindex{\lt main>decreasing function\lt /main>\lt sub>strictly\lt /sub>}
+Let <m>f</m> be a function defined on an interval <m>I</m>.<index><main>increasing function</main></index><index><main>decreasing function</main></index><index><main>increasing function</main><sub>strictly</sub></index><index><main>decreasing function</main><sub>strictly</sub></index>
 </p>
   <ol><li><m>f</m> is <b>increasing</b> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \leq f(b)</m>.</li>
 <li><m>f</m> is <b>decreasing</b> on <m>I</m> if for every <m>a\lt b</m> in <m>I</m>, <m>f(a) \geq f(b)</m>.</li>
  </ol>  
 <p>
-A function is strictly increasing when <m>a\lt b</m> in <m>I</m> implies <m>f(a) \lt  f(b)</m>, with a similar definition holding for strictly decreasing.
+A function is <term>strictly increasing</term> when <m>a\lt b</m> in <m>I</m> implies <m>f(a) \lt  f(b)</m>, with a similar definition holding for <term>strictly decreasing</term>.
 </p>
  </statement>
 </definition>
@@ -63,7 +63,7 @@ By considering all such secant lines in <m>I</m>, we strongly imply that <m>\fp(
 </p>
   
 <p>
-Our above logic can be summarized as ``If <m>f</m> is increasing, then <m>\fp</m> is probably positive." <xref ref="thm_incr_decr">Theorem</xref> below turns this around by stating <q>If <m>\fp</m> is postive, then <m>f</m> is increasing.</q> This leads us to a method for finding when functions are increasing and decreasing.
+Our above logic can be summarized as "If <m>f</m> is increasing, then <m>\fp</m> is probably positive." <xref ref="thm_incr_decr">Theorem</xref> below turns this around by stating "If <m>\fp</m> is postive, then <m>f</m> is increasing." This leads us to a method for finding when functions are increasing and decreasing.
 </p>
   
 <theorem xml:id="thm_incr_decr"><title>Test For Increasing/Decreasing Functions</title>
@@ -91,7 +91,7 @@ Let <m>a</m> and <m>b</m> be in <m>I</m> where <m>\fp(a)>0</m> and <m>\fp(b)\lt 
 <key idea xml:id="idea_incr_decr"><title>Finding Intervals on Which $f$ is Increasing or Decreasing</title>
 <statement>
 <p>
-Let <m>f</m> be a differentiable function on an interval I. To find intervals on which <m>f</m> is increasing and decreasing:\knownindex{\lt main>increasing function\lt /main>\lt sub>finding intervals\lt /sub>}\knownindex{\lt main>decreasing function\lt /main>\lt sub>finding intervals\lt /sub>}
+Let <m>f</m> be a differentiable function on an interval I. To find intervals on which <m>f</m> is increasing and decreasing:<index><main>increasing function</main><sub>finding intervals</sub></index><index><main>decreasing function</main><sub>finding intervals</sub></index>
 </p>
   <ol><li>Find the critical values of <m>f</m>. That is, find all <m>c</m> in <m>I</m> where <m>\fp(c) = 0</m> or <m>\fp</m> is not defined.</li>
 <li>Use the critical values to divide <m>I</m> into subintervals.</li>
@@ -124,11 +124,11 @@ Since an interval was not specified for us to consider, we consider the entire d
 <image source="images/figincrline1.png" /> 
 <div class="caption"><span class="heading">Figure</span><span class="codenumber">3.3.3</span>Number line for <m>f</m> in <xref ref="ex_incr1">Example</xref>.</div></div>   
 <p>
-We now pick a value <m>p</m> in each subinterval and find the sign of <m>\fp(p)</m>. All we care about is the sign, so we do not actually have to fully compute <m>\fp(p)</m>; pick <q>nice</q> values that make this simple.
+We now pick a value <m>p</m> in each subinterval and find the sign of <m>\fp(p)</m>. All we care about is the sign, so we do not actually have to fully compute <m>\fp(p)</m>; pick "nice" values that make this simple.
 </p>
   
 <p>
-<b>Subinterval 1</b>, <m>(-\infty,-1)</m>:<nbsp /><nbsp /> We (arbitrarily) pick <m>p=-2</m>. We can compute <m>\fp(-2)</m> directly: <m>\fp(-2) = 3(-2)^2+2(-2)-1=7>0</m>. We conclude that <m>f</m> is increasing on <m>(-\infty,-1)</m>.
+<b>Subinterval 1</b>, <m>(-\infty,-1)</m>:  We (arbitrarily) pick <m>p=-2</m>. We can compute <m>\fp(-2)</m> directly: <m>\fp(-2) = 3(-2)^2+2(-2)-1=7>0</m>. We conclude that <m>f</m> is increasing on <m>(-\infty,-1)</m>.
 </p>
   
 <p>
@@ -136,11 +136,11 @@ Note we can arrive at the same conclusion without computation. For instance, we 
 </p>
   
 <p>
-<b>Subinterval 2</b>, <m>(-1,1/3)</m>:<nbsp /><nbsp /> We pick <m>p=0</m> since that value seems easy to deal with. <m>\fp(0) = -1\lt 0</m>. We conclude <m>f</m> is decreasing on <m>(-1,1/3)</m>.<br />
+<b>Subinterval 2</b>, <m>(-1,1/3)</m>:  We pick <m>p=0</m> since that value seems easy to deal with. <m>\fp(0) = -1\lt 0</m>. We conclude <m>f</m> is decreasing on <m>(-1,1/3)</m>.<br />
 </p>
   
 <p>
-<b>Subinterval 3</b>, <m>(1/3,\infty)</m>:<nbsp /><nbsp /> Pick an arbitrarily large value for <m>p>1/3</m> and note that <m>\fp(p) =3p^2+2p-1 >0</m>. We conclude that <m>f</m> is increasing on <m>(1/3,\infty)</m>.
+<b>Subinterval 3</b>, <m>(1/3,\infty)</m>:  Pick an arbitrarily large value for <m>p>1/3</m> and note that <m>\fp(p) =3p^2+2p-1 >0</m>. We conclude that <m>f</m> is increasing on <m>(1/3,\infty)</m>.
 </p>
   
 <p>
@@ -160,17 +160,17 @@ First, the points at which <m>f</m> switches from increasing to decreasing are n
   
 <p>
 One could argue that just finding critical values is important; once we know the significant points are <m>x=-1</m> and <m>x=1/3</m>, the graph shows the increasing/decreasing traits just fine. That is true. However, the technique prescribed here helps reinforce the relationship between increasing/decreasing and the sign of <m>\fp</m>. Once mastery of this concept (and several others) is obtained, one finds that either (a) just the critical points are computed and the graph shows all else that is desired, or (b) a graph is never produced, because determining increasing/decreasing using <m>\fp</m> is straightforward and the graph is unnecessary.
-So our second reason why the above work is worthwhile is this: once mastery of a subject is gained, one has <em>options</em> for finding needed information. We are working to develop mastery.
+So our second reason why the above work is worthwhile is this: once mastery of a subject is gained, one has <i>options</i> for finding needed information. We are working to develop mastery.
 </p>
   
 <p>
-Finally, our third reason: many problems we face <q>in the real world</q> are very complex. Solutions are tractable only through the use of computers to do many calculations for us. Computers do not solve problems <q>on their own,</q> however; they need to be taught (i.e., <em>programmed</em>) to do the right things. It would be beneficial to give a function to a computer and have it return maximum and minimum values, intervals on which the function is increasing and decreasing, the locations of relative maxima, etc. The work that we are doing here is easily programmable. It is hard to teach a computer to <q>look at the graph and see if it is going up or down.</q> It is easy to teach a computer to <q>determine if a number is greater than or less than 0.</q>
+Finally, our third reason: many problems we face "in the real world" are very complex. Solutions are tractable only through the use of computers to do many calculations for us. Computers do not solve problems "on their own," however; they need to be taught (i.e., <i>programmed</i>) to do the right things. It would be beneficial to give a function to a computer and have it return maximum and minimum values, intervals on which the function is increasing and decreasing, the locations of relative maxima, etc. The work that we are doing here is easily programmable. It is hard to teach a computer to "look at the graph and see if it is going up or down." It is easy to teach a computer to "determine if a number is greater than or less than 0."
 </p>
   
 <theorem xml:id="thm_first_der"><title>First Derivative Test</title>
 <statement>
 <p>
-Let <m>f</m> be differentiable on <m>I</m> and let <m>c</m> be a critical number in <m>I</m>.\knownindex{\lt main>First Derivative Test\lt /main>}\knownindex{\lt main>derivative\lt /main>\lt sub>First Deriv. Test\lt /sub>}\knownindex{\lt main>extrema\lt /main>\lt sub>and First Deriv. Test\lt /sub>}\knownindex{\lt main>maximum\lt /main>\lt sub>and First Deriv. Test\lt /sub>}\knownindex{\lt main>minimum\lt /main>\lt sub>and First Deriv. Test\lt /sub>}
+Let <m>f</m> be differentiable on <m>I</m> and let <m>c</m> be a critical number in <m>I</m>.<index><main>First Derivative Test</main></index><index><main>derivative</main><sub>First Deriv. Test</sub></index><index><main>extrema</main><sub>and First Deriv. Test</sub></index><index><main>maximum</main><sub>and First Deriv. Test</sub></index><index><main>minimum</main><sub>and First Deriv. Test</sub></index>
 </p>
   <ol><li>If the sign of \fp<nbsp />switches from positive to negative at <m>c</m>, then <m>f(c)</m> is a relative maximum of <m>f</m>.</li>
 <li>If the sign of \fp<nbsp />switches from negative to positive at <m>c</m>, then <m>f(c)</m> is a relative minimum of <m>f</m>.</li>
@@ -195,7 +195,7 @@ f(x) = \frac{x^2+3}{x-1}.
  
 <solution xml:id="fig_incrline2"><statement>
 <p>
-We start by noting the domain of <m>f</m>: <m>(-\infty,1)\cup(1,\infty)</m>. Key <xref ref="idea_incr_decr">Idea</xref> describes how to find intervals where <m>f</m> is increasing and decreasing <em>when the domain of <m>f</m> is an interval.</em> Since the domain of <m>f</m> in this example is the union of two intervals, we apply the techniques of Key <xref ref="idea_incr_decr">Idea</xref> to both intervals of the domain of <m>f</m>.
+We start by noting the domain of <m>f</m>: <m>(-\infty,1)\cup(1,\infty)</m>. Key <xref ref="idea_incr_decr">Idea</xref> describes how to find intervals where <m>f</m> is increasing and decreasing <i>when the domain of <m>f</m> is an interval.</i> Since the domain of <m>f</m> in this example is the union of two intervals, we apply the techniques of Key <xref ref="idea_incr_decr">Idea</xref> to both intervals of the domain of <m>f</m>.
 </p>
   
 <p>
@@ -227,23 +227,23 @@ We have found that <m>f</m> has two critical numbers, <m>x=-1,3</m>, and at <m>x
 </me>
  
 <p>
-Pick a number <m>p</m> from each subinterval and test the sign of \fp<nbsp />at <m>p</m> to determine whether <m>f</m> is increasing or decreasing on that interval. Again, we do well to avoid complicated computations; notice that the denominator of <m>\fp</m> is <em>always</em> positive so we can ignore it during our work.
+Pick a number <m>p</m> from each subinterval and test the sign of \fp<nbsp />at <m>p</m> to determine whether <m>f</m> is increasing or decreasing on that interval. Again, we do well to avoid complicated computations; notice that the denominator of <m>\fp</m> is <i>always</i> positive so we can ignore it during our work.
 </p>
   
 <p>
-<b>Interval 1</b>, <m>(-\infty,-1)</m>:<nbsp /><nbsp /> Choosing a very small number (i.e., a negative number with a large magnitude) <m>p</m> returns <m>p^2-2p-3</m> in the numerator of <m>\fp</m>; that will be positive. Hence <m>f</m> is increasing on <m>(-\infty,-1)</m>.
+<b>Interval 1</b>, <m>(-\infty,-1)</m>:  Choosing a very small number (i.e., a negative number with a large magnitude) <m>p</m> returns <m>p^2-2p-3</m> in the numerator of <m>\fp</m>; that will be positive. Hence <m>f</m> is increasing on <m>(-\infty,-1)</m>.
 </p>
   
 <p>
-<b>Interval 2</b>, <m>(-1,1)</m>:<nbsp /><nbsp /> Choosing 0 seems simple: <m>\fp(0)=-3\lt 0</m>. We conclude <m>f</m> is decreasing on <m>(-1,1)</m>.
+<b>Interval 2</b>, <m>(-1,1)</m>:  Choosing 0 seems simple: <m>\fp(0)=-3\lt 0</m>. We conclude <m>f</m> is decreasing on <m>(-1,1)</m>.
 </p>
   
 <p>
-<b>Interval 3</b>, <m>(1,3)</m>:<nbsp /><nbsp /> Choosing 2 seems simple: <m>\fp(2) = -3\lt 0</m>. Again, <m>f</m> is decreasing.
+<b>Interval 3</b>, <m>(1,3)</m>:  Choosing 2 seems simple: <m>\fp(2) = -3\lt 0</m>. Again, <m>f</m> is decreasing.
 </p>
   
 <p>
-<b>Interval 4</b>, <m>(3,\infty)</m>:<nbsp /><nbsp />	Choosing an very large number <m>p</m> from this subinterval will give a positive numerator and (of course) a positive denominator. So <m>f</m> is increasing on <m>(3,\infty)</m>.
+<b>Interval 4</b>, <m>(3,\infty)</m>: 	Choosing an very large number <m>p</m> from this subinterval will give a positive numerator and (of course) a positive denominator. So <m>f</m> is increasing on <m>(3,\infty)</m>.
 </p>
   <figure xml:id="fig_incr2" >
 <caption>A graph of <m>f(x)</m> in <xref ref="ex_incr2">Example</xref>, showing where <m>f</m> is increasing and decreasing.</caption>
@@ -264,7 +264,7 @@ This is summarized in the number line shown in <xref ref="fig_incrline2">Figure<
 </example>
    
 <p>
-One is often tempted to think that functions always alternate <q>increasing, decreasing, increasing, decreasing,<m>\ldots</m></q> around critical values. Our previous example demonstrated that this is not always the case. While <m>x=1</m> was not technically a critical value, it was an important value we needed to consider. We found that <m>f</m> was decreasing on <q>both sides of <m>x=1.</m></q>
+One is often tempted to think that functions always alternate "increasing, decreasing, increasing, decreasing,<m>\ldots</m>" around critical values. Our previous example demonstrated that this is not always the case. While <m>x=1</m> was not technically a critical value, it was an important value we needed to consider. We found that <m>f</m> was decreasing on "both sides of <m>x=1.</m>"
 </p>
   
 <p>
@@ -302,7 +302,7 @@ This derivation of <m>\fp</m> shows that <m>\fp(x) = 0</m> when <m>x=\pm 1</m> a
 </me>
  
 <p>
-We have a <q>negative <m>\times</m> negative <m>\times</m> positive</q> giving a positive number; <m>f</m> is increasing on <m>(-1,0)</m>.
+We have a "negative <m>\times</m> negative <m>\times</m> positive" giving a positive number; <m>f</m> is increasing on <m>(-1,0)</m>.
 		
 <b>Interval 3</b>, <m>(0,1)</m>: We do a similar sign analysis as before, using <m>p</m> in <m>(0,1)</m>.
 </p>
@@ -334,7 +334,7 @@ conclude by stating that <m>f</m> is increasing on <m>(-1,0) \cup (1,\infty)</m>
 </example>
    
 <p>
-We have seen how the first derivative of a function helps determine when the function is going <q>up</q> or <q>down.</q> In the next section, we will see how the second derivative helps determine how the graph of a function curves.
+We have seen how the first derivative of a function helps determine when the function is going "up" or "down." In the next section, we will see how the second derivative helps determine how the graph of a function curves.
 </p>
  </introduction> 
 <subsection>
@@ -348,7 +348,7 @@ In your own words describe what it means for a function to be increasing.
   
 <exercise><statement>
 <p>
-What does a decreasing function <q>look like</q>?
+What does a decreasing function "look like"?
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>
@@ -362,7 +362,7 @@ Sketch a graph of a function on <m>[0,2]</m> that is increasing but not strictly
   
 <exercise><statement>
 <p>
-Give an example of a function describing a situation where it is <q>bad</q> to be increasing and <q>good</q> to be decreasing.
+Give an example of a function describing a situation where it is "bad" to be increasing and "good" to be decreasing.
 </p>
   <hint>Answers will vary.</hint> </statement>
 </exercise>

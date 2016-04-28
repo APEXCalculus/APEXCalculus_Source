@@ -6,11 +6,11 @@ We have been learning how we can understand the behavior of a function based on 
 </p>
   
 <p>
-Why bother? Graphing utilities are very accessible, whether on a computer, a hand&#x2013;held calculator, or a smartphone. These resources are usually very fast and accurate. We will see that our method is not particularly fast &#x2013; it will require time (but it is not <em>hard</em>). So again: why bother?
+Why bother? Graphing utilities are very accessible, whether on a computer, a hand&#x2013;held calculator, or a smartphone. These resources are usually very fast and accurate. We will see that our method is not particularly fast &#x2013; it will require time (but it is not <i>hard</i>). So again: why bother?
 </p>
   
 <p>
-We are attempting to understand the behavior of a function <m>f</m> based on the information given by its derivatives. While all of a function's derivatives relay information about it, it turns out that <q>most</q> of the behavior we care about is explained by \fp<nbsp />and \fpp. Understanding the interactions between the graph of <m>f</m> and \fp<nbsp />and \fpp<nbsp />is important. To gain this understanding, one might argue that all that is needed is to look at lots of graphs. This is true to a point, but is somewhat similar to stating that one understands how an engine works after looking only at pictures. It is true that the basic ideas will be conveyed, but <q>hands&#x2013;on</q> access increases understanding.
+We are attempting to understand the behavior of a function <m>f</m> based on the information given by its derivatives. While all of a function's derivatives relay information about it, it turns out that "most" of the behavior we care about is explained by \fp<nbsp />and \fpp. Understanding the interactions between the graph of <m>f</m> and \fp<nbsp />and \fpp<nbsp />is important. To gain this understanding, one might argue that all that is needed is to look at lots of graphs. This is true to a point, but is somewhat similar to stating that one understands how an engine works after looking only at pictures. It is true that the basic ideas will be conveyed, but "hands&#x2013;on" access increases understanding.
 </p>
   
 <p>
@@ -18,7 +18,7 @@ The following Key Idea summarizes what we have learned so far that is applicable
 </p>
   
 <p>
-To produce an accurate sketch a given function <m>f</m>, consider the following steps.\knownindex{\lt main>curve sketching\lt /main>}
+To produce an accurate sketch a given function <m>f</m>, consider the following steps.<index><main>curve sketching</main></index>
 </p>
   <ol><li>Find the domain of <m>f</m>. Generally, we assume that the domain is the entire real line then find restrictions, such as where a denominator is 0 or where negatives appear under the radical.</li>
 <li>Find the critical values of <m>f</m>.</li>
@@ -27,7 +27,7 @@ To produce an accurate sketch a given function <m>f</m>, consider the following 
 <li>Consider the limits <m>\ds\lim_{x\to-\infty}f(x)</m> and <m>\ds\lim_{x\to\infty}f(x)</m> to determine the end behavior of the function.</li>
  </ol>  
 <p>
-<em>(continued)</em>
+<i>(continued)</i>
 </p>
   
 <p>
@@ -165,7 +165,7 @@ We again follow Key <xref ref="idea_sketch">Idea</xref>.
 <me>
 \fpp(x) = -\frac{30x^3+180x^2-240}{(x^2+2x+4)^3} .
 </me>
-  The cubic in the numerator does not factor very <q>nicely.</q> We instead approximate the roots at <m>x= -5.759</m>, <m>x=-1.305</m> and <m>x=1.064</m>.</li>
+  The cubic in the numerator does not factor very "nicely." We instead approximate the roots at <m>x= -5.759</m>, <m>x=-1.305</m> and <m>x=1.064</m>.</li>
 <li>There are no vertical asymptotes.</li>
 <li>We have a horizontal asymptote of <m>y=5</m>, as <m>\ds \lim_{x\to-\infty}f(x) = \lim_{x\to\infty}f(x) = 5</m>.</li>
 <li xml:id="fig_sketchline3" >We place the critical points and possible points on a number line as shown in <xref ref="fig_sketchline3">Figure</xref> and mark each interval as increasing/decreasing, concave up/down appropriately.
@@ -201,23 +201,23 @@ In each of our examples, we found a few, significant points on the graph of <m>f
 </p>
   
 <p>
-Why are computer graphics so good? It is not because computers are <q>smarter</q> than we are. Rather, it is largely because computers are much faster at computing than we are. In general, computers graph functions much like most students do when first learning to draw graphs: they plot equally spaced points, then connect the dots using lines. By using lots of points, the connecting lines are short and the graph looks smooth.
+Why are computer graphics so good? It is not because computers are "smarter" than we are. Rather, it is largely because computers are much faster at computing than we are. In general, computers graph functions much like most students do when first learning to draw graphs: they plot equally spaced points, then connect the dots using lines. By using lots of points, the connecting lines are short and the graph looks smooth.
 </p>
   
 <p>
-This does a fine job of graphing in most cases (in fact, this is the method used for many graphs in this text). However, in regions where the graph is very <q>curvy,</q> this can generate noticeable sharp edges on the graph unless a large number of points are used. High quality computer algebra systems, such as <em>Mathematica</em>, use special algorithms to plot lots of points only where the graph is <q>curvy.</q>
+This does a fine job of graphing in most cases (in fact, this is the method used for many graphs in this text). However, in regions where the graph is very "curvy," this can generate noticeable sharp edges on the graph unless a large number of points are used. High quality computer algebra systems, such as <i>Mathematica</i>, use special algorithms to plot lots of points only where the graph is "curvy."
 </p>
   
 <p>
-In <xref ref="fig_mathematica_sinx">Figure</xref>, a graph of <m>y=\sin x</m> is given, generated by <em>Mathematica</em>. The small points represent each of the places <em>Mathematica</em> sampled the function. Notice how at the <q>bends</q> of <m>\sin x</m>, lots of points are used; where <m>\sin x</m> is relatively straight, fewer points are used. (Many points are also used at the endpoints to ensure the <q>end behavior</q> is accurate.)
+In <xref ref="fig_mathematica_sinx">Figure</xref>, a graph of <m>y=\sin x</m> is given, generated by <i>Mathematica</i>. The small points represent each of the places <i>Mathematica</i> sampled the function. Notice how at the "bends" of <m>\sin x</m>, lots of points are used; where <m>\sin x</m> is relatively straight, fewer points are used. (Many points are also used at the endpoints to ensure the "end behavior" is accurate.)
 </p>
   
 <p>
-does <em>Mathematica</em> know where the graph is <q>curvy</q>? Calculus. When we study <em>curvature</em> in a later chapter, we will see how the first and second derivatives of a function work together to provide a measurement of <q>curviness.</q> <em>Mathematica</em> employs algorithms to determine regions of <q>high curvature</q> and plots extra points there.
+does <i>Mathematica</i> know where the graph is "curvy"? Calculus. When we study <i>curvature</i> in a later chapter, we will see how the first and second derivatives of a function work together to provide a measurement of "curviness." <i>Mathematica</i> employs algorithms to determine regions of "high curvature" and plots extra points there.
 </p>
   
 <p>
-Again, the goal of this section is not <q>How to graph a function when there is no computer to help.</q> Rather, the goal is <q>Understand that the shape of the graph of a function is largely determined by understanding the behavior of the function at a few key places.</q> In <xref ref="ex_sketch3">Example</xref>, we were able to accurately sketch a complicated graph using only 5 points and knowledge of asymptotes!
+Again, the goal of this section is not "How to graph a function when there is no computer to help." Rather, the goal is "Understand that the shape of the graph of a function is largely determined by understanding the behavior of the function at a few key places." In <xref ref="ex_sketch3">Example</xref>, we were able to accurately sketch a complicated graph using only 5 points and knowledge of asymptotes!
 </p>
   
 <p>
@@ -235,7 +235,7 @@ Why is sketching curves by hand beneficial even though technology is ubiquitous?
   
 <exercise><statement>
 <p>
-What does <q>ubiquitous</q> mean?
+What does "ubiquitous" mean?
 </p>
   <hint>Found everywhere.</hint> </statement>
 </exercise>
@@ -455,10 +455,10 @@ Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m
 </exercise>
   
 <p>
-\clearpage{
+{
 \appendix
 
-\clearpage{
+{
 </p>
   
 <p>
@@ -475,7 +475,7 @@ Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m
     
 <p>
 <b> Differentiation Rules</b><br />
-\footnotesize
+
 </p>
   <div class="minipage">{.20\linewidth}
 <ol><li>\deriv{cx}c</li>
@@ -558,11 +558,7 @@ Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m
 <li>\myint{\frac{1}{a^2-x^2}}{\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C}</li>
 <li>\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}</li>
 <li>\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}</li>
- </ol> </div>   
-<p>
-\clearpage
-</p>
-  <div class="minipage">{.53\linewidth}
+ </ol> </div>     <div class="minipage">{.53\linewidth}
 <b> The Unit Circle</b>
 
 <image source="images/833be8423218b29ecf65ad631b2f84f2b3ceed02.png" /></div>  <div class="minipage">{.45\linewidth}
@@ -578,15 +574,15 @@ Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m
 <div class="minipage">{.4\linewidth}
 \vskip 0in 
 <table id="7807a8c3dc03cf6d81316f1797886cfa6d313ed9" ><tr><td class='c'>
-<m>\sin \theta = y</m> \amp  <m>\cos \theta = x</m> </td></tr>
+<m>\sin \theta = y</m> </td><td class='c'> <m>\cos \theta = x</m> </td></tr>
 <tr><td class='c'>
 </td></tr>
 <tr><td class='c'>
-<m>\ds\csc \theta = \frac1y</m>\amp <m>\ds\sec \theta = \frac1x</m> </td></tr>
+<m>\ds\csc \theta = \frac1y</m></td><td class='c'><m>\ds\sec \theta = \frac1x</m> </td></tr>
 <tr><td class='c'>
 </td></tr>
 <tr><td class='c'>
-<m>\myrule\ds\tan \theta = \frac yx</m> \amp  <m>\ds\cot \theta = \frac xy</m></td></tr>
+<m>\myrule\ds\tan \theta = \frac yx</m> </td><td class='c'> <m>\ds\cot \theta = \frac xy</m></td></tr>
 </table></div> 
 <b> Right Triangle Definition</b>
 
@@ -596,15 +592,15 @@ Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m
 <div class="minipage">{.4\linewidth}
 \vskip 0in 
 <table id="38a9ae746c77e00a3d22e83e239c60fba22529de" ><tr><td class='c'>
-<m>\ds\sin \theta = \frac{\text{O} }{\text{H} }</m> \amp  <m>\ds\csc \theta = \frac{\text{H} }{\text{O} }</m> </td></tr>
+<m>\ds\sin \theta = \frac{\text{O} }{\text{H} }</m> </td><td class='c'> <m>\ds\csc \theta = \frac{\text{H} }{\text{O} }</m> </td></tr>
 <tr><td class='c'>
 </td></tr>
 <tr><td class='c'>
-<m>\ds\cos \theta = \frac{\text{A} }{\text{H} }</m> \amp  <m>\ds\sec \theta = \frac{\text{H} }{\text{A} }</m> </td></tr>
+<m>\ds\cos \theta = \frac{\text{A} }{\text{H} }</m> </td><td class='c'> <m>\ds\sec \theta = \frac{\text{H} }{\text{A} }</m> </td></tr>
 <tr><td class='c'>
 </td></tr>
 <tr><td class='c'>
-<m>\ds\tan \theta = \frac{\text{O} }{\text{A} }</m> \amp  <m>\ds\cot \theta = \frac{\text{A} }{\text{O} }</m> </td></tr>
+<m>\ds\tan \theta = \frac{\text{O} }{\text{A} }</m> </td><td class='c'> <m>\ds\cot \theta = \frac{\text{A} }{\text{O} }</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table></div></div>   
 <p>
@@ -640,11 +636,7 @@ Common Trigonometric Identities}<br />
 <b>Angle Sum/Difference Formulas</b>\vskip 5pt
 <m>\sin (x\pm y) = \sin x\cos y \pm \cos x\sin y</m>\vskip 5pt
 <m>\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y</m>\vskip 5pt
-<m>\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}</m></div>  
-<p>
-\clearpage
-</p>
-  
+<m>\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}</m></div>    
 <p>
 <b> Areas and Volumes</b>
 </p>
@@ -706,11 +698,7 @@ Common Trigonometric Identities}<br />
 		<div class="minipage">{115pt}
 			
 			\vskip 0pt
-			<image source="images/3bd734a50407431e961798a575a6935ac7cb5f91.png" /></div></div>  
-<p>
-\clearpage
-</p>
-  
+			<image source="images/3bd734a50407431e961798a575a6935ac7cb5f91.png" /></div></div>    
 <p>
 <b> Algebra</b>
 <b> Factors and Zeros of Polynomials</b><br />
@@ -766,7 +754,7 @@ a^0=1, \; \; a \ne 0 \quad \amp  (ab)^x=a^xb^x \quad \amp  a^xa^y = a^{x+y}\quad
 </p>
   
 <p>
-\clearpage
+
 <b> Additional Formulas</b>
 </p>
   
@@ -774,9 +762,9 @@ a^0=1, \; \; a \ne 0 \quad \amp  (ab)^x=a^xb^x \quad \amp  a^xa^y = a^{x+y}\quad
 <b> Summation Formulas:</b><br />
 </p>
   <table id="c1279806432a6b8e8d1f097ded50e90de938ce57" ><tr><td class='l'>
-<m>\ds \sum^n_{i=1}{c} = cn</m> \hskip 100pt<nbsp />\amp  <m>\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}</m></td></tr>
+<m>\ds \sum^n_{i=1}{c} = cn</m> \hskip 100pt<nbsp /></td><td class='l'> <m>\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}</m></td></tr>
 <tr><td class='l'>
-<m>\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}</m> \amp  <m>\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2</m></td></tr>
+<m>\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}</m> </td><td class='l'> <m>\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2</m></td></tr>
 <tr><td class='l'></td></tr>
 </table>   
 <p>
@@ -834,68 +822,64 @@ F = \int_a^b{w\,d(y)\,\ell(y)}dy
 <m>\displaystyle p_n(x) = f(0) + f\,'(0)x + \frac{f\,''(0)}{2!}x^2 + \frac{f\,'''(0)}{3!}x^3 + ... + \frac{f\,^{(n)}(0)}{n!}x^n
 </m>
 </p>
-  
-<p>
-\clearpage
-</p>
-  
+    
 <p>
 <b> Summary of Tests for Series:</b><br />
 </p>
   <table id="91b934ee9e2811ab03849be9e60496bba09efaf6" ><tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
-Test \amp  Series \amp  \rule[-15pt]{0pt}{33pt}\text{ Condition(s) of Convergence} \amp  \text{ Condition(s) of Divergence} \amp    Comment </td></tr>
+Test </td><td class='cv'> Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}\text{ Condition(s) of Convergence} </td><td class='cv'> \text{ Condition(s) of Divergence} </td><td class='cv'>   Comment </td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
-<m>n</m>th-Term \amp  \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{a_n}}</m> \amp   \amp  <m>\displaystyle{\lim_{n \to \infty} a_n \neq 0}</m> \amp  \text{This test cannot be used to show convergence.}</td></tr>
-<tr><td class='hline' colspan='5'><hr /></td></tr>
-<tr><td class='vcv'>
-
-Geometric Series \amp  \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=0}{r^n}}</m> \amp  <m> \left| r \right| \lt  1</m> \amp  <m>\left| r \right| \geq 1</m> \amp   <m>\displaystyle{\text{Sum}  = \frac{1}{1-r}}</m> </td></tr>
+<m>n</m>th-Term </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{a_n}}</m> </td><td class='cv'>  </td><td class='cv'> <m>\displaystyle{\lim_{n \to \infty} a_n \neq 0}</m> </td><td class='cv'> \text{This test cannot be used to show convergence.}</td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Telescoping Series \amp \rule[-15pt]{0pt}{33pt} <m>\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+a})}}</m> \amp  <m>\displaystyle{\lim_{n \to \infty} b_n = L}</m> \amp  \amp  <m>\displaystyle\text{Sum} = \left(\sum^a_{n=1}b_n\right) -L</m> </td></tr>
+Geometric Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=0}{r^n}}</m> </td><td class='cv'> <m> \left| r \right| \lt  1</m> </td><td class='cv'> <m>\left| r \right| \geq 1</m> </td><td class='cv'>  <m>\displaystyle{\text{Sum}  = \frac{1}{1-r}}</m> </td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-<m>p</m>-Series \amp  \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}</m> \amp  <m>p>1</m> \amp  <m>p\leq 1</m> \amp  </td></tr>
+Telescoping Series </td><td class='cv'>\rule[-15pt]{0pt}{33pt} <m>\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+a})}}</m> </td><td class='cv'> <m>\displaystyle{\lim_{n \to \infty} b_n = L}</m> </td><td class='cv'> </td><td class='cv'> <m>\displaystyle\text{Sum} = \left(\sum^a_{n=1}b_n\right) -L</m> </td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Integral Test \amp  \rule[-20pt]{0pt}{40pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> \amp  \rule[-15pt]{0pt}{40pt}\text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
-<tr><td class='vcv'> is convergent} \amp  \text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
-<tr><td class='vcv'> is divergent} \amp  \text{<m>a_n = a(n)</m> must be continuous}</td></tr>
+<m>p</m>-Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}</m> </td><td class='cv'> <m>p>1</m> </td><td class='cv'> <m>p\leq 1</m> </td><td class='cv'> </td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Direct Comparison \amp  \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> \amp  \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+Integral Test </td><td class='cv'> \rule[-20pt]{0pt}{40pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \rule[-15pt]{0pt}{40pt}\text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
+<tr><td class='vcv'> is convergent} </td><td class='cv'> \text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
+<tr><td class='vcv'> is divergent} </td><td class='cv'> \text{<m>a_n = a(n)</m> must be continuous}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Direct Comparison </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
 <tr><td class='vcv'> converges and </td></tr>
-<tr><td class='vcv'> <m>0\leq a_n\leq b_n</m>}\amp  \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> <m>0\leq a_n\leq b_n</m>}</td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
 <tr><td class='vcv'> diverges and </td></tr>
-<tr><td class='vcv'> <m>0\leq b_n\leq a_n</m>} \amp  </td></tr>
+<tr><td class='vcv'> <m>0\leq b_n\leq a_n</m>} </td><td class='cv'> </td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Limit Comparison \amp  \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> \amp  \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+Limit Comparison </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
 <tr><td class='vcv'> converges and </td></tr>
-<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0</m>}\amp  \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0</m>}</td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
 <tr><td class='vcv'> diverges and </td></tr>
-<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n > 0</m>}  \amp  \text{ Also diverges if</td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n > 0</m>}  </td><td class='cv'> \text{ Also diverges if</td></tr>
 <tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n=\infty</m>}</td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Ratio Test \amp  \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> \amp 
- \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  \lt  1</m>}\amp  \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} > 1</m>} \amp  
+Ratio Test </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'>
+ \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  \lt  1</m>}</td><td class='cv'> \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} > 1</m>} </td><td class='cv'> 
 \text{ <m>\{a_n\}</m> must be positive</td></tr>
 <tr><td class='vcv'> Also diverges if</td></tr>
 <tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_{n+1}/a_n=\infty</m>}</td></tr>
 <tr><td class='hline' colspan='5'><hr /></td></tr>
 <tr><td class='vcv'>
 
-Root Test \amp  \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> \amp 
- \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}  \lt  1</m>}\amp  \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n} > 1</m>} \amp  
+Root Test </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'>
+ \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}  \lt  1</m>}</td><td class='cv'> \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n} > 1</m>} </td><td class='cv'> 
 \text{ <m>\{a_n\}</m> must be positive</td></tr>
 <tr><td class='vcv'> Also diverges if</td></tr>
 <tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}=\infty</m>}</td></tr>

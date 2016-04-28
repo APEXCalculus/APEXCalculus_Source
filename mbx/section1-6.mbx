@@ -2,7 +2,7 @@
 <section xml:id="sec_limits_infty">
 <title>Limits Involving Infinity</title><introduction>
 <p>
-In <xref ref="def_limit">Definition</xref> we stated that in the equation <m>\ds \lim_{x\to c}f(x) = L</m>, both <m>c</m> and <m>L</m> were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let <m>c</m> and/or <m>L</m> be <q>infinity.</q>
+In <xref ref="def_limit">Definition</xref> we stated that in the equation <m>\ds \lim_{x\to c}f(x) = L</m>, both <m>c</m> and <m>L</m> were numbers. In this section we relax that definition a bit by considering situations when it makes sense to let <m>c</m> and/or <m>L</m> be "infinity."
 </p>
   
 <p>
@@ -31,7 +31,7 @@ We explore both types of use of <m>\infty</m> in turn.
 <definition xml:id="def_limit_of_infinity"><title>Limit of Infinity, $\infty$</title>
 <statement>
 <p>
-We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>|x-c|\lt \delta</m>, then <m>f(x)\geq M</m>. \knownindex{\lt main>limit\lt /main>\lt sub>of infinity\lt /sub>}
+We say <m>\ds \lim_{x\rightarrow c} f(x)=\infty</m> if for every <m>M>0</m> there exists <m>\delta>0</m> such that for all <m>x\neq c</m>, if <m>|x-c|\lt \delta</m>, then <m>f(x)\geq M</m>. <index><main>limit</main><sub>of infinity</sub></index>
 </p>
  </statement>
 </definition>
@@ -41,7 +41,7 @@ This is just like the <m>\epsilon</m>&#x2013;<m>\delta</m> definition from <xref
 </p>
   
 <p>
-It is important to note that by saying <m>\ds \lim_{x\to c}f(x) = \infty</m> we are implicitly stating that <em>the</em> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <em>does not exist.</em> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.<br />
+It is important to note that by saying <m>\ds \lim_{x\to c}f(x) = \infty</m> we are implicitly stating that <i>the</i> limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, <i>does not exist.</i> A limit only exists when <m>f(x)</m> approaches an actual numeric value. We use the concept of limits that approach infinity because it is helpful and descriptive.<br />
 </p>
   
 <example xml:id="ex_inflim1"><title>Evaluating limits involving infinity</title>
@@ -55,7 +55,7 @@ Find <m>\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}</m> as shown in <xref
   
 <solution><statement>
 <p>
-In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to 1 we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of 1. In general, let a <q>large</q> value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of 1, i.e., if <m>|x-1|\lt 1/\sqrt{M}</m>, then:
+In <xref ref="ex_no_limit2">Example</xref> of <xref ref="sec_limit_intro">Section</xref>, by inspecting values of <m>x</m> close to 1 we concluded that this limit does not exist. That is, it cannot equal any real number. But the limit could be infinite. And in fact, we see that the function does appear to be growing larger and larger, as <m>f(.99)=10^4</m>, <m>f(.999)=10^6</m>, <m>f(.9999)=10^8</m>. A similar thing happens on the other side of 1. In general, let a "large" value <m>M</m> be given. Let <m>\delta=1/\sqrt{M}</m>. If <m>x</m> is within <m>\delta</m> of 1, i.e., if <m>|x-1|\lt 1/\sqrt{M}</m>, then:
 </p>
   
 <md><mrow>|x-1| \amp \lt  \frac{1}{\sqrt{M}}</mrow>
@@ -91,7 +91,7 @@ It is easy to see that the function grows without bound near 0, but it does so i
 </example>
   
 <p>
-Vertical asymptotes}\knownindex{\lt main>asymptote\lt /main>\lt sub>vertical\lt /sub>}<br />
+Vertical asymptotes}<index><main>asymptote</main><sub>vertical</sub></index><br />
 </p>
   
 <p>
@@ -140,7 +140,7 @@ If the denominator is 0 at a certain point but the numerator is not, then there 
 </p>
   
 <p>
-Forms}\knownindex{\lt main>limit\lt /main>\lt sub>indeterminate form\lt /sub>}\knownindex{\lt main>indeterminate form\lt /main>}<br />
+Forms}<index><main>limit</main><sub>indeterminate form</sub></index><index><main>indeterminate form</main></index><br />
 </p>
   
 <p>
@@ -152,7 +152,7 @@ We have seen how the limits
 </me>
  
 <p>
-each return the indeterminate form <q><m>0/0</m></q> when we blindly plug in <m>x=0</m> and <m>x=1</m>, respectively. However, <m>0/0</m> is not a valid arithmetical expression. It gives no indication that the respective limits are 1 and 2.
+each return the indeterminate form "<m>0/0</m>" when we blindly plug in <m>x=0</m> and <m>x=1</m>, respectively. However, <m>0/0</m> is not a valid arithmetical expression. It gives no indication that the respective limits are 1 and 2.
 </p>
   
 <p>
@@ -160,7 +160,7 @@ With a little cleverness, one can come up <m>0/0</m> expressions which have a li
 </p>
   
 <p>
-A key concept to understand is that such limits do not really return <m>0/0</m>. Rather, keep in mind that we are taking <em>limits</em>. What is really happening is that the numerator is shrinking to 0 while the denominator is also shrinking to 0. The respective rates at which they do this are very important and determine the actual value of the limit.
+A key concept to understand is that such limits do not really return <m>0/0</m>. Rather, keep in mind that we are taking <i>limits</i>. What is really happening is that the numerator is shrinking to 0 while the denominator is also shrinking to 0. The respective rates at which they do this are very important and determine the actual value of the limit.
 </p>
   
 <p>
@@ -169,7 +169,7 @@ In a later section we will learn a technique called l'Hospital's Rule that provi
 </p>
   
 <p>
-Some other common indeterminate forms are <m>\infty-\infty</m>, <m>\infty\cdot 0</m>, <m>\infty/\infty</m>, <m>0^0</m>, <m>\infty^0</m> and <m>1^{\infty}</m>. Again, keep in mind that these are the <q>blind</q> results of evaluating a limit, and each, in and of itself, has no meaning. The expression <m>\infty-\infty</m> does not really mean <q>subtract infinity from infinity.</q> Rather, it means <q>One quantity is subtracted from the other, but both are growing without bound.</q> What is the result? It is possible to get every value between <m>-\infty</m> and <m>\infty</m>
+Some other common indeterminate forms are <m>\infty-\infty</m>, <m>\infty\cdot 0</m>, <m>\infty/\infty</m>, <m>0^0</m>, <m>\infty^0</m> and <m>1^{\infty}</m>. Again, keep in mind that these are the "blind" results of evaluating a limit, and each, in and of itself, has no meaning. The expression <m>\infty-\infty</m> does not really mean "subtract infinity from infinity." Rather, it means "One quantity is subtracted from the other, but both are growing without bound." What is the result? It is possible to get every value between <m>-\infty</m> and <m>\infty</m>
 </p>
   
 <p>
@@ -182,11 +182,11 @@ at Infinity and Horizontal Asymptotes}<br />
   
 <p>
 At the beginning of this section we briefly considered what happens to <m>f(x) = 1/x^2</m> as <m>x</m> grew very large.
-Graphically, it concerns the behavior of the function to the <q>far right</q> of the graph. We make this notion more explicit in the following definition.
+Graphically, it concerns the behavior of the function to the "far right" of the graph. We make this notion more explicit in the following definition.
 </p>
   
 <definition xml:id="def_limit_at_infinity"><title>Limits at Infinity and Horizontal Asymptote</title>
-<statement><ol><li>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.\knownindex{\lt main>limit\lt /main>\lt sub>at infinity\lt /sub>}\knownindex{\lt main>asymptote\lt /main>\lt sub>horizontal\lt /sub>} <br /></li>
+<statement><ol><li>We say <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M>0</m> such that if <m>x\geq M</m>, then <m>|f(x)-L|\lt \epsilon</m>.<index><main>limit</main><sub>at infinity</sub></index><index><main>asymptote</main><sub>horizontal</sub></index> <br /></li>
 <li>We say <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m> if for every <m>\epsilon>0</m> there exists <m>M\lt 0</m> such that if <m>x\leq M</m>, then <m>|f(x)-L|\lt \epsilon</m>. <br /></li>
 <li>If <m>\ds\lim_{x\rightarrow\infty} f(x)=L</m> or <m>\ds\lim_{x\rightarrow-\infty} f(x)=L</m>, we say that <m>y=L</m> is a <b>horizontal asymptote</b> of <m>f</m>.</li>
  </ol>  </statement>
@@ -199,11 +199,7 @@ Graphically, it concerns the behavior of the function to the <q>far right</q> of
 <p>
 We can also define limits such as <m>\ds\lim_{x\rightarrow\infty}f(x)=\infty</m> by combining this definition with <xref ref="def_limit_of_infinity">Definition</xref>. <br />
 </p>
-  
-<p>
-\clearpage
-</p>
-  
+    
 <example xml:id="ex_hzasy1"><title>Approximating horizontal asymptotes</title>
 <statement>
 <p>
@@ -230,20 +226,20 @@ We will approximate the horizontal asymptotes by approximating the limits
 (a)</td></tr>
 <tr><td class='c'>
 <table id="f643dc74b73d664ce432995969712ce8f0dc99c7" ><tr><td class='c'>
-		<m>x</m> \amp  <m>f(x)</m> </td></tr>
+		<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-		 10 \amp  0.9615 </td></tr>
+		 10 </td><td class='c'> 0.9615 </td></tr>
 <tr><td class='c'>
-		100 \amp  0.9996 </td></tr>
+		100 </td><td class='c'> 0.9996 </td></tr>
 <tr><td class='c'>
-		10000 \amp  0.999996</td></tr>
+		10000 </td><td class='c'> 0.999996</td></tr>
 <tr><td class='c'>
-		<m>-10</m> \amp  0.9615 </td></tr>
+		<m>-10</m> </td><td class='c'> 0.9615 </td></tr>
 <tr><td class='c'>
-		<m>-100</m> \amp  0.9996 </td></tr>
+		<m>-100</m> </td><td class='c'> 0.9996 </td></tr>
 <tr><td class='c'>
-		<m>-10000</m> \amp  0.999996</td></tr>
+		<m>-10000</m> </td><td class='c'> 0.999996</td></tr>
 </table>  </td></tr>
 <tr><td class='c'>
 		(b)</td></tr>
@@ -272,9 +268,9 @@ Horizontal asymptotes can take on a variety of forms. <xref ref="fig_hzasy">Figu
 </p>
   <div class="minipage">{\textwidth+100pt}
 <table id="9da5f31ebdef3f45ff5b256f2daf9bd58cc779a3" ><tr><td class='c'>
-<image source="images/fighzasy2.png" />  \amp  <image source="images/fighzasy3.png" />   \amp  <image source="images/fighzasy4.png" />  </td></tr>
+<image source="images/fighzasy2.png" />  </td><td class='c'> <image source="images/fighzasy3.png" />   </td><td class='c'> <image source="images/fighzasy4.png" />  </td></tr>
 <tr><td class='c'>
-(a) \amp  (b) \amp  (c)</td></tr>
+(a) </td><td class='c'> (b) </td><td class='c'> (c)</td></tr>
 </table> 
 <div class="caption"><span class="heading">Figure</span><span class="codenumber">1.6.7</span>Considering different types of horizontal asymptotes.</div></div>   
 <p>
@@ -426,7 +422,7 @@ Use <xref ref="thm_lim_rational_fn_at_infty">Theorem</xref> to evaluate each of 
 </example>
    
 <p>
-\clearpage
+
 <b> Chapter Summary</b>
 this chapter we:
 </p>
@@ -438,7 +434,7 @@ this chapter we:
 <li>considered limits that involved infinity.</li>
  </ul>   
 <p>
-Why? Mathematics is famous for building on itself and calculus proves to be no exception. In the next chapter we will be interested in <q>dividing by 0.</q> That is, we will want to divide a quantity by a smaller and smaller number and see what value the quotient approaches. In other words, we will want to find a limit. These limits will enable us to, among other things, determine <em>exactly</em> how fast something is moving when we are only given position information.
+Why? Mathematics is famous for building on itself and calculus proves to be no exception. In the next chapter we will be interested in "dividing by 0." That is, we will want to divide a quantity by a smaller and smaller number and see what value the quotient approaches. In other words, we will want to find a limit. These limits will enable us to, among other things, determine <i>exactly</i> how fast something is moving when we are only given position information.
 </p>
   
 <p>
@@ -638,25 +634,25 @@ Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is
 </p>
   <hint>Tables will vary.
 <ol><li><table id="71b162261e2207065c750680d819e79a25ee4634" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m>2.9</m> \amp  <m>-15.1224</m> </td></tr>
+<m>2.9</m> </td><td class='c'> <m>-15.1224</m> </td></tr>
 <tr><td class='c'>
- <m>2.99</m> \amp  <m>-159.12</m> </td></tr>
+ <m>2.99</m> </td><td class='c'> <m>-159.12</m> </td></tr>
 <tr><td class='c'>
- <m>2.999</m> \amp  <m>-1599.12</m></td></tr>
+ <m>2.999</m> </td><td class='c'> <m>-1599.12</m></td></tr>
 </table> 
  It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
 <li><table id="4188fa9046f31134991e23ef5cb12b62f8f89923" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m> 3.1</m> \amp  <m>16.8824</m> </td></tr>
+<m> 3.1</m> </td><td class='c'> <m>16.8824</m> </td></tr>
 <tr><td class='c'>
- <m>3.01</m> \amp  <m>160.88</m> </td></tr>
+ <m>3.01</m> </td><td class='c'> <m>160.88</m> </td></tr>
 <tr><td class='c'>
- <m>3.001</m> \amp  <m>1600.88</m></td></tr>
+ <m>3.001</m> </td><td class='c'> <m>1600.88</m></td></tr>
 </table> 
   It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
 <li>It seems <m>\lim_{x\to3}f(x)</m> does not exist.</li>
@@ -669,22 +665,22 @@ Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is
 </p>
   <hint>Tables will vary.
 <ol><li><table id="9a33e77c3546d45449fd9a8f9ff33bbe6dfc7b8c" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m>2.9</m> \amp  <m>-335.64</m> </td></tr>
+<m>2.9</m> </td><td class='c'> <m>-335.64</m> </td></tr>
 <tr><td class='c'>
- <m>2.99</m> \amp  <m>-30350.6</m> </td></tr>
+ <m>2.99</m> </td><td class='c'> <m>-30350.6</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
  It seems <m>\lim_{x\to3^-}f(x) =-\infty</m>.</li>
 <li><table id="09788a80359d3a5755664998c963bfc0df022f0e" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m> 3.1</m> \amp  <m>-265.61</m> </td></tr>
+<m> 3.1</m> </td><td class='c'> <m>-265.61</m> </td></tr>
 <tr><td class='c'>
- <m>3.01</m> \amp  <m>-29650.6</m> </td></tr>
+ <m>3.01</m> </td><td class='c'> <m>-29650.6</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
   It seems <m>\lim_{x\to3^+}f(x) =-\infty</m>.</li>
@@ -698,22 +694,22 @@ Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is
 </p>
   <hint>Tables will vary.
 <ol><li><table id="ee6f1fa62107dedf3862c30e4269c98aeabce9b5" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m>2.9</m> \amp  <m>132.857</m> </td></tr>
+<m>2.9</m> </td><td class='c'> <m>132.857</m> </td></tr>
 <tr><td class='c'>
- <m>2.99</m> \amp  <m>12124.4</m> </td></tr>
+ <m>2.99</m> </td><td class='c'> <m>12124.4</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
  It seems <m>\lim_{x\to3^-}f(x) =\infty</m>.</li>
 <li><table id="416325501c0f96cf6b06af7e5f2b8b7303d28809" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m> 3.1</m> \amp  <m>108.039</m> </td></tr>
+<m> 3.1</m> </td><td class='c'> <m>108.039</m> </td></tr>
 <tr><td class='c'>
- <m>3.01</m> \amp  <m>11876.4</m> </td></tr>
+ <m>3.01</m> </td><td class='c'> <m>11876.4</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
   It seems <m>\lim_{x\to3^+}f(x) =\infty</m>.</li>
@@ -727,26 +723,26 @@ Let <m>\ds \lim_{x\to 7} f(x) = \infty</m>. Explain how we know that <m>f</m> is
 </p>
   <hint>Tables will vary.
 <ol><li><table id="754c51b0e96fdde30695014aff50d78f87e2a5a9" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m>2.9</m> \amp  <m>-0.632</m> </td></tr>
+<m>2.9</m> </td><td class='c'> <m>-0.632</m> </td></tr>
 <tr><td class='c'>
- <m>2.99</m> \amp  <m>-0.6032</m> </td></tr>
+ <m>2.99</m> </td><td class='c'> <m>-0.6032</m> </td></tr>
 <tr><td class='c'>
- <m>2.999</m> \amp  <m>-0.60032</m> </td></tr>
+ <m>2.999</m> </td><td class='c'> <m>-0.60032</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
  It seems <m>\lim_{x\to3^-}f(x) =-0.6</m>.</li>
 <li><table id="a6785278d031df98d43f46fb425869006d8ff538" ><tr><td class='c'>
-<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
 <tr><td class='hline' colspan='2'><hr /></td></tr>
 <tr><td class='c'>
-<m> 3.1</m> \amp  <m>-0.5686</m> </td></tr>
+<m> 3.1</m> </td><td class='c'> <m>-0.5686</m> </td></tr>
 <tr><td class='c'>
- <m>3.01</m> \amp  <m>-0.5968</m> </td></tr>
+ <m>3.01</m> </td><td class='c'> <m>-0.5968</m> </td></tr>
 <tr><td class='c'>
- <m>3.001</m> \amp  <m>-0.59968</m> </td></tr>
+ <m>3.001</m> </td><td class='c'> <m>-0.59968</m> </td></tr>
 <tr><td class='c'></td></tr>
 </table> 
   It seems <m>\lim_{x\to3^+}f(x) =-0.6</m>.</li>
@@ -874,7 +870,7 @@ Let <m>\ds f(x) = \left\{ \begin{array}{ccc} x^2-1 \amp  \amp  x \lt  3 \\
 													
 Is <m>f</m> continuous everywhere?
 </p>
-  <hint>Yes. The only <q>questionable</q> place is at <m>x=3</m>, but the left and right limits agree.</hint> </statement>
+  <hint>Yes. The only "questionable" place is at <m>x=3</m>, but the left and right limits agree.</hint> </statement>
 </exercise>
   
 <exercise><statement>
@@ -885,6 +881,6 @@ Evaluate the limit: <m>\ds \lim_{x\to e} \ln x</m>.
 </exercise>
   
 <p>
-\clearpage{
+{
 </p>
  </subsection> </section>
