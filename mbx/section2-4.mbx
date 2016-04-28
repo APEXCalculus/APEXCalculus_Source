@@ -1,0 +1,833 @@
+
+<section xml:id="sec_prod_quot_rules">
+<title>The Product and Quotient Rules</title><introduction>
+<p>
+The previous section showed that, in some ways, derivatives behave nicely. The Constant Multiple and Sum/Difference Rules established that the derivative of <m>f(x) = 5x^2+\sin x </m> was not complicated. We neglected computing the derivative of things like <m>g(x) = 5x^2\sin x</m> and <m>h(x) = \frac{5x^2}{\sin x}</m> on purpose; their derivatives are <em>not</em> as straightforward. (If you had to guess what their respective derivatives are, you would probably guess wrong.) For these, we need the Product and Quotient Rules, respectively, which are defined in this section.
+</p>
+  
+<p>
+We begin with the Product Rule.
+</p>
+  
+<theorem xml:id="thm_ProductRule"><title>Product Rule</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be differentiable functions on an open interval <m>I</m>.\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Product Rule\lt /sub>} Then <m>fg</m> is a differentiable function on <m>I</m>, and
+</p>
+  
+<me>
+\frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g\primeskip'(x) + \fp(x)g(x).
+</me>
+ </statement>
+</theorem>
+  
+<p>
+\sword{Important:} <m>\ds\frac{d}{dx}\Big(f(x)g(x)\Big) \neq \fp(x)g\primeskip'(x)</m>! While this answer is simpler than the Product Rule, it is wrong.
+</p>
+  
+<p>
+We practice using this new rule in an example, followed by an example that demonstrates why this theorem is true.<br />
+</p>
+  
+<example xml:id="ex_prod1"><title>Using the Product Rule</title>
+<statement>
+<p>
+Use the Product Rule to compute the derivative of <m>y=5x^2\sin x</m>. Evaluate the derivative at <m>x=\pi/2</m>.
+</p>
+  
+<solution><statement>
+<p>
+To make our use of the Product Rule explicit, let's set <m>f(x) = 5x^2</m> and <m>g(x) = \sin x</m>. We easily compute/recall that <m>\fp(x) = 10x</m> and <m>g\primeskip'(x) = \cos x</m>. Employing the rule, we have
+</p>
+  
+<me>
+\frac{d}{dx}\Big(5x^2\sin x\Big) = 5x^2\cos x + 10x\sin x.
+</me>
+  
+<p>
+At <m>x=\pi/2</m>, we have
+</p>
+  
+<me>
+y\primeskip'(\pi/2) = 5\left(\frac{\pi}{2}\right)^2\cos \left(\frac{\pi}2\right) + 10\frac{\pi}2 \sin\left(\frac{\pi}{2}\right) = 5\pi.
+</me>
+ 
+<p>
+We graph <m>y</m> and its tangent line at <m>x=\pi/2</m>, which has a slope of <m>5\pi</m>, in <xref ref="fig_5xsquaredsinx">Figure</xref>. While this does not <em>prove</em> that the Product Rule is the correct way to handle derivatives of products, it helps validate its truth.
+</p>
+  <figure xml:id="fig_5xsquaredsinx" >
+<caption>A graph of <m>y = 5x^2\sin x</m> and its tangent line at <m>x=\pi/2</m>.</caption>
+<image source="images/fig5xsquaredsinx.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We now investigate why the Product Rule is true.<br />
+</p>
+  
+<example xml:id="ex_prove_product"><title>A proof of the Product Rule</title>
+<statement>
+<p>
+Use the definition of the derivative to prove <xref ref="thm_ProductRule">Theorem</xref>.
+</p>
+  
+<solution><statement>
+<p>
+By the limit definition, we have
+</p>
+  
+<me>
+\frac{d}{dx}\Big(f(x)g(x)\Big) =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h}.
+</me>
+ 
+<p>
+We now do something a bit unexpected; add 0 to the numerator (so that nothing is changed) in the form of <m>-f(x+h)g(x)+f(x+h)g(x)</m>, then do some regrouping as shown.
+		
+</p>
+  
+<md><mrow>\frac{d}{dx}\Big(f(x)g(x)\Big) \amp =\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x)g(x)}{h} \quad \text{ (now add 0 to the numerator)}</mrow>
+ <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h} \quad \text{ (regroup)}</mrow>
+ <mrow>\amp =	\lim_{h\to0} \frac{\Big(f(x+h)g(x+h)-f(x+h)g(x)\Big)+\Big(f(x+h)g(x)-f(x)g(x)\Big)}{h}</mrow>
+ <mrow>\amp =	\lim_{h\to0} \frac{f(x+h)g(x+h)-f(x+h)g(x)}{h}+\lim_{h\to0}\frac{f(x+h)g(x)-f(x)g(x)}{h}\quad\text{ (factor)}</mrow>
+ <mrow>\amp =\lim_{h\to0} f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to0}\frac{f(x+h)-f(x)}{h}g(x)\quad\text{ (apply limits)}</mrow>
+ <mrow>\amp =f(x)g\primeskip'(x) + \fp(x)g(x)</mrow>
+ 
+</md>
+  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+It is often true that we can recognize that a theorem is true through its proof yet somehow doubt its applicability to real problems. In the following example, we compute the derivative of a product of functions in two ways to verify that the Product Rule is indeed <q>right.</q><br />
+</p>
+  
+<example xml:id="ex_prod2"><title>Exploring alternate derivative methods</title>
+<statement>
+<p>
+Let <m>y = (x^2+3x+1)(2x^2-3x+1)</m>. Find <m>y\primeskip'</m> two ways: first, by expanding the given product and then taking the derivative, and second, by applying the Product Rule. Verify that both methods give the same answer.
+</p>
+  
+<solution><statement>
+<p>
+We first expand the expression for <m>y</m>; a little algebra shows that <m>y = 2x^4+3x^3-6x^2+1</m>. It is easy to compute <m>y\primeskip'</m>;
+</p>
+  
+<me>
+y\primeskip' = 8x^3+9x^2-12x.
+</me>
+  
+<p>
+Now apply the Product Rule.
+</p>
+  
+<md><mrow>y\primeskip' \amp = (x^2+3x+1)(4x-3)+(2x+3)(2x^2-3x+1)</mrow>
+ <mrow>\amp = \big(4x^3+9x^2-5x-3\big) + \big(4x^3-7x+3\big)</mrow>
+ <mrow>\amp  = 8x^3+9x^2-12x.</mrow>
+ 
+</md>
+  
+<p>
+The uninformed usually assume that <q>the derivative of the product is the product of the derivatives.</q> Thus we are tempted to say that <m>y\primeskip' = (2x+3)(4x-3) = 8x^2+6x-9</m>. Obviously this is not correct.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_prod10"><title>Using the Product Rule with a product of three functions</title>
+<statement>
+<p>
+Let <m>y = x^3\ln x\cos x</m>. Find <m>y\primeskip'.</m>
+</p>
+  
+<solution><statement>
+<p>
+We have a product of three functions while the Product Rule only specifies how to handle a product of two functions. Our method of handling this problem is to simply group the latter two functions together, and consider <m>y = x^3\big(\ln x\cos x\big)</m>. Following the Product Rule, we have
+</p>
+  
+<md><mrow>\yp \amp = (x^3)\big(\ln x\cos x\big)' + 3x^2\big(\ln x\cos x\big)
+\end{mathrow}
+To evaluate $\big(\ln x\cos x\big)'$, we apply the Product Rule again:
+\begin{mathrow}
+		\amp = (x^3)\big(\ln x(-\sin x) + \frac1x\cos x\big)+ 3x^2\big(\ln x\cos x\big)</mrow>
+ <mrow>\amp = x^3\ln x(-\sin x) + x^3\frac1x\cos x+ 3x^2\ln x\cos x</mrow>
+ 
+</md>
+ 
+<p>
+Recognize the pattern in our answer above: when applying the Product Rule to a product of three functions, there are three terms added together in the final derivative. Each terms contains only one derivative of one of the original functions, and each function's derivative shows up in only one term. It is straightforward to extend this pattern to finding the derivative of a product of 4 or more functions.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We consider one more example before discussing another derivative rule.<br />
+</p>
+  
+<example xml:id="ex_deriv_ln"><title>Using the Product Rule</title>
+<statement>
+<p>
+Find the derivatives of the following functions.
+</p>
+  <ol><li><m>f(x) = x\ln x</m></li>
+<li><m>g(x) = x\ln x - x</m>.</li>
+ </ol>  
+<solution><statement>
+<p>
+Recalling that the derivative of <m>\ln x</m> is <m>1/x</m>, we use the Product Rule to find our answers.
+</p>
+  <ol><li><m>\ds \frac{d}{dx}\Big(x\ln x\Big) = x\cdot 1/x + 1\cdot \ln x = 1+\ln x</m>.</li>
+<li>Using the result from above, we compute 
+<me>
+\ds \frac{d}{dx}\Big(x\ln x-x\Big) = 1+\ln x-1 = \ln x.
+</me>
+</li>
+ </ol>  
+<p>
+This seems significant; if the natural log function <m>\ln x</m> is an important function (it is), it seems worthwhile to know a function whose derivative is <m>\ln x</m>. We have found one. (We leave it to the reader to find another; a correct answer will be <em>very</em> similar to this one.)
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We have learned how to compute the derivatives of sums, differences, and products of functions. We now learn how to find the derivative of a quotient of functions.<br />
+</p>
+  
+<theorem xml:id="thm_QuotientRule"><title>Quotient Rule</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be functions defined on an open interval <m>I</m>, where <m>g(x) \neq 0</m> on <m>I</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Quotient Rule\lt /sub>}\knownindex{\lt main>Quotient Rule\lt /main>} Then <m>f/g</m> is differentiable on <m>I</m>, and
+</p>
+  
+<me>
+\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) = \frac{g(x)\fp(x) - f(x)g\primeskip'(x)}{g(x)^2}.
+</me>
+ </statement>
+</theorem>
+  
+<p>
+The Quotient Rule is not hard to use, although it might be a bit tricky to remember. A useful mnemonic works as follows. Consider a fraction's numerator and denominator as <q>HI</q> and <q>LO</q>, respectively. Then
+</p>
+  
+<me>
+\frac{d}{dx}\left(\frac{\text{HI} }{\text{LO} }\right) = \frac{\text{LO<m>\cdot</m> dHI -- HI<m>\cdot</m> dLO} }{\text{LOLO} },
+</me>
+ 
+<p>
+read <q>low dee high minus high dee low, over low low.</q> Said fast, that phrase can roll off the tongue, making it easy to memorize. The <q>dee high</q> and <q>dee low</q> parts refer to the derivatives of the numerator and denominator, respectively.<br />
+</p>
+  
+<p>
+Let's practice using the Quotient Rule.<br />
+</p>
+  
+<example xml:id="ex_quot1"><title>Using the Quotient Rule</title>
+<statement>
+<p>
+Let <m>\ds f(x) = \frac{5x^2}{\sin x}</m>. Find <m>\fp(x)</m>.
+</p>
+  
+<solution><statement>
+<p>
+Directly applying the Quotient Rule gives:
+</p>
+  
+<md><mrow>\frac{d}{dx}\left(\frac{5x^2}{\sin x}\right) \amp = \frac{\sin x\cdot 10x - 5x^2\cdot \cos x}{\sin^2x}</mrow>
+ <mrow>\amp =	\frac{10x\sin x - 5x^2\cos x}{\sin^2 x}.</mrow>
+ 
+</md>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The Quotient Rule allows us to fill in holes in our understanding of derivatives of the common trigonometric functions. We start with finding the derivative of the tangent function.<br />
+</p>
+  
+<example xml:id="ex_der_tan"><title>Using the Quotient Rule to find $\frac{d}{dx}\big(\tan x\big)$.</title>
+<statement>
+<p>
+Find the derivative of <m>y=\tan x</m>.
+</p>
+  
+<solution><statement>
+<p>
+At first, one might feel unequipped to answer this question. But recall that <m>\tan x = \sin x/\cos x</m>, so we can apply the Quotient Rule.
+</p>
+  
+<md><mrow>\frac{d}{dx}\Big(\tan x\Big) \amp = \frac{d}{dx}\left(\frac{\sin x}{\cos x}\right)</mrow>
+ <mrow>\amp =	\frac{\cos x \cos x - \sin x (-\sin x)}{\cos^2 x}</mrow>
+ <mrow>\amp = \frac{\cos^2x+\sin^2x}{\cos^2x}</mrow>
+ <mrow>\amp = \frac{1}{\cos^2x}</mrow>
+ <mrow>\amp = \sec ^2 x.</mrow>
+ 
+</md>
+ 
+<p>
+This is a beautiful result. To confirm its truth, we can find the equation of the tangent line to <m>y=\tan x</m> at <m>x=\pi/4</m>. The slope is <m>\sec^2(\pi/4) = 2</m>; <m>y=\tan x</m>, along with its tangent line, is graphed in <xref ref="fig_tanx">Figure</xref>.
+</p>
+  <figure xml:id="fig_tanx" >
+<caption>A graph of <m>y=\tan x</m> along with its tangent line at <m>x=\pi/4</m>.</caption>
+<image source="images/figtanx.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We include this result in the following theorem about the derivatives of the trigonometric functions. Recall we found the derivative of <m>y=\sin x</m> in <xref ref="ex_deriv_sinx">Example</xref> and stated the derivative of the cosine function in <xref ref="thm_deriv_common">Theorem</xref>. The derivatives of the cotangent, cosecant and secant functions can all be computed directly using <xref ref="thm_deriv_common">Theorem</xref> and the Quotient Rule.
+</p>
+  
+<theorem xml:id="thm_deriv_trig"><title>Derivatives of Trigonometric Functions</title>
+<statement><div class="minipage">{.5\specialboxlength}
+		<ol><li><m>\ds \frac{d}{dx}\big(\sin x\big) = \cos x</m>\knownindex{\lt main>derivative\lt /main>\lt sub>trigonometric functions\lt /sub>}</li>
+<li><m>\ds \frac{d}{dx}\big(\tan x\big) = \sec^2 x</m></li>
+<li><m>\ds \frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></li>
+ </ol> </div>  <div class="minipage">{.5\specialboxlength}
+		<ol><li><m>\ds \frac{d}{dx}\big(\cos x\big) = -\sin x</m></li>
+<li><m>\ds \frac{d}{dx}\big(\cot x\big) = -\csc^2 x</m></li>
+<li><m>\ds \frac{d}{dx}\big(\csc x\big) = -\csc x\cot x</m></li>
+ </ol> </div> </statement>
+</theorem>
+  
+<p>
+To remember the above, it may be helpful to keep in mind that the derivatives of the trigonometric functions that start with <q>c</q> have a minus sign in them.<br />
+</p>
+  
+<example xml:id="ex_prod_quot"><title>Exploring alternate derivative methods</title>
+<statement>
+<p>
+In <xref ref="ex_quot1">Example</xref> the derivative of <m>\ds f(x) = \frac{5x^2}{\sin x}</m> was found using the Quotient Rule. Rewriting <m>f</m> as <m>f(x) = 5x^2\csc x</m>, find <m>\fp</m> using <xref ref="thm_deriv_trig">Theorem</xref> and verify the two answers are the same.
+</p>
+  
+<solution><statement>
+<p>
+We found in <xref ref="ex_quot1">Example</xref> that the <m>\ds \fp(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}</m>. We now find <m>\fp</m> using the Product Rule, considering <m>f</m> as <m>f(x) = 5x^2\csc x</m>.
+</p>
+  
+<md><mrow>\fp(x) \amp = \frac{d}{dx}\Big(5x^2\csc x\Big)</mrow>
+ <mrow>\amp =	\text{$5x^2(-\csc x\cot x) + 10x\csc x$} \text{ (now rewrite trig functions)}</mrow>
+ <mrow>\amp = 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}</mrow>
+ <mrow>\amp =	\parbox{140pt}{$\ds\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$} \text{ (get common denominator)}</mrow>
+ <mrow>\amp = \frac{10x\sin x - 5x^2\cos x}{\sin^2x}</mrow>
+ 
+</md>
+ 
+<p>
+Finding <m>\fp</m> using either method returned the same result. At first, the answers looked different, but some algebra verified they are the same. In general, there is not one final form that we seek; the immediate result from the Product Rule is fine. Work to <q>simplify\primeskip</q> your results into a form that is most readable and useful to you.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The Quotient Rule gives other useful results, as show in the next example.<br />
+</p>
+  
+<example xml:id="ex_deriv_power"><title>Using the Quotient Rule to expand the Power Rule</title>
+<statement>
+<p>
+Find the derivatives of the following functions.
+</p>
+  <ol><li><m>\ds f(x) = \frac{1}{x}</m></li>
+<li><m>\ds f(x)= \frac{1}{x^n}</m>, where <m>n>0</m> is an integer.</li>
+ </ol>  
+<solution><statement>
+<p>
+We employ the Quotient Rule.
+</p>
+  <ol><li><m>\ds \fp(x) = \frac{x\cdot 0 - 1\cdot 1}{x^2} = -\frac{1}{x^2}</m>.</li>
+<li><m>\ds \fp(x) = \frac{x^n\cdot 0 - 1\cdot nx^{n-1}}{(x^n)^2} = -\frac{nx^{n-1}}{x^{2n}} = -\frac{n}{x^{n+1}}.</m></li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The derivative of <m>\ds y=\frac{1}{x^n}</m> turned out to be rather nice. It gets better. Consider:
+</p>
+  
+<md><mrow>\frac{d}{dx}\left(\frac{1}{x^n}\right) \amp = \parbox{60pt}{$\ds\frac{d}{dx}\Big(x^{-n}\Big)$} \text{ (apply result from <xref ref="ex_deriv_power">Example</xref>)}</mrow>
+ <mrow>\amp = \parbox{60pt}{$\ds-\frac{n}{x^{n+1}}$}\text{ (rewrite algebraically)}</mrow>
+ <mrow>\amp = -nx^{-(n+1)}</mrow>
+ <mrow>\amp = -nx^{-n-1}.</mrow>
+ 
+</md>
+ 
+<p>
+This is reminiscent of the Power Rule: multiply by the power, then subtract 1 from the power. We now add to our previous Power Rule, which had the restriction of <m>n>0</m>.
+</p>
+  
+<theorem xml:id="thm_PowerRule"><title>Power Rule with Integer Exponents</title>
+<statement>
+<p>
+Let <m>f(x) = x^n</m>, where <m>n\neq 0</m> is an integer.\knownindex{\lt main>derivative\lt /main>\lt sub>Power Rule\lt /sub>}\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>} Then
+</p>
+  
+<me>
+\fp(x) = n\cdot x^{n-1}.
+</me>
+ </statement>
+</theorem>
+  
+<p>
+Taking the derivative of many functions is relatively straightforward. It is clear (with practice) what rules apply and in what order they should be applied. Other functions present multiple paths; different rules may be applied depending on how the function is treated. One of the beautiful things about calculus is that there is not <q>the</q> right way; each path, when applied correctly, leads to the same result, the derivative. We demonstrate this concept in an example.<br />
+</p>
+  
+<example xml:id="ex_multiple_deriv"><title>Exploring alternate derivative methods</title>
+<statement>
+<p>
+Let <m>\ds f(x) = \frac{x^2-3x+1}{x}</m>. Find <m>\fp(x)</m> in each of the following ways:
+</p>
+  <ol><li>By applying the Quotient Rule,</li>
+<li>by viewing <m>f</m> as <m>f(x) = \big(x^2-3x+1\big)\cdot x^{-1}</m> and applying the Product and Power Rules, and</li>
+<li>by <q>simplifying\primeskip</q> first through division.</li>
+ </ol>  
+<p>
+Verify that all three methods give the same result.
+</p>
+  
+<solution><statement><ol><li>Applying the Quotient Rule gives: 
+<me>
+ \fp(x) = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2}.
+</me>
+</li>
+<li>By rewriting <m>f</m>, we can apply the Product and Power Rules as follows:
+			
+<md><mrow>\fp(x) \amp =		\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}</mrow>
+ <mrow>\amp =	-\frac{x^2-3x+1}{x^2}+\frac{2x-3}{x}</mrow>
+ <mrow>\amp = -\frac{x^2-3x+1}{x^2}+\frac{2x^2-3x}{x^2}</mrow>
+ <mrow>\amp = \frac{x^2-1}{x^2} = 1-\frac{1}{x^2},</mrow>
+ 
+</md>
+ 
+			the same result as above.</li>
+<li>As <m>x\neq 0</m>, we can divide through by <m>x</m> first, giving <m>\ds f(x) = x-3+\frac{1}x</m>. Now apply the Power Rule. 
+<me>
+\fp(x) = 1-\frac{1}{x^2},
+</me>
+   the same result as before.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+<xref ref="ex_multiple_deriv">Example</xref> demonstrates three methods of finding \fp. One is hard pressed to argue for a <q>best method</q> as all three gave the same result without too much difficulty, although it is clear that using the Product Rule required more steps. Ultimately, the important principle to take away from this is: reduce the answer to a form that seems <q>simple</q> and easy to interpret. In that example, we saw different expressions for \fp, including: {
+</p>
+  
+<me>
+1-\frac{1}{x^2} = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} = 	\big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}.
+</me>
+ 
+<p>
+} They are equal; they are all correct; only the first is <q>clear.</q> Work to make answers clear.
+		
+In the next section we continue to learn rules that allow us to more easily compute derivatives than using the limit definition directly. We have to memorize the derivatives of a certain set of functions, such as <q>the derivative of <m>\sin x</m> is <m>\cos x</m>.</q> The Sum/Difference, Constant Multiple, Power, Product and Quotient Rules show us how to find the derivatives of certain combinations of these functions. The next section shows how to find the derivatives when we <em>compose</em> these functions together.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+T/F: The Product Rule states that <m>\ds \frac{d}{dx}\big(x^2\sin x\big) = 2x\cos x</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: The Quotient Rule states that <m>\ds \frac{d}{dx}\left(\frac{x^2}{\sin x}\right) = \frac{\cos x}{2x}</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: The derivatives of the trigonometric functions that start with <q>c</q> have minus signs in them.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+What derivative rule is used to extend the Power Rule to include negative integer exponents?
+</p>
+  <hint>Quotient Rule</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: Regardless of the function, there is always exactly one right way of computing its derivative.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+In your own words, explain what it means to make your answers <q>clear.</q>
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{:
+</p>
+  <ol><li class="custom-list-style-type" label="(a)" >Use the Product Rule to differentiate the function.</li>
+<li class="custom-list-style-type" label="(b)" >Manipulate the function algebraically and differentiate without the Product Rule.</li>
+<li class="custom-list-style-type" label="(c)" >Show that the answers from (a) and (b) are equivalent.</li>
+ </ol>  
+<p>
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x(x^2+3x)</m>
+</p>
+  <hint><ol><li><m>\fp(x) = (x^2+3x) + x(2x+3)</m></li>
+<li><m>\fp(x) = 3x^2 + 6x</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = 2x^2(5x^3)</m>
+</p>
+  <hint><ol><li><m>g'(x) = 4x(5x^3)+2x^2(15x^2)</m></li>
+<li><m>g'(x) = 50x^4</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(s) = (2s-1)(s+4)</m>
+</p>
+  <hint><ol><li><m>h'(s) = 2(s+4) + (2s-1)(1)</m></li>
+<li><m>h'(s) = 4s + 7</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x)= (x^2+5)(3-x^3)</m>
+</p>
+  <hint><ol><li><m>\fp(x) = 2x(3-x^3)+(x^2+5)(-3x^2)</m></li>
+<li><m>\fp(x) = -5x^4-15x^2+6x</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{:
+</p>
+  <ol><li class="custom-list-style-type" label="(a)" >Use the Quotient Rule to differentiate the function.</li>
+<li class="custom-list-style-type" label="(b)" >Manipulate the function algebraically and differentiate without the Quotient Rule.</li>
+<li class="custom-list-style-type" label="(c)" >Show that the answers from (a) and (b) are equivalent.</li>
+ </ol>  
+<p>
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x)= \frac{x^2+3}{x}</m>
+</p>
+  <hint><ol><li><m>\fp(x) = \frac{x(2x)-(x^2+3)1}{x^2}</m></li>
+<li><m>\fp(x) = 1-\frac{3}{x^2}</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(x)= \frac{x^3-2x^2}{2x^2}</m>
+</p>
+  <hint><ol><li><m>g'(x) = \frac{2x^2(3x^2-4x)-(x^3-2x^2)(4x)}{4x^4}</m></li>
+<li><m>g'(x) = 1/2</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(s)= \frac{3}{4s^3}</m>
+</p>
+  <hint><ol><li><m>h'(s) = \frac{4s^3(0) - 3(12s^2)}{16s^6}</m></li>
+<li><m>h'(s) = -9/4s^{-4}</m></li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(t)= \frac{t^2-1}{t+1}</m>
+</p>
+  <hint><ol><li><m>\fp(t) = \frac{(t+1)(2t) - (t^2-1)(1)}{(t+1)^2}</m></li>
+<li><m>f(t) = t-1</m> when <m>t\neq -1</m>, so <m>\fp(t) = 1</m>.</li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, compute the derivative of the given function.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x\sin x</m>
+</p>
+  <hint><m>\fp(x) = \sin x + x\cos x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(t) = \frac{1}{t^2}(\csc t-4)</m>
+</p>
+  <hint><m>\fp(t) = \frac{-2}{t^3}(\csc t-4) + \frac{1}{t^2}(-\csc t\cot t)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(x) = \frac{x+7}{x-5}</m>
+</p>
+  <hint><m>g'(x) = \frac{-12}{(x-5)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(t) = \frac{t^5}{\cos t-2t^2}</m>
+</p>
+  <hint><m>g'(t) = \frac{(\cos t-2t^2)(5t^4)-(t^5)(-\sin t-4t)}{(\cos t-2t^2)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(x) =\cot x - e^x</m>
+</p>
+  <hint><m>h'(x) = -\csc^2x-e^x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(t) =7t^2+6t-2</m>
+</p>
+  <hint><m>h'(t) = 14t+6</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x)= \frac{x^4+2x^3}{x+2}</m>
+</p>
+  <hint><ol><li><m>\fp(x) = \frac{(x+2)(4x^3+6x^2)-(x^4+2x^3)(1)}{(x+2)^2}</m></li>
+<li><m>f(x) = x^3</m> when <m>x\neq -2</m>, so <m>\fp(x) = 3x^2</m>.</li>
+<li>They are equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = (16x^3+24x^2+3x)\frac{7x-1}{16x^3+24x^2+3x}</m>
+</p>
+  <hint><m>\fp(x) = 7</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m> f(t) = t^5(\sec t + e^t)</m>
+</p>
+  <hint><m>\fp(t) = 5t^4(\sec t+ e^t) + t^5(\sec t\tan t + e^t)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{\sin x}{\cos x+3}</m>
+</p>
+  <hint><m>\fp(x) = \frac{\sin ^2(x)+\cos ^2(x)+3 \cos (x)}{(\cos (x)+3)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = e^2\big(\sin (\pi/4) - 1\big)</m>
+</p>
+  <hint><m>g'(x) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = 4t^3e^t - \sin t\cos t</m>
+</p>
+  <hint><m>g'(t) = 12t^2e^t + 4t^3e^t - \cos^2t + \sin^2t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(t) = \frac{t^2\sin t+3}{t^2\cos t+2}</m>
+</p>
+  <hint><m>\fp(x) = \frac{(t^2\cos t+2)(2t\sin t+t^2\cos t)-(t^2\sin t+3)(2t\cos t-t^2\sin t)}{(t^2\cos t+2)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2e^x\tan x</m>
+</p>
+  <hint><m>\fp(x) = 2xe^x\tan x = x^2e^x\tan x + x^2e^x\sec^2x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = 2x\sin x \sec x</m>
+</p>
+  <hint><m>g'(x) = 2\sin x\sec x+2x\cos x \sec x + 2x\sin x\sec x\tan x = 2\tan x+2x+2x\tan^2x = 2\tan x+2x\sec^2x</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the equations of the tangent and normal lines to the graph of <m>g</m> at the indicated point.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>g(s) = e^s(s^2+2) </m> at <m>(0,2)</m>.
+</p>
+  <hint>Tangent line: <m>y = 2x+2</m>
+
+Normal line: <m>y = -1/2x+2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = t\sin t</m> at <m>(\frac{3\pi}{2},-\frac{3\pi}{2})</m>
+</p>
+  <hint>Tangent line: <m>y = -(x-\frac{3\pi}{2}) - \frac{3\pi}{2} = -x</m>
+
+Normal line: <m>y = (x-\frac{3\pi}{2}) - \frac{3\pi}{2} = x-3\pi</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(x) = \frac{x^2}{x-1}</m> at <m>(2,4)</m>
+</p>
+  <hint>Tangent line: <m>y = 4</m>
+
+Normal line: <m>x=2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(\theta) = \frac{\cos \theta - 8\theta}{\theta+1}</m> at <m>(0,-5)</m>
+</p>
+  <hint>Tangent line: <m>y = -9x-5</m>
+
+Normal line: <m>y = 1/9x-5</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the <m>x</m>&#x2013;values where the graph of the function has a horizontal tangent line.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 6x^2-18x-24</m>
+</p>
+  <hint><m>x=3/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x\sin x</m> on <m>[-1,1]</m>
+</p>
+  <hint><m>x=0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x}{x+1}</m>
+</p>
+  <hint><m>\fp(x)</m> is never 0.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x^2}{x+1}</m>
+</p>
+  <hint><m>x= -2,0</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the requested derivative.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x\sin x</m>; find <m>\fpp(x)</m>.
+</p>
+  <hint><m>\fpp(x) = 2\cos x - x\sin x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x\sin x</m>; find <m>f\,^{(4)}(x)</m>.
+</p>
+  <hint><m>f^{(4)}(x) = -4\cos x+ x\sin x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \csc x</m>; find <m>\fpp(x)</m>.
+</p>
+  <hint><m>\fpp(x) = \cot^2x\csc x + \csc^3 x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = (x^3-5x+2)(x^2+x-7)</m>; find <m>f\,^{(8)}(x)</m>.
+</p>
+  <hint><m>f^{(8)} = 0</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, use the graph of <m>f(x)</m> to sketch <m>\fp(x)</m>.
+}
+</p>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig02_04_ex_42.png" /></div>  <hint><image source="images/fig02_04_ex_42a.png" /> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig02_04_ex_43.png" /></div>  <hint><image source="images/fig02_04_ex_43a.png" /> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig02_04_ex_44.png" /></div>  <hint><image source="images/fig02_04_ex_44a.png" /> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig02_04_ex_45.png" /></div>  <hint><image source="images/fig02_04_ex_45a.png" /> </hint> </statement>
+</exercise>
+ </subsection> </section>

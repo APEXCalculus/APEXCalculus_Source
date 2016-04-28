@@ -1,0 +1,843 @@
+
+<section xml:id="sec_chainrule">
+<title>The Chain Rule</title><introduction>
+<p>
+We have covered almost all of the derivative rules that deal with combinations of two (or more) functions. The operations of addition, subtraction, multiplication (including by a constant) and division led to the Sum and Difference rules, the Constant Multiple Rule, the Power Rule, the Product Rule and the Quotient Rule.
+To complete the list of differentiation rules, we look at the last way two (or more) functions can be combined: the process of composition (i.e. one function <q>inside</q> another).
+</p>
+  
+<p>
+One example of a composition of functions is <m>f(x) = \cos(x^2)</m>. We currently do not know how to compute this derivative. If forced to guess, one would likely guess <m>\fp(x) = -\sin(2x)</m>, where we recognize <m>-\sin x</m> as the derivative of <m>\cos x</m> and <m>2x</m> as the derivative of <m>x^2</m>. However, this is not the case; <m>\fp(x)\neq -\sin(2x)</m>. In <xref ref="ex_chain7">Example</xref> we'll see the correct answer, which employs the new rule this section introduces, the \sword{Chain Rule}.
+</p>
+  
+<p>
+Before we define this new rule, recall the notation for composition of functions. We write <m>(f \circ g)(x)</m> or <m>f(g(x))</m>, read as <q><m>f</m> of <m>g</m> of <m>x</m>,</q> to denote composing <m>f</m> with <m>g</m>. In shorthand, we simply write
+<m>f \circ g</m> or <m>f(g)</m> and read it as <q><m>f</m> of <m>g</m>.</q> Before giving the corresponding differentiation rule, we note that the rule extends to multiple compositions like <m>f(g(h(x)))</m> or <m>f(g(h(j(x))))</m>, etc.
+</p>
+  
+<p>
+To motivate the rule, let's look at three derivatives we can already compute.<br />
+</p>
+  
+<example xml:id="ex_chain1"><title>Exploring similar derivatives</title>
+<statement>
+<p>
+Find the derivatives of <m>F_1(x) = (1-x)^2</m>, <m>F_2(x) = (1-x)^3,</m> and <m>F_3(x) = (1-x)^4.</m> (We'll see later why we are using subscripts for different functions and an uppercase <m>F</m>.)
+</p>
+  
+<solution><statement>
+<p>
+In order to use the rules we already have, we must first expand each function as
+<m>F_1(x) = 1 - 2x + x^2</m>, <m>F_2(x) = 1 - 3x + 3x^2 - x^3</m> and <m>F_3(x) = 1 - 4x + 6x^2 - 4x^3 + x^4</m>.
+</p>
+  
+<p>
+It is not hard to see that:<br />
+</p>
+  
+<p>
+<m>F\hskip.5pt_1'(x) = -2 + 2x</m>,
+</p>
+  
+<p>
+<m>F\hskip.5pt_2'(x) = -3 + 6x - 3x^2</m> and
+</p>
+  
+<p>
+<m>F\hskip.5pt_3'(x) = -4 + 12x - 12x^2 + 4x^3.</m><br />
+</p>
+  
+<p>
+An interesting fact is that these can be rewritten as
+</p>
+  
+<me>
+ 
+F\hskip.5pt_1'(x) = -2(1-x),\quad  F\hskip.5pt_2'(x) = -3(1-x)^2\ \textrm{ and }  \ 
+F\hskip.5pt_3'(x) = -4(1-x)^3.
+
+</me>
+ 
+<p>
+A pattern might jump out at you. Recognize that each of these functions is a composition, letting <m>g(x) = 1-x</m>:
+</p>
+  
+<md><mrow>F_1(x) = f_1(g(x)),\amp  \text{ where }  f_1(x) = x^2,</mrow>
+ <mrow>F_2(x) = f_2(g(x)),\amp  \text{ where }  f_2(x) = x^3,</mrow>
+ <mrow>F_3(x) = f_3(g(x)),\amp  \text{ where }  f_3(x) = x^4.</mrow>
+ 
+</md>
+  
+<p>
+We'll come back to this example after giving the formal statements of the Chain Rule; for now, we are just illustrating a pattern.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<theorem xml:id="thm_chain_rule"><title>The Chain Rule</title>
+<statement>
+<p>
+Let <m>y = f(u)</m> be a differentiable function of <m>u</m> and let <m>u = g(x)</m> be a differentiable function of <m>x</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Chain Rule\lt /sub>}\knownindex{\lt main>Chain Rule\lt /main>} Then <m>y=f(g(x))</m> is a differentiable function of <m>x</m>, and
+</p>
+  
+<me>
+y\primeskip' = \fp(g(x))\cdot g\primeskip'(x).
+</me>
+ </statement>
+</theorem>
+  
+<p>
+To help understand the Chain Rule, we return to <xref ref="ex_chain1">Example</xref>.<br />
+</p>
+  
+<example xml:id="ex_chain2"><title>Using the Chain Rule</title>
+<statement>
+<p>
+Use the Chain Rule to find the derivatives of the following functions, as given in <xref ref="ex_chain1">Example</xref>.
+</p>
+  
+<solution><statement>
+<p>
+<xref ref="ex_chain1">Example</xref> ended with the recognition that each of the given functions was actually a composition of functions. To avoid confusion, we ignore most of the subscripts here. <br />
+</p>
+  
+<p>
+<b><m>F_1(x) = (1-x)^2</m>:</b><br />
+</p>
+  
+<p>
+We found that
+</p>
+  
+<me>
+y=(1-x)^2 = f(g(x)), \text{ where }  f(x) = x^2\ \text{ and } \ g(x) = 1-x.
+</me>
+ 
+<p>
+To find <m>y\primeskip'</m>, we apply the Chain Rule. We need <m>\fp(x)=2x</m> and <m>g\primeskip'(x)=-1.</m>
+</p>
+  
+<p>
+Part of the Chain Rule uses <m>\fp(g(x))</m>. This means substitute <m>g(x)</m> for <m>x</m> in the equation for <m>\fp(x)</m>. That is, <m>\fp(x) = 2(1-x)</m>. Finishing out the Chain Rule we have
+</p>
+  
+<me>
+y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = 2(1-x)\cdot (-1) = -2(1-x)= 2x-2.
+</me>
+  
+<p>
+<m>F_2(x) = (1-x)^3</m>:<br />
+</p>
+  
+<p>
+Let <m>y = (1-x)^3 = f(g(x))</m>, where <m>f(x) = x^3</m> and <m>g(x) = (1-x)</m>. We have <m>\fp(x) = 3x^2</m>, so <m>\fp(g(x)) = 3(1-x)^2</m>. The Chain Rule then states
+</p>
+  
+<me>
+y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = 3(1-x)^2\cdot(-1) = -3(1-x)^2.
+</me>
+  
+<p>
+Finally, when <m>y = (1-x)^4</m>, we have <m>f(x)= x^4</m> and <m>g(x) = (1-x)</m>. Thus <m>\fp(x) = 4x^3</m> and <m>\fp(g(x)) = 4(1-x)^3</m>. Thus
+</p>
+  
+<me>
+y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = 4(1-x)^3\cdot (-1) = -4(1-x)^3.
+</me>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+<xref ref="ex_chain2">Example</xref> demonstrated a particular pattern: when <m>f(x)=x^n</m>, then <m>y\primeskip' =n\cdot (g(x))^{n-1}\cdot g\primeskip'(x)</m>. This is called the Generalized Power Rule.<br />
+</p>
+  
+<theorem xml:id="thm_gen_power_rule"><title>Generalized Power Rule</title>
+<statement>
+<p>
+Let <m>g(x)</m> be a differentiable function and let <m>n\neq 0</m> be an integer.\knownindex{\lt main>derivative\lt /main>\lt sub>Generalized Power Rule\lt /sub>}\knownindex{\lt main>Generalized Power Rule\lt /main>} Then
+</p>
+  
+<me>
+\frac{d}{dx}\Big(g(x)^n\Big) = n\cdot \big(g(x)\big)^{n-1}\cdot g\primeskip'(x).
+</me>
+ </statement>
+</theorem>
+  
+<p>
+This allows us to quickly find the derivative of functions like <m>y = (3x^2-5x+7+\sin x)^{20}</m>. While it may look intimidating, the Generalized Power Rule states that
+</p>
+  
+<me>
+y\primeskip' = 20(3x^2-5x+7+\sin x)^{19}\cdot (6x-5+\cos x).
+</me>
+  
+<p>
+Treat the derivative&#x2013;taking process step&#x2013;by&#x2013;step. In the example just given, first multiply by 20, then rewrite the inside of the parentheses, raising it all to the 19<m>^{\text{th} }</m> power. Then think about the derivative of the expression inside the parentheses, and multiply by that.
+</p>
+  
+<p>
+We now consider more examples that employ the Chain Rule.<br />
+</p>
+  
+<example xml:id="ex_chain3"><title>Using the Chain Rule</title>
+<statement>
+<p>
+Find the derivatives of the following functions:
+</p>
+  <div class="minipage">{.3\textwidth}
+			<ol><li><m>y = \sin{2x}</m></li>
+ </ol> </div>  <div class="minipage">{.3\textwidth}
+			<ol><li><m>y= \ln (4x^3-2x^2)</m></li>
+ </ol> </div>  <div class="minipage">{.3\textwidth}
+	<ol><li><m>y = e^{-x^2}</m></li>
+ </ol> </div> 
+<solution><statement><ol><li>Consider <m>y = \sin 2x</m>. Recognize that this is a composition of functions, where <m>f(x) = \sin x</m> and <m>g(x) = 2x</m>. Thus 
+<me>
+y\primeskip' = \fp(g(x))\cdot g\primeskip'(x) = \cos (2x)\cdot 2 = 2\cos 2x.
+</me>
+</li>
+<li>Recognize that <m>y = \ln (4x^3-2x^2)</m> is the composition of <m>f(x) = \ln x</m> and <m>g(x) = 4x^3-2x^2</m>. Also, recall that 
+<me>
+\frac{d}{dx}\Big(\ln x\Big) = \frac{1}{x}.
+</me>
+  This leads us to:
+		
+<me>
+y\primeskip' = \frac{1}{4x^3-2x^2} \cdot (12x^2-4x) = \frac{12x^2-4x}{4x^3-2x^2}= \frac{4x(3x-1)}{2x(2x^2-x)} = \frac{2(3x-1)}{2x^2-x}.
+</me>
+</li>
+<li>Recognize  that <m>y = e^{-x^2}</m> is the composition of <m>f(x) = e^x</m> and <m>g(x) = -x^2</m>. Remembering that <m>\fp(x) = e^x</m>, we have 
+<me>
+y\primeskip' = e^{-x^2}\cdot (-2x) = (-2x)e^{-x^2}.
+</me>
+</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_chain7"><title>Using the Chain Rule to find a tangent line</title>
+<statement>
+<p>
+Let <m>f(x) = \cos x^2</m>. Find the equation of the line tangent to the graph of <m>f</m> at <m>x=1</m>.
+</p>
+  
+<solution><statement>
+<p>
+The tangent line goes through the point <m>(1,f(1)) \approx (1,0.54)</m> with slope <m>\fp(1)</m>. To find <m>\fp</m>, we need the Chain Rule.
+</p>
+  
+<p>
+<m>\fp(x) = -\sin(x^2) \cdot(2x) = -2x\sin x^2</m>. Evaluated at <m>x=1</m>, we have <m>\fp(1) = -2\sin 1\approx -1.68</m>. Thus the equation of the tangent line is
+</p>
+  
+<me>
+y = -1.68(x-1)+0.54 .
+</me>
+  
+<p>
+The tangent line is sketched along with <m>f</m> in <xref ref="fig_chain7">Figure</xref>.
+</p>
+  <figure xml:id="fig_chain7" >
+<caption><m>f(x) = \cos x^2</m> sketched along with its tangent line at <m>x=1</m>.</caption>
+<image source="images/figchain7.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The Chain Rule is used often in taking derivatives. Because of this, one can become familiar with the basic process and learn patterns that facilitate finding derivatives quickly. For instance,
+</p>
+  
+<me>
+\frac{d}{dx}\Big(\ln (\text{anything} )\Big) = \frac{1}{\text{anything} }\cdot (\text{anything} )' = \frac{(\text{anything} )'}{\text{anything} }.
+</me>
+ 
+<p>
+A concrete example of this is
+</p>
+  
+<me>
+\frac{d}{dx}\Big(\ln(3x^{15}-\cos x+e^x)\Big) = \frac{45x^{14}+\sin x+e^x}{3x^{15}-\cos x+e^x}.
+</me>
+ 
+<p>
+While the derivative may look intimidating at first, look for the pattern. The denominator is the same as what was inside the natural log function; the numerator is simply its derivative.
+</p>
+  
+<p>
+This pattern recognition process can be applied to lots of functions. In general, instead of writing <q>anything</q>, we use <m>u</m> as a generic function of <m>x</m>. We then say
+</p>
+  
+<me>
+\frac{d}{dx}\Big(\ln u\Big) = \frac{u\primeskip'}{u}.
+</me>
+ 
+<p>
+The following is a short list of how the Chain Rule can be quickly applied to familiar functions.
+</p>
+  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds\frac{d}{dx}\Big(u^n\Big) = n\cdot u^{n-1}\cdot u\primeskip'.</m></li>
+<li><m>\ds\frac{d}{dx}\Big(e^u\Big) = u\primeskip'\cdot e^u.</m></li>
+<li><m>\ds\frac{d}{dx}\Big(\sin u\Big) = u\primeskip'\cdot \cos u.</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds\frac{d}{dx}\Big(\cos u\Big) = -u\primeskip'\cdot \sin u.</m></li>
+<li><m>\ds\frac{d}{dx}\Big(\tan u\Big) = u\primeskip'\cdot \sec^2 u.</m></li>
+ </ol> </div> 
+<p>
+
+course, the Chain Rule can be applied in conjunction with any of the other rules we have already learned. We practice this next.<br />
+</p>
+  
+<example xml:id="ex_chain4"><title>Using the Product, Quotient and Chain Rules</title>
+<statement>
+<p>
+Find the derivatives of the following functions. <br />
+</p>
+  
+<p>
+1. <m>f(x) = x^5 \sin{2x^3}</m> <nbsp /><nbsp /> 2. <m>\ds f(x) = \frac{5x^3}{e^{-x^2}}.</m>
+</p>
+  
+<solution><statement><ol><li>We must use the Product and Chain Rules. Do not think that you must be able to <q>see</q> the whole answer immediately; rather, just proceed step&#x2013;by&#x2013;step.
+		
+<me>
+\fp(x) = x^5\big(6x^2\cos 2x^3\big) + 5x^4\big(\sin 2x^3\big)= 6x^7\cos2x^3+5x^4\sin 2x^3.
+</me>
+</li>
+<li>We must employ the Quotient Rule along with the Chain Rule. Again, proceed step&#x2013;by&#x2013;step.
+
+<md><mrow>\fp(x) = \frac{e^{-x^2}\big(15x^2\big) - 5x^3\big((-2x)e^{-x^2}\big)}{\big(e^{-x^2}\big)^2} \amp =\frac{e^{-x^2}\big(10x^4+15x^2\big)}{e^{-2x^2}}</mrow>
+ <mrow>\amp = e^{x^2}\big(10x^4+15x^2\big).</mrow>
+ 
+</md>
+</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+A key to correctly working these problems is to break the problem down into smaller, more manageable pieces. For instance, when using the Product and Chain Rules together, just consider the first part of the Product Rule at first: <m>f(x)g\primeskip'(x)</m>. Just rewrite <m>f(x)</m>, then find <m>g\primeskip'(x)</m>. Then move on to the <m>\fp(x)g(x)</m> part. Don't attempt to figure out both parts at once.
+</p>
+  
+<p>
+Likewise, using the Quotient Rule, approach the numerator in two steps and handle the denominator after completing that. Only simplify afterward.
+</p>
+  
+<p>
+We can also employ the Chain Rule itself several times, as shown in the next example.<br />
+</p>
+  
+<example xml:id="ex_chain6"><title>Using the Chain Rule multiple times</title>
+<statement>
+<p>
+Find the derivative of <m>y = \tan^5(6x^3-7x)</m>.
+</p>
+  
+<solution><statement>
+<p>
+Recognize that we have the <m>g(x)=\tan(6x^3-7x)</m> function <q>inside</q> the <m>f(x)=x^5</m> function; that is, we have <m>y = \big(\tan(6x^3-7x)\big)^5</m>. We begin using the Generalized Power Rule; in this first step, we do not fully compute the derivative. Rather, we are approaching this step&#x2013;by&#x2013;step.
+</p>
+  
+<me>
+y\primeskip' = 5\big(\tan(6x^3-7x)\big)^4\cdot g\primeskip'(x).
+</me>
+ 
+<p>
+We now find <m>g\primeskip'(x)</m>. We again need the Chain Rule;
+</p>
+  
+<me>
+g\primeskip'(x) = \sec^2(6x^3-7x)\cdot(18x^2-7).
+</me>
+ 
+<p>
+Combine this with what we found above to give
+</p>
+  
+<md><mrow>y\primeskip' \amp = 5\big(\tan(6x^3-7x)\big)^4\cdot\sec^2(6x^3-7x)\cdot(18x^2-7)</mrow>
+ <mrow>\amp = (90x^2-35)\sec^2(6x^3-7x)\tan^4(6x^3-7x).</mrow>
+ 
+</md>
+  
+<p>
+This function is frankly a ridiculous function, possessing no real practical value. It is very difficult to graph, as the tangent function has many vertical asymptotes and <m>6x^3-7x</m> grows so very fast. The important thing to learn from this is that the derivative can be found. In fact, it is not <q>hard;</q> one must take several simple steps and be careful to keep track of how to apply each of these steps.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+It is a traditional mathematical exercise to find the derivatives of arbitrarily complicated functions just to demonstrate that it <em>can be done</em>. Just break everything down into smaller pieces. <br />
+</p>
+  
+<example xml:id="ex_chain5"><title>Using the Product, Quotient and Chain Rules</title>
+<statement>
+<p>
+Find the derivative of <m>\ds f(x) = \frac{x\cos(x^{-2})-\sin^2(e^{4x})}{\ln(x^2+5x^4)}.</m>
+</p>
+  
+<solution><statement>
+<p>
+This function likely has no practical use outside of demonstrating derivative skills. The answer is given below without simplification. It employs the Quotient Rule, the Product Rule, and the Chain Rule three times.<br />
+</p>
+  
+<p>
+\scriptsize
+<m>\fp(x) = </m>
+</p>
+  
+<me>
+\frac{\left(\begin{array}{l}\ln(x^2+5x^4)\cdot\Big[\big(x\cdot(-\sin(x^{-2}))\cdot(-2x^{-3})+1\cdot \cos(x^{-2})\big)-2\sin(e^{4x})\cdot\cos(e^{4x})\cdot(4e^{4x})\Big]\\
+\qquad-\Big(x\cos(x^{-2})-\sin^2(e^{4x})\Big)\cdot\frac{2x+20x^3}{x^2+5x^4}
+\end{array} \right)}{\big(\ln(x^2+5x^4)\big)^2}.
+</me>
+   
+<p>
+The reader is highly encouraged to look at each term and recognize why it is there. (I.e., the Quotient Rule is used; in the numerator, identify the <q>LOdHI</q> term, etc.) This example demonstrates that derivatives can be computed systematically, no matter how arbitrarily complicated the function is.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The Chain Rule also has theoretic value. That is, it can be used to find the derivatives of functions that we have not yet learned as we do in the following example.<br />
+</p>
+  
+<example xml:id="ex_chain8"><title>The Chain Rule and exponential functions</title>
+<statement>
+<p>
+Use the Chain Rule to find the derivative of <m>y= a^x</m> where <m>a>0</m>, <m>a\neq 1</m> is constant.
+</p>
+  
+<solution><statement>
+<p>
+We only know how to find the derivative of one exponential function: <m>y = e^x</m>; this problem is asking us to find the derivative of functions such as <m>y = 2^x</m>.
+</p>
+  
+<p>
+This can be accomplished by rewriting <m>a^x</m> in terms of <m>e</m>. Recalling that <m>e^x</m> and <m>\ln x</m> are inverse functions, we can write
+</p>
+  
+<me>
+
+a = e^{\ln a} \quad \text{and so }  \quad y = a^x = e^{\ln (a^x)}.
+
+</me>
+  
+<p>
+By the exponent property of logarithms, we can <q>bring down</q> the power to get
+</p>
+  
+<me>
+
+y = a^x = e^{x (\ln a)}.
+
+</me>
+  
+<p>
+The function is now the composition <m>y=f(g(x))</m>, with <m>f(x) = e^x</m> and <m>g(x) = x(\ln a)</m>. Since <m>\fp(x) = e^x</m> and <m>g\primeskip'(x) = \ln a</m>, the Chain Rule gives
+</p>
+  
+<me>
+
+y\primeskip' = e^{x (\ln a)} \cdot \ln a.
+
+</me>
+ 
+<p>
+Recall that the <m>e^{x(\ln a)}</m> term on the right hand side is just <m>a^x</m>, our original function. Thus, the derivative contains the original function itself. We have
+</p>
+  
+<me>
+
+y\primeskip' = y \cdot \ln a = a^x\cdot \ln a.
+
+</me>
+ 
+<p>
+The Chain Rule, coupled with the derivative rule of <m>e^x</m>, allows us to find the derivatives of all exponential functions.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The previous example produced a result worthy of its own <q>box.</q>
+</p>
+  
+<theorem xml:id="thm_exponentials"><title>Derivatives of Exponential Functions</title>
+<statement>
+<p>
+Let <m>f(x)=a^x</m>, for <m>a>0, a\neq 1</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>exponential functions\lt /sub>} Then <m>f</m> is differentiable for all real numbers and
+</p>
+  
+<me>
+\fp(x) = \ln a\cdot a^x.
+</me>
+ </statement>
+</theorem>
+  
+<p>
+Alternate Chain Rule Notation}<br />
+</p>
+  
+<p>
+It is instructive to understand what the Chain Rule <q>looks like</q> using <q><m>\frac{dy}{dx}</m></q> notation instead of <m>y\primeskip'</m> notation. Suppose that <m>y=f(u)</m> is a function of <m>u</m>, where <m>u=g(x)</m> is a function of <m>x</m>, as stated in <xref ref="thm_chain_rule">Theorem</xref>. Then, through the composition <m>f \circ g</m>, we can think of <m>y</m> as a function of <m>x</m>, as <m>y=f(g(x))</m>. Thus the derivative of <m>y</m> with respect to <m>x</m> makes sense; we can talk about <m>\frac{dy}{dx}.</m> This leads to an interesting progression of notation:\knownindex{\lt main>Chain Rule\lt /main>\lt sub>notation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Chain Rule\lt /sub>}
+</p>
+  
+<md><mrow>y\primeskip' \amp = \fp(g(x))\cdot g\primeskip'(x)</mrow>
+ <mrow>\frac{dy}{dx} \amp = \text{$\ds y\primeskip'(u) \cdot u\primeskip'(x)$} \mbox{ (since <m>y=f(u)</m> and <m>u=g(x)</m>)}</mrow>
+ <mrow>\frac{dy}{dx} \amp = \parbox{70pt}{$\ds \frac{dy}{du} \cdot \frac{du}{dx}$ } \mbox{ (using ``fractional'' notation for the derivative)}</mrow>
+ 
+</md>
+  
+<p>
+Here the <q>fractional</q> aspect of the derivative notation stands out. On the right hand side, it seems as though the <q><m>du</m></q> terms cancel out, leaving
+</p>
+  
+<me>
+ \frac{dy}{dx} = \frac{dy}{dx}.
+</me>
+ 
+<p>
+It is important to realize that we <em>are not</em> canceling these terms; the derivative notation of <m>\frac{dy}{dx}</m> is one symbol. It is equally important to realize that this notation was chosen precisely because of this behavior. It makes applying the Chain Rule easy with multiple variables. For instance,
+</p>
+  
+<me>
+
+\frac{dy}{dt} = \frac{dy}{d\bigcirc} \cdot \frac{d\bigcirc}{d\triangle} \cdot \frac{d\triangle}{dt}.
+
+</me>
+ 
+<p>
+where <m>\bigcirc</m> and <m>\triangle</m> are any variables you\primeskip'd like to use.
+</p>
+  
+<p>
+One of the most common ways of
+<q>visualizing\primeskip</q> the Chain Rule is to consider a set of gears, as shown in <xref ref="fig_chainrulegears">Figure</xref>. The gears have 36, 18, and 6 teeth, respectively. That means for every revolution of the <m>x</m> gear, the <m>u</m> gear revolves twice. That is, the rate at which the <m>u</m> gear makes a revolution is twice as fast as the rate at which the <m>x</m> gear makes a revolution. Using the terminology of calculus, the rate of <m>u</m>-change, with respect to <m>x</m>, is <m>\frac{du}{dx} = 2</m>.
+</p>
+  <figure xml:id="fig_chainrulegears" >
+<caption>A series of gears to demonstrate the Chain Rule. Note how <m>\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}</m></caption>
+<image source="images/figchainrulegears.png" /> </figure>
+  
+<p>
+Likewise, every revolution of <m>u</m> causes 3 revolutions of <m>y</m>: <m>\frac{dy}{du} = 3</m>. How does <m>y</m> change with respect to <m>x</m>? For each revolution of <m>x</m>, <m>y</m> revolves 6 times; that is,
+</p>
+  
+<me>
+\frac{dy}{dx} = \frac{dy}{du}\cdot \frac{du}{dx} = 2\cdot 3 = 6.
+</me>
+ 
+<p>
+We can then extend the Chain Rule with more variables by adding more gears to the picture.<br />
+</p>
+  
+<p>
+It is difficult to overstate the importance of the Chain Rule. So often the functions that we deal with are compositions of two or more functions, requiring us to use this rule to compute derivatives. It is often used in practice when actual functions are unknown. Rather, through measurement, we can calculate <m>\frac{dy}{du}</m> and <m>\frac{du}{dx}</m>. With our knowledge of the Chain Rule, finding <m>\frac{dy}{dx}</m> is straightforward.
+</p>
+  
+<p>
+In the next section, we use the Chain Rule to justify another differentiation technique. There are many curves that we can draw in the plane that fail the <q>vertical line test.</q> For instance, consider <m>x^2+y^2=1</m>, which describes the unit circle. We may still be interested in finding slopes of tangent lines to the circle at various points. The next section shows how we can find <m>\frac{dy}{dx}</m> without first <q>solving for <m>y</m>.</q> While we can in this instance, in many other instances solving for <m>y</m> is impossible. In these situations, <em>implicit differentiation</em> is indispensable.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+T/F: The Chain Rule describes how to evaluate the derivative of a composition of functions.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: The Generalized Power Rule states that <m>\ds \frac{d}{dx}\Big( g(x)^n\Big) = n\big(g(x)\big)^{n-1}</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: <m>\ds \frac{d}{dx}\big(\ln (x^2)\big) = \frac{1}{x^2}</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: <m>\ds \frac{d}{dx}\big(3^x\big) \approx 1.1\cdot3^x</m>.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: <m>\ds \frac{dx}{dy} = \frac{dx}{dt}\cdot \frac{dt}{dy}</m>
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: Taking the derivative of <m>f(x) = x^2\sin(5x)</m> requires the use of both the Product and Chain Rules.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, compute the derivative of the given function.
+}
+</p>
+  
+<exercise xml:id="exer_02_05_06"><statement>
+<p>
+<m>f(x) = (4x^3-x)^{10}</m>
+</p>
+  <hint><m>\fp(x) = 10(4x^3-x)^9\cdot(12x^2-1) = (120x^2-10)(4x^3-x)^9</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t) = (3t-2)^{5}</m>
+</p>
+  <hint><m>\fp(t) = 15(3t-2)^4</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(\theta) = (\sin \theta+\cos \theta)^3</m>
+</p>
+  <hint><m>g'(\theta) = 3(\sin \theta+\cos \theta)^2(\cos \theta-\sin\theta)</m></hint> </statement>
+</exercise>
+  
+<exercise xml:id="exer_02_05_09"><statement>
+<p>
+<m>h(t) = e^{3t^2+t-1}</m>
+</p>
+  <hint><m>h'(t) = (6t+1)e^{3t^2+t-1}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \big(x+\frac{1}{x}\big)^4</m>
+</p>
+  <hint><m>\fp(x) = 4\big(x+\frac1x\big)^3\big(1-\frac{1}{x^2}\big)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \cos (3x)</m>
+</p>
+  <hint><m>\fp(x) = -3\sin(3x)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = \tan (5x)</m>
+</p>
+  <hint><m>g'(x) = 5\sec^2(5x)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(t) = \sin^4(2t)</m>
+</p>
+  <hint><m>h'(t) = 8\sin^3(2t)\cos(2t)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>p(t) = \cos^3(t^2+3t+1)</m>
+</p>
+  <hint><m>p'(t) = -3\cos^2(t^2+3t+1)\sin(t^2+3t+1)(2t+3)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \ln (\cos x)</m>
+</p>
+  <hint><m>\fp(x) = -\tan x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \ln (x^2)</m>
+</p>
+  <hint><m>\fp(x) = 2/x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 2\ln (x)</m>
+</p>
+  <hint><m>\fp(x) = 2/x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(r) = 4^r</m>
+</p>
+  <hint><m>g'(r) = \ln 4\cdot 4^r</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = 5^{\cos t}</m>
+</p>
+  <hint><m>g'(t) = -\ln 5\cdot 5^{\cos t}\sin t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = 15^2</m>
+</p>
+  <hint><m>g'(t) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds m(w) = \frac{3^w}{2^w}</m>
+</p>
+  <hint><m>m'(w) = \ln (3/2) (3/2)^w</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(t) = \frac{2^t+3}{3^t+2}</m>
+</p>
+  <hint><m>\fp(x) = \frac{(3^t+2)\big((\ln 2) 2^t\big)-(2^t+3)\big((\ln 3)3^t\big)}{(3^t+2)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds m(w) = \frac{3^w+1}{2^w}</m>
+</p>
+  <hint><m>m'(w) = \frac{2^w\big(\ln 3\cdot 3^w-\ln 2\cdot (3^w+1)\big)}{2^{2w}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{3^{x^2}+x}{2^{x^2}}</m>
+</p>
+  <hint><m>\fp(x) = \frac{2^{x^2}(\ln 3\cdot 3^x{x^2}2x+1) - (3^{x^2}+x)(\ln 2\cdot 2^{x^2}2x)}{2^{2x^2}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2\sin(5x)</m>
+</p>
+  <hint><m>\fp(x) = 5x^2\cos(5x) + 2x\sin(5x)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t)   = \cos(t^2+3t)\sin(5t-7)</m>
+</p>
+  <hint><m>g'(t) = 5\cos(t^2+3t)\cos(5t-7)- (2t+3)\sin(t^2+3t)\sin(5t-7)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t)   = \cos(\frac1t)e^{5t^2}</m>
+</p>
+  <hint><m>g'(t) = 10t\cos(\frac1t)e^{5t^2}+\frac{1}{t^2}\sin(\frac1t)e^{5t^2}</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the equations of tangent and normal lines to the graph of the function at the given point. Note: the functions here are the same as in <xref ref="exer_02_05_06">Exercises</xref> through <xref ref="exer_02_05_09"></xref>.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = (4x^3-x)^{10}</m> at <m>x=0</m>
+</p>
+  <hint>Tangent line: <m>y=0</m>
+
+Normal line: <m>x=0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t) = (3t-2)^5</m> at <m>t=1</m>
+</p>
+  <hint>Tangent line: <m>y=15(t-1)+1</m>
+
+Normal line: <m>y=-1/15(t-1)+1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(\theta) = (\sin\theta+\cos\theta)^3</m> at <m>\theta = \pi/2</m>
+</p>
+  <hint>Tangent line: <m>y=-3(\theta - \pi/2)+1</m>
+
+Normal line: <m>y=1/3(\theta - \pi/2)+1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(t) = e^{3t^2+t-1}</m> at <m>t=-1</m>
+</p>
+  <hint>Tangent line: <m>y=-5e(t+1)+e</m>
+
+Normal line: <m>y=1/(5e)(t+1)+e</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Compute <m>\ds \frac{d}{dx}\big(\ln (kx)\big) </m> two ways:
+</p>
+  <ol><li>Using the Chain Rule, and</li>
+<li>by first using the logarithm rule <m>\ln (ab) = \ln a + \ln b</m>, then taking the derivative.</li>
+ </ol>   <hint>In both cases the derivative is the same: <m>1/x</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Compute <m>\ds \frac{d}{dx}\big(\ln (x^k)\big) </m> two ways:
+</p>
+  <ol><li>Using the Chain Rule, and</li>
+<li>by first using the logarithm rule <m>\ln (a^p) = p\ln a</m>, then taking the derivative.</li>
+ </ol>   <hint>In both cases the derivative is the same: <m>k/x</m>.</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+The <q>wind chill factor</q> is a measurement of how cold it <q>feels</q> during cold, windy weather. Let <m>W(w)</m> be the wind chill factor, in degrees Fahrenheit, when it is <m>25^\circ</m>F outside with a wind of <m>w</m> mph.
+</p>
+  <ol><li>What are the units of <m>W'(w)</m>?</li>
+<li>What would you expect the sign of <m>W'(10)</m> to be?</li>
+ </ol>   <hint><ol><li><m>^\circ</m> F/mph</li>
+<li>The sign would be negative; when the wind is blowing at 10 mph, any increase in wind speed will make it feel colder, i.e., a lower number on the Fahrenheit scale.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Find the derivatives of the following functions.
+</p>
+  <ol><li><m>f(x) = x^2e^x\cot x</m></li>
+<li><m>g(x) = 2^x3^x4^x</m></li>
+ </ol>   <hint><ol><li><m>2xe^x\cot x + x^2e^x\cot x - x^2e^x\csc^2 x</m></li>
+<li><m>\ln(48)48^x</m></li>
+ </ol> </hint> </statement>
+</exercise>
+ </subsection> </section>

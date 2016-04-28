@@ -1,0 +1,604 @@
+
+<section xml:id="sec_basic_diff_rules">
+<title>Basic Differentiation Rules</title><introduction>
+<p>
+The derivative is a powerful tool but is admittedly awkward given its reliance on limits. Fortunately, one thing mathematicians are good at is <em>abstraction.</em> For instance, instead of continually finding derivatives at a point, we abstracted and found the derivative function.
+</p>
+  
+<p>
+Let's practice abstraction on linear functions, <m>y=mx+b</m>. What is <m>y\primeskip'</m>? Without limits, recognize that linear function are characterized by being functions with a constant rate of change (the slope). The derivative, <m>y\primeskip'</m>, gives the instantaneous rate of change; with a linear function, this is constant, <m>m</m>. Thus <m>y\primeskip'=m</m>.
+</p>
+  
+<p>
+Let's abstract once more. Let's find the derivative of the general quadratic function, <m>f(x) = ax^2+bx+c</m>. Using the definition of the derivative, we have:
+</p>
+  
+<md><mrow>\fp(x) 	\amp =	\lim_{h\to 0}\frac{a(x+h)^2+b(x+h)+c-(ax^2+bx+c)}{h}</mrow>
+ <mrow>\amp =	\lim_{h\to 0} \frac{ah^2+2ahx+bh}{h}</mrow>
+ <mrow>\amp =	\lim_{h\to 0} ah+2ax+b</mrow>
+ <mrow>\amp = 2ax+b.</mrow>
+ 
+</md>
+ 
+<p>
+So if <m>y = 6x^2+11x-13</m>, we can immediately compute <m>y\primeskip' = 12x+11</m>. <br />
+</p>
+  
+<p>
+In this section (and in some sections to follow) we will learn some of what mathematicians have already discovered about the derivatives of certain functions and how derivatives interact with arithmetic operations. We start with a theorem.
+</p>
+  <div class="minipage">{\specialboxlength}
+
+<theorem xml:id="thm_deriv_common"><title>Derivatives of Common Functions</title>
+<statement><div class="minipage">{175pt}
+		<ol><li>\sword{Constant Rule:}\knownindex{\lt main>derivative\lt /main>\lt sub>Constant Rule\lt /sub>} 
+		
+		<m>\ds \frac{d}{dx}\big( c\big) = 0</m>, where <m>c</m> is a constant.</li>
+<li><m>\ds \frac{d}{dx}(\sin x) = \cos x</m></li>
+<li><m>\ds \frac{d}{dx}\left(e^x\right) = e^x</m></li>
+ </ol> </div>  <div class="minipage">{210pt}
+		<ol><li>\sword{Power Rule:}\knownindex{\lt main>derivative\lt /main>\lt sub>Power Rule\lt /sub>}\knownindex{\lt main>Power Rule\lt /main>\lt sub>differentiation\lt /sub>}
+		
+		<m>\ds \frac{d}{dx}\left(x^n\right) = nx^{n-1}</m>, where <m>n</m> is an integer, <m>n>0</m>.</li>
+<li><m>\ds \frac{d}{dx}(\cos x) = -\sin x</m></li>
+<li><m>\ds \frac{d}{dx}(\ln x) = \frac{1}{x}</m></li>
+ </ol>  \knownindex{\lt main>derivative\lt /main>\lt sub>basic rules\lt /sub>}</div> </statement>
+</theorem>
+</div> 
+<p>
+\restoreboxwidth
+</p>
+  
+<p>
+This theorem starts by stating an intuitive fact: constant functions have no rate of change as they are <em>constant</em>. Therefore their derivative is 0 (they change at the rate of 0). The theorem then states some fairly amazing things. The Power Rule states that the derivatives of Power Functions (of the form <m>y=x^n</m>) are very straightforward: multiply by the power, then subtract 1 from the power. We see something incredible about the function <m>y=e^x</m>: it is its own derivative. We also see a new connection between the sine and cosine functions.
+</p>
+  
+<p>
+One special case of the Power Rule is when <m>n=1</m>, i.e., when <m>f(x) = x</m>. What is <m>\fp(x)</m>? According to the Power Rule,
+</p>
+  
+<me>
+\fp(x) = \frac{d}{dx}\big(x\big) = \frac{d}{dx}\big(x^1\big) = 1\cdot x^0 = 1.
+</me>
+ 
+<p>
+In words, we are asking <q>At what rate does <m>f</m> change with respect to <m>x</m>?</q> Since <m>f</m> <em>is</em> <m>x</m>, we are asking <q>At what rate does <m>x</m> change with respect to <m>x</m>?</q> The answer is: 1. They change at the same rate.<br />
+</p>
+  
+<example xml:id="ex_deriv_rule1"><title>Using <xref ref="thm_deriv_common">Theorem</xref> to find, and use, derivatives</title>
+<statement>
+<p>
+Let <m>f(x)=x^3</m>.
+</p>
+  <ol><li>Find <m>\fp(x)</m>.</li>
+<li>Find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>.</li>
+<li>Use the tangent line to approximate <m>(-1.1)^3</m>.</li>
+<li>Sketch <m>f</m>, <m>\fp</m> and the found tangent line on the same axis.</li>
+ </ol>  
+<solution><statement><ol><li>To find the equation of the line tangent to the graph of <m>f</m> at <m>x=-1</m>, we need a point and the slope. The point is <m>(-1,f(-1)) = (-1, -1)</m>. The slope is <m>\fp(-1)= 3</m>. Thus the tangent line has equation <m>y = 3(x-(-1))+(-1) = 3x+2</m>.</li>
+<li>We can use the tangent line to approximate <m>(-1.1)^3</m> as <m>-1.1</m> is close to <m>-1</m>. We have 
+<me>
+(-1.1)^3 \approx 3(-1.1)+2 = -1.3.
+</me>
+ 
+			We can easily find the actual answer; <m>(-1.1)^3 = -1.331</m>.</li>
+<li>See <xref ref="fig_xcubedwithderiv">Figure</xref>.
+		<figure xml:id="fig_xcubedwithderiv" >
+<caption>A graph of <m>f(x) = x^3</m>, along with its derivative <m>\fp(x) = 3x^2</m> and its tangent line at <m>x=-1</m>.</caption>
+<image source="images/figxcubedwithderiv.png" /> </figure>
+</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+ 
+<p>
+
+\clearpage
+</p>
+  
+<p>
+<xref ref="thm_deriv_common">Theorem</xref> gives useful information, but we will need much more. For instance, using the theorem, we can easily find the derivative of <m>y=x^3</m>, but it does not tell how to compute the derivative of <m>y=2x^3</m>, <m>y=x^3+\sin x</m> nor <m>y=x^3\sin x</m>. The following theorem helps with the first two of these examples (the third is answered in the next section).
+</p>
+  
+<theorem xml:id="thm_deriv_prop"><title>Properties of the Derivative</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be differentiable on an open interval <m>I</m> and let <m>c</m> be a real number. Then:
+</p>
+  <ol><li>\sword{Sum/Difference Rule:}
+	
+	<m>\ds \frac{d}{dx}\Big(f(x) \pm g(x)\Big) = \frac{d}{dx}\Big(f(x)\Big) \pm \frac{d}{dx}\Big(g(x)\Big)</m> <m>= \fp(x)\pm g\primeskip'(x)</m>
+	\knownindex{\lt main>derivative\lt /main>\lt sub>Sum/Difference Rule\lt /sub>}\knownindex{\lt main>Sum/Difference Rule\lt /main>\lt sub>of derivatives\lt /sub>}</li>
+<li>\sword{Constant Multiple Rule:}
+	
+	<m>\ds \frac{d}{dx}\Big(c\cdot f(x)\Big) = c\cdot\frac{d}{dx}\Big(f(x)\Big) = c\cdot\fp(x)</m>.\knownindex{\lt main>derivative\lt /main>\lt sub>Constant Multiple Rule\lt /sub>}\knownindex{\lt main>Constant Multiple Rule\lt /main>\lt sub>of derivatives\lt /sub>}</li>
+ </ol>  </statement>
+</theorem>
+  
+<p>
+<xref ref="thm_deriv_prop">Theorem</xref> allows us to find the derivatives of a wide variety of functions. It can be used in conjunction with the Power Rule to find the derivatives of any polynomial. Recall in <xref ref="ex_deriv1">Example</xref> that we found, using the limit definition, the derivative of <m>f(x) = 3x^2+5x-7</m>. We can now find its derivative without expressly using limits:
+</p>
+  
+<md><mrow>\frac{d}{dx}\Big(3x^2+5x+7\Big) \amp = 3\frac{d}{dx}\Big(x^2\Big) + 5\frac{d}{dx}\Big(x\Big) + \frac{d}{dx}\Big(7\Big)</mrow>
+ <mrow>\amp = 3\cdot 2x+5\cdot 1+ 0</mrow>
+ <mrow>\amp = 6x+5.</mrow>
+ 
+</md>
+  
+<p>
+We were a bit pedantic here, showing every step. Normally we would do all the arithmetic and steps in our head and readily find <m>\ds \frac{d}{dx}\Big(3x^2+5x+7\Big) = 6x+5.</m><br />
+</p>
+  
+<example xml:id="ex_der2"><title>Using the tangent line to approximate a function value</title>
+<statement>
+<p>
+Let <m>f(x) = \sin x + 2x+1</m>. Approximate <m>f(3)</m> using an appropriate tangent line.
+</p>
+  
+<solution><statement>
+<p>
+This problem is intentionally ambiguous; we are to <em>approximate</em> using an <em>appropriate</em> tangent line. How good of an approximation are we seeking? What does appropriate mean?
+</p>
+  
+<p>
+In the <q>real world,</q> people solving problems deal with these issues all time. One must make a judgment using whatever seems reasonable. In this example, the actual answer is <m>f(3) = \sin 3 + 7</m>, where the real problem spot is <m>\sin 3</m>. What is <m>\sin 3</m>?
+</p>
+  
+<p>
+Since <m>3</m> is close to <m>\pi</m>, we can assume <m>\sin 3\approx \sin \pi = 0</m>. Thus one guess is <m>f(3) \approx 7</m>. Can we do better? Let's use a tangent line as instructed and examine the results; it seems best to find the tangent line at <m>x=\pi</m>.
+</p>
+  
+<p>
+Using <xref ref="thm_deriv_common">Theorem</xref> we find <m>\fp(x) = \cos x + 2</m>. The slope of the tangent line is thus <m>\fp(\pi) = \cos \pi + 2 =1</m>. Also, <m>f(\pi) = 2\pi+1 \approx 7.28</m>. So the tangent line to the graph of <m>f</m> at <m>x=\pi</m> is <m>y=1(x-\pi)+ 2\pi+1 =x+\pi+1 \approx x+4.14</m>. Evaluated at <m>x=3</m>, our tangent line gives <m>y=3+4.14 = 7.14</m>. Using the tangent line, our final approximation is that <m>f(3) \approx 7.14</m>.
+</p>
+  
+<p>
+Using a calculator, we get an answer accurate to 4 places after the decimal: <m>f(3) = 7.1411</m>. Our initial guess was <m>7</m>; our tangent line approximation was more accurate, at <m>7.14</m>.
+</p>
+  
+<p>
+The point is <em>not</em> <q>Here's a cool way to do some math without a calculator.</q> Sure, that might be handy sometime, but your phone could probably give you the answer. Rather, the point is to say that tangent lines are a good way of approximating, and many scientists, engineers and mathematicians often face problems too hard to solve directly. So they approximate.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+<b> Higher Order Derivatives</b><br />
+</p>
+  
+<article class="aside-like" id="marginalnote2-3-5"><h5 class="heading"><span class="type"></span><span class="codenumber">2.3.5</span></h5>
+<p>
+<b>Note:</b> <xref ref="def_Higher_Deriv">Definition</xref> comes with the caveat <q>Where the corresponding limits exist.</q> With <m>f</m> differentiable on <m>I</m>, it is possible that <m>\fp</m> is <em>not</em> differentiable on all of <m>I</m>, and so on.
+</p>
+ 
+</article>
+  
+<p>
+The derivative of a function <m>f</m> is itself a function, therefore we can take its derivative. The following definition gives a name to this concept and introduces its notation.
+Let <m>y=f(x)</m> be a differentiable function on <m>I</m>. \knownindex{\lt main>derivative\lt /main>\lt sub>higher order\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>notation\lt /sub>}
+</p>
+  <ol><li>The <em>second derivative</em> of <m>f</m> is: 
+						
+<me>
+ \fp'(x) = \frac{d}{dx}\Big(\fp(x)\Big) = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d\primeskip^2y}{dx^2}=y\primeskip''.
+</me>
+</li>
+<li>The <em>third derivative</em> of <m>f</m> is: 
+						
+<me>
+ \fp''(x) = \frac{d}{dx}\Big(\fp'(x)\Big) = \frac{d}{dx}\left(\frac{d\primeskip^2y}{dx^2}\right) = \frac{d\primeskip^3y}{dx^3}=y\primeskip'''.
+</me>
+</li>
+<li>The <em>n<m>^{\text{th} }</m> derivative</em> of <m>f</m> is:
+						
+<me>
+ f\,^{(n)}(x) = \frac{d}{dx}\left(f\,^{(n-1)}(x)\right) = \frac{d}{dx}\left(\frac{d\primeskip^{n-1}y}{dx^{n-1}}\right) = \frac{d\primeskip^ny}{dx^n}=y^{(n)}.
+</me>
+</li>
+ </ol>   
+<p>
+\end{definition}
+</p>
+    
+<p>
+In general, when finding the fourth derivative and on, we resort to the <m>f\,^{(4)}(x)</m> notation, not <m>\fp'''(x)</m>; after a while, too many ticks is too confusing.<br />
+</p>
+  
+<p>
+Let's practice using this new concept.<br />
+</p>
+  
+<example xml:id="ex_high_order"><title>Finding higher order derivatives</title>
+<statement>
+<p>
+Find the first four derivatives of the following functions:
+</p>
+  <div class="minipage">{.5\textwidth}
+	<ol><li><m>f(x) = 4x^2</m></li>
+<li><m>f(x) = \sin x</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+	<ol><li><m>f(x) = 5e^x</m></li>
+ </ol> </div> 
+<solution><statement><ol><li>Using the Power and Constant Multiple Rules, we have: <m>\fp(x) = 8x</m>. Continuing on, we have 
+	
+<me>
+\fp'(x) = \frac{d}{dx}\big(8x\big) = 8;\qquad \fp''(x) = 0;\qquad f\,^{(4)}(x) = 0.
+</me>
+  Notice how all successive derivatives will also be 0.</li>
+<li>We employ <xref ref="thm_deriv_common">Theorem</xref> repeatedly.
+	
+<me>
+\fp(x) = \cos x;\qquad \fp'(x) = -\sin x;\qquad \fp''(x) = -\cos x;\qquad f\,^{(4)}(x) = \sin x.
+</me>
+  Note how we have come right back to <m>f(x)</m> again. (Can you quickly figure what <m>f\,^{(23)}(x)</m> is?)</li>
+<li>Employing <xref ref="thm_deriv_common">Theorem</xref> and the Constant Multiple Rule, we can see that 
+<me>
+\fp(x) = \fp'(x) = \fp''(x) = f\,^{(4)}(x) = 5e^x.
+</me>
+</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+  
+<p>
+Interpreting Higher Order Derivatives}<br />
+</p>
+  
+<p>
+What do higher order derivatives <em>mean</em>? What is the practical interpretation? \knownindex{\lt main>derivative\lt /main>\lt sub>higher order!interpretation\lt /sub>}
+</p>
+  
+<p>
+Our first answer is a bit wordy, but is technically correct and beneficial to understand. That is,
+</p>
+  <div class="quote">The second derivative of a function <m>f</m> is the rate of change of the rate of change of <m>f</m>.</div>  
+<p>
+One way to grasp this concept is to let <m>f</m> describe a position function. Then, as stated in Key <xref ref="idea_motion">Idea</xref>, <m>\fp</m> describes the rate of position change: velocity. We now consider <m>\fp'</m>, which describes the rate of velocity change. Sports car enthusiasts talk of how fast a car can go from 0 to 60 mph; they are bragging about the <em>acceleration</em> of the car.
+</p>
+  
+<p>
+We started this chapter with amusement&#x2013;park riders free&#x2013;falling with position function <m>f(t) = -16t^2+150</m>. It is easy to compute <m>\fp(t)=-32t</m> ft/s and <m>\fp'(t) = -32</m> (ft/s)/s. We may recognize this latter constant; it is the acceleration due to gravity. In keeping with the unit notation introduced in the previous section, we say the units are <q>feet per second per second.</q> This is usually shortened to <q>feet per second squared,</q> written as <q>ft/s<m>^2</m>.</q>
+</p>
+  
+<p>
+It can be difficult to consider the meaning of the third, and higher order, derivatives. The third derivative is <q>the rate of change of the rate of change of the rate of change of <m>f</m>.</q> That is essentially meaningless to the uninitiated. In the context of our position/velocity/acceleration example, the third derivative is the <q>rate of change of acceleration,</q> commonly referred to as <q>jerk.</q>
+</p>
+  
+<p>
+Make no mistake: higher order derivatives have great importance even if their practical interpretations are hard (or <q>impossible</q>) to understand. The mathematical topic of <em>series</em> makes extensive use of higher order derivatives.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+What is the name of the rule which states that <m>\ds \frac{d}{dx}\big(x^n\big) = nx^{n-1}</m>, where <m>n>0</m> is an integer?
+</p>
+  <hint>Power Rule.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+What is <m>\ds \frac{d}{dx}\big(\ln x\big)</m>?
+</p>
+  <hint><m>1/x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Give an example of a function <m>f(x)</m> where <m>\fp(x) = f(x)</m>.
+</p>
+  <hint>One answer is <m>f(x) = 10e^x</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Give an example of a function <m>f(x)</m> where <m>\fp(x) = 0</m>.
+</p>
+  <hint>One answer is <m>f(x) = 10</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+The derivative rules introduced in this section explain how to compute the derivative of which of the following functions?
+</p>
+  <div class="minipage">{.5\linewidth}
+<ul><li><m>\ds f(x) = \frac{3}{x^2}</m></li>
+<li><m>g(x) = 3x^2-x+17</m></li>
+<li><m>h(x) = 5\ln x</m></li>
+ </ul> </div>  <div class="minipage">{.5\linewidth}
+<ul><li><m>j(x) = \sin x \cos x</m></li>
+<li><m>k(x) = e^{x^2}</m></li>
+<li><m>m(x) = \sqrt{x}</m></li>
+ </ul> </div>  <hint><m>g(x)</m> and <m>h(x)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Explain in your own words how to find the third derivative of a function <m>f(x)</m>.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Give an example of a function where <m>\fp(x) \neq 0</m> and <m>\fpp(x) = 0</m>.
+</p>
+  <hint>One possible answer is <m>f(x) = 17x-205</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Explain in your own words what the second derivative <q>means.</q>
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+If <m>f(x)</m> describes a position function, then <m>\fp(x)</m> describes what kind of function? What kind of function is <m>\fpp(x)</m>?
+</p>
+  <hint><m>\fp(x)</m> is a velocity function, and <m>\fpp(x)</m> is acceleration.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f(x)</m> be a function measured in pounds, where <m>x</m> is measured in feet. What are the units of <m>\fpp(x)</m>?
+</p>
+  <hint>lbs/ft<m>^2</m>.</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, compute the derivative of the given function.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 7x^2-5x+7</m>
+</p>
+  <hint><m>\fp(x) = 14x-5</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = 14x^3+7x^2+11x-29</m>
+</p>
+  <hint><m>g'(x) = 42x^2+14x+11</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>m(t) = 9t^5-\frac18t^3+3t-8</m>
+</p>
+  <hint><m>m'(t) = 45t^4-\frac38t^2+3</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(\theta) = 9\sin \theta + 10\cos \theta</m>
+</p>
+  <hint><m>\fp(\theta) = 9\cos \theta-10\sin\theta</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(r) = 6e^r</m>
+</p>
+  <hint><m>\fp(r) = 6e^r</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = 10t^4-\cos t +7\sin t</m>
+</p>
+  <hint><m>g'(t) = 40t^3 + \sin t + 7\cos t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 2\ln x - x</m>
+</p>
+  <hint><m>\fp(x) = \frac2x-1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>p(s) = \frac14s^4+\frac13s^3+\frac12s^2+s+1</m>
+</p>
+  <hint><m>p'(s) = s^3+s^2+s+1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(t) = e^t - \sin t - \cos t</m>
+</p>
+  <hint><m>h'(t) = e^t - \cos t + \sin t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \ln (5x^2)</m>
+</p>
+  <hint><m>\fp(x) = \frac2x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t) = \ln (17)+ e^2 + \sin \pi/2</m>
+</p>
+  <hint><m>\fp(t) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = (1+3t)^2</m>
+</p>
+  <hint><m>g'(t) = 18t+6</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = (2x-5)^3</m>
+</p>
+  <hint><m>g'(x) = 24x^2-120x+150</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = (1-x)^3</m>
+</p>
+  <hint><m>\fp(x) = -3x^2+6x-3</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = (2-3x)^2</m>
+</p>
+  <hint><m>\fp(x) = 18x-12</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+A property of logarithms is that <m>\ds \log_a x = \frac{\log_b x}{\log_b a}</m>, for all bases <m>a,b>0,\neq 1</m>.
+</p>
+  <hint>\begin{enumerate}</hint> </statement>
+</exercise>
+ 
+<p>
+\item Rewrite this identity when <m>b=e</m>, i.e., using <m>\log_ex =\ln x</m>.
+	\item	Use part (a) to find the derivative of <m>y=\log_a x</m>.
+	\item	Give the derivative of <m>y=\log_{10} x</m>.
+	
+{
+}
+{ In Exercises}
+{, compute the first four derivatives of the given function.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^6</m>
+</p>
+  <hint><m>\fp(x) = 6x^5</m> <m>\fpp(x) = 30x^4</m> <m>\fpp'(x) = 120x^3</m> <m>f^{(4)}(x) = 360x^2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = 2\cos x</m>
+</p>
+  <hint><m>g'(x) = -2\sin x</m> <m>g''(x) = -2\cos x</m> <m>g'''(x) = 2\sin x</m> <m>g^{(4)}(x) = 2\cos x</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>h(t) = t^2 - e^t</m>
+</p>
+  <hint><m>h'(t) = 2t-e^t</m> <m>h''(t) = 2-e^t</m> <m>h'''(t) = -e^t</m> <m>h^{(4)}(t) = -e^t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>p(\theta) = \theta^4-\theta^3</m>
+</p>
+  <hint><m>p'(\theta) = 4\theta^3-3\theta^2</m> <m>p''(\theta) = 12\theta^2 - 6\theta</m> <m>p'''(\theta) = 24\theta-6</m> <m>p^{(4)}(\theta) = 24</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(\theta) = \sin\theta-\cos\theta</m>
+</p>
+  <hint><m>\fp(\theta) = \cos\theta+\sin\theta</m> <m>\fp'(\theta) = -\sin\theta+\cos\theta</m> <m>\fp''(\theta) = -\cos\theta-\sin\theta</m> <m>f^{(4)}(\theta) = \sin\theta-\cos\theta</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x)=1,100</m>
+</p>
+  <hint><m>\fp(x) = \fp'(x) = \fp''(x) = f^{(4)}(x) = 0</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the equations of the tangent and normal lines to the graph of the function at the given point.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x)=x^3-x</m> at <m>x=1</m>
+</p>
+  <hint>Tangent line: <m>y = 2(x-1)</m>
+
+Normal line: <m>y=-1/2(x-1)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t)=e^t+3</m> at <m>t=0</m>
+</p>
+  <hint>Tangent line: <m>y = t+4</m>
+
+Normal line: <m>y=-t+4</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x)=\ln x</m> at <m>x=1</m>
+</p>
+  <hint>Tangent line: <m>y = x-1</m>
+
+Normal line: <m>y=-x+1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x)=4\sin x</m> at <m>x=\pi/2</m>
+</p>
+  <hint>Tangent line: <m>y = 4</m>
+
+Normal line: <m>x=\pi/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x)=-2\cos x</m> at <m>x=\pi/4</m>
+</p>
+  <hint>Tangent line: <m>y = \sqrt{2}(x-\frac{\pi}{4})-\sqrt{2}</m>
+
+Normal line: <m>y = \frac{-1}{\sqrt{2}}(x-\frac{\pi}{4})-\sqrt{2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x)=2x+3</m> at <m>x=5</m>
+</p>
+  <hint>Tangent line: <m>y = 2x+3</m>
+
+Normal line: <m>y=-1/2(x-5)+13</m></hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Given that <m>e^0=1</m>, approximate the value of <m>e^{0.1}</m> using the tangent line to <m>f(x) = e^x</m> at <m>x=0</m>.
+</p>
+  <hint>The tangent line to <m>f(x) = e^x</m> at <m>x=0</m> is <m>y=x+1</m>; thus <m>e^{0.1} \approx y(0.1) = 1.1</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Approximate the value of <m>(3.01)^4</m> using the tangent line to <m>f(x) = x^4</m> at <m>x=3</m>.
+</p>
+  <hint>The tangent line to <m>f(x) = x^4</m> at <m>x=3</m> is <m>y=108(x-3)+81</m>; thus <m>(3.01)^4 \approx y(3.01) = 108(.01)+81 = 82.08</m>.</hint> </statement>
+</exercise>
+ </subsection> </section>

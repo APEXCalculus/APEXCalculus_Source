@@ -1,0 +1,14 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter_derivatives">
+<title>Derivatives</title><introduction>  
+<p>
+The previous chapter introduced the most fundamental of calculus topics: the limit. This chapter introduces the second most fundamental of calculus topics: the derivative. Limits describe <em>where</em> a function is going; derivatives describe <em>how fast</em> the function is going.
+</p>
+ </introduction> <xi:include  href="section2-1.mbx" />
+ <xi:include  href="section2-2.mbx" />
+ <xi:include  href="section2-3.mbx" />
+ <xi:include  href="section2-4.mbx" />
+ <xi:include  href="section2-5.mbx" />
+ <xi:include  href="section2-6.mbx" />
+ <xi:include  href="section2-7.mbx" />
+ </chapter>

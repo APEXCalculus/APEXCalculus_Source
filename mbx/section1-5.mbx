@@ -1,0 +1,757 @@
+
+<section xml:id="sec_continuity">
+<title>Continuity</title><introduction>
+<p>
+As we have studied limits, we have gained the intuition that limits measure <q>where a function is heading.</q> That is, if <m>\ds \lim_{x\to 1} f(x) = 3</m>, then as <m>x</m> is close to 1, <m>f(x)</m> is close to 3. We have seen, though, that this is not necessarily a good indicator of what <m>f(1)</m> actually is. This can be problematic; functions can tend to one value but attain another. This section focuses on functions that <em>do not</em> exhibit such behavior.
+</p>
+  
+<definition xml:id="def_continuous"><title>Continuous Function</title>
+<statement>
+<p>
+Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. \knownindex{\lt main>continuous function\lt /main>}
+</p>
+  <ol><li><m>f</m> is <b>continuous at <m>c</m></b> if <m>\ds \lim_{x\to c}f(x) = f(c)</m>.</li>
+<li><m>f</m> is <b>continuous on <m>I</m></b> if <m>f</m> is continuous at <m>c</m> for all values of <m>c</m> in <m>I</m>. If <m>f</m> is continuous on <m>(-\infty,\infty)</m>, we say <m>f</m> is <b>continuous everywhere</b>.</li>
+ </ol>  </statement>
+</definition>
+  
+<p>
+A useful way to establish whether or not a function <m>f</m> is continuous at <m>c</m> is to verify the following three things:
+</p>
+  <ol><li><m>\ds \lim_{x\to c} f(x)</m> exists,</li>
+<li><m>f(c)</m> is defined, and</li>
+<li><m>\ds \lim_{x\to c} f(x) = f(c)</m>.</li>
+ </ol>   
+<example xml:id="ex_contint1"><title>Finding intervals of continuity</title>
+<statement>
+<p>
+Let <m>f</m> be defined as shown in <xref ref="fig_continuous1">Figure</xref>. Give the interval(s) on which <m>f</m> is continuous.
+</p>
+  <figure xml:id="fig_continuous1" >
+<caption>A graph of <m>f</m> in <xref ref="ex_contint1">Example</xref>.</caption>
+<image source="images/figContinuous1.png" /> </figure>
+  
+<solution><statement>
+<p>
+We proceed by examining the three criteria for continuity.
+</p>
+  <ol><li>The limits <m>\ds \lim_{x\to c} f(x)</m> exists for all <m>c</m> between 0 and 3.</li>
+<li><m>f(c)</m> is defined for all <m>c</m> between 0 and 3, <em>except for</em> <m>c=1</m>. We know immediately that <m>f</m> cannot be continuous at <m>x=1</m>.</li>
+<li>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all <m>c</m> between 0 and 3, except, of course, for <m>c=1</m>.</li>
+ </ol>   
+<p>
+We conclude that <m>f</m> is continuous at every point of <m>(0,3)</m> except at <m>x=1</m>. Therefore <m>f</m> is continuous on <m>(0,1)\cup(1,3)</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_contint2"><title>Finding intervals of continuity</title>
+<statement>
+<p>
+The <em>floor function</em>,\knownindex{\lt main>floor function\lt /main>} <m>f(x) = \lfloor x \rfloor</m>, returns the largest integer smaller than the input <m>x</m>. (For example, <m>f(\pi) = \lfloor \pi \rfloor = 3</m>.) The graph of <m>f</m> in <xref ref="fig_continuous2">Figure</xref> demonstrates why this is often called a <q>step function.</q> <br />
+</p>
+  
+<p>
+Give the intervals on which <m>f</m> is continuous.
+</p>
+  <figure xml:id="fig_continuous2" >
+<caption>A graph of the step function in <xref ref="ex_contint2">Example</xref>.</caption>
+<image source="images/figContinuous2.png" /> </figure>
+  
+<solution><statement>
+<p>
+We examine the three criteria for continuity.
+</p>
+  <ol><li>The limits <m>\lim_{x\to c} f(x)</m> do not exist at the jumps from one <q>step</q> to the next, which occur at all integer values of <m>c</m>. Therefore the limits exist for all <m>c</m> except when <m>c</m> is an integer.</li>
+<li>The function is defined for all values of <m>c</m>.</li>
+<li>The limit <m>\ds \lim_{x\to c} f(x) = f(c)</m> for all values of <m>c</m> where the limit exist, since each step consists of just a line.</li>
+ </ol>  
+<p>
+We conclude that <m>f</m> is continuous everywhere except at integer values of <m>c</m>. So the intervals on which <m>f</m> is continuous are
+</p>
+  
+<me>
+\ldots, (-2,-1), (-1,0), (0,1), (1,2), \ldots.
+</me>
+ </statement>
+</solution>
+ </statement>
+</example>
+ 
+<p>
+
+		
+Our definition of continuity on an interval specifies the interval is an open interval. We can extend the definition of continuity to closed intervals by considering the appropriate one-sided limits at the endpoints.
+</p>
+  
+<definition xml:id="def_closed_continuity"><title>Continuity on Closed Intervals</title>
+<statement>
+<p>
+Let <m>f</m> be defined on the closed interval <m>[a,b]</m> for some real numbers <m>a,b</m>. <m>f</m> is continuous on <m>[a,b]</m> if:
+</p>
+  <ol><li><m>f</m> is continuous on <m>(a,b)</m>,</li>
+<li><m>\ds \lim_{x\to a^+} f(x) = f(a)</m> and</li>
+<li><m>\ds \lim_{x\to b^-} f(x) = f(b)</m>.</li>
+ </ol>  </statement>
+</definition>
+  
+<p>
+We can make the appropriate adjustments to talk about continuity on half&#x2013;open intervals such as <m>[a,b)</m> or <m>(a,b]</m> if necessary.<br />
+</p>
+  
+<example xml:id="ex_cont_funct1"><title>Determining intervals on which a function is continuous</title>
+<statement>
+<p>
+For each of the following functions, give the domain of the function and the interval(s) on which it is continuous.
+</p>
+  <div class="minipage">{.5\textwidth}
+			<ol><li><m>f(x) = 1/x</m></li>
+<li><m>f(x) = \sin x</m></li>
+<li><m>f(x) = \sqrt{x}</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+			<ol><li><m>f(x) = \sqrt{1-x^2}</m></li>
+<li><m>f(x) = |x|</m></li>
+ </ol> </div> 
+<solution><statement>
+<p>
+We examine each in turn.
+</p>
+  <ol><li>The domain of <m>f(x) = 1/x</m> is <m>(-\infty,0) \cup (0,\infty)</m>. As it is a rational function, we apply <xref ref="thm_poly_rat">Theorem</xref> to recognize that <m>f</m> is continuous on all of its domain.</li>
+<li>The domain of <m>f(x) = \sin x</m> is all real numbers, or <m>(-\infty,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>\sin x</m> is continuous everywhere.</li>
+<li>The domain of <m>f(x) = \sqrt{x}</m> is <m>[0,\infty)</m>. Applying <xref ref="thm_lim_continuous">Theorem</xref> shows that <m>f(x) = \sqrt{x}</m> is continuous on its domain of <m>[0,\infty)</m>.</li>
+<li>The domain of <m>f(x) = \sqrt{1-x^2}</m> is <m>[-1,1]</m>. Applying <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_lim_continuous"></xref> shows that <m>f</m> is continuous on all of its domain, <m>[-1,1]</m>.</li>
+<li>The domain of <m>f(x) = |x|</m> is <m>(-\infty,\infty)</m>. We can define the absolute value function as <m>\ds f(x) = \left\{\begin{array}{cc} -x \amp  x\lt 0 \\ x \amp  x\geq 0
+\end{array} \right.</m>. Each <q>piece</q> of this piecewise defined function is continuous on all of its domain, giving that <m>f</m> is continuous on <m>(-\infty,0)</m> and <m>[0,\infty)</m>. We cannot assume this implies that <m>f</m> is continuous on <m>(-\infty,\infty)</m>; we need to check that <m>\ds \lim_{x\to 0}f(x) = f(0)</m>, as <m>x=0</m> is the point where <m>f</m> transitions from one <q>piece</q> of its definition to the other. It is easy to verify that this is indeed true, hence we conclude that <m>f(x) = |x|</m> is continuous everywhere.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Continuity is inherently tied to the properties of limits. Because of this, the properties of limits found in <xref ref="thm_limit_algebra">Theorems</xref> and <xref ref="thm_poly_rat"></xref> apply to continuity as well. Further, now knowing the definition of continuity we can re&#x2013;read <xref ref="thm_lim_continuous">Theorem</xref> as giving a list of functions that are continuous on their domains. The following theorem states how continuous functions can be combined to form other continuous functions, followed by a theorem which formally lists functions that we know are continuous on their domains.
+</p>
+  
+<theorem xml:id="thm_continuity_algebra"><title>Properties of Continuous Functions</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be continuous functions on an interval <m>I</m>, let <m>c</m> be a real number and let <m>n</m> be a positive integer. The following functions are continuous on <m>I</m>.
+</p>
+  <ol><li>\text{Sums/Differences:}	<m>f\pm g</m></li>
+<li>\text{Constant Multiples:}	<m>c\cdot f</m></li>
+<li>\text{Products:}	<m>f\cdot g</m></li>
+<li>\text{Quotients:}	<m>f/g</m> &nbsp;&nbsp;&nbsp; { (as long as <m>g\neq 0</m> on <m>I</m>)}</li>
+<li>\text{Powers:}	<m>f\,^n</m></li>
+<li>\text{Roots:}	<m>\sqrt[n]{f}</m> &nbsp;&nbsp;&nbsp; \parbox[t]{150pt}{ (if <m>n</m> is even then <m>f\geq 0</m> on <m>I</m>; if <m>n</m> is odd, then true for all values of <m>f</m> on <m>I</m>.)}</li>
+<li>\text{Compositions:}\parbox[t]{185pt}{Adjust the definitions of <m>f</m> and <m>g</m> to: Let <m>f</m> be continuous on <m>I</m>, where the range of <m>f</m> on <m>I</m> is <m>J</m>, and let <m>g</m> be continuous on <m>J</m>. Then <m>g\circ f</m>, i.e., <m>g(f(x))</m>, is continuous on <m>I</m>.}</li>
+ </ol>  </statement>
+</theorem>
+  
+<theorem xml:id="thm_continuous_functions"><title>Continuous Functions</title>
+<statement>
+<p>
+The following functions are continuous on their domains. \knownindex{\lt main>continuous function\lt /main>\lt sub>properties\lt /sub>}
+</p>
+  <div class="minipage">{.5\specialboxlength}
+<ol><li><m>\ds f(x) = \sin x</m></li>
+<li><m>\ds f(x) =  \tan x</m></li>
+<li><m>\ds f(x) =  \sec x</m></li>
+<li><m>\ds f(x) =  \ln x</m></li>
+<li><m>\ds f(x) =  a^x</m> (<m>a>0</m>)</li>
+ </ol> </div>  <div class="minipage">{.5\specialboxlength}
+<ol><li><m>\ds f(x) = \cos x</m></li>
+<li><m>\ds f(x) =  \cot x</m></li>
+<li><m>\ds f(x) =  \csc x</m></li>
+<li><m>\ds f(x) =  \sqrt[n]{x}</m>, 
+
+{ (where <m>n</m> is a positive integer)}</li>
+ </ol> </div> </statement>
+</theorem>
+  
+<p>
+We apply these theorems in the following Example.<br />
+</p>
+  
+<p>
+\clearpage
+</p>
+  
+<example xml:id="ex_cont_funct"><title>Determining intervals on which a function is continuous</title>
+<statement>
+<p>
+State the interval(s) on which each of the following functions is continuous.
+</p>
+  <div class="minipage">{.5\linewidth}
+		<ol><li><m>\ds f(x) = \sqrt{x-1} + \sqrt{5-x}</m></li>
+<li><m>\ds f(x) = x\sin x</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+		<ol><li><m>\ds f(x) = \tan x</m></li>
+<li><m>\ds f(x) = \sqrt{\ln x}</m></li>
+ </ol> </div> 
+<solution><statement>
+<p>
+We examine each in turn, applying <xref ref="thm_continuity_algebra">Theorems</xref> and <xref ref="thm_continuous_functions"></xref> as appropriate.
+</p>
+  <ol><li>The square&#x2013;root terms are continuous on the intervals <m>[1,\infty)</m> and <m>(-\infty,5]</m>, respectively. As <m>f</m> is continuous only where each term is continuous, <m>f</m> is continuous on <m>[1,5]</m>, the intersection of these two intervals. A graph of <m>f</m> is given in <xref ref="fig_continuous3">Figure</xref>.
+			
+	<figure xml:id="fig_continuous3" >
+<caption>A graph of <m>f</m> in <xref ref="ex_cont_funct">Example</xref>(1).</caption>
+<image source="images/figContinuous3.png" /> </figure>
+</li>
+<li>The functions <m>y=x</m> and <m>y=\sin x</m> are each continuous everywhere, hence their product is, too.</li>
+<li><xref ref="thm_continuous_functions">Theorem</xref> states that <m>f(x) = \tan x</m> is continuous <q>on its domain.</q> Its domain includes all real numbers except odd multiples of <m>\pi/2</m>. Thus <m>f(x) = \tan x</m> is continuous on 
+<me>
+\ldots \left(-\frac{3\pi}{2},-\frac{\pi}2\right),\ \left(-\frac{\pi}2,\frac{\pi}2\right),\ \left(\frac{\pi}2,\frac{3\pi}2\right),\ldots,
+</me>
+  or, equivalently, on <m>D = \{x\in \mathbb{R}\ |\ x\neq n\cdot \frac{\pi}2,\ </m>n<m>\ \text{is an odd integer}  \}.</m></li>
+<li>The domain of <m>y = \sqrt{x}</m> is <m>[0,\infty)</m>. The range of <m>y=\ln x</m> is <m>(-\infty,\infty)</m>, but if we restrict its domain to <m>[1,\infty)</m> its range is <m>[0,\infty)</m>. So restricting <m>y = \ln x</m> to the domain of <m>[1,\infty)</m> restricts its output is <m>[0,\infty)</m>, on which <m>y = \sqrt{x}</m> is defined. Thus the domain of <m>f(x) = \sqrt{\ln x}</m> is <m>[1,\infty)</m>.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+A common way of thinking of a continuous function is that <q>its graph can be sketched without lifting your pencil.</q> That is, its graph forms a <q>continuous</q> curve, without holes, breaks or jumps.
+While beyond the scope of this text, this pseudo&#x2013;definition glosses over some of the finer points of continuity. Very strange functions are continuous that one would be hard pressed to actually sketch by hand.
+</p>
+  
+<p>
+This intuitive notion of continuity does help us understand another important concept as follows. Suppose <m>f</m> is defined on <m>[1,2]</m> and <m>f(1) = -10</m> and <m>f(2) = 5</m>. If <m>f</m> is continuous on <m>[1,2]</m> (i.e., its graph can be sketched as a continuous curve from <m>(1,-10)</m> to <m>(2,5)</m>) then we know intuitively that somewhere on <m>[1,2]</m> <m>f</m> must be equal to <m>-9</m>, and <m>-8</m>, and <m>-7,\ -6,\ \ldots,\ 0,\ 1/2,</m> etc. In short, <m>f</m> takes on all <em>intermediate</em> values between <m>-10</m> and <m>5</m>. It may take on more values; <m>f</m> may actually equal 6 at some time, for instance, but we are guaranteed all values between <m>-10</m> and 5.
+</p>
+  
+<p>
+While this notion seems intuitive, it is not trivial to prove and its importance is profound. Therefore the concept is stated in the form of a theorem.
+</p>
+  
+<theorem xml:id="thm_IVT"><title>Intermediate Value Theorem</title>
+<statement>
+<p>
+Let <m>f</m> be a continuous function on <m>[a,b]</m> and, without loss of generality, let <m>f(a) \lt  f(b)</m>. Then for every value <m>y</m>, where <m>f(a) \lt  y \lt  f(b)</m>, there is a value <m>c</m> in <m>[a,b]</m> such that <m>f(c) = y</m>. \knownindex{\lt main>Intermediate Value Theorem\lt /main>}
+</p>
+ </statement>
+</theorem>
+  
+<p>
+One important application of the Intermediate Value Theorem is root finding. Given a function <m>f</m>, we are often interested in finding values of <m>x</m> where <m>f(x) = 0</m>. These roots may be very difficult to find exactly. Good approximations can be found through successive applications of this theorem. Suppose through direct computation we find that <m>f(a) \lt 0 </m> and <m>f(b)>0</m>, where <m>a\lt b</m>. The Intermediate Value Theorem states that there is a <m>c</m> in <m>[a,b]</m> such that <m>f(c) = 0</m>. The theorem does not give us any clue as to where that value is in the interval <m>[a,b]</m>, just that it exists.
+</p>
+  
+<p>
+There is a technique that produces a good approximation of <m>c</m>. Let <m>d</m> be the midpoint of the interval <m>[a,b]</m> and consider <m>f(d)</m>. There are three possibilities:
+</p>
+  <ol><li><m>f(d) = 0</m> &#x2013; we got lucky and stumbled on the actual value. We stop as we found a root.</li>
+<li><m>f(d) \lt 0</m> Then we know there is a root of <m>f</m> on the interval <m>[d,b]</m> &#x2013; we have halved the size of our interval, hence are closer to a good approximation of the root.</li>
+<li><m>f(d) >0</m> Then we know there is a root of <m>f</m> on the interval <m>[a,d]</m> &#x2013; again,we have halved the size of our interval, hence are closer to a good approximation of the root.</li>
+ </ol>   
+<example xml:id="ex_bisect_method"><title>Using the Bisection Method</title>
+<statement>
+<p>
+Approximate the root of <m>f(x) = x-\cos x</m>, accurate to three places after the decimal.
+</p>
+  
+<solution><statement>
+<p>
+Consider the graph of <m>f(x) = x-\cos x</m>, shown in <xref ref="fig_xminuscosx">Figure</xref>. It is clear that the graph crosses the <m>x</m>-axis somewhere near <m>x=0.8</m>. To start the Bisection Method, pick an interval that contains <m>0.8</m>. We choose <m>[0.7,0.9]</m>. Note that all we care about are signs of <m>f(x)</m>, not their actual value, so this is all we display.
+</p>
+  <figure xml:id="fig_xminuscosx" >
+<caption>Graphing a root of <m>f(x) = x-\cos x</m>.</caption>
+<image source="images/figXMinusCosX.png" /> </figure>
+  <ul><li class="custom-list-style-type" label="Iteration 1:" ><m>f(0.7) \lt  0</m>, <m>f(0.9) > 0</m>, and <m>f(0.8) >0</m>. So replace <m>0.9</m> with <m>0.8</m> and repeat.</li>
+<li class="custom-list-style-type" label="Iteration 2:" ><m>f(0.7)\lt 0</m>, <m>f(0.8) > 0</m>, and at the midpoint, <m>0.75</m>, we have <m>f(0.75) >0 </m>. So replace <m>0.8</m> with <m>0.75</m> and repeat. Note that we don't need to continue to check the endpoints, just the midpoint. Thus we put the rest of the iterations in <xref ref="table_rootfinding">Table</xref>.</li>
+ </ul>   <figure xml:id="table_rootfinding" >
+<caption>Iterations of the Bisection Method of Root Finding</caption>
+\footnotesize <table id="6dc9ba364fec99eb0643365e3d8efa163e83ac7d" ><tr><td class='c'>
+			Iteration <hash /> \amp  Interval \amp  Midpoint Sign </td></tr>
+<tr><td class='hline' colspan='3'><hr /></td></tr>
+<tr><td class='c'>
+			1		\amp  <m>[0.7,0.9]</m> \amp  <m>f(0.8) >0</m> </td></tr>
+<tr><td class='c'>
+			2 \amp  <m>[0.7,0.8] </m> \amp  <m>f(0.75) >0</m> </td></tr>
+<tr><td class='c'>
+			3 \amp  <m>[0.7,0.75]</m> \amp  <m>f(0.725)\lt 0</m></td></tr>
+<tr><td class='c'>
+			4 \amp  <m>[0.725,0.75]</m> \amp  <m>f(0.7375)\lt 0</m></td></tr>
+<tr><td class='c'>
+			5 \amp  <m>[0.7375,0.75]</m> \amp  <m>f(0.7438)>0</m></td></tr>
+<tr><td class='c'>
+			6 \amp  <m>[0.7375,0.7438]</m> \amp  <m>f(0.7407)>0</m></td></tr>
+<tr><td class='c'>
+			7 \amp  <m>[0.7375,0.7407]</m> \amp  <m>f(0.7391)>0</m></td></tr>
+<tr><td class='c'>
+			8 \amp  <m>[0.7375,0.7391]</m> \amp  <m>f(0.7383)\lt 0</m></td></tr>
+<tr><td class='c'>
+			9 \amp  <m>[0.7383,0.7391]</m> \amp  <m>f(0.7387)\lt 0</m></td></tr>
+<tr><td class='c'>
+			10 \amp  <m>[0.7387,0.7391]</m> \amp  <m>f(0.7389)\lt 0</m></td></tr>
+<tr><td class='c'>
+			11 \amp  <m>[0.7389,0.7391]</m> \amp  <m>f(0.7390)\lt 0</m></td></tr>
+<tr><td class='c'>
+			12 \amp  <m>[0.7390,0.7391]</m> \amp    </td></tr>
+<tr><td class='c'></td></tr>
+</table> 
+			
+</figure>
+  
+<p>
+Notice that in the 12<m>^\text{th} </m> iteration we have the endpoints of the interval each starting with <m>0.739</m>. Thus we have narrowed the zero down to an accuracy of the first three places after the decimal. Using a computer, we have
+</p>
+  
+<me>
+ f(0.7390) = -0.00014, \quad f(0.7391) = 0.000024.
+</me>
+ 
+<p>
+Either endpoint of the interval gives a good approximation of where <m>f</m> is 0. The Intermediate Value Theorem states that the actual zero is still within this interval. While we do not know its exact value, we know it starts with <m>0.739</m>.
+</p>
+  
+<p>
+This type of exercise is rarely done by hand. Rather, it is simple to program a computer to run such an algorithm and stop when the endpoints differ by a preset small amount. One of the authors did write such a program and found the zero of <m>f</m>, accurate to 10 places after the decimal, to be 0.7390851332. While it took a few minutes to write the program, it took less than a thousandth of a second for the program to run the necessary 35 iterations. In less than 8 hundredths of a second, the zero was calculated to 100 decimal places (with less than 200 iterations).
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+It is a simple matter to extend the Bisection Method to solve problems similar to <q>Find <m>x</m>, where <m>f(x) = 0</m>.</q> For instance, we can find <m>x</m>, where <m>f(x) = 1</m>.
+It actually works very well to define a new function <m>g</m> where <m>g(x) = f(x) - 1</m>. Then use the Bisection Method to solve <m>g(x)=0</m>.
+Similarly, given two functions <m>f</m> and <m>g</m>, we can use the Bisection Method to solve <m>f(x) = g(x)</m>. Once again, create a new function <m>h</m> where <m>h(x) = f(x)-g(x)</m> and solve <m>h(x) = 0</m>.
+</p>
+  
+<p>
+In <xref ref="sec_newton">Section</xref> another equation solving method will be introduced, called Newton's Method. In many cases, Newton's Method is much faster. It relies on more advanced mathematics, though, so we will wait before introducing it.
+</p>
+  
+<p>
+This section formally defined what it means to be a continuous function. <q>Most</q> functions that we deal with are continuous, so often it feels odd to have to formally define this concept. Regardless, it is important, and forms the basis of the next chapter.
+In the next section we examine one more aspect of limits: limits that involve infinity.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+In your own words, describe what it means for a function to be continuous.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+In your own words, describe what the Intermediate Value Theorem states.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+What is a <q>root</q> of a function?
+</p>
+  <hint>A root of a function <m>f</m> is a value <m>c</m> such that <m>f(c)=0</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Given functions <m>f</m> and <m>g</m> on an interval <m>I</m>, how can the Bisection Method be used to find a value <m>c</m> where <m>f(c) = g(c)</m>?
+</p>
+  <hint>Consider the function <m>h(x) = g(x) - f(x)</m>, and use the Bisection Method to find a root of <m>h</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F:	If <m>f</m> is defined on an open interval containing <m>c</m>, and <m>\ds \lim_{x\to c}f(x)</m> exists, then <m>f</m> is continuous at <m>c</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>f</m> is continuous at <m>c</m>, then <m>\ds \lim_{x\to c}f(x)</m> exists.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>f</m> is continuous at <m>c</m>, then <m>\ds \lim_{x\to c^+}f(x) = f(c)</m>.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>f</m> is continuous on <m>[a,b]</m>, then <m>\ds\lim_{x\to a^-}f(x) = f(a)</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>f</m> is continuous on <m>[0,1)</m> and <m>[1,2)</m>, then <m>f</m> is continuous on <m>[0,2)</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: The sum of continuous functions is also continuous.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, a graph of a function <m>f</m> is given along with a value <m>a</m>. Determine if <m>f</m> is continuous at <m>a</m>; if it is not, state why it is not.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>a = 1</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_05.png" />
+</p>
+  <hint>No; <m>\ds \lim_{x\to 1} f(x) = 2</m>, while <m>f(1) = 1</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>a = 1</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_06.png" />
+</p>
+  <hint>No; <m>\ds \lim_{x\to 1} f(x)</m> does not exist.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>a = 1</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_07.png" />
+</p>
+  <hint>No; <m>f(1)</m> does not exist.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>a = 0</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_08.png" />
+</p>
+  <hint>Yes</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>a = 1</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_09.png" />
+</p>
+  <hint>Yes</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>a = 4</m>
+</p>
+  
+<p>
+<image source="images/fig01_04_ex_10.png" />
+</p>
+  <hint>Yes</hint> </statement>
+</exercise>
+  
+<exercise><statement><ol><li><m>a = -2</m></li>
+<li><m>a=0</m></li>
+<li><m>a=2</m></li>
+ </ol>   
+<p>
+<image source="images/fig01_04_ex_11.png" />
+</p>
+  <hint><ol><li>No; <m>\ds \lim_{x\to -2}f(x) \neq f(-2)</m></li>
+<li>Yes</li>
+<li>No; <m>f(2)</m> is not defined.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, determine if <m>f</m> is continuous at the indicated values. If not, explain why.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc} 
+1		\amp  \amp  x=0\\
+\frac{\sin x}{x} \amp  \amp  x>0
+\end{array} \right.
+</m>
+</p>
+  <ol><li><m>x=0</m></li>
+<li><m>x=\pi</m></li>
+ </ol>   <hint><ol><li>Yes</li>
+<li>Yes</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc} 
+x^3-x		\amp  \amp  x\lt 1\\
+x-2 \amp  \amp  x\geq 1
+\end{array} \right.
+</m>
+</p>
+  <ol><li><m>x=0</m></li>
+<li><m>x=1</m></li>
+ </ol>   <hint><ol><li>Yes</li>
+<li>No; the left and right hand limits at 1 are not equal.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc} 
+\frac{x^2+5x+4}{x^2+3x+2}		\amp  \amp   x\neq -1\\
+3 \amp  \amp  x=-1
+\end{array} \right.
+</m>
+</p>
+  <ol><li><m>x=-1</m></li>
+<li><m>x=10</m></li>
+ </ol>   <hint><ol><li>Yes</li>
+<li>Yes</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+\frac{x^2-64}{x^2-11 x+24}		\amp  \amp   x\neq 8\\
+5 \amp  \amp  x=8
+\end{array} \right.
+</m>
+</p>
+  <ol><li><m>x=0</m></li>
+<li><m>x=8</m></li>
+ </ol>   <hint><ol><li>Yes</li>
+<li>No. <m>\lim_{x\to 8} f(x) = 16/5 \neq f(8) = 5</m>.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, give the intervals on which the given function is continuous.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2-3x+9</m>
+</p>
+  <hint><m>(-\infty,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(x) = \sqrt{x^2-4}</m>
+</p>
+  <hint><m>(-\infty,-2]\cup [2,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(k) = \sqrt{1-k}+\sqrt{k+1}</m>
+</p>
+  <hint><m>[-1,1]</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(t) = \sqrt{5t^2-30}</m>
+</p>
+  <hint><m>(-\infty,-\sqrt{6}]\cup [\sqrt{6},\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(t) = \frac{1}{\sqrt{1-t^2}}</m>
+</p>
+  <hint><m>(-1,1)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(x) = \frac{1}{1+x^2}</m>
+</p>
+  <hint><m>(-\infty,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = e^x</m>
+</p>
+  <hint><m>(-\infty,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds g(s) = \ln s</m>
+</p>
+  <hint><m>(0,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(t) = \cos t</m>
+</p>
+  <hint><m>(-\infty,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(k) = \sqrt{1-e^k}</m>
+</p>
+  <hint><m>(-\infty,0]</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sin(e^x+x^2)</m>
+</p>
+  <hint><m>(-\infty,\infty)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f</m> be continuous on <m>[1,5]</m> where <m>f(1) = -2</m> and <m>f(5) = -10</m>. Does a value <m>1\lt c\lt 5</m> exist such that <m>f(c) = -9</m>? Why/why not?
+</p>
+  <hint>Yes, by the Intermediate Value Theorem.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>g</m> be continuous on <m>[-3,7]</m> where <m>g(0) = 0</m> and <m>g(2) = 25</m>. Does a value <m>-3\lt c\lt 7</m> exist such that <m>g(c) = 15</m>? Why/why not?
+</p>
+  <hint>Yes, by the Intermediate Value Theorem. In fact, we can be more specific and state such a value <m>c</m> exists in <m>(0,2)</m>, not just in <m>(-3,7)</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f</m> be continuous on <m>[-1,1]</m> where <m>f(-1) = -10</m> and <m>f(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>f(c) = 11</m>? Why/why not?
+</p>
+  <hint>We cannot say; the Intermediate Value Theorem only applies to function values between <m>-10</m> and 10; as 11 is outside this range, we do not know.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>h</m> be a function on <m>[-1,1]</m> where <m>h(-1) = -10</m> and <m>h(1) = 10</m>. Does a value <m>-1\lt c\lt 1</m> exist such that <m>h(c) = 0</m>? Why/why not?
+</p>
+  <hint>We cannot say; the Intermediate Value Theorem only applies to continuous functions. As we do know know if <m>h</m> is continuous, we cannot say.</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, use the Bisection Method to approximate, accurate to two decimal places, the value of the root of the given function in the given interval. }
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2+2x-4</m> on <m>[1,1.5]</m>.
+</p>
+  <hint>Approximate root is <m>x=1.23</m>. The intervals used are:
+<m>[1,1.5] \quad [1,1.25] \quad [1.125,1.25]</m>
+<m>[1.1875,1.25]\quad [1.21875,1.25]\quad [1.234375,1.25]</m>
+<m>[1.234375,1.2421875]\quad [1.234375,1.2382813]</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \sin x - 1/2</m> on <m>[0.5,0.55]</m>
+</p>
+  <hint>Approximate root is <m>x=0.52</m>. The intervals used are:
+<m>[0.5,0.55] \quad [0.5,0.525] \quad [0.5125,0.525]</m>
+<m>[0.51875,0.525]\quad [0.521875,0.525]</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = e^x - 2</m> on <m>[0.65,0.7]</m>.
+</p>
+  <hint>Approximate root is <m>x=0.69</m>. The intervals used are:
+<m>[0.65,0.7] \quad [0.675,0.7] \quad [0.6875,0.7]</m>
+<m>[0.6875,0.69375]\quad [0.690625,0.69375]</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \cos x -\sin x</m> on <m>[0.7,0.8]</m>.
+</p>
+  <hint>Approximate root is <m>x=0.78</m>. The intervals used are:
+<m>[0.7,0.8] \quad [0.75,0.8] \quad [0.775,0.8]</m>
+<m>[0.775,0.7875]\quad [0.78125,0.7875]</m>
+
+(A few more steps show that <m>0.79</m> is better as the root is <m>\pi/4 \approx 0.78539</m>.)</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Let <m>\ds f(x)= \left\{\begin{array}{ccc}
+x^2-5 \amp  \amp  x\lt 5 \\
+5x \amp  \amp  x \geq 5
+\end{array} \right.</m>.
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 5^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 5^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 5} f(x)</m></li>
+<li><m>f(5)</m></li>
+ </ol> </div>  <hint><ol><li>20</li>
+<li>25</li>
+<li>Limit does not exist</li>
+<li>25</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Numerically approximate the following limits:
+</p>
+  <ol><li><m>\ds \lim_{x\to -4/5^+} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></li>
+<li><m>\ds \lim_{x\to -4/5^-} \frac{x^2-8.2 x-7.2}{x^2+5.8 x+4}</m></li>
+ </ol>   <hint><table id="668e54113ec15834e21fb0dac2531201a2492b4e" ><tr><td class='c'>
+<m>x</m> \amp  <m>f(x)</m> </td></tr>
+<tr><td class='hline' colspan='2'><hr /></td></tr>
+<tr><td class='c'> 
+<m>-0.81 </m>\amp  <m>-2.34129</m> </td></tr>
+<tr><td class='c'>
+<m> -0.801</m> \amp  <m>-2.33413</m> </td></tr>
+<tr><td class='c'>
+<m> -0.79 </m>\amp  <m>-2.32542 </m></td></tr>
+<tr><td class='c'>
+<m> -0.799</m> \amp  <m>-2.33254</m></td></tr>
+</table> 
+
+The top two lines give an approximation of the limit from the left: <m>-2.33</m>. The bottom two lines give an approximation from the right: <m>-2.33</m> as well.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Give an example of function <m>f(x)</m> for which <m>\ds \lim_{x\to 0} f(x)</m> does not exist.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+ </subsection> </section>

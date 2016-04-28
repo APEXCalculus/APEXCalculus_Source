@@ -1,0 +1,407 @@
+
+<section xml:id="sec_mvt">
+<title>The Mean Value Theorem</title><introduction>
+<p>
+We motivate this section with the following question: Suppose you leave your house and drive to your friend's house in a city 100 miles away, completing the trip in two hours. At any point during the trip do you necessarily have to be going 50 miles per hour?
+</p>
+  
+<p>
+In answering this question, it is clear that the <em>average</em> speed for the entire trip is 50 mph (i.e. 100 miles in 2 hours), but the question is whether or not your <em>instantaneous</em> speed is ever exactly 50 mph. More simply, does your speedometer ever read exactly 50 mph?. The answer, under some very reasonable assumptions, is <q>yes.</q>
+</p>
+  
+<p>
+Let's now see why this situation is in a calculus text by translating it into mathematical symbols.<br />
+</p>
+  
+<p>
+First assume that the function <m>y = f(t)</m> gives the distance (in miles) traveled from your home at time <m>t</m> (in hours) where <m>0\le t\le 2</m>. In particular, this gives <m>f(0)=0</m> and <m>f(2)=100</m>. The slope of the secant line connecting the starting and ending points <m>(0,f(0))</m> and <m>(2,f(2))</m> is therefore
+</p>
+  
+<me>
+
+\frac{\Delta f}{\Delta t} = \frac{f(2)-f(0)}{2-0} = \frac{100-0}{2} = 50 \, \text{mph} .
+
+</me>
+  
+<p>
+The slope at any point on the graph itself is given by the derivative <m>\fp(t)</m>. So, since the answer to the question above is <q>yes,</q> this means that at some time during the trip, the derivative takes on the value of 50 mph. Symbolically,
+</p>
+  
+<me>
+
+\fp(c) = \frac{f(2)-f(0)}{2-0} = 50
+
+</me>
+ 
+<p>
+for some time <m>0\le c \le 2.</m><br />
+</p>
+  
+<p>
+How about more generally? Given any function <m>y=f(x)</m> and a range <m>a\le x\le b</m> does the value of the derivative at some point between <m>a</m> and <m>b</m> have to match the slope of the secant line connecting the points <m>(a,f(a))</m> and <m>(b,f(b))</m>? Or equivalently, does the equation
+<m>\fp(c) = \frac{f(b)-f(a)}{b-a}</m> have to hold for some <m>a \lt  c \lt  b</m>?
+</p>
+  
+<p>
+Let's look at two functions in an example.<br />
+</p>
+  
+<example xml:id="ex_mvt1"><title>Comparing average and instantaneous rates of change</title>
+<statement>
+<p>
+Consider functions
+</p>
+  
+<me>
+f_1(x)=\frac{1}{x^2}\quad \text{and}  \quad f_2(x) = |x|
+</me>
+ 
+<p>
+with <m>a=-1</m> and <m>b=1</m> as shown in <xref ref="fig_mvt1">Figure</xref>(a) and (b), respectively. Both functions have a value of 1 at <m>a</m> and <m>b</m>. Therefore the slope of the secant line connecting the end points is <m>0</m> in each case. But if you look at the plots of each, you can see that there are no points on either graph where the tangent lines have slope zero. Therefore we have found that there is no <m>c</m> in <m>[-1,1]</m> such that
+</p>
+  
+<me>
+\fp(c) = \frac{f(1)-f(-1)}{1-(-1)} = 0.
+</me>
+  <figure xml:id="fig_mvt1" >
+<caption>A graph of <m>f_1(x) = 1/x^2</m> and <m>f_2(x) = |x|</m> in <xref ref="ex_mvt1">Example</xref>.</caption>
+<table id="776a5dd79c802076c016eb46f4c96ed2c5825891" ><tr><td class='c'>
+<image source="images/figmvt1.png" /> </td></tr>
+<tr><td class='c'>
+(a)</td></tr>
+<tr><td class='c'>
+<image source="images/figmvt2.png" /> </td></tr>
+<tr><td class='c'>
+(b)</td></tr>
+</table> 
+</figure>
+ </statement>
+</example>
+   
+<p>
+So what went <q>wrong\primeskip</q>? It may not be surprising to find that the discontinuity of <m>f_1</m> and the corner of <m>f_2</m> play a role. If our functions had been continuous and differentiable, would we have been able to find that special value <m>c</m>? This is our motivation for the following theorem.
+</p>
+  
+<theorem xml:id="thm_mvt"><title>The Mean Value Theorem of Differentiation</title>
+<statement>
+<p>
+Let <m>y=f(x)</m> be continuous function on the closed interval <m>[a,b]</m> and differentiable on the open interval <m>(a,b)</m>. There exists a value <m>c</m>, <m>a \lt  c \lt  b</m>, such that \knownindex{\lt main>Mean Value Theorem\lt /main>\lt sub>of differentiation\lt /sub>}\knownindex{\lt main>derivative\lt /main>\lt sub>Mean Value Theorem\lt /sub>}
+</p>
+  
+<me>
+
+\fp(c) = \frac{f(b)-f(a)}{b-a}.
+
+</me>
+ 
+<p>
+That is, there is a value <m>c</m> in <m>(a,b)</m> where the instantaneous rate of change of <m>f</m> at <m>c</m> is equal to the average rate of change of <m>f</m> on <m>[a,b]</m>.
+</p>
+ </statement>
+</theorem>
+  
+<p>
+Note that the reasons that the functions in <xref ref="ex_mvt1">Example</xref> fail are indeed that <m>f_1</m> has a discontinuity on the interval <m>[-1,1]</m> and <m>f_2</m> is not differentiable at the origin.<br />
+</p>
+  
+<p>
+We will give a proof of the Mean Value Theorem below. To do so, we use a fact, called Rolle's Theorem, stated here.
+</p>
+  
+<theorem xml:id="thm_rolles"><title>Rolle's Theorem</title>
+<statement>
+<p>
+Let <m>f</m> be continuous on <m>[a,b]</m> and differentiable on <m>(a,b)</m>, where <m>f(a) = f(b)</m>. There is some <m>c</m> in <m>(a,b)</m> such that <m>\fp(c) = 0.</m>\knownindex{\lt main>Rolle's Theorem\lt /main>}
+</p>
+ </statement>
+</theorem>
+  
+<p>
+Consider <xref ref="fig_mvt3">Figure</xref> where the graph of a function <m>f</m> is given, where <m>f(a) = f(b)</m>. It should make intuitive sense that if <m>f</m> is differentiable (and hence, continuous) that there would be a value <m>c</m> in <m>(a,b)</m> where <m>\fp(c)=0</m>; that is, there would be a relative maximum or minimum of <m>f</m> in <m>(a,b)</m>. Rolle's Theorem guarantees at least one; there may be more.
+</p>
+  <figure xml:id="fig_mvt3" >
+<caption>A graph of <m>f(x) = x^3-5x^2+3x+5</m>, where <m>f(a) = f(b)</m>. Note the existence of <m>c</m>, where <m>a\lt c\lt b</m>, where <m>\fp(c)=0</m>.</caption>
+<image source="images/figmvt3.png" /> </figure>
+  
+<p>
+Rolle's Theorem is really just a special case of the Mean Value Theorem. If <m>f(a) = f(b)</m>, then the <em>average</em> rate of change on <m>(a,b)</m> is <m>0</m>, and the theorem guarantees some <m>c</m> where <m>\fp(c)=0</m>. We will prove Rolle's Theorem, then use it to prove the Mean Value Theorem.<br />
+</p>
+  
+<p>
+<b>Proof of Rolle's Theorem</b>
+</p>
+  
+<p>
+Let <m>f</m> be differentiable on <m>(a,b)</m> where <m>f(a)=f(b)</m>. We consider two cases.
+</p>
+  
+<p>
+<b>Case 1:</b> Consider the case when <m>f</m> is constant on <m>[a,b]</m>; that is, <m>f(x) = f(a) = f(b)</m> for all <m>x</m> in <m>[a,b]</m>. Then <m>\fp(x) = 0</m> for all <m>x</m> in <m>[a,b]</m>, showing there is at least one value <m>c</m> in <m>(a,b)</m> where <m>\fp(c)=0</m>.
+</p>
+  
+<p>
+<b>Case 2:</b> Now assume that <m>f</m> is not constant on <m>[a,b]</m>. The Extreme Value Theorem guarantees that <m>f</m> has a maximal and minimal value on <m>[a,b]</m>, found either at the endpoints or at a critical value in <m>(a,b)</m>. Since <m>f(a)=f(b)</m> and <m>f</m> is not constant, it is clear that the maximum and minimum cannot <em>both</em> be found at the endpoints. Assume, without loss of generality, that the maximum of <m>f</m> is not found at the endpoints. Therefore there is a <m>c</m> in <m>(a,b)</m> such that <m>f(c)</m> is the maximum value of <m>f</m>. By <xref ref="thm_criticalpts">Theorem</xref>, <m>c</m> must be a critical number of <m>f</m>; since <m>f</m> is differentiable, we have that <m>\fp(c) = 0</m>, completing the proof of the theorem. \hfill <m>\square</m><br />
+</p>
+  
+<p>
+We can now prove the Mean Value Theorem.<br />
+</p>
+  
+<p>
+<b>Proof of the Mean Value Theorem</b>
+</p>
+  
+<p>
+Define the function
+</p>
+  
+<me>
+g(x) = f(x) - \frac{f(b)-f(a)}{b-a}x.
+</me>
+ 
+<p>
+We know <m>g</m> is differentiable on <m>(a,b)</m> and continuous on <m>[a,b]</m> since <m>f</m> is. We can show <m>g(a)=g(b)</m> (it is actually easier to show <m>g(b)-g(a)=0</m>, which suffices). We can then apply Rolle's theorem to guarantee the existence of <m>c \in (a,b)</m> such that <m>g\primeskip'(c) = 0</m>. But note that
+</p>
+  
+<me>
+0= g\primeskip'(c) = \fp(c) - \frac{f(b)-f(a)}{b-a} \ ;
+</me>
+ 
+<p>
+hence
+</p>
+  
+<me>
+\fp(c) = \frac{f(b)-f(a)}{b-a},
+</me>
+ 
+<p>
+which is what we sought to prove.\hfill <m>\square</m><br />
+</p>
+  
+<p>
+Going back to the very beginning of the section, we see that the only assumption we would need about our distance function <m>f(t)</m> is that it be continuous and differentiable for <m>t</m> from 0 to 2 hours (both reasonable assumptions). By the Mean Value Theorem, we are guaranteed a time during the trip where our instantaneous speed is 50 mph. This fact is used in practice. Some law enforcement agencies monitor traffic speeds while in aircraft. They do not measure speed with radar, but rather by timing individual cars as they pass over lines painted on the highway whose distances apart are known. The officer is able to measure the <em>average</em> speed of a car between the painted lines; if that average speed is greater than the posted speed limit, the officer is assured that the driver exceeded the speed limit at some time.
+</p>
+  
+<p>
+Note that the Mean Value Theorem is an <em>existence</em> theorem. It states that a special value <m>c</m> <em>exists</em>, but it does not give any indication about how to find it. It turns out that when we need the Mean Value Theorem, existence is all we need.<br />
+</p>
+  
+<example xml:id="ex_mvt2"><title>Using the Mean Value Theorem</title>
+<statement>
+<p>
+Consider <m>f(x) = x^3+5x+5</m> on <m>[-3,3]</m>. Find <m>c</m> in <m>[-3,3]</m> that satisfies the Mean Value Theorem.
+</p>
+  
+<solution><statement>
+<p>
+The average rate of change of <m>f</m> on <m>[-3,3]</m> is:
+</p>
+  
+<me>
+\frac{f(3)-f(-3)}{3-(-3)} = \frac{84}{6} = 14.
+</me>
+ 
+<p>
+We want to find <m>c</m> such that <m>\fp(c) = 14</m>. We find <m>\fp(x) = 3x^2+5</m>. We set this equal to 14 and solve for <m>x</m>.
+</p>
+  
+<md><mrow>\fp(x) \amp = 14</mrow>
+ <mrow>3x^2 +5 \amp = 14</mrow>
+ <mrow>x^2  \amp = 3</mrow>
+ <mrow>x \amp = \pm \sqrt{3} \approx \pm 1.732</mrow>
+ 
+</md>
+ 
+<p>
+We have found 2 values <m>c</m> in <m>[-3,3]</m> where the instantaneous rate of change is equal to the average rate of change; the Mean Value Theorem guaranteed at least one. In <xref ref="fig_mvt4">Figure</xref> <m>f</m> is graphed with a dashed line representing the average rate of change; the lines tangent to <m>f</m> at <m>x=\pm \sqrt{3}</m> are also given. Note how these lines are parallel (i.e., have the same slope) as the dashed line.
+</p>
+  <figure xml:id="fig_mvt4" >
+<caption>Demonstrating the Mean Value Theorem in <xref ref="ex_mvt2">Example</xref>.</caption>
+<image source="images/figmvt4.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+While the Mean Value Theorem has practical use (for instance, the speed monitoring application mentioned before), it is mostly used to advance other theory. We will use it in the next section to relate the shape of a graph to its derivative.<br />
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+Explain in your own words what the Mean Value Theorem states.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Explain in your own words what Rolle's Theorem states.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if Rolle's Theorem can be applied to <m>f</m> on <m>[a,b]</m>; if so, find <m>c</m> in <m>[a,b]</m> such that <m>\fp(c)=0</m>.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 6</m> on <m>[-1,1]</m>.
+</p>
+  <hint>Any <m>c</m> in <m>[-1,1]</m> is valid.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 6x</m> on <m>[-1,1]</m>.
+</p>
+  <hint>Rolle's Thm. does not apply.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2+x-6</m> on <m>[-3,2]</m>.
+</p>
+  <hint><m>c=-1/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2+x-2</m> on <m>[-3,2]</m>.
+</p>
+  <hint><m>c=-1/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2+x</m> on <m>[-2,2]</m>.
+</p>
+  <hint>Rolle's Thm. does not apply.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \sin x</m> on <m>[\pi/6,5\pi/6]</m>.
+</p>
+  <hint><m>c=\pi/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \cos x</m> on <m>[0,\pi]</m>.
+</p>
+  <hint>Rolle's Thm. does not apply.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{1}{x^2-2x+1}</m> on <m>[0,2]</m>.
+</p>
+  <hint>Rolle's Theorem does not apply.</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, a function <m>f(x)</m> and interval <m>[a,b]</m> are given. Check if the Mean Value Theorem can be applied to <m>f</m> on <m>[a,b]</m>; if so, find a value <m>c</m> in <m>[a,b]</m> guaranteed by the Mean Value Theorem.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2+3x-1</m> on <m>[-2,2]</m>.
+</p>
+  <hint><m>c=0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = 5x^2-6x+8</m> on <m>[0,5]</m>.
+</p>
+  <hint><m>c=5/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sqrt{9-x^2}</m> on <m>[0,3]</m>.
+</p>
+  <hint><m>c=3/\sqrt{2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sqrt{25-x}</m> on <m>[0,9]</m>.
+</p>
+  <hint><m>c=19/4</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) =\frac{x^2-9}{x^2-1}</m> on <m>[0,2]</m>.
+</p>
+  <hint>The Mean Value Theorem does not apply.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \ln x</m> on <m>[1,5]</m>.
+</p>
+  <hint><m>c=4/\ln 5</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \tan x</m> on <m>[-\pi/4,\pi/4]</m>.
+</p>
+  <hint><m>c=\pm \sec^{-1} (2/\sqrt{\pi})</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^3-2x^2+x+1</m> on <m>[-2,2]</m>.
+</p>
+  <hint><m>c=-2/3</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = 2x^3-5x^2+6x+1</m> on <m>[-5,2]</m>.
+</p>
+  <hint><m>c=\frac{5\pm7\sqrt{7}}{6}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sin^{-1} x</m> on <m>[-1,1]</m>.
+</p>
+  <hint><m>c=\frac{\pm\sqrt{\pi^2-4}}{\pi}</m></hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Find the extreme values of <m>f(x) =x^2-3x+9</m> on <m>[-2,5]</m>.
+</p>
+  <hint>Max value of 19 at <m>x=-2</m> and <m>x=5</m>; min value of 6.75 at <m>x=1.5</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Describe the critical points of <m>f(x) = \cos x</m>.
+</p>
+  <hint>They are the odd, integer valued multiples of <m>\pi/2</m> (such as <m>0,\pm\pi/2, \pm 3\pi/2, \pm5\pi/2</m>, etc.)</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Describe the critical points of <m>f(x) = \tan x</m>.
+</p>
+  <hint>They are the odd, integer valued multiples of <m>\pi/2</m> (such as <m>0, \pm\pi/2, \pm 3\pi/2, \pm5\pi/2</m>, etc.)</hint> </statement>
+</exercise>
+ </subsection> </section>

@@ -1,0 +1,667 @@
+
+<section xml:id="sec_limit_def">
+<title>Epsilon-Delta Definition of a Limit</title><introduction>
+<p>
+This section introduces the formal definition of a limit. Many refer to this as <q>the epsilon&#x2013;delta,</q> definition, referring to the letters <m>\epsilon</m> and <m>\delta</m> of the Greek alphabet.<br />
+</p>
+  
+<p>
+Before we give the actual definition, let's consider a few informal ways of describing a limit. Given a function <m>y=f(x)</m> and an <m>x</m>-value, <m>c</m>, we say that <q>the limit of the function <m>f</m>, as <m>x</m> approaches <m>c</m>, is a value<nbsp /><m>L</m></q>:
+</p>
+  <ul><li class="custom-list-style-type" label="1." >if <q><m>y</m> tends to <m>L</m></q> as <q><m>x</m> tends to <m>c</m>.</q></li>
+<li class="custom-list-style-type" label="2." >if <q><m>y</m> approaches <m>L</m></q> as <q><m>x</m> approaches <m>c</m>.</q></li>
+<li class="custom-list-style-type" label="3." >if <q><m>y</m> is near <m>L</m></q> whenever <q><m>x</m> is near <m>c</m>.</q></li>
+ </ul>   
+<p>
+The problem with these definitions is that the words <q>tends,</q> <q>approach,</q> and especially <q>near</q> are not exact. In what way does the variable <m>x</m> tend to, or approach, <m>c</m>? How near do <m>x</m> and <m>y</m> have to be to <m>c</m> and <m>L</m>, respectively? <br />
+</p>
+  
+<p>
+The definition we describe in this section comes from formalizing <b>3</b>. A quick restatement gets us closer to what we want:
+</p>
+  <ul><li class="custom-list-style-type" label="<m>\textbf{3}^\prime</m>." >If <m>x</m> is within a certain <em>tolerance level</em> of <m>c</m>, then the corresponding value <m>y=f(x)</m> is within a certain <em>tolerance level</em> of <m>L</m>.</li>
+ </ul>   
+<p>
+The traditional notation for the <m>x</m>-tolerance is the lowercase Greek letter delta, or <m>\delta</m>, and the <m>y</m>-tolerance is denoted by lowercase epsilon, or <m>\epsilon</m>. One more rephrasing of <m>\textbf{3}^\prime</m> nearly gets us to the actual definition:
+</p>
+  <ul><li class="custom-list-style-type" label="<m>\textbf{3}^{\prime \prime}</m>." >If <m>x</m> is within <m>\delta</m> units of <m>c</m>, then the corresponding value of <m>y</m> is within <m>\epsilon</m> units of <m>L</m>.</li>
+ </ul>   
+<p>
+We can write <q><m>x</m> is within <m>\delta</m> units of <m>c</m></q> mathematically as
+</p>
+  
+<me>
+|x-c| \lt  \delta, \qquad \text{which is equivalent to } \qquad c-\delta \lt  x \lt  c+\delta.
+</me>
+ 
+<p>
+Letting the symbol <q><m>\longrightarrow</m></q> represent the word <q>implies,</q> we can rewrite <m>\textbf{3}''</m> as
+</p>
+  
+<me>
+
+|x - c| \lt  \delta \longrightarrow  |y - L| \lt  \epsilon 
+\qquad \textrm{or}  \qquad c - \delta \lt  x \lt  c + \delta \longrightarrow L - \epsilon \lt  y \lt  L + \epsilon.
+
+</me>
+ 
+<p>
+The point is that <m>\delta</m> and <m>\epsilon</m>, being tolerances, can be any positive (but typically small) values. Finally, we have the formal definition of the limit with the notation seen in the previous section.
+</p>
+  
+<definition xml:id="def_limit"><title>The Limit of a Function $f$</title>
+<statement>
+<p>
+Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>. The \sword{limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m>, is <m>L</m>}, denoted by
+</p>
+  
+<me>
+\displaystyle \lim_{x\rightarrow c} f(x) = L,
+</me>
+ 
+<p>
+means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\neq c</m>,
+if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.\knownindex{\lt main>limit\lt /main>\lt sub>definition\lt /sub>}
+</p>
+ </statement>
+</definition>
+  
+<p>
+(Mathematicians often enjoy writing ideas without using any words. Here is the wordless definition of the limit:<br />
+</p>
+  
+<p>
+<m>\displaystyle \lim_{x\rightarrow c} f(x) = L \iff</m>
+<m>\forall \, \epsilon > 0, \exists \, \delta > 0 \; s.t. \;
+0\lt |x - c| \lt  \delta \longrightarrow |f(x) - L| \lt  \epsilon</m>.\text{)} <br />
+</p>
+  
+<p>
+Note the order in which <m>\epsilon</m> and <m>\delta</m> are given. In the definition, the <m>y</m>-tolerance <m>\epsilon</m> is given <em>first</em> and then the limit will exist <b>if</b> we can find an <m>x</m>-tolerance <m>\delta</m> that works.
+</p>
+  
+<p>
+An example will help us understand this definition. Note that the explanation is long, but it will take one through all steps necessary to understand the ideas.<br />
+</p>
+  
+<example xml:id="ex_compute_lim1"><title>Evaluating a limit using the definition</title>
+<statement>
+<p>
+Show that <m>\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 </m>.
+</p>
+  
+<solution><statement>
+<p>
+Before we use the formal definition, let's try some numerical tolerances. What if the <m>y</m> tolerance is 0.5, or <m>\epsilon =0.5</m>? How close to 4 does <m>x</m> have to be so that <m>y</m> is within 0.5 units of 2, i.e., <m>1.5 \lt  y \lt  2.5</m>? In this case, we can proceed as follows:
+</p>
+  
+<md><mrow>1.5 \amp \lt  \text{ $y$} \lt  2.5</mrow>
+ <mrow>1.5 \amp \lt  \parbox{15pt}{ $\sqrt{x}$} \lt  2.5</mrow>
+ <mrow>1.5^2 \amp \lt  \text{ $x$} \lt  2.5^2</mrow>
+ <mrow>2.25 \amp \lt  \text{ $x$} \lt  6.25.</mrow>
+ 
+</md>
+  
+<p>
+So, what is the desired <m>x</m> tolerance? Remember, we want to find a symmetric interval of <m>x</m> values, namely
+<m>4 - \delta \lt  x \lt  4 + \delta</m>. The lower bound of <m>2.25</m> is <m>1.75</m> units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances; we must have <m>\delta \leq 1.75</m>. See <xref ref="fig_choose_e_d">Figure</xref>.<br />
+</p>
+  <figure xml:id="fig_choose_e_d" >
+<caption>Illustrating the <m>\epsilon-\delta</m> process.</caption>
+<image source="images/figLimitProof1a.png" /> <br />
+		<image source="images/figLimitProof1b.png" /> <br />
+		\text{With <m>\epsilon=0.5</m>, we pick any <m>\delta \lt  1.75</m>.}</figure>
+  
+<p>
+Given the <m>y</m> tolerance <m>\epsilon =0.5</m>, we have found an <m>x</m> tolerance, <m>\delta \leq 1.75</m>, such that whenever <m>x</m> is within <m>\delta</m> units of 4, then <m>y</m> is within <m>\epsilon</m> units of 2. That's what we were trying to find.<br />
+</p>
+  
+<p>
+Let's try another value of <m>\epsilon</m>.<br />
+</p>
+  
+<p>
+What if the <m>y</m> tolerance is 0.01, i.e., <m>\epsilon =0.01</m>? How close to 4 does <m>x</m> have to be in order for <m>y</m> to be within 0.01 units of 2 (or <m>1.99 \lt  y \lt  2.01</m>)? Again, we just square these values to get
+<m>1.99^2 \lt  x \lt  2.01^2</m>, or
+</p>
+  
+<me>
+3.9601 \lt  x \lt  4.0401.
+</me>
+ 
+<p>
+What is the desired <m>x</m> tolerance? In this case we must have <m>\delta \leq 0.0399</m>, which is the minimum distance from 4 of the two bounds given above.
+</p>
+  
+<p>
+What we have so far: if <m>\epsilon =0.5</m>, then <m>\delta \leq 1.75</m> and if <m>\epsilon = 0.01</m>, then <m>\delta \leq 0.0399</m>. A pattern is not easy to see, so we switch to general <m>\epsilon</m> try to determine <m>\delta</m> symbolically. We start by assuming <m>y=\sqrt{x}</m> is within <m>\epsilon</m> units of 2:
+</p>
+  
+<md><mrow>|y - 2| \lt  \epsilon \amp </mrow>
+ <mrow>-\epsilon \lt  y - 2 \lt  \epsilon\amp  \qquad \textrm{(Definition of absolute value)}</mrow>
+ <mrow>-\epsilon \lt  \sqrt{x} - 2 \lt  \epsilon  \amp \qquad (y=\sqrt{x})</mrow>
+ <mrow>2 - \epsilon \lt  \sqrt{x} \lt  2+ \epsilon \amp \qquad \textrm{ (Add 2)}</mrow>
+ <mrow>(2 - \epsilon)^2 \lt  x \lt  (2+ \epsilon) ^2 \amp \qquad \textrm{ (Square all)}</mrow>
+ <mrow>4 - 4\epsilon + \epsilon^2 \lt  x \lt  4 + 4\epsilon + \epsilon^2 \amp \qquad \textrm{ (Expand)}</mrow>
+ <mrow>4 - (4\epsilon - \epsilon^2) \lt  x \lt  4 + (4\epsilon + \epsilon^2). \amp \qquad \textrm{ (Rewrite in the desired form)}</mrow>
+ 
+</md>
+  
+<p>
+The <q>desired form</q> in the last step is <q><m>4-\textit{something} \lt  x \lt  4 +\textit{something}</m>.</q>
+Since we want this last interval to describe an <m>x</m> tolerance around 4, we have that either <m>\delta \leq 4\epsilon - \epsilon^2</m> or <m>\delta \leq 4\epsilon + \epsilon^2</m>, whichever is smaller:
+</p>
+  
+<me>
+\delta \leq \min\{4\epsilon - \epsilon^2, 4\epsilon + \epsilon^2\}.
+</me>
+ 
+<p>
+Since <m>\epsilon > 0</m>, the minimum is <m>\delta \leq 4\epsilon - \epsilon^2</m>. That's the formula: given an <m>\epsilon</m>, set <m>\delta \leq 4\epsilon-\epsilon^2</m>.
+</p>
+  
+<p>
+We can check this for our previous values. If <m>\epsilon=0.5</m>, the formula gives
+<m>\delta \leq 4(0.5) - (0.5)^2 = 1.75</m> and when <m>\epsilon=0.01</m>, the formula gives <m>\delta \leq 4(0.01) - (0.01)^2 = 0.399</m>.
+</p>
+  
+<p>
+So given any <m>\epsilon >0</m>, set <m>\delta \leq 4\epsilon - \epsilon^2</m>. Then if <m>|x-4|\lt \delta</m> (and <m>x\neq 4</m>), then <m>|f(x) - 2| \lt  \epsilon</m>, satisfying the definition of the limit. We have shown formally (and finally!) that <m>\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 </m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The previous example was a little long in that we sampled a few specific cases of <m>\epsilon</m> before handling the general case. Normally this is not done. The previous example is also a bit unsatisfying in that <m>\sqrt{4}=2</m>; why work so hard to prove something so obvious? Many <m>\epsilon</m>-<m>\delta</m> proofs are long and difficult to do. In this section, we will focus on examples where the answer is, frankly, obvious, because the non&#x2013;obvious examples are even harder. In the next section we will learn some theorems that allow us to evaluate limits <em>analytically</em>, that is, without using the <m>\epsilon</m>-<m>\delta</m> definition.<br />
+</p>
+  
+<example xml:id="ex_compute_lim2"><title>Evaluating a limit using the definition</title>
+<statement>
+<p>
+Show that <m>\displaystyle \lim_{x\rightarrow 2} x^2 = 4</m>.
+</p>
+  
+<solution><statement>
+<p>
+Let's do this example symbolically from the start. Let <m>\epsilon > 0</m> be given; we want <m>|y-4| \lt  \epsilon</m>, i.e., <m>|x^2-4| \lt  \epsilon</m>. How do we find <m>\delta</m> such that when <m>|x-2| \lt  \delta</m>, we are guaranteed that <m>|x^2-4|\lt \epsilon</m>?
+</p>
+  
+<p>
+This is a bit trickier than the previous example, but let's start by noticing that
+<m>|x^2-4| = |x-2|\cdot|x+2|</m>. Consider:<br />
+</p>
+  
+<men xml:id="eq_limit1" >
+|x^2-4| \lt  \epsilon \longrightarrow |x-2|\cdot|x+2| \lt  \epsilon \longrightarrow |x-2| \lt  \frac{\epsilon}{|x+2|}. 
+</men>
+ 
+<p>
+Could we not set <m>\displaystyle \delta = \frac{\epsilon}{|x+2|}</m>?
+</p>
+  
+<p>
+We are close to an answer, but the catch is that <m>\delta</m> must be a <em>constant</em> value (so it can't contain <m>x</m>). There is a way to work around this, but we do have to make an assumption. Remember that <m>\epsilon</m> is supposed to be a small number, which implies that <m>\delta</m> will also be a small value. In particular, we can (probably) assume that <m>\delta \lt  1</m>. If this is true, then <m>|x-2| \lt  \delta</m> would imply that <m>|x-2| \lt  1</m>, giving <m>1 \lt  x \lt  3</m>.
+</p>
+  
+<p>
+Now, back to the fraction <m>\displaystyle \frac{\epsilon}{|x+2|}</m>. If <m>1\lt x\lt 3</m>, then <m>3\lt x+2\lt 5</m> (add 2 to all terms in the inequality). Taking reciprocals, we have
+</p>
+  
+<md><mrow>\frac15 \lt \amp  \frac1{|x+2|} \lt  \frac 13 \amp  \text{which implies} \notag</mrow>
+ <mrow>\frac15 \lt \amp  \frac1{|x+2|} \amp  \text{which implies} \notag</mrow>
+ <mrow xml:id="eq_limit2" >\frac\epsilon5\lt \amp \frac{\epsilon}{|x+2|}. </mrow>
+ 
+</md>
+  
+<p>
+This suggests that we set
+<m>\displaystyle \delta \leq \frac{\epsilon}{5}</m>. To see why, let consider what follows when we assume <m>|x-2|\lt \delta</m>:
+</p>
+    
+<md><mrow>|x - 2| \amp \lt  \delta \amp </mrow>
+ <mrow>|x - 2| \amp \lt  \frac{\epsilon}{5}\amp   \text{(Our choice of <m>\delta</m>)}</mrow>
+ <mrow>|x - 2|\cdot|x + 2| \amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{(Multiply by <m>|x+2|</m>)}</mrow>
+ <mrow>|x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\amp   \text{(Combine left side)}</mrow>
+ <mrow>|x^2 - 4|\amp \lt  |x + 2|\cdot\frac{\epsilon}{5}\lt  |x + 2|\cdot\frac{\epsilon}{|x+2|}=\epsilon \amp   
+\text{(Using (1.2.4) as long as <m>\delta \lt 1</m>)}</mrow>
+ 
+</md>
+   
+<p>
+We have arrived at <m>|x^2 - 4|\lt \epsilon</m> as desired. Note again, in order to make this happen we needed <m>\delta</m> to first be less than 1. That is a safe assumption; we want <m>\epsilon</m> to be arbitrarily small, forcing <m>\delta</m> to also be small.
+</p>
+  
+<p>
+We have also picked <m>\delta</m> to be smaller than <q>necessary.</q> We could get by with a slightly larger <m>\delta</m>, as shown in <xref ref="fig_limit_eover5">Figure</xref>. The dashed outer lines show the boundaries defined by our choice of <m>\epsilon</m>. The dotted inner lines show the boundaries defined by setting <m>\delta = \epsilon/5</m>. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing <m>x</m> within the dotted lines we are guaranteed that <m>f(x)</m> will be within <m>\epsilon</m> of 4.
+</p>
+  <figure xml:id="fig_limit_eover5" >
+<caption>Choosing <m>\delta = \epsilon/5</m> in <xref ref="ex_compute_lim2">Example</xref>.</caption>
+<image source="images/figlimit_proof2a.png" /> </figure>
+  
+<p>
+In summary, given <m>\epsilon > 0</m>, set <m>\delta=\leq\epsilon/5</m>. Then <m>|x - 2| \lt  \delta</m> implies
+<m>|x^2 - 4|\lt  \epsilon</m> (i.e. <m>|y - 4|\lt  \epsilon</m>) as desired. This shows that <m>\displaystyle \lim_{x\rightarrow 2} x^2 = 4 </m>. <xref ref="fig_limit_eover5">Figure</xref> gives a visualization of this; by restricting <m>x</m> to values within <m>\delta = \epsilon/5</m> of 2, we see that <m>f(x)</m> is within <m>\epsilon</m> of <m>4</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Make note of the general pattern exhibited in these last two examples. In some sense, each starts out <q>backwards.</q> That is, while we want to
+</p>
+  <ol><li>start with <m>|x-c|\lt \delta</m> and conclude that</li>
+<li><m>|f(x)-L|\lt \epsilon</m>,</li>
+ </ol>  
+<p>
+we actually start by assuming
+</p>
+  <ol><li><m>|f(x)-L|\lt \epsilon</m>, then perform some algebraic manipulations to give an inequality of the form</li>
+<li><m>|x-c|\lt </m> <em>something</em>.</li>
+ </ol>  
+<p>
+When we have properly done this, the <em>something</em> on the <q>greater than</q> side of the inequality becomes our <m>\delta</m>. We can refer to this as the <q>scratch&#x2013;work</q> phase of our proof. Once we have <m>\delta</m>, we can formally start with <m>|x-c|\lt \delta</m> and use algebraic manipulations to conclude that <m>|f(x)-L|\lt \epsilon</m>, usually by using the same steps of our <q>scratch&#x2013;work</q> in reverse order.
+</p>
+  
+<p>
+We highlight this process in the following example.<br />
+</p>
+  
+<example xml:id="ex_compute_lim4"><title>Evaluating a limit using the definition</title>
+<statement>
+<p>
+Prove that <m>\ds \lim_{x\rightarrow 1}x^3-2x = -1</m>.
+</p>
+  
+<solution><statement>
+<p>
+We start our scratch&#x2013;work by considering <m>|f(x) - (-1)| \lt  \epsilon</m>:
+</p>
+  
+<md><mrow>|f(x)-(-1)| \amp \lt  \epsilon \notag</mrow>
+ <mrow>|x^3-2x + 1|\amp \lt  \epsilon \amp  \text{(Now factor)} \notag</mrow>
+ <mrow>|(x-1)(x^2+x-1)|\amp \lt  \epsilon \notag</mrow>
+ <mrow xml:id="eq_lim4" >|x-1| \amp \lt \frac{\epsilon}{|x^2+x-1|}. </mrow>
+ 
+</md>
+ 
+<p>
+We are at the phase of saying that <m>|x-1|\lt </m> <em>something</em>, where <em>something</em><m>=\epsilon/|x^2+x-1|</m>. We want to turn that <em>something</em> into <m>\delta</m>.
+</p>
+  
+<p>
+Since <m>x</m> is approaching 1, we are safe to assume that <m>x</m> is between 0 and 2. So
+</p>
+  
+<md><mrow>0\amp \lt  x\lt 2  \amp </mrow>
+ <mrow>0\amp \lt  x^2\lt 4.\amp \text{(squared each term)}</mrow>
+ <mrow>\end{mathrow}
+Since $0\lt x\lt 2$, we can add $0$, $x$ and $2$, respectively, to each part of the inequality and maintain the inequality.
+\begin{mathrow}
+0\amp \lt  x^2+x\lt 6 \amp </mrow>
+ <mrow>-1\amp \lt  x^2+x-1\lt 5.\amp \text{(subtracted 1 from each part)}</mrow>
+ 
+</md>
+  
+<p>
+In Equation <xref ref="eq_lim4" />, we wanted <m>|x-1|\lt \epsilon/|x^2+x-1|</m>. The above shows that given any <m>x</m> in <m>[0,2]</m>, we know that
+</p>
+  
+<md><mrow>x^2+x-1 \amp \lt  5 \amp \text{which implies that} \notag</mrow>
+ <mrow>\frac15 \amp \lt  \frac{1}{x^2+x-1} \amp \text{which implies that} \notag</mrow>
+ <mrow xml:id="eq_lim4b" >\frac{\epsilon}5 \amp \lt  \frac{\epsilon}{x^2+x-1}. </mrow>
+ 
+</md>
+ 
+<p>
+So we set <m>\delta \leq \epsilon/5</m>. This ends our scratch&#x2013;work, and we begin the formal proof (which also helps us understand why this was a good choice of <m>\delta</m>).
+</p>
+  
+<p>
+Given <m>\epsilon</m>, let <m>\delta \leq \epsilon/5</m>. We want to show that when <m>|x-1|\lt \delta</m>, then <m>|(x^3-2x)-(-1)|\lt \epsilon</m>. We start with <m>|x-1|\lt \delta</m>:
+</p>
+  
+<md><mrow>|x-1| \amp \lt  \delta</mrow>
+ <mrow>|x-1| \amp \lt  \frac{\epsilon}5</mrow>
+ <mrow>|x-1| \amp \lt  \frac\epsilon5 \lt  \frac{\epsilon}{|x^2+x-1|} \amp  \text{(for <m>x</m> near 1, from Equation (1.2.11))}</mrow>
+ <mrow>|x-1|\cdot |x^2+x-1| \amp \lt  \epsilon</mrow>
+ <mrow>|x^3-2x+1| \amp \lt  \epsilon</mrow>
+ <mrow>|(x^3-2x)-(-1)| \amp \lt \epsilon,</mrow>
+ 
+</md>
+ 
+<p>
+which is what we wanted to show. Thus <m>\ds \lim_{x\to 1}x^3-2x = -1</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We illustrate evaluating limits once more.<br />
+</p>
+  
+<example xml:id="ex_compute_lim3"><title>Evaluating a limit using the definition</title>
+<statement>
+<p>
+Prove that <m>\displaystyle \lim_{x\rightarrow 0} e^x = 1 </m>.
+</p>
+  
+<solution><statement>
+<p>
+Symbolically, we want to take the equation <m>|e^x - 1| \lt  \epsilon</m> and unravel it to the form <m>|x-0| \lt  \delta</m>. Here is our scratch&#x2013;work:
+</p>
+  
+<md><mrow>|e^x - 1| \lt  \epsilon\amp </mrow>
+ <mrow>-\epsilon \lt  e^x - 1 \lt  \epsilon\amp  \qquad \textrm{(Definition of absolute value)}</mrow>
+ <mrow>1-\epsilon \lt  e^x \lt  1+\epsilon \amp  \qquad \textrm{(Add 1)}</mrow>
+ <mrow>\ln(1-\epsilon) \lt  x \lt  \ln(1+\epsilon) \amp  \qquad \textrm{(Take natural logs)}</mrow>
+  
+</md>
+ 
+<p>
+Making the safe assumption that <m>\epsilon\lt 1</m> ensures the last inequality is valid (i.e., so that <m>\ln (1-\epsilon)</m> is defined). We can then set <m>\delta</m> to be the minimum of <m>|\ln(1-\epsilon)|</m> and <m>\ln(1+\epsilon)</m>; i.e.,
+</p>
+  
+<me>
+\delta = \min\{|\ln(1-\epsilon)|, \ln(1+\epsilon)\} = \ln(1+\epsilon).
+</me>
+  
+<article class="aside-like" id="marginalnote1-2-5"><h5 class="heading"><span class="type"></span><span class="codenumber">1.2.5</span></h5>
+<p>
+<b>Note:</b> Recall <m>\ln 1= 0</m> and <m>\ln x\lt 0</m> when <m>0\lt x\lt 1</m>. So <m>\ln (1-\epsilon) \lt 0</m>, hence we consider its absolute value.
+</p>
+ 
+</article>
+  
+<p>
+Now, we work through the actual the proof:
+</p>
+  
+<md><mrow>|x - 0|\amp \lt \delta</mrow>
+ <mrow>-\delta \amp \lt  x \lt  \delta \amp   \textrm{(Definition of absolute value)}</mrow>
+ <mrow>-\ln(1+\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp </mrow>
+ <mrow>\ln(1-\epsilon) \amp \lt  x \lt  \ln(1+\epsilon). \amp  \text{(since <m>\ln(1-\epsilon) \lt  -\ln(1+\epsilon)</m>)}</mrow>
+ <mrow>\end{mathrow}
+The above line is true by our choice of $\delta$ and by the fact that since $|\ln(1-\epsilon)|>\ln(1+\epsilon)$ and $\ln(1-\epsilon)\lt 0$, we know $\ln(1-\epsilon) \lt  -\ln(1+\epsilon )$.
+\begin{mathrow} 
+1-\epsilon \amp \lt  e^x \lt  1+\epsilon \amp   \textrm{(Exponentiate)}</mrow>
+ <mrow>-\epsilon \amp \lt  e^x - 1 \lt  \epsilon \amp   \textrm{(Subtract 1)}</mrow>
+  
+</md>
+  
+<p>
+In summary, given <m>\epsilon > 0</m>, let <m>\delta = \ln(1+\epsilon)</m>. Then <m>|x - 0| \lt  \delta</m> implies <m>|e^x - 1|\lt  \epsilon</m> as desired. We have shown that <m>\displaystyle \lim_{x\rightarrow 0} e^x = 1 </m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We note that we could actually show that <m>\lim_{x\rightarrow c} e^x = e^c </m> for any constant <m>c</m>. We do this by factoring out <m>e^c</m> from both sides, leaving us to show <m>\lim_{x\rightarrow c} e^{x-c} = 1 </m> instead. By using the substitution <m>u=x-c</m>, this reduces to showing <m>\lim_{u\rightarrow 0} e^u = 1 </m> which we just did in the last example. As an added benefit, this shows that in fact the function <m>f(x)=e^x</m> is <em>continuous</em> at all values of <m>x</m>, an important concept we will define in <xref ref="sec_continuity">Section</xref>.<br />
+</p>
+  
+<p>
+This formal definition of the limit is not an easy concept grasp. Our examples are actually <q>easy</q> examples, using <q>simple</q> functions like polynomials, square&#x2013;roots and exponentials. It is very difficult to prove, using the techniques given above, that <m>\ds \lim_{x\to 0}(\sin x)/x = 1</m>, as we approximated in the previous section.
+</p>
+  
+<p>
+There is hope. The next section shows how one can evaluate complicated limits using certain basic limits as building blocks. While limits are an incredibly important part of calculus (and hence much of higher mathematics), rarely are limits evaluated using the definition. Rather, the techniques of the following section are employed.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+What is wrong with the following <q>definition</q> of a limit?
+</p>
+  <div class="quote"><q>The limit of <m>f(x)</m>, as <m>x</m> approaches <m>a</m>, is <m>K</m></q> means that given any <m>\delta>0</m> there exists <m>\epsilon>0</m> such that whenever <m>|f(x)-K|\lt  \epsilon</m>, we have <m>|x-a|\lt \delta</m>.</div>  <hint><m>\epsilon</m> should be given first, and the restriction 	<m>|x-a|\lt \delta</m> implies <m>|f(x)-K|\lt  \epsilon</m>, not the other way around.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Which is given first in establishing a limit, the <m>x</m>&#x2013;tolerance or the <m>y</m>&#x2013;tolerance?
+</p>
+  <hint>The <m>y</m>&#x2013;tolerance.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: <m>\epsilon</m> must always be positive.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: <m>\delta</m> must always be positive.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, prove the given limit using an <m>\epsilon - \delta</m> proof.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 5} 3-x = -2</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-5|\lt \delta</m>, <m>|f(x)-(-2)|\lt \epsilon</m>. 
+
+Consider <m>|f(x)-(-2)|\lt \epsilon</m>:
+
+<md><mrow>|f(x) + 2 | \lt  \epsilon</mrow>
+ <mrow>|(3-x) + 2 |\lt \epsilon</mrow>
+ <mrow>| 5-x | \lt  \epsilon</mrow>
+ <mrow>-\epsilon \lt  5-x \lt  \epsilon</mrow>
+ <mrow>-\epsilon \lt  x-5 \lt  \epsilon.</mrow>
+  
+</md>
+ 
+This implies we can let <m>\delta =\epsilon</m>. Then:
+
+<md><mrow>|x-5|\lt \delta</mrow>
+ <mrow>-\delta \lt  x-5 \lt  \delta</mrow>
+ <mrow>-\epsilon \lt  x-5 \lt  \epsilon</mrow>
+ <mrow>-\epsilon \lt  (x-3)-2 \lt  \epsilon</mrow>
+ <mrow>-\epsilon \lt  (-x+3)-(-2) \lt  \epsilon</mrow>
+ <mrow>|3-x - (-2)| \lt  \epsilon,</mrow>
+ 
+</md>
+ 
+which is what we wanted to prove.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 3} x^2-3 = 6</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-3|\lt \delta</m>, <m>|f(x)-6|\lt \epsilon</m>. 
+
+Consider <m>|f(x)-6|\lt \epsilon</m>, keeping in  mind we want to make a statement about <m>|x-3|</m>:
+
+<md><mrow>|f(x) -6 | \lt  \epsilon</mrow>
+ <mrow>|x^2-3 -6 |\lt \epsilon</mrow>
+ <mrow>| x^2-9 | \lt  \epsilon</mrow>
+ <mrow>| x-3 |\cdot|x+3| \lt  \epsilon</mrow>
+ <mrow>| x-3 | \lt  \epsilon/|x+3|</mrow>
+  
+</md>
+ 
+Since <m>x</m> is near 3, we can safely assume that, for instance, <m>2\lt x\lt 4</m>. Thus
+
+<md><mrow>2+3\lt x+3\lt 4+3</mrow>
+ <mrow>5 \lt  x+3 \lt  7</mrow>
+ <mrow>\frac{1}{7} \lt  \frac{1}{x+3} \lt  \frac{1}{5}</mrow>
+ <mrow>\frac{\epsilon}{7} \lt  \frac{\epsilon}{x+3} \lt  \frac{\epsilon}{5}</mrow>
+  
+</md>
+ 
+Let <m>\delta =\frac{\epsilon}{7}</m>. Then:
+
+<md><mrow>|x-3|\lt \delta</mrow>
+ <mrow>|x-3| \lt  \frac{\epsilon}7</mrow>
+ <mrow>|x-3| \lt  \frac{\epsilon}{x+3}</mrow>
+ <mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot|x+3|</mrow>
+  
+</md>
+ 
+Assuming <m>x</m> is near 3, <m>x+3</m> is positive and we can drop the absolute value signs on the right.
+
+<md><mrow>|x-3|\cdot|x+3| \lt  \frac{\epsilon}{x+3}\cdot(x+3)</mrow>
+ <mrow>|x^2-9| \lt  \epsilon</mrow>
+ <mrow>|(x^2-3) - 6| \lt  \epsilon,</mrow>
+ 
+</md>
+ 
+which is what we wanted to prove.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 4} x^2+x-5 = 15</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-4|\lt \delta</m>, <m>|f(x)-15|\lt \epsilon</m>. 
+
+Consider <m>|f(x)-15|\lt \epsilon</m>, keeping in  mind we want to make a statement about <m>|x-4|</m>:
+
+<md><mrow>|f(x) -15 | \lt  \epsilon</mrow>
+ <mrow>|x^2+x-5 -15 |\lt \epsilon</mrow>
+ <mrow>| x^2+x-20 | \lt  \epsilon</mrow>
+ <mrow>| x-4 |\cdot|x+5| \lt  \epsilon</mrow>
+ <mrow>| x-4 | \lt  \epsilon/|x+5|</mrow>
+  
+</md>
+ 
+Since <m>x</m> is near 4, we can safely assume that, for instance, <m>3\lt x\lt 5</m>. Thus
+
+<md><mrow>3+5\lt x+5\lt 5+5</mrow>
+ <mrow>8 \lt  x+5 \lt  10</mrow>
+ <mrow>\frac{1}{10} \lt  \frac{1}{x+5} \lt  \frac{1}{8}</mrow>
+ <mrow>\frac{\epsilon}{10} \lt  \frac{\epsilon}{x+5} \lt  \frac{\epsilon}{8}</mrow>
+  
+</md>
+ 
+Let <m>\delta =\frac{\epsilon}{10}</m>. Then:
+
+<md><mrow>|x-4|\lt \delta</mrow>
+ <mrow>|x-4| \lt  \frac{\epsilon}{10}</mrow>
+ <mrow>|x-4| \lt  \frac{\epsilon}{x+5}</mrow>
+ <mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot|x+5|</mrow>
+  
+</md>
+ 
+Assuming <m>x</m> is near 4, <m>x+5</m> is positive and we can drop the absolute value signs on the right.
+
+<md><mrow>|x-4|\cdot|x+5| \lt  \frac{\epsilon}{x+5}\cdot(x+5)</mrow>
+ <mrow>|x^2+x-20| \lt  \epsilon</mrow>
+ <mrow>|(x^2+x-5) -15| \lt  \epsilon,</mrow>
+ 
+</md>
+ 
+which is what we wanted to prove.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 2} x^3-1 = 7</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-7|\lt \epsilon</m>. 
+
+Consider <m>|f(x)-7|\lt \epsilon</m>, keeping in  mind we want to make a statement about <m>|x-2|</m>:
+
+<md><mrow>|f(x) -7 | \lt  \epsilon</mrow>
+ <mrow>|x^3-1 -7 |\lt \epsilon</mrow>
+ <mrow>| x^3-8 | \lt  \epsilon</mrow>
+ <mrow>| x-2 |\cdot|x^2+2x+4| \lt  \epsilon</mrow>
+ <mrow>| x-3 | \lt  \epsilon/|x^2+2x+4|</mrow>
+  
+</md>
+ 
+Since <m>x</m> is near 2, we can safely assume that, for instance, <m>1\lt x\lt 3</m>. Thus
+
+<md><mrow>1^2+2\cdot1+4\lt x^2+2x+4\lt 3^2+2\cdot3+4</mrow>
+ <mrow>7 \lt  x^2+2x+4 \lt  19</mrow>
+ <mrow>\frac{1}{19} \lt  \frac{1}{x^2+2x+4} \lt  \frac{1}{7}</mrow>
+ <mrow>\frac{\epsilon}{19} \lt  \frac{\epsilon}{x^2+2x+4} \lt  \frac{\epsilon}{7}</mrow>
+  
+</md>
+ 
+Let <m>\delta =\frac{\epsilon}{19}</m>. Then:
+
+<md><mrow>|x-2|\lt \delta</mrow>
+ <mrow>|x-2| \lt  \frac{\epsilon}{19}</mrow>
+ <mrow>|x-2| \lt  \frac{\epsilon}{x^2+2x+4}</mrow>
+ <mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot|x^2+2x+4|</mrow>
+  
+</md>
+ 
+Assuming <m>x</m> is near 2, <m>x^2+2x+4</m> is positive and we can drop the absolute value signs on the right.
+
+<md><mrow>|x-2|\cdot|x^2+2x+4| \lt  \frac{\epsilon}{x^2+2x+4}\cdot(x^2+2x+4)</mrow>
+ <mrow>|x^3-8| \lt  \epsilon</mrow>
+ <mrow>|(x^3-1) - 7| \lt  \epsilon,</mrow>
+ 
+</md>
+ 
+which is what we wanted to prove.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 2} 5 = 5</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-2|\lt \delta</m>, <m>|f(x)-5|\lt \epsilon</m>. However, since <m>f(x)=5</m>, a constant function, the latter inequality is simply <m>|5-5|\lt \epsilon</m>, which is always true. Thus we can choose any <m>\delta</m> we like; we arbitrarily choose <m>\delta =\epsilon</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 0} e^{2x}-1 = 0</m>
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>. 
+
+Consider <m>|f(x)-0|\lt \epsilon</m>, keeping in  mind we want to make a statement about <m>|x-0|</m> (i.e., <m>|x|</m>):
+
+<md><mrow>|f(x) -0 | \lt  \epsilon</mrow>
+ <mrow>|e^{2x}-1 |\lt \epsilon</mrow>
+ <mrow>-\epsilon\lt  e^{2x}-1 \lt  \epsilon</mrow>
+ <mrow>1-\epsilon\lt  e^{2x} \lt  1+\epsilon</mrow>
+ <mrow>\ln (1-\epsilon) \lt  2x \lt  \ln (1+\epsilon)</mrow>
+ <mrow>\frac{\ln (1-\epsilon)}{2} \lt  x \lt  \frac{\ln (1+\epsilon)}{2}</mrow>
+  
+</md>
+ 
+Let <m>\delta = \min\left\{\left|\frac{\ln(1-\epsilon)}{2}\right|,\frac{\ln(1+\epsilon)}{2}\right\}=\frac{\ln(1+\epsilon)}{2}.</m>
+
+Thus:
+
+<md><mrow>|x| \lt  \delta</mrow>
+ <mrow>|x| \lt \frac{\ln(1+\epsilon)}{2}\lt \left|\frac{\ln(1-\epsilon)}{2}\right|</mrow>
+ <mrow>\frac{\ln(1-\epsilon)}{2} \lt  x \lt  \frac{\ln(1+\epsilon)}{2}</mrow>
+ <mrow>\ln(1-\epsilon)\lt  2x \lt  \ln(1+\epsilon)</mrow>
+ <mrow>1-\epsilon \lt  e^{2x} \lt  1+\epsilon</mrow>
+ <mrow>-\epsilon \lt  e^{2x}-1 \lt  \epsilon</mrow>
+ <mrow>|e^{2x}-1-(0)| \lt  \epsilon,</mrow>
+ 
+</md>
+ 
+which is what we wanted to prove.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\displaystyle \lim_{x\to 0} \sin x= 0</m> (Hint: use the fact that <m>|\sin x| \leq |x|</m>, with equality only when <m>x=0</m>.)
+</p>
+  <hint>Let <m>\epsilon >0</m> be given. We wish to find <m>\delta >0</m> such that when <m>|x-0|\lt \delta</m>, <m>|f(x)-0|\lt \epsilon</m>. In simpler terms, we want to show that when <m>|x|\lt \delta</m>, <m>|\sin x| \lt  \epsilon</m>. 
+
+Set <m>\delta = \epsilon</m>. We start with assuming that <m>|x|\lt \delta</m>. Using the hint, we have that <m>|\sin x | \lt  |x| \lt  \delta = \epsilon</m>. Hence if <m>|x|\lt \delta</m>, we know immediately that <m>|\sin x| \lt  \epsilon</m>.</hint> </statement>
+</exercise>
+ </subsection> </section>
