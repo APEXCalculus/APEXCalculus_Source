@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<docinfo>
+<macros>
+\renewcommand{\thepage}{A.\arabic{page}}
+\newcommand{\apex}{A\kern -1pt \lower -2pt\mbox{P}\kern -4pt \lower .7ex\mbox{E}\kern -1pt X}
+\newcommand{\colorlinecolor}{blue!95!black!30}
+\newcommand{\bwlinecolor}{black!30}
+\newcommand{\thelinecolor}{\colorlinecolor}
+\newcommand{\colornamesuffix}{}
+\newcommand{\includegraphics}[2][]{\includegraphics[#1]{#2\colornamesuffix}}
+\newcommand{\includegraphicsthreenostar}[3]{{
+				\includegraphics[#2]{#3} }}
+\newcommand{\includegraphicsthreestarred}[3]{{
+				\includegraphics[#2]{#3} }}
+\newcommand{\linestyle}{[thick, \thelinecolor]}
+\newcommand{\exc}{\arabic{excounter}}
+\newcommand{\include}[1]{}
+\def\printexercisename{exercises/#1_#2_#3_#4 {#1 #2 #3 #4}}
+\newcommand{\readsection}[1]{.#2{#2}}
+\newcommand{\writeexercisestofile}[1]{}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ \ \ \ {#1}}{}}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\bmx}[1]{\left[\hskip -3pt\begin{array}{#1} }
+\newcommand{\emx}{\end{array}\hskip -3pt\right]}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\fp}{f\,'}
+\newcommand{\fpp}{f\,''}
+\newcommand{\Fp}{F\primeskip'}
+\newcommand{\Fpp}{F\primeskip''}
+\newcommand{\yp}{y\primeskip'}
+\newcommand{\gp}{g\primeskip'}
+\newcommand{\dx}{\Delta x}
+\newcommand{\dy}{\Delta y}
+\newcommand{\ddz}{\Delta z}
+\newcommand{\thet}{\theta}
+\newcommand{\norm}[1]{||\ #1\ ||}
+\newcommand{\vnorm}[1]{\norm{\vec #1}}
+\newcommand{\snorm}[1]{\left|\left|\ #1\ \right|\right|}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\dotp}[2]{\vec #1 \cdot \vec #2}
+\newcommand{\proj}[2]{\text{proj}_{\,\vec #2}{\,\vec #1}}
+\newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+\newcommand{\veci}{\vec i}
+\newcommand{\vecj}{\vec j}
+\newcommand{\veck}{\vec k}
+\newcommand{\vecu}{\vec u}
+\newcommand{\vecv}{\vec v}
+\newcommand{\vecw}{\vec w}
+\newcommand{\vecx}{\vec x}
+\newcommand{\vecy}{\vec y}
+\newcommand{\vrp}{\vec r\, '}
+\newcommand{\vsp}{\vec s\, '}
+\newcommand{\vrt}{\vec r(t)}
+\newcommand{\vst}{\vec s(t)}
+\newcommand{\vvt}{\vec v(t)}
+\newcommand{\vat}{\vec a(t)}
+\newcommand{\px}{\partial x}
+\newcommand{\py}{\partial y}
+\newcommand{\pz}{\partial z}
+\newcommand{\pf}{\partial f}
+\newcommand{\underlinespace}{\underline{}}
+\newcommand{\mathN}{\mathbb{N}}
+\newcommand{\zerooverzero}{\ds \raisebox{8pt}{\text{``\ }}\frac{0}{0}\raisebox{8pt}{\textit{ ''}}}
+\newcommand{\myrule}{\rule[-4pt]{0pt}{13pt}}
+\newcommand{\mmrule}{\rule[-10pt]{0pt}{15pt}}
+\newcommand{\myds}{\ds\mmrule}
+\newcommand{\deriv}[2]{\myds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\myds\int #1\ dx= {\ds #2}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\newcommand{\sword}[1]{\textbf{#1}}
+\newcommand{\primeskip}{\hskip.75pt}
+\newcommand{\plotlinecolor}{blue}
+\newcommand{\asyouread}[1]{\begin{tikzpicture}
+\node [preaction={fill=black,opacity=.5,transform canvas={xshift=1mm,yshift=-1mm}}, right color=black!30, left color=black!10] at (0,0) {\textcolor{white}{\textsf{\textit{AS YOU READ $\ldots$}}}}; 
+\end{tikzpicture}
+\begin{enumerate}
+#1
+\end{enumerate}
+}
+\renewcommand{\themyfigurecounter}{\thechapter.\arabic{myfigurecounter}}
+\newcommand{\mycaption}[1]{\begin{center}\vskip -1.5\begin{tikzpicture}\draw (0,0) node [text width=\textwidth,align=center] {Figure \themyfigurecounter: #1};\end{tikzpicture}\end{center}}
+</macros>
+
+</docinfo>
+
+
+<book>
+    <title>Title Goes Here    </title>
+<frontmatter>
+<titlepage>
+</titlepage>
+</frontmatter>
+
+
+<xi:include href="./chapter2.mbx" />
+
+<xi:include href="./chapter3.mbx" />
+<backmatter>
+<index-part>
+<title>Index</title>
+<index-list />
+</index-part>
+
+</backmatter>
+</book>
+</mathbook>

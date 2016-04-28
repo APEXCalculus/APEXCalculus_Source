@@ -1,0 +1,878 @@
+
+<section xml:id="sec_limit_analytically">
+<title>Finding Limits Analytically</title><introduction>
+<p>
+In <xref ref="sec_limit_intro">Section</xref> we explored the concept of the limit without a strict definition, meaning we could only make approximations. In the previous section we gave the definition of the limit and demonstrated how to use it to verify our approximations were correct. Thus far, our method of finding a limit is 1) make a really good approximation either graphically or numerically, and 2) verify our approximation is correct using a <m>\epsilon</m>-<m>\delta</m> proof.
+</p>
+  
+<p>
+Recognizing that <m>\epsilon</m>-<m>\delta</m> proofs are cumbersome, this section gives a series of theorems which allow us to find limits much more quickly and intuitively. <br />
+</p>
+  
+<p>
+Suppose that <m>\lim_{x\to 2} f(x)=2</m> and <m>\lim_{x\to 2} g(x) = 3</m>. What is <m>\lim_{x\to 2}(f(x)+g(x))</m>? Intuition tells us that the limit should be 5, as we expect limits to behave in a nice way. The following theorem states that already established limits do behave nicely.
+</p>
+  
+<theorem xml:id="thm_limit_algebra"><title>Basic Limit Properties</title>
+<statement>
+<p>
+
+Let <m>b</m>, <m>c</m>, <m>L</m> and <m>K</m> be real numbers, let <m>n</m> be a positive integer, and let <m>f</m> and <m>g</m> be functions with the following limits: <index><main>limit</main><sub>properties</sub></index>
+</p>
+  
+<me>
+\lim_{x\to c}f(x) = L \textit{ and\ } \lim_{x\to c} g(x) = K.
+</me>
+ 
+<p>
+The following limits hold.
+</p>
+  <ol><li>\text{Constants:} <m>\displaystyle \lim_{x\to c} b = b</m></li>
+<li>\text{Identity }						<m>\displaystyle \lim_{x\to c} x = c</m></li>
+<li>\text{Sums/Differences:} <m>\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K</m></li>
+<li>\text{Scalar Multiples:}	<m>\displaystyle \lim_{x\to c} b\cdot f(x) = bL</m></li>
+<li>\text{Products:}	<m>\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK</m></li>
+<li>\text{Quotients:} <m>\displaystyle \lim_{x\to c} f(x)/g(x) = L/K</m>, (<m>K\neq 0)</m></li>
+<li>\text{Powers:} 	<m>\displaystyle \lim_{x\to c} f(x)^n = L^n</m></li>
+<li>\text{Roots:}		\parbox[t]{185pt}{<m>\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}</m>}</li>
+<li>\text{Compositions:} \parbox[t]{200pt}{Adjust our previously given limit situation to: 
+<me>
+\lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = K \textit{ and\ } g(L)=K .
+</me>
+  Then <m>\ds \lim_{x\to c}g(f(x)) = K</m>.}</li>
+ </ol>  </statement>
+</theorem>
+  
+<p>
+We make a note about Property \#8: when <m>n</m> is even, <m>L</m> must be greater than 0. If <m>n</m> is odd, then the statement is true for all <m>L</m>.
+</p>
+  
+<p>
+We apply the theorem to an example.<br />
+</p>
+  
+<example xml:id="ex_basic_limit_1"><title>Using basic limit properties</title>
+<statement>
+<p>
+Let
+</p>
+  
+<me>
+\lim_{x\to 2} f(x)=2,\quad\lim_{x\to 2} g(x) = 3\quad \textit{ and \ }\quad p(x) = 3x^2-5x+7.
+</me>
+ 
+<p>
+Find the following limits:
+</p>
+  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big)</m></li>
+<li><m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big)</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to 2} p(x)</m></li>
+ </ol> </div> 
+<solution><statement><ol><li>Using the Sum/Difference rule, we know that <m>\ds \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5</m>.</li>
+<li>Using the Scalar Multiple and Sum/Difference rules, we find that <m>\ds \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.</m></li>
+<li>Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+				
+<md><mrow>\lim_{x\to 2} p(x) \amp = \lim_{x\to 2} (3x^2-5x+7)</mrow>
+ <mrow>\amp = \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7</mrow>
+ <mrow>\amp = 3\cdot 2^2 - 5\cdot 2+7</mrow>
+ <mrow>\amp = 9</mrow>
+ 
+</md>
+</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Part 3 of the previous example demonstrates how the limit of a quadratic polynomial can be determined using the properties of <xref ref="thm_limit_algebra">Theorem</xref>. Not only that, recognize that
+</p>
+  
+<me>
+\lim_{x\to 2} p(x) = 9 = p(2);
+</me>
+ 
+<p>
+i.e., the limit at 2 was found just by plugging 2 into the function. This holds true for all polynomials, and also for rational functions (which are quotients of polynomials), as stated in the following theorem.
+</p>
+  
+<theorem xml:id="thm_poly_rat"><title>Limits of Polynomial and Rational Functions</title>
+<statement>
+<p>
+Let <m>p(x)</m> and <m>q(x)</m> be polynomials and <m>c</m> a real number. Then:
+</p>
+  <ol><li><m>\ds \lim_{x\to c} p(x) = p(c)</m></li>
+<li><m>\ds \lim_{x\to c} \frac{p(x)}{q(x)} = \frac{p(c)}{q(c)}</m>, where <m>q(c) \neq 0</m>.</li>
+ </ol>  </statement>
+</theorem>
+  
+<example xml:id="ex_limit_rat"><title>Finding a limit of a rational function</title>
+<statement>
+<p>
+Using <xref ref="thm_poly_rat">Theorem</xref>, find
+</p>
+  
+<me>
+\lim_{x\to -1} \frac{3x^2-5x+1}{x^4-x^2+3}.
+</me>
+ 
+<solution><statement>
+<p>
+Using <xref ref="thm_poly_rat">Theorem</xref>, we can quickly state that
+</p>
+  
+<md><mrow>\lim_{x\to -1}\frac{3x^2-5x+1}{x^4-x^2+3} \amp = \frac{3(-1)^2-5(-1)+1}{(-1)^4-(-1)^2+3}</mrow>
+ <mrow>\amp = \frac{9}{3} =3.</mrow>
+ 
+</md>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+It was likely frustrating in <xref ref="sec_limit_def">Section</xref> to do a lot of work to prove that
+</p>
+  
+<me>
+\lim_{x\to 2} x^2 = 4
+</me>
+ 
+<p>
+as it seemed fairly obvious. The previous theorems state that many functions behave in such an "obvious" fashion, as demonstrated by the rational function in <xref ref="ex_limit_rat">Example</xref>.
+</p>
+  
+<p>
+Polynomial and rational functions are not the only functions to behave in such a predictable way. The following theorem gives a list of functions whose behavior is particularly "nice" in terms of limits. In the next section, we will give a formal name to these functions that behave "nicely."
+</p>
+  <div class="minipage">{\specialboxlength}
+
+<theorem xml:id="thm_lim_continuous"><title>Special Limits</title>
+<statement>
+<p>
+Let <m>c</m> be a real number in the domain of the given function and let <m>n</m> be a positive integer. The following limits hold:
+</p>
+  <div class="minipage">{.33\specialboxlength}
+<ol><li><m>\ds \lim_{x\to c} \sin x = \sin c</m></li>
+<li><m>\ds \lim_{x\to c} \cos x = \cos c</m></li>
+<li><m>\ds \lim_{x\to c} \tan x = \tan c</m></li>
+ </ol> </div>  <div class="minipage">{.33\specialboxlength}
+<ol><li><m>\ds \lim_{x\to c} \csc x = \csc c</m></li>
+<li><m>\ds \lim_{x\to c} \sec x = \sec c</m></li>
+<li><m>\ds \lim_{x\to c} \cot x = \cot c</m></li>
+ </ol> </div>  <div class="minipage">{.33\specialboxlength}
+<ol><li><m>\ds \lim_{x\to c} a^x = a^c</m> (<m>a>0</m>)</li>
+<li><m>\ds \lim_{x\to c} \ln x = \ln c</m></li>
+<li><m>\ds \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}</m></li>
+ </ol> </div> </statement>
+</theorem>
+</div> 
+<p>
+
+\restoreboxwidth
+</p>
+  
+<example xml:id="ex_limit_1"><title>Evaluating limits analytically</title>
+<statement>
+<p>
+Evaluate the following limits.
+</p>
+  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to \pi} \cos x</m></li>
+<li><m>\ds \lim_{x\to 3} (\sec^2x - \tan^2 x)</m></li>
+<li><m>\ds \lim_{x\to \pi/2} \cos x\sin x</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to 1} e^{\ln x}</m></li>
+<li><m>\ds \lim_{x\to 0} \frac{\sin x}{x}</m></li>
+ </ol> </div> 
+<solution><statement><ol><li>This is a straightforward application of <xref ref="thm_lim_continuous">Theorem</xref>. <m>\ds \lim_{x\to \pi} \cos x = \cos \pi = -1</m>.</li>
+<li>We can approach this in at least two ways. First, by directly applying <xref ref="thm_lim_continuous">Theorem</xref>, we have:
+				
+<me>
+\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.
+</me>
+  Using the Pythagorean Theorem, this last expression is 1; therefore 
+<me>
+\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.
+</me>
+ 
+				
+				We can also use the Pythagorean Theorem from the start. 
+<me>
+\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,
+</me>
+  using the Constant limit rule. Either way, we find the limit is 1.</li>
+<li>Applying the Product limit rule of <xref ref="thm_limit_algebra">Theorem</xref> and <xref ref="thm_lim_continuous">Theorem</xref> gives 
+<me>
+\ds \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.
+</me>
+</li>
+<li>Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that <m>e^{\ln x} = x</m> and evaluate <m>\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.</m> 
+
+We can also use the limit Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>. Using <xref ref="thm_lim_continuous">Theorem</xref>, we have <m>\ds \lim_{x\to 1}\ln x = \ln 1 = 0</m> and <m>\ds\lim_{x\to 0} e^x= e^0=1</m>, satisfying the conditions of the Composition Rule. Applying this rule, 
+<me>
+\ds \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.
+</me>
+  Both approaches are valid, giving the same result.</li>
+<li>We encountered this limit in <xref ref="sec_limit_intro">Section</xref>. Applying our theorems, we attempt to find the limit as 
+<me>
+\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \raisebox{8pt}{\text{``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}}.
+</me>
+  This, of course, violates a condition of <xref ref="thm_limit_algebra">Theorem</xref>, as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The section could have been titled "Using Known Limits to Find Unknown Limits." By knowing certain limits of functions, we can find limits involving sums, products, powers, etc., of these functions. We further the development of such comparative tools with the Squeeze Theorem, a clever and intuitive way to find the value of some limits.
+</p>
+  
+<p>
+Before stating this theorem formally, suppose we have functions <m>f</m>, <m>g</m> and <m>h</m> where <m>g</m> always takes on values between <m>f</m> and <m>h</m>; that is, for all <m>x</m> in an interval,
+</p>
+  
+<me>
+f(x) \leq g(x) \leq h(x).
+</me>
+ 
+<p>
+If <m>f</m> and <m>h</m> have the same limit at <m>c</m>, and <m>g</m> is always "squeezed" between them, then <m>g</m> must have the same limit as well. That is what the Squeeze Theorem states.
+</p>
+  
+<theorem xml:id="thm_sqz"><title>Squeeze Theorem</title>
+<statement>
+<p>
+Let <m>f</m>, <m>g</m> and <m>h</m> be functions on an open interval <m>I</m> containing <m>c</m> such that for all <m>x</m> in <m>I</m>,
+</p>
+  
+<me>
+f(x)\leq g(x) \leq h(x).
+</me>
+ 
+<p>
+If
+</p>
+  
+<me>
+\lim_{x\to c} f(x) = L = \lim_{x\to c} h(x),
+</me>
+ 
+<p>
+then
+</p>
+  
+<me>
+\lim_{x\to c} g(x) = L.
+</me>
+ 
+<p>
+<index><main>limit</main><sub>Squeeze Theorem</sub></index><index><main>Squeeze Theorem</main></index>
+</p>
+ </statement>
+</theorem>
+  
+<p>
+It can take some work to figure out appropriate functions by which to "squeeze" the given function of which you are trying to evaluate a limit. However, that is generally the only place work is necessary; the theorem makes the "evaluating the limit part" very simple.
+</p>
+  
+<p>
+We use the Squeeze Theorem in the following example to finally prove that <m>\ds \lim_{x\to 0} \frac{\sin x}{x} = 1</m>.<br />
+</p>
+  
+<example xml:id="ex_limit_sinx_prove"><title>Using the Squeeze Theorem</title>
+<statement>
+<p>
+Use the Squeeze Theorem to show that
+</p>
+  
+<me>
+\ds \lim_{x\to 0} \frac{\sin x}{x} = 1.
+</me>
+ 
+<solution><statement>
+<p>
+We begin by considering the unit circle. Each point on the unit circle has coordinates <m>(\cos \theta,\sin \theta)</m> for some angle <m>\theta</m> as shown in <xref ref="fig_squeeze_sinx">Figure</xref>. Using similar triangles, we can extend the line from the origin through the point to the point <m>(1,\tan \theta)</m>, as shown. (Here we are assuming that <m>0\leq \theta \leq \pi/2</m>. Later we will show that we can also consider <m>\theta \leq 0</m>.)
+</p>
+  <figure xml:id="fig_squeeze_sinx" >
+<caption>The unit circle and related triangles.</caption>
+<image source="images/figSqueeze1.png" /> </figure>
+  
+<p>
+<xref ref="fig_squeeze_sinx">Figure</xref> shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is <m>\frac12\tan\theta</m>; the area of the sector is <m>\theta/2</m>; the area of the triangle contained inside the sector is <m>\frac12\sin\theta</m>. It is then clear from the diagram that
+</p>
+  <table id="b3b5c4e6d6d38dba82c3c84d45a7d7a7c7fe59e1" ><tr><td class='c'>
+<image source="images/figSqueeze1a.png" />  </td><td class='c'> </td><td class='c'> <image source="images/figSqueeze1b.png" />  </td><td class='c'> </td><td class='c'> <image source="images/figSqueeze1c.png" /> </td></tr>
+<tr><td class='c'>
+<m>\ds \frac{\tan \theta}{2}</m> </td><td class='c'> <m>\geq</m> </td><td class='c'> <m>\ds \frac{\theta}{2}</m> </td><td class='c'> <m>\geq</m> </td><td class='c'> <m>\ds \frac{\sin \theta}{2}</m></td></tr>
+</table>  
+<p>
+Multiply all terms by <m>\ds\frac{2}{\sin \theta}</m>, giving
+</p>
+  
+<me>
+\frac{1}{\cos\theta} \geq \frac{\theta}{\sin \theta} \geq 1.
+</me>
+  
+<p>
+Taking reciprocals reverses the inequalities, giving
+</p>
+  
+<me>
+ \cos \theta \leq \frac{\sin \theta}{\theta} \leq 1.
+</me>
+ 
+<p>
+(These inequalities hold for all values of <m>\theta</m> near 0, even negative values, since <m>\cos (-\theta) = \cos \theta</m> and <m>\sin (-\theta) = -\sin \theta</m>.)
+</p>
+  
+<p>
+Now take limits.
+</p>
+  
+<me>
+\lim_{\theta\to 0} \cos \theta \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq \lim_{\theta\to 0}  1 
+</me>
+  
+<me>
+\cos 0 \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq  1 
+</me>
+  
+<me>
+1 \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq  1 
+</me>
+  
+<p>
+Clearly this means that <m>\ds \lim_{\theta\to 0} \frac{\sin\theta}{\theta}=1</m>.<br />
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Two notes about the previous example are worth mentioning. First, one might be discouraged by this application, thinking "I would <i>never</i> have come up with that on my own. This is too hard!" Don't be discouraged; within this text we will guide you in your use of the Squeeze Theorem. As one gains mathematical maturity, clever proofs like this are easier and easier to create.
+</p>
+  
+<p>
+Second, this limit tells us more than just that as <m>x</m> approaches 0, <m>\sin(x)/x</m> approaches 1. Both <m>x</m> and <m>\sin x</m> are approaching 0, but the <i>ratio</i> of <m>x</m> and <m>\sin x</m> approaches 1, meaning that they are approaching 0 in essentially the same way. Another way of viewing this is: for small <m>x</m>, the functions <m>y=x</m> and <m>y=\sin x</m> are essentially indistinguishable.<br />
+</p>
+  
+<p>
+We include this special limit, along with three others, in the following theorem.
+</p>
+  
+<theorem xml:id="thm_special_limits"><title>Special Limits</title>
+<statement><div class="minipage">{.5\specialboxlength}
+<ol><li><m>\ds \lim_{x\to 0} \frac{\sin x}{x} = 1</m></li>
+<li><m>\ds \lim_{x\to 0} \frac{\cos x-1}{x} = 0</m></li>
+ </ol> </div>  <div class="minipage">{.5\specialboxlength}
+<ol><li><m>\ds \lim_{x\to 0} (1+x)^\frac1x = e</m></li>
+<li><m>\ds \lim_{x\to 0} \frac{e^x-1}{x} = 1</m></li>
+ </ol> </div> </statement>
+</theorem>
+  
+<p>
+A short word on how to interpret the latter three limits. We know that as <m>x</m> goes to 0, <m>\cos x</m> goes to 1. So, in the second limit, both the numerator and denominator are approaching 0. However, since the limit is 0, we can interpret this as saying that "<m>\cos x</m> is approaching 1 faster than <m>x</m> is approaching 0."
+</p>
+  
+<p>
+In the third limit, inside the parentheses we have an expression that is approaching 1 (though never equaling 1), and we know that 1 raised to any power is still 1. At the same time, the power is growing toward infinity. What happens to a number near 1 raised to a very large power? In this particular case, the result approaches Euler's number, <m>e</m>, approximately <m>2.718.</m>
+</p>
+  
+<p>
+In the fourth limit, we see that as <m>x\to 0</m>, <m>e^x</m> approaches 1 "just as fast" as <m>x\to 0</m>, resulting in a limit of 1.<br />
+</p>
+  
+<p>
+Our final theorem for this section will be motivated by the following example.<br />
+</p>
+  
+<example xml:id="ex_limit_onept"><title>Using algebra to evaluate a limit</title>
+<statement>
+<p>
+Evaluate the following limit:
+</p>
+  
+<me>
+\lim_{x\to 1}\frac{x^2-1}{x-1}.
+</me>
+ 
+<solution><statement>
+<p>
+We begin by attempting to apply <xref ref="thm_lim_continuous">Theorem</xref> and substituting 1 for <m>x</m> in the quotient. This gives:
+</p>
+  
+<me>
+\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} = \raisebox{8pt}{\text{``\ } }\frac{0}{0}\raisebox{8pt}{\textit{ ''}},
+</me>
+ 
+<p>
+and indeterminate form. We cannot apply the theorem.
+</p>
+  <figure xml:id="fig_limitxplus1" >
+<caption>Graphing <m>f</m> in <xref ref="ex_limit_onept">Example</xref> to understand a limit.</caption>
+<image source="images/fig_LimitXplus1.png" /> </figure>
+  
+<p>
+By graphing the function, as in <xref ref="fig_limitxplus1">Figure</xref>, we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
+</p>
+  
+<me>
+\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}.
+</me>
+ 
+<p>
+The function is not defined when <m>x=1</m>, but for all other <m>x</m>,
+</p>
+  
+<me>
+\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = \frac{\mbox{\sout{<m>(x-1)</m>}} (x+1)}{\mbox{\sout{<m>x-1</m>}} }= x+1.
+</me>
+ 
+<p>
+Clearly <m>\ds \lim_{x\to 1}x+1 = 2</m>. Recall that when considering limits, we are not concerned with the value of the function at 1, only the value the function approaches as <m>x</m> approaches 1. Since <m>(x^2-1)/(x-1)</m> and <m>x+1</m> are the same at all points except <m>x=1</m>, they both approach the same value as <m>x</m> approaches 1. Therefore we can conclude that
+</p>
+  
+<me>
+\lim_{x\to 1}\frac{x^2-1}{x-1}=2.
+</me>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+The key to the above example is that the functions <m>y=(x^2-1)/(x-1)</m> and <m>y=x+1</m> are identical except at <m>x=1</m>. Since limits describe a value the function is approaching, not the value the function actually attains, the limits of the two functions are always equal.
+</p>
+  
+<theorem xml:id="thm_limit_allbut1"><title>Limits of Functions Equal At All But One Point</title>
+<statement>
+<p>
+Let <m>g(x) = f(x)</m> for all <m>x</m> in an open interval, except possibly at <m>c</m>, and let <m>\ds \lim_{x\to c} g(x) = L</m> for some real number <m>L</m>. Then
+</p>
+  
+<me>
+\lim_{x\to c}f(x) = L.
+</me>
+ </statement>
+</theorem>
+  
+<p>
+The Fundamental Theorem of Algebra tells us that when dealing with a rational function of the form <m>g(x)/f(x)</m> and directly evaluating the limit <m>\ds \lim_{x\to c} \frac{g(x)}{f(x)}</m> returns "0/0",
+then <m>(x-c)</m> is a factor of both <m>g(x)</m> and <m>f(x)</m>. One can then use algebra to factor this term out, cancel, then apply <xref ref="thm_limit_allbut1">Theorem</xref>. We demonstrate this once more.<br />
+</p>
+  
+<example xml:id="ex_limit_allbut1"><title>Evaluating a limit using <xref ref="thm_limit_allbut1">Theorem</xref></title>
+<statement>
+<p>
+Evaluate <m>\ds \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}</m>.
+</p>
+  
+<solution><statement>
+<p>
+We begin by applying <xref ref="thm_lim_continuous">Theorem</xref> and substituting 3 for <m>x</m>. This returns the familiar indeterminate form of "0/0".
+Since the numerator and denominator are each polynomials, we know that <m>(x-3)</m> is factor of each. Using whatever method is most comfortable to you, factor out <m>(x-3)</m> from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that
+</p>
+  
+<me>
+\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}.
+</me>
+ 
+<p>
+We can cancel the <m>(x-3)</m> terms as long as <m>x\neq 3</m>. Using <xref ref="thm_limit_allbut1">Theorem</xref> we conclude:
+</p>
+  
+<md><mrow>\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} \amp = \lim_{x\to 3}\frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}</mrow>
+ <mrow>\amp =	\lim_{x\to 3} \frac{(x^2+x-2)}{(2 x^2+9 x-5)}</mrow>
+ <mrow>\amp = \frac{10}{40} = \frac14.</mrow>
+ 
+</md>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We end this section by revisiting a limit first seen in <xref ref="sec_limit_intro">Section</xref>, a limit of a difference quotient. Let <m>f(x) = -1.5x^2+11.5x</m>; we approximated the limit <m>\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.</m> We formally evaluate this limit in the following example.<br />
+</p>
+  
+<example xml:id="ex_limit_diffquot"><title>Evaluating the limit of a difference quotient</title>
+<statement>
+<p>
+Let <m>f(x) = -1.5x^2+11.5x</m>; find <m>\ds \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.</m>
+</p>
+  
+<solution><statement>
+<p>
+Since <m>f</m> is a polynomial, our first attempt should be to employ <xref ref="thm_lim_continuous">Theorem</xref> and substitute 0 for <m>h</m>. However, we see that this gives us "<m>0/0</m>."
+Knowing that we have a rational function hints that some algebra will help. Consider the following steps:
+</p>
+  
+<md><mrow>\lim_{h\to 0}\frac{f(1+h)-f(1)}{h} 	\amp = 	\lim_{h\to 0}\frac{-1.5(1+h)^2 + 11.5(1+h) - \left(-1.5(1)^2+11.5(1)\right)}{h}</mrow>
+ <mrow>\amp =	\lim_{h\to 0}\frac{-1.5(1+2h+h^2) + 11.5+11.5h - 10}{h}</mrow>
+ <mrow>\amp =	\lim_{h\to 0}\frac{-1.5h^2 +8.5h}{h}</mrow>
+ <mrow>\amp = 	\lim_{h\to 0}\frac{h(-1.5h+8.5)}h</mrow>
+ <mrow>\amp =	\lim_{h\to 0}(-1.5h+8.5) \quad (\text{ using <xref ref="thm_limit_allbut1">Theorem</xref>, as <m>h\neq 0</m>} )</mrow>
+ <mrow>\amp = 	8.5 \quad (\text{ using <xref ref="thm_lim_continuous">Theorem</xref>} )</mrow>
+ 
+</md>
+  
+<p>
+This matches our previous approximation.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+This section contains several valuable tools for evaluating limits. One of the main results of this section is <xref ref="thm_lim_continuous">Theorem</xref>; it states that many functions that we use regularly behave in a very nice, predictable way. In the next section we give a name to this nice behavior; we label such functions as <i>continuous.</i> Defining that term will require us to look again at what a limit is and what causes limits to not exist.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+Explain in your own words, without using <m>\epsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} b = b</m>.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Explain in your own words, without using <m>\epsilon</m>-<m>\delta</m> formality, why <m>\ds \lim_{x\to c} x = c</m>.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+What does the text mean when it says that certain functions' "behavior is `nice' in terms of limits"? What, in particular, is "nice"?
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Sketch a graph that visually demonstrates the Squeeze Theorem.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+You are given the following information:
+</p>
+  <ol><li><m>\ds \lim_{x\to 1} f(x) = 0</m></li>
+<li><m>\ds \lim_{x\to 1} g(x) = 0</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)/g(x) = 2</m></li>
+ </ol>  
+<p>
+What can be said about the relative sizes of <m>f(x)</m> and <m>g(x)</m> as <m>x</m> approaches 1?
+</p>
+  <hint>As <m>x</m> is near 1, both <m>f</m> and <m>g</m> are near 0, but <m>f</m> is approximately twice the size of <m>g</m>. (I.e., <m>f(x) \approx 2g(x)</m>.)</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{In Exercises
+}
+{, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.
+</p>
+  <ul><li><m>\ds \lim_{x\to9}f(x) = 6</m>,   <m>\ds \lim_{x\to6} f(x) = 9</m>,   <m>f(9)=6</m></li>
+<li><m>\ds \lim_{x\to9}g(x) = 3</m>,  <m>\ds \lim_{x\to6} g(x) = 3</m>,  <m>g(6)=9</m></li>
+ </ul>  
+<p>
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to9}(f(x)+g(x))</m>
+</p>
+  <hint>9</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to9}(3f(x)/g(x))</m>
+</p>
+  <hint>6</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to9}\left(\frac{f(x)-2g(x)}{g(x)}\right)</m>
+</p>
+  <hint>0</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to6}\left(\frac{f(x)}{3-g(x)}\right)</m>
+</p>
+  <hint>Limit does not exist.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to9}g\big(f(x)\big)</m>
+</p>
+  <hint>3</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to6}f\big(g(x)\big)</m>
+</p>
+  <hint>Not possible to know; as <m>x</m> approaches 6, <m>g(x)</m> approaches 3, but we know nothing of the behavior of <m>f(x)</m> when <m>x</m> is near 3.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to6}g\big(f(f(x))\big)</m>
+</p>
+  <hint>3</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to6}f(x)g(x)-f\,^2(x)+g^2(x)</m>
+</p>
+  <hint><m>-45</m></hint> </statement>
+</exercise>
+  
+<p>
+{In Exercises}
+{, use the following information to evaluate the given limit, when possible. If it is not possible to determine the limit, state why not.
+</p>
+  <ul><li><m>\ds \lim_{x\to1}f(x) = 2</m>,  <m>\ds \lim_{x\to10} f(x) = 1</m>,   <m>f(1)=1/5</m></li>
+<li><m>\ds \lim_{x\to1}g(x) = 0</m>,  <m>\ds \lim_{x\to10} g(x) = \pi</m>,   <m>g(10)=\pi</m></li>
+ </ul>  
+<p>
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to1}f(x)^{g(x)}</m>
+</p>
+  <hint><m>1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to10}\cos \big(g(x)\big)</m>
+</p>
+  <hint><m>-1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to1}f(x)g(x)</m>
+</p>
+  <hint><m>0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to1}g\big(5f(x)\big)</m>
+</p>
+  <hint><m>\pi</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, evaluate the given limit.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to3}x^2-3x+7</m>
+</p>
+  <hint><m>7</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to\pi}\left(\frac{x-3}{x-5}\right)^7</m>
+</p>
+  <hint><m>-0.000000015\approx 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to\pi/4}\cos x\sin x</m>
+</p>
+  <hint><m>1/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0}\ln x</m>
+</p>
+  <hint>Limit does not exist</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to3}4^{x^3-8x}</m>
+</p>
+  <hint><m>64</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to\pi/6} \csc x</m>
+</p>
+  <hint><m>2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0} \ln(1+x)</m>
+</p>
+  <hint><m>0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to\pi}\frac{x^2+3x+5}{5x^2-2x-3}</m>
+</p>
+  <hint><m>\frac{\pi^2+3\pi+5}{5\pi^2-2\pi-3} \approx 0.6064</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to\pi}\frac{3x+1}{1-x}</m>
+</p>
+  <hint><m>\frac{3\pi+1}{1-\pi}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to6} \frac{x^2-4 x-12}{x^2-13 x+42}</m>
+</p>
+  <hint><m>-8</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0} \frac{x^2+2 x}{x^2-2 x}</m>
+</p>
+  <hint><m>-1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to2} \frac{x^2+6 x-16}{x^2-3 x+2}</m>
+</p>
+  <hint><m>10</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to2}\frac{x^2-10 x+16}{x^2-x-2}</m>
+</p>
+  <hint><m>-2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to-2}\frac{x^2-5 x-14}{x^2+10 x+16}</m>
+</p>
+  <hint><m>-3/2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to-1}\frac{x^2+9 x+8}{x^2-6 x-7}</m>
+</p>
+  <hint><m>-7/8</m></hint> </statement>
+</exercise>
+  
+<p>
+{Use the Squeeze Theorem in Exercises}
+{, where appropriate, to evaluate the given limit.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0} x\sin\left(\frac{1}{x}\right)</m>
+</p>
+  <hint><m>0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0} \sin x\cos\left(\frac{1}{x^2}\right)</m>
+</p>
+  <hint><m>0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to1} f(x)</m>, where <m>3x-2\leq f(x) \leq x^3</m>.
+</p>
+  <hint><m>1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to3} f(x)</m>, where <m>6x-9\leq f(x) \leq x^2</m>.
+</p>
+  <hint><m>9</m></hint> </statement>
+</exercise>
+  
+<p>
+{ Exercises}
+{ challenge your understanding of limits but can be evaluated using the knowledge gained in this section.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0}\frac{\sin 3x}{x}</m>
+</p>
+  <hint><m>3</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0}\frac{\sin 5x}{8x}</m>
+</p>
+  <hint><m>5/8</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0}\frac{\ln (1+x)}{x}</m>
+</p>
+  <hint><m>1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds \lim_{x\to0}\frac{\sin x}{x}</m>, where <m>x</m> is measured in degrees, not radians.
+</p>
+  <hint><m>\pi/180</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f(x) = 0</m> and <m>\ds g(x) = \frac xx</m>.
+</p>
+  <ol><li>Show why <m>\ds \lim_{x\to2} f(x)=0</m>.</li>
+<li>Show why <m>\ds \lim_{x\to0} g(x) = 1</m>.</li>
+<li>Show why <m>\ds \lim_{x\to2} g\big(f(x)\big)</m> does not exist.</li>
+<li>Show why the answer to part (c) does not violate the Composition Rule of <xref ref="thm_limit_algebra">Theorem</xref>.</li>
+ </ol>   <hint><ol><li>Apply Part 1 of <xref ref="thm_limit_algebra">Theorem</xref>.</li>
+<li>Apply <xref ref="thm_limit_allbut1">Theorem</xref>; <m>g(x) = \frac xx</m> is the same as <m>g(x) = 1</m> everywhere except at <m>x=0</m>. Thus <m>\ds\lim_{x\to0} g(x) = \lim_{x\to 0} 1 = 1.</m></li>
+<li>The function <m>f(x)</m> is always 0, so <m>g\big(f(x)\big)</m> is never defined as <m>g(x)</m> is not defined at <m>x=0</m>. Therefore the limit does not exist.</li>
+<li>The Composition Rule requires that <m>\ds\lim_{x\to0} g(x)</m> be equal to <m>g(0)</m>. They are not equal, so the conditions of the Composition Rule are not satisfied, and hence the rule is not violated.</li>
+ </ol> </hint> </statement>
+</exercise>
+ </subsection> </section>

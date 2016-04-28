@@ -1,0 +1,579 @@
+
+<section xml:id="sec_deriv_inverse_function">
+<title>Derivatives of Inverse Functions</title><introduction>
+<p>
+Recall that a function <m>y=f(x)</m> is said to be <i>one to one</i> if it passes the horizontal line test; that is, for two different <m>x</m> values <m>x_1</m> and <m>x_2</m>, we do <i>not</i> have <m>f(x_1)=f(x_2)</m>. In some cases the domain of <m>f</m> must be restricted so that it is one to one. For instance, consider <m>f(x)=x^2</m>. Clearly, <m>f(-1)= f(1)</m>, so <m>f</m> is not one to one on its regular domain, but by restricting <m>f</m> to <m>(0,\infty)</m>, <m>f</m> is one to one.<index><main>derivative</main><sub>inverse function</sub></index>
+</p>
+  
+<p>
+Now recall that one to one functions have <i>inverses</i>. That is, if <m>f</m> is one to one, it has an inverse function, denoted by <m>f\primeskip^{-1}</m>, such that if <m>f(a)=b</m>, then <m>f\primeskip^{-1}(b) = a</m>. The domain of <m>f\primeskip^{-1}</m> is the range of <m>f</m>, and vice-versa. For ease of notation, we set <m>g=f\primeskip^{-1}</m> and treat <m>g</m> as a function of <m>x</m>.
+</p>
+  
+<p>
+Since <m>f(a)=b</m> implies <m>g(b)=a</m>, when we compose <m>f</m> and <m>g</m> we get a nice result:
+</p>
+  
+<me>
+f\big(g(b)\big) = f(a) = b.
+</me>
+ 
+<p>
+In general, <m>f\big(g(x)\big) =x</m> and <m>g\big(f(x)\big) = x</m>. This gives us a convenient way to check if two functions are inverses of each other: compose them and if the result is <m>x</m>, then they are inverses (on the appropriate domains.)
+</p>
+  
+<p>
+When the point <m>(a,b)</m> lies on the graph of <m>f</m>, the point <m>(b,a)</m> lies on the graph of <m>g</m>. This leads us to discover that the graph of <m>g</m> is the reflection of <m>f</m> across the line <m>y=x</m>. In <xref ref="fig_inverse1">Figure</xref> we see a function graphed along with its inverse. See how the point <m>(1,1.5)</m> lies on one graph, whereas <m>(1.5,1)</m> lies on the other. Because of this relationship, whatever we know about <m>f</m> can quickly be transferred into knowledge about <m>g</m>.
+</p>
+  <figure xml:id="fig_inverse1" >
+<caption>A function <m>f</m> along with its inverse <m>f\primeskip^{-1}</m>. (Note how it does not matter which function we refer to as <m>f</m>; the other is <m>f\primeskip^{-1}</m>.)</caption>
+<image source="images/figinverse1.png" /> </figure>
+  
+<p>
+For example, consider <xref ref="fig_inverse2">Figure</xref> where the tangent line to <m>f</m> at the point <m>(a,b)</m> is drawn. That line has slope <m>\fp(a)</m>. Through reflection across <m>y=x</m>, we can see that the tangent line to <m>g</m> at the point <m>(b,a)</m> should have slope <m>\ds \frac{1}{\fp(a)}</m>. This then tells us that <m>\ds g\primeskip'(b) = \frac{1}{\fp(a)}.</m>
+</p>
+  <figure xml:id="fig_inverse2" >
+<caption>Corresponding tangent lines drawn to <m>f</m> and <m>f\primeskip^{-1}</m>.</caption>
+<image source="images/figinverse2.png" /> </figure>
+  
+<p>
+Consider:
+</p>
+  <table id="a98b3bc7e85e149759c6c94dbceeb4a784885ee3" ><tr><td class='c'>
+	Information about <m>f</m> </td><td class='c'> </td><td class='c'> Information about <m>g=f\primeskip^{-1}</m> </td></tr>
+<tr><td class='hline' colspan='3'><hr /></td></tr>
+<tr><td class='c'>
+	\text{ <m>(-0.5,0.375)</m> lies on <m>f</m>} </td><td class='c'> \hskip 40pt </td><td class='c'> \text{ <m>(0.375,-0.5)</m> lies on <m>g</m>}</td></tr>
+<tr><td class='c'>
+	\text{ Slope of tangent line to <m>f</m> at <m>x=-0.5</m> is <m>3/4</m>} </td><td class='c'> </td><td class='c'> \text{ Slope of tangent line to <m>g</m> at <m>x=0.375</m> is <m>4/3</m>} </td></tr>
+<tr><td class='c'>
+	<m>\fp(-0.5) = 3/4</m> </td><td class='c'> </td><td class='c'> <m>g\primeskip'(0.375) = 4/3</m></td></tr>
+</table>  
+<p>
+We have discovered a relationship between <m>\fp</m> and <m>g\primeskip'</m> in a mostly graphical way. We can realize this relationship analytically as well. Let <m>y = g(x)</m>, where again <m>g = f\primeskip^{-1}</m>. We want to find <m>\ds y\primeskip'</m>. Since <m>y = g(x)</m>, we know that <m>f(y) = x</m>. Using the Chain Rule and Implicit Differentiation, take the derivative of both sides of this last equality.
+</p>
+  
+<md><mrow>\frac{d}{dx}\Big(f(y)\Big) \amp = \frac{d}{dx}\Big(x\Big)</mrow>
+ <mrow>\fp(y)\cdot y\primeskip' \amp = 1</mrow>
+ <mrow>y\primeskip' \amp = \frac{1}{\fp(y)}</mrow>
+ <mrow>y\primeskip' \amp = \frac{1}{\fp(g(x))}</mrow>
+ 
+</md>
+ 
+<p>
+This leads us to the following theorem.
+</p>
+  
+<theorem xml:id="thm_deriv_inverse_functions"><title>Derivatives of Inverse Functions</title>
+<statement>
+<p>
+Let <m>f</m> be differentiable and one to one on an open interval <m>I</m>, where <m>\fp(x) \neq 0</m> for all <m>x</m> in <m>I</m>, let <m>J</m> be the range of <m>f</m> on <m>I</m>, let <m>g</m> be the inverse function of <m>f</m>, and let <m>f(a) = b</m> for some <m>a</m> in <m>I</m>. Then <m>g</m> is a differentiable function on <m>J</m>, and in particular,
+</p>
+  <table id="ca9c1256d15c7c8e0905c2b1ba7bc80b356a4eb4" ><tr><td class='c'>
+	1. <m>\ds \left(f\primeskip^{-1}\right)'(b)=g\primeskip'(b) = \frac{1}{\fp(a)}</m> </td><td class='c'>\hskip 4pt and \hskip 4pt</td><td class='c'>  2. <m>\ds \left(f\primeskip^{-1}\right)'(x)=g\primeskip'(x) = \frac{1}{\fp(g(x))}</m></td></tr>
+</table> </statement>
+</theorem>
+  
+<p>
+The results of <xref ref="thm_deriv_inverse_functions">Theorem</xref> are not trivial; the notation may seem confusing at first. Careful consideration, along with examples, should earn understanding.
+</p>
+  
+<p>
+In the next example we apply <xref ref="thm_deriv_inverse_functions">Theorem</xref> to the arcsine function.<br />
+</p>
+  
+<example xml:id="ex_deriv_arcsin"><title>Finding the derivative of an inverse trigonometric function</title>
+<statement>
+<p>
+Let <m>y = \arcsin x = \sin^{-1} x</m>. Find <m>y\primeskip'</m> using <xref ref="thm_deriv_inverse_functions">Theorem</xref>.
+</p>
+  
+<solution><statement>
+<p>
+Adopting our previously defined notation, let <m>g(x) = \arcsin x</m> and <m>f(x) = \sin x</m>. Thus <m>\fp(x) = \cos x</m>. Applying the theorem, we have
+</p>
+  
+<md><mrow>g\primeskip'(x) \amp = \frac{1}{\fp(g(x))}</mrow>
+ <mrow>\amp = \frac{1}{\cos(\arcsin x)}.</mrow>
+ 
+</md>
+ 
+<p>
+This last expression is not immediately illuminating. Drawing a figure will help, as shown in <xref ref="fig_inverse3">Figure</xref>. Recall that the sine function can be viewed as taking in an angle and returning a ratio of sides of a right triangle, specifically, the ratio "opposite over hypotenuse." This means that the arcsine function takes as input a ratio of sides and returns an angle. The equation <m>y=\arcsin x</m> can be rewritten as <m>y=\arcsin (x/1)</m>; that is, consider a right triangle where the hypotenuse has length 1 and the side opposite of the angle with measure <m>y</m> has length <m>x</m>. This means the final side has length <m>\sqrt{1-x^2}</m>, using the Pythagorean Theorem.
+</p>
+  
+<p>
+<m>\cos (\sin^{-1} x) = \cos y = \sqrt{1-x^2}/1 = \sqrt{1-x^2}</m>, resulting in
+</p>
+  
+<me>
+\frac{d}{dx}\big(\arcsin x\big) = g\primeskip'(x) = \frac{1}{\sqrt{1-x^2}}.
+</me>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Remember that the input <m>x</m> of the arcsine function is a ratio of a side of a right triangle to its hypotenuse; the absolute value of this ratio will never be greater than 1. Therefore the inside of the square root will never be negative.
+</p>
+  
+<p>
+In order to make <m>y=\sin x</m> one to one, we restrict its domain to <m>[-\pi/2,\pi/2]</m>; on this domain, the range is <m>[-1,1]</m>. Therefore the domain of <m>y=\arcsin x</m> is <m>[-1,1]</m> and the range is <m>[-\pi/2,\pi/2]</m>. When <m>x=\pm 1</m>, note how the derivative of the arcsine function is undefined; this corresponds to the fact that as <m>x\to \pm1</m>, the tangent lines to arcsine approach vertical lines with undefined slopes.
+</p>
+  <figure xml:id="fig_inverse4" >
+<caption>Graphs of <m>\sin x</m> and <m>\sin^{-1}x</m> along with corresponding tangent lines.</caption>
+<image source="images/figinverse4.png" /> </figure>
+  
+<p>
+In <xref ref="fig_inverse4">Figure</xref> we see <m>f(x) = \sin x</m> and <m>f\primeskip^{-1} = \sin^{-1} x</m> graphed on their respective domains. The line tangent to <m>\sin x</m> at the point <m>(\pi/3, \sqrt{3}/2)</m> has slope <m>\cos \pi/3 = 1/2</m>. The slope of the corresponding point on <m>\sin^{-1}x</m>, the point <m>(\sqrt{3}/2,\pi/3)</m>, is
+</p>
+  
+<me>
+\frac{1}{\sqrt{1-(\sqrt{3}/2)^2}} = \frac{1}{\sqrt{1-3/4}} = \frac{1}{\sqrt{1/4}} = \frac{1}{1/2}=2,
+</me>
+ 
+<p>
+verifying yet again that at corresponding points, a function and its inverse have reciprocal slopes.<br />
+</p>
+  
+<p>
+Using similar techniques, we can find the derivatives of all the inverse trigonometric functions. In <xref ref="fig_domain_trig">Figure</xref> we show the restrictions of the domains of the standard trigonometric functions that allow them to be invertible.<br />
+</p>
+  <div class="minipage">{\textwidth+200pt}
+
+<table id="bfa237345325b150c68507d8cbea6ac819b71a2a" ><tr><td class='c'>
+Function </td><td class='c'> Domain </td><td class='c'> Range </td><td class='c'>\parbox[b]{40pt}{ Inverse Function} </td><td class='c'> Domain </td><td class='c'> Range</td></tr>
+<tr><td class='hline' colspan='6'><hr /></td></tr>
+<tr><td class='c'>
+ <m>\sin x</m> </td><td class='c'> <m>[-\pi/2, \pi/2]</m> </td><td class='c'> <m>[-1,1]</m></td><td class='c'><m>\sin^{-1} x</m> </td><td class='c'> <m>[-1,1]</m> </td><td class='c'> <m>[-\pi/2, \pi/2]</m> </td></tr>
+<tr><td class='c'>
+<m>\cos x</m> </td><td class='c'> <m>[0,\pi]</m> </td><td class='c'> <m>[-1,1]</m></td><td class='c'><m>\cos^{-1}(x)</m> </td><td class='c'> <m>[-1,1]</m> </td><td class='c'> <m>[0,\pi]</m> </td></tr>
+<tr><td class='c'>
+<m>\tan x</m> </td><td class='c'> <m>(-\pi/2,\pi/2)</m> </td><td class='c'> <m>(-\infty,\infty)</m></td><td class='c'><m>\tan^{-1}(x)</m> </td><td class='c'> <m>(-\infty,\infty)</m> </td><td class='c'> <m>(-\pi/2,\pi/2)</m>	</td></tr>
+<tr><td class='c'>
+ <m>\csc x</m> </td><td class='c'> <m>[-\pi/2,0)\cup (0, \pi/2]</m> </td><td class='c'> <m>(-\infty,-1]\cup [1,\infty)</m></td><td class='c'><m>\csc^{-1} x</m> </td><td class='c'> <m>(-\infty,-1]\cup [1,\infty)</m> </td><td class='c'> <m>[-\pi/2,0)\cup (0, \pi/2]</m>  </td></tr>
+<tr><td class='c'>
+<m>\sec x</m> </td><td class='c'> <m>[0,\pi/2)\cup (\pi/2,\pi]</m> </td><td class='c'> <m>(-\infty,-1]\cup [1,\infty)</m></td><td class='c'><m>\sec^{-1}(x)</m> </td><td class='c'> <m>(-\infty,-1]\cup [1,\infty)</m> </td><td class='c'> <m>[0,\pi/2)\cup (\pi/2,\pi]</m> </td></tr>
+<tr><td class='c'>
+<m>\cot x</m> </td><td class='c'> <m>(0,\pi)</m> </td><td class='c'> <m>(-\infty,\infty)</m></td><td class='c'><m>\cot^{-1}(x)</m> </td><td class='c'>  <m> (-\infty,\infty)</m> </td><td class='c'> <m>(0,\pi)</m></td></tr>
+</table> 
+<div class="caption"><span class="heading">Figure</span><span class="codenumber">2.7.5</span>Domains and ranges of the trigonometric and inverse trigonometric functions.</div></div>  
+<theorem xml:id="thm_deriv_inverse_trig"><title>Derivatives of Inverse Trigonometric Functions</title>
+<statement>
+<p>
+The inverse trigonometric functions are differentiable on all open sets contained in their domains (as listed in <xref ref="fig_domain_trig">Figure</xref>) and their derivatives are as follows:<br />
+</p>
+  <div class="minipage">{.5\specialboxlength}
+	<ol><li><m>\ds \frac{d}{dx}\big(\sin^{-1}(x)\big) = \frac{1}{\sqrt{1-x^2}}</m></li>
+<li><m>\ds \frac{d}{dx}\big(\sec^{-1}(x)\big) = \frac{1}{|x|\sqrt{x^2-1}}</m></li>
+<li><m>\ds \frac{d}{dx}\big(\tan^{-1}(x)\big) = \frac{1}{1+x^2}</m></li>
+ </ol> </div>  <div class="minipage">{.5\specialboxlength}
+	<ol><li><m>\ds \frac{d}{dx}\big(\cos^{-1}(x)\big) = -\frac{1}{\sqrt{1-x^2}}</m></li>
+<li><m>\ds \frac{d}{dx}\big(\csc^{-1}(x)\big) = -\frac{1}{|x|\sqrt{x^2-1}}</m></li>
+<li><m>\ds \frac{d}{dx}\big(\cot^{-1}(x)\big) = -\frac{1}{1+x^2}</m></li>
+ </ol>  <index><main>derivative</main><sub>inverse trig.</sub></index>
+	</div> </statement>
+</theorem>
+  
+<p>
+Note how the last three derivatives are merely the opposites of the first three, respectively. Because of this, the first three are used almost exclusively throughout this text.<br />
+</p>
+  
+<p>
+In <xref ref="sec_basic_diff_rules">Section</xref>, we stated without proof or explanation that <m>\ds \frac{d}{dx}\big(\ln x\big) = \frac{1}{x}</m>. We can justify that now using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, as shown in the example.<br />
+</p>
+  
+<example xml:id="ex_deriv_lnx"><title>Finding the derivative of $y=\ln x$</title>
+<statement>
+<p>
+Use <xref ref="thm_deriv_inverse_functions">Theorem</xref> to compute <m>\ds \frac{d}{dx}\big(\ln x\big)</m>.
+</p>
+  
+<solution><statement>
+<p>
+View <m>y= \ln x</m> as the inverse of <m>y = e^x</m>. Therefore, using our standard notation, let <m>f(x) = e^x</m> and <m>g(x) = \ln x</m>. We wish to find <m>g\primeskip'(x)</m>. <xref ref="thm_deriv_inverse_functions">Theorem</xref> gives:
+</p>
+  
+<md><mrow>g\primeskip'(x) \amp = \frac{1}{\fp(g(x))}</mrow>
+ <mrow>\amp =	\frac{1}{e^{\ln x}}</mrow>
+ <mrow>\amp = \frac{1}{x}.</mrow>
+ 
+</md>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+In this chapter we have defined the derivative, given rules to facilitate its computation, and given the derivatives of a number of standard functions. We restate the most important of these in the following theorem, intended to be a reference for further work.
+</p>
+  
+<theorem xml:id="thm_deriv_glossary"><title>Glossary of Derivatives of Elementary Functions</title>
+<statement>
+<p>
+Let <m>u</m> and <m>v</m> be differentiable functions, and let <m>a</m>, <m>c</m> and <m>n</m> be real numbers, <m>a>0</m>, <m>n\neq 0</m>. <br />
+</p>
+  <div class="minipage">{.5\specialboxlength}
+	<ol><li><m>\frac{d}{dx}\big(cu\big) = cu'</m></li>
+<li><m>\frac{d}{dx}\big(u\cdot v\big) = uv'+u'v</m></li>
+<li><m>\frac{d}{dx}\big(u(v)\big) = u'(v)v'</m></li>
+<li><m>\frac{d}{dx}\big(x\big) = 1</m></li>
+<li><m>\frac{d}{dx}\big(e^x\big) = e^x</m></li>
+<li><m>\frac{d}{dx}\big(\ln x\big) = \frac{1}{x}</m></li>
+<li><m>\frac{d}{dx}\big(\sin x\big) = \cos x</m></li>
+<li><m>\frac{d}{dx}\big(\csc x\big) = -\csc x\cot x</m></li>
+<li><m>\frac{d}{dx}\big(\tan x\big) = \sec^2x</m></li>
+<li><m>\frac{d}{dx}\big(\sin^{-1}x\big) = \frac{1}{\sqrt{1-x^2}}</m></li>
+<li><m>\frac{d}{dx}\big(\csc^{-1}x\big) = -\frac{1}{|x|\sqrt{x^2-1}}</m></li>
+<li><m>\frac{d}{dx}\big(\tan^{-1}x\big) = \frac{1}{1+x^2}</m></li>
+ </ol>  
+</div>  <div class="minipage">{.5\specialboxlength}
+	<ol><li><m>\frac{d}{dx}\big(u\pm v\big) = u'\pm v'</m></li>
+<li><m>\frac{d}{dx}\big(\frac uv\big) = \frac{u'v-uv'}{v^2}</m></li>
+<li><m>\frac{d}{dx}\big(c\big) = 0</m></li>
+<li><m>\frac{d}{dx}\big(x^n\big) = nx^{n-1}</m></li>
+<li><m>\frac{d}{dx}\big(a^x\big) = \ln a\cdot a^x</m></li>
+<li><m>\frac{d}{dx}\big(\log_a x\big) = \frac{1}{\ln a}\cdot\frac{1}{x}</m></li>
+<li><m>\frac{d}{dx}\big(\cos x\big) = -\sin x</m></li>
+<li><m>\frac{d}{dx}\big(\sec x\big) = \sec x\tan x</m></li>
+<li><m>\frac{d}{dx}\big(\cot x\big) = -\csc^2x</m></li>
+<li><m>\frac{d}{dx}\big(\cos^{-1}x\big) = -\frac{1}{\sqrt{1-x^2}}</m></li>
+<li><m>\frac{d}{dx}\big(\sec^{-1}x\big) = \frac{1}{|x|\sqrt{x^2-1}}</m></li>
+<li><m>\frac{d}{dx}\big(\cot^{-1}x\big) = -\frac{1}{1+x^2}</m></li>
+ </ol>  
+</div> </statement>
+</theorem>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+T/F: Every function has an inverse.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+In your own words explain what it means for a function to be "one to one."
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+If <m>(1,10)</m> lies on the graph of <m>y=f(x)</m>, what can be said about the graph of <m>y=f^{-1}(x)</m>?
+</p>
+  <hint>The point <m>(10,1)</m> lies on the graph of <m>y=f^{-1}(x)</m> (assuming <m>f</m> is invertible).</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+If <m>(1,10)</m> lies on the graph of <m>y=f(x)</m> and <m>\fp(1) = 5</m>, what can be said about <m>y=f^{-1}(x)</m>?
+</p>
+  <hint>The point <m>(10,1)</m> lies on the graph of <m>y=f^{-1}(x)</m> (assuming <m>f</m> is invertible) and <m>(f^{-1})'(10) = 1/5</m>.</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, verify that the given functions are inverses.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 2x+6</m> and <m>g(x) = \frac12x-3</m>
+</p>
+  <hint>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2+6x+11</m>, <m>x\geq 3</m> and
+</p>
+  
+<p>
+<m>g(x) = \sqrt{x-2}-3</m>, <m>x\geq 2</m>
+</p>
+  <hint>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{3}{x-5}</m>, <m>x\neq 5</m> and
+</p>
+  
+<p>
+<m>\ds g(x) = \frac{3+5x}{x}</m>, <m>x\neq 0</m>
+</p>
+  <hint>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x+1}{x-1}</m>, <m>x\neq 1</m> and <m>g(x) = f(x)</m>
+</p>
+  <hint>Compose <m>f(g(x))</m> and <m>g(f(x))</m> to confirm that each equals <m>x</m>.</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, an invertible function <m>f(x)</m> is given along with a point that lies on its graph. Using <xref ref="thm_deriv_inverse_functions">Theorem</xref>, evaluate <m>\left(f^{-1}\right)'(x)</m> at the indicated value.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 5x+10</m>
+</p>
+  
+<p>
+Point<m>=(2,20)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(20)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(20) = \frac{1}{\fp(2)} = 1/5</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^2-2x+4</m>, <m>x\geq 1</m>
+</p>
+  
+<p>
+Point<m>=(3,7)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(7)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(7) = \frac{1}{\fp(3)} = 1/4</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \sin 2x</m>, <m>-\pi/4\leq x\leq \pi/4</m>
+</p>
+  
+<p>
+Point<m>=(\pi/6,\sqrt{3}/2)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(\sqrt{3}/2)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(\sqrt{3}/2) = \frac{1}{\fp(\pi/6)} = 1</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = x^3-6x^2+15x-2</m>
+</p>
+  
+<p>
+Point<m>=(1,8)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(8)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(8) = \frac{1}{\fp(1)} = 1/6</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{1}{1+x^2}</m>, <m>x\geq 0</m>
+</p>
+  
+<p>
+Point<m>=(1,1/2)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(1/2)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(1/2) = \frac{1}{\fp(1)} = -2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m> f(x) = 6e^{3x}</m>
+</p>
+  
+<p>
+Point<m>=(0,6)</m>
+</p>
+  
+<p>
+Evaluate <m>\left(f^{-1}\right)'(6)</m>
+</p>
+  <hint><m>\left(f^{-1}\right)'(6) = \frac{1}{\fp(0)} = 1/6</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, compute the derivative of the given function.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>h(t) = \sin^{-1} (2t)</m>
+</p>
+  <hint><m>h'(t) = \frac{2}{\sqrt{1-4t^2}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t) = \sec^{-1} (2t)</m>
+</p>
+  <hint><m>\fp(t) = \frac{1}{|t|\sqrt{4t^2+1}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x)=\tan^{-1} (2x)</m>
+</p>
+  <hint><m>g'(x) = \frac{2}{1+4x^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =x\sin^{-1}x</m>
+</p>
+  <hint><m>\fp(x) = \frac{x}{\sqrt{1-x^2}}+\sin ^{-1}(x)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(t) = \sin t\cos^{-1}t</m>
+</p>
+  <hint><m>g'(t) = \cos ^{-1}(t) \cos (t)-\frac{\sin (t)}{\sqrt{1-t^2}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(t) = \ln te^t</m>
+</p>
+  <hint><m>\fp(t) = \frac{e^t}{t} + \ln te^t</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds h(x) = \frac{\sin^{-1}x}{\cos^{-1}x}</m>
+</p>
+  <hint><m>h'(x)=\frac{\sin ^{-1}(x)+\cos ^{-1}(x)}{\sqrt{1-x^2} \cos ^{-1}(x)^2}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>g(x) = \tan^{-1}(\sqrt{x})</m>
+</p>
+  <hint><m>g'(x) = \frac{1}{\sqrt{x} (2 x+2)}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\sec^{-1}(1/x)</m>
+</p>
+  <hint><m>\fp(x) = -\frac{1}{\sqrt{1-x^2}}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\sin (\sin^{-1}x)</m>
+</p>
+  <hint><ol><li><m>f(x) = x</m>, so <m>\fp(x) = 1</m></li>
+<li><m>\fp(x) = \cos(\sin^{-1}x)\frac{1}{\sqrt{1-x^2}} = 1</m>.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, compute the derivative of the given function in two ways:
+</p>
+  <ol><li class="custom-list-style-type" label="(a)" >By simplifying first, then taking the derivative, and</li>
+<li class="custom-list-style-type" label="(b)" >by using the Chain Rule first then simplifying.</li>
+ </ol>  
+<p>
+Verify that the two answers are the same.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\sin (\sin^{-1}x)</m>
+</p>
+  <hint><ol><li><m>f(x) = x</m>, so <m>\fp(x) = 1</m></li>
+<li><m>\fp(x) = \cos(\sin^{-1}x)\frac{1}{\sqrt{1-x^2}} = 1</m>.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\tan^{-1}(\tan x)</m>
+</p>
+  <hint><ol><li><m>f(x) = x</m>, so <m>\fp(x) = 1</m></li>
+<li><m>\fp(x) = \frac{1}{1+\tan^2x}\sec^2 x = 1</m></li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\sin(\cos^{-1} x)</m>
+</p>
+  <hint><ol><li><m>f(x) = \sqrt{1-x^2}</m>, so <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m></li>
+<li><m>\fp(x) = \cos (\cos^{-1}x)(\frac{1}{\sqrt{1-x^2}} =\frac{-x}{\sqrt{1-x^2}}</m></li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the equation of the line tangent to the graph of <m>f</m> at the indicated <m>x</m> value.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\sin^{-1}x</m>   at  <m>x=\frac{\sqrt{2}}{2}</m>
+</p>
+  <hint><m>y = \sqrt{2}(x-\sqrt{2}/2)+\pi/4</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) =\cos^{-1}(2x)</m>   at  <m>x=\frac{\sqrt{3}}{4}</m>
+</p>
+  <hint><m>y = -4(x-\sqrt{3}/4)+\pi/6</m></hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Find <m>\frac{dy}{dx}</m>, where <m>x^2y-y^2x = 1</m>.
+</p>
+  <hint><m>\frac{dy}{dx} = \frac{y (y-2 x)}{x (x-2 y)}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Find the equation of the line tangent to the graph of <m>x^2+y^2+xy=7</m> at the point <m>(1,2)</m>.
+</p>
+  <hint><m>y=-4/5(x-1)+2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f(x) = x^3+x</m>.
+</p>
+  
+<p>
+Evaluate <m>\ds \lim_{s\to 0} \frac{f(x+s)-f(x)}{s}</m>.
+</p>
+  <hint><m>3x^2+1</m></hint> </statement>
+</exercise>
+  
+<p>
+{
+</p>
+ </subsection> </section>

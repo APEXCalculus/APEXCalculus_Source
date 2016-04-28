@@ -1,0 +1,681 @@
+
+<section xml:id="sec_limit_continuity">
+<title>One Sided Limits</title><introduction>
+<p>
+We introduced the concept of a limit gently, approximating their values graphically and numerically. Next came the rigorous definition of the limit, along with an admittedly tedious method for evaluating them. The previous section gave us tools (which we call theorems) that allow us to compute limits with greater ease. Chief among the results were the facts that polynomials and rational, trigonometric, exponential and logarithmic functions (and their sums, products, etc.) all behave "nicely." In this section we rigorously define what we mean by "nicely."
+</p>
+  
+<p>
+In <xref ref="sec_limit_intro">Section</xref> we explored the three ways in which limits of functions failed to exist:
+</p>
+  <ol><li>The function approached different values from the left and right,</li>
+<li>The function grows without bound, and</li>
+<li>The function oscillates.</li>
+ </ol>  
+<p>
+In this section we explore in depth the concepts behind \#1 by introducing the <i>one-sided limit</i>. We begin with formal definitions that are very similar to the definition of the limit given in <xref ref="sec_limit_def">Section</xref>, but the notation is slightly different and "<m>x\neq c</m>" is replaced with either "<m>x\lt c</m>" or "<m>x>c</m>."
+</p>
+  
+<p>
+<b>Left-Hand Limit</b> <index><main>limit</main><sub>one sided</sub></index><index><main>limit</main><sub>right handed</sub></index><index><main>limit</main><sub>left handed</sub></index>
+</p>
+  
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
+The \sword{limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the left, is <m>L</m>}, or, \sword{the left&#x2013;hand limit of <m>f</m> at <m>c</m> is <m>L</m>}, denoted by
+</p>
+  
+<me>
+\displaystyle \lim_{x\rightarrow c^-} f(x) = L,
+</me>
+ 
+<p>
+means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x\lt  c</m>,
+if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.<br />
+</p>
+  
+<p>
+<b>Right-Hand Limit</b>
+</p>
+  
+<p>
+Let <m>I</m> be an open interval containing <m>c</m>, and let <m>f</m> be a function defined on <m>I</m>, except possibly at <m>c</m>.
+The \sword{limit of <m>f(x)</m>, as <m>x</m> approaches <m>c</m> from the right, is <m>L</m>}, or, \sword{the right&#x2013;hand limit of <m>f</m> at <m>c</m> is <m>L</m>}, denoted by
+</p>
+  
+<me>
+\displaystyle \lim_{x\rightarrow c^+} f(x) = L,
+</me>
+ 
+<p>
+means that given any <m>\epsilon > 0</m>, there exists <m>\delta > 0</m> such that for all <m>x> c</m>,
+if <m>|x - c| \lt  \delta</m>, then <m>|f(x) - L| \lt  \epsilon</m>.
+</p>
+  
+<p>
+\end{definition}
+</p>
+  
+<p>
+\restoreboxwidth
+
+</p>
+  
+<p>
+Practically speaking, when evaluating a left-hand limit, we consider only values of <m>x</m> "to the left of <m>c</m>," i.e., where <m>x\lt c</m>. The admittedly imperfect notation <m>x\to c^-</m> is used to imply that we look at values of <m>x</m> to the left of <m>c</m>. The notation has nothing to do with positive or negative values of either <m>x</m> or <m>c</m>. A similar statement holds for evaluating right-hand limits; there we consider only values of <m>x</m> to the right of <m>c</m>, i.e., <m>x>c</m>. We can use the theorems from previous sections to help us evaluate these limits; we just restrict our view to one side of <m>c</m>.
+</p>
+  
+<p>
+We practice evaluating left and right-hand limits through a series of examples.<br />
+</p>
+  
+<example xml:id="ex_onesidea"><title>Evaluating one sided limits</title>
+<statement>
+<p>
+Let <m>\ds f(x) = \left\{\begin{array}{cc} x \amp  0\leq x\leq 1 \\ 3-x \amp  1\lt x\lt 2
+\end{array} ,\right.</m> as shown in <xref ref="fig_onesided1">Figure</xref>. Find each of the following:
+</p>
+  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>\ds f(1)</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+<ol><li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+<li><m>f(0)</m></li>
+<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>f(2)</m></li>
+ </ol> </div>  <figure xml:id="fig_onesided1" >
+<caption>A graph of <m>f</m> in <xref ref="ex_onesidea">Example</xref>.</caption>
+<image source="images/figOneSidedLimits1.png" /> </figure>
+  
+<solution><statement>
+<p>
+For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using <m>f</m> itself. Therefore we will refer often to the graph.
+</p>
+  <ol><li>As <m>x</m> goes to 1 <i>from the left</i>, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 1^-} f(x) =1.</m></li>
+<li>As <m>x</m> goes to 1 <i>from the right</i>, we see that <m>f(x)</m> is approaching the value of 2. Recall that it does not matter that there is an "open circle" there; we are evaluating a limit, not the value of the function. Therefore <m>\ds \lim_{x\to 1^+} f(x)=2</m>.</li>
+<li><i>The</i> limit of <m>f</m> as <m>x</m> approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.</li>
+<li>Using the definition and by looking at the graph we see that <m>f(1) = 1</m>.</li>
+<li>As <m>x</m> goes to 0 from the right, we see that <m>f(x)</m> is also approaching 0. Therefore <m>\ds \lim_{x\to 0^+} f(x)=0</m>. Note we cannot consider a left-hand limit at 0 as <m>f</m> is not defined for values of <m>x\lt 0</m>.</li>
+<li>Using the definition and the graph, <m>f(0) = 0</m>.</li>
+<li>As <m>x</m> goes to 2 from the left, we see that <m>f(x)</m> is approaching the value of 1. Therefore <m>\ds \lim_{x\to 2^-} f(x)=1.</m></li>
+<li>The graph and the definition of the function show that <m>f(2)</m> is not defined.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Note how the left and right-hand limits were different at <m>x=1</m>. This, of course, causes <i>the</i> limit to not exist. The following theorem states what is fairly intuitive: <i>the</i> limit exists precisely when the left and right-hand limits are equal.
+</p>
+  
+<theorem xml:id="thm_leftrightlimits"><title>Limits and One Sided Limits</title>
+<statement>
+<p>
+Let <m>f</m> be a function defined on an open interval <m>I</m> containing <m>c</m>. <index><main>limit</main><sub>does not exist</sub></index> Then
+</p>
+  
+<me>
+\lim_{x\to c}f(x) = L
+</me>
+ 
+<p>
+if, and only if,
+</p>
+  
+<me>
+\lim_{x\to c^-}f(x) = L \quad \text{and}  \quad \lim_{x\to c^+}f(x) = L.
+</me>
+ </statement>
+</theorem>
+  
+<p>
+The phrase "if, and only if" means the two statements are <i>equivalent</i>: they are either both true or both false. If the limit equals <m>L</m>, then the left and right hand limits both equal <m>L</m>. If the limit is not equal to <m>L</m>, then at least one of the left and right-hand limits is not equal to <m>L</m> (it may not even exist).
+			
+One thing to consider in <xref ref="ex_onesidea">Examples</xref> &#x2013; <xref ref="ex_onesided"></xref> is that the value of the function may/may not be equal to the value(s) of its left/right-hand limits, even when these limits agree. <br />
+</p>
+  
+<example xml:id="ex_onesideb"><title>Evaluating limits of a piecewise&#x2013;defined function</title>
+<statement>
+<p>
+Let <m>f(x) = \left\{\begin{array}{cc} 2-x \amp  0\lt x\lt 1 \\ (x-2)^2 \amp  1\lt x\lt 2
+\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedb">Figure</xref>. Evaluate the following.
+</p>
+  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>\ds f(1)</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+<li><m>f(0)</m></li>
+<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>f(2)</m></li>
+ </ol> </div>  <figure xml:id="fig_onesidedb" >
+<caption>A graph of <m>f</m> from <xref ref="ex_onesideb">Example</xref></caption>
+<image source="images/figOneSidedLimits2.png" /> </figure>
+  
+<solution><statement>
+<p>
+Again we will evaluate each using both the definition of <m>f</m> and its graph.
+</p>
+  <ol><li>As <m>x</m> approaches 1 from the left, we see that <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1^-} f(x)=1.</m></li>
+<li>As <m>x</m> approaches 1 from the right, we see that again <m>f(x)</m> approaches 1. Therefore <m>\ds \lim_{x\to 1+} f(x)=1</m>.</li>
+<li><i>The</i> limit of <m>f</m> as <m>x</m> approaches 1 exists and is 1, as <m>f</m> approaches 1 from both the right and left. Therefore <m>\ds \lim_{x\to 1} f(x)=1</m>.</li>
+<li><m>f(1)</m> is not defined. Note that 1 is not in the domain of <m>f</m> as defined by the problem, which is indicated on the graph by an open circle when <m>x=1</m>.</li>
+<li>As <m>x</m> goes to 0 from the right, <m>f(x)</m> approaches 2. So <m>\ds \lim_{x\to 0^+} f(x)=2</m>.</li>
+<li><m>f(0)</m>  is not defined as <m>0</m> is not in the domain of <m>f</m>.</li>
+<li>As <m>x</m> goes to 2 from the left, <m>f(x)</m> approaches 0. So <m>\ds \lim_{x\to 2^-} f(x)=0</m>.</li>
+<li><m>f(2)</m>  is not defined as 2 is not in the domain of <m>f</m>.</li>
+ </ol>  </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_onesidec"><title>Evaluating limits of a piecewise&#x2013;defined function</title>
+<statement>
+<p>
+Let <m>f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  0\leq x\leq 2, x\neq 1\\ 1 \amp  x=1
+\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedc">Figure</xref>. Evaluate the following.
+</p>
+  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <figure xml:id="fig_onesidedc" >
+<caption>Graphing <m>f</m> in <xref ref="ex_onesidec">Example</xref></caption>
+<image source="images/figOneSidedLimits3.png" /> </figure>
+  
+<solution><statement>
+<p>
+It is clear by looking at the graph that both the left and right-hand limits of <m>f</m>, as <m>x</m> approaches 1, is 0. Thus it is also clear that <i>the</i> limit is 0; i.e., <m>\ds \lim_{x\to 1} f(x) = 0</m>. It is also clearly stated that <m>f(1) = 1</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_onesided"><title>Evaluating limits of a piecewise&#x2013;defined function</title>
+<statement>
+<p>
+Let <m>f(x) = \left\{\begin{array}{cc} x^2 \amp  0\leq x\leq 1 \\ 2-x \amp  1\lt x\leq 2
+\end{array} ,\right.</m> as shown in <xref ref="fig_onesidedd">Figure</xref>. Evaluate the following.
+</p>
+  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\textwidth}
+		<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div> 
+<solution><statement>
+<p>
+It is clear from the definition of the function and its graph that all of the following are equal:
+</p>
+  <figure xml:id="fig_onesidedd" >
+<caption>Graphing <m>f</m> in <xref ref="ex_onesided">Example</xref></caption>
+<image source="images/figOneSidedLimits4.png" /> </figure>
+  
+<me>
+ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.
+</me>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+In <xref ref="ex_onesidea">Examples</xref> &#x2013; <xref ref="ex_onesided"></xref> we were asked to find both <m>\ds \lim_{x\to 1}f(x)</m> and <m>f(1)</m>. Consider the following table:
+</p>
+  <table id="4f7cf5521599123d7e5277b695cd1853e03578dc" ><tr><td class='c'> </td><td class='c'> <m>\ds \lim_{x\to 1}f(x)</m> </td><td class='c'> <m>f(1)</m> \vspace{2pt}</td></tr>
+<tr><td class='hline' colspan='3'><hr /></td></tr>
+<tr><td class='c'>
+<xref ref="ex_onesidea">Example</xref> </td><td class='c'> does not exist </td><td class='c'> 1 </td></tr>
+<tr><td class='c'>
+<xref ref="ex_onesideb">Example</xref> </td><td class='c'> 1 </td><td class='c'> not defined </td></tr>
+<tr><td class='c'>
+<xref ref="ex_onesidec">Example</xref> </td><td class='c'> 0 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'>
+<xref ref="ex_onesided">Example</xref> </td><td class='c'> 1 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'></td></tr>
+</table>  
+<p>
+Only in <xref ref="ex_onesided">Example</xref> do both the function and the limit exist and agree. This seems "nice;" in fact, it seems "normal." This is in fact an important situation which we explore in the next section, entitled "Continuity." In short, a <i>continuous function</i> is one in which when a function approaches a value as <m>x\rightarrow c</m> (i.e., when <m>\ds \lim_{x\to c} f(x) = L</m>), it actually <i>attains</i> that value at <m>c</m>. Such functions behave nicely as they are very predictable.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+What are the three ways in which a limit may fail to exist?
+</p>
+  <hint>The function approaches different values from the left and right; the function grows without bound; the function oscillates.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1} f(x) = 5</m>
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 1^-} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^+} f(x) = 5</m>
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>\ds \lim_{x\to 1} f(x) = 5</m>, then <m>\ds \lim_{x\to 1^-} f(x) = 5</m>
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, evaluate each expression using the given graph of <m>f(x)</m>.}
+</p>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_05.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>f(1)</m></li>
+<li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li>2</li>
+<li>2</li>
+<li>1</li>
+<li>As <m>f</m> is not defined for <m>x\lt 0</m>, this limit is not defined.</li>
+<li>1</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_06.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>f(1)</m></li>
+<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
+ </ol> </div>  <hint><ol><li>1</li>
+<li>2</li>
+<li>Does not exist.</li>
+<li>2</li>
+<li>0</li>
+<li>As <m>f</m> is not defined for <m>x>2</m>, this limit is not defined.</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_07.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>f(1)</m></li>
+<li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+ </ol> </div>  <hint><ol><li>Does not exist.</li>
+<li>Does not exist.</li>
+<li>Does not exist.</li>
+<li>Not defined.</li>
+<li>0</li>
+<li>0</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_08.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li>0</li>
+<li>Does not exist.</li>
+<li>1</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_09.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li>2</li>
+<li>2</li>
+<li>2</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_10.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0} f(x)</m></li>
+<li><m>f(0)</m></li>
+ </ol> </div>  <hint><ol><li>4</li>
+<li><m>-4</m></li>
+<li>Does not exist.</li>
+<li>0</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_11.png" /></div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to -2^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to -2^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to -2} f(x)</m></li>
+<li><m>f(-2)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 2} f(x)</m></li>
+<li><m>f(2)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li>2</li>
+<li>2</li>
+<li>0</li>
+<li>2</li>
+<li>2</li>
+<li>2</li>
+<li>Not defined</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig01_04_ex_12.png" /></div>  
+<p>
+Let <m>-3\leq a\leq 3</m> be an integer.
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to a^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to a^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to a} f(x)</m></li>
+<li><m>f(a)</m></li>
+ </ol> </div>  <hint><ol><li><m>a-1</m></li>
+<li><m>a</m></li>
+<li>Does not exist.</li>
+<li><m>a</m></li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, evaluate the given limits of the piecewise defined functions <m>f</m>.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	x+1 \amp  \amp  x\leq 1 \\
+	x^2-5 \amp  \amp  x>1
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li><m>-4</m></li>
+<li>Does not exist.</li>
+<li>2</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	2x^2+5x-1 \amp  \amp  x\lt 0 \\
+	\sin x \amp  \amp  x\geq 0
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0} f(x)</m></li>
+<li><m>f(0)</m></li>
+ </ol> </div>  <hint><ol><li><m>-1</m></li>
+<li>0</li>
+<li>Does not exist.</li>
+<li>0</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	x^2-1 \amp  \amp  x\lt -1 \\
+	x^3+1 \amp  \amp  -1\leq x\leq 1\\
+	x^2+1 \amp  \amp  x>1
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to -1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to -1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to -1} f(x)</m></li>
+<li><m>f(-1)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <hint><ol><li>0</li>
+<li>0</li>
+<li>0</li>
+<li>0</li>
+<li>2</li>
+<li>2</li>
+<li>2</li>
+<li>2</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	\cos x \amp  \amp  x\lt \pi \\
+	\sin x \amp  \amp  x\geq \pi
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to \pi^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to \pi^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to \pi} f(x)</m></li>
+<li><m>f(\pi)</m></li>
+ </ol> </div>  <hint><ol><li><m>-1</m></li>
+<li>0</li>
+<li>Does not exist.</li>
+<li>0</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	1-\cos^2 x \amp  \amp  x\lt a \\
+	\sin^2 x \amp  \amp  x\geq a
+\end{array} ,
+	\right.
+</m>
+</p>
+  
+<p>
+where <m>a</m> is a real number.
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to a^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to a^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to a} f(x)</m></li>
+<li><m>f(a)</m></li>
+ </ol> </div>  <hint><ol><li><m>1-\cos^2 a = \sin^2 a</m></li>
+<li><m>\sin^2 a</m></li>
+<li><m>\sin^2 a</m></li>
+<li><m>\sin ^2 a</m></li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	x+1 \amp  \amp  x\lt 1 \\
+	1  \amp  \amp  x=1\\
+	x-1 \amp  \amp  x>1
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 1^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 1} f(x)</m></li>
+<li><m>f(1)</m></li>
+ </ol> </div>  <hint><ol><li>2</li>
+<li>0</li>
+<li>Does not exist</li>
+<li>1</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	x^2 \amp  \amp  x\lt 2 \\
+	x+1  \amp  \amp  x=2\\
+	-x^2+2x+4 \amp  \amp  x>2
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 2^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 2^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 2} f(x)</m></li>
+<li><m>f(2)</m></li>
+ </ol> </div>  <hint><ol><li>4</li>
+<li>4</li>
+<li>4</li>
+<li>3</li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	a(x-b)^2+c \amp  \amp  x\lt b \\
+	a(x-b)+c \amp  \amp  x\geq b
+\end{array} 
+	\right.,
+</m>
+</p>
+  
+<p>
+where <m>a</m>, <m>b</m> and <m>c</m> are real numbers.
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to b^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to b^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to b} f(x)</m></li>
+<li><m>f(b)</m></li>
+ </ol> </div>  <hint><ol><li><m>c</m></li>
+<li><m>c</m></li>
+<li><m>c</m></li>
+<li><m>c</m></li>
+ </ol> </hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{ccc}
+	\frac{|x|}{x} \amp  \amp  x\neq 0 \\
+	0 \amp  \amp  x=0
+\end{array} 
+	\right.
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0^-} f(x)</m></li>
+<li><m>\ds \lim_{x\to 0^+} f(x)</m></li>
+ </ol> </div>  <div class="minipage">{.5\linewidth}
+<ol><li><m>\ds \lim_{x\to 0} f(x)</m></li>
+<li><m>f(0)</m></li>
+ </ol> </div>  <hint><ol><li><m>-1</m></li>
+<li><m>1</m></li>
+<li>Does not exist</li>
+<li><m>0</m></li>
+ </ol> </hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Evaluate the limit: <m>\ds \lim_{x\to -1} \frac{x^2+5 x+4}{x^2-3 x-4}</m>.
+</p>
+  <hint><m>-3/5</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Evaluate the limit: <m>\ds \lim_{x\to -4} \frac{x^2-16}{x^2-4 x-32}</m>.
+</p>
+  <hint><m>2/3</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Evaluate the limit: <m>\ds \lim_{x\to -6} \frac{x^2-15 x+54}{x^2-6 x}</m>.
+</p>
+  <hint><m>2.5</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Approximate the limit numerically: <m>\ds \lim_{x\to 0.4} \frac{x^2-4.4 x+1.6}{x^2-0.4 x}</m>.
+</p>
+  <hint><m>-9</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Approximate the limit numerically:
+<m>\ds \lim_{x\to 0.2} \frac{x^2+5.8 x-1.2}{x^2-4.2 x+0.8}</m>.
+</p>
+  <hint><m>-1.63</m></hint> </statement>
+</exercise>
+ </subsection> </section>

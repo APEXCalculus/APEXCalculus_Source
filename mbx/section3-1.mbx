@@ -1,0 +1,676 @@
+
+<section xml:id="sec_extreme_values">
+<title>Extreme Values</title><introduction>
+<definition xml:id="def_extreme_values"><title>Extreme Values</title>
+<statement>
+<p>
+Let <m>f</m> be defined on an interval <m>I</m> containing <m>c</m>.<index><main>extreme values</main></index><index><main>absolute minimum</main></index><index><main>minimum</main><sub>absolute</sub></index><index><main>absolute maximum</main></index><index><main>maximum</main><sub>absolute</sub></index>
+</p>
+  <ol><li><m>f(c)</m> is the <b>minimum</b> (also, <b>absolute minimum</b>) of <m>f</m> on <m>I</m> if <m>f(c) \leq f(x)</m> for all <m>x</m> in <m>I</m>.</li>
+<li><m>f(c)</m> is the <b>maximum</b> (also, <b>absolute maximum</b>) of <m>f</m> on <m>I</m> if <m>f(c) \geq f(x)</m> for all <m>x</m> in <m>I</m>.</li>
+ </ol>  
+<p>
+The maximum and minimum values are the <term>extreme values</term>, or <term>extrema</term>, of <m>f</m> on <m>I</m>.<index><main>extrema</main><sub>absolute</sub></index>
+</p>
+ </statement>
+</definition>
+  
+<article class="aside-like" id="marginalnote3-1-2"><h5 class="heading"><span class="type"></span><span class="codenumber">3.1.2</span></h5>
+<p>
+<b>Note:</b> The extreme values of a function are "<m>y</m>" values, values the function attains, not the input values.
+</p>
+ 
+</article>
+  
+<p>
+Consider <xref ref="fig_extreme">Figure</xref>.
+The function displayed in (a) has a maximum, but no minimum, as the interval over which the function is defined is open. In (b), the function has a minimum, but no maximum; there is a discontinuity in the "natural" place for the maximum to occur. Finally, the function shown in (c) has both a maximum and a minimum; note that the function is continuous and the interval on which it is defined is closed.
+</p>
+  <figure xml:id="fig_extreme" >
+<caption>Graphs of functions with and without extreme values.</caption>
+<table id="2bca028e883c010d60dbc6c8a788888e565ff09a" ><tr><td class='c'> <image source="images/figextreme1.png" />  </td></tr>
+<tr><td class='c'> (a) </td></tr>
+<tr><td class='c'> </td></tr>
+<tr><td class='c'> <image source="images/figextreme2.png" />   </td></tr>
+<tr><td class='c'>  (b)</td></tr>
+<tr><td class='c'> </td></tr>
+<tr><td class='c'>  <image source="images/figextreme3.png" />  </td></tr>
+<tr><td class='c'> (c)</td></tr>
+</table> 
+</figure>
+  
+<p>
+It is possible for discontinuous functions defined on an open interval to have both a maximum and minimum value, but we have just seen examples where they did not. On the other hand, continuous functions on a closed interval <i>always</i> have a maximum and minimum value.
+</p>
+  
+<theorem xml:id="thm_extreme_val"><title>The Extreme Value Theorem</title>
+<statement>
+<p>
+Let <m>f</m> be a continuous function defined on a closed interval <m>I</m>. Then <m>f</m> has both a maximum and minimum value on <m>I</m>.
+<index><main>Extreme Value Theorem</main></index>
+</p>
+ </statement>
+</theorem>
+  
+<p>
+This theorem states that <m>f</m> has extreme values, but it does not offer any advice about how/where to find these values. The process can seem to be fairly easy, as the next example illustrates. After the example, we will draw on lessons learned to form a more general and powerful method for finding extreme values.<br />
+</p>
+  
+<example xml:id="ex_extval1"><title>Approximating extreme values</title>
+<statement>
+<p>
+Consider <m>f(x) = 2x^3-9x^2</m> on <m>I=[-1,5]</m>, as graphed in <xref ref="fig_extval1">Figure</xref>. Approximate the extreme values of <m>f</m>.
+</p>
+  <figure xml:id="fig_extval1" >
+<caption>A graph of <m>f(x) = 2x^3-9x^2</m> as in <xref ref="ex_extval1">Example</xref>.</caption>
+<image source="images/figextval1.png" /> </figure>
+  
+<solution><statement>
+<p>
+The graph is drawn in such a way to draw attention to certain points. It certainly seems that the smallest <m>y</m> value is <m>-27</m>, found when <m>x=3</m>. It also seems that the largest <m>y</m> value is 25, found at the endpoint of <m>I</m>, <m>x=5</m>. We use the word <i>seems</i>, for by the graph alone we cannot be sure the smallest value is not less than <m>-27</m>. Since the problem asks for an approximation, we approximate the extreme values to be <m>25</m> and <m>-27</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Notice how the minimum value came at "the bottom of a hill," and the maximum value came at an endpoint. Also note that while <m>0</m> is not an extreme value, it would be if we narrowed our interval to <m>[-1,4]</m>. The idea that the point <m>(0,0)</m> is the location of an extreme value for some interval is important, leading us to a definition.
+</p>
+  
+<article class="aside-like" id="marginalnote3-1-4"><h5 class="heading"><span class="type"></span><span class="codenumber">3.1.4</span></h5>
+<p>
+<b>Note:</b> The terms <i>local minimum</i> and <i>local maximum</i> are often used as synonyms for <i>relative minimum</i> and <i>relative maximum</i>.
+</p>
+ 
+</article>
+  
+<definition xml:id="def_rel_ext"><title>Relative Minimum and Relative Maximum</title>
+<statement>
+<p>
+Let <m>f</m> be defined on an interval <m>I</m> containing <m>c</m>.
+</p>
+  <ol><li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the minimum value, then <m>f(c)</m> is a <b>relative minimum</b> of <m>f</m>. We also say that <m>f</m> has a relative minimum at <m>(c,f(c))</m>. <index><main>minimum</main><sub>relative/local</sub></index></li>
+<li>If there is an open interval containing <m>c</m> such that <m>f(c)</m> is the maximum value, then <m>f(c)</m> is a <b>relative maximum</b> of <m>f</m>. We also say that <m>f</m> has a relative maximum at <m>(c,f(c))</m>. <index><main>maximum</main><sub>relative/local</sub></index><index><main>extrema</main><sub>relative</sub></index></li>
+ </ol>  
+<p>
+The relative maximum and minimum values comprise the <term>relative extrema</term> of <m>f</m>.
+</p>
+ </statement>
+</definition>
+  
+<p>
+\restoreboxwidth
+</p>
+  
+<p>
+We briefly practice using these definitions.<br />
+</p>
+  
+<example xml:id="ex_extval2"><title>Approximating relative extrema</title>
+<statement>
+<p>
+Consider <m>f(x) = (3x^4-4x^3-12x^2+5)/5</m>, as shown in <xref ref="fig_extval2">Figure</xref>. Approximate the relative extrema of <m>f</m>. At each of these points, evaluate <m>\fp</m>.
+</p>
+  <figure xml:id="fig_extval2" >
+<caption>A graph of <m>f(x) = (3x^4-4x^3-12x^2+5)/5</m> as in <xref ref="ex_extval2">Example</xref>.</caption>
+<image source="images/figextval2.png" /> </figure>
+  
+<solution><statement>
+<p>
+We still do not have the tools to exactly find the relative extrema, but the graph does allow us to make reasonable approximations. It seems <m>f</m> has relative minima at <m>x=-1</m> and <m>x=2</m>, with values of <m>f(-1)=0</m> and <m>f(2) = -5.4</m>. It also seems that <m>f</m> has a relative maximum at the point <m>(0,1)</m>.
+</p>
+  
+<p>
+We approximate the relative minima to be <m>0</m> and <m>-5.4</m>; we approximate the relative maximum to be <m>1</m>.
+</p>
+  
+<p>
+It is straightforward to evaluate <m>\fp(x) =\frac15(12x^3-12x^2-24x)</m> at <m>x=0, 1</m> and <m>2</m>. In each case, <m>\fp(x) = 0</m>.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_extval3"><title>Approximating relative extrema</title>
+<statement>
+<p>
+Approximate the relative extrema of <m>f(x) = (x-1)^{2/3}+2</m>, shown in <xref ref="fig_extval3">Figure</xref>. At each of these points, evaluate <m>\fp</m>.
+</p>
+  <figure xml:id="fig_extval3" >
+<caption>A graph of <m>f(x) = (x-1)^{2/3}+2</m> as in <xref ref="ex_extval3">Example</xref>.</caption>
+<image source="images/figextval3.png" /> </figure>
+  
+<solution><statement>
+<p>
+The figure implies that <m>f</m> does not have any relative maxima, but has a relative minimum at <m>(1,2)</m>. In fact, the graph suggests that not only is this point a relative minimum, <m>y=f(1)=2</m> <i>the</i> minimum value of the function.
+</p>
+  
+<p>
+We compute <m>\fp(x) = \frac23(x-1)^{-1/3}</m>. When <m>x=1</m>, <m>\fp</m> is undefined.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+What can we learn from the previous two examples? We were able to visually approximate relative extrema, and at each such point, the derivative was either 0 or it was not defined. This observation holds for all functions, leading to a definition and a theorem.
+</p>
+  
+<definition xml:id="def_criticalnum"><title>Critical Numbers and Critical Points</title>
+<statement>
+<p>
+Let <m>f</m> be defined at <m>c</m>. The value <m>c</m> is a <term>critical number</term> (or <term>critical value</term>) of <m>f</m> if <m>\fp(c)=0</m> or <m>\fp(c)</m> is not defined.<index><main>critical number</main></index><index><main>critical point</main></index> <br />
+</p>
+  
+<p>
+If <m>c</m> is a critical number of <m>f</m>, then the point <m>(c,f(c))</m> is a <term>critical point</term> of <m>f</m>.
+</p>
+ </statement>
+</definition>
+  
+<theorem xml:id="thm_criticalpts"><title>Relative Extrema and Critical Points</title>
+<statement>
+<p>
+Let a function <m>f</m> have a relative extrema at the point <m>(c,f(c))</m>. Then <m>c</m> is a critical number of <m>f</m>.
+</p>
+ </statement>
+</theorem>
+  
+<p>
+Be careful to understand that this theorem states "All relative extrema occur at critical points." It does not say "All critical numbers produce relative extrema." For instance, consider <m>f(x) = x^3</m>. Since <m>\fp(x) = 3x^2</m>, it is straightforward to determine that <m>x=0</m> is a critical number of <m>f</m>. However, <m>f</m> has no relative extrema, as illustrated in <xref ref="fig_extreme4">Figure</xref>. <br />
+</p>
+  <figure xml:id="fig_extreme4" >
+<caption>A graph of <m>f(x)=x^3</m> which has a critical value of <m>x=0</m>, but no relative extrema.</caption>
+<image source="images/figextreme4.png" /> </figure>
+  
+<p>
+<xref ref="thm_extreme_val">Theorem</xref> states that a continuous function on a closed interval will have absolute extrema, that is, both an absolute maximum and an absolute minimum. These extrema occur either at the endpoints or at critical values in the interval. We combine these concepts to offer a strategy for finding extrema.
+</p>
+  
+<key idea xml:id="idea_extrema"><title>Finding Extrema on a Closed Interval</title>
+<statement>
+<p>
+Let <m>f</m> be a continuous function defined on a closed interval <m>[a,b]</m>. To find the maximum and minimum values of <m>f</m> on <m>[a,b]</m>:<index><main>extrema</main><sub>finding</sub></index>
+</p>
+  <ol><li>Evaluate <m>f</m> at the endpoints <m>a</m> and <m>b</m> of the interval.</li>
+<li>Find the critical numbers of <m>f</m> in <m>[a,b]</m>.</li>
+<li>Evaluate <m>f</m> at each critical number.</li>
+<li>The absolute maximum of <m>f</m> is the largest of these values, and the absolute minimum of <m>f</m> is the least of these values.</li>
+ </ol>  </statement>
+</key idea>
+  
+<p>
+We practice these ideas in the next examples.<br />
+</p>
+  
+<example xml:id="ex_extval4"><title>Finding extreme values</title>
+<statement>
+<p>
+Find the extreme values of <m>f(x) = 2x^3+3x^2-12x</m> on <m>[0,3]</m>, graphed in <xref ref="fig_extval4">Figure</xref>.
+</p>
+  
+<solution><statement>
+<p>
+We follow the steps outlined in Key <xref ref="idea_extrema">Idea</xref>. We first evaluate <m>f</m> at the endpoints:
+</p>
+  
+<me>
+f(0) = 0 \quad \text{and} \quad f(3) =45.
+</me>
+  <figure xml:id="fig_extval4" >
+<caption>A graph of <m>f(x) = 2x^3+3x^2-12x</m> on <m>[0,3]</m> as in <xref ref="ex_extval4">Example</xref>.</caption>
+<image source="images/figextval4.png" /> </figure>
+  
+<p>
+Next, we find the critical values of <m>f</m> on <m>[0,3]</m>. <m>\fp(x) = 6x^2+6x-12 = 6(x+2)(x-1)</m>; therefore the critical values of <m>f</m> are <m>x=-2</m> and <m>x=1</m>. Since <m>x=-2</m> does not lie in the interval <m>[0,3]</m>, we ignore it. Evaluating <m>f</m> at the only critical number in our interval gives: <m>f(1) = -7</m>.
+</p>
+  
+<p>
+The table in <xref ref="table_ext4">Figure</xref> gives <m>f</m> evaluated at the "important" <m>x</m> values in <m>[0,3]</m>. We can easily see the maximum and minimum values of <m>f</m>: the maximum value is <m>45</m> and the minimum value is <m>-7</m>.
+</p>
+  <figure xml:id="table_ext4" >
+<caption>Finding the extreme values of <m>f</m> in <xref ref="ex_extval4">Example</xref>.</caption>
+<table id="f522ebd31b5cfbb5f65fcb17afcc792ac70daf24" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
+<tr><td class='hline' colspan='2'><hr /></td></tr>
+<tr><td class='c'>  0 </td><td class='c'> 0 </td></tr>
+<tr><td class='c'> 1 </td><td class='c'> <m>-7</m></td></tr>
+<tr><td class='c'>3 </td><td class='c'> 45</td></tr>
+</table> 
+</figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+Note that all this was done without the aid of a graph; this work followed an analytic algorithm and did not depend on any visualization. <xref ref="fig_extval4">Figure</xref> shows <m>f</m> and we can confirm our answer, but it is important to understand that these answers can be found without graphical assistance.
+</p>
+  
+<p>
+We practice again.<br />
+</p>
+  
+<example xml:id="ex_extval5"><title>Finding extreme values</title>
+<statement>
+<p>
+Find the maximum and minimum values of <m>f</m> on <m>[-4,2]</m>, where
+</p>
+  
+<me>
+f(x) = \left\{\begin{array}{cc} (x-1)^2 \amp  x\leq 0 \\ x+1 \amp  x>0
+\end{array} \right. .
+</me>
+ 
+<solution><statement>
+<p>
+Here <m>f</m> is piecewise&#x2013;defined, but we can still apply Key <xref ref="idea_extrema">Idea</xref>. Evaluating <m>f</m> at the endpoints gives:
+</p>
+  
+<me>
+ f(-4) = 25 \quad \text{and}  \quad f(2) = 3.
+</me>
+  
+<p>
+We now find the critical numbers of <m>f</m>. We have to define <m>\fp</m> in a piecewise manner; it is
+</p>
+  
+<me>
+\fp(x) =\left\{\begin{array}{cc} 2(x-1) \amp  x \lt  0 \\ 1 \amp  x>0
+\end{array} \right. .
+</me>
+ 
+<p>
+Note that while <m>f</m> is defined for all of <m>[-4,2]</m>, <m>\fp</m> is not, as the derivative of <m>f</m> does not exist when <m>x=0</m>. (From the left, the derivative approaches <m>-2</m>; from the right the derivative is 1.) Thus one critical number of <m>f</m> is <m>x=0</m>.
+</p>
+  
+<p>
+We now set <m>\fp(x) = 0</m>. When <m>x >0</m>, <m>\fp(x)</m> is never 0. When <m>x\lt 0</m>, <m>\fp(x)</m> is also never 0. (We may be tempted to say that <m>\fp(x) = 0 </m> when <m>x=1</m>. However, this is nonsensical, for we only consider <m>\fp(x) = 2(x-1)</m> when <m>x\lt 0</m>, so we will ignore a solution that says <m>x=1</m>.)
+</p>
+  
+<p>
+So we have three important <m>x</m> values to consider: <m>x= -4, 2</m> and <m>0</m>. Evaluating <m>f</m> at each gives, respectively, <m>25</m>, <m>3</m> and <m>1</m>, shown in <xref ref="table_ext5">Figure</xref>. Thus the absolute minimum of <m>f</m> is 1; the absolute maximum of <m>f</m> is <m>25</m>. Our answer is confirmed by the graph of <m>f</m> in <xref ref="fig_extval5">Figure</xref>.
+</p>
+  <figure xml:id="table_ext5" >
+<caption>Finding the extreme values of <m>f</m> in <xref ref="ex_extval5">Example</xref>.</caption>
+<table id="ccf40c8648ae1878531ff38cb876a9cd91c9c09c" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
+<tr><td class='hline' colspan='2'><hr /></td></tr>
+<tr><td class='c'>  <m>-4</m> </td><td class='c'> 25 </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'> 2 </td><td class='c'> 3</td></tr>
+</table> 
+</figure>
+  <figure xml:id="fig_extval5" >
+<caption>A graph of <m>f(x)</m> on <m>[-4,2]</m> as in <xref ref="ex_extval5">Example</xref>.</caption>
+<image source="images/figextval5.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<example xml:id="ex_extval6"><title>Finding extreme values</title>
+<statement>
+<p>
+Find the extrema of <m>f(x) = \cos (x^2)</m> on <m>[-2,2]</m>.
+</p>
+  
+<solution><statement>
+<p>
+We again use Key <xref ref="idea_extrema">Idea</xref>. Evaluating <m>f</m> at the endpoints of the interval gives: <m>f(-2) = f(2) = \cos (4) \approx -0.6536.</m> We now find the critical values of <m>f</m>.
+</p>
+  
+<p>
+Applying the Chain Rule, we find <m>\fp(x) = -2x\sin (x^2)</m>. Set <m>\fp(x) = 0</m> and solve for <m>x</m> to find the critical values of <m>f</m>.
+</p>
+  
+<p>
+We have <m>\fp(x) = 0</m> when <m>x = 0</m> and when <m>\sin (x^2) = 0</m>. In general, <m>\sin t = 0</m> when <m>t = \ldots -2\pi, -\pi, 0, \pi, \ldots</m> Thus <m>\sin (x^2) = 0</m> when <m>x^2 = 0, \pi, 2\pi, \ldots</m> (<m>x^2</m> is always positive so we ignore <m>-\pi</m>, etc.) So <m>\sin (x^2)=0</m> when <m>x= 0, \pm \sqrt{\pi}, \pm\sqrt{2\pi}, \ldots</m>. The only values to fall in the given interval of <m>[-2,2]</m> are <m>-\sqrt{\pi}</m> and <m>\sqrt{\pi}</m>, approximately <m>\pm 1.77</m>.
+</p>
+  
+<p>
+We again construct a table of important values in <xref ref="table_ext6">Figure</xref>. In this example we have 5 values to consider: <m>x= 0, \pm 2, \pm\sqrt{\pi}</m>.
+</p>
+  <figure xml:id="table_ext6" >
+<caption>Finding the extrema of <m>f(x)= \cos (x^2)</m> in <xref ref="ex_extval6">Example</xref>.</caption>
+<table id="8ce8d8b060a61d5543e7f609badb06972bdb0429" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
+<tr><td class='hline' colspan='2'><hr /></td></tr>
+<tr><td class='c'>  <m>-2</m> </td><td class='c'> <m>-0.65</m> </td></tr>
+<tr><td class='c'> <m>-\sqrt{\pi}</m> </td><td class='c'> <m>-1</m> </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1</td></tr>
+<tr><td class='c'> <m>\sqrt{\pi}</m> </td><td class='c'> <m>-1</m> </td></tr>
+<tr><td class='c'> 2 </td><td class='c'> <m>-0.65</m></td></tr>
+</table> 
+</figure>
+  
+<p>
+From the table it is clear that the maximum value of <m>f</m> on <m>[-2,2]</m> is 1; the minimum value is <m>-1</m>. The graph in <xref ref="fig_extval6">Figure</xref> confirms our results.
+</p>
+  <figure xml:id="fig_extval6" >
+<caption>A graph of <m>f(x)=\cos(x^2)</m> on <m>[-2,2]</m> as in <xref ref="ex_extval6">Example</xref>.</caption>
+<image source="images/figextval6.png" /> </figure>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<p>
+We consider one more example.<br />
+</p>
+  
+<example xml:id="ex_extval7"><title>Finding extreme values</title>
+<statement>
+<p>
+Find the extreme values of <m>f(x) = \sqrt{1-x^2}</m>.
+</p>
+  
+<solution><statement>
+<p>
+A closed interval is not given, so we find the extreme values of <m>f</m> on its domain. <m>f</m> is defined whenever <m>1-x^2\geq 0</m>; thus the domain of <m>f</m> is <m>[-1,1]</m>. Evaluating <m>f</m> at either endpoint returns 0.
+</p>
+  <figure xml:id="fig_extval7" >
+<caption>A graph of <m>f(x)=\sqrt{1-x^2}</m> on <m>[-1,1]</m> as in <xref ref="ex_extval7">Example</xref>.</caption>
+<image source="images/figextval7.png" /> </figure>
+  <figure xml:id="table_ext7" >
+<caption>Finding the extrema of the half&#x2013;circle in <xref ref="ex_extval7">Example</xref>.</caption>
+<table id="70b3a42af670597b3eb02362c21eb9187d148183" ><tr><td class='c'> <m>x</m> </td><td class='c'> <m>f(x)</m> </td></tr>
+<tr><td class='hline' colspan='2'><hr /></td></tr>
+<tr><td class='c'>  <m>-1</m> </td><td class='c'> 0 </td></tr>
+<tr><td class='c'> 0 </td><td class='c'> 1 </td></tr>
+<tr><td class='c'> 1 </td><td class='c'> 0</td></tr>
+</table> 
+</figure>
+  
+<p>
+Using the Chain Rule, we find <m>\ds \fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. The critical points of <m>f</m> are found when <m>\fp(x) = 0</m> or when <m>\fp</m> is undefined. It is straightforward to find that <m>\fp(x) = 0</m> when <m>x=0</m>, and <m>\fp</m> is undefined when <m>x=\pm 1</m>, the endpoints of the interval. The table of important values is given in <xref ref="table_ext7">Figure</xref>. The maximum value is 1, and the minimum value is 0.
+</p>
+ </statement>
+</solution>
+ </statement>
+</example>
+   
+<article class="aside-like" id="marginalnote3-1-11"><h5 class="heading"><span class="type"></span><span class="codenumber">3.1.11</span></h5>
+<p>
+<b>Note:</b> We implicitly found the derivative of <m>x^2+y^2=1</m>, the unit circle, in <xref ref="ex_implicit7">Example</xref> as <m>\frac{dy}{dx} = -x/y</m>. In <xref ref="ex_extval7">Example</xref>, half of the unit circle is given as <m>y=f(x) = \sqrt{1-x^2}</m>. We found <m>\fp(x) = \frac{-x}{\sqrt{1-x^2}}</m>. Recognize that the denominator of this fraction is <m>y</m>; that is, we again found <m>\fp(x) = \frac{dy}{dx} = -x/y.</m>
+</p>
+ 
+</article>
+  
+<p>
+We have seen that continuous functions on closed intervals always have a maximum and minimum value, and we have also developed a technique to find these values. In the next section, we further our study of the information we can glean from "nice" functions with the Mean Value Theorem. On a closed interval, we can find the <i>average rate of change</i> of a function (as we did at the beginning of Chapter 2). We will see that differentiable functions always have a point at which their <i>instantaneous</i> rate of change is same as the <i>average</i> rate of change. This is surprisingly useful, as we'll see.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+Describe what an "extreme value" of a function is in your own words.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Sketch the graph of a function <m>f</m> on <m>(-1,1)</m> that has both a maximum and minimum value.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Describe the difference between absolute and relative maxima in your own words.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Sketch the graph of a function <m>f</m> where <m>f</m> has a relative maximum at <m>x=1</m> and <m>\fp(1)</m> is undefined.
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: If <m>c</m> is a critical value of a function <m>f</m>, then <m>f</m> has either a relative maximum or relative minimum at <m>x=c</m>.
+</p>
+  <hint>F</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, identify each of the marked points as being an absolute maximum or minimum, a relative maximum or minimum, or none of the above.}
+</p>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig03_01_ex_06.png" /></div>  <hint><m>A</m>: none
+<m>B</m>: abs. max &amp; rel. max
+<m>C</m>: rel. min
+<m>D</m>: none
+<m>E</m>: none
+<m>F</m>: rel. min
+<m>G</m>: none</hint> </statement>
+</exercise>
+  
+<exercise><statement><div class="minipage">{\linewidth}
+<image source="images/fig03_01_ex_07.png" /></div>  <hint><m>A</m>: abs. min
+<m>B</m>: none
+<m>C</m>: abs. max
+<m>D</m>: none
+<m>E</m>: none</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, evaluate <m>\fp(x)</m> at the points indicated in the graph.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{2}{x^2+1}</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_08.png" />
+</p>
+  <hint><m>\fp(0) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2\sqrt{6-x^2}</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_09.png" />
+</p>
+  <hint><m>\fp(0) = 0</m>
+<m>\fp(2) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sin x</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_10.png" />
+</p>
+  <hint><m>\fp(\pi/2) = 0</m>
+<m>\fp(3\pi/2) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2\sqrt{4-x}</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_11.png" />
+</p>
+  <hint><m>\fp(0) = 0</m>
+<m>\fp(3.2) = 0</m>
+<m>\fp(4)</m> is undefined</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{cc} x^2 \amp  x\leq 0 \\ x^5 \amp  x> 0
+\end{array}  \right.</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_12.png" />
+</p>
+  <hint><m>\fp(0) = 0</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \left\{\begin{array}{cc} x^2 \amp  x\leq 0 \\ x \amp  x> 0
+\end{array}  \right.</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_13.png" />
+</p>
+  <hint><m>\fp(0)</m> is not defined</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{(x-2)^{2/3}}{x}</m>
+</p>
+  
+<p>
+<image source="images/fig03_01_ex_14.png" />
+</p>
+  <hint><m>\fp(2)</m> is not defined
+<m>\fp(6) = 0</m></hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, find the extreme values of the function on the given interval.}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2+x+4</m>  on   <m>[-1,2]</m>.
+</p>
+  <hint>min: <m>(-0.5,3.75)</m>
+
+max: <m>(2,10)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^3-\frac92x^2-30x+3</m>  on   <m>[0,6]</m>.
+</p>
+  <hint>min: <m>(5,-134.5)</m>
+
+max: <m>(0,3)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = 3\sin x</m>  on   <m>[\pi/4,2\pi/3]</m>.
+</p>
+  <hint>min: <m>(\pi/4,3\sqrt{2}/2)</m>
+
+max: <m>(\pi/2,3)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2\sqrt{4-x^2}</m>  on   <m>[-2,2]</m>.
+</p>
+  <hint>min: <m>(0,0)</m> and <m>(\pm 2,0)</m>
+
+max: <m>(\pm 2\sqrt{2/3},16\sqrt{3}/9)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x+\frac3x</m>  on   <m>[1,5]</m>.
+</p>
+  <hint>min: <m>(\sqrt3,2\sqrt3)</m>
+
+max: <m>(5,28/5)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x^2}{x^2+5}</m>  on   <m>[-3,5]</m>.
+</p>
+  <hint>min: <m>(0,0)</m>
+
+max: <m>(5,5/6)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = e^x\cos x</m>  on   <m>[0,\pi]</m>.
+</p>
+  <hint>min: <m>(\pi,-e^\pi)</m>
+
+max: <m>(\pi/4,\frac{\sqrt{2}e^{\pi/4}}{2})</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = e^x\sin x</m>  on   <m>[0,\pi]</m>.
+</p>
+  <hint>min: <m>(0,0)</m> and <m>(\pi,0)</m>
+
+max: <m>(3\pi/4,\frac{\sqrt{2}e^{3\pi/4}}{2})</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{\ln x}{x}</m>  on   <m>[1,4]</m>.
+</p>
+  <hint>min: <m>(1,0)</m>
+
+max: <m>(e,1/e)</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^{2/3}-x</m>  on   <m>[0,2]</m>.
+</p>
+  <hint>min: <m>(2,2^{2/3}-2)</m>
+
+max: <m>(8/27,4/27)</m></hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Review</title>
+<exercise><statement>
+<p>
+Find <m>\frac{dy}{dx}</m>, where <m>x^2y-y^2x = 1</m>.
+</p>
+  <hint><m>\frac{dy}{dx} = \frac{y (y-2 x)}{x (x-2 y)}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Find the equation of the line tangent to the graph of <m>x^2+y^2+xy=7</m> at the point <m>(1,2)</m>.
+</p>
+  <hint><m>y=-4/5(x-1)+2</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Let <m>f(x) = x^3+x</m>.
+</p>
+  
+<p>
+Evaluate <m>\ds \lim_{s\to 0} \frac{f(x+s)-f(x)}{s}</m>.
+</p>
+  <hint><m>3x^2+1</m></hint> </statement>
+</exercise>
+ </subsection> </section>

@@ -1,0 +1,888 @@
+
+<section xml:id="sec_sketch">
+<title>Curve Sketching</title><introduction>
+<p>
+We have been learning how we can understand the behavior of a function based on its first and second derivatives. While we have been treating the properties of a function separately (increasing and decreasing, concave up and concave down, etc.), we combine them here to produce an accurate graph of the function without plotting lots of extraneous points.
+</p>
+  
+<p>
+Why bother? Graphing utilities are very accessible, whether on a computer, a hand&#x2013;held calculator, or a smartphone. These resources are usually very fast and accurate. We will see that our method is not particularly fast &#x2013; it will require time (but it is not <i>hard</i>). So again: why bother?
+</p>
+  
+<p>
+We are attempting to understand the behavior of a function <m>f</m> based on the information given by its derivatives. While all of a function's derivatives relay information about it, it turns out that "most" of the behavior we care about is explained by \fp<nbsp />and \fpp. Understanding the interactions between the graph of <m>f</m> and \fp<nbsp />and \fpp<nbsp />is important. To gain this understanding, one might argue that all that is needed is to look at lots of graphs. This is true to a point, but is somewhat similar to stating that one understands how an engine works after looking only at pictures. It is true that the basic ideas will be conveyed, but "hands&#x2013;on" access increases understanding.
+</p>
+  
+<p>
+The following Key Idea summarizes what we have learned so far that is applicable to sketching graphs of functions and gives a framework for putting that information together. It is followed by several examples.
+</p>
+  
+<p>
+To produce an accurate sketch a given function <m>f</m>, consider the following steps.<index><main>curve sketching</main></index>
+</p>
+  <ol><li>Find the domain of <m>f</m>. Generally, we assume that the domain is the entire real line then find restrictions, such as where a denominator is 0 or where negatives appear under the radical.</li>
+<li>Find the critical values of <m>f</m>.</li>
+<li>Find the possible points of inflection of <m>f</m>.</li>
+<li>Find the location of any vertical asymptotes of <m>f</m> (usually done in conjunction with item 1 above).</li>
+<li>Consider the limits <m>\ds\lim_{x\to-\infty}f(x)</m> and <m>\ds\lim_{x\to\infty}f(x)</m> to determine the end behavior of the function.</li>
+ </ol>  
+<p>
+<i>(continued)</i>
+</p>
+  
+<p>
+\end{keyidea}
+</p>
+  
+<key idea xml:id="idea_sketchb"><title>Curve Sketching &#x2013; Continued</title>
+<statement><ol><li>Create a number line that includes all critical points, possible points of inflection, and locations of vertical asymptotes. For each interval created, determine whether <m>f</m> is increasing or decreasing, concave up or down.</li>
+<li>Evaluate <m>f</m> at each critical point and possible point of inflection. Plot these points on a set of axes. Connect these points with curves exhibiting the proper concavity. Sketch asymptotes and <m>x</m> and <m>y</m> intercepts where applicable.</li>
+ </ol>  </statement>
+</key idea>
+  
+<example xml:id="ex_sketch1"><title>Curve sketching</title>
+<statement>
+<p>
+Use Key <xref ref="idea_sketch">Idea</xref> to sketch <m>f(x) = 3x^3-10x^2+7x+5</m>.\begin{solution}
+We follow the steps outlined in the Key Idea.
+</p>
+  <ol><li>The domain of <m>f</m> is the entire real line; there are no values <m>x</m> for which <m>f(x)</m> is not defined.</li>
+<li>Find the critical values of <m>f</m>. We compute <m>\fp(x) = 9x^2-20x+7</m>. Use the Quadratic Formula to find the roots of <m>\fp</m>:
+				
+<me>
+x = \frac{20\pm \sqrt{(-20)^2-4(9)(7)}}{2(9)} = \frac19\left(10\pm\sqrt{37}\right) \Rightarrow x\approx 0.435, 1.787.
+</me>
+</li>
+<li>Find the possible points of inflection of <m>f</m>. Compute <m>\fpp(x) = 18x-20</m>. We have 
+<me>
+\fpp(x) = 0 \Rightarrow x= 10/9 \approx 1.111.
+</me>
+</li>
+<li>There are no vertical asymptotes.</li>
+<li>We determine the end behavior using limits as <m>x</m> approaches <m>\pm</m>infinity.				
+			
+<me>
+\lim_{x\to -\infty} f(x) = -\infty \qquad \lim_{x\to \infty}f(x) = \infty.
+</me>
+ 
+			We do not have any horizontal asymptotes.</li>
+<li xml:id="fig_sketchline1" >We place the values <m>x=(10\pm\sqrt{37})/9</m> and <m>x=10/9</m> on a number line, as shown in <xref ref="fig_sketchline1">Figure</xref>. We mark each subinterval as increasing or decreasing, concave up or down, using the techniques used in <xref ref="sec_incr_decr">Sections</xref> and <xref ref="sec_concavity"></xref>.
+
+\vskip <div class="minipage">{\textwidth}
+
+\hskip-30pt<image source="images/figsketchline1.png" /> 
+<div class="caption"><span class="heading">Figure</span><span class="codenumber">3.5.1</span>Number line for <m>f</m> in <xref ref="ex_sketch1">Example</xref>.</div></div> </li>
+<li>We plot the appropriate points on axes as shown in <xref ref="fig_sketch1">Figure</xref>(a) and connect the points with straight lines. In <xref ref="fig_sketch1">Figure</xref>(b) we adjust these lines to demonstrate the proper concavity. Our curve crosses the <m>y</m> axis at <m>y=5</m> and crosses the <m>x</m> axis near <m>x=-0.424</m>. In <xref ref="fig_sketch1">Figure</xref>(c) we show a graph of <m>f</m> drawn with a computer program, verifying the accuracy of our sketch.</li>
+ </ol>   <figure xml:id="fig_sketch1" >
+<caption>Sketching <m>f</m> in <xref ref="ex_sketch1">Example</xref>.</caption>
+<table id="2540e2ce1969d01bec81999efcb7ca4608cf30c0" ><tr><td class='c'>
+<image source="images/figsketch1a.png" /> </td></tr>
+<tr><td class='c'>
+(a)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch1b.png" /> </td></tr>
+<tr><td class='c'>
+(b)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch1.png" /> </td></tr>
+<tr><td class='c'>
+(c)</td></tr>
+</table> 
+
+</figure>
+ </statement>
+</example>
+   
+<example xml:id="ex_sketch2"><title>Curve sketching</title>
+<statement>
+<p>
+Sketch <m>\ds f(x) = \frac{x^2-x-2}{x^2-x-6}</m>.\begin{solution}
+We again follow the steps outlined in Key <xref ref="idea_sketch">Idea</xref>.
+</p>
+  <ol><li>In determining the domain, we assume it is all real numbers and looks for restrictions. We find that at <m>x=-2</m> and <m>x=3</m>, <m>f(x)</m> is not defined. So the domain of <m>f</m> is <m>D = \{\text{real numbers }  x\ | \ x\neq -2,3\}</m>.</li>
+<li>To find the critical values of <m>f</m>, we first find <m>\fp(x)</m>. Using the Quotient Rule, we find 
+<me>
+\fp(x) = \frac{-8x+4}{(x^2+x-6)^2} = \frac{-8x+4}{(x-3)^2(x+2)^2}.
+</me>
+ 
+		
+		<m>\fp(x) = 0</m> when <m>x = 1/2</m>, and <m>\fp</m> is undefined when <m>x=-2,3</m>. Since \fp<nbsp />is undefined only when <m>f</m> is, these are not critical values. The only critical value is <m>x=1/2</m>.</li>
+<li>To find the possible points of inflection, we find <m>\fpp(x)</m>, again employing the Quotient Rule: 
+<me>
+\fpp(x) = \frac{24x^2-24x+56}{(x-3)^3(x+2)^3}.
+</me>
+ 
+		
+		We find that <m>\fpp(x)</m> is never 0 (setting the numerator equal to 0 and solving for <m>x</m>, we find the only roots to this quadratic are imaginary) and \fpp<nbsp />is undefined when <m>x=-2,3</m>. Thus concavity will possibly only change at <m>x=-2</m> and <m>x=3</m>.</li>
+<li>The vertical asymptotes of <m>f</m> are at <m>x=-2</m> and <m>x=3</m>, the places where <m>f</m> is undefined.</li>
+<li>There is a horizontal asymptote of <m>y=1</m>, as <m>\ds \lim_{x\to -\infty}f(x) = 1</m> and <m>\ds\lim_{x\to\infty}f(x) =1</m>.</li>
+<li xml:id="fig_sketchline2" >We place the values <m>x=1/2</m>, <m>x=-2</m> and <m>x=3</m> on a number line as shown in <xref ref="fig_sketchline2">Figure</xref>. We mark in each interval whether <m>f</m> is increasing or decreasing, concave up or down. We see that <m>f</m> has a relative maximum at <m>x=1/2</m>; concavity changes only at the vertical asymptotes.
+		
+		\vskip <div class="minipage">{\textwidth}
+
+\hskip-30pt<image source="images/figsketchline2.png" /> 
+<div class="caption"><span class="heading">Figure</span><span class="codenumber">3.5.3</span>Number line for <m>f</m> in <xref ref="ex_sketch2">Example</xref>.</div></div> </li>
+<li>In <xref ref="fig_sketch2">Figure</xref>(a), we plot the points from the number line on a set of axes and connect the points with straight lines to get a general idea of what the function looks like (these lines effectively only convey increasing/decreasing information). In <xref ref="fig_sketch2">Figure</xref>(b), we adjust the graph with the appropriate concavity. We also show <m>f</m> crossing the <m>x</m> axis at <m>x=-1</m> and <m>x=2</m>.</li>
+ </ol>  
+<p>
+<xref ref="fig_sketch2">Figure</xref>(c) shows a computer generated graph of <m>f</m>, which verifies the accuracy of our sketch.
+</p>
+  <figure xml:id="fig_sketch2" >
+<caption>Sketching <m>f</m> in <xref ref="ex_sketch2">Example</xref>.</caption>
+<table id="626892505a52c58b2db50e3c80f5ef5c193b449b" ><tr><td class='c'>
+<image source="images/figsketch2a.png" /> </td></tr>
+<tr><td class='c'>
+(a)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch2b.png" /> </td></tr>
+<tr><td class='c'>
+(b)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch2.png" /> </td></tr>
+<tr><td class='c'>
+(c)</td></tr>
+</table> 
+
+</figure>
+ </statement>
+</example>
+   
+<example xml:id="ex_sketch3"><title>Curve sketching</title>
+<statement>
+<p>
+Sketch <m>\ds f(x) = \frac{5(x-2)(x+1)}{x^2+2x+4}.</m>\begin{solution}
+We again follow Key <xref ref="idea_sketch">Idea</xref>.
+</p>
+  <ol><li>We assume that the domain of <m>f</m> is all real numbers and consider restrictions. The only restrictions come when the denominator is 0, but this never occurs. Therefore the domain of <m>f</m> is all real numbers, <m>\mathbb{R}</m>.</li>
+<li>We find the critical values of <m>f</m> by setting <m>\fp(x)=0</m> and solving for <m>x</m>. We find 
+				
+<me>
+\fp(x) = \frac{15x(x+4)}{(x^2+2x+4)^2} \quad \Rightarrow \quad \fp(x) = 0 \text{ when }  \ x=-4,0.
+</me>
+</li>
+<li>We find the possible points of inflection by solving <m>\fpp(x) = 0</m> for <m>x</m>. We find
+			
+<me>
+\fpp(x) = -\frac{30x^3+180x^2-240}{(x^2+2x+4)^3} .
+</me>
+  The cubic in the numerator does not factor very "nicely." We instead approximate the roots at <m>x= -5.759</m>, <m>x=-1.305</m> and <m>x=1.064</m>.</li>
+<li>There are no vertical asymptotes.</li>
+<li>We have a horizontal asymptote of <m>y=5</m>, as <m>\ds \lim_{x\to-\infty}f(x) = \lim_{x\to\infty}f(x) = 5</m>.</li>
+<li xml:id="fig_sketchline3" >We place the critical points and possible points on a number line as shown in <xref ref="fig_sketchline3">Figure</xref> and mark each interval as increasing/decreasing, concave up/down appropriately.
+	
+			
+		\vskip <div class="minipage">{\textwidth}
+
+\hskip-30pt<image source="images/figsketchline3.png" /> 
+<div class="caption"><span class="heading">Figure</span><span class="codenumber">3.5.5</span>Number line for <m>f</m> in <xref ref="ex_sketch3">Example</xref>.</div></div> </li>
+<li>In <xref ref="fig_sketch3">Figure</xref>(a) we plot the significant points from the number line as well as the two roots of <m>f</m>, <m>x=-1</m> and <m>x=2</m>, and connect the points with straight lines to get a general impression about the graph. In <xref ref="fig_sketch3">Figure</xref>(b), we add concavity. <xref ref="fig_sketch3">Figure</xref>(c) shows a computer generated graph of <m>f</m>, affirming our results.</li>
+ </ol>   <figure xml:id="fig_sketch3" >
+<caption>Sketching <m>f</m> in <xref ref="ex_sketch3">Example</xref>.</caption>
+<table id="d633ec71df1a738d0fdba8a6e85597969b028e75" ><tr><td class='c'>
+<image source="images/figsketch3a.png" /> </td></tr>
+<tr><td class='c'>
+(a)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch3b.png" /> </td></tr>
+<tr><td class='c'>
+(b)</td></tr>
+<tr><td class='c'>
+<image source="images/figsketch3.png" /> </td></tr>
+<tr><td class='c'>
+(c)</td></tr>
+</table> 
+
+</figure>
+ </statement>
+</example>
+   
+<p>
+In each of our examples, we found a few, significant points on the graph of <m>f</m> that corresponded to changes in increasing/decreasing or concavity. We connected these points with straight lines, then adjusted for concavity, and finished by showing a very accurate, computer generated graph.
+</p>
+  
+<p>
+Why are computer graphics so good? It is not because computers are "smarter" than we are. Rather, it is largely because computers are much faster at computing than we are. In general, computers graph functions much like most students do when first learning to draw graphs: they plot equally spaced points, then connect the dots using lines. By using lots of points, the connecting lines are short and the graph looks smooth.
+</p>
+  
+<p>
+This does a fine job of graphing in most cases (in fact, this is the method used for many graphs in this text). However, in regions where the graph is very "curvy," this can generate noticeable sharp edges on the graph unless a large number of points are used. High quality computer algebra systems, such as <i>Mathematica</i>, use special algorithms to plot lots of points only where the graph is "curvy."
+</p>
+  
+<p>
+In <xref ref="fig_mathematica_sinx">Figure</xref>, a graph of <m>y=\sin x</m> is given, generated by <i>Mathematica</i>. The small points represent each of the places <i>Mathematica</i> sampled the function. Notice how at the "bends" of <m>\sin x</m>, lots of points are used; where <m>\sin x</m> is relatively straight, fewer points are used. (Many points are also used at the endpoints to ensure the "end behavior" is accurate.)
+</p>
+  
+<p>
+does <i>Mathematica</i> know where the graph is "curvy"? Calculus. When we study <i>curvature</i> in a later chapter, we will see how the first and second derivatives of a function work together to provide a measurement of "curviness." <i>Mathematica</i> employs algorithms to determine regions of "high curvature" and plots extra points there.
+</p>
+  
+<p>
+Again, the goal of this section is not "How to graph a function when there is no computer to help." Rather, the goal is "Understand that the shape of the graph of a function is largely determined by understanding the behavior of the function at a few key places." In <xref ref="ex_sketch3">Example</xref>, we were able to accurately sketch a complicated graph using only 5 points and knowledge of asymptotes!
+</p>
+  
+<p>
+There are many applications of our understanding of derivatives beyond curve sketching. The next chapter explores some of these applications, demonstrating just a few kinds of problems that can be solved with a basic knowledge of differentiation.
+</p>
+ </introduction> 
+<subsection>
+<title>Terms and Concepts</title>
+<exercise><statement>
+<p>
+Why is sketching curves by hand beneficial even though technology is ubiquitous?
+</p>
+  <hint>Answers will vary.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+What does "ubiquitous" mean?
+</p>
+  <hint>Found everywhere.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: When sketching graphs of functions, it is useful to find the critical points.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: When sketching graphs of functions, it is useful to find the possible points of inflection.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+T/F: When sketching graphs of functions, it is useful to find the horizontal and vertical asymptotes.
+</p>
+  <hint>T</hint> </statement>
+</exercise>
+ </subsection> 
+<subsection>
+<title>Problems</title>
+<p>
+{ In Exercises}
+{, practice using Key <xref ref="idea_sketch">Idea</xref> by applying the principles to the given functions with familiar graphs.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>f(x) = 2x+4</m>
+</p>
+  <hint>A good sketch will include the <m>x</m> and <m>y</m> intercepts and draw the appropriate line.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = -x^2+1</m>
+</p>
+  <hint>A good sketch will include the <m>x</m> and <m>y</m> intercepts..</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = \sin x</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>f(x) = e^x</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{1}{x}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{1}{x^2}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, sketch a graph of the given function using Key <xref ref="idea_sketch">Idea</xref>. Show all work; check your answer with technology.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^3-2x^2+4x+1</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = -x^3+5x^2-3x+2</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^3+3x^2+3x+1</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^3-x^2-x+1</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = (x-2)\ln (x-2)</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = (x-2)^2\ln (x-2)</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x^2-4}{x^2}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x^2-4x+3}{x^2-6x+8}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{x^2-2x+1}{x^2-6x+8}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x\sqrt{x+1}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = x^2e^x</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sin x \cos x</m> on <m>[-\pi,\pi]</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = (x-3)^{2/3} + 2</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{(x-1)^{2/3}}{x}</m>
+</p>
+  <hint>Use technology to verify sketch.</hint> </statement>
+</exercise>
+  
+<p>
+{ In Exercises}
+{, a function with the parameters <m>a</m> and <m>b</m> are given. Describe the critical points and possible points of inflection of <m>f</m> in terms of <m>a</m> and <m>b</m>.
+}
+</p>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \frac{a}{x^2+b^2}</m>
+</p>
+  <hint>Critical point: <m>x=0</m>
+Points of inflection: <m>\pm b/\sqrt{3}</m></hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = \sin (ax+b)</m>
+</p>
+  <hint>Critical points: <m>x=\frac{n\pi/2-b}{a}</m>, where <m>n</m> is an odd integer
+Points of inflection: <m>(n\pi-b)/a</m>, where <m>n</m> is an integer.</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+<m>\ds f(x) = (x-a)(x-b)</m>
+</p>
+  <hint>Critical point: <m>x=(a+b)/2</m>
+Points of inflection: none</hint> </statement>
+</exercise>
+  
+<exercise><statement>
+<p>
+Given <m>x^2+y^2=1</m>, use implicit differentiation to find <m>\frac{dy}{dx}</m> and <m>\frac{d^2y}{dx^2}</m>. Use this information to justify the sketch of the unit circle.
+</p>
+  <hint><m>\frac{dy}{dx} = -x/y</m>, so the function is increasing in second and fourth quadrants, decreasing in the first and third quadrants.
+
+<m>\frac{d^2y}{dx^2} = -1/y - x^2/y^3</m>, which is positive when <m>y\lt 0</m> and is negative when <m>y>0</m>. Hence the function is concave down in the first and second quadrants and concave up in the third and fourth quadrants.</hint> </statement>
+</exercise>
+  
+<p>
+{
+\appendix
+
+{
+</p>
+  
+<p>
+\makeexercisesection{Solutions To Selected Problems}
+\qendheader
+\eendgeometry
+</p>
+  
+<p>
+\phantomsection
+\cleardoublepage
+
+</p>
+    
+<p>
+<b> Differentiation Rules</b><br />
+
+</p>
+  <div class="minipage">{.20\linewidth}
+<ol><li>\deriv{cx}c</li>
+<li>\deriv{u\pm v}{u'\pm v'}</li>
+<li>\deriv{u\cdot v}{uv'+ u'v}</li>
+<li>\deriv{\frac uv}{\frac{vu'-uv'}{v^2}}</li>
+<li>\deriv{u(v)}{u'(v)v'}</li>
+<li>\deriv{c}0</li>
+<li>\deriv{x}1</li>
+<li>\deriv{x^n}{nx^{n-1}}</li>
+<li>\deriv{e^x}{e^x}</li>
+ </ol> </div>  <div class="minipage">{.23\linewidth}
+<ol><li>\deriv{a^x}{\ln a\cdot a^x}</li>
+<li>\deriv{\ln x}{\frac{1}x}</li>
+<li>\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}</li>
+<li>\deriv{\sin x}{\cos x}</li>
+<li>\deriv{\cos x}{-\sin x}</li>
+<li>\deriv{\csc x}{-\csc x\cot x}</li>
+<li>\deriv{\sec x}{\sec x\tan x}</li>
+<li>\deriv{\tan x}{\sec^2 x}</li>
+<li>\deriv{\cot x}{-\csc^2 x}</li>
+ </ol> </div>  <div class="minipage">{.25\linewidth}
+<ol><li>\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}</li>
+<li>\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}</li>
+<li>\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}</li>
+<li>\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}</li>
+<li>\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}</li>
+<li>\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}</li>
+<li>\deriv{\cosh x}{\sinh x}</li>
+<li>\deriv{\sinh x}{\cosh x}</li>
+<li>\deriv{\tanh x}{\sech^2 x}</li>
+ </ol> </div>  <div class="minipage">{.25\linewidth}
+<ol><li>\deriv{\sech x}{-\sech x\tanh x}</li>
+<li>\deriv{\csch x}{-\csch x\coth x}</li>
+<li>\deriv{\coth x}{-\csch^2 x}</li>
+<li>\deriv{\cosh^{-1}x}{\frac1{\sqrt{x^2-1}}}</li>
+<li>\deriv{\sinh^{-1}x}{\frac1{\sqrt{x^2+1}}}</li>
+<li>\deriv{\sech^{-1}x}{\frac{-1}{x\sqrt{1-x^2}}}</li>
+<li>\deriv{\csch^{-1}x}{\frac{-1}{|x|\sqrt{1+x^2}}}</li>
+<li>\deriv{\tanh^{-1}x}{\frac1{1-x^2}}</li>
+<li>\deriv{\coth^{-1}x}{\frac1{1-x^2}}</li>
+ </ol> </div> 
+<p>
+<b> Integration Rules</b><br />
+</p>
+  <div class="minipage">{.30\linewidth}
+<ol><li>\myint{c\cdot f(x)}{c\int f(x)<nbsp />dx}</li>
+<li>\myint{f(x)\pm g(x)}<br />
+<m>\ds \int f(x)\ dx \pm \int g(x)\ dx</m></li>
+<li>\myint{0}C</li>
+<li>\myint{1}{x+C}</li>
+<li>\myint{x^n}{\frac{1}{n+1}x^{n+1}+C,  n\neq -1}<br />
+<m>\ n\neq -1</m></li>
+<li>\myint{e^x}{e^x+C}</li>
+<li>\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}</li>
+<li>\myint{\frac{1}x}{\ln |x| + C}</li>
+<li>\myint{\cos x}{\sin x+C}</li>
+<li>\myint{\sin x}{-\cos x+C}</li>
+ </ol> </div>  <div class="minipage">{.31\linewidth}
+<ol><li>\myint{\tan x}{-\ln |\cos x|+C}</li>
+<li>\myint{\sec x}{\ln |\sec x+\tan x|+C}</li>
+<li>\myint{\csc x}{-\ln |\csc x+\cot x|+C}</li>
+<li>\myint{\cot x}{\ln |\sin x|+C}</li>
+<li>\myint{\sec^2 x}{\tan x+C}</li>
+<li>\myint{\csc^2x}{-\cot x+C}</li>
+<li>\myint{\sec x\tan x}{\sec x+C}</li>
+<li>\myint{\csc x\cot x}{-\csc x+C}</li>
+<li>\myint{\cos^2x}{\frac12x+\frac14\sin\big(2x\big)+C}</li>
+<li>\myint{\sin^2x}{\frac12x-\frac14\sin\big(2x\big)+C}</li>
+<li>\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}</li>
+ </ol> </div>  <div class="minipage">{.38\linewidth}
+<ol><li>\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}</li>
+<li>\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}a\right)+C}</li>
+<li>\myint{\cosh x}{\sinh x+C}</li>
+<li>\myint{\sinh x}{\cosh x+C}</li>
+<li>\myint{\tanh x}{\ln(\cosh x)+C}</li>
+<li>\myint{\coth x}{\ln |\sinh  x|+C}</li>
+<li>\myint{\frac{1}{\sqrt{x^2-a^2}}}{\ln\big|x+\sqrt{x^2-a^2}\big|+C}</li>
+<li>\myint{\frac{1}{\sqrt{x^2+a^2}}}{\ln\big|x+\sqrt{x^2+a^2}\big|+C}</li>
+<li>\myint{\frac{1}{a^2-x^2}}{\frac1{2a}\ln\left|\frac{a+x}{a-x}\right|+C}</li>
+<li>\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}</li>
+<li>\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}</li>
+ </ol> </div>     <div class="minipage">{.53\linewidth}
+<b> The Unit Circle</b>
+
+<image source="images/833be8423218b29ecf65ad631b2f84f2b3ceed02.png" /></div>  <div class="minipage">{.45\linewidth}
+<b> Definitions of the Trigonometric Functions</b><br />
+
+
+<b> Unit Circle Definition</b>
+
+
+<div class="minipage">{.56\linewidth}
+
+\vskip 0in<image source="images/d7afb1900fa60701de2aa6a4d16f06439328acb7.png" /></div> 
+<div class="minipage">{.4\linewidth}
+\vskip 0in 
+<table id="7807a8c3dc03cf6d81316f1797886cfa6d313ed9" ><tr><td class='c'>
+<m>\sin \theta = y</m> </td><td class='c'> <m>\cos \theta = x</m> </td></tr>
+<tr><td class='c'>
+</td></tr>
+<tr><td class='c'>
+<m>\ds\csc \theta = \frac1y</m></td><td class='c'><m>\ds\sec \theta = \frac1x</m> </td></tr>
+<tr><td class='c'>
+</td></tr>
+<tr><td class='c'>
+<m>\myrule\ds\tan \theta = \frac yx</m> </td><td class='c'> <m>\ds\cot \theta = \frac xy</m></td></tr>
+</table></div> 
+<b> Right Triangle Definition</b>
+
+<div class="minipage">{.56\linewidth}
+
+<image source="images/d99627593c507cbb36ac9a61f5b5f5cbaf6ecbaa.png" /></div> 
+<div class="minipage">{.4\linewidth}
+\vskip 0in 
+<table id="38a9ae746c77e00a3d22e83e239c60fba22529de" ><tr><td class='c'>
+<m>\ds\sin \theta = \frac{\text{O} }{\text{H} }</m> </td><td class='c'> <m>\ds\csc \theta = \frac{\text{H} }{\text{O} }</m> </td></tr>
+<tr><td class='c'>
+</td></tr>
+<tr><td class='c'>
+<m>\ds\cos \theta = \frac{\text{A} }{\text{H} }</m> </td><td class='c'> <m>\ds\sec \theta = \frac{\text{H} }{\text{A} }</m> </td></tr>
+<tr><td class='c'>
+</td></tr>
+<tr><td class='c'>
+<m>\ds\tan \theta = \frac{\text{O} }{\text{A} }</m> </td><td class='c'> <m>\ds\cot \theta = \frac{\text{A} }{\text{O} }</m> </td></tr>
+<tr><td class='c'></td></tr>
+</table></div></div>   
+<p>
+Common Trigonometric Identities}<br />
+</p>
+  <div class="minipage">{.45\linewidth}
+	<b>Cofunction Identities</b>\vskip 5pt
+	<div class="minipage">{.45\linewidth}
+		<m>\ds \sin\left(\frac{\pi}{2}-x\right) = \cos x</m>\vskip 5pt
+		<m>\ds \cos\left(\frac{\pi}{2}-x\right) = \sin x</m>\vskip 5pt
+		<m>\ds \tan\left(\frac{\pi}{2}-x\right) = \cot x</m>\vskip 5pt</div> 
+	<div class="minipage">{.45\linewidth}
+		<m>\ds \csc\left(\frac{\pi}{2}-x\right) = \sec x</m>\vskip 5pt
+		<m>\ds \sec\left(\frac{\pi}{2}-x\right) = \csc x</m>\vskip 5pt
+		<m>\ds \cot\left(\frac{\pi}{2}-x\right) = \tan x</m>\vskip 5pt</div></div>  <div class="minipage">{.25\linewidth}
+	<b>Double Angle Formulas</b>\vskip 5pt
+	<m>\sin 2x = 2\sin x\cos x</m> \vskip 5pt
+	<m>\cos 2x = \cos^2x - \sin^2 x</m>\vskip 5pt
+	<m>= 2\cos^2x-1</m>\vskip 5pt
+	<m>= 1-2\sin^2x</m>\vskip 5pt
+	<m>\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}</m></div>  <div class="minipage">{.3\linewidth}
+<b>Power&#x2013;Reducing Formulas</b>\vskip 5pt
+<m>\ds \sin^2 x = \frac{1-\cos 2x}{2}</m>\vskip 5pt
+<m>\ds \cos^2 x = \frac{1+\cos 2x}{2}</m>\vskip 5pt
+<m>\ds \tan^2x = \frac{1-\cos 2x}{1+\cos 2x}</m></div>  <div class="minipage">{.25\linewidth}
+<b>Even/Odd Identities</b>\vskip 5pt
+<m>\sin(-x) = -\sin x</m>\vskip 5pt
+<m>\cos (-x) = \cos x</m>\vskip 5pt
+<m>\tan (-x) = -\tan x</m>\vskip 5pt
+<m>\csc(-x) = -\csc x</m>\vskip 5pt
+<m>\sec (-x) = \sec x</m>\vskip 5pt
+<m>\cot (-x) = -\cot x</m>\vskip 5pt</div>  <div class="minipage">{.45\linewidth}
+<b>Angle Sum/Difference Formulas</b>\vskip 5pt
+<m>\sin (x\pm y) = \sin x\cos y \pm \cos x\sin y</m>\vskip 5pt
+<m>\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y</m>\vskip 5pt
+<m>\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}</m></div>    
+<p>
+<b> Areas and Volumes</b>
+</p>
+  <div class="minipage">{225pt}
+	<div class="minipage">{100pt}
+		<b>Right Circular Cone</b>\vskip 5pt
+		Volume = <m>\frac 13 \pi r^2h</m> \vskip 5pt
+		Surface Area =\vskip 3pt		
+		 <m>\pi r\sqrt{r^2+h^2} +\pi r^2</m></div> 
+		<div class="minipage">{115pt}
+			
+			\vskip 0pt
+			<image source="images/428a3ea6c73fb5b216240e260808f93805a85f0a.png" /></div></div>  
+<p>
+2ff1b8810c8754413a9642711b8f6fa97c05e4d8END
+</p>
+  <div class="minipage">{225pt}
+<div class="minipage">{100pt}
+		<b>Right Circular Cylinder</b>\vskip 5pt
+		Volume = <m>\pi r^2h</m> \vskip 5pt
+		Surface Area =\vskip 3pt		
+		 <m>2\pi rh  +2\pi r^2</m></div> 
+		<div class="minipage">{115pt}
+			
+			\vskip 0pt
+			<image source="images/69e1cc0cf5b0711818a1d627bfdca54768596407.png" /></div></div>  
+<p>
+892844821c8b328de07db29b0ca79e3cc8b049e0END
+</p>
+  <div class="minipage">{225pt}
+<div class="minipage">{100pt}
+		<b>Sphere</b>\vskip 5pt
+		Volume = <m>\frac43\pi r^3</m> \vskip 5pt
+		Surface Area =<m>4\pi r^2</m></div> 
+		<div class="minipage">{115pt}
+			
+			\vskip 0pt
+			<image source="images/c1e137425cd32492f8401f63b2ef44016b45dd88.png" /></div></div>  
+<p>
+2ce748e645b5bc5e835c57adadf502bd14b6041dEND
+</p>
+  <div class="minipage">{225pt}
+<div class="minipage">{100pt}
+		<b>General Cone</b>\vskip 5pt
+		Area of Base = <m>A</m>\vskip 5pt
+		Volume = <m>\frac13Ah</m> \vskip 5pt</div> 
+		<div class="minipage">{115pt}
+			
+			\vskip 0pt
+			<image source="images/9793875a2875de756bb6b893e87c9afc84229d3f.png" /></div></div>  
+<p>
+942d3f4c61349415868c269c248e8f754e2a3e7dEND
+</p>
+  <div class="minipage">{225pt}
+<div class="minipage">{100pt}
+		<b>General Right Cylinder</b>\vskip 5pt
+		Area of Base = <m>A</m>\vskip 5pt
+		Volume = <m>Ah</m> \vskip 5pt</div> 
+		<div class="minipage">{115pt}
+			
+			\vskip 0pt
+			<image source="images/3bd734a50407431e961798a575a6935ac7cb5f91.png" /></div></div>    
+<p>
+<b> Algebra</b>
+<b> Factors and Zeros of Polynomials</b><br />
+Let <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> be a polynomial. If <m>p(a)=0</m>, then <m>a</m> is a <m>zero</m> of the polynomial and a solution
+of the equation <m>p(x)=0</m>. Furthermore, <m>(x-a)</m> is a <m>factor</m> of the polynomial.
+Fundamental Theorem of Algebra}<br />
+An <m>n</m>th degree polynomial has <m>n</m> (not necessarily distinct) zeros. Although all of these zeros may be imaginary, a real polynomial of odd degree
+must have at least one real zero.<br />
+Quadratic Formula}<br />
+If <m>p(x) = ax^2 + bx + c</m>, and <m>0 \le b^2 - 4ac</m>, then the real zeros of <m>p</m> are <m>x=(-b\pm \sqrt{b^2-4ac})/2a</m><br />
+Special Factors}<br />
+<m>
+\begin{array}{ll}
+x^2 - a^2 = (x-a)(x+a) \qquad \qquad \qquad \amp  x^3 - a^3 = (x-a)(x^2+ax+a^2)\\	
+x^3 + a^3 = (x+a)(x^2-ax+a^2) \qquad \qquad \qquad \amp  x^4 - a^4 = (x^2-a^2)(x^2+a^2)\\
+\end{array} 
+</m>
+</p>
+  
+<p>
+<m>\begin{array}{l}
+(x+y)^n  =x^n + nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2+\cdots +nxy^{n-1}+y^n\\
+(x-y)^n  =x^n - nx^{n-1}y+\frac{n(n-1)}{2!}x^{n-2}y^2-\cdots \pm nxy^{n-1}\mp y^n
+\end{array} </m> Binomial Theorem}<br />
+<m>
+\begin{array}{ll}
+(x+y)^2 = x^2 + 2xy + y^2 \qquad \amp  (x-y)^2 = x^2 -2xy +y^2\\
+(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \qquad  \amp  (x-y)^3 = x^3 -3x^2y + 3xy^2 -y^3\\
+(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4 \qquad  \amp  (x-y)^4 = x^4 - 4x^3y + 6x^2y^2 - 4xy^3 + y^4\\
+\end{array} 
+</m> Rational Zero Theorem}<br />
+If <m>p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0</m> has integer coefficients, then every <m>rational</m> <m>zero</m> of <m>p</m> is of the form
+<m>x=r/s</m>, where <m>r</m> is a factor of <m>a_0</m> and <m>s</m> is a factor of <m>a_n</m>.<br />
+Factoring by Grouping}<br />
+<m>ac x^3 + adx^2 + bcx + bd = ax^2(cs+d)+b(cx+d)=(ax^2+b)(cx+d)</m><br />
+Arithmetic Operations}<br />
+<m>
+\begin{array}{lll}
+ab+ac=a(b+c) \qquad \qquad \amp  \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \qquad \qquad \amp  \displaystyle \frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}\\	\\
+\displaystyle\frac{\left(\displaystyle\frac{a}{b}\right)}{\left(\displaystyle\frac{c}{d}\right)}=\left(\frac{a}{b}\right)\left(\frac{d}{c}\right)=\frac{ad}{bc} 
+\amp \displaystyle \frac{\left(\displaystyle\frac{a}{b}\right)}{c} =\displaystyle \frac{a}{bc}
+\amp \displaystyle \frac{a}{\left(\displaystyle\frac{b}{c}\right)} =\displaystyle \frac{ac}{b}\\ \\
+a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}\amp \displaystyle\frac{a-b}{c-d}=\frac{b-a}{d-c}\amp \displaystyle\frac{ab+ac}{a}=b+c\\
+\end{array} 
+</m> Exponents and Radicals}<br />
+<m>
+\begin{array}{llllll}
+a^0=1, \; \; a \ne 0 \quad \amp  (ab)^x=a^xb^x \quad \amp  a^xa^y = a^{x+y}\quad  \amp  \sqrt{a}=a^{1/2}   \amp \displaystyle \frac{a^x}{a^y}=a^{x-y}  \amp \sqrt[n]{a}=a^{1/n}\\
+\left(\displaystyle\frac{a}{b}\right)^x=\displaystyle\frac{a^x}{b^x} \amp \sqrt[n]{a^m}=a^{m/n} \amp  a^{-x}=\displaystyle\frac{1}{a^x} \amp  \sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b} \quad \amp 
+(a^x)^y=a^{xy} \quad\amp  \displaystyle\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+\end{array} 
+</m>
+</p>
+  
+<p>
+
+<b> Additional Formulas</b>
+</p>
+  
+<p>
+<b> Summation Formulas:</b><br />
+</p>
+  <table id="c1279806432a6b8e8d1f097ded50e90de938ce57" ><tr><td class='l'>
+<m>\ds \sum^n_{i=1}{c} = cn</m> \hskip 100pt<nbsp /></td><td class='l'> <m>\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}</m></td></tr>
+<tr><td class='l'>
+<m>\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}</m> </td><td class='l'> <m>\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2</m></td></tr>
+<tr><td class='l'></td></tr>
+</table>   
+<p>
+<b> Trapezoidal Rule:</b><br />
+</p>
+  
+<p>
+<m>\ds
+\int_a^b{f(x)}\ dx  \approx \frac{\Delta x}{2}\big[f(x_1)+2f(x_2) + 2f(x_3) + ... + 2f(x_{n}) + f(x_{n+1})\big]</m> <br />
+with <m>\displaystyle \text{Error}  \leq \frac{(b-a)^3}{12n^2}\big[ \max \big| f\,''(x)  \big|\big]</m>
+</p>
+  
+<p>
+<b> Simpson's Rule:</b><br />
+</p>
+  
+<p>
+<m>\ds\int_a^b{f(x)}\ dx  \approx  \frac{\Delta x}{3}\big[f(x_1)+4f(x_2) + 2f(x_3) + 4f(x_4) + ... + 2f(x_{n-1}) + 4f(x_{n}) + f(x_{n+1})\big] 
+</m><br />
+with <m>\displaystyle \text{Error}  \leq \frac{(b-a)^5}{180n^4}\big[ \max \big| f\,^{(4)}(x)  \big|\big]
+</m>
+</p>
+  <div class="minipage">{.5\linewidth}
+<b> Arc Length:</b><br />
+<m>\displaystyle
+L = \int_a^b{\sqrt{1+ f\,'(x)^2}}dx  
+</m><br /></div>  <div class="minipage">{.49\linewidth}
+<b> Surface of Revolution:</b>
+<br />
+<m>\displaystyle
+S = 2\pi \int_a^b{f(x) \sqrt{1+ f\,'(x)^2}}dx  
+</m><br />
+{ (where <m>f(x)\geq 0</m>)}<br />
+
+<m>\displaystyle
+S = 2\pi \int_a^b{x \sqrt{1+ f\,'(x)^2}}dx 
+</m><br />
+{ (where <m>a,b \geq 0</m>)}</div>  <div class="minipage">{.49\linewidth}
+<b> Work Done by a Variable Force:</b><br />
+<m>\displaystyle
+W = \int_a^b{F(x)}dx  
+</m></div>  <div class="minipage">{.5\linewidth}
+<b> Force Exerted by a Fluid:</b><br />
+<m>\displaystyle
+F = \int_a^b{w\,d(y)\,\ell(y)}dy  
+</m></div>  
+<p>
+<b> Taylor Series Expansion for <m>f(x)</m>:</b><br />
+<m>\displaystyle p_n(x) = f(c) + f\,'(c)(x-c) + \frac{f\,''(c)}{2!}(x-c)^2 + \frac{f\,'''(c)}{3!}(x-c)^3 + ... + \frac{f\,^{(n)}(c)}{n!}(x-c)^n
+</m>
+</p>
+  
+<p>
+<b> Maclaurin Series Expansion for <m>f(x)</m>, where <m>c=0</m>:</b><br />
+<m>\displaystyle p_n(x) = f(0) + f\,'(0)x + \frac{f\,''(0)}{2!}x^2 + \frac{f\,'''(0)}{3!}x^3 + ... + \frac{f\,^{(n)}(0)}{n!}x^n
+</m>
+</p>
+    
+<p>
+<b> Summary of Tests for Series:</b><br />
+</p>
+  <table id="91b934ee9e2811ab03849be9e60496bba09efaf6" ><tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+Test </td><td class='cv'> Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}\text{ Condition(s) of Convergence} </td><td class='cv'> \text{ Condition(s) of Divergence} </td><td class='cv'>   Comment </td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+<m>n</m>th-Term </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{a_n}}</m> </td><td class='cv'>  </td><td class='cv'> <m>\displaystyle{\lim_{n \to \infty} a_n \neq 0}</m> </td><td class='cv'> \text{This test cannot be used to show convergence.}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Geometric Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=0}{r^n}}</m> </td><td class='cv'> <m> \left| r \right| \lt  1</m> </td><td class='cv'> <m>\left| r \right| \geq 1</m> </td><td class='cv'>  <m>\displaystyle{\text{Sum}  = \frac{1}{1-r}}</m> </td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Telescoping Series </td><td class='cv'>\rule[-15pt]{0pt}{33pt} <m>\displaystyle{\sum^\infty_{n=1}{(b_n-b_{n+a})}}</m> </td><td class='cv'> <m>\displaystyle{\lim_{n \to \infty} b_n = L}</m> </td><td class='cv'> </td><td class='cv'> <m>\displaystyle\text{Sum} = \left(\sum^a_{n=1}b_n\right) -L</m> </td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+<m>p</m>-Series </td><td class='cv'> \rule[-15pt]{0pt}{33pt}<m>\displaystyle{\sum^\infty_{n=1}{\frac{1}{(an+b)^p}}}</m> </td><td class='cv'> <m>p>1</m> </td><td class='cv'> <m>p\leq 1</m> </td><td class='cv'> </td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Integral Test </td><td class='cv'> \rule[-20pt]{0pt}{40pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \rule[-15pt]{0pt}{40pt}\text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
+<tr><td class='vcv'> is convergent} </td><td class='cv'> \text{<m>\displaystyle \int_1^\infty a(n)\ dn</m></td></tr>
+<tr><td class='vcv'> is divergent} </td><td class='cv'> \text{<m>a_n = a(n)</m> must be continuous}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Direct Comparison </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> converges and </td></tr>
+<tr><td class='vcv'> <m>0\leq a_n\leq b_n</m>}</td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> diverges and </td></tr>
+<tr><td class='vcv'> <m>0\leq b_n\leq a_n</m>} </td><td class='cv'> </td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Limit Comparison </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> converges and </td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n  \geq 0</m>}</td><td class='cv'> \text{<m>\displaystyle \sum_{n=0}^\infty b_n </m></td></tr>
+<tr><td class='vcv'> diverges and </td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n > 0</m>}  </td><td class='cv'> \text{ Also diverges if</td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_n/b_n=\infty</m>}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Ratio Test </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'>
+ \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n}  \lt  1</m>}</td><td class='cv'> \text{<m>\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} > 1</m>} </td><td class='cv'> 
+\text{ <m>\{a_n\}</m> must be positive</td></tr>
+<tr><td class='vcv'> Also diverges if</td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} a_{n+1}/a_n=\infty</m>}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+<tr><td class='vcv'>
+
+Root Test </td><td class='cv'> \rule[-30pt]{0pt}{65pt}<m>\displaystyle{\sum^\infty_{n=0}{a_n}}</m> </td><td class='cv'>
+ \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}  \lt  1</m>}</td><td class='cv'> \text{<m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n} > 1</m>} </td><td class='cv'> 
+\text{ <m>\{a_n\}</m> must be positive</td></tr>
+<tr><td class='vcv'> Also diverges if</td></tr>
+<tr><td class='vcv'> <m>\displaystyle \lim_{n\to\infty} \big(a_n\big)^{1/n}=\infty</m>}</td></tr>
+<tr><td class='hline' colspan='5'><hr /></td></tr>
+
+</table> </subsection> </section>
