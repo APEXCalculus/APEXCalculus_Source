@@ -1,7 +1,9 @@
 APEXCalculus_Source
 ===================
 
-Outdated: Source files for the APEX Calculus text, Version 3.0.
+Outdated: See APEXCalculusV5 for more up-to-date files.
+
+Source files for the APEX Calculus text, Version 3.0.
 
 The main file is Calculus.tex, intended to be run with XeLaTeX with the Calibri font. 
 It will run without Calibri and with pdflatex, but the spacing will be different than intended. One can try using the Carlito font, which is an open font with (supposedly) the same font metrics as Calibri. I have not yet tried it personally.
